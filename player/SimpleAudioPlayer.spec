@@ -14,6 +14,7 @@ binaries += [
 
 datas = []
 datas += collect_data_files("accessible_output3")
+datas += collect_data_files("certifi")
 datas += [
     (str(PROJECT_ROOT / "sounds" / "speaker_test.wav"), "sounds"),
 ]

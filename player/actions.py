@@ -48,6 +48,7 @@ CLOSE_ALL_FILES = "close_all_files"
 TEST_SPEAKERS = "test_speakers"
 OPEN_SETTINGS = "open_settings"
 GO_TO_FILE = "go_to_file"
+GO_TO_TIME = "go_to_time"
 NEXT_TRACK = "next_track"
 PREVIOUS_TRACK = "previous_track"
 GO_FIRST_FILE = "go_first_file"
@@ -91,9 +92,17 @@ VIDEO_COPY_LINK = "video_copy_link"
 OPEN_USER_GUIDE = "open_user_guide"
 OPEN_CHANGES = "open_changes"
 OPEN_CONTACT = "open_contact"
+OPEN_CONTACT_EMAIL = "open_contact_email"
+OPEN_CONTACT_TELEGRAM = "open_contact_telegram"
+OPEN_CONTACT_WEBSITE = "open_contact_website"
 OPEN_ABOUT = "open_about"
 CHECK_APP_UPDATES = "check_app_updates"
 UPDATE_YT_COMPONENTS = "update_yt_components"
+ADD_BOOKMARK = "add_bookmark"
+MANAGE_BOOKMARKS = "manage_bookmarks"
+REC_START = "recording_start"
+REC_PAUSE = "recording_pause_resume"
+REC_STOP = "recording_stop"
 
 
 ACTIONS = {
@@ -192,6 +201,21 @@ ACTIONS = {
         "Contact Me",
         None,
     ),
+    OPEN_CONTACT_EMAIL: Action(
+        OPEN_CONTACT_EMAIL,
+        "Contact: Email",
+        None,
+    ),
+    OPEN_CONTACT_TELEGRAM: Action(
+        OPEN_CONTACT_TELEGRAM,
+        "Contact: Telegram",
+        None,
+    ),
+    OPEN_CONTACT_WEBSITE: Action(
+        OPEN_CONTACT_WEBSITE,
+        "Contact: Visit Website",
+        None,
+    ),
     OPEN_ABOUT: Action(
         OPEN_ABOUT,
         "About",
@@ -206,6 +230,31 @@ ACTIONS = {
         UPDATE_YT_COMPONENTS,
         "Update YouTube Components",
         None,
+    ),
+    ADD_BOOKMARK: Action(
+        ADD_BOOKMARK,
+        "Add Bookmark",
+        Shortcut("m", frozenset({"shift"})),
+    ),
+    MANAGE_BOOKMARKS: Action(
+        MANAGE_BOOKMARKS,
+        "Manage Bookmarks",
+        Shortcut("m", frozenset({"ctrl", "shift"})),
+    ),
+    REC_START: Action(
+        REC_START,
+        "Start Recording",
+        Shortcut("f9"),
+    ),
+    REC_PAUSE: Action(
+        REC_PAUSE,
+        "Pause/Resume Recording",
+        Shortcut("f7"),
+    ),
+    REC_STOP: Action(
+        REC_STOP,
+        "Stop Recording",
+        Shortcut("f8"),
     ),
     OPEN_FOLDER: Action(
         OPEN_FOLDER, "Open Folder", Shortcut("o", frozenset({"ctrl", "shift"}))
@@ -230,6 +279,11 @@ ACTIONS = {
         OPEN_SETTINGS, "Settings", Shortcut("p", frozenset({"ctrl"}))
     ),
     GO_TO_FILE: Action(GO_TO_FILE, "Go To File", Shortcut("g", frozenset({"ctrl"}))),
+    GO_TO_TIME: Action(
+        GO_TO_TIME,
+        "Go To Time",
+        Shortcut("g", frozenset({"ctrl", "shift"})),
+    ),
     NEXT_TRACK: Action(
         NEXT_TRACK,
         "Next Track",
@@ -346,6 +400,17 @@ GLOBAL_SHORTCUT_ACTIONS = {
         Shortcut("page_up", frozenset({"win", "alt"})),
     ),
 }
+
+BOOKMARK_JUMPS = {}
+for slot in range(1, 11):
+    key = "0" if slot == 10 else str(slot)
+    action_id = f"bookmark_jump_{slot}"
+    ACTIONS[action_id] = Action(
+        action_id,
+        f"Jump to Bookmark {slot}",
+        Shortcut(key, frozenset({"alt"})),
+    )
+    BOOKMARK_JUMPS[action_id] = slot
 
 PERCENT_JUMPS = {}
 for digit in range(10):

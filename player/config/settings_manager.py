@@ -56,6 +56,15 @@ LEGACY_AUDIO_SILENCE_KEYS = (
 )
 
 
+def _default_rec_folder():
+    docs = ""
+    if os.name == "nt":
+        docs = os.path.join(os.path.expanduser("~"), "Documents")
+    if not docs:
+        docs = os.path.join(os.path.expanduser("~"), "Documents")
+    return os.path.join(docs, APP_NAME, "recordings")
+
+
 class SettingsManager:
     def __init__(self):
         self._config = configparser.ConfigParser(interpolation=None)
@@ -70,6 +79,8 @@ class SettingsManager:
                 "speed_step": str(float(SPEED_STEP)),
                 "volume_step": str(int(VOLUME_STEP)),
                 "end_behavior": "advance",
+                "wrap_playlist": "false",
+                "save_file_pos": "false",
                 "audio_normalize_enabled": "true",
                 "audio_mono_enabled": "false",
             },
@@ -90,6 +101,7 @@ class SettingsManager:
                 "verbosity": "beginner",
                 "open_with_files_mode": "file_only",
                 "check_app_updates": "true",
+                "save_on_close": "true",
                 "speak_file_on_nav": "false",
                 "language": "system",
             },
@@ -99,6 +111,12 @@ class SettingsManager:
                 "video_quality": "medium",
                 "mixed_link_mode": "ask",
                 "yt_dlp_channel": YT_DLP_DEFAULT_CHANNEL,
+            },
+            "recording": {
+                "channels": "stereo",
+                "quality": "192",
+                "format": "wav",
+                "folder": _default_rec_folder(),
             },
             "playback": {
                 "remember_position": "false",
@@ -142,8 +160,28 @@ class SettingsManager:
         self._migrate_silence_removal_settings(has_new_silence_section)
 
     def save(self):
+        if self.get_save_on_close():
+            self._write_config(self._config)
+            return
+        self._save_save_on_close_only()
+
+    def _save_save_on_close_only(self):
+        disk = configparser.ConfigParser(interpolation=None)
+        if os.path.exists(self._config_path):
+            try:
+                disk.read(self._config_path, encoding="utf-8")
+            except (configparser.Error, OSError):
+                disk = configparser.ConfigParser(interpolation=None)
+        if not disk.sections():
+            disk.read_dict(self._defaults)
+        if "ui" not in disk:
+            disk["ui"] = {}
+        disk["ui"]["save_on_close"] = "false"
+        self._write_config(disk)
+
+    def _write_config(self, parser):
         with open(self._config_path, "w", encoding="utf-8") as handle:
-            self._config.write(handle)
+            parser.write(handle)
 
     def reset_to_defaults(self):
         self._config = configparser.ConfigParser(interpolation=None)
@@ -204,6 +242,17 @@ class SettingsManager:
         if "ui" not in self._config:
             self._config["ui"] = {}
         self._config["ui"]["check_app_updates"] = "true" if enabled else "false"
+
+    def get_save_on_close(self):
+        try:
+            return self._config.getboolean("ui", "save_on_close")
+        except (ValueError, configparser.Error):
+            return True
+
+    def set_save_on_close(self, enabled):
+        if "ui" not in self._config:
+            self._config["ui"] = {}
+        self._config["ui"]["save_on_close"] = "true" if enabled else "false"
 
     def get_speak_file_on_nav(self):
         try:
@@ -295,6 +344,69 @@ class SettingsManager:
         if value not in YT_DLP_UPDATE_CHANNELS:
             value = YT_DLP_DEFAULT_CHANNEL
         self._config["youtube"]["yt_dlp_channel"] = value
+
+    def get_rec_channels(self):
+        value = str(
+            self._config.get("recording", "channels", fallback="stereo") or "stereo"
+        ).strip().lower()
+        if value not in ("mono", "stereo"):
+            return "stereo"
+        return value
+
+    def set_rec_channels(self, value):
+        if "recording" not in self._config:
+            self._config["recording"] = {}
+        text = str(value or "stereo").strip().lower()
+        if text not in ("mono", "stereo"):
+            text = "stereo"
+        self._config["recording"]["channels"] = text
+
+    def get_rec_quality(self):
+        try:
+            val = int(self._config.get("recording", "quality", fallback="192"))
+        except (ValueError, configparser.Error):
+            val = 192
+        return int(clamp(val, 32, 320))
+
+    def set_rec_quality(self, value):
+        if "recording" not in self._config:
+            self._config["recording"] = {}
+        try:
+            val = int(value)
+        except (TypeError, ValueError):
+            val = 192
+        self._config["recording"]["quality"] = str(int(clamp(val, 32, 320)))
+
+    def get_rec_format(self):
+        value = str(
+            self._config.get("recording", "format", fallback="wav") or "wav"
+        ).strip().lower()
+        if value not in ("wav", "mp3"):
+            return "wav"
+        return value
+
+    def set_rec_format(self, value):
+        if "recording" not in self._config:
+            self._config["recording"] = {}
+        text = str(value or "wav").strip().lower()
+        if text not in ("wav", "mp3"):
+            text = "wav"
+        self._config["recording"]["format"] = text
+
+    def get_rec_folder(self):
+        value = str(
+            self._config.get("recording", "folder", fallback=_default_rec_folder())
+            or ""
+        ).strip()
+        if not value:
+            return _default_rec_folder()
+        return value
+
+    def set_rec_folder(self, value):
+        if "recording" not in self._config:
+            self._config["recording"] = {}
+        text = str(value or "").strip()
+        self._config["recording"]["folder"] = text or _default_rec_folder()
 
     def get_remember_position(self):
         try:
@@ -413,6 +525,28 @@ class SettingsManager:
         if value not in ("advance", "loop", "none"):
             value = "advance"
         self._config["audio"]["end_behavior"] = value
+
+    def get_wrap_playlist(self):
+        try:
+            return self._config.getboolean("audio", "wrap_playlist")
+        except (ValueError, configparser.Error):
+            return False
+
+    def set_wrap_playlist(self, enabled):
+        if "audio" not in self._config:
+            self._config["audio"] = {}
+        self._config["audio"]["wrap_playlist"] = "true" if enabled else "false"
+
+    def get_save_file_pos(self):
+        try:
+            return self._config.getboolean("audio", "save_file_pos")
+        except (ValueError, configparser.Error):
+            return False
+
+    def set_save_file_pos(self, enabled):
+        if "audio" not in self._config:
+            self._config["audio"] = {}
+        self._config["audio"]["save_file_pos"] = "true" if enabled else "false"
 
     def get_audio_normalize_enabled(self):
         try:

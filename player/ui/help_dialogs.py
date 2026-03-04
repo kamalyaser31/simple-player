@@ -8,53 +8,6 @@ except Exception:  # pragma: no cover - wx.adv is expected on desktop builds.
     wxadv = None
 
 
-class ContactDialog(wx.Dialog):
-    def __init__(self, parent, on_email, on_tg):
-        super().__init__(
-            parent,
-            title=_("Contact me"),
-            style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
-        )
-        self._on_email = on_email
-        self._on_tg = on_tg
-
-        info = wx.StaticText(
-            self,
-            label=_(
-                "contact me:\ntelegram: t.me/kamalyaser31\ne-mail: kamalyaser31@gmail.com"
-            ),
-        )
-
-        email_btn = wx.Button(self, wx.ID_ANY, _("Email"))
-        tg_btn = wx.Button(self, wx.ID_ANY, _("Telegram"))
-        email_btn.Bind(wx.EVT_BUTTON, self._open_email)
-        tg_btn.Bind(wx.EVT_BUTTON, self._open_tg)
-
-        row = wx.BoxSizer(wx.HORIZONTAL)
-        row.Add(email_btn, 0, wx.RIGHT, 8)
-        row.Add(tg_btn, 0)
-
-        root = wx.BoxSizer(wx.VERTICAL)
-        root.Add(info, 1, wx.ALL | wx.EXPAND, 10)
-        root.Add(row, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.ALIGN_RIGHT, 10)
-        self.SetSizerAndFit(root)
-        self.SetMinSize((420, 220))
-        self.CentreOnParent()
-        self.Bind(wx.EVT_CHAR_HOOK, self._on_char_hook)
-
-    def _open_email(self, _event):
-        self._on_email()
-
-    def _open_tg(self, _event):
-        self._on_tg()
-
-    def _on_char_hook(self, event):
-        if event.GetKeyCode() == wx.WXK_ESCAPE:
-            self.EndModal(wx.ID_CANCEL)
-            return
-        event.Skip()
-
-
 class AboutDialog(wx.Dialog):
     def __init__(self, parent, app_name, version, website):
         super().__init__(

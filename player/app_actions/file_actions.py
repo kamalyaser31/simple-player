@@ -21,7 +21,6 @@ from helpers.file_helpers import (
     set_switched,
     show_name,
 )
-from playlist.info import show as show_pl_info
 from ui import dialogs
 from youtube.actions import open_yt_link, sync_sel, try_next
 from youtube.link_validator import parse_link
@@ -171,20 +170,50 @@ def open_paths(ctx, raw_paths):
     if not paths:
         return False
 
-    path = paths[0]
-    if os.path.isdir(path):
+    first = paths[0]
+    if os.path.isdir(first):
         clear_ses(ctx)
-        ok = ctx.player.open_folder(path)
+        ok = ctx.player.open_folder(first)
         if ok:
-            ctx.settings.set_last_dir(path)
+            ctx.settings.set_last_dir(first)
             set_ready(ctx)
         return bool(ok)
 
-    if os.path.isfile(path):
-        clear_ses(ctx)
-        if _open_with_mode(ctx, path):
-            ctx.settings.set_last_dir(os.path.dirname(path))
+    if os.path.isfile(first):
+        files = [path for path in paths if os.path.isfile(path)]
+        if not files:
+            files = [first]
+        if _open_shell_files(ctx, files):
             return True
+    return False
+
+
+def _open_shell_files(ctx, files):
+    entries = [path for path in files if path]
+    if not entries:
+        return False
+
+    first = entries[0]
+    mode = ctx.settings.get_open_with_files_mode()
+
+    clear_ses(ctx)
+    ok = False
+    if mode == "file_only" and len(entries) > 1:
+        ok = bool(
+            ctx.player.open_file_list(
+                entries,
+                preferred_path=first,
+                start_position=None,
+            )
+        )
+        if ok:
+            set_ready(ctx)
+    else:
+        ok = bool(_open_with_mode(ctx, first))
+
+    if ok:
+        ctx.settings.set_last_dir(os.path.dirname(first))
+        return True
     return False
 
 
@@ -362,12 +391,22 @@ def open_list(ctx):
         names,
         current_index=ctx.player.get_current_index(),
     )
-    dlg.info_button.Bind(wx.EVT_BUTTON, lambda _e: show_pl_info(dlg, ctx, files))
+    dlg.info_button.Bind(wx.EVT_BUTTON, lambda _e: _show_playlist_info(dlg, ctx, files))
     if dlg.ShowModal() == wx.ID_OK:
         idx = dlg.get_selection()
         if idx != wx.NOT_FOUND and ctx.player.jump_to_index(idx):
+            _restore_pos(ctx)
             set_ready(ctx)
     dlg.Destroy()
+
+
+def _show_playlist_info(parent, ctx, files):
+    try:
+        from playlist.info import show as show_pl_info
+    except Exception:
+        ctx.speak(_("Could not load playlist info."), _("Info failed."))
+        return
+    show_pl_info(parent, ctx, files)
 
 
 def spk_test(ctx):
@@ -417,11 +456,13 @@ def goto_file(ctx):
             dlg.Destroy()
             return
         if ctx.player.jump_to_index(idx):
+            _restore_pos(ctx)
             set_ready(ctx)
     dlg.Destroy()
 
 
 def next_file(ctx):
+    _save_pos(ctx)
     current = str(ctx.player.current_path or "")
     if current and str(ctx.selection_path or "") == current:
         if ctx.selection_start is not None or ctx.selection_end is not None:
@@ -432,6 +473,7 @@ def next_file(ctx):
         if moved:
             sync_sel(ctx)
     if moved:
+        _restore_pos(ctx)
         set_switched(ctx)
         if ctx.settings.get_speak_file_on_nav():
             filename = show_name(ctx.player.current_path)
@@ -439,7 +481,9 @@ def next_file(ctx):
 
 
 def prev_file(ctx):
+    _save_pos(ctx)
     if ctx.player.previous_track():
+        _restore_pos(ctx)
         sync_sel(ctx)
         set_switched(ctx)
         if ctx.settings.get_speak_file_on_nav():
@@ -449,11 +493,13 @@ def prev_file(ctx):
 
 def first_file(ctx):
     if ctx.player.go_to_first_file():
+        _restore_pos(ctx)
         set_switched(ctx)
 
 
 def last_file(ctx):
     if ctx.player.go_to_last_file():
+        _restore_pos(ctx)
         set_switched(ctx)
 
 
@@ -652,3 +698,61 @@ def _copy_txt(text):
         return True
     finally:
         clip.Close()
+
+
+def _save_pos(ctx):
+    if not _can_track_pos(ctx):
+        return
+    path = str(ctx.player.current_path or "").strip()
+    if not path or not os.path.isfile(path):
+        return
+    raw = ctx.player.get_elapsed()
+    if raw is None:
+        return
+    try:
+        pos = float(raw)
+    except (TypeError, ValueError):
+        return
+    if pos < 0:
+        pos = 0.0
+    try:
+        ctx.file_pos.set(path, pos)
+    except Exception:
+        return
+
+
+def _restore_pos(ctx):
+    if not _can_track_pos(ctx):
+        return
+    path = str(ctx.player.current_path or "").strip()
+    if not path or not os.path.isfile(path):
+        return
+    try:
+        target = ctx.file_pos.get(path)
+    except Exception:
+        return
+    if target is None:
+        return
+    try:
+        value = float(target)
+    except (TypeError, ValueError):
+        return
+    if value <= 0:
+        return
+    duration = ctx.player.get_duration()
+    if duration is not None:
+        try:
+            value = min(float(value), max(0.0, float(duration)))
+        except (TypeError, ValueError):
+            return
+    ctx.player.set_pending_start(value)
+    if not ctx.player.reload_current_file():
+        ctx.player.seek_absolute(value)
+
+
+def _can_track_pos(ctx):
+    if not bool(ctx.settings.get_save_file_pos()):
+        return False
+    if getattr(ctx, "file_pos", None) is None:
+        return False
+    return True

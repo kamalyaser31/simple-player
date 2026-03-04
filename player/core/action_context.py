@@ -4,9 +4,11 @@ import speech
 
 
 class ActionContext:
-    def __init__(self, player, settings):
+    def __init__(self, player, settings, marks=None, file_pos=None):
         self.player = player
         self.settings = settings
+        self.marks = marks
+        self.file_pos = file_pos
         self.frame = None
         self.selection_start = None
         self.selection_end = None

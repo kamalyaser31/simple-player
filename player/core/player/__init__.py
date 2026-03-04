@@ -1,4 +1,3 @@
-from core.mpv_engine import MpvEngine
 from core.player.files import PlayerFilesMixin
 from core.player.filters import PlayerFiltersMixin
 from core.player.lifecycle import PlayerLifecycleMixin
@@ -19,9 +18,12 @@ class Player(
     PlayerLifecycleMixin,
 ):
     def __init__(self):
+        from core.mpv_engine import MpvEngine
+
         self._engine = MpvEngine(on_end_file=self._on_end_file_event)
         self._state = PlaylistState()
         self._end_behavior = "advance"
+        self._wrap_playlist_enabled = False
         self._render_window_id = None
         self._audio_normalize_enabled = False
         self._audio_mono_enabled = False

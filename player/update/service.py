@@ -15,6 +15,7 @@ from config.constants import (
     APP_UPDATE_RELEASES_URL,
     APP_UPDATE_UPDATER_EXE,
 )
+from helpers.http_utils import open_url
 
 
 UA = "SimpleAudioPlayer/1.0"
@@ -96,7 +97,7 @@ def fetch_update_info(url=None, timeout=12):
     if not target:
         raise ValueError("Update info URL is not configured.")
     req = request.Request(target, headers={"User-Agent": UA})
-    with request.urlopen(req, timeout=timeout) as resp:
+    with open_url(req, timeout=timeout) as resp:
         raw = resp.read()
     data = json.loads(raw.decode("utf-8", errors="replace"))
     return parse_info_json(data)
@@ -135,7 +136,7 @@ def download_file(url, dest, cancel, on_update=None, timeout=25):
     req = request.Request(url, headers={"User-Agent": UA})
     got = 0
     size = 0
-    with request.urlopen(req, timeout=timeout) as resp:
+    with open_url(req, timeout=timeout) as resp:
         size = int(resp.headers.get("Content-Length", "0") or "0")
         _emit(on_update, size, got)
         with open(target, "wb") as out:

@@ -51,12 +51,18 @@ class PlayerLoadMixin:
         return self._state.append(url, jump=False, title=title, source=source_url)
 
     def next_track(self):
-        if not self._state.next_track(use_shuffle=True):
+        if not self._state.next_track(
+            use_shuffle=True,
+            wrap=self._wrap_playlist_enabled,
+        ):
             return False
         return self._load_current()
 
     def previous_track(self):
-        if not self._state.previous_track(use_shuffle=True):
+        if not self._state.previous_track(
+            use_shuffle=True,
+            wrap=self._wrap_playlist_enabled,
+        ):
             return False
         return self._load_current()
 

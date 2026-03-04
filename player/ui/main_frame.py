@@ -16,7 +16,10 @@ class MainFrame(MainFrameMenuMixin, MainFrameStateMixin, MainFrameEventsMixin, w
         self._menu_action_map = {}
         self._accelerator_bound = False
         self._jump_menu_map = {}
+        self._bookmark_jump_ids = []
         self._seek_step_menu_map = {}
+        self._bookmarks_menu_index = -1
+        self._bookmarks_enabled = False
         self._marked_actions_items = ()
         self._marked_actions_menu_index = -1
         self._has_marked_files = False
@@ -26,6 +29,8 @@ class MainFrame(MainFrameMenuMixin, MainFrameStateMixin, MainFrameEventsMixin, w
         self._video_opts_items = ()
         self._video_opts_menu_index = -1
         self._video_opts_enabled = False
+        self._recording_running = False
+        self._recording_paused = False
 
         self._build_menu()
         self._build_ui()
@@ -33,6 +38,9 @@ class MainFrame(MainFrameMenuMixin, MainFrameStateMixin, MainFrameEventsMixin, w
         self.Bind(wx.EVT_CLOSE, self._on_close)
         self.Bind(wx.EVT_CHAR_HOOK, self._on_char_hook)
         self.set_file_loaded(False)
+
+    def set_controller(self, controller):
+        self._controller = controller
 
     def _build_ui(self):
         self._prev_button = CustomButton(self, -1, _("Previous"))

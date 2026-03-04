@@ -17,6 +17,13 @@ class PlayerStateMixin:
     def toggle_repeat_file(self):
         return self._state.toggle_repeat_file()
 
+    def is_wrap_playlist_enabled(self):
+        return bool(self._wrap_playlist_enabled)
+
+    def set_wrap_playlist_enabled(self, enabled):
+        self._wrap_playlist_enabled = bool(enabled)
+        return self._wrap_playlist_enabled
+
     def toggle_mark_current(self):
         return self._state.toggle_mark_current()
 
@@ -52,6 +59,9 @@ class PlayerStateMixin:
 
     def get_current_index(self):
         return self._state.get_current_index()
+
+    def set_pending_start(self, value):
+        self._state.set_pending_start(value)
 
     def jump_to_index(self, index):
         if not self._state.jump_to_index(index):

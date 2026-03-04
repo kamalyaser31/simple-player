@@ -1,13 +1,13 @@
 class PlaylistStateNavigationMixin:
-    def next_track(self, use_shuffle=True):
+    def next_track(self, use_shuffle=True, wrap=False):
         if use_shuffle and self._shuffle_enabled:
-            return self._next_with_shuffle()
-        return self._next_sequential()
+            return self._next_with_shuffle(wrap=wrap)
+        return self._next_sequential(wrap=wrap)
 
-    def previous_track(self, use_shuffle=True):
+    def previous_track(self, use_shuffle=True, wrap=False):
         if use_shuffle and self._shuffle_enabled:
-            return self._previous_with_shuffle()
-        return self._previous_sequential()
+            return self._previous_with_shuffle(wrap=wrap)
+        return self._previous_sequential(wrap=wrap)
 
     def jump_to_index(self, index):
         if index < 0 or index >= len(self._file_list):
@@ -78,47 +78,59 @@ class PlaylistStateNavigationMixin:
     def toggle_repeat_file(self):
         return self.set_repeat_file_enabled(not self._repeat_file_enabled)
 
-    def _next_sequential(self):
+    def _next_sequential(self, wrap=False):
         if len(self._file_list) <= 1:
             return False
         if self._current_index + 1 >= len(self._file_list):
-            return False
-        self._current_index += 1
+            if not wrap:
+                return False
+            self._current_index = 0
+        else:
+            self._current_index += 1
         self._current_path = self._file_list[self._current_index]
         self._pending_start = None
         self._sync_shuffle_position_to_current()
         return True
 
-    def _previous_sequential(self):
+    def _previous_sequential(self, wrap=False):
         if len(self._file_list) <= 1:
             return False
         if self._current_index - 1 < 0:
-            return False
-        self._current_index -= 1
+            if not wrap:
+                return False
+            self._current_index = len(self._file_list) - 1
+        else:
+            self._current_index -= 1
         self._current_path = self._file_list[self._current_index]
         self._pending_start = None
         self._sync_shuffle_position_to_current()
         return True
 
-    def _next_with_shuffle(self):
+    def _next_with_shuffle(self, wrap=False):
         if len(self._file_list) <= 1:
             return False
         self._sync_shuffle_position_to_current()
         if self._shuffle_position + 1 >= len(self._shuffle_order):
-            return False
-        self._shuffle_position += 1
+            if not wrap:
+                return False
+            self._shuffle_position = 0
+        else:
+            self._shuffle_position += 1
         self._current_index = self._shuffle_order[self._shuffle_position]
         self._current_path = self._file_list[self._current_index]
         self._pending_start = None
         return True
 
-    def _previous_with_shuffle(self):
+    def _previous_with_shuffle(self, wrap=False):
         if len(self._file_list) <= 1:
             return False
         self._sync_shuffle_position_to_current()
         if self._shuffle_position <= 0:
-            return False
-        self._shuffle_position -= 1
+            if not wrap:
+                return False
+            self._shuffle_position = len(self._shuffle_order) - 1
+        else:
+            self._shuffle_position -= 1
         self._current_index = self._shuffle_order[self._shuffle_position]
         self._current_path = self._file_list[self._current_index]
         self._pending_start = None

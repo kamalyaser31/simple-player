@@ -35,6 +35,11 @@ class GeneralSettingsPanel(wx.Panel):
             label=_("Check for app updates on startup"),
         )
         self._check_updates_checkbox.SetValue(self._settings.get_check_app_updates())
+        self._save_on_close_checkbox = wx.CheckBox(
+            self,
+            label=_("Save settings on close"),
+        )
+        self._save_on_close_checkbox.SetValue(self._settings.get_save_on_close())
         self._verbosity_labels = [
             _("Beginner"),
             _("Advanced"),
@@ -96,6 +101,7 @@ class GeneralSettingsPanel(wx.Panel):
         sizer.Add(self._remember_checkbox, 0, wx.ALL, 8)
         sizer.Add(self._speak_nav_checkbox, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
         sizer.Add(self._check_updates_checkbox, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
+        sizer.Add(self._save_on_close_checkbox, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
         verbosity_sizer = wx.BoxSizer(wx.VERTICAL)
         verbosity_sizer.Add(self._verbosity_label, 0, wx.BOTTOM, 4)
         verbosity_sizer.Add(self._verbosity_choice, 0, wx.EXPAND)
@@ -119,6 +125,7 @@ class GeneralSettingsPanel(wx.Panel):
             self._remember_checkbox: self._help_remember_position,
             self._speak_nav_checkbox: self._help_speak_nav,
             self._check_updates_checkbox: self._help_check_updates,
+            self._save_on_close_checkbox: self._help_save_on_close,
             self._verbosity_choice: self._help_verbosity,
             self._open_with_files_choice: self._help_open_with_files,
             self._register_extensions_button: self._help_register_extensions,
@@ -133,6 +140,7 @@ class GeneralSettingsPanel(wx.Panel):
         self._settings.set_remember_position(self._remember_checkbox.GetValue())
         self._settings.set_speak_file_on_nav(self._speak_nav_checkbox.GetValue())
         self._settings.set_check_app_updates(self._check_updates_checkbox.GetValue())
+        self._settings.set_save_on_close(self._save_on_close_checkbox.GetValue())
         selection = self._verbosity_choice.GetSelection()
         if selection == wx.NOT_FOUND:
             selection = 0
@@ -149,6 +157,7 @@ class GeneralSettingsPanel(wx.Panel):
         self._remember_checkbox.SetValue(self._settings.get_remember_position())
         self._speak_nav_checkbox.SetValue(self._settings.get_speak_file_on_nav())
         self._check_updates_checkbox.SetValue(self._settings.get_check_app_updates())
+        self._save_on_close_checkbox.SetValue(self._settings.get_save_on_close())
         current = self._settings.get_verbosity()
         try:
             index = self._verbosity_values.index(current)
@@ -209,6 +218,13 @@ class GeneralSettingsPanel(wx.Panel):
         return _(
             "Check for app updates on startup. "
             "When enabled, the app checks online update metadata at launch and prompts when a newer version is available."
+        )
+
+    def _help_save_on_close(self):
+        return _(
+            "Save settings on close. "
+            "When enabled, current settings are written when the app closes. "
+            "When disabled, closing the app does not save session changes such as volume, speed, or other setting updates."
         )
 
     def _help_open_with_files(self):

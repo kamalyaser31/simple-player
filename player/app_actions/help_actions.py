@@ -6,7 +6,7 @@ import wx
 
 from config.constants import APP_NAME, APP_REPO_URL, APP_VERSION
 from config.localization import app_root
-from ui.help_dialogs import AboutDialog, ContactDialog
+from ui.help_dialogs import AboutDialog
 from youtube.ui_utils import open_url
 
 
@@ -23,17 +23,19 @@ def open_changes(ctx):
 
 
 def open_contact(ctx):
-    if ctx.frame is None:
-        return
-    dlg = ContactDialog(
-        ctx.frame,
-        on_email=lambda: _open_link(ctx, MAIL_URL),
-        on_tg=lambda: _open_link(ctx, TG_URL),
-    )
-    try:
-        dlg.ShowModal()
-    finally:
-        dlg.Destroy()
+    open_contact_website(ctx)
+
+
+def open_contact_email(ctx):
+    _open_link(ctx, MAIL_URL)
+
+
+def open_contact_tg(ctx):
+    _open_link(ctx, TG_URL)
+
+
+def open_contact_website(ctx):
+    _open_link(ctx, APP_REPO_URL)
 
 
 def show_about(ctx):

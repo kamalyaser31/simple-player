@@ -2,6 +2,8 @@ import wx
 from gettext import gettext as _
 
 from actions import (
+    ADD_BOOKMARK,
+    BOOKMARK_JUMPS,
     CHECK_APP_UPDATES,
     CLEAR_SELECTION,
     CLEAR_MARKED_FILES,
@@ -10,6 +12,8 @@ from actions import (
     COPY_CURRENT_FILE,
     DELETE_FILE,
     END_SELECTION,
+    GO_TO_FILE,
+    GO_TO_TIME,
     GO_FIRST_FILE,
     GO_LAST_FILE,
     MARKED_COPY_TO_CLIPBOARD,
@@ -18,6 +22,7 @@ from actions import (
     MARKED_MOVE_TO_FOLDER,
     MARK_ALL_FILES,
     MARK_CURRENT_FILE,
+    MANAGE_BOOKMARKS,
     NEXT_TRACK,
     OPEN_CONTAINING_FOLDER,
     OPEN_FILE,
@@ -31,6 +36,9 @@ from actions import (
     PASTE_FROM_CLIPBOARD,
     PLAY_PAUSE,
     PREVIOUS_TRACK,
+    REC_PAUSE,
+    REC_START,
+    REC_STOP,
     RENAME_FILE,
     RESET_SPEED,
     SEEK_BACKWARD,
@@ -58,7 +66,9 @@ from actions import (
     TOGGLE_SILENCE_REMOVAL,
     OPEN_USER_GUIDE,
     OPEN_CHANGES,
-    OPEN_CONTACT,
+    OPEN_CONTACT_EMAIL,
+    OPEN_CONTACT_TELEGRAM,
+    OPEN_CONTACT_WEBSITE,
     OPEN_ABOUT,
     VIDEO_COPY_LINK,
     VIDEO_DESCRIPTION,
@@ -76,18 +86,23 @@ class MainFrameMenuMixin:
 
         file_menu = self._build_file_menu()
         edit_menu = self._build_edit_menu()
+        bookmarks_menu = self._build_bookmarks_menu()
         marked_menu = self._build_marked_menu()
         player_menu = self._build_player_menu()
         video_menu = self._build_video_menu()
+        recording_menu = self._build_recording_menu()
         help_menu = self._build_help_menu()
 
         menu_bar.Append(file_menu, _("File"))
         menu_bar.Append(edit_menu, _("Edit"))
+        self._bookmarks_menu_index = menu_bar.GetMenuCount()
+        menu_bar.Append(bookmarks_menu, _("Bookmarks"))
         self._marked_actions_menu_index = menu_bar.GetMenuCount()
         menu_bar.Append(marked_menu, _("Actions for marked files"))
         menu_bar.Append(player_menu, _("Player"))
         self._video_opts_menu_index = menu_bar.GetMenuCount()
         menu_bar.Append(video_menu, _("Video options"))
+        menu_bar.Append(recording_menu, _("Recording"))
         menu_bar.Append(help_menu, _("Help"))
 
         self.SetMenuBar(menu_bar)
@@ -100,6 +115,7 @@ class MainFrameMenuMixin:
 
         self.set_marked_actions_enabled(False)
         self.set_video_options_enabled(False)
+        self.set_recording_state(False, False)
 
     def _build_file_menu(self):
         menu = wx.Menu()
@@ -209,6 +225,31 @@ class MainFrameMenuMixin:
         self._bind_action_item(self._clear_marked_item, CLEAR_MARKED_FILES)
         return menu
 
+    def _build_bookmarks_menu(self):
+        menu = wx.Menu()
+        self._bookmark_add_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Add a new bookmark"), ADD_BOOKMARK),
+        )
+        self._bookmark_manage_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Manage bookmarks"), MANAGE_BOOKMARKS),
+        )
+        jumps = wx.Menu()
+        self._bookmark_jump_ids = []
+        for action_id, slot in sorted(BOOKMARK_JUMPS.items(), key=lambda item: item[1]):
+            item = jumps.Append(
+                wx.ID_ANY,
+                self._menu_label(_("Bookmark {slot}").format(slot=slot), action_id),
+            )
+            self._bookmark_jump_ids.append(item.GetId())
+            self._bind_action_item(item, action_id)
+        menu.AppendSubMenu(jumps, _("Jump to bookmark"))
+
+        self._bind_action_item(self._bookmark_add_item, ADD_BOOKMARK)
+        self._bind_action_item(self._bookmark_manage_item, MANAGE_BOOKMARKS)
+        return menu
+
     def _build_marked_menu(self):
         menu = wx.Menu()
         self._marked_copy_folder_item = menu.Append(
@@ -275,6 +316,10 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("First File"), GO_FIRST_FILE),
         )
+        self._go_to_file_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Go to file..."), GO_TO_FILE),
+        )
         self._last_item = menu.Append(
             wx.ID_ANY,
             self._menu_label(_("Last File"), GO_LAST_FILE),
@@ -327,6 +372,10 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("End"), SEEK_END),
         )
+        self._go_to_time_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Go to time..."), GO_TO_TIME),
+        )
 
         menu.AppendSeparator()
         jump_menu = wx.Menu()
@@ -376,6 +425,7 @@ class MainFrameMenuMixin:
         self._bind_action_item(self._prev_item, PREVIOUS_TRACK)
         self._bind_action_item(self._next_item, NEXT_TRACK)
         self._bind_action_item(self._first_item, GO_FIRST_FILE)
+        self._bind_action_item(self._go_to_file_item, GO_TO_FILE)
         self._bind_action_item(self._last_item, GO_LAST_FILE)
         self._bind_action_item(self._shuffle_item, TOGGLE_SHUFFLE)
         self._bind_action_item(self._repeat_file_item, TOGGLE_REPEAT_FILE)
@@ -387,6 +437,7 @@ class MainFrameMenuMixin:
         self._bind_action_item(self._forward_item, SEEK_FORWARD)
         self._bind_action_item(self._start_item, SEEK_START)
         self._bind_action_item(self._end_item, SEEK_END)
+        self._bind_action_item(self._go_to_time_item, GO_TO_TIME)
         self._bind_action_item(self._sound_cards_item, SOUND_CARDS)
         return menu
 
@@ -425,10 +476,20 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("What's new"), OPEN_CHANGES),
         )
-        self._contact_item = menu.Append(
+        contact_menu = wx.Menu()
+        self._contact_email_item = contact_menu.Append(
             wx.ID_ANY,
-            self._menu_label(_("Contact me"), OPEN_CONTACT),
+            self._menu_label(_("Email"), OPEN_CONTACT_EMAIL),
         )
+        self._contact_tg_item = contact_menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Telegram"), OPEN_CONTACT_TELEGRAM),
+        )
+        self._contact_web_item = contact_menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Visit website"), OPEN_CONTACT_WEBSITE),
+        )
+        menu.AppendSubMenu(contact_menu, _("Contact me"))
         menu.AppendSeparator()
         updates = wx.Menu()
         self._check_updates_item = updates.Append(
@@ -448,10 +509,31 @@ class MainFrameMenuMixin:
 
         self._bind_action_item(self._user_guide_item, OPEN_USER_GUIDE)
         self._bind_action_item(self._changes_item, OPEN_CHANGES)
-        self._bind_action_item(self._contact_item, OPEN_CONTACT)
+        self._bind_action_item(self._contact_email_item, OPEN_CONTACT_EMAIL)
+        self._bind_action_item(self._contact_tg_item, OPEN_CONTACT_TELEGRAM)
+        self._bind_action_item(self._contact_web_item, OPEN_CONTACT_WEBSITE)
         self._bind_action_item(self._check_updates_item, CHECK_APP_UPDATES)
         self._bind_action_item(self._update_yt_item, UPDATE_YT_COMPONENTS)
         self._bind_action_item(self._about_item, OPEN_ABOUT)
+        return menu
+
+    def _build_recording_menu(self):
+        menu = wx.Menu()
+        self._rec_start_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Start recording"), REC_START),
+        )
+        self._rec_pause_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Pause"), REC_PAUSE),
+        )
+        self._rec_stop_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Stop"), REC_STOP),
+        )
+        self._bind_action_item(self._rec_start_item, REC_START)
+        self._bind_action_item(self._rec_pause_item, REC_PAUSE)
+        self._bind_action_item(self._rec_stop_item, REC_STOP)
         return menu
 
     def _bind_action_item(self, item, action_id):

@@ -7,6 +7,7 @@ import zipfile
 from urllib import request
 
 from config.constants import YT_DLP_DEFAULT_CHANNEL, YT_DLP_UPDATE_CHANNELS
+from helpers.http_utils import open_url
 
 
 APP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
@@ -84,7 +85,7 @@ def latest_tag(repo):
     url = f"https://api.github.com/repos/{repo}/releases/latest"
     req = request.Request(url, headers={"User-Agent": UA})
     try:
-        with request.urlopen(req, timeout=12) as resp:
+        with open_url(req, timeout=12) as resp:
             raw = resp.read()
     except Exception:
         return None
@@ -251,7 +252,7 @@ def _download_item(item, idx, total, tag, cancel, on_update):
     downloaded = 0
     size = 0
     try:
-        with request.urlopen(req, timeout=20) as resp:
+        with open_url(req, timeout=20) as resp:
             size = int(resp.headers.get("Content-Length", "0") or "0")
             _emit(
                 on_update,

@@ -1,9 +1,11 @@
 from gettext import gettext as _
 
 import speech
+import wx
 
 from config.constants import VOLUME_MAX, VOLUME_MIN_SHORTCUT
 from helpers.utils import format_time
+from ui import dialogs
 from youtube.state import is_yt
 
 SEEK_STEP_PRESETS = {
@@ -248,6 +250,32 @@ def jump_to_percent(ctx, percent):
         target = duration * (percent / 100.0)
         ctx.player.seek_absolute(target)
     ctx.speak(_("{percent} percent").format(percent=percent), f"{percent}%")
+
+
+def go_to_time(ctx):
+    if ctx.frame is None:
+        return
+    duration = ctx.player.get_duration()
+    if duration is None or float(duration) <= 0:
+        wx.MessageBox(
+            _("Time is not available for the current file."),
+            _("Go to time"),
+            wx.OK | wx.ICON_WARNING,
+            parent=ctx.frame,
+        )
+        return
+
+    elapsed = ctx.player.get_elapsed()
+    try:
+        initial = int(max(0, float(elapsed or 0.0)))
+    except (TypeError, ValueError):
+        initial = 0
+    dlg = dialogs.GoToTimeDialog(ctx.frame, duration_seconds=duration, initial_seconds=initial)
+    try:
+        if dlg.ShowModal() == wx.ID_OK:
+            ctx.player.seek_absolute(dlg.get_seconds())
+    finally:
+        dlg.Destroy()
 
 
 def set_seek_step(ctx, key):

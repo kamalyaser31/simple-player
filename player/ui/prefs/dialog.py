@@ -6,6 +6,7 @@ from actions import ACTIONS, GLOBAL_SHORTCUT_ACTIONS
 from ui.audio_settings import AudioSettings
 from ui.prefs.backup import BackupRestorePanel
 from ui.prefs.general import GeneralSettingsPanel
+from ui.prefs.recording import RecordingSettingsPanel
 from ui.prefs.youtube import YouTubeSettingsPanel
 from ui.shortcut_settings import ShortcutSettings
 from ui.silence_removal import SilenceRemovalSettings
@@ -37,7 +38,7 @@ class SettingsDialog(wx.Dialog):
         self._panels.append(self._general_panel)
         self._current_panel = self._general_panel
 
-        backup_item = self._tree.AppendItem(general_item, _("Backup and restore"))
+        backup_item = self._tree.AppendItem(root, _("Backup and restore"))
         self._backup_panel = BackupRestorePanel(
             self._book,
             settings,
@@ -49,7 +50,7 @@ class SettingsDialog(wx.Dialog):
         self._panels.append(self._backup_panel)
 
         audio_item = self._tree.AppendItem(root, _("Audio"))
-        silence_removal_item = self._tree.AppendItem(audio_item, _("Silence removal"))
+        silence_removal_item = self._tree.AppendItem(root, _("Silence removal"))
         self._audio_panel = AudioSettings(self._book, settings)
         self._book_sizer.Add(self._audio_panel, 1, wx.EXPAND)
         self._audio_panel.Hide()
@@ -61,6 +62,13 @@ class SettingsDialog(wx.Dialog):
         self._silence_removal_panel.Hide()
         self._pages[silence_removal_item] = self._silence_removal_panel
         self._panels.append(self._silence_removal_panel)
+
+        recording_item = self._tree.AppendItem(root, _("Recording"))
+        self._recording_panel = RecordingSettingsPanel(self._book, settings)
+        self._book_sizer.Add(self._recording_panel, 1, wx.EXPAND)
+        self._recording_panel.Hide()
+        self._pages[recording_item] = self._recording_panel
+        self._panels.append(self._recording_panel)
 
         youtube_item = self._tree.AppendItem(root, _("YouTube"))
         self._youtube_panel = YouTubeSettingsPanel(
@@ -74,7 +82,7 @@ class SettingsDialog(wx.Dialog):
         self._panels.append(self._youtube_panel)
 
         shortcuts_item = self._tree.AppendItem(root, _("Keyboard Shortcuts"))
-        global_shortcuts_item = self._tree.AppendItem(shortcuts_item, _("Global shortcuts"))
+        global_shortcuts_item = self._tree.AppendItem(root, _("Global shortcuts"))
         self._shortcuts_panel = ShortcutSettings(
             self._book,
             settings,
@@ -104,10 +112,6 @@ class SettingsDialog(wx.Dialog):
         self._pages[global_shortcuts_item] = self._global_shortcuts_panel
         self._panels.append(self._global_shortcuts_panel)
 
-        self._tree.Collapse(general_item)
-        self._tree.Collapse(audio_item)
-        self._tree.Collapse(youtube_item)
-        self._tree.Collapse(shortcuts_item)
         self._tree.SelectItem(general_item)
         self._tree.Bind(wx.EVT_TREE_SEL_CHANGED, self._on_tree_changed)
         self.Bind(wx.EVT_CHAR_HOOK, self._on_char_hook)
