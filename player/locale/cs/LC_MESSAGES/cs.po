@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-23 16:26+0200\n"
-"PO-Revision-Date: 2026-03-06 09:05+0100\n"
+"PO-Revision-Date: 2026-03-07 07:46+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -868,7 +868,7 @@ msgstr "První soubor"
 
 #: ui/main_frame.py:41 ui/mainwin/menu.py:320
 msgid "Forward"
-msgstr "Rychle vpřed"
+msgstr "Přetočit dopředu"
 
 #: ui/prefs/dialog.py:33
 msgid "General"
@@ -1736,7 +1736,7 @@ msgstr "Obnovit výchozí"
 
 #: ui/main_frame.py:39 ui/mainwin/menu.py:316
 msgid "Rewind"
-msgstr "Rychle zpět"
+msgstr "Přetočit dozadu"
 
 #: config/shortcut_utils.py:34
 msgid "Right"
