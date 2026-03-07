@@ -35,6 +35,7 @@ from actions import (
     OPEN_LINK,
     OPEN_YOUTUBE_LINK,
     OPEN_YOUTUBE_SEARCH,
+    OPEN_FAVORITES,
     OPEN_USER_GUIDE,
     OPEN_CHANGES,
     OPEN_CONTACT,
@@ -43,6 +44,7 @@ from actions import (
     OPEN_CONTACT_WEBSITE,
     OPEN_ABOUT,
     MANAGE_BOOKMARKS,
+    OPEN_REC_FOLDER,
     REC_PAUSE,
     REC_START,
     REC_STOP,
@@ -99,9 +101,11 @@ from actions import (
     GLOBAL_SHORTCUT_ACTIONS,
 )
 from bookmarks.store import MarkStore
+from favorites.store import FavStore
 from config.constants import APP_NAME
 from core.action_context import ActionContext
 from app_actions.bookmark_actions import add_mark, jump_mark_slot, manage_marks
+from app_actions.favorite_actions import manage_favs
 from app_actions.device_actions import open_sound_cards
 from app_actions.file_actions import (
     close_file,
@@ -145,7 +149,12 @@ from app_actions.help_actions import (
     open_contact_website,
     show_about,
 )
-from app_actions.recording_actions import pause_resume_rec, start_rec, stop_rec
+from app_actions.recording_actions import (
+    open_rec_folder,
+    pause_resume_rec,
+    start_rec,
+    stop_rec,
+)
 from core.keyboard_handler import KeyboardHandler
 from app_actions.playback_actions import (
     announce_duration,
@@ -211,12 +220,14 @@ class AppController:
         self._player = Player()
         self._rec = RecEngine()
         self._marks = MarkStore(self._settings.config_path)
+        self._favs = FavStore(self._settings.config_path)
         self._file_pos = PosStore(self._settings.config_path)
         self._ctx = ActionContext(
             self._player,
             self._settings,
             marks=self._marks,
             file_pos=self._file_pos,
+            favs=self._favs,
         )
         self._media = WindowsMediaBridge(
             app_id="SimpleAudioPlayer",
@@ -255,6 +266,7 @@ class AppController:
             OPEN_LINK: lambda: open_link(self._ctx),
             OPEN_YOUTUBE_LINK: lambda: open_yt(self._ctx),
             OPEN_YOUTUBE_SEARCH: lambda: search_yt(self._ctx),
+            OPEN_FAVORITES: lambda: manage_favs(self._ctx),
             VIDEO_DOWNLOAD: lambda: dl_now(self._ctx),
             VIDEO_DESCRIPTION: lambda: show_desc(self._ctx),
             VIDEO_COPY_LINK: lambda: copy_link(self._ctx),
@@ -272,6 +284,7 @@ class AppController:
             REC_START: lambda: start_rec(self._ctx, self._rec),
             REC_PAUSE: lambda: pause_resume_rec(self._ctx, self._rec),
             REC_STOP: lambda: stop_rec(self._ctx, self._rec),
+            OPEN_REC_FOLDER: lambda: open_rec_folder(self._ctx),
             OPEN_FOLDER: lambda: open_folder(self._ctx),
             OPEN_CONTAINING_FOLDER: lambda: open_here(self._ctx),
             OPEN_FILE_PROPERTIES: lambda: open_props(self._ctx),

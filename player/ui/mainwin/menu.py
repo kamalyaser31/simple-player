@@ -29,6 +29,7 @@ from actions import (
     OPEN_FILE_LIST,
     OPEN_FILE_PROPERTIES,
     OPEN_FOLDER,
+    OPEN_FAVORITES,
     OPEN_LINK,
     OPEN_SETTINGS,
     OPEN_YOUTUBE_LINK,
@@ -37,6 +38,7 @@ from actions import (
     PLAY_PAUSE,
     PREVIOUS_TRACK,
     REC_PAUSE,
+    OPEN_REC_FOLDER,
     REC_START,
     REC_STOP,
     RENAME_FILE,
@@ -135,6 +137,10 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("Search YouTube..."), OPEN_YOUTUBE_SEARCH),
         )
+        self._open_favs_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Favorite videos..."), OPEN_FAVORITES),
+        )
         self._open_folder_item = menu.Append(
             wx.ID_ANY,
             self._menu_label(_("Open Folder..."), OPEN_FOLDER),
@@ -174,6 +180,7 @@ class MainFrameMenuMixin:
         self._bind_action_item(self._open_link_item, OPEN_LINK)
         self._bind_action_item(self._open_yt_link_item, OPEN_YOUTUBE_LINK)
         self._bind_action_item(self._open_yt_search_item, OPEN_YOUTUBE_SEARCH)
+        self._bind_action_item(self._open_favs_item, OPEN_FAVORITES)
         self._bind_action_item(self._open_folder_item, OPEN_FOLDER)
         self._bind_action_item(self._open_containing_item, OPEN_CONTAINING_FOLDER)
         self._bind_action_item(self._open_file_props_item, OPEN_FILE_PROPERTIES)
@@ -531,9 +538,15 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("Stop"), REC_STOP),
         )
+        menu.AppendSeparator()
+        self._open_rec_folder_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Open recordings folder"), OPEN_REC_FOLDER),
+        )
         self._bind_action_item(self._rec_start_item, REC_START)
         self._bind_action_item(self._rec_pause_item, REC_PAUSE)
         self._bind_action_item(self._rec_stop_item, REC_STOP)
+        self._bind_action_item(self._open_rec_folder_item, OPEN_REC_FOLDER)
         return menu
 
     def _bind_action_item(self, item, action_id):

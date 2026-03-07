@@ -1,1032 +1,524 @@
-<h1>Simple Audio Player - User Guide</h1>
-<h2>Table of Contents</h2>
-<ol>
-<li><a href="#getting-started">Getting Started</a></li>
-<li><a href="#installation--setup">Installation &amp; Setup</a></li>
-<li><a href="#main-interface">Main Interface</a></li>
-<li><a href="#basic-playback">Basic Playback</a></li>
-<li><a href="#file-management">File Management</a></li>
-<li><a href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
-<li><a href="#youtube-features">YouTube Features</a></li>
-<li><a href="#audio-settings">Audio Settings</a></li>
-<li><a href="#advanced-features">Advanced Features</a></li>
-<li><a href="#system-integration">System Integration</a></li>
-<li><a href="#accessibility--screen-readers">Accessibility &amp; Screen Readers</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-<li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
-</ol>
-<hr />
-<h2>Getting Started</h2>
-<p>Simple Audio Player is a feature-rich audio and media player designed for Windows with full keyboard accessibility and screen reader support. Whether you're a casual listener or need accessibility features, this guide will help you get the most out of the application.</p>
-<h3>What is Simple Audio Player?</h3>
-<p>Simple Audio Player allows you to:
-- Play audio and video files in multiple formats
-- Manage large music libraries and playlists
-- Search and play YouTube videos
-- Process audio with advanced features like silence removal
-- Control playback entirely with keyboard shortcuts
-- Access all features through screen readers</p>
-<h3>System Requirements</h3>
-<ul>
-<li><strong>Operating System:</strong> Windows 7 SP1 or later (Windows 10+ recommended)</li>
-<li><strong>RAM:</strong> Minimum 256 MB</li>
-<li><strong>Disk Space:</strong> 200 MB for installation</li>
-<li><strong>Audio Device:</strong> Working audio output device</li>
-</ul>
-<hr />
-<h2>Installation &amp; Setup</h2>
-<h3>Windows Installer (Recommended)</h3>
-<ol>
-<li>Download <code>SimpleAudioPlayerSetup.exe</code> from the project releases page</li>
-<li>Run the installer executable</li>
-<li>Follow the installation wizard prompts</li>
-<li>Choose installation directory (default: <code>%LocalAppData%\Programs\Simple Audio Player</code>)</li>
-<li>Select whether to create desktop shortcut</li>
-<li>Click "Install" and wait for completion</li>
-<li>Launch the application from Start Menu or desktop shortcut</li>
-</ol>
-<h3>Portable Version</h3>
-<ol>
-<li>Download the portable ZIP file</li>
-<li>Extract to your preferred location</li>
-<li>Run <code>SimpleAudioPlayer.exe</code> directly</li>
-<li>No installation or elevated permissions required</li>
-</ol>
-<blockquote>
-<p><strong>Tip:</strong> Portable version is ideal if you want to use the player from a USB drive or don't have administrator rights on your computer.</p>
-</blockquote>
-<h3>First-Time Setup</h3>
-<p>When you run Simple Audio Player for the first time:
-1. Application window appears with main controls
-2. If YouTube features are needed, installation prompt may appear
-3. Settings dialog allows customization of preferences
-4. Your preferences are automatically saved</p>
-<hr />
-<h2>Main Interface</h2>
-<h3>Main Window Layout</h3>
-<p>The main window contains:
-- <strong>Menu Bar:</strong> File, Edit, View, Help menus with dropdown options
-- <strong>Control Buttons:</strong> Previous, Rewind, Play/Pause, Forward, Next
-- <strong>Status Area:</strong> Displays current file information and playback status</p>
-<h3>Menu Structure</h3>
-<table>
-<thead>
-<tr>
-<th>Menu</th>
-<th>Options</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>File</strong></td>
-<td>Open File, Open Folder, Open YouTube Link, YouTube Search, Close File, Close All, Exit</td>
-<td>File and application management</td>
-</tr>
-<tr>
-<td><strong>Edit</strong></td>
-<td>Copy, Paste, Delete, Rename, Mark Files, Batch Operations</td>
-<td>File and playlist editing</td>
-</tr>
-<tr>
-<td><strong>Playback</strong></td>
-<td>Play/Pause, Next, Previous, Stop, Shuffle, Repeat</td>
-<td>Playback control</td>
-</tr>
-<tr>
-<td><strong>Tools</strong></td>
-<td>Audio Devices, Settings, Preferences, Silence Removal</td>
-<td>Application settings and tools</td>
-</tr>
-<tr>
-<td><strong>Help</strong></td>
-<td>User Guide, Changes, About, Contact Support</td>
-<td>Help and information</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>Basic Playback</h2>
-<h3>Opening and Playing Files</h3>
-<ol>
-<li><strong>Using Menu:</strong> Go to <code>File → Open File</code></li>
-<li><strong>Using Keyboard:</strong> Press <code>Ctrl+O</code></li>
-<li>Select audio or video file from your computer</li>
-<li>File loads and automatic playback begins (if autoplay enabled)</li>
-<li>Current file information displayed in status area</li>
-</ol>
-<h3>Play and Pause</h3>
-<ul>
-<li><strong>Button:</strong> Click "Play/Pause" button</li>
-<li><strong>Keyboard:</strong> Press <code>Space</code></li>
-<li>Current playback status announced via text-to-speech</li>
-<li>Press again to resume from same position</li>
-</ul>
-<h3>Seeking (Navigation)</h3>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Keyboard Shortcut</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Seek Forward (5 sec)</td>
-<td><code>Right Arrow</code></td>
-<td>Skip ahead 5 seconds</td>
-</tr>
-<tr>
-<td>Seek Backward (5 sec)</td>
-<td><code>Left Arrow</code></td>
-<td>Rewind 5 seconds</td>
-</tr>
-<tr>
-<td>Jump to Start</td>
-<td><code>Home</code></td>
-<td>Go to beginning of file</td>
-</tr>
-<tr>
-<td>Jump to End</td>
-<td><code>End</code></td>
-<td>Go to end of file</td>
-</tr>
-<tr>
-<td>Seek Steps</td>
-<td><code>Shift+1</code> through <code>Shift+0</code></td>
-<td>Jump by fixed intervals (1s to 60m)</td>
-</tr>
-<tr>
-<td>Custom Seek Step</td>
-<td><code>Shift+-</code></td>
-<td>Jump by your custom seek interval</td>
-</tr>
-<tr>
-<td>Percent Jumps</td>
-<td><code>Ctrl+1</code> through <code>Ctrl+0</code></td>
-<td>Jump to 10% through 100% of the file</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Tip:</strong> You can also use <code>Ctrl+Shift+1</code> through <code>Ctrl+Shift+0</code> to jump to 5% offsets (e.g., 15%, 25%, etc.).</p>
-<p><strong>Note:</strong> Seek steps (Shift+1-0) are fixed presets. Percent jumps (Ctrl+1-0) allow quick navigation through long files.
-You can also use <code>Ctrl+Shift+1-0</code> to jump to 5% offsets (e.g., 15%, 25%).</p>
-</blockquote>
-<h3>Volume Control</h3>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Keyboard Shortcut</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Volume Up</td>
-<td><code>Up Arrow</code></td>
-<td>Increase volume</td>
-</tr>
-<tr>
-<td>Volume Down</td>
-<td><code>Down Arrow</code></td>
-<td>Decrease volume</td>
-</tr>
-<tr>
-<td>Maximize Volume</td>
-<td><code>Shift+Up Arrow</code></td>
-<td>Set to maximum</td>
-</tr>
-<tr>
-<td>Mute</td>
-<td><code>Shift+Down Arrow</code></td>
-<td>Set to minimum (Mute)</td>
-</tr>
-<tr>
-<td>Announce Volume</td>
-<td><code>V</code></td>
-<td>Current volume spoken aloud</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Tip:</strong> Volume control has 1000 steps for fine-grained control. Minimum keyboard increment is 5 steps, but can be set to 1 step in settings.</p>
-</blockquote>
-<h3>Speed Control</h3>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Keyboard Shortcut</th>
-<th>Range</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Increase Speed</td>
-<td><code>Ctrl+Up Arrow</code></td>
-<td>0.5x to 6.0x</td>
-</tr>
-<tr>
-<td>Decrease Speed</td>
-<td><code>Ctrl+Down Arrow</code></td>
-<td>0.5x to 6.0x</td>
-</tr>
-<tr>
-<td>Reset Speed</td>
-<td><code>Alt+Y</code></td>
-<td>Return to 1.0x (normal)</td>
-</tr>
-<tr>
-<td>Announce Speed</td>
-<td><code>S</code></td>
-<td>Current speed spoken aloud</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2>File Management</h2>
-<h3>Opening Folders</h3>
-<ol>
-<li>Go to <code>File → Open Folder</code> or press <code>Ctrl+Shift+O</code></li>
-<li>Select a folder containing audio files</li>
-<li>Application scans folder recursively for all audio files</li>
-<li>Progress dialog shows scanning status</li>
-<li>All found files added to playlist automatically</li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong> Folder scanning looks for all supported audio formats recursively through subfolders. Large folders may take time to scan.</p>
-</blockquote>
-<h3>Navigating Files</h3>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Keyboard Shortcut</th>
-<th>Menu Option</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Next File</td>
-<td><code>Tab</code> or <code>Page Down</code></td>
-<td>Playback → Next</td>
-</tr>
-<tr>
-<td>Previous File</td>
-<td><code>Shift+Tab</code> or <code>Page Up</code></td>
-<td>Playback → Previous</td>
-</tr>
-<tr>
-<td>First File</td>
-<td><code>Ctrl+Home</code></td>
-<td>Playback → First</td>
-</tr>
-<tr>
-<td>Last File</td>
-<td><code>Ctrl+End</code></td>
-<td>Playback → Last</td>
-</tr>
-<tr>
-<td>Go to File</td>
-<td><code>Ctrl+G</code></td>
-<td>File → Go to File</td>
-</tr>
-<tr>
-<td>Open Containing Folder</td>
-<td><code>Ctrl+F</code></td>
-<td>File → Open Containing Folder</td>
-</tr>
-</tbody>
-</table>
-<h3>File Operations</h3>
-<h4>Rename File</h4>
-<ol>
-<li>Load file or select from playlist</li>
-<li>Press <code>Shift+F2</code> or go to <code>Edit → Rename</code></li>
-<li>Enter new filename in dialog</li>
-<li>Press Enter to confirm</li>
-</ol>
-<h4>Delete File</h4>
-<ol>
-<li>Select file to delete</li>
-<li>Press <code>Shift+Delete</code> or go to <code>Edit → Delete</code></li>
-<li>Confirm deletion in dialog</li>
-<li>File moved to Recycle Bin</li>
-</ol>
-<h4>File Properties</h4>
-<ol>
-<li>Load file or select from playlist</li>
-<li>Press <code>Alt+Enter</code> or go to <code>File → File Properties</code></li>
-<li>Standard Windows file properties dialog appears</li>
-</ol>
-<h4>Copy File Path</h4>
-<ol>
-<li>Load file</li>
-<li>Press <code>Ctrl+Shift+C</code> or go to <code>Edit → Copy</code></li>
-<li>File path copied to clipboard</li>
-<li>Can be pasted into any text editor</li>
-</ol>
-<h4>Paste Files</h4>
-<ol>
-<li>Copy audio files in Windows Explorer</li>
-<li>Press <code>Ctrl+V</code> in Simple Audio Player</li>
-<li>Files added to current playlist</li>
-</ol>
-<h3>Marking Files (Batch Operations)</h3>
-<p>Mark files to perform batch operations on multiple files:</p>
-<h4>Marking Operations</h4>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Keyboard Shortcut</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mark Current File</td>
-<td><code>Ctrl+K</code></td>
-<td>Add current file to marked list</td>
-</tr>
-<tr>
-<td>Mark All Files</td>
-<td><code>Ctrl+A</code></td>
-<td>Mark all files in playlist</td>
-</tr>
-<tr>
-<td>Clear Marks</td>
-<td><code>Ctrl+Shift+K</code></td>
-<td>Remove all marks</td>
-</tr>
-<tr>
-<td>Announce Marked Count</td>
-<td><code>K</code></td>
-<td>Speak number of marked files</td>
-</tr>
-</tbody>
-</table>
-<h4>Batch Operations on Marked Files</h4>
-<ul>
-<li><strong>Copy to Folder:</strong> Copy all marked files to selected directory</li>
-<li><strong>Move to Folder:</strong> Move all marked files to selected directory</li>
-<li><strong>Copy to Clipboard:</strong> Copy all marked file paths to clipboard</li>
-<li><strong>Delete Marked:</strong> Delete all marked files</li>
-</ul>
-<hr />
-<h2>Keyboard Shortcuts</h2>
-<h3>Playback Control</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Space</code> or <code>Enter</code></td>
-<td>Play / Pause</td>
-</tr>
-<tr>
-<td><code>Tab</code> or <code>Page Down</code></td>
-<td>Next Track</td>
-</tr>
-<tr>
-<td><code>Shift+Tab</code> or <code>Page Up</code></td>
-<td>Previous Track</td>
-</tr>
-</tbody>
-</table>
-<h3>Seeking</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Right Arrow</code></td>
-<td>Seek Forward 5 seconds</td>
-</tr>
-<tr>
-<td><code>Left Arrow</code></td>
-<td>Seek Backward 5 seconds</td>
-</tr>
-<tr>
-<td><code>Ctrl+Right Arrow</code></td>
-<td>Seek Forward x2</td>
-</tr>
-<tr>
-<td><code>Ctrl+Left Arrow</code></td>
-<td>Seek Backward x2</td>
-</tr>
-<tr>
-<td><code>Shift+Right Arrow</code></td>
-<td>Seek Forward x8</td>
-</tr>
-<tr>
-<td><code>Shift+Left Arrow</code></td>
-<td>Seek Backward x8</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+Right Arrow</code></td>
-<td>Seek Forward x4</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+Left Arrow</code></td>
-<td>Seek Backward x4</td>
-</tr>
-<tr>
-<td><code>Home</code></td>
-<td>Jump to Start</td>
-</tr>
-<tr>
-<td><code>End</code></td>
-<td>Jump to End</td>
-</tr>
-<tr>
-<td><code>Shift+1</code> through <code>Shift+9</code></td>
-<td>Jump by Seek Step 1-9</td>
-</tr>
-<tr>
-<td><code>Shift+0</code></td>
-<td>Jump by Seek Step 10</td>
-</tr>
-</tbody>
-</table>
-<h3>Volume Control</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Up Arrow</code></td>
-<td>Increase Volume</td>
-</tr>
-<tr>
-<td><code>Down Arrow</code></td>
-<td>Decrease Volume</td>
-</tr>
-<tr>
-<td><code>Shift+Up Arrow</code></td>
-<td>Maximize Volume</td>
-</tr>
-<tr>
-<td><code>Shift+Down Arrow</code></td>
-<td>Minimize Volume (Mute)</td>
-</tr>
-<tr>
-<td><code>V</code></td>
-<td>Announce Volume</td>
-</tr>
-</tbody>
-</table>
-<h3>Speed Control</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+Up Arrow</code></td>
-<td>Increase Speed</td>
-</tr>
-<tr>
-<td><code>Ctrl+Down Arrow</code></td>
-<td>Decrease Speed</td>
-</tr>
-<tr>
-<td><code>Alt+Y</code></td>
-<td>Reset Speed to 1.0x</td>
-</tr>
-<tr>
-<td><code>S</code></td>
-<td>Announce Speed</td>
-</tr>
-</tbody>
-</table>
-<h3>File Management</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+O</code></td>
-<td>Open File</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+O</code></td>
-<td>Open Folder</td>
-</tr>
-<tr>
-<td><code>Ctrl+W</code></td>
-<td>Close Current File</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+W</code></td>
-<td>Close All Files</td>
-</tr>
-<tr>
-<td><code>Ctrl+L</code></td>
-<td>Open Link</td>
-</tr>
-<tr>
-<td><code>F2</code></td>
-<td>Opened Files List</td>
-</tr>
-<tr>
-<td><code>Shift+F2</code></td>
-<td>Rename File</td>
-</tr>
-<tr>
-<td><code>Shift+Delete</code></td>
-<td>Delete File</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+C</code></td>
-<td>Copy File Path</td>
-</tr>
-<tr>
-<td><code>Ctrl+V</code></td>
-<td>Paste Files</td>
-</tr>
-<tr>
-<td><code>Alt+Enter</code></td>
-<td>File Properties</td>
-</tr>
-</tbody>
-</table>
-<h3>Navigation</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+Home</code></td>
-<td>Go to First File</td>
-</tr>
-<tr>
-<td><code>Ctrl+End</code></td>
-<td>Go to Last File</td>
-</tr>
-<tr>
-<td><code>Ctrl+G</code></td>
-<td>Go to Specific File</td>
-</tr>
-<tr>
-<td><code>Ctrl+F</code></td>
-<td>Open Containing Folder</td>
-</tr>
-</tbody>
-</table>
-<h3>Information</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>E</code></td>
-<td>Announce Elapsed Time</td>
-</tr>
-<tr>
-<td><code>R</code></td>
-<td>Announce Remaining Time</td>
-</tr>
-<tr>
-<td><code>T</code></td>
-<td>Announce Duration</td>
-</tr>
-<tr>
-<td><code>P</code></td>
-<td>Announce Current Position %</td>
-</tr>
-<tr>
-<td><code>F</code></td>
-<td>Announce File Information</td>
-</tr>
-</tbody>
-</table>
-<h3>Marking Files</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+K</code></td>
-<td>Mark Current File</td>
-</tr>
-<tr>
-<td><code>Ctrl+A</code></td>
-<td>Mark All Files</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+K</code></td>
-<td>Clear All Marks</td>
-</tr>
-<tr>
-<td><code>K</code></td>
-<td>Announce Marked Count</td>
-</tr>
-</tbody>
-</table>
-<h3>Utilities</h3>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+P</code></td>
-<td>Open Settings</td>
-</tr>
-<tr>
-<td><code>F1</code></td>
-<td>Show User Guide</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+T</code></td>
-<td>Test Speakers</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+A</code></td>
-<td>Audio Devices (Sound Cards)</td>
-</tr>
-<tr>
-<td><code>Ctrl+M</code></td>
-<td>Toggle Silence Removal</td>
-</tr>
-<tr>
-<td><code>Ctrl+Shift+V</code></td>
-<td>Toggle Verbosity Mode</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Tip:</strong> All keyboard shortcuts are customizable. Go to Settings &gt; Keyboard Shortcuts to modify them to your preference.</p>
-</blockquote>
-<hr />
-<h2>YouTube Features</h2>
-<h3>YouTube Search</h3>
-<ol>
-<li>Go to <code>File → YouTube Search</code> or press <code>Ctrl+Y</code></li>
-<li>Enter search query (e.g., "music artist name")</li>
-<li>Wait for search results to load</li>
-<li>Select video from results list</li>
-<li>Video plays immediately</li>
-</ol>
-<h3>Opening YouTube Links</h3>
-<ol>
-<li>Copy YouTube video URL to clipboard</li>
-<li>Go to <code>File → Open YouTube Link</code> or press <code>Ctrl+Shift+Y</code></li>
-<li>Paste URL when prompted</li>
-<li>Video begins playing automatically</li>
-</ol>
-<h4>Video Actions</h4>
-<table>
-<thead>
-<tr>
-<th>Shortcut</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Ctrl+D</code></td>
-<td>Download Video</td>
-</tr>
-<tr>
-<td><code>Alt+D</code></td>
-<td>Show Video Description</td>
-</tr>
-<tr>
-<td><code>Ctrl+Y</code></td>
-<td>YouTube Search</td>
-</tr>
-</tbody>
-</table>
-<h3>Downloading YouTube Videos</h3>
-<ol>
-<li>Search or open YouTube video</li>
-<li>Go to <code>Edit → Download Video</code></li>
-<li>Select download options:</li>
-<li>Video quality (best available to specific resolution)</li>
-<li>Format (video file, audio only, etc.)</li>
-<li>Choose save location</li>
-<li>Download progress displayed in dialog</li>
-<li>Downloaded file playable offline</li>
-</ol>
-<h3>YouTube Components Installation</h3>
-<p>YouTube features require additional components (yt-dlp):
-- Application automatically detects if components are missing
-- Installation prompt appears on first YouTube use
-- Click "Install" to download and set up components
-- Internet connection required for installation</p>
-<hr />
-<h2>Audio Settings</h2>
-<h3>Accessing Settings</h3>
-<ol>
-<li>Press <code>Ctrl+P</code>, or</li>
-<li>Go to <code>Tools → Settings</code></li>
-</ol>
-<h3>General Settings Tab</h3>
-<ul>
-<li><strong>Language:</strong> Choose English or Arabic</li>
-<li><strong>Verbosity:</strong> Beginner or Advanced mode</li>
-<li>Beginner: Less detailed announcements</li>
-<li>Advanced: Detailed status messages</li>
-<li><strong>Check for Updates:</strong> Enable/disable automatic update checks</li>
-<li><strong>Speak file name when navigating:</strong> Automatically announce the file name when moving to the next or previous track.</li>
-</ul>
-<h3>Audio Device Settings</h3>
-<ol>
-<li>Go to Settings → Audio Device tab</li>
-<li>View list of available audio devices</li>
-<li>Select desired output device</li>
-<li>Settings saved automatically</li>
-</ol>
-<h3>Silence Removal Settings</h3>
-<p>Automatically remove silent sections from audio:</p>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Enable Silence Removal</td>
-<td>Toggle feature on/off</td>
-<td>Off</td>
-</tr>
-<tr>
-<td>Minimum Silence Duration</td>
-<td>Silence shorter than this kept (seconds)</td>
-<td>0.5</td>
-</tr>
-<tr>
-<td>Silence Threshold</td>
-<td>Audio level considered silent (dB)</td>
-<td>-30</td>
-</tr>
-<tr>
-<td>Detection Mode</td>
-<td>Peak or RMS level detection</td>
-<td>Peak</td>
-</tr>
-</tbody>
-</table>
-<h3>Audio Normalization</h3>
-<ul>
-<li><strong>Enable Audio Normalization:</strong> Automatically adjusts levels</li>
-<li><strong>Benefit:</strong> Consistent volume across different audio sources</li>
-<li><strong>Use Case:</strong> Listening to podcasts or music from various sources</li>
-</ul>
-<h3>Mono Conversion</h3>
-<ul>
-<li><strong>Enable Mono Mode:</strong> Convert stereo to single-channel</li>
-<li><strong>Benefit:</strong> Compatible with single-channel audio devices</li>
-<li><strong>Use Case:</strong> Using mono headphone or speaker</li>
-</ul>
-<h3>Keyboard Shortcuts Customization</h3>
-<ol>
-<li>Go to Settings → Keyboard Shortcuts tab</li>
-<li>View list of all available actions</li>
-<li>Select action to customize</li>
-<li>Press new keyboard shortcut</li>
-<li>Confirm by clicking Save</li>
-</ol>
-<p>⚠️ <strong>Warning:</strong> Some shortcuts (like Alt+F4) are reserved by Windows and cannot be customized.</p>
-<hr />
-<h2>Advanced Features</h2>
-<h3>Shuffle and Repeat Modes</h3>
-<table>
-<thead>
-<tr>
-<th>Mode</th>
-<th>Behavior</th>
-<th>Keyboard</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Shuffle</td>
-<td>Play files in random order</td>
-<td><code>Ctrl+Z</code></td>
-</tr>
-<tr>
-<td>Repeat File</td>
-<td>Repeat current file continuously</td>
-<td><code>Ctrl+R</code></td>
-</tr>
-</tbody>
-</table>
-<h3>File Selection (Range Selection)</h3>
-<p>Select ranges of files for batch operations:</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Keyboard Shortcut</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Start Selection</td>
-<td><code>[</code></td>
-</tr>
-<tr>
-<td>End Selection</td>
-<td><code>]</code></td>
-</tr>
-<tr>
-<td>Clear Selection</td>
-<td><code>Backspace</code></td>
-</tr>
-</tbody>
-</table>
-<h3>Playback Information</h3>
-<p>Get detailed playback information:
-- <strong>Elapsed Time:</strong> Press <code>E</code>
-- <strong>Remaining Time:</strong> Press <code>R</code>
-- <strong>Total Duration:</strong> Press <code>T</code>
-- <strong>Current Position %:</strong> Press <code>P</code>
-- <strong>File Information:</strong> Press <code>F</code></p>
-<h3>Playlist Information</h3>
-<ol>
-<li>Go to <code>File → Playlist Information</code></li>
-<li>View:</li>
-<li>Total number of files</li>
-<li>Total playlist duration</li>
-<li>Currently playing file</li>
-</ol>
-<hr />
-<h2>System Integration</h2>
-<h3>Windows Media Session</h3>
-<p>Simple Audio Player integrates with the Windows Media Session, allowing you to control playback from the Windows UI. When you are playing a media file, you can:</p>
-<ul>
-<li>See the current track information in the Windows volume flyout.</li>
-<li>Use the media control keys on your keyboard (Play/Pause, Next, Previous) to control the player even when it is not in focus.</li>
-<li>Control playback from other Windows devices, such as a connected smartphone.</li>
-</ul>
-<h3>File Associations</h3>
-<p>You can set Simple Audio Player as the default application for various audio and video formats. This allows you to open your media files directly in Simple Audio Player by double-clicking them.</p>
-<p>You can also right-click on a media file and select "Play with Simple Audio Player" from the context menu to open it in the player.</p>
-<p>You can manage file associations from the application's settings.</p>
-<hr />
-<h2>Accessibility &amp; Screen Readers</h2>
-<h3>Screen Reader Support</h3>
-<p>Simple Audio Player works with:
-- <strong>JAWS:</strong> Full support for all features
-- <strong>NVDA:</strong> Full support for all features
-- <strong>Windows Narrator:</strong> Basic support</p>
-<h3>Text-to-Speech Output</h3>
-<p>Many actions provide audio feedback:
-- Play/Pause state changes announced
-- Volume changes spoken when requested
-- File information announced
-- Errors and warnings spoken</p>
-<h3>Keyboard-Only Operation</h3>
-<p>Complete application control via keyboard:
-- No mouse required for any function
-- All menus accessible via Alt key
-- Shortcuts available for all common operations</p>
-<h3>Beginner vs Advanced Mode</h3>
-<table>
-<thead>
-<tr>
-<th>Mode</th>
-<th>Feature</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Beginner</td>
-<td>Simple Messages</td>
-<td>Only essential feedback provided</td>
-</tr>
-<tr>
-<td>Advanced</td>
-<td>Detailed Messages</td>
-<td>Comprehensive status and action information</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Tip:</strong> Toggle between modes by pressing <code>V</code> when no file is playing.
-<strong>Tip:</strong> Toggle verbosity mode anytime by pressing <code>Ctrl+Shift+V</code>.</p>
-</blockquote>
-<hr />
-<h2>Troubleshooting</h2>
-<h3>Common Issues</h3>
-<h4>No Sound Output</h4>
-<p><strong>Symptoms:</strong> Application runs but no audio plays</p>
-<p><strong>Solutions:</strong>
-1. Check Windows audio device is working
-2. Verify speakers/headphones are connected
-3. Check system volume is not muted
-4. Try different audio device in Settings
-5. Run "Test Speakers" (Ctrl+Shift+T)
-6. Restart application</p>
-<h4>Screen Reader Not Announcing</h4>
-<p><strong>Symptoms:</strong> No text-to-speech output from application</p>
-<p><strong>Solutions:</strong>
-1. Verify screen reader (JAWS/NVDA) is running
-2. Check system volume is not muted
-3. Try "Test Speakers" to verify audio output works
-4. Restart screen reader
-5. Restart application</p>
-<h4>YouTube Search Not Working</h4>
-<p><strong>Symptoms:</strong> YouTube features unavailable or searching fails</p>
-<p><strong>Solutions:</strong>
-1. Check internet connection
-2. Install YouTube components if prompted
-3. Update yt-dlp: Go to Tools → Update YouTube Components
-4. Verify video URL is valid and public
-5. Check if video is region-restricted</p>
-<h4>Application Crashes</h4>
-<p><strong>Symptoms:</strong> Application unexpectedly closes</p>
-<p><strong>Solutions:</strong>
-1. Disable silence removal in Settings
-2. Disable audio normalization
-3. Try different audio device
-4. Close other applications
-5. Reinstall application</p>
-<h4>File Not Playing</h4>
-<p><strong>Symptoms:</strong> File selected but won't play</p>
-<p><strong>Solutions:</strong>
-1. Verify file is readable and not corrupted
-2. Check file format is supported
-3. Try different file to confirm format support
-4. Convert file to common format (MP3, WAV)</p>
-<hr />
-<h2>Frequently Asked Questions</h2>
-<h3>General Questions</h3>
-<p><strong>Q: Is Simple Audio Player free?</strong><br />
-A: Yes, the application is free and open-source.</p>
-<p><strong>Q: Can I use it on Mac or Linux?</strong><br />
-A: Currently Windows-only. Future cross-platform support is possible.</p>
-<p><strong>Q: Do I need to install anything else?</strong><br />
-A: YouTube features require yt-dlp components, installed automatically when first used.</p>
-<h3>Playback Questions</h3>
-<p><strong>Q: What audio formats are supported?</strong><br />
-A: MP3, FLAC, WAV, OGG, OPUS, AAC, AIFF, ALAC, WMA, and more.</p>
-<p><strong>Q: Can I adjust playback speed?</strong><br />
-A: Yes, speed adjustable from 0.5x to 6.0x normal speed.</p>
-<p><strong>Q: Does it support playlists?</strong><br />
-A: Yes, create playlists by opening folders or adding individual files.</p>
-<h3>Customization Questions</h3>
-<p><strong>Q: Can I customize keyboard shortcuts?</strong><br />
-A: Yes, all shortcuts customizable in Settings &gt; Keyboard Shortcuts.</p>
-<p><strong>Q: Can I change the language?</strong><br />
-A: Yes, English and Arabic supported. Change in Settings &gt; General.</p>
-<p><strong>Q: Where are settings saved?</strong><br />
-A: In the application directory or %LocalAppData% folder depending on installation type.</p>
-<h3>YouTube Questions</h3>
-<p><strong>Q: Can I download YouTube videos?</strong><br />
-A: Yes, with restrictions. Only download content you have permission to use.</p>
-<p><strong>Q: What video quality options are available?</strong><br />
-A: Quality depends on YouTube availability, typically up to 1080p or best available.</p>
-<h3>Accessibility Questions</h3>
-<p><strong>Q: Does it work with my screen reader?</strong><br />
-A: Yes, JAWS and NVDA fully supported. Windows Narrator has basic support.</p>
-<p><strong>Q: Can I control everything with keyboard?</strong><br />
-A: Yes, all features accessible via keyboard with no mouse required.</p>
-<hr />
-<p><strong>Simple Audio Player User Guide | Version 1.0.1</strong><br />
-<strong>Last Updated: February 22, 2026</strong></p>
-<p>For more information, visit the <a href="https://github.com/kamalyaser31/simple-player">GitHub Repository</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Audio Player User Guide (Version 1.0.1)</title>
+  <style>
+    body {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.68;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      color: #1f1f1f;
+      background: #ffffff;
+    }
+    h1, h2, h3 {
+      line-height: 1.3;
+      margin-top: 1.5em;
+    }
+    h1 {
+      margin-top: 0.2em;
+    }
+    p {
+      margin: 0.8em 0;
+    }
+    ul, ol {
+      margin-top: 0.4em;
+    }
+    li {
+      margin-bottom: 0.35em;
+    }
+    code {
+      background: #f3f4f7;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+    .muted {
+      color: #5c5c5c;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #dcdcdc;
+      margin: 2em 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Audio Player User Guide (Version 1.0.1)</h1>
+  <p class="muted">Last updated: March 7, 2026</p>
+
+  <p>
+    This guide explains the app in plain language for day-to-day use. It starts with the interface,
+    then goes through playback and file workflows, then covers YouTube, recording, settings, shortcuts,
+    and troubleshooting. The goal is to explain how features are actually used in normal listening,
+    not just list menu labels.
+  </p>
+
+  <h2>Table of Contents</h2>
+  <ol>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#system-requirements">System Requirements</a></li>
+    <li><a href="#installation">Installation and First Launch</a></li>
+    <li><a href="#main-interface">Main Interface</a></li>
+    <li><a href="#basic-playback">Basic Playback</a></li>
+    <li><a href="#file-playlist-management">File and Playlist Management</a></li>
+    <li><a href="#bookmarks">Bookmarks</a></li>
+    <li><a href="#favorite-videos">Favorite Videos</a></li>
+    <li><a href="#youtube-features">YouTube Features</a></li>
+    <li><a href="#recording">Recording</a></li>
+    <li><a href="#settings-interface">Settings Interface</a></li>
+    <li><a href="#settings-categories">Settings Categories</a></li>
+    <li><a href="#shortcut-configuration">Configuring Shortcuts</a></li>
+    <li><a href="#shortcuts-reference">Local Shortcuts Reference</a></li>
+    <li><a href="#data-backup-restore">Data, Backup, and Restore</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+    <li><a href="#global-shortcuts">Global Shortcuts</a></li>
+    <li><a href="#contact-us">Contact Us</a></li>
+  </ol>
+
+  <hr>
+
+  <h2 id="overview">Overview</h2>
+  <p>
+    Simple Audio Player is a Windows media player built around fast keyboard control and predictable behavior.
+    You can use it for local files, folder-based playlists, stream links, YouTube videos/playlists,
+    and recording. The app keeps most actions visible in the main menu bar, so once you understand
+    the menu structure, you can move through features quickly.
+  </p>
+  <p>
+    The app also separates feature data cleanly. Settings, bookmarks, favorites, and saved playback positions
+    are stored in different files, so each feature can be backed up or reset without affecting everything else.
+  </p>
+
+  <h2 id="system-requirements">System Requirements</h2>
+  <p>
+    The app is designed for Windows desktop use. You need a working sound output device (speakers,
+    headphones, or any configured audio output). If you plan to record, you also need a working input
+    device such as a microphone.
+  </p>
+  <p>
+    Internet is optional for local playback. It is only needed for update checks and YouTube features.
+    If you use the app only for local files, it still works normally without YouTube components.
+  </p>
+
+  <h2 id="installation">Installation and First Launch</h2>
+  <p>
+    The simplest way to install is from the project releases page. Use the installer build if you want a
+    normal installed app entry, or use the portable zip build if you prefer to run it from a custom folder.
+  </p>
+  <p>
+    On first launch, open one local file first to confirm output is correct. Then open settings with
+    <code>Ctrl+P</code> (or from <code>File &gt; Preferences...</code>) and review General and Audio pages.
+    This first setup is where most long-term behavior is defined, especially open-with-files mode,
+    save-on-close behavior, and playback step values.
+  </p>
+
+  <hr>
+
+  <h2 id="main-interface">Main Interface</h2>
+  <p>
+    The main window has transport buttons and a menu bar. The transport buttons are for immediate playback
+    actions (previous, rewind, play/pause, forward, next). The menu bar is where you access full workflows
+    such as bookmarks, favorites, YouTube tools, recording, and preferences.
+  </p>
+
+  <h3>Menu Bar Structure</h3>
+  <ul>
+    <li><strong>File:</strong> opening files/folders/links, favorites, file list/properties, preferences, close/exit actions.</li>
+    <li><strong>Edit:</strong> rename/delete/copy/paste for local files, plus mark controls.</li>
+    <li><strong>Bookmarks:</strong> add, manage, and jump-to-slot actions.</li>
+    <li><strong>Actions for marked files:</strong> batch copy/move/delete/clipboard actions.</li>
+    <li><strong>Player:</strong> playback navigation, seek/time controls, A-B loop, speed, shuffle/repeat, silence removal, sound cards.</li>
+    <li><strong>Video options:</strong> YouTube-specific actions for current video context.</li>
+    <li><strong>Recording:</strong> recording start/pause/stop and recordings folder.</li>
+    <li><strong>Help:</strong> guide, what's new, contact options, updates, and about dialog.</li>
+  </ul>
+
+  <p>
+    Some menu items become disabled when they do not apply. For example, local file properties and bookmark
+    actions are disabled for URLs and YouTube streams.
+  </p>
+
+  <hr>
+
+  <h2 id="basic-playback">Basic Playback</h2>
+  <p>
+    To open one local file, press <code>Ctrl+O</code>, or use <code>File &gt; Open File...</code>. To build a playlist
+    from a folder, press <code>Ctrl+Shift+O</code>, or use <code>File &gt; Open Folder...</code>. To open a direct stream,
+    press <code>Ctrl+L</code>, or use <code>File &gt; Open Link...</code>.
+  </p>
+  <p>
+    Play/pause uses <code>Space</code> or <code>Enter</code>. Next/previous uses <code>Tab</code>/<code>Page Down</code> and
+    <code>Shift+Tab</code>/<code>Page Up</code>. This is usually enough for normal playback.
+  </p>
+  <p>
+    For navigation inside long files, use left/right arrows for seek, then use modifier variants when needed:
+    <code>Ctrl+Left/Right</code> (x2), <code>Ctrl+Shift+Left/Right</code> (x4), and <code>Shift+Left/Right</code> (x8).
+    You can also jump by percentage with <code>Ctrl+1</code> to <code>Ctrl+0</code>, and the shifted set for offset jumps.
+  </p>
+  <p>
+    Exact file index navigation is available through go-to-file: press <code>Ctrl+G</code>, or choose
+    <code>Player &gt; Go to file...</code>. Exact time navigation is available through go-to-time: press
+    <code>Ctrl+Shift+G</code>, or choose <code>Player &gt; Go to time...</code>. The go-to-time dialog validates
+    values against actual duration and keeps the dialog open if the value is invalid.
+  </p>
+  <p>
+    A-B loop is useful when you need to repeat a segment. Set A with <code>[</code>, set B with <code>]</code>,
+    and clear with <code>Backspace</code>. The same actions are available from <code>Player &gt; A-B loop</code>.
+  </p>
+
+  <h2 id="file-playlist-management">File and Playlist Management</h2>
+  <p>
+    The opened-files dialog is the fastest way to jump in large playlists. Open it with <code>F2</code>,
+    or choose <code>File &gt; Opened Files...</code>. Select an item and press Enter to jump.
+  </p>
+  <p>
+    For local file operations, use rename with <code>Shift+F2</code> or <code>Edit &gt; Rename...</code>, and delete with
+    <code>Shift+Delete</code> or <code>Edit &gt; Delete</code>. Open containing folder with <code>Ctrl+F</code> or
+    <code>File &gt; Open Containing Folder</code>. Open file properties with <code>Alt+Enter</code> or
+    <code>File &gt; File properties...</code>. These operations are local-file only by design.
+  </p>
+  <p>
+    Marking is useful when managing multiple files in one pass. Mark current with <code>Ctrl+K</code>, mark all
+    with <code>Ctrl+A</code>, clear marks with <code>Ctrl+Shift+K</code>, and announce marked count with <code>K</code>.
+    After marking, use <code>Actions for marked files</code> to copy, move, copy paths to clipboard, or delete.
+  </p>
+  <p>
+    Two audio settings affect playlist behavior heavily. "Wrap to top for multiple files" makes next/previous
+    circular when there is more than one file. "Save current position for each file" saves position when you
+    move between files and restores the saved point when returning to that same file.
+  </p>
+
+  <hr>
+
+  <h2 id="bookmarks">Bookmarks</h2>
+  <p>
+    Bookmarks are named positions for local files. They are intended for quick return points in long material
+    such as courses, podcasts, and interviews.
+  </p>
+  <p>
+    Add a bookmark with <code>Shift+M</code>, or from <code>Bookmarks &gt; Add a new bookmark</code>. The app asks for
+    a name and stores current position with that name.
+  </p>
+  <p>
+    Open bookmark manager with <code>Ctrl+Shift+M</code>, or from <code>Bookmarks &gt; Manage bookmarks</code>. The dialog
+    shows name and position columns, and provides jump, edit name, and delete actions. Pressing Enter on a selected
+    bookmark jumps directly to its saved position.
+  </p>
+  <p>
+    Quick slot jumping is available through <code>Alt+1</code> to <code>Alt+9</code> and <code>Alt+0</code> for slot 10.
+    The same actions are available under <code>Bookmarks &gt; Jump to bookmark</code>.
+  </p>
+
+  <h2 id="favorite-videos">Favorite Videos</h2>
+  <p>
+    Favorite Videos stores reusable links with an explicit type. It is useful when you often open the same
+    playlist, video, livestream, or generic stream URL and want one central place to manage those links.
+  </p>
+  <p>
+    Open the dialog with <code>Ctrl+Shift+F</code>, or from <code>File &gt; Favorite videos...</code>. The list contains
+    name, type, and link. Use add/edit/remove buttons to maintain the list.
+  </p>
+  <p>
+    Type behavior is important: "Video" and "Playlist" force their specific YouTube flow, "Combined link"
+    follows your mixed-link setting in YouTube settings, and "Generic stream" opens directly as normal stream
+    without YouTube resolver behavior.
+  </p>
+
+  <h2 id="youtube-features">YouTube Features</h2>
+  <p>
+    YouTube support includes direct link opening, search, result browsing, and video-related actions.
+    Open YouTube link with <code>Ctrl+Shift+Y</code> (or <code>File &gt; Open YouTube Link...</code>) and search with
+    <code>Ctrl+Y</code> (or <code>File &gt; Search YouTube...</code>).
+  </p>
+  <p>
+    Search opens a results dialog where you can play entries, copy links, open browser/channel,
+    and download from result context. Playlist links open a browse flow, while direct video links
+    can be played immediately.
+  </p>
+  <p>
+    For links that include both video and playlist IDs, behavior is controlled by YouTube settings:
+    ask every time, always video, or always playlist. This setting also affects favorites of type
+    "Combined link".
+  </p>
+  <p>
+    Video actions for current YouTube context are available through <code>Ctrl+D</code> for download,
+    <code>Alt+D</code> for description, or from the <code>Video options</code> menu.
+  </p>
+  <p>
+    YouTube components can be updated from <code>Help &gt; Updates &gt; Update YouTube components</code> or from
+    <code>Settings &gt; YouTube</code>. The startup update-check option for yt-dlp compares local and remote
+    versions and shows the regular update prompt when an update is available.
+  </p>
+
+  <h2 id="recording">Recording</h2>
+  <p>
+    Recording captures from your default input device and writes to the configured recordings folder.
+    Start with <code>F9</code>, pause/resume with <code>F7</code>, and stop with <code>F8</code>, or use the same commands
+    from the <code>Recording</code> menu.
+  </p>
+  <p>
+    Start and resume operations use a blocking beep before capture continues. Stop plays a lower-frequency
+    confirmation beep after recording is stopped.
+  </p>
+  <p>
+    You can open recordings folder directly from <code>Recording &gt; Open recordings folder</code>. Global recording
+    control is available with <code>Alt+Win+F9</code>, <code>Alt+Win+F7</code>, and <code>Alt+Win+F8</code>.
+  </p>
+
+  <hr>
+
+  <h2 id="settings-interface">Settings Interface</h2>
+  <p>
+    Open settings with <code>Ctrl+P</code> (or <code>File &gt; Preferences...</code>). Categories are displayed as a flat
+    list on the left, and each category page appears on the right. Pressing OK validates all pages.
+    If a value is invalid, a message box appears and the dialog stays open so you can correct it.
+  </p>
+  <p>
+    Press <code>F1</code> while focused on any setting control to hear short help for that specific option.
+    This is useful when you are not sure what a setting changes and want quick guidance without leaving the dialog.
+  </p>
+
+  <h2 id="settings-categories">Settings Categories</h2>
+  <h3>12.1 General Settings</h3>
+  <p>
+    This page defines how the app behaves across launches. Language, verbosity, and update checks are all managed
+    here, along with the two options that affect daily workflow the most: open-with-files mode and save-on-close.
+    If open-with-files mode is set to include folder content, opening one file can build a full playlist
+    automatically. If save-on-close is disabled, session-level changes are intentionally discarded on exit.
+  </p>
+  <p>
+    General settings also includes \"Remember last file position\" for startup restore behavior and file-association
+    actions for Explorer integration.
+  </p>
+
+  <h3>12.2 Backup and Restore</h3>
+  <p>
+    Use this page when moving to another machine, recovering from broken settings, or saving a backup before major
+    changes. You can export and import settings, export and import bookmarks separately, reset settings to defaults,
+    and open the settings folder directly.
+  </p>
+  <p>
+    Keeping bookmarks import/export separate from settings helps if you want to keep listening markers while testing
+    a fresh settings profile.
+  </p>
+
+  <h3>12.3 Audio Settings</h3>
+  <p>
+    Audio settings control seek behavior, speed and volume increments, and file-end behavior. This is also where
+    playlist wrapping and per-file position tracking are configured. If you frequently switch between many files,
+    enabling per-file position tracking makes navigation feel much more continuous.
+  </p>
+  <p>
+    Processing options such as dynamic normalize/limiter and mono playback are also on this page. They are useful
+    for difficult source material, especially content with uneven loudness or channel imbalance.
+  </p>
+
+  <h3>12.4 Silence Removal Settings</h3>
+  <p>
+    This page controls the FFmpeg silence-removal filter. In basic use, you only need threshold and minimum
+    duration. Advanced controls expose full filter parameters for more precise trimming behavior.
+  </p>
+  <p>
+    If speech sounds too choppy, reduce aggressiveness by adjusting threshold and duration before touching advanced
+    controls.
+  </p>
+
+  <h3>12.5 Recording Settings</h3>
+  <p>
+    Recording settings define input channel layout (mono/stereo), bitrate preset, output format (WAV/MP3), and the
+    target recordings folder. Most users only change format and folder, but bitrate presets are useful when you need
+    smaller files for long recordings.
+  </p>
+
+  <h3>12.6 YouTube Settings</h3>
+  <p>
+    YouTube settings decide how links are handled and how components are updated. Mixed-link behavior is especially
+    important because it controls what happens when one URL contains both a video ID and playlist ID.
+  </p>
+  <p>
+    The yt-dlp startup-check option compares local and remote versions and triggers the same update flow used by the
+    manual update command when a newer version is detected.
+  </p>
+
+  <h3>12.7 Keyboard Shortcuts and Global Shortcuts</h3>
+  <p>
+    These two pages are for custom bindings. Keyboard Shortcuts affects focused app controls. Global shortcuts affect
+    actions while the app runs in background. Conflicts are blocked inside each scope, and defaults can be restored
+    from the same page.
+  </p>
+
+  <h2 id="shortcut-configuration">Configuring Shortcuts</h2>
+  <p>
+    For local shortcuts, open settings with <code>Ctrl+P</code>, select <code>Keyboard Shortcuts</code>, pick an action,
+    click edit, then press the new combination. For global bindings, follow the same process in
+    <code>Global shortcuts</code>.
+  </p>
+  <p>
+    If you choose a key combination that is already assigned to another action in the same scope, the app
+    shows a conflict message and keeps the original assignment. You can use "Reset to Defaults" at any time.
+  </p>
+
+  <hr>
+
+  <h2 id="shortcuts-reference">Local Shortcuts Reference</h2>
+
+  <h3>Playback and Navigation</h3>
+  <ul>
+    <li><code>Space</code> or <code>Enter</code>: Play or pause the current file.</li>
+    <li><code>Tab</code> or <code>Page Down</code>: Move to the next file in the playlist.</li>
+    <li><code>Shift+Tab</code> or <code>Page Up</code>: Move to the previous file in the playlist.</li>
+    <li><code>Ctrl+Home</code>: Jump to the first file in the playlist.</li>
+    <li><code>Ctrl+End</code>: Jump to the last file in the playlist.</li>
+    <li><code>Ctrl+G</code>: Open the Go to File dialog.</li>
+    <li><code>Ctrl+Shift+G</code>: Open the Go to Time dialog.</li>
+  </ul>
+
+  <h3>Seek and Position</h3>
+  <ul>
+    <li><code>Left</code>: Seek backward using the current movement value.</li>
+    <li><code>Right</code>: Seek forward using the current movement value.</li>
+    <li><code>Ctrl+Left</code>: Seek backward with 2x movement.</li>
+    <li><code>Ctrl+Right</code>: Seek forward with 2x movement.</li>
+    <li><code>Ctrl+Shift+Left</code>: Seek backward with 4x movement.</li>
+    <li><code>Ctrl+Shift+Right</code>: Seek forward with 4x movement.</li>
+    <li><code>Shift+Left</code>: Seek backward with 8x movement.</li>
+    <li><code>Shift+Right</code>: Seek forward with 8x movement.</li>
+    <li><code>Home</code>: Jump to the beginning of the current file.</li>
+    <li><code>End</code>: Jump to the end of the current file.</li>
+    <li><code>Shift+1</code> to <code>Shift+0</code>: Apply built-in seek-step presets.</li>
+    <li><code>Shift+-</code>: Use the custom seek value from Audio settings.</li>
+    <li><code>Ctrl+1</code> to <code>Ctrl+0</code>: Jump to 10% through 100% of the file.</li>
+    <li><code>Ctrl+Shift+1</code> to <code>Ctrl+Shift+0</code>: Jump to 15% through 100% offset positions.</li>
+  </ul>
+
+  <h3>Volume and Speed</h3>
+  <ul>
+    <li><code>Up</code>: Increase volume.</li>
+    <li><code>Down</code>: Decrease volume.</li>
+    <li><code>Shift+Up</code>: Set volume to maximum level.</li>
+    <li><code>Shift+Down</code>: Set volume to minimum level.</li>
+    <li><code>V</code>: Announce the current volume.</li>
+    <li><code>Ctrl+Up</code>: Increase playback speed.</li>
+    <li><code>Ctrl+Down</code>: Decrease playback speed.</li>
+    <li><code>Alt+Y</code>: Reset playback speed to normal (1x).</li>
+    <li><code>S</code>: Announce the current playback speed.</li>
+  </ul>
+
+  <h3>File and Edit</h3>
+  <ul>
+    <li><code>Ctrl+O</code>: Open file dialog.</li>
+    <li><code>Ctrl+Shift+O</code>: Open folder dialog.</li>
+    <li><code>Ctrl+L</code>: Open link dialog.</li>
+    <li><code>Ctrl+F</code>: Open containing folder for current local file.</li>
+    <li><code>Alt+Enter</code>: Open Windows file properties for current local file.</li>
+    <li><code>F2</code>: Open the Opened Files playlist dialog.</li>
+    <li><code>Ctrl+W</code>: Close the current file.</li>
+    <li><code>Ctrl+Shift+W</code>: Close all loaded files.</li>
+    <li><code>Shift+F2</code>: Rename current local file.</li>
+    <li><code>Shift+Delete</code>: Delete current local file.</li>
+    <li><code>Ctrl+Shift+C</code>: Copy current file for paste/file operations.</li>
+    <li><code>Ctrl+V</code>: Paste files or links from clipboard.</li>
+    <li><code>Ctrl+K</code>: Mark the current file.</li>
+    <li><code>Ctrl+A</code>: Mark all files in the playlist.</li>
+    <li><code>Ctrl+Shift+K</code>: Clear all marked files.</li>
+    <li><code>K</code>: Announce how many files are marked.</li>
+  </ul>
+
+  <h3>Bookmarks, Favorites, and YouTube</h3>
+  <ul>
+    <li><code>Shift+M</code>: Add a bookmark at the current playback position.</li>
+    <li><code>Ctrl+Shift+M</code>: Open bookmark manager for the current file.</li>
+    <li><code>Alt+1</code> to <code>Alt+0</code>: Jump to bookmark slot 1 through 10.</li>
+    <li><code>Ctrl+Shift+F</code>: Open Favorite Videos dialog.</li>
+    <li><code>Ctrl+Shift+Y</code>: Open YouTube link dialog.</li>
+    <li><code>Ctrl+Y</code>: Open YouTube search dialog.</li>
+    <li><code>Ctrl+D</code>: Start download for current YouTube video context.</li>
+    <li><code>Alt+D</code>: Open description for current YouTube video context.</li>
+  </ul>
+
+  <h3>Utilities and Recording</h3>
+  <ul>
+    <li><code>[</code>: Set A-B loop start point (A).</li>
+    <li><code>]</code>: Set A-B loop end point (B).</li>
+    <li><code>Backspace</code>: Clear A-B loop selection.</li>
+    <li><code>Ctrl+Z</code>: Toggle shuffle mode on or off.</li>
+    <li><code>Ctrl+R</code>: Toggle repeat-current-file mode on or off.</li>
+    <li><code>Ctrl+M</code>: Toggle silence-removal filter on or off.</li>
+    <li><code>E</code>: Announce elapsed playback time.</li>
+    <li><code>R</code>: Announce remaining playback time.</li>
+    <li><code>T</code>: Announce total file duration.</li>
+    <li><code>P</code>: Announce current playback percentage.</li>
+    <li><code>F</code>: Announce current file information.</li>
+    <li><code>Ctrl+Shift+A</code>: Open sound cards dialog.</li>
+    <li><code>Ctrl+Shift+T</code>: Run speaker test.</li>
+    <li><code>Ctrl+Shift+V</code>: Toggle verbosity mode.</li>
+    <li><code>F9</code>: Start recording.</li>
+    <li><code>F7</code>: Pause or resume recording.</li>
+    <li><code>F8</code>: Stop recording.</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="data-backup-restore">Data, Backup, and Restore</h2>
+  <p>
+    The app keeps feature data in separate files under the same settings directory. The main settings file
+    is <code>settings.ini</code>. Bookmarks are saved in <code>bookmarks.json</code>, favorites in
+    <code>favorites.json</code>, and per-file playback positions in <code>positions.json</code>.
+  </p>
+  <p>
+    Backup and restore page provides import/export for settings and bookmarks, plus settings reset and
+    quick access to the settings folder.
+  </p>
+
+  <h2 id="troubleshooting">Troubleshooting</h2>
+  <p>
+    If output is wrong, run speaker test with <code>Ctrl+Shift+T</code> or from <code>File &gt; Test speakers</code>,
+    then check sound cards selection. If go-to-time fails, verify selected time is inside current duration.
+    If bookmarks are disabled, make sure current source is a local file, not a URL/YouTube stream.
+  </p>
+  <p>
+    If per-file position does not restore as expected, confirm "Save current position for each file" is enabled.
+    If settings are not preserved between launches, confirm "Save settings on close" is enabled in General settings.
+  </p>
+  <p>
+    For YouTube failures, update components from Help updates submenu or YouTube settings page. For global
+    shortcut issues, rebind to another combination to avoid conflicts with Windows or other apps.
+  </p>
+
+  <h2 id="global-shortcuts">Global Shortcuts</h2>
+  <p>
+    Global shortcuts work while the app is running even when its window is not focused. If one of these shortcuts
+    does not trigger, the most common reason is conflict with another app or a system-level shortcut.
+  </p>
+  <ul>
+    <li><code>Alt+Win+Space</code>: Play or pause the current file globally.</li>
+    <li><code>Alt+Win+Left</code>: Seek backward globally.</li>
+    <li><code>Alt+Win+Right</code>: Seek forward globally.</li>
+    <li><code>Alt+Win+Up</code>: Increase volume globally.</li>
+    <li><code>Alt+Win+Down</code>: Decrease volume globally.</li>
+    <li><code>Alt+Win+Page Down</code>: Move to next track globally.</li>
+    <li><code>Alt+Win+Page Up</code>: Move to previous track globally.</li>
+    <li><code>Alt+Win+F9</code>: Start recording globally.</li>
+    <li><code>Alt+Win+F7</code>: Pause or resume recording globally.</li>
+    <li><code>Alt+Win+F8</code>: Stop recording globally.</li>
+  </ul>
+
+  <hr>
+
+  <h2 id="contact-us">Contact Us</h2>
+  <p>
+    If you need help, want to report a bug, or want to suggest improvements, use one of these channels:
+  </p>
+  <ul>
+    <li>Website: <a href="https://github.com/kamalyaser31/simple-player">https://github.com/kamalyaser31/simple-player</a></li>
+    <li>Email: <a href="mailto:kamalyaser31@gmail.com">kamalyaser31@gmail.com</a></li>
+    <li>Telegram: <a href="https://t.me/kamalyaser31">https://t.me/kamalyaser31</a></li>
+    <li>Issues: <a href="https://github.com/kamalyaser31/simple-player/issues">https://github.com/kamalyaser31/simple-player/issues</a></li>
+  </ul>
+
+  <p class="muted">Simple Audio Player User Guide - Version 1.0.1</p>
+</body>
+</html>

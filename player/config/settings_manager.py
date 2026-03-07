@@ -111,6 +111,7 @@ class SettingsManager:
                 "video_quality": "medium",
                 "mixed_link_mode": "ask",
                 "yt_dlp_channel": YT_DLP_DEFAULT_CHANNEL,
+                "check_yt_updates_startup": "false",
             },
             "recording": {
                 "channels": "stereo",
@@ -344,6 +345,17 @@ class SettingsManager:
         if value not in YT_DLP_UPDATE_CHANNELS:
             value = YT_DLP_DEFAULT_CHANNEL
         self._config["youtube"]["yt_dlp_channel"] = value
+
+    def get_check_yt_updates_startup(self):
+        try:
+            return self._config.getboolean("youtube", "check_yt_updates_startup")
+        except (ValueError, configparser.Error):
+            return False
+
+    def set_check_yt_updates_startup(self, enabled):
+        if "youtube" not in self._config:
+            self._config["youtube"] = {}
+        self._config["youtube"]["check_yt_updates_startup"] = "true" if enabled else "false"
 
     def get_rec_channels(self):
         value = str(

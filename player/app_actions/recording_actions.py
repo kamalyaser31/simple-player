@@ -1,3 +1,5 @@
+import os
+
 import wx
 from gettext import gettext as _
 
@@ -36,6 +38,22 @@ def stop_rec(ctx, rec):
     res = rec.stop(beep=True)
     if not res.get("ok"):
         _error(ctx.frame, _("Could not stop recording.\n{error}"), res.get("error"))
+
+
+def open_rec_folder(ctx):
+    folder = str(ctx.settings.get_rec_folder() or "").strip()
+    if not folder:
+        _error(ctx.frame, _("Could not open recordings folder.\n{error}"), _("Folder is not set."))
+        return
+    try:
+        os.makedirs(folder, exist_ok=True)
+    except OSError as exc:
+        _error(ctx.frame, _("Could not open recordings folder.\n{error}"), str(exc))
+        return
+    try:
+        os.startfile(folder)
+    except Exception as exc:
+        _error(ctx.frame, _("Could not open recordings folder.\n{error}"), str(exc))
 
 
 def _build_opts(settings):

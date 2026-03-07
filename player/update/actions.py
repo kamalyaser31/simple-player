@@ -18,9 +18,10 @@ _BG_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=1)
 def check_updates_on_startup(ctx):
     if ctx.frame is None:
         return True
-    if not ctx.settings.get_check_app_updates():
-        return True
-    _check_updates_bg(ctx)
+    if ctx.settings.get_check_app_updates():
+        _check_updates_bg(ctx)
+    if ctx.settings.get_check_yt_updates_startup():
+        _check_yt_updates_bg(ctx)
     return True
 
 
@@ -181,6 +182,75 @@ def _on_bg_update_info(ctx, info):
     if not frame.IsShown():
         return
     _process_update_info(ctx, info, show_latest=False)
+
+
+def _check_yt_updates_bg(ctx):
+    frame = ctx.frame
+    if frame is None:
+        return
+    channel = str(ctx.settings.get_yt_dlp_channel() or "").strip().lower()
+
+    def worker():
+        try:
+            yt_components.add_to_path()
+            local_ver = str(yt_components.yt_local_version() or "").strip()
+            if not local_ver:
+                return None
+            remote_ver, used_channel = yt_components.yt_remote_version(channel=channel)
+            remote_ver = str(remote_ver or "").strip()
+            if not remote_ver:
+                return None
+            return {
+                "local": local_ver,
+                "remote": remote_ver,
+                "channel": str(used_channel or channel or "stable"),
+            }
+        except Exception:
+            return None
+
+    future = _BG_POOL.submit(worker)
+
+    def done(_future):
+        try:
+            info = _future.result()
+        except Exception:
+            info = None
+        if not info:
+            return
+        if not service.is_newer(info.get("remote"), info.get("local")):
+            return
+        wx.CallAfter(_on_bg_yt_update_info, ctx, info)
+
+    future.add_done_callback(done)
+
+
+def _on_bg_yt_update_info(ctx, info):
+    frame = ctx.frame
+    if frame is None:
+        return
+    if not frame.IsShown():
+        return
+    local_ver = str(info.get("local") or "").strip() or _("unknown")
+    remote_ver = str(info.get("remote") or "").strip() or _("unknown")
+    channel = str(info.get("channel") or "stable").strip() or "stable"
+    message = _(
+        "A newer yt-dlp version is available on '{ch}' channel.\n"
+        "Current version: {cur}\n"
+        "Latest version: {new}\n\n"
+        "Do you want to update now?"
+    ).format(
+        ch=channel,
+        cur=local_ver,
+        new=remote_ver,
+    )
+    answer = wx.MessageBox(
+        message,
+        _("yt-dlp update"),
+        wx.YES_NO | wx.ICON_QUESTION,
+        parent=frame,
+    )
+    if answer == wx.YES:
+        update_youtube_components_now(ctx)
 
 
 def _fetch_info(parent):

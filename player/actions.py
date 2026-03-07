@@ -39,6 +39,7 @@ OPEN_FILE = "open_file"
 OPEN_LINK = "open_link"
 OPEN_YOUTUBE_LINK = "open_youtube_link"
 OPEN_YOUTUBE_SEARCH = "open_youtube_search"
+OPEN_FAVORITES = "open_favorites"
 OPEN_FOLDER = "open_folder"
 OPEN_CONTAINING_FOLDER = "open_containing_folder"
 OPEN_FILE_LIST = "open_file_list"
@@ -103,6 +104,7 @@ MANAGE_BOOKMARKS = "manage_bookmarks"
 REC_START = "recording_start"
 REC_PAUSE = "recording_pause_resume"
 REC_STOP = "recording_stop"
+OPEN_REC_FOLDER = "open_recordings_folder"
 
 
 ACTIONS = {
@@ -170,6 +172,11 @@ ACTIONS = {
         OPEN_YOUTUBE_SEARCH,
         "Search YouTube",
         Shortcut("y", frozenset({"ctrl"})),
+    ),
+    OPEN_FAVORITES: Action(
+        OPEN_FAVORITES,
+        "Favorite Videos",
+        Shortcut("f", frozenset({"ctrl", "shift"})),
     ),
     VIDEO_DOWNLOAD: Action(
         VIDEO_DOWNLOAD,
@@ -255,6 +262,11 @@ ACTIONS = {
         REC_STOP,
         "Stop Recording",
         Shortcut("f8"),
+    ),
+    OPEN_REC_FOLDER: Action(
+        OPEN_REC_FOLDER,
+        "Open Recordings Folder",
+        None,
     ),
     OPEN_FOLDER: Action(
         OPEN_FOLDER, "Open Folder", Shortcut("o", frozenset({"ctrl", "shift"}))
@@ -398,6 +410,21 @@ GLOBAL_SHORTCUT_ACTIONS = {
         PREVIOUS_TRACK,
         "Previous Track",
         Shortcut("page_up", frozenset({"win", "alt"})),
+    ),
+    REC_START: Action(
+        REC_START,
+        "Start Recording",
+        Shortcut("f9", frozenset({"win", "alt"})),
+    ),
+    REC_PAUSE: Action(
+        REC_PAUSE,
+        "Pause/Resume Recording",
+        Shortcut("f7", frozenset({"win", "alt"})),
+    ),
+    REC_STOP: Action(
+        REC_STOP,
+        "Stop Recording",
+        Shortcut("f8", frozenset({"win", "alt"})),
     ),
 }
 

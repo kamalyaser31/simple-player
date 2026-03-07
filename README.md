@@ -1,195 +1,113 @@
 # Simple Audio Player
 
-A feature-rich, accessible Windows desktop audio and media player built with Python and wxPython. Designed with keyboard accessibility and screen reader support in mind.
+Simple Audio Player is a Windows desktop media player built with Python and wxPython.  
+The project focuses on practical daily playback, strong keyboard support, and good screen reader compatibility.
 
-**Version:** 1.0.1  
-**Author:** Kamal Yaser  
-**Repository:** [GitHub](https://github.com/kamalyaser31/simple-player)
-
----
+It is designed for users who want a straightforward player that still includes advanced tools when needed: playlist and file navigation, YouTube workflows, bookmarks and favorites, recording, and configurable audio behavior.
 
 ## Features
 
-- **Wide Format Support:** Play all common audio and video files.
-- **YouTube Integration:** Search, play, and download YouTube videos and playlists.
-- **Advanced Audio Processing:** Includes silence removal, audio normalization, and mono conversion.
-- **Full Keyboard Accessibility:** Control everything with your keyboard.
-- **Screen Reader Support:** Works with JAWS, NVDA, and other screen readers.
-- **Customizable:** Change keyboard shortcuts, language (English/Arabic), and other settings.
+Simple Audio Player supports common audio and video formats and includes:
 
----
+- Keyboard-first control with customizable shortcuts
+- Accessible UI and screen reader friendly behavior
+- File/folder playback and playlist navigation
+- Bookmarks and favorite links (video, playlist, combined YouTube links, and generic streams)
+- YouTube search, playback, and download workflows (after components are available)
+- Recording with configurable format, bitrate, and output folder
+- Audio controls such as normalization, mono downmix, speed control, and silence removal
+- Backup/restore support for settings and bookmark data
 
-## System Requirements
+The app is Windows-focused and integrates with system behaviors such as file association actions and media session controls.
 
-- **Operating System:** Windows 7 SP1 or later (Windows 10+ recommended)
-- **RAM:** Minimum 256 MB
-- **Disk Space:** 200 MB for installation
-- **Audio Device:** A working audio output device
+## Download
 
----
+Prebuilt versions are available on the project releases page:
 
-## Supported Formats
+<https://github.com/kamalyaser31/simple-player/releases>
 
-- **Audio:** AAC, AIFF, ALAC, FLAC, M4A, MP3, OGG, OPUS, WAV, WMA
-- **Video:** 3GP, AVI, FLV, M2TS, M4V, MKV, MOV, MPEG, MP4, MPG, TS, WebM, WMV
+You can choose either:
 
----
+- Installer build (`SimpleAudioPlayerSetup.exe`) for regular installation
+- Portable ZIP build if you want to run it without installing
 
-## Installation
+If you only want to use the app, downloading from releases is the easiest path.
 
-### Windows Installer (Recommended)
+## Build From Source
 
-1. Download the latest `SimpleAudioPlayerSetup.exe` from the [Releases page](https://github.com/kamalyaser31/simple-player/releases).
-2. Run the installer and follow the on-screen instructions.
+### Requirements
 
-### Portable Version
+For local development/build:
 
-1. Download the portable ZIP file from the [Releases page](https://github.com/kamalyaser31/simple-player/releases).
-2. Extract the ZIP file to any folder.
-3. Run `SimpleAudioPlayer.exe`.
-
----
-
-## Usage
-
-For detailed instructions, please refer to the [Full User Guide](player/docs/en/userguide.html).
-
-### Basic Playback
-
-- **Open a file:** Go to `File > Open File` or press `Ctrl+O`.
-- **Play/Pause:** Press `Space`.
-- **Navigate:** Use the `Right` and `Left` arrow keys to seek.
-- **Volume:** Use the `Up` and `Down` arrow keys to adjust the volume.
-
----
-
-## Development
-
-If you want to contribute to the project, you can build it from source.
-
-### Project Structure
-
-```
-simple-player/
-├── player/                    # Main application directory
-│   ├── app.py                # Application entry point
-│   ├── SimpleAudioPlayer.py   # GUI entry point
-│   ├── requirements.txt       # Python dependencies
-│   ├── SimpleAudioPlayer.spec # PyInstaller configuration
-│   ├── simple_audio_player.iss # Inno Setup configuration
-│   │
-│   ├── core/                 # Core functionality
-│   │   ├── controller.py     # Main application controller
-│   │   ├── mpv_engine.py     # Media playback engine
-│   │   ├── keyboard_handler.py # Global keyboard input
-│   │   ├── media_library.py  # File scanning/indexing
-│   │   └── player/           # Player implementation
-│   │
-│   ├── config/               # Configuration management
-│   │   ├── constants.py      # Application constants
-│   │   ├── settings_manager.py # Settings persistence
-│   │   ├── shortcuts.py      # Keyboard shortcuts
-│   │   ├── localization.py   # i18n support
-│   │   └── file_associations.py # Windows file registration
-│   │
-│   ├── ui/                   # User interface
-│   │   ├── main_frame.py     # Main window
-│   │   ├── mainwin/          # Main window components
-│   │   ├── dialogs.py        # UI dialogs
-│   │   ├── settings_dialog.py # Settings window
-│   │   └── prefs/            # Settings panels
-│   │
-│   ├── app_actions/          # Application actions
-│   │   ├── playback_actions.py # Playback control
-│   │   ├── file_actions.py   # File operations
-│   │   ├── device_actions.py # Audio device management
-│   │   └── help_actions.py   # Help/documentation
-│   │
-│   ├── youtube/              # YouTube integration
-│   │   ├── search.py         # Search functionality
-│   │   ├── download.py       # Download functionality
-│   │   ├── flow.py           # YouTube workflow
-│   │   └── components.py     # Component management
-│   │
-│   ├── playlist/             # Playlist management
-│   │   ├── state.py          # Playlist state
-│   │   └── state/            # Playlist state modules
-│   │
-│   ├── helpers/              # Utility functions
-│   │   ├── utils.py          # Common utilities
-│   │   ├── file_helpers.py   # File operations
-│   │   └── clipboard_utils.py # Clipboard handling
-│   │
-│   ├── locale/               # Localization files
-│   │   └── ar/, en/          # Language directories
-│   │
-│   ├── docs/                 # Documentation
-│   │   └── en/, ar/          # Language docs
-│   │
-│   └── sounds/               # Audio resources
-│       └── speaker_test.wav  # Test sound file
-```
-
-### Dependencies
-
-| Package | Purpose |
-|---------|---------|
-| `wxPython` | GUI framework |
-| `python-libmpv` | Media playback |
-| `pynput` | Global keyboard handling |
-| `appGuard` | Single instance enforcement |
-| `accessible_output3` | Screen reader integration |
-| `py-yt-search` | YouTube search |
-| `winsdk` | Windows SDK integration |
-
-### Building from Source
-
-#### Prerequisites
-- Python 3.7 or higher
+- Windows
+- Python 3.11 or newer recommended
 - Git
+- A working C/C++ build environment may be needed for some Python packages depending on your setup
 
-#### Steps
+### Clone and run
 
-1. **Clone the Repository**
-   ```powershell
-   git clone https://github.com/kamalyaser31/simple-player.git
-   cd simple-player/player
-   ```
+```powershell
+git clone https://github.com/kamalyaser31/simple-player.git
+cd simple-player\player
+```
 
-2. **Install Dependencies**
-   ```powershell
-   pip install -r requirements.txt
-   ```
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+py SimpleAudioPlayer.py
+```
 
-3. **Run the Application**
-   ```powershell
-   python SimpleAudioPlayer.py
-   ```
----
+### Build executable
+
+```powershell
+py -m PyInstaller SimpleAudioPlayer.spec
+```
+
+The generated executable is placed in the standard PyInstaller output directory (`dist`).
+
+### Build installer
+
+The repository includes an Inno Setup script:
+
+`player/simple_audio_player.iss`
+
+Use Inno Setup to compile this script when you need an installer package.
+
+## Project Notes
+
+YouTube support depends on runtime components (for example `yt-dlp`) that the app can manage through its own update/download flow.  
+For local file playback and normal player features, no special YouTube setup is required.
+
+Application settings are stored in the user profile config path. Feature-specific data (such as bookmarks, favorites, and position data) is stored in separate JSON files in the same settings directory.
+
+## Contributing
+
+Contributions are welcome.
+
+If you want to contribute, please open an issue first for bugs or feature ideas, especially for behavior changes. This keeps implementation direction clear before code review.
+
+For pull requests, prefer focused changes with clear scope. Include:
+
+- What changed
+- Why it changed
+- How you tested it (manual steps and/or automated checks)
+
+Please avoid unrelated refactors in the same pull request unless they are required for the feature.
+
+## Contact Us
+
+If you have any questions or ideas, you can contact us through the following ways:
+
+- Email: `kamalyaser31@gmail.com`
+- Telegram: <https://t.me/kamalyaser31>
+
+For issues and feature request, please go to:
+
+<https://github.com/kamalyaser31/simple-player/issues>
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the **GNU General Public License, version 2, or (at your option) any later version** (GPL-2.0-or-later).
 
----
-
-## Support
-
-If you need help, have suggestions, or want to report a bug, please use one of the following channels:
-
-- **Report Issues:** [GitHub Issues](https://github.com/kamalyaser31/simple-player/issues)
-- **Email Support:** kamalyaser31@gmail.com
-- **Telegram:** [@kamalyaser31](https://t.me/kamalyaser31)
-
----
-
-## Frequently Asked Questions
-
-**Q: Is Simple Audio Player free?**  
-A: Yes, it is free and open-source.
-
-**Q: Can I use it on Mac or Linux?**  
-A: Currently, it is Windows-only.
-
-**Q: Can I customize keyboard shortcuts?**  
-A: Yes, you can customize all shortcuts in `Settings > Keyboard Shortcuts`.
+See [LICENSE](LICENSE) for the full license text.

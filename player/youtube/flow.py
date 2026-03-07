@@ -54,7 +54,7 @@ def open_yt(ctx):
     open_yt_link(ctx, link)
 
 
-def open_yt_link(ctx, link):
+def open_yt_link(ctx, link, forced_kind=""):
     if ctx.frame is None:
         return False
     if not has_all():
@@ -70,7 +70,26 @@ def open_yt_link(ctx, link):
         return False
 
     kind = str(info.kind or "")
-    if bool(info.has_video) and bool(info.has_playlist):
+    pref = str(forced_kind or "").strip().lower()
+    if pref == "video":
+        if not bool(info.has_video):
+            _show_error(
+                ctx,
+                _("This link does not include a YouTube video."),
+                _("Invalid YouTube link"),
+            )
+            return False
+        kind = "video"
+    elif pref == "playlist":
+        if not bool(info.has_playlist):
+            _show_error(
+                ctx,
+                _("This link does not include a YouTube playlist."),
+                _("Invalid YouTube link"),
+            )
+            return False
+        kind = "playlist"
+    elif bool(info.has_video) and bool(info.has_playlist):
         mode = str(ctx.settings.get_yt_mixed_link_mode() or "ask").strip().lower()
         if mode == "playlist":
             kind = "playlist"

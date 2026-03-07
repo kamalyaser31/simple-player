@@ -36,6 +36,13 @@ class YouTubeSettingsPanel(wx.Panel):
         self._channel_labels = [text.title() for text in self._channel_values]
         self._channel_choice = wx.Choice(self, choices=self._channel_labels)
         self._set_channel_selection(self._settings.get_yt_dlp_channel())
+        self._check_updates_startup = wx.CheckBox(
+            self,
+            label=_("Check for yt-dlp updates on startup"),
+        )
+        self._check_updates_startup.SetValue(
+            self._settings.get_check_yt_updates_startup()
+        )
         self._download_button = wx.Button(self, label=_("Download YouTube components"))
         self._download_button.Bind(wx.EVT_BUTTON, self._on_download)
 
@@ -56,6 +63,12 @@ class YouTubeSettingsPanel(wx.Panel):
         channel_sizer.Add(self._channel_label, 0, wx.BOTTOM, 4)
         channel_sizer.Add(self._channel_choice, 0, wx.EXPAND)
         sizer.Add(channel_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(
+            self._check_updates_startup,
+            0,
+            wx.LEFT | wx.RIGHT | wx.BOTTOM,
+            8,
+        )
         sizer.Add(self._download_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
         self.SetSizer(sizer)
@@ -77,12 +90,18 @@ class YouTubeSettingsPanel(wx.Panel):
         if cidx == wx.NOT_FOUND:
             cidx = 0
         self._settings.set_yt_dlp_channel(self._channel_values[cidx])
+        self._settings.set_check_yt_updates_startup(
+            self._check_updates_startup.GetValue()
+        )
 
     def refresh_from_settings(self):
         self._audio_only.SetValue(self._settings.get_yt_audio_only())
         self._set_quality_selection(self._settings.get_yt_video_quality())
         self._set_mixed_selection(self._settings.get_yt_mixed_link_mode())
         self._set_channel_selection(self._settings.get_yt_dlp_channel())
+        self._check_updates_startup.SetValue(
+            self._settings.get_check_yt_updates_startup()
+        )
 
     def get_context_help(self, focused):
         control = focused
@@ -108,6 +127,12 @@ class YouTubeSettingsPanel(wx.Panel):
                     "yt-dlp update channel. Stable is recommended. "
                     "Nightly and Master can include newer but less-tested builds."
                 )
+            if control is self._check_updates_startup:
+                return _(
+                    "Check for yt-dlp updates on startup. "
+                    "When enabled, the app checks local and latest channel versions at launch "
+                    "and prompts you to run the standard yt-dlp update when a newer version is available."
+                )
             if control is self._download_button:
                 return _(
                     "Download YouTube components installs missing YouTube libraries "
@@ -117,7 +142,7 @@ class YouTubeSettingsPanel(wx.Panel):
                 break
             control = control.GetParent()
         return _(
-            "YouTube settings page. Configure playback mode, quality, mixed-link behavior and yt-dlp update channel."
+            "YouTube settings page. Configure playback mode, quality, mixed-link behavior, yt-dlp update channel, and startup update checks."
         )
 
     def _set_quality_selection(self, value):

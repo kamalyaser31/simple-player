@@ -96,6 +96,26 @@ def latest_tag(repo):
     return data.get("tag_name")
 
 
+def yt_local_version(timeout=30):
+    if not has_yt():
+        return ""
+    cancel = CancelFlag()
+    try:
+        text = _run_yt_cmd(cancel, ["--version"], timeout=timeout)
+    except Exception:
+        return ""
+    return _clean_version(text)
+
+
+def yt_remote_version(channel=YT_DLP_DEFAULT_CHANNEL):
+    chan = _norm_channel(channel)
+    repo = YT_CHANNEL_REPOS.get(chan, YT_CHANNEL_REPOS[YT_DLP_DEFAULT_CHANNEL])
+    tag = latest_tag(repo)
+    if not tag:
+        return "", chan
+    return _clean_version(tag), chan
+
+
 def plan(channel=YT_DLP_DEFAULT_CHANNEL):
     chan = _norm_channel(channel)
     yt_repo = YT_CHANNEL_REPOS.get(chan, YT_CHANNEL_REPOS[YT_DLP_DEFAULT_CHANNEL])

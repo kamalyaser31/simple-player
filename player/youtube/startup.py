@@ -42,7 +42,7 @@ def install_components_now(parent, settings, channel=None):
     if has_all():
         wx.MessageBox(
             _("YouTube components are already installed."),
-            _("YouTube"),
+            _("Info"),
             wx.OK | wx.ICON_INFORMATION,
             parent=parent,
         )
@@ -57,7 +57,7 @@ def install_components_now(parent, settings, channel=None):
 
     wx.MessageBox(
         _("YouTube components were downloaded successfully."),
-        _("YouTube"),
+        _("Success"),
         wx.OK | wx.ICON_INFORMATION,
         parent=parent,
     )
@@ -155,4 +155,4 @@ def _show_install_error(parent, err):
     message = _("Could not install YouTube components.")
     if err:
         message = f"{message}\n{err}"
-    wx.MessageBox(message, _("YouTube"), wx.OK | wx.ICON_ERROR, parent=parent)
+    wx.MessageBox(message, _("Error"), wx.OK | wx.ICON_ERROR, parent=parent)

@@ -96,6 +96,11 @@ class KeyboardHandler:
 def _key_token(key):
     if key in _SPECIAL_KEYS:
         return _SPECIAL_KEYS[key]
+    name = getattr(key, "name", "")
+    if name:
+        text = str(name).lower()
+        if text.startswith("f") and text[1:].isdigit():
+            return text
     if isinstance(key, keyboard.KeyCode) and key.char:
         return key.char.lower()
     return None
