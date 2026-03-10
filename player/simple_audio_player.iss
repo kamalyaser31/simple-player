@@ -2,7 +2,7 @@
 ; Build with: ISCC simple_audio_player.iss
 
 #define MyAppName "Simple Audio Player"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.1.0"
 #define MyAppPublisher "Kamal Yaser"
 #define MyAppURL "https://github.com/kamalyaser31/simple-player"
 #define MyAppExeName "SimpleAudioPlayer.exe"
@@ -22,7 +22,7 @@ DefaultDirName={localappdata}\Programs\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=no
 PrivilegesRequired=lowest
-PrivilegesRequiredOverridesAllowed=none
+
 OutputDir=dist
 OutputBaseFilename=SimpleAudioPlayerSetup
 Compression=lzma2/ultra64

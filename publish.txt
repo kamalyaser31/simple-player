@@ -36,10 +36,7 @@ Your app checks the `info.json` file on the `main` branch to see if an update ex
 {
   "version": "1.0.1",
   "changes": [
-    "Fixed YouTube playlist skipping bugs.",
-    "Added Arabic translation.",
-    "Improved audio silence removal."
-  ]
+]
 }
 
 ```
@@ -73,5 +70,4 @@ Now, create the release and upload the files you built in Step 2.
 To verify everything works, run an older version of your app (e.g., `1.0.0`) with **Check for app updates on startup** enabled in Preferences.
 
 When the app launches, it will read `info.json`, detect version `1.0.1`, show you the popup with your changes, and download the correct file from the GitHub release you just published.
-
-Would you like the exact PyInstaller command you should use to bundle your Python code into the executable before zipping it?
+don't forget to edit the setup script

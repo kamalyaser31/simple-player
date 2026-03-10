@@ -1,5 +1,5 @@
 APP_NAME = "Simple Audio Player"
-APP_VERSION = "1.0.1"
+APP_VERSION = "1.1.0"
 DOMAIN = "SimpleAudioPlayer"
 
 CONFIG_FILENAME = "settings.ini"
@@ -9,7 +9,7 @@ VOLUME_MAX = 1000
 VOLUME_STEP = 5
 VOLUME_MIN_SHORTCUT = 5
 SPEED_MIN = 0.5
-SPEED_MAX = 6.0
+SPEED_MAX = 4.0
 SPEED_STEP = 0.1
 
 APP_UPDATE_REPO_OWNER = "kamalyaser31"
