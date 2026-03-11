@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-08 13:22+0200\n"
-"PO-Revision-Date: 2026-03-11 12:38+0100\n"
+"POT-Creation-Date: 2026-03-11 22:10+0200\n"
+"PO-Revision-Date: 2026-03-12 00:27+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -209,7 +209,6 @@ msgid "Audio format"
 msgstr "Formát zvuku"
 
 #: ui/prefs/recording.py:17
-#| msgid "Video quality"
 msgid "Audio quality (kbps)"
 msgstr "Kvalita audia (kbps)"
 
@@ -249,7 +248,7 @@ msgstr "Režim pro začátečníky"
 msgid "Beginning"
 msgstr "Začátek"
 
-#: ui/prefs/youtube.py:120
+#: ui/prefs/youtube.py:154
 msgid ""
 "Behavior for YouTube links that include both a video ID and a playlist ID. "
 "Ask every time shows a chooser dialog. Play the video opens only the "
@@ -324,7 +323,7 @@ msgstr "Nelze načíst data ze schránky."
 msgid "Channel link is not available."
 msgstr "Odkaz na kanál není dostupný."
 
-#: youtube/flow.py:110
+#: youtube/flow.py:109
 msgid "Channel links are not supported here."
 msgstr "Odkazy na kanály zde nejsou podporovány."
 
@@ -354,7 +353,7 @@ msgstr ""
 msgid "Check for yt-dlp updates on startup"
 msgstr "Při spuštění vyhledávat aktualizace yt-dlp"
 
-#: ui/prefs/youtube.py:132
+#: ui/prefs/youtube.py:166
 msgid ""
 "Check for yt-dlp updates on startup. When enabled, the app checks local and "
 "latest channel versions at launch and prompts you to run the standard yt-dlp "
@@ -512,7 +511,7 @@ msgstr "Nepodařilo se zavřít soubory."
 msgid "Could not close the file."
 msgstr "Soubor se nepodařilo zavřít."
 
-#: youtube/flow.py:287
+#: youtube/flow.py:288
 msgid "Could not complete YouTube search."
 msgstr "Nepodařilo se dokončit vyhledávání na YouTube."
 
@@ -585,7 +584,7 @@ msgstr "Nepodařilo se nainstalovat YouTube komponenty."
 msgid "Could not load playlist info."
 msgstr "Nepodařilo se načíst informace o playlistu."
 
-#: youtube/flow.py:339
+#: youtube/flow.py:340
 msgid "Could not open YouTube stream."
 msgstr "Nepodařilo se otevřít datový stream z YouTube."
 
@@ -649,7 +648,7 @@ msgstr ""
 "Nepodařilo se pozastavit nahrávání.\n"
 "{error}"
 
-#: youtube/flow.py:308
+#: youtube/flow.py:309
 msgid "Could not read YouTube link data."
 msgstr "Nepodařilo se načíst data z odkazu na YouTube."
 
@@ -683,7 +682,7 @@ msgstr ""
 "Nepodařilo se obnovit výchozí nastavení.\n"
 "{error}"
 
-#: youtube/flow.py:407
+#: youtube/flow.py:408
 msgid "Could not resolve YouTube stream."
 msgstr "Nepodařilo se načíst datový stream z YouTube."
 
@@ -856,11 +855,11 @@ msgstr "Šipka dolů"
 msgid "Download"
 msgstr "Stáhnout"
 
-#: ui/prefs/youtube.py:46
+#: ui/prefs/youtube.py:58
 msgid "Download YouTube components"
 msgstr "Stáhnout YouTube komponenty"
 
-#: ui/prefs/youtube.py:138
+#: ui/prefs/youtube.py:184
 msgid ""
 "Download YouTube components installs missing YouTube libraries such as yt-"
 "dlp and Deno."
@@ -1003,8 +1002,8 @@ msgstr "Zadejte hledaný výraz."
 #: app.py:194 app_actions/bookmark_actions.py:98
 #: app_actions/file_actions.py:265 app_actions/file_actions.py:564
 #: app_actions/help_actions.py:63 update/actions.py:89 update/actions.py:135
-#: update/actions.py:141 youtube/flow.py:48 youtube/flow.py:61
-#: youtube/flow.py:339 youtube/flow.py:624 youtube/startup.py:158
+#: update/actions.py:141 youtube/flow.py:47 youtube/flow.py:60
+#: youtube/flow.py:340 youtube/flow.py:625 youtube/startup.py:158
 msgid "Error"
 msgstr "Chyba"
 
@@ -1048,7 +1047,7 @@ msgstr "Oblíbená videa"
 msgid "Favorite videos..."
 msgstr "Oblíbená videa..."
 
-#: youtube/flow.py:264
+#: youtube/flow.py:265
 msgid "Fetching first stream..."
 msgstr "Načítá se první datový stream..."
 
@@ -1245,8 +1244,8 @@ msgstr "Příkaz Info selhal."
 msgid "Information"
 msgstr "Informace"
 
-#: youtube/flow.py:69 youtube/flow.py:79 youtube/flow.py:88 youtube/flow.py:111
-#: youtube/flow.py:131
+#: youtube/flow.py:68 youtube/flow.py:78 youtube/flow.py:87 youtube/flow.py:110
+#: youtube/flow.py:130
 msgid "Invalid YouTube link"
 msgstr "Neplatný odkaz na YouTube"
 
@@ -1262,7 +1261,7 @@ msgstr "Neplatná značka konce."
 msgid "Invalid file number."
 msgstr "Neplatné číslo souboru."
 
-#: app_actions/file_actions.py:255 youtube/flow.py:66
+#: app_actions/file_actions.py:255 youtube/flow.py:65
 msgid "Invalid link"
 msgstr "Neplatný odkaz"
 
@@ -1316,6 +1315,14 @@ msgstr "Klávesové zkratky"
 msgid "Language"
 msgstr "Jazyk"
 
+#: ui/prefs/youtube.py:172
+msgid ""
+"Language code used for YouTube searches. Example: 'en' for English, 'es' for "
+"Spanish."
+msgstr ""
+"Kód jazyka, který se použije při vyhledávání na YouTube. Příklad: 'en' pro "
+"angličtinu, 'es' pro španělštinu."
+
 #: ui/mainwin/menu.py:332
 msgid "Last File"
 msgstr "Poslední soubor"
@@ -1356,11 +1363,11 @@ msgstr "Odkaz zkopírován."
 msgid "Link is required."
 msgstr "Musíte zadat odkaz."
 
-#: youtube/flow.py:301
+#: youtube/flow.py:302
 msgid "Loading YouTube link"
 msgstr "Načítá se odkaz na YouTube"
 
-#: youtube/flow.py:400
+#: youtube/flow.py:401
 msgid "Loading YouTube stream"
 msgstr "Načítá se datový stream z YouTube"
 
@@ -1376,7 +1383,7 @@ msgstr "Načítají se soubory ze složky a podsložek..."
 msgid "Loading more videos..."
 msgstr "Načítají se další videa..."
 
-#: youtube/flow.py:488
+#: youtube/flow.py:489
 msgid "Loading next video..."
 msgstr "Načítá se následující video..."
 
@@ -1510,7 +1517,7 @@ msgstr "Minimální délka tiché pasáže musí být kladné číslo."
 msgid "Minutes"
 msgstr "Minuty"
 
-#: youtube/flow.py:149
+#: youtube/flow.py:148
 msgid "Missing components."
 msgstr "Chybí komponenty."
 
@@ -1658,7 +1665,7 @@ msgstr "Žádný začátek."
 msgid "No videos found."
 msgstr "Žádná videa nenalezena."
 
-#: youtube/flow.py:262
+#: youtube/flow.py:263
 msgid "No videos were found for this search."
 msgstr "Pro tento výraz nebyla nalezena žádná videa."
 
@@ -1683,6 +1690,14 @@ msgstr "Nepodporováno."
 #, python-brace-format
 msgid "Number of files: {count}"
 msgstr "Počet souborů: {count}"
+
+#: ui/prefs/youtube.py:180
+msgid ""
+"Number of videos to prefetch when opening a YouTube playlist or search "
+"result."
+msgstr ""
+"Kolik videí se má přednačíst při otevření YouTube playlistu nebo výsledků "
+"hledání."
 
 #: ui/dialogs.py:73 ui/help_dialogs.py:47
 msgid "OK"
@@ -1909,7 +1924,7 @@ msgstr "Přehrát video"
 msgid "Play videos as audio only"
 msgstr "U videí přehrávat pouze zvukovou stopu"
 
-#: ui/prefs/youtube.py:111
+#: ui/prefs/youtube.py:145
 msgid ""
 "Play videos as audio only. When enabled, YouTube playback prefers audio "
 "streams."
@@ -1965,6 +1980,10 @@ msgstr "Nastavení"
 #: ui/mainwin/menu.py:174
 msgid "Preferences..."
 msgstr "Nastavení..."
+
+#: ui/prefs/youtube.py:46
+msgid "Prefetch count"
+msgstr "Kolik videí přednačíst"
 
 #: playlist/info.py:56 playlist/info.py:61
 msgid "Preparing..."
@@ -2046,6 +2065,14 @@ msgid ""
 msgstr ""
 "Cesta ke složce s nahrávkami. Tlačítkem Procházet vyberte, kam se mají "
 "ukládat nové nahrávky."
+
+#: ui/prefs/youtube.py:176
+msgid ""
+"Region code used for YouTube searches (country/region). Example: 'US', 'GB', "
+"'BR'."
+msgstr ""
+"Kód regionu, který se použije při vyhledávání na YouTube (země/oblast). "
+"Příklad: 'US', 'GB', 'BR'."
 
 #: ui/prefs/general.py:84
 msgid "Register file extensions"
@@ -2211,20 +2238,28 @@ msgstr "Vyhledat na YouTube"
 msgid "Search YouTube..."
 msgstr "Vyhledat na YouTube..."
 
+#: ui/prefs/youtube.py:51
+msgid "Search language code"
+msgstr "Kód jazyka vyhledávání"
+
+#: ui/prefs/youtube.py:54
+msgid "Search region code"
+msgstr "Kód regionu vyhledávání"
+
 #: youtube/ui_utils.py:176
 msgid "Search results"
 msgstr "Výsledky vyhledávání"
 
-#: youtube/flow.py:163
+#: youtube/flow.py:162
 #, python-brace-format
 msgid "Search results: {query}"
 msgstr "Výsledky vyhledávání: {query}"
 
-#: youtube/flow.py:280
+#: youtube/flow.py:281
 msgid "Searching YouTube"
 msgstr "Vyhledávání na YouTube"
 
-#: youtube/flow.py:258
+#: youtube/flow.py:257
 msgid "Searching videos..."
 msgstr "Vyhledávají se videa..."
 
@@ -2556,7 +2591,7 @@ msgid "The link must be a valid YouTube link for this type."
 msgstr "Odkaz tohoto typu musí být platný odkaz na YouTube."
 
 #: app_actions/favorite_actions.py:179 app_actions/file_actions.py:254
-#: youtube/flow.py:66
+#: youtube/flow.py:65
 msgid "The link must start with http or https."
 msgstr "Odkaz musí začínat znaky http nebo https."
 
@@ -2564,15 +2599,15 @@ msgstr "Odkaz musí začínat znaky http nebo https."
 msgid "The selected time exceeds the file duration."
 msgstr "Zadaný čas přesahuje délku souboru."
 
-#: youtube/flow.py:69 youtube/flow.py:131
+#: youtube/flow.py:68 youtube/flow.py:130
 msgid "This is not a valid YouTube link."
 msgstr "Toto není platný odkaz na YouTube."
 
-#: youtube/flow.py:87
+#: youtube/flow.py:86
 msgid "This link does not include a YouTube playlist."
 msgstr "Tento odkaz neobsahuje playlist na YouTube."
 
-#: youtube/flow.py:78
+#: youtube/flow.py:77
 msgid "This link does not include a YouTube video."
 msgstr "Tento odkaz neobsahuje video na YouTube."
 
@@ -2765,7 +2800,7 @@ msgstr "Možnosti videa"
 msgid "Video quality"
 msgstr "Kvalita videa"
 
-#: ui/prefs/youtube.py:115
+#: ui/prefs/youtube.py:149
 msgid ""
 "Video quality used when audio-only playback is disabled. Low prefers smaller "
 "streams, Medium is balanced, Best prefers highest quality."
@@ -2868,8 +2903,8 @@ msgstr "Ano"
 msgid "You are using the latest version."
 msgstr "Používáte nejnovější verzi."
 
-#: ui/prefs/dialog.py:73 youtube/flow.py:288 youtube/flow.py:309
-#: youtube/flow.py:408
+#: ui/prefs/dialog.py:73 youtube/flow.py:289 youtube/flow.py:310
+#: youtube/flow.py:409
 msgid "YouTube"
 msgstr "YouTube"
 
@@ -2881,7 +2916,7 @@ msgstr "YouTube komponenty"
 msgid "YouTube components are already installed."
 msgstr "YouTube komponenty jsou už nainstalovány."
 
-#: youtube/flow.py:48 youtube/flow.py:61 youtube/flow.py:149
+#: youtube/flow.py:47 youtube/flow.py:60 youtube/flow.py:148
 msgid "YouTube components are missing."
 msgstr "Chybí YouTube komponenty."
 
@@ -2897,15 +2932,16 @@ msgstr ""
 "YouTube vrátil odpověď HTTP 429 (Too Many Requests). Množství požadavků z "
 "vaší IP adresy je možná dočasně omezeno."
 
-#: ui/prefs/youtube.py:145
+#: ui/prefs/youtube.py:191
 msgid ""
 "YouTube settings page. Configure playback mode, quality, mixed-link "
-"behavior, yt-dlp update channel, and startup update checks."
+"behavior, search language/region, yt-dlp update channel, and startup update "
+"checks."
 msgstr ""
 "Záložka pro nastavení YouTube. Zde můžete nakonfigurovat režim přehrávání, "
-"kvalitu videa, chování smíšených odkazů, kanál pro stahování aktualizací "
-"knihovny yt-dlp a jestli se při spuštění mají tyto aktualizace vyhledávat "
-"automaticky."
+"kvalitu videa, chování smíšených odkazů, jazyk a region vyhledávání, kanál "
+"pro stahování aktualizací knihovny yt-dlp a jestli se při spuštění mají tyto "
+"aktualizace vyhledávat automaticky."
 
 #: app_actions/recording_actions.py:32
 msgid "paused"
@@ -2942,7 +2978,7 @@ msgstr "Aktualizace yt-dlp zrušena."
 msgid "yt-dlp update channel"
 msgstr "Kanál pro aktualizace yt-dlp"
 
-#: ui/prefs/youtube.py:127
+#: ui/prefs/youtube.py:161
 msgid ""
 "yt-dlp update channel. Stable is recommended. Nightly and Master can include "
 "newer but less-tested builds."
