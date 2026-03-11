@@ -43,6 +43,10 @@ class YouTubeSettingsPanel(wx.Panel):
         self._check_updates_startup.SetValue(
             self._settings.get_check_yt_updates_startup()
         )
+        self._prefetch_label = wx.StaticText(self, label=_("Prefetch count"))
+        self._prefetch_spin = wx.SpinCtrl(self, min=1, max=20)
+        self._prefetch_spin.SetValue(self._settings.get_yt_prefetch_count())
+
         self._download_button = wx.Button(self, label=_("Download YouTube components"))
         self._download_button.Bind(wx.EVT_BUTTON, self._on_download)
 
@@ -69,6 +73,12 @@ class YouTubeSettingsPanel(wx.Panel):
             wx.LEFT | wx.RIGHT | wx.BOTTOM,
             8,
         )
+
+        prefetch_sizer = wx.BoxSizer(wx.VERTICAL)
+        prefetch_sizer.Add(self._prefetch_label, 0, wx.BOTTOM, 4)
+        prefetch_sizer.Add(self._prefetch_spin, 0, wx.EXPAND)
+        sizer.Add(prefetch_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+
         sizer.Add(self._download_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
         self.SetSizer(sizer)
@@ -93,6 +103,7 @@ class YouTubeSettingsPanel(wx.Panel):
         self._settings.set_check_yt_updates_startup(
             self._check_updates_startup.GetValue()
         )
+        self._settings.set_yt_prefetch_count(self._prefetch_spin.GetValue())
 
     def refresh_from_settings(self):
         self._audio_only.SetValue(self._settings.get_yt_audio_only())
@@ -102,6 +113,7 @@ class YouTubeSettingsPanel(wx.Panel):
         self._check_updates_startup.SetValue(
             self._settings.get_check_yt_updates_startup()
         )
+        self._prefetch_spin.SetValue(self._settings.get_yt_prefetch_count())
 
     def get_context_help(self, focused):
         control = focused
@@ -132,6 +144,10 @@ class YouTubeSettingsPanel(wx.Panel):
                     "Check for yt-dlp updates on startup. "
                     "When enabled, the app checks local and latest channel versions at launch "
                     "and prompts you to run the standard yt-dlp update when a newer version is available."
+                )
+            if control is self._prefetch_spin:
+                return _(
+                    "Number of videos to prefetch when opening a YouTube playlist or search result."
                 )
             if control is self._download_button:
                 return _(

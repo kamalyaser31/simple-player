@@ -112,6 +112,7 @@ class SettingsManager:
                 "mixed_link_mode": "ask",
                 "yt_dlp_channel": YT_DLP_DEFAULT_CHANNEL,
                 "check_yt_updates_startup": "false",
+                "prefetch_count": "5",
             },
             "recording": {
                 "channels": "stereo",
@@ -356,6 +357,18 @@ class SettingsManager:
         if "youtube" not in self._config:
             self._config["youtube"] = {}
         self._config["youtube"]["check_yt_updates_startup"] = "true" if enabled else "false"
+
+    def get_yt_prefetch_count(self):
+        try:
+            return self._config.getint("youtube", "prefetch_count")
+        except (ValueError, configparser.Error):
+            return 5
+
+    def set_yt_prefetch_count(self, value):
+        if "youtube" not in self._config:
+            self._config["youtube"] = {}
+        self._config["youtube"]["prefetch_count"] = str(int(value))
+
 
     def get_rec_channels(self):
         value = str(

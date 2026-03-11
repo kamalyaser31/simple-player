@@ -17,7 +17,6 @@ _PREP_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 _PREP_FUT = {}
 _PREP_DONE = {}
 _PREP_MAX = 200
-_PREFETCH_N = 5
 
 
 def _opts(ctx, ses=None):
@@ -124,7 +123,7 @@ def open_yt_link(ctx, link, forced_kind=""):
             prefetch=_prefetch_range,
             play_item=_play_item,
             pool=_PREP_POOL,
-            prefetch_n=_PREFETCH_N,
+            prefetch_n=ctx.settings.get_yt_prefetch_count(),
         )
         return True
     if kind != "video":
@@ -180,7 +179,7 @@ def search_yt(ctx):
         prefetch=_prefetch_range,
         play_item=_play_item,
         pool=_PREP_POOL,
-        prefetch_n=_PREFETCH_N,
+        prefetch_n=ctx.settings.get_yt_prefetch_count(),
     )
 
 
@@ -205,7 +204,7 @@ def on_esc(ctx):
         prefetch=_prefetch_range,
         play_item=_play_item,
         pool=_PREP_POOL,
-        prefetch_n=_PREFETCH_N,
+        prefetch_n=ctx.settings.get_yt_prefetch_count(),
     )
     return True
 
