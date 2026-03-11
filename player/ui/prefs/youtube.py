@@ -47,6 +47,14 @@ class YouTubeSettingsPanel(wx.Panel):
         self._prefetch_spin = wx.SpinCtrl(self, min=1, max=20)
         self._prefetch_spin.SetValue(self._settings.get_yt_prefetch_count())
 
+        # search language/region settings
+        self._search_lang_label = wx.StaticText(self, label=_("Search language code"))
+        self._search_lang_ctrl = wx.TextCtrl(self)
+        self._search_lang_ctrl.SetValue(self._settings.get_yt_search_language())
+        self._search_region_label = wx.StaticText(self, label=_("Search region code"))
+        self._search_region_ctrl = wx.TextCtrl(self)
+        self._search_region_ctrl.SetValue(self._settings.get_yt_search_region())
+
         self._download_button = wx.Button(self, label=_("Download YouTube components"))
         self._download_button.Bind(wx.EVT_BUTTON, self._on_download)
 
@@ -79,6 +87,17 @@ class YouTubeSettingsPanel(wx.Panel):
         prefetch_sizer.Add(self._prefetch_spin, 0, wx.EXPAND)
         sizer.Add(prefetch_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
+        # search language and region sizers
+        lang_sizer = wx.BoxSizer(wx.VERTICAL)
+        lang_sizer.Add(self._search_lang_label, 0, wx.BOTTOM, 4)
+        lang_sizer.Add(self._search_lang_ctrl, 0, wx.EXPAND)
+        sizer.Add(lang_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+
+        region_sizer = wx.BoxSizer(wx.VERTICAL)
+        region_sizer.Add(self._search_region_label, 0, wx.BOTTOM, 4)
+        region_sizer.Add(self._search_region_ctrl, 0, wx.EXPAND)
+        sizer.Add(region_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+
         sizer.Add(self._download_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
         self.SetSizer(sizer)
@@ -104,6 +123,9 @@ class YouTubeSettingsPanel(wx.Panel):
             self._check_updates_startup.GetValue()
         )
         self._settings.set_yt_prefetch_count(self._prefetch_spin.GetValue())
+        # save search lang/region
+        self._settings.set_yt_search_language(self._search_lang_ctrl.GetValue())
+        self._settings.set_yt_search_region(self._search_region_ctrl.GetValue())
 
     def refresh_from_settings(self):
         self._audio_only.SetValue(self._settings.get_yt_audio_only())
@@ -145,6 +167,14 @@ class YouTubeSettingsPanel(wx.Panel):
                     "When enabled, the app checks local and latest channel versions at launch "
                     "and prompts you to run the standard yt-dlp update when a newer version is available."
                 )
+            if control is self._search_lang_ctrl:
+                return _(
+                    "Language code used for YouTube searches. Example: 'en' for English, 'es' for Spanish."
+                )
+            if control is self._search_region_ctrl:
+                return _(
+                    "Region code used for YouTube searches (country/region). Example: 'US', 'GB', 'BR'."
+                )
             if control is self._prefetch_spin:
                 return _(
                     "Number of videos to prefetch when opening a YouTube playlist or search result."
@@ -158,7 +188,7 @@ class YouTubeSettingsPanel(wx.Panel):
                 break
             control = control.GetParent()
         return _(
-            "YouTube settings page. Configure playback mode, quality, mixed-link behavior, yt-dlp update channel, and startup update checks."
+            "YouTube settings page. Configure playback mode, quality, mixed-link behavior, search language/region, yt-dlp update channel, and startup update checks."
         )
 
     def _set_quality_selection(self, value):

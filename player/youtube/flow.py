@@ -255,7 +255,9 @@ def _search(ctx, query, ses_opts):
 
     def job(cancel, on_line, _on_up):
         on_line(_("Searching videos..."))
-        state = start_search(query, limit=50, language="en", region="US")
+        lang = ctx.settings.get_yt_search_language()
+        reg = ctx.settings.get_yt_search_region()
+        state = start_search(query, limit=50, language=lang, region=reg)
         items = list(getattr(state, "items", []) or [])
         if not items:
             raise ResolveError(_("No videos were found for this search."))
