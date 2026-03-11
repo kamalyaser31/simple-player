@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-08 13:22+0200\n"
+"POT-Creation-Date: 2026-03-11 22:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Beginning"
 msgstr ""
 
-#: ui/prefs/youtube.py:120
+#: ui/prefs/youtube.py:154
 msgid ""
 "Behavior for YouTube links that include both a video ID and a playlist ID. "
 "Ask every time shows a chooser dialog. Play the video opens only the "
@@ -299,7 +299,7 @@ msgstr ""
 msgid "Channel link is not available."
 msgstr ""
 
-#: youtube/flow.py:110
+#: youtube/flow.py:109
 msgid "Channel links are not supported here."
 msgstr ""
 
@@ -325,7 +325,7 @@ msgstr ""
 msgid "Check for yt-dlp updates on startup"
 msgstr ""
 
-#: ui/prefs/youtube.py:132
+#: ui/prefs/youtube.py:166
 msgid ""
 "Check for yt-dlp updates on startup. When enabled, the app checks local and "
 "latest channel versions at launch and prompts you to run the standard yt-dlp "
@@ -475,7 +475,7 @@ msgstr ""
 msgid "Could not close the file."
 msgstr ""
 
-#: youtube/flow.py:287
+#: youtube/flow.py:288
 msgid "Could not complete YouTube search."
 msgstr ""
 
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Could not load playlist info."
 msgstr ""
 
-#: youtube/flow.py:339
+#: youtube/flow.py:340
 msgid "Could not open YouTube stream."
 msgstr ""
 
@@ -600,7 +600,7 @@ msgid ""
 "{error}"
 msgstr ""
 
-#: youtube/flow.py:308
+#: youtube/flow.py:309
 msgid "Could not read YouTube link data."
 msgstr ""
 
@@ -630,7 +630,7 @@ msgid ""
 "{error}"
 msgstr ""
 
-#: youtube/flow.py:407
+#: youtube/flow.py:408
 msgid "Could not resolve YouTube stream."
 msgstr ""
 
@@ -790,11 +790,11 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: ui/prefs/youtube.py:46
+#: ui/prefs/youtube.py:58
 msgid "Download YouTube components"
 msgstr ""
 
-#: ui/prefs/youtube.py:138
+#: ui/prefs/youtube.py:184
 msgid ""
 "Download YouTube components installs missing YouTube libraries such as yt-"
 "dlp and Deno."
@@ -930,8 +930,8 @@ msgstr ""
 #: app.py:194 app_actions/bookmark_actions.py:98
 #: app_actions/file_actions.py:265 app_actions/file_actions.py:564
 #: app_actions/help_actions.py:63 update/actions.py:89 update/actions.py:135
-#: update/actions.py:141 youtube/flow.py:48 youtube/flow.py:61
-#: youtube/flow.py:339 youtube/flow.py:624 youtube/startup.py:158
+#: update/actions.py:141 youtube/flow.py:47 youtube/flow.py:60
+#: youtube/flow.py:340 youtube/flow.py:625 youtube/startup.py:158
 msgid "Error"
 msgstr ""
 
@@ -974,7 +974,7 @@ msgstr ""
 msgid "Favorite videos..."
 msgstr ""
 
-#: youtube/flow.py:264
+#: youtube/flow.py:265
 msgid "Fetching first stream..."
 msgstr ""
 
@@ -1161,8 +1161,8 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-#: youtube/flow.py:69 youtube/flow.py:79 youtube/flow.py:88 youtube/flow.py:111
-#: youtube/flow.py:131
+#: youtube/flow.py:68 youtube/flow.py:78 youtube/flow.py:87 youtube/flow.py:110
+#: youtube/flow.py:130
 msgid "Invalid YouTube link"
 msgstr ""
 
@@ -1178,7 +1178,7 @@ msgstr ""
 msgid "Invalid file number."
 msgstr ""
 
-#: app_actions/file_actions.py:255 youtube/flow.py:66
+#: app_actions/file_actions.py:255 youtube/flow.py:65
 msgid "Invalid link"
 msgstr ""
 
@@ -1232,6 +1232,12 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
+#: ui/prefs/youtube.py:172
+msgid ""
+"Language code used for YouTube searches. Example: 'en' for English, 'es' for "
+"Spanish."
+msgstr ""
+
 #: ui/mainwin/menu.py:332
 msgid "Last File"
 msgstr ""
@@ -1270,11 +1276,11 @@ msgstr ""
 msgid "Link is required."
 msgstr ""
 
-#: youtube/flow.py:301
+#: youtube/flow.py:302
 msgid "Loading YouTube link"
 msgstr ""
 
-#: youtube/flow.py:400
+#: youtube/flow.py:401
 msgid "Loading YouTube stream"
 msgstr ""
 
@@ -1290,7 +1296,7 @@ msgstr ""
 msgid "Loading more videos..."
 msgstr ""
 
-#: youtube/flow.py:488
+#: youtube/flow.py:489
 msgid "Loading next video..."
 msgstr ""
 
@@ -1412,7 +1418,7 @@ msgstr ""
 msgid "Minutes"
 msgstr ""
 
-#: youtube/flow.py:149
+#: youtube/flow.py:148
 msgid "Missing components."
 msgstr ""
 
@@ -1560,7 +1566,7 @@ msgstr ""
 msgid "No videos found."
 msgstr ""
 
-#: youtube/flow.py:262
+#: youtube/flow.py:263
 msgid "No videos were found for this search."
 msgstr ""
 
@@ -1584,6 +1590,12 @@ msgstr ""
 #: playlist/info.py:221
 #, python-brace-format
 msgid "Number of files: {count}"
+msgstr ""
+
+#: ui/prefs/youtube.py:180
+msgid ""
+"Number of videos to prefetch when opening a YouTube playlist or search "
+"result."
 msgstr ""
 
 #: ui/dialogs.py:73 ui/help_dialogs.py:47
@@ -1790,7 +1802,7 @@ msgstr ""
 msgid "Play videos as audio only"
 msgstr ""
 
-#: ui/prefs/youtube.py:111
+#: ui/prefs/youtube.py:145
 msgid ""
 "Play videos as audio only. When enabled, YouTube playback prefers audio "
 "streams."
@@ -1842,6 +1854,10 @@ msgstr ""
 
 #: ui/mainwin/menu.py:174
 msgid "Preferences..."
+msgstr ""
+
+#: ui/prefs/youtube.py:46
+msgid "Prefetch count"
 msgstr ""
 
 #: playlist/info.py:56 playlist/info.py:61
@@ -1915,6 +1931,12 @@ msgstr ""
 #: ui/prefs/recording.py:117
 msgid ""
 "Recordings folder path. Use Browse to choose where new recordings are saved."
+msgstr ""
+
+#: ui/prefs/youtube.py:176
+msgid ""
+"Region code used for YouTube searches (country/region). Example: 'US', 'GB', "
+"'BR'."
 msgstr ""
 
 #: ui/prefs/general.py:84
@@ -2064,20 +2086,28 @@ msgstr ""
 msgid "Search YouTube..."
 msgstr ""
 
+#: ui/prefs/youtube.py:51
+msgid "Search language code"
+msgstr ""
+
+#: ui/prefs/youtube.py:54
+msgid "Search region code"
+msgstr ""
+
 #: youtube/ui_utils.py:176
 msgid "Search results"
 msgstr ""
 
-#: youtube/flow.py:163
+#: youtube/flow.py:162
 #, python-brace-format
 msgid "Search results: {query}"
 msgstr ""
 
-#: youtube/flow.py:280
+#: youtube/flow.py:281
 msgid "Searching YouTube"
 msgstr ""
 
-#: youtube/flow.py:258
+#: youtube/flow.py:257
 msgid "Searching videos..."
 msgstr ""
 
@@ -2378,7 +2408,7 @@ msgid "The link must be a valid YouTube link for this type."
 msgstr ""
 
 #: app_actions/favorite_actions.py:179 app_actions/file_actions.py:254
-#: youtube/flow.py:66
+#: youtube/flow.py:65
 msgid "The link must start with http or https."
 msgstr ""
 
@@ -2386,15 +2416,15 @@ msgstr ""
 msgid "The selected time exceeds the file duration."
 msgstr ""
 
-#: youtube/flow.py:69 youtube/flow.py:131
+#: youtube/flow.py:68 youtube/flow.py:130
 msgid "This is not a valid YouTube link."
 msgstr ""
 
-#: youtube/flow.py:87
+#: youtube/flow.py:86
 msgid "This link does not include a YouTube playlist."
 msgstr ""
 
-#: youtube/flow.py:78
+#: youtube/flow.py:77
 msgid "This link does not include a YouTube video."
 msgstr ""
 
@@ -2572,7 +2602,7 @@ msgstr ""
 msgid "Video quality"
 msgstr ""
 
-#: ui/prefs/youtube.py:115
+#: ui/prefs/youtube.py:149
 msgid ""
 "Video quality used when audio-only playback is disabled. Low prefers smaller "
 "streams, Medium is balanced, Best prefers highest quality."
@@ -2659,8 +2689,8 @@ msgstr ""
 msgid "You are using the latest version."
 msgstr ""
 
-#: ui/prefs/dialog.py:73 youtube/flow.py:288 youtube/flow.py:309
-#: youtube/flow.py:408
+#: ui/prefs/dialog.py:73 youtube/flow.py:289 youtube/flow.py:310
+#: youtube/flow.py:409
 msgid "YouTube"
 msgstr ""
 
@@ -2672,7 +2702,7 @@ msgstr ""
 msgid "YouTube components are already installed."
 msgstr ""
 
-#: youtube/flow.py:48 youtube/flow.py:61 youtube/flow.py:149
+#: youtube/flow.py:47 youtube/flow.py:60 youtube/flow.py:148
 msgid "YouTube components are missing."
 msgstr ""
 
@@ -2686,10 +2716,11 @@ msgid ""
 "rate-limited."
 msgstr ""
 
-#: ui/prefs/youtube.py:145
+#: ui/prefs/youtube.py:191
 msgid ""
 "YouTube settings page. Configure playback mode, quality, mixed-link "
-"behavior, yt-dlp update channel, and startup update checks."
+"behavior, search language/region, yt-dlp update channel, and startup update "
+"checks."
 msgstr ""
 
 #: app_actions/recording_actions.py:32
@@ -2727,7 +2758,7 @@ msgstr ""
 msgid "yt-dlp update channel"
 msgstr ""
 
-#: ui/prefs/youtube.py:127
+#: ui/prefs/youtube.py:161
 msgid ""
 "yt-dlp update channel. Stable is recommended. Nightly and Master can include "
 "newer but less-tested builds."

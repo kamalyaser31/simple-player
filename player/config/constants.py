@@ -38,6 +38,10 @@ APP_UPDATE_INSTALLER_MARKER = ".sap_installed"
 YT_DLP_UPDATE_CHANNELS = ("stable", "nightly", "master")
 YT_DLP_DEFAULT_CHANNEL = "stable"
 
+# default settings used by YouTube search
+YT_SEARCH_LANGUAGE = "en"
+YT_SEARCH_REGION = "US"
+
 AUDIO_EXTENSIONS = {
     ".aac",
     ".aiff",

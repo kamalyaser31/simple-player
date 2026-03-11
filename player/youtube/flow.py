@@ -17,7 +17,6 @@ _PREP_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 _PREP_FUT = {}
 _PREP_DONE = {}
 _PREP_MAX = 200
-_PREFETCH_N = 5
 
 
 def _opts(ctx, ses=None):
@@ -124,7 +123,7 @@ def open_yt_link(ctx, link, forced_kind=""):
             prefetch=_prefetch_range,
             play_item=_play_item,
             pool=_PREP_POOL,
-            prefetch_n=_PREFETCH_N,
+            prefetch_n=ctx.settings.get_yt_prefetch_count(),
         )
         return True
     if kind != "video":
@@ -180,7 +179,7 @@ def search_yt(ctx):
         prefetch=_prefetch_range,
         play_item=_play_item,
         pool=_PREP_POOL,
-        prefetch_n=_PREFETCH_N,
+        prefetch_n=ctx.settings.get_yt_prefetch_count(),
     )
 
 
@@ -205,7 +204,7 @@ def on_esc(ctx):
         prefetch=_prefetch_range,
         play_item=_play_item,
         pool=_PREP_POOL,
-        prefetch_n=_PREFETCH_N,
+        prefetch_n=ctx.settings.get_yt_prefetch_count(),
     )
     return True
 
@@ -256,7 +255,9 @@ def _search(ctx, query, ses_opts):
 
     def job(cancel, on_line, _on_up):
         on_line(_("Searching videos..."))
-        state = start_search(query, limit=50, language="en", region="US")
+        lang = ctx.settings.get_yt_search_language()
+        reg = ctx.settings.get_yt_search_region()
+        state = start_search(query, limit=50, language=lang, region=reg)
         items = list(getattr(state, "items", []) or [])
         if not items:
             raise ResolveError(_("No videos were found for this search."))
@@ -349,7 +350,8 @@ def _play_item(ctx, item, ses, idx):
     else:
         set_ses(ctx, ses, idx)
         _mark_queued(ses, src)
-        _prefetch_range(ses, int(idx or 0) + 1, 1)
+        prefetch_n = ctx.settings.get_yt_prefetch_count()
+        _prefetch_range(ses, int(idx or 0) + 1, prefetch_n)
     return True
 
 
@@ -548,7 +550,8 @@ def _advance_to_next(ctx, ses, from_idx, to_idx, item, prep):
         return False
     ses["sel"] = int(to_idx)
     set_now(ctx, item)
-    _prefetch_range(ses, int(to_idx) + 1, 1)
+    prefetch_n = ctx.settings.get_yt_prefetch_count()
+    _prefetch_range(ses, int(to_idx) + 1, prefetch_n)
     return True
 
 

@@ -10,6 +10,8 @@ from config.constants import (
     VOLUME_STEP,
     YT_DLP_DEFAULT_CHANNEL,
     YT_DLP_UPDATE_CHANNELS,
+    YT_SEARCH_LANGUAGE,
+    YT_SEARCH_REGION,
 )
 from config.shortcut_utils import shortcut_from_config, shortcut_to_config
 from helpers.utils import clamp
@@ -112,6 +114,9 @@ class SettingsManager:
                 "mixed_link_mode": "ask",
                 "yt_dlp_channel": YT_DLP_DEFAULT_CHANNEL,
                 "check_yt_updates_startup": "false",
+                "prefetch_count": "5",
+                "search_language": YT_SEARCH_LANGUAGE,
+                "search_region": YT_SEARCH_REGION,
             },
             "recording": {
                 "channels": "stereo",
@@ -160,11 +165,11 @@ class SettingsManager:
                 has_new_silence_section = False
         self._migrate_silence_removal_settings(has_new_silence_section)
 
-    def save(self):
-        if self.get_save_on_close():
-            self._write_config(self._config)
+    def save(self, force=False):
+        if not force and not self.get_save_on_close():
+            self._save_save_on_close_only()
             return
-        self._save_save_on_close_only()
+        self._write_config(self._config)
 
     def _save_save_on_close_only(self):
         disk = configparser.ConfigParser(interpolation=None)
@@ -356,6 +361,44 @@ class SettingsManager:
         if "youtube" not in self._config:
             self._config["youtube"] = {}
         self._config["youtube"]["check_yt_updates_startup"] = "true" if enabled else "false"
+
+    def get_yt_prefetch_count(self):
+        try:
+            return self._config.getint("youtube", "prefetch_count")
+        except (ValueError, configparser.Error):
+            return 5
+
+    def set_yt_prefetch_count(self, value):
+        if "youtube" not in self._config:
+            self._config["youtube"] = {}
+        self._config["youtube"]["prefetch_count"] = str(int(value))
+
+    def get_yt_search_language(self):
+        # language code passed to YouTube search (py-yt VideosSearch)
+        return str(
+            self._config.get("youtube", "search_language", fallback=YT_SEARCH_LANGUAGE)
+            or YT_SEARCH_LANGUAGE
+        ).strip()
+
+    def set_yt_search_language(self, lang):
+        if "youtube" not in self._config:
+            self._config["youtube"] = {}
+        text = str(lang or YT_SEARCH_LANGUAGE).strip()
+        self._config["youtube"]["search_language"] = text
+
+    def get_yt_search_region(self):
+        # region code passed to YouTube search (py-yt VideosSearch)
+        return str(
+            self._config.get("youtube", "search_region", fallback=YT_SEARCH_REGION)
+            or YT_SEARCH_REGION
+        ).strip()
+
+    def set_yt_search_region(self, region):
+        if "youtube" not in self._config:
+            self._config["youtube"] = {}
+        text = str(region or YT_SEARCH_REGION).strip()
+        self._config["youtube"]["search_region"] = text
+
 
     def get_rec_channels(self):
         value = str(

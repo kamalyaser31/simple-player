@@ -8,3 +8,5 @@ venv/
 dist/
 build/
 /player/venv311
+player/deno.exe
+player/yt-dlp.exe

@@ -81,7 +81,7 @@ def show_res(ctx, ses, sel, prefetch, play_item, pool, prefetch_n):
             def on_pick(_event=None):
                 idx = cur_idx()
                 action["idx"] = idx
-                prefetch(ses, idx, 2)
+                prefetch(ses, idx + 1, prefetch_n)
                 if idx == dlg.list_box.GetCount() - 1:
                     _try_more(ctx, ses, dlg, busy_more, prefetch, pool, prefetch_n)
 
