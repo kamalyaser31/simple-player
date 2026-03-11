@@ -1,200 +1,113 @@
 # Simple Audio Player
 
-Funkcemi nadupanÃ½, pÅ™Ã­stupnÃ½ desktopovÃ½ audio a multimediÃ¡lnÃ­ pÅ™ehrÃ¡vaÄ pro Windows vytvoÅ™enÃ½ v Pythonu a wxPythonu. Je navrÅ¾en s dÅ¯razem na pÅ™Ã­stupnost z klÃ¡vesnice a podporu odeÄÃ­taÄÅ¯ obrazovky.
+Simple Audio Player je desktopovı multimediální pøehrávaè pro Windows vytvoøenı v Pythonu a wxPythonu.
+Projekt se zamìøuje na praktické kadodenní pøehrávání, silnou podporu ovládání z klávesnice a dobrou kompatibilitu s odeèítaèi obrazovky.
 
-**Verze:** 1.0.1
-**Autor:** Kamal Yaser
-**RepozitÃ¡Å™:** [GitHub](https://github.com/kamalyaser31/simple-player)
-
----
+Je navren pro uivatele, kteøí chtìjí pøímoèarı pøehrávaè, ale zároveò ocení pokroèilé nástroje, kdy jsou potøeba: navigaci v souborech a playlistech, práci s YouTube, záloky a oblíbené poloky, nahrávání a nastavitelné chování zvuku.
 
 ## Funkce
 
-* **Å irokÃ¡ podpora formÃ¡tÅ¯:** PÅ™ehrÃ¡vÃ¡ vÅ¡echny bÄ›Å¾nÃ© zvukovÃ© a video soubory.
-* **Integrace s YouTube:** VyhledÃ¡vÃ¡nÃ­, pÅ™ehrÃ¡vÃ¡nÃ­ a stahovÃ¡nÃ­ videÃ­ a playlistÅ¯ z YouTube.
-* **PokroÄilÃ© zpracovÃ¡nÃ­ zvuku:** Zahrnuje odstraÅˆovÃ¡nÃ­ ticha, normalizaci zvuku a pÅ™evod do mono.
-* **PlnÃ¡ pÅ™Ã­stupnost z klÃ¡vesnice:** VÅ¡e lze ovlÃ¡dat pomocÃ­ klÃ¡vesnice.
-* **Podpora odeÄÃ­taÄÅ¯ obrazovky:** Funguje s JAWSem, NVDA a dalÅ¡Ã­mi odeÄÃ­taÄi obrazovky.
-* **MoÅ¾nosti pÅ™izpÅ¯sobenÃ­:** Lze mÄ›nit klÃ¡vesovÃ© zkratky, jazyk (angliÄtina/arabÅ¡tina) a dalÅ¡Ã­ nastavenÃ­.
+Simple Audio Player podporuje bìné zvukové a video formáty a zahrnuje:
 
----
+* Ovládání zamìøené pøedevším na klávesnici s pøizpùsobitelnımi zkratkami
+* Pøístupné uivatelské rozhraní a chování vstøícné k odeèítaèùm obrazovky
+* Pøehrávání souborù a sloek a navigaci v playlistech
+* Záloky a oblíbené odkazy (video, playlist, kombinované odkazy na YouTube a obecné streamy)
+* Vyhledávání na YouTube, pøehrávání a stahování (jakmile jsou k dispozici potøebné komponenty)
+* Nahrávání s nastavitelnım formátem, bitrate a vıstupní slokou
+* Ovládání zvuku, jako je normalizace, pøevod do mono, øízení rychlosti a odstraòování ticha
+* Podporu zálohování a obnovení nastavení a dat záloek
 
-## SystÃ©movÃ© poÅ¾adavky
+Aplikace je zamìøena na Windows a integruje se se systémovım chováním, jako jsou akce asociací souborù a ovládání mediálních relací.
 
-* **OperaÄnÃ­ systÃ©m:** Windows 7 SP1 nebo novÄ›jÅ¡Ã­ (doporuÄena Windows 10+)
-* **RAM:** MinimÃ¡lnÄ› 256 MB
-* **MÃ­sto na disku:** 200 MB pro instalaci
-* **ZvukovÃ© zaÅ™Ã­zenÃ­:** FunkÄnÃ­ zaÅ™Ã­zenÃ­ pro zvukovÃ½ vÃ½stup
+## Staení
 
----
+Pøedpøipravené verze jsou k dispozici na stránce vydání projektu:
 
-## PodporovanÃ© formÃ¡ty
+[https://github.com/kamalyaser31/simple-player/releases](https://github.com/kamalyaser31/simple-player/releases)
 
-* **Audio:** AAC, AIFF, ALAC, FLAC, M4A, MP3, OGG, OPUS, WAV, WMA
-* **Video:** 3GP, AVI, FLV, M2TS, M4V, MKV, MOV, MPEG, MP4, MPG, TS, WebM, WMV
+Mùete si vybrat buï:
 
----
+* instalaèní build (`SimpleAudioPlayerSetup.exe`) pro bìnou instalaci
+* pøenosnı ZIP build, pokud jej chcete spouštìt bez instalace
 
-## Instalace
+Pokud chcete aplikaci jen pouívat, nejjednodušší cesta je stáhnout ji ze sekce Releases.
 
-### InstalaÄnÃ­ program pro Windows (doporuÄeno)
+## Sestavení ze zdrojového kódu
 
-1. StÃ¡hnÄ›te si nejnovÄ›jÅ¡Ã­ soubor `SimpleAudioPlayerSetup.exe` ze strÃ¡nky [Releases](https://github.com/kamalyaser31/simple-player/releases).
-2. SpusÅ¥te instalaÄnÃ­ program a postupujte podle pokynÅ¯ na obrazovce.
+### Poadavky
 
-### PÅ™enosnÃ¡ verze
+Pro lokální vıvoj a sestavení:
 
-1. StÃ¡hnÄ›te si pÅ™enosnÃ½ ZIP soubor ze strÃ¡nky [Releases](https://github.com/kamalyaser31/simple-player/releases).
-2. Rozbalte ZIP soubor do libovolnÃ© sloÅ¾ky.
-3. SpusÅ¥te `SimpleAudioPlayer.exe`.
-
----
-
-## PouÅ¾itÃ­
-
-PodrobnÃ© pokyny najdete v [ÃºplnÃ© uÅ¾ivatelskÃ© pÅ™Ã­ruÄce](player/docs/en/userguide.html).
-
-### ZÃ¡kladnÃ­ pÅ™ehrÃ¡vÃ¡nÃ­
-
-* **OtevÅ™enÃ­ souboru:** PÅ™ejdÄ›te na `Soubor > OtevÅ™Ã­t soubor` nebo stisknÄ›te `Ctrl+O`.
-* **PÅ™ehrÃ¡t/Pozastavit:** StisknÄ›te `MezernÃ­k`.
-* **Navigace:** K posunu pouÅ¾ijte Å¡ipky `Vpravo` a `Vlevo`.
-* **Hlasitost:** K ÃºpravÄ› hlasitosti pouÅ¾ijte Å¡ipky `Nahoru` a `DolÅ¯`.
-
----
-
-## VÃ½voj
-
-Pokud chcete do projektu pÅ™ispÄ›t, mÅ¯Å¾ete jej sestavit ze zdrojovÃ©ho kÃ³du.
-
-### Struktura projektu
-
-```
-simple-player/
-â”œâ”€â”€ player/                    # HlavnÃ­ adresÃ¡Å™ aplikace
-â”‚   â”œâ”€â”€ app.py                # VstupnÃ­ bod aplikace
-â”‚   â”œâ”€â”€ SimpleAudioPlayer.py   # VstupnÃ­ bod GUI
-â”‚   â”œâ”€â”€ requirements.txt       # ZÃ¡vislosti Pythonu
-â”‚   â”œâ”€â”€ SimpleAudioPlayer.spec # Konfigurace PyInstalleru
-â”‚   â”œâ”€â”€ simple_audio_player.iss # Konfigurace Inno Setup
-â”‚   â”‚
-â”‚   â”œâ”€â”€ core/                 # ZÃ¡kladnÃ­ funkce
-â”‚   â”‚   â”œâ”€â”€ controller.py     # HlavnÃ­ Å™adiÄ aplikace
-â”‚   â”‚   â”œâ”€â”€ mpv_engine.py     # JÃ¡dro pÅ™ehrÃ¡vÃ¡nÃ­ mÃ©diÃ­
-â”‚   â”‚   â”œâ”€â”€ keyboard_handler.py # GlobÃ¡lnÃ­ vstup z klÃ¡vesnice
-â”‚   â”‚   â”œâ”€â”€ media_library.py  # ProchÃ¡zenÃ­/indexace souborÅ¯
-â”‚   â”‚   â””â”€â”€ player/           # Implementace pÅ™ehrÃ¡vaÄe
-â”‚   â”‚
-â”‚   â”œâ”€â”€ config/               # SprÃ¡va konfigurace
-â”‚   â”‚   â”œâ”€â”€ constants.py      # Konstanty aplikace
-â”‚   â”‚   â”œâ”€â”€ settings_manager.py # UklÃ¡dÃ¡nÃ­ nastavenÃ­
-â”‚   â”‚   â”œâ”€â”€ shortcuts.py      # KlÃ¡vesovÃ© zkratky
-â”‚   â”‚   â”œâ”€â”€ localization.py   # Podpora i18n
-â”‚   â”‚   â””â”€â”€ file_associations.py # Registrace souborÅ¯ ve Windows
-â”‚   â”‚
-â”‚   â”œâ”€â”€ ui/                   # UÅ¾ivatelskÃ© rozhranÃ­
-â”‚   â”‚   â”œâ”€â”€ main_frame.py     # HlavnÃ­ okno
-â”‚   â”‚   â”œâ”€â”€ mainwin/          # Komponenty hlavnÃ­ho okna
-â”‚   â”‚   â”œâ”€â”€ dialogs.py        # DialogovÃ¡ okna UI
-â”‚   â”‚   â”œâ”€â”€ settings_dialog.py # Okno nastavenÃ­
-â”‚   â”‚   â””â”€â”€ prefs/            # Panely nastavenÃ­
-â”‚   â”‚
-â”‚   â”œâ”€â”€ app_actions/          # Akce aplikace
-â”‚   â”‚   â”œâ”€â”€ playback_actions.py # OvlÃ¡dÃ¡nÃ­ pÅ™ehrÃ¡vÃ¡nÃ­
-â”‚   â”‚   â”œâ”€â”€ file_actions.py   # Operace se soubory
-â”‚   â”‚   â”œâ”€â”€ device_actions.py # SprÃ¡va zvukovÃ½ch zaÅ™Ã­zenÃ­
-â”‚   â”‚   â””â”€â”€ help_actions.py   # NÃ¡povÄ›da/dokumentace
-â”‚   â”‚
-â”‚   â”œâ”€â”€ youtube/              # Integrace s YouTube
-â”‚   â”‚   â”œâ”€â”€ search.py         # Funkce vyhledÃ¡vÃ¡nÃ­
-â”‚   â”‚   â”œâ”€â”€ download.py       # Funkce stahovÃ¡nÃ­
-â”‚   â”‚   â”œâ”€â”€ flow.py           # Workflow pro YouTube
-â”‚   â”‚   â””â”€â”€ components.py     # SprÃ¡va komponent
-â”‚   â”‚
-â”‚   â”œâ”€â”€ playlist/             # SprÃ¡va playlistÅ¯
-â”‚   â”‚   â”œâ”€â”€ state.py          # Stav playlistu
-â”‚   â”‚   â””â”€â”€ state/            # Moduly stavu playlistu
-â”‚   â”‚
-â”‚   â”œâ”€â”€ helpers/              # PomocnÃ© funkce
-â”‚   â”‚   â”œâ”€â”€ utils.py          # BÄ›Å¾nÃ© pomocnÃ© funkce
-â”‚   â”‚   â”œâ”€â”€ file_helpers.py   # Operace se soubory
-â”‚   â”‚   â””â”€â”€ clipboard_utils.py # PrÃ¡ce se schrÃ¡nkou
-â”‚   â”‚
-â”‚   â”œâ”€â”€ locale/               # LokalizaÄnÃ­ soubory
-â”‚   â”‚   â””â”€â”€ ar/, en/          # JazykovÃ© adresÃ¡Å™e
-â”‚   â”‚
-â”‚   â”œâ”€â”€ docs/                 # Dokumentace
-â”‚   â”‚   â””â”€â”€ en/, ar/          # AdresÃ¡Å™e s dokumentacÃ­ v jednotlivÃ½ch jazycÃ­ch
-â”‚   â”‚
-â”‚   â””â”€â”€ sounds/               # ZvukovÃ© soubory
-â”‚       â””â”€â”€ speaker_test.wav  # TestovacÃ­ zvukovÃ½ soubor
-```
-
-### ZÃ¡vislosti
-
-| BalÃ­Äek              | ÃšÄel                               |
-| -------------------- | ---------------------------------- |
-| `wxPython`           | Framework pro GUI                  |
-| `python-libmpv`      | PÅ™ehrÃ¡vÃ¡nÃ­ mÃ©diÃ­                   |
-| `pynput`             | GlobÃ¡lnÃ­ zpracovÃ¡nÃ­ klÃ¡vesnice     |
-| `appGuard`           | ZajiÅ¡tÄ›nÃ­ jedinÃ© spuÅ¡tÄ›nÃ© instance |
-| `accessible_output3` | Integrace s odeÄÃ­taÄi obrazovky    |
-| `py-yt-search`       | VyhledÃ¡vÃ¡nÃ­ na YouTube             |
-| `winsdk`             | Integrace s Windows SDK            |
-
-### SestavenÃ­ ze zdrojovÃ©ho kÃ³du
-
-#### PÅ™edpoklady
-
-* Python 3.7 nebo vyÅ¡Å¡Ã­
+* Windows
+* doporuèen Python 3.11 nebo novìjší
 * Git
+* podle vašeho prostøedí mùe bıt pro nìkteré balíèky Pythonu potøeba funkèní C/C++ build prostøedí
 
-#### Kroky
+### Klonování a spuštìní
 
-1. **NaklonovÃ¡nÃ­ repozitÃ¡Å™e**
+```powershell
+git clone https://github.com/kamalyaser31/simple-player.git
+cd simple-player\player
+```
 
-   ```powershell
-   git clone https://github.com/kamalyaser31/simple-player.git
-   cd simple-player/player
-   ```
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+py SimpleAudioPlayer.py
+```
 
-2. **Instalace zÃ¡vislostÃ­**
+### Sestavení spustitelného souboru
 
-   ```powershell
-   pip install -r requirements.txt
-   ```
+```powershell
+py -m PyInstaller SimpleAudioPlayer.spec
+```
 
-3. **SpuÅ¡tÄ›nÃ­ aplikace**
+Vygenerovanı spustitelnı soubor je umístìn do standardního vıstupního adresáøe PyInstalleru (`dist`).
 
-   ```powershell
-   python SimpleAudioPlayer.py
-   ```
+### Sestavení instalátoru
 
----
+Repozitáø obsahuje skript pro Inno Setup:
+
+`player/simple_audio_player.iss`
+
+Kdy potøebujete vytvoøit instalaèní balíèek, zkompilujte tento skript v Inno Setup.
+
+## Poznámky k projektu
+
+Podpora YouTube závisí na komponentách dostupnıch za bìhu aplikace (napøíklad `yt-dlp`), které si aplikace umí spravovat pomocí vlastního postupu pro staení a aktualizaci.
+Pro pøehrávání lokálních souborù a bìné funkce pøehrávaèe není ádné zvláštní nastavení YouTube potøeba.
+
+Nastavení aplikace se ukládá do konfiguraèní cesty v uivatelském profilu. Data specifická pro jednotlivé funkce (napøíklad záloky, oblíbené poloky a údaje o pozici pøehrávání) jsou uloena v samostatnıch souborech JSON ve stejném adresáøi s nastavením.
+
+## Pøispívání
+
+Pøíspìvky jsou vítány.
+
+Pokud chcete pøispìt, otevøete prosím nejprve issue pro chyby nebo návrhy funkcí, zejména pokud jde o zmìny chování. Pomùe to udret jasnı smìr implementace ještì pøed code review.
+
+U pull requestù upøednostòujte zamìøené zmìny s jasnì vymezenım rozsahem. Uveïte:
+
+* co se zmìnilo
+* proè se to zmìnilo
+* jak jste to testovali (ruèní kroky a/nebo automatizované kontroly)
+
+Vyhnìte se prosím nesouvisejícím refaktoringùm v rámci tého pull requestu, pokud nejsou pro danou funkci nezbytné.
+
+## Kontakt
+
+Máte-li jakékoli dotazy nebo nápady, mùete nás kontaktovat tìmito zpùsoby:
+
+* E-mail: `kamalyaser31@gmail.com`
+* Telegram: [https://t.me/kamalyaser31](https://t.me/kamalyaser31)
+
+Pro hlášení chyb a návrhy funkcí pøejdìte na:
+
+[https://github.com/kamalyaser31/simple-player/issues](https://github.com/kamalyaser31/simple-player/issues)
 
 ## Licence
 
-Tento projekt je licencovÃ¡n pod licencÃ­ MIT. Podrobnosti najdete v souboru `LICENSE`.
+Tento projekt je licencován pod licencí **GNU General Public License, verze 2, nebo (podle vaší volby) jakékoli pozdìjší verze** (GPL-2.0-or-later).
 
----
-
-## Podpora
-
-Pokud potÅ™ebujete pomoc, mÃ¡te nÃ¡pady nebo chcete nahlÃ¡sit chybu, pouÅ¾ijte nÄ›kterÃ½ z nÃ¡sledujÃ­cÃ­ch kanÃ¡lÅ¯:
-
-* **HlÃ¡Å¡enÃ­ problÃ©mÅ¯:** [GitHub Issues](https://github.com/kamalyaser31/simple-player/issues)
-* **Podpora e-mailem:** [kamalyaser31@gmail.com](mailto:kamalyaser31@gmail.com)
-* **Telegram:** [@kamalyaser31](https://t.me/kamalyaser31)
-
----
-
-## ÄŒasto kladenÃ© otÃ¡zky
-
-**OtÃ¡zka: Je Simple Audio Player zdarma?**
-OdpovÄ›Ä: Ano, je zdarma a mÃ¡ otevÅ™enÃ½ zdrojovÃ½ kÃ³d.
-
-**OtÃ¡zka: Mohu jej pouÅ¾Ã­vat na Macu nebo Linuxu?**
-OdpovÄ›Ä: V souÄasnosti je urÄen pouze pro Windows.
-
-**OtÃ¡zka: Mohu si pÅ™izpÅ¯sobit klÃ¡vesovÃ© zkratky?**
-OdpovÄ›Ä: Ano, vÅ¡echny zkratky si mÅ¯Å¾ete pÅ™izpÅ¯sobit v `NastavenÃ­ > KlÃ¡vesovÃ© zkratky`.
+Úplné znìní licence najdete v souboru [LICENSE](LICENSE).

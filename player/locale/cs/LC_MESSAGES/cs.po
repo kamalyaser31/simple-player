@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-23 16:26+0200\n"
-"PO-Revision-Date: 2026-03-07 07:46+0100\n"
+"POT-Creation-Date: 2026-03-08 13:22+0200\n"
+"PO-Revision-Date: 2026-03-11 12:38+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
 
-#: ui/mainwin/menu.py:216
+#: ui/mainwin/menu.py:264
 msgid "&Copy to folder..."
 msgstr "&Zkopírovat do složky..."
 
-#: ui/mainwin/menu.py:228
+#: ui/mainwin/menu.py:276
 msgid "&Delete"
 msgstr "&Smazat"
 
-#: ui/mainwin/menu.py:220
+#: ui/mainwin/menu.py:268
 msgid "&Move to folder..."
 msgstr "&Přesunout do složky..."
 
@@ -34,47 +34,47 @@ msgstr "&Přesunout do složky..."
 msgid "1 file marked"
 msgstr "Jeden soubor označen"
 
-#: app_actions/playback_actions.py:25
+#: app_actions/playback_actions.py:27
 msgid "1 minute"
 msgstr "Jedna minuta"
 
-#: app_actions/playback_actions.py:23
+#: app_actions/playback_actions.py:25
 msgid "1 second"
 msgstr "Jedna sekunda"
 
-#: app_actions/playback_actions.py:27
+#: app_actions/playback_actions.py:29
 msgid "10 minutes"
 msgstr "10 minut"
 
-#: app_actions/playback_actions.py:28
+#: app_actions/playback_actions.py:30
 msgid "20 minutes"
 msgstr "20 minut"
 
-#: app_actions/playback_actions.py:29
+#: app_actions/playback_actions.py:31
 msgid "30 minutes"
 msgstr "30 minut"
 
-#: app_actions/playback_actions.py:30
+#: app_actions/playback_actions.py:32
 msgid "40 minutes"
 msgstr "40 minut"
 
-#: app_actions/playback_actions.py:26
+#: app_actions/playback_actions.py:28
 msgid "5 minutes"
 msgstr "5 minut"
 
-#: app_actions/playback_actions.py:24
+#: app_actions/playback_actions.py:26
 msgid "5 seconds"
 msgstr "5 sekund"
 
-#: app_actions/playback_actions.py:31
+#: app_actions/playback_actions.py:33
 msgid "50 minutes"
 msgstr "50 minut"
 
-#: app_actions/playback_actions.py:32
+#: app_actions/playback_actions.py:34
 msgid "60 minutes"
 msgstr "60 minut"
 
-#: ui/help_dialogs.py:67
+#: ui/help_dialogs.py:20
 #, python-brace-format
 msgid ""
 "A lightweight, highly accessible media player designed for keyboard "
@@ -97,11 +97,26 @@ msgid ""
 "A new version of {app_name} has been detected. Would you like to update?"
 msgstr "Je k dispozici nová verze {app_name}. Přejete si aktualizovat?"
 
-#: ui/mainwin/menu.py:311
+#: update/actions.py:237
+#, python-brace-format
+msgid ""
+"A newer yt-dlp version is available on '{ch}' channel.\n"
+"Current version: {cur}\n"
+"Latest version: {new}\n"
+"\n"
+"Do you want to update now?"
+msgstr ""
+"Je k dispozici nová verze yt-dlp v kanálu '{ch}'.\n"
+"Stávající verze: {cur}\n"
+"Poslední verze: {new}\n"
+"\n"
+"Přejete si aktualizovat teď?"
+
+#: ui/mainwin/menu.py:363
 msgid "A-B loop"
 msgstr "Smyčka od místa do místa"
 
-#: ui/help_dialogs.py:62 ui/mainwin/menu.py:446
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:514
 msgid "About"
 msgstr "O programu"
 
@@ -109,23 +124,39 @@ msgstr "O programu"
 msgid "Action"
 msgstr "Akce"
 
-#: ui/mainwin/menu.py:87
+#: ui/mainwin/menu.py:103
 msgid "Actions for marked files"
 msgstr "Akce s označenými soubory"
+
+#: app_actions/bookmark_actions.py:16 ui/mainwin/menu.py:239
+msgid "Add a new bookmark"
+msgstr "Přidat novou záložku"
+
+#: app_actions/favorite_actions.py:62
+msgid "Add favorite"
+msgstr "Přidat k oblíbeným"
+
+#: ui/favorite_dlg.py:41
+msgid "Add..."
+msgstr "Přidat..."
 
 #: ui/audio_settings.py:6
 msgid "Advance to the next file"
 msgstr "Přejít na další soubor"
 
-#: ui/prefs/general.py:40
+#: ui/prefs/general.py:45
 msgid "Advanced"
 msgstr "Pokročilý"
 
-#: app_actions/playback_actions.py:56
+#: app_actions/playback_actions.py:68
 msgid "Advanced mode"
 msgstr "Režim pro pokročilé"
 
-#: app_actions/file_actions.py:484
+#: app_actions/bookmark_actions.py:123
+msgid "All bookmarks for this file were removed."
+msgstr "Všechny záložky pro tento soubor byly odstraněny."
+
+#: app_actions/file_actions.py:530
 msgid "All files closed."
 msgstr "Všechny soubory zavřeny."
 
@@ -145,7 +176,7 @@ msgstr "Vše označeno."
 msgid "All unmarked."
 msgstr "Označení všech zrušeno."
 
-#: ui/prefs/general.py:195
+#: ui/prefs/general.py:204
 msgid ""
 "Application language. System default follows your OS language. Choosing a "
 "specific language applies it on next app start."
@@ -157,7 +188,7 @@ msgstr ""
 msgid "Application update"
 msgstr "Aktualizace aplikace"
 
-#: ui/prefs/backup.py:139
+#: ui/prefs/backup.py:224
 msgid ""
 "Are you sure you want to reset all settings to defaults?\n"
 "This action cannot be undone."
@@ -169,11 +200,20 @@ msgstr ""
 msgid "Ask every time"
 msgstr "Vždy se zeptat"
 
-#: ui/prefs/dialog.py:51
+#: ui/prefs/dialog.py:52
 msgid "Audio"
 msgstr "Zvuk"
 
-#: ui/audio_settings.py:123
+#: ui/prefs/recording.py:23
+msgid "Audio format"
+msgstr "Formát zvuku"
+
+#: ui/prefs/recording.py:17
+#| msgid "Video quality"
+msgid "Audio quality (kbps)"
+msgstr "Kvalita audia (kbps)"
+
+#: ui/audio_settings.py:141
 msgid ""
 "Audio settings. Use Tab to move between controls. Press F1 on a specific "
 "control to hear detailed help."
@@ -185,11 +225,11 @@ msgstr ""
 msgid "Backspace"
 msgstr "Backspace"
 
-#: ui/prefs/dialog.py:40
+#: ui/prefs/dialog.py:41
 msgid "Backup and restore"
 msgstr "Záloha a obnovení"
 
-#: ui/prefs/backup.py:61
+#: ui/prefs/backup.py:77
 msgid ""
 "Backup and restore settings page. Use Export settings, Import settings, or "
 "Open user settings folder."
@@ -197,19 +237,19 @@ msgstr ""
 "Záložka Záloha a obnovení. Zde můžete exportovat nastavení, importovat "
 "nastavení nebo otevřít složku s konfiguračními soubory."
 
-#: ui/prefs/general.py:39
+#: ui/prefs/general.py:44
 msgid "Beginner"
 msgstr "Začátečník"
 
-#: app_actions/playback_actions.py:53
+#: app_actions/playback_actions.py:65
 msgid "Beginner mode"
 msgstr "Režim pro začátečníky"
 
-#: ui/mainwin/menu.py:324
+#: ui/mainwin/menu.py:376
 msgid "Beginning"
 msgstr "Začátek"
 
-#: ui/prefs/youtube.py:101
+#: ui/prefs/youtube.py:120
 msgid ""
 "Behavior for YouTube links that include both a video ID and a playlist ID. "
 "Ask every time shows a chooser dialog. Play the video opens only the "
@@ -224,12 +264,50 @@ msgstr ""
 msgid "Best"
 msgstr "Nejlepší"
 
+#: app_actions/bookmark_actions.py:41
+#, python-brace-format
+msgid "Bookmark '{name}' added at {time}."
+msgstr "Záložka '{name}' přidána v čase {time}."
+
+#: app_actions/bookmark_actions.py:21 app_actions/bookmark_actions.py:97
+msgid "Bookmark name cannot be empty."
+msgstr "Název záložky nesmí být prázdný."
+
+#: ui/mainwin/menu.py:250
+#, python-brace-format
+msgid "Bookmark {slot}"
+msgstr "Záložka {slot}"
+
+#: app_actions/bookmark_actions.py:15
+#, python-brace-format
+msgid "Bookmark {time}"
+msgstr "Záložka v čase {time}"
+
+#: app_actions/bookmark_actions.py:22 app_actions/bookmark_actions.py:33
+#: app_actions/bookmark_actions.py:60 app_actions/bookmark_actions.py:124
+#: ui/mainwin/menu.py:101
+msgid "Bookmarks"
+msgstr "Záložky"
+
+#: ui/prefs/backup.py:182
+msgid "Bookmarks exported successfully."
+msgstr "Záložky úspěšně exportovány."
+
+#: ui/prefs/backup.py:215
+msgid "Bookmarks imported successfully."
+msgstr "Záložky úspěšně importovány."
+
+#: ui/prefs/recording.py:32
+msgid "Browse..."
+msgstr "Procházet..."
+
 #: youtube/results.py:68 youtube/results.py:79
 msgid "Browser open failed."
 msgstr "Nepodařilo se otevřít prohlížeč."
 
-#: ui/dialogs.py:52 ui/task_dialogs.py:18 ui/task_dialogs.py:78
-#: ui/yt_dialogs.py:58 ui/yt_dialogs.py:114 youtube/ui_utils.py:69
+#: ui/dialogs.py:74 ui/dialogs.py:198 ui/task_dialogs.py:18
+#: ui/task_dialogs.py:78 ui/yt_dialogs.py:58 ui/yt_dialogs.py:114
+#: youtube/ui_utils.py:69
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -238,7 +316,7 @@ msgstr "Zrušit"
 msgid "Canceled."
 msgstr "Zrušeno."
 
-#: app_actions/file_actions.py:555
+#: app_actions/file_actions.py:601
 msgid "Cannot open clipboard data."
 msgstr "Nelze načíst data ze schránky."
 
@@ -246,11 +324,15 @@ msgstr "Nelze načíst data ze schránky."
 msgid "Channel link is not available."
 msgstr "Odkaz na kanál není dostupný."
 
-#: youtube/flow.py:91
+#: youtube/flow.py:110
 msgid "Channel links are not supported here."
 msgstr "Odkazy na kanály zde nejsou podporovány."
 
-#: ui/mainwin/menu.py:436
+#: ui/prefs/recording.py:11
+msgid "Channels"
+msgstr "Kanály"
+
+#: ui/mainwin/menu.py:504
 msgid "Check for app updates"
 msgstr "Vyhledat aktualizace aplikace"
 
@@ -258,7 +340,7 @@ msgstr "Vyhledat aktualizace aplikace"
 msgid "Check for app updates on startup"
 msgstr "Při spuštění vyhledávat aktualizace"
 
-#: ui/prefs/general.py:210
+#: ui/prefs/general.py:219
 msgid ""
 "Check for app updates on startup. When enabled, the app checks online update "
 "metadata at launch and prompts when a newer version is available."
@@ -268,54 +350,89 @@ msgstr ""
 "aktualizaci, a pokud je dostupná novější verze, zeptá se, jestli si přejete "
 "aktualizovat."
 
-#: update/actions.py:192
+#: ui/prefs/youtube.py:41
+msgid "Check for yt-dlp updates on startup"
+msgstr "Při spuštění vyhledávat aktualizace yt-dlp"
+
+#: ui/prefs/youtube.py:132
+msgid ""
+"Check for yt-dlp updates on startup. When enabled, the app checks local and "
+"latest channel versions at launch and prompts you to run the standard yt-dlp "
+"update when a newer version is available."
+msgstr ""
+"Při spuštění vyhledávat aktualizace yt-dlp. Když je tato možnost zaškrtnuta, "
+"aplikace při spuštění zkontroluje na serveru informace o poslední "
+"aktualizaci knihovny yt-dlp, a pokud je dostupná novější verze, zeptá se, "
+"jestli si přejete aktualizovat."
+
+#: update/actions.py:262
 msgid "Checking for app updates"
 msgstr "Vyhledávají se aktualizace"
 
-#: ui/mainwin/menu.py:309
+#: ui/prefs/recording.py:148
+msgid "Choose recordings folder"
+msgstr "Vybrat složku s nahrávkami"
+
+#: ui/dialogs.py:47
+msgid "Choose time position:"
+msgstr "Vyberte časovou značku:"
+
+#: ui/mainwin/menu.py:361
 msgid "Clear A-B loop"
 msgstr "Zrušit smyčku od místa do místa"
 
-#: ui/mainwin/menu.py:200
+#: ui/mainwin/menu.py:223
 msgid "Clear Marked Files"
 msgstr "Zrušit označení všech souborů"
 
-#: app_actions/file_actions.py:501
+#: app_actions/file_actions.py:547
 msgid "Clipboard does not contain files or folders."
 msgstr "Ve schránce není cesta k žádnému souboru ani složce."
 
-#: app_actions/file_actions.py:555
+#: app_actions/file_actions.py:601
 msgid "Clipboard does not contain openable files or folders."
 msgstr ""
 "Ve schránce není cesta k žádnému souboru ani složce, které by se daly "
 "otevřít."
 
-#: app_actions/file_actions.py:501
+#: app_actions/file_actions.py:547
 msgid "Clipboard empty."
 msgstr "Schránka je prázdná."
 
-#: app_actions/file_actions.py:551
+#: app_actions/file_actions.py:597
 #, python-brace-format
 msgid "Clipboard path could not be resolved: {path}"
 msgstr "Cestu ve schránce se nepodařilo otevřít: {path}"
 
-#: ui/dialogs.py:98 ui/dialogs.py:121 ui/yt_dialogs.py:163
+#: ui/bookmark_dlg.py:30 ui/dialogs.py:244 ui/dialogs.py:267
+#: ui/favorite_dlg.py:44 ui/yt_dialogs.py:163
 msgid "Close"
 msgstr "Zavřít"
 
-#: ui/mainwin/menu.py:140
+#: ui/mainwin/menu.py:162
 msgid "Close File"
 msgstr "Zavřít soubor"
 
-#: ui/mainwin/menu.py:144
+#: ui/mainwin/menu.py:166
 msgid "Close all files"
 msgstr "Zavřít všechny soubory"
 
-#: app_actions/file_actions.py:466 app_actions/file_actions.py:480
+#: app_actions/file_actions.py:512 app_actions/file_actions.py:526
 msgid "Close failed."
 msgstr "Zavírání selhalo."
 
-#: app_actions/file_actions.py:572 app_actions/marked_file_actions.py:89
+#: ui/favorite_dlg.py:12
+msgid "Combined link"
+msgstr "Kombinovaný odkaz"
+
+#: app_actions/favorite_actions.py:187
+msgid ""
+"Combined link favorites require a link containing both video and playlist."
+msgstr ""
+"Pro přidání kombinovaného odkazu k oblíbeným musí odkaz obsahovat ID videa i "
+"playlistu."
+
+#: app_actions/file_actions.py:618 app_actions/marked_file_actions.py:89
 msgid "Confirm Delete"
 msgstr "Potvrdit smazání"
 
@@ -323,25 +440,33 @@ msgstr "Potvrdit smazání"
 msgid "Confirm Reset"
 msgstr "Potvrdit obnovení"
 
-#: ui/help_dialogs.py:15 ui/mainwin/menu.py:430
+#: app_actions/bookmark_actions.py:114
+msgid "Confirm delete"
+msgstr "Potvrdit smazání"
+
+#: app_actions/favorite_actions.py:126
+msgid "Confirm remove"
+msgstr "Potvrdit odstranění"
+
+#: ui/mainwin/menu.py:499
 msgid "Contact me"
 msgstr "Kontaktovat autora (anglicky)"
 
-#: ui/mainwin/menu.py:364
+#: ui/mainwin/menu.py:420
 msgid "Control the clicks movement value"
 msgstr "Nastavení intervalů pro přetáčení"
 
-#: app_actions/file_actions.py:493 app_actions/file_actions.py:637
+#: app_actions/file_actions.py:539 app_actions/file_actions.py:683
 #: app_actions/marked_file_actions.py:76 app_actions/marked_file_actions.py:266
 #: youtube/results.py:59 youtube/video.py:45
 msgid "Copied."
 msgstr "Zkopírováno."
 
-#: ui/mainwin/menu.py:183
+#: ui/mainwin/menu.py:206
 msgid "Copy"
 msgstr "Zkopírovat"
 
-#: app_actions/file_actions.py:495 app_actions/file_actions.py:639
+#: app_actions/file_actions.py:541 app_actions/file_actions.py:685
 #: app_actions/marked_file_actions.py:78 youtube/results.py:61
 #: youtube/video.py:47
 msgid "Copy failed."
@@ -351,11 +476,11 @@ msgstr "Kopírování selhalo."
 msgid "Copy link\tCtrl+C"
 msgstr "Zkopírovat odkaz\tCtrl+C"
 
-#: ui/mainwin/menu.py:224
+#: ui/mainwin/menu.py:272
 msgid "Copy to &clipboard"
 msgstr "Zkopírovat do &schránky"
 
-#: ui/mainwin/menu.py:405
+#: ui/mainwin/menu.py:463
 msgid "Copy video link"
 msgstr "Zkopírovat odkaz na video"
 
@@ -363,23 +488,31 @@ msgstr "Zkopírovat odkaz na video"
 msgid "Copying marked files"
 msgstr "Kopírují se označené soubory"
 
-#: app_actions/playback_actions.py:100
+#: app_actions/bookmark_actions.py:32
+msgid "Could not add bookmark."
+msgstr "Nepodařilo se přidat záložku."
+
+#: app_actions/favorite_actions.py:75
+msgid "Could not add favorite."
+msgstr "Nepodařilo se přidat položku k oblíbeným."
+
+#: app_actions/playback_actions.py:112
 msgid "Could not change silence removal filter."
 msgstr "Nepodařilo se přenastavit filtr odstraňování ticha."
 
-#: update/actions.py:87
+#: update/actions.py:88
 msgid "Could not check for updates."
 msgstr "Nepodařilo se vyhledat aktualizace."
 
-#: app_actions/file_actions.py:480
+#: app_actions/file_actions.py:526
 msgid "Could not close files."
 msgstr "Nepodařilo se zavřít soubory."
 
-#: app_actions/file_actions.py:466
+#: app_actions/file_actions.py:512
 msgid "Could not close the file."
 msgstr "Soubor se nepodařilo zavřít."
 
-#: youtube/flow.py:268
+#: youtube/flow.py:287
 msgid "Could not complete YouTube search."
 msgstr "Nepodařilo se dokončit vyhledávání na YouTube."
 
@@ -391,15 +524,24 @@ msgstr "Nepodařilo se zkopírovat odkaz."
 msgid "Could not delete marked files."
 msgstr "Nepodařilo se smazat označené soubory."
 
-#: app_actions/file_actions.py:580
+#: app_actions/file_actions.py:626
 msgid "Could not delete the file."
 msgstr "Soubor se nepodařilo smazat."
 
-#: update/actions.py:133
+#: update/actions.py:134
 msgid "Could not download update."
 msgstr "Aktualizaci se nepodařilo stáhnout."
 
-#: ui/prefs/backup.py:87
+#: ui/prefs/backup.py:175
+#, python-brace-format
+msgid ""
+"Could not export bookmarks.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se exportovat záložky.\n"
+"{error}"
+
+#: ui/prefs/backup.py:103
 #, python-brace-format
 msgid ""
 "Could not export settings.\n"
@@ -408,12 +550,21 @@ msgstr ""
 "Nepodařilo se exportovat nastavení.\n"
 "{error}"
 
-#: app_actions/help_actions.py:60
+#: app_actions/help_actions.py:62
 #, python-brace-format
 msgid "Could not find the file {name}."
 msgstr "Nepodařilo se najít soubor {name}."
 
-#: ui/prefs/backup.py:123
+#: ui/prefs/backup.py:208
+#, python-brace-format
+msgid ""
+"Could not import bookmarks.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se importovat záložky.\n"
+"{error}"
+
+#: ui/prefs/backup.py:139
 #, python-brace-format
 msgid ""
 "Could not import settings.\n"
@@ -422,15 +573,19 @@ msgstr ""
 "Nepodařilo se importovat nastavení.\n"
 "{error}"
 
+#: app.py:193
+msgid "Could not initialize the application."
+msgstr "Nepodařilo se inicializovat aplikaci."
+
 #: youtube/startup.py:155
 msgid "Could not install YouTube components."
 msgstr "Nepodařilo se nainstalovat YouTube komponenty."
 
-#: playlist/info.py:30
+#: app_actions/file_actions.py:407 playlist/info.py:30
 msgid "Could not load playlist info."
 msgstr "Nepodařilo se načíst informace o playlistu."
 
-#: youtube/flow.py:320
+#: youtube/flow.py:339
 msgid "Could not open YouTube stream."
 msgstr "Nepodařilo se otevřít datový stream z YouTube."
 
@@ -438,40 +593,63 @@ msgstr "Nepodařilo se otevřít datový stream z YouTube."
 msgid "Could not open browser."
 msgstr "Nepodařilo se otevřít prohlížeč."
 
-#: app_actions/file_actions.py:277 app_actions/file_actions.py:281
+#: app_actions/file_actions.py:306 app_actions/file_actions.py:310
 msgid "Could not open file properties."
 msgstr "Nepodařilo se otevřít vlastnosti souboru."
 
-#: app_actions/file_actions.py:278
+#: app_actions/file_actions.py:307
 #, python-brace-format
 msgid "Could not open file properties: {error}"
 msgstr "Nepodařilo se otevřít vlastnosti souboru: {error}"
 
-#: app_actions/file_actions.py:544
+#: app_actions/recording_actions.py:46 app_actions/recording_actions.py:51
+#: app_actions/recording_actions.py:56
+#, python-brace-format
+msgid ""
+"Could not open recordings folder.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se otevřít složku s nahrávkami.\n"
+"{error}"
+
+#: app_actions/favorite_actions.py:144
+msgid "Could not open stream link."
+msgstr "Odkaz na stream se nepodařilo otevřít."
+
+#: app_actions/file_actions.py:590
 msgid "Could not open the file from clipboard."
 msgstr "Nepodařilo se otevřít soubor ze schránky."
 
-#: app_actions/help_actions.py:68
+#: app_actions/help_actions.py:70
 msgid "Could not open the file."
 msgstr "Soubor se nepodařilo otevřít."
 
-#: app_actions/file_actions.py:255
+#: app_actions/file_actions.py:284
 msgid "Could not open the folder."
 msgstr "Složku se nepodařilo otevřít."
 
-#: app_actions/file_actions.py:517
+#: app_actions/file_actions.py:563
 msgid "Could not open the link from clipboard."
 msgstr "Nepodařilo se otevřít odkaz ze schránky."
 
-#: app_actions/file_actions.py:235 app_actions/help_actions.py:74
+#: app_actions/file_actions.py:264 app_actions/help_actions.py:76
 msgid "Could not open the link."
 msgstr "Odkaz se nepodařilo otevřít."
 
-#: ui/prefs/backup.py:176
+#: ui/prefs/backup.py:261
 msgid "Could not open the settings folder."
 msgstr "Nepodařilo se otevřít složku s konfiguračními soubory."
 
-#: youtube/flow.py:289
+#: app_actions/recording_actions.py:30
+#, python-brace-format
+msgid ""
+"Could not pause recording.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se pozastavit nahrávání.\n"
+"{error}"
+
+#: youtube/flow.py:308
 msgid "Could not read YouTube link data."
 msgstr "Nepodařilo se načíst data z odkazu na YouTube."
 
@@ -483,7 +661,7 @@ msgstr "Nepodařilo se načíst informace o playlistu."
 msgid "Could not read video details."
 msgstr "Nepodařilo se načíst podrobnosti videa."
 
-#: ui/prefs/general.py:247
+#: ui/prefs/general.py:263
 #, python-brace-format
 msgid ""
 "Could not register file extensions.\n"
@@ -492,11 +670,11 @@ msgstr ""
 "Nepodařilo se zaregistrovat přípony souborů.\n"
 "{error}"
 
-#: app_actions/file_actions.py:613
+#: app_actions/file_actions.py:659
 msgid "Could not rename the file."
 msgstr "Soubor se nepodařilo přejmenovat."
 
-#: ui/prefs/backup.py:154
+#: ui/prefs/backup.py:239
 #, python-brace-format
 msgid ""
 "Could not reset settings.\n"
@@ -505,7 +683,7 @@ msgstr ""
 "Nepodařilo se obnovit výchozí nastavení.\n"
 "{error}"
 
-#: youtube/flow.py:388
+#: youtube/flow.py:407
 msgid "Could not resolve YouTube stream."
 msgstr "Nepodařilo se načíst datový stream z YouTube."
 
@@ -513,15 +691,42 @@ msgstr "Nepodařilo se načíst datový stream z YouTube."
 msgid "Could not resolve a playable stream."
 msgstr "Nepodařilo se načíst žádný přehratelný datový stream."
 
+#: app_actions/recording_actions.py:25
+#, python-brace-format
+msgid ""
+"Could not resume recording.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se pokračovat v nahrávání.\n"
+"{error}"
+
 #: app_actions/device_actions.py:32
 msgid "Could not set sound card."
 msgstr "Nepodařilo se nastavit zvukové zařízení."
 
-#: update/actions.py:139
+#: app_actions/recording_actions.py:16
+#, python-brace-format
+msgid ""
+"Could not start recording.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se zahájit nahrávání.\n"
+"{error}"
+
+#: update/actions.py:140
 msgid "Could not start the updater."
 msgstr "Nepodařilo se spustit updater."
 
-#: ui/prefs/general.py:264
+#: app_actions/recording_actions.py:40
+#, python-brace-format
+msgid ""
+"Could not stop recording.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se ukončit nahrávání.\n"
+"{error}"
+
+#: ui/prefs/general.py:280
 #, python-brace-format
 msgid ""
 "Could not unregister file extensions.\n"
@@ -530,16 +735,20 @@ msgstr ""
 "Nepodařilo se odregistrovat přípony souborů.\n"
 "{error}"
 
-#: update/actions.py:58
+#: app_actions/favorite_actions.py:109
+msgid "Could not update favorite."
+msgstr "Nepodařilo se aktualizovat oblíbenou položku."
+
+#: update/actions.py:59
 msgid "Could not update yt-dlp."
 msgstr "Nepodařilo se aktualizovat yt-dlp."
 
-#: app_actions/file_actions.py:143
+#: app_actions/file_actions.py:142
 #, python-brace-format
 msgid "Counting files... {count}"
 msgstr "Počítají se soubory... {count}"
 
-#: app_actions/file_actions.py:493
+#: app_actions/file_actions.py:539
 msgid "Current file copied to clipboard."
 msgstr "Aktuální soubor zkopírován do schránky."
 
@@ -547,7 +756,7 @@ msgstr "Aktuální soubor zkopírován do schránky."
 msgid "Custom seek value (seconds)"
 msgstr "Vlastní interval skoku (v sekundách)"
 
-#: ui/audio_settings.py:129
+#: ui/audio_settings.py:147
 msgid ""
 "Custom seek value in seconds. This value is used when the custom seek step "
 "is selected. Enter a positive number like 5, 10, or 30. Decimals are "
@@ -557,19 +766,19 @@ msgstr ""
 "příkazu Vlastní interval skoku. Zadejte kladné číslo, například 5, 10 nebo "
 "30. Můžete používat i desetinná místa, například 2.5 sekundy."
 
-#: app_actions/playback_actions.py:33
+#: app_actions/playback_actions.py:35
 msgid "Custom value"
 msgstr "Vlastní interval"
 
-#: ui/mainwin/menu.py:257
+#: ui/mainwin/menu.py:305
 msgid "Decrease Speed"
 msgstr "Zpomalit"
 
-#: config/shortcut_utils.py:41 ui/mainwin/menu.py:179
+#: config/shortcut_utils.py:41 ui/bookmark_dlg.py:29 ui/mainwin/menu.py:202
 msgid "Delete"
 msgstr "Smazat"
 
-#: app_actions/file_actions.py:571
+#: app_actions/file_actions.py:617
 #, python-brace-format
 msgid "Delete '{name}'?"
 msgstr "Opravdu smazat '{name}'?"
@@ -579,11 +788,16 @@ msgstr "Opravdu smazat '{name}'?"
 msgid "Delete Complete"
 msgstr "Smazáno"
 
-#: app_actions/file_actions.py:580 app_actions/marked_file_actions.py:157
+#: app_actions/bookmark_actions.py:113
+#, python-brace-format
+msgid "Delete bookmark '{name}'?"
+msgstr "Opravdu smazat záložku '{name}'?"
+
+#: app_actions/file_actions.py:626 app_actions/marked_file_actions.py:157
 msgid "Delete failed."
 msgstr "Mazání selhalo."
 
-#: app_actions/file_actions.py:565
+#: app_actions/file_actions.py:611
 msgid "Delete is available only for local files."
 msgstr "Mazat můžete pouze místní soubory."
 
@@ -602,7 +816,7 @@ msgstr "Smazáno {count} označených souborů."
 msgid "Deleted {deleted} files. Failed to delete {failed} files."
 msgstr "Smazáno {deleted} souborů. {failed} souborů se nepodařilo smazat."
 
-#: app_actions/file_actions.py:586 app_actions/marked_file_actions.py:144
+#: app_actions/file_actions.py:632 app_actions/marked_file_actions.py:144
 msgid "Deleted."
 msgstr "Smazáno."
 
@@ -642,11 +856,11 @@ msgstr "Šipka dolů"
 msgid "Download"
 msgstr "Stáhnout"
 
-#: ui/prefs/youtube.py:39
+#: ui/prefs/youtube.py:46
 msgid "Download YouTube components"
 msgstr "Stáhnout YouTube komponenty"
 
-#: ui/prefs/youtube.py:113
+#: ui/prefs/youtube.py:138
 msgid ""
 "Download YouTube components installs missing YouTube libraries such as yt-"
 "dlp and Deno."
@@ -662,7 +876,7 @@ msgstr "Staženo."
 msgid "Download failed."
 msgstr "Stahování selhalo."
 
-#: ui/mainwin/menu.py:397
+#: ui/mainwin/menu.py:455
 msgid "Download..."
 msgstr "Stáhnout..."
 
@@ -674,15 +888,15 @@ msgstr "Stahují se YouTube komponenty"
 msgid "Downloading audio"
 msgstr "Stahuje se audio"
 
-#: update/actions.py:125
+#: update/actions.py:126
 msgid "Downloading update"
 msgstr "Stahuje se aktualizace"
 
-#: update/actions.py:128
+#: update/actions.py:129
 msgid "Downloading update package..."
 msgstr "Stahují se soubory aktualizace..."
 
-#: ui/mainwin/menu.py:85
+#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:99
 msgid "Edit"
 msgstr "Úpravy"
 
@@ -694,7 +908,19 @@ msgstr "Změnit primární zkratku"
 msgid "Edit Secondary Shortcut"
 msgstr "Změnit sekundární zkratku"
 
-#: app_actions/playback_actions.py:188
+#: app_actions/bookmark_actions.py:89
+msgid "Edit bookmark name"
+msgstr "Upravit název záložky"
+
+#: app_actions/favorite_actions.py:93
+msgid "Edit favorite"
+msgstr "Upravit oblíbené video"
+
+#: ui/favorite_dlg.py:42
+msgid "Edit..."
+msgstr "Upravit..."
+
+#: app_actions/playback_actions.py:200
 msgid "Elapsed time: "
 msgstr "Přehráno: "
 
@@ -703,15 +929,15 @@ msgstr "Přehráno: "
 msgid "Elapsed: {value}"
 msgstr "Přehráno: {value}"
 
-#: ui/help_dialogs.py:28
+#: ui/mainwin/menu.py:489
 msgid "Email"
 msgstr "E-mail"
 
-#: ui/audio_settings.py:48
+#: ui/audio_settings.py:60
 msgid "Enable dynamic normalize and limiter"
 msgstr "Zapnout dynamickou normalizaci a limiter"
 
-#: ui/audio_settings.py:158
+#: ui/audio_settings.py:190
 msgid ""
 "Enable dynamic normalize and limiter audio filter. When enabled, audio uses "
 "dynaudnorm followed by alimiter to reduce clipping at high volume boosts. "
@@ -723,24 +949,24 @@ msgstr ""
 "vypněte, pokud chcete slyšet původní zvukový výstup bez tohoto dodatečného "
 "zpracování."
 
-#: ui/mainwin/menu.py:293
+#: ui/mainwin/menu.py:345
 msgid "Enable silence removal filter"
 msgstr "Zapnout odstraňování ticha"
 
-#: config/shortcut_utils.py:40 ui/mainwin/menu.py:328
+#: config/shortcut_utils.py:40 ui/mainwin/menu.py:380
 msgid "End"
 msgstr "End"
 
-#: app_actions/playback_actions.py:284
+#: app_actions/playback_actions.py:322
 msgid "End selection must be after start."
 msgstr "Značka konce musí být za značkou začátku."
 
-#: app_actions/playback_actions.py:292
+#: app_actions/playback_actions.py:330
 #, python-brace-format
 msgid "End selection: {time}"
 msgstr "Značka konce: {time}"
 
-#: app_actions/playback_actions.py:293
+#: app_actions/playback_actions.py:331
 #, python-brace-format
 msgid "End {time}"
 msgstr "KOnec {time}"
@@ -753,16 +979,20 @@ msgstr "Enter"
 msgid "Enter a YouTube video or playlist link."
 msgstr "Zadejte odkaz na video nebo playlist na YouTube."
 
-#: app_actions/file_actions.py:404
+#: app_actions/bookmark_actions.py:16
+msgid "Enter bookmark name"
+msgstr "Zadejte název záložky"
+
+#: app_actions/file_actions.py:443
 #, python-brace-format
 msgid "Enter file number (1-{count})"
 msgstr "Zadejte číslo souboru (1 až {count})"
 
-#: app_actions/file_actions.py:220
+#: app_actions/file_actions.py:249
 msgid "Enter link to play."
 msgstr "Zadejte odkaz, který chcete přehrát."
 
-#: app_actions/file_actions.py:603
+#: app_actions/file_actions.py:649
 msgid "Enter new name for the file."
 msgstr "Zadejte nový název souboru."
 
@@ -770,26 +1000,35 @@ msgstr "Zadejte nový název souboru."
 msgid "Enter search text."
 msgstr "Zadejte hledaný výraz."
 
-#: app_actions/file_actions.py:236 app_actions/file_actions.py:518
-#: app_actions/help_actions.py:61 update/actions.py:88 update/actions.py:134
-#: update/actions.py:140 youtube/flow.py:48 youtube/flow.py:61
-#: youtube/flow.py:320 youtube/flow.py:605
+#: app.py:194 app_actions/bookmark_actions.py:98
+#: app_actions/file_actions.py:265 app_actions/file_actions.py:564
+#: app_actions/help_actions.py:63 update/actions.py:89 update/actions.py:135
+#: update/actions.py:141 youtube/flow.py:48 youtube/flow.py:61
+#: youtube/flow.py:339 youtube/flow.py:624 youtube/startup.py:158
 msgid "Error"
 msgstr "Chyba"
 
-#: ui/mainwin/menu.py:155
+#: ui/mainwin/menu.py:177
 msgid "Exit"
 msgstr "Ukončit"
 
-#: ui/prefs/backup.py:88
+#: ui/prefs/backup.py:19 ui/prefs/backup.py:158 ui/prefs/backup.py:183
+msgid "Export bookmarks"
+msgstr "Exportovat záložky"
+
+#: ui/prefs/backup.py:59
+msgid "Export bookmarks creates a copy of the bookmarks JSON file."
+msgstr "Příkaz Exportovat záložky vytvoří kopii JSON souboru se záložkami."
+
+#: ui/prefs/backup.py:104 ui/prefs/backup.py:176
 msgid "Export error"
 msgstr "Chyba při exportu"
 
-#: ui/prefs/backup.py:15 ui/prefs/backup.py:74 ui/prefs/backup.py:95
+#: ui/prefs/backup.py:17 ui/prefs/backup.py:90 ui/prefs/backup.py:111
 msgid "Export settings"
 msgstr "Exportovat nastavení"
 
-#: ui/prefs/backup.py:43
+#: ui/prefs/backup.py:51
 msgid "Export settings creates a copy of the current settings file."
 msgstr ""
 "Příkaz Exportovat nastavení vytvoří kopii aktuálního konfiguračního souboru."
@@ -798,7 +1037,18 @@ msgstr ""
 msgid "Failed."
 msgstr "Příkaz selhal."
 
-#: youtube/flow.py:245
+#: app_actions/favorite_actions.py:68 app_actions/favorite_actions.py:76
+#: app_actions/favorite_actions.py:102 app_actions/favorite_actions.py:110
+#: app_actions/favorite_actions.py:145 app_actions/favorite_actions.py:156
+#: ui/favorite_dlg.py:29
+msgid "Favorite videos"
+msgstr "Oblíbená videa"
+
+#: ui/mainwin/menu.py:142
+msgid "Favorite videos..."
+msgstr "Oblíbená videa..."
+
+#: youtube/flow.py:264
 msgid "Fetching first stream..."
 msgstr "Načítá se první datový stream..."
 
@@ -806,7 +1056,7 @@ msgstr "Načítá se první datový stream..."
 msgid "Fetching stream URL..."
 msgstr "Načítá se URL datového streamu..."
 
-#: ui/mainwin/menu.py:84
+#: ui/mainwin/menu.py:98
 msgid "File"
 msgstr "Soubor"
 
@@ -814,39 +1064,39 @@ msgstr "Soubor"
 msgid "File added to marked files."
 msgstr "Soubor přidán mezi označené."
 
-#: app_actions/file_actions.py:472
+#: app_actions/file_actions.py:518
 msgid "File closed."
 msgstr "Soubor zavřen."
 
-#: app_actions/file_actions.py:586
+#: app_actions/file_actions.py:632
 msgid "File deleted."
 msgstr "Soubor smazán."
 
-#: ui/prefs/general.py:240
+#: ui/prefs/general.py:256
 msgid "File extensions registered successfully."
 msgstr "Přípony souborů úspěšně zaregistrovány."
 
-#: ui/prefs/general.py:257
+#: ui/prefs/general.py:273
 msgid "File extensions unregistered successfully."
 msgstr "Přípony souborů úspěšně odregistrovány."
 
-#: app_actions/file_actions.py:416
+#: app_actions/file_actions.py:455
 msgid "File number out of range."
 msgstr "Zadané číslo souboru je mimo rozsah."
 
-#: app_actions/file_actions.py:637
+#: app_actions/file_actions.py:683
 msgid "File path copied to clipboard."
 msgstr "Cesta k souboru zkopírována do schránky."
 
-#: app_actions/file_actions.py:265
+#: app_actions/file_actions.py:294
 msgid "File properties are available only for local files."
 msgstr "Vlastnosti jsou dostupné pouze pro místní soubory."
 
-#: app_actions/file_actions.py:270
+#: app_actions/file_actions.py:299
 msgid "File properties are not supported on this platform."
 msgstr "Na této platformě nejsou vlastnosti souborů podporovány."
 
-#: ui/mainwin/menu.py:132
+#: ui/mainwin/menu.py:154
 msgid "File properties..."
 msgstr "Vlastnosti souboru..."
 
@@ -854,27 +1104,31 @@ msgstr "Vlastnosti souboru..."
 msgid "File removed from marked files."
 msgstr "Soubor odstraněn z označených."
 
-#: app_actions/file_actions.py:611
+#: app_actions/file_actions.py:657
 msgid "File renamed."
 msgstr "Soubor přejmenován."
 
-#: app_actions/playback_actions.py:100
+#: app_actions/playback_actions.py:112
 msgid "Filter failed."
 msgstr "Použití filtru selhalo."
 
-#: ui/mainwin/menu.py:276
+#: ui/mainwin/menu.py:324
 msgid "First File"
 msgstr "První soubor"
 
-#: ui/main_frame.py:41 ui/mainwin/menu.py:320
+#: app_actions/recording_actions.py:46
+msgid "Folder is not set."
+msgstr "Složka není nastavena."
+
+#: ui/main_frame.py:49 ui/mainwin/menu.py:372
 msgid "Forward"
 msgstr "Přetočit dopředu"
 
-#: ui/prefs/dialog.py:33
+#: ui/prefs/dialog.py:34
 msgid "General"
 msgstr "Obecné"
 
-#: ui/prefs/general.py:174
+#: ui/prefs/general.py:183
 msgid ""
 "General settings. Use Tab to move between controls. Press F1 on a specific "
 "control to hear detailed help."
@@ -882,25 +1136,50 @@ msgstr ""
 "Obecná nastavení.  Klávesou tab se pohybujete mezi ovládacími prvky dialogu. "
 "Klávesou F1 vyvoláte podrobnou nápovědu k danému prvku."
 
-#: ui/prefs/dialog.py:99
+#: ui/favorite_dlg.py:13
+msgid "Generic stream"
+msgstr "Generický stream"
+
+#: app_actions/favorite_actions.py:174
+msgid "Generic stream link must start with http or https."
+msgstr "Odkaz na generický stream musí začínat znaky http nebo https."
+
+#: ui/prefs/dialog.py:107
 msgid "Global Shortcuts"
 msgstr "Globální klávesové zkratky"
 
-#: ui/prefs/dialog.py:77
+#: ui/prefs/dialog.py:85
 msgid "Global shortcuts"
 msgstr "Globální zkratky"
 
-#: app_actions/file_actions.py:405
+#: app_actions/file_actions.py:444
 msgid "Go To File"
 msgstr "Přejít na soubor"
 
-#: ui/mainwin/menu.py:91
+#: ui/mainwin/menu.py:328
+msgid "Go to file..."
+msgstr "Přejít na soubor..."
+
+#: app_actions/playback_actions.py:262 ui/dialogs.py:41 ui/dialogs.py:164
+#: ui/dialogs.py:174
+msgid "Go to time"
+msgstr "Přejít na čas"
+
+#: ui/mainwin/menu.py:384
+msgid "Go to time..."
+msgstr "Přejít na čas..."
+
+#: ui/mainwin/menu.py:108
 msgid "Help"
 msgstr "Nápověda"
 
 #: config/shortcut_utils.py:39
 msgid "Home"
 msgstr "Home"
+
+#: ui/dialogs.py:49
+msgid "Hours"
+msgstr "Hodiny"
 
 #: ui/silence_removal.py:35
 msgid "How many silence chunks to trim after audio has started (-1 means all)."
@@ -920,42 +1199,54 @@ msgstr ""
 "na změny v hlasitosti řeči (výchozí nastavení). Volba RMS je plynulejší a "
 "méně citlivá na krátké výkyvy."
 
-#: ui/prefs/backup.py:77 ui/prefs/backup.py:109
+#: ui/prefs/backup.py:93 ui/prefs/backup.py:125
 msgid "INI files (*.ini)|*.ini|All files (*.*)|*.*"
 msgstr "Soubory INI (*.ini)|*.ini|Všechny soubory (*.*)|*.*"
 
-#: ui/prefs/backup.py:124
+#: ui/prefs/backup.py:20 ui/prefs/backup.py:194 ui/prefs/backup.py:216
+msgid "Import bookmarks"
+msgstr "Importovat záložky"
+
+#: ui/prefs/backup.py:63
+msgid ""
+"Import bookmarks replaces current bookmarks with a selected bookmarks file."
+msgstr ""
+"Příkaz Importovat záložky nahradí aktuální záložky vybraným souborem se "
+"záložkami."
+
+#: ui/prefs/backup.py:140 ui/prefs/backup.py:209
 msgid "Import error"
 msgstr "Chyba při importu"
 
-#: ui/prefs/backup.py:16 ui/prefs/backup.py:106 ui/prefs/backup.py:131
+#: ui/prefs/backup.py:18 ui/prefs/backup.py:122 ui/prefs/backup.py:147
 msgid "Import settings"
 msgstr "Importovat nastavení"
 
-#: ui/prefs/backup.py:47
+#: ui/prefs/backup.py:55
 msgid ""
 "Import settings replaces current settings with a selected settings file."
 msgstr ""
 "Příkaz Importovat nastavení nahradí aktuální nastavení vybraným "
 "konfiguračním souborem."
 
-#: ui/mainwin/menu.py:253
+#: ui/mainwin/menu.py:301
 msgid "Increase Speed"
 msgstr "Zrychlit"
 
-#: update/actions.py:103
+#: update/actions.py:104 youtube/startup.py:45
 msgid "Info"
 msgstr "Info"
 
-#: playlist/info.py:30
+#: app_actions/file_actions.py:407 playlist/info.py:30
 msgid "Info failed."
 msgstr "Příkaz Info selhal."
 
-#: ui/dialogs.py:87
+#: ui/dialogs.py:233
 msgid "Information"
 msgstr "Informace"
 
-#: youtube/flow.py:69 youtube/flow.py:92 youtube/flow.py:112
+#: youtube/flow.py:69 youtube/flow.py:79 youtube/flow.py:88 youtube/flow.py:111
+#: youtube/flow.py:131
 msgid "Invalid YouTube link"
 msgstr "Neplatný odkaz na YouTube"
 
@@ -963,15 +1254,15 @@ msgstr "Neplatný odkaz na YouTube"
 msgid "Invalid download folder."
 msgstr "Neplatná složka pro stažení."
 
-#: app_actions/playback_actions.py:284
+#: app_actions/playback_actions.py:322
 msgid "Invalid end."
 msgstr "Neplatná značka konce."
 
-#: app_actions/file_actions.py:412
+#: app_actions/file_actions.py:451
 msgid "Invalid file number."
 msgstr "Neplatné číslo souboru."
 
-#: app_actions/file_actions.py:226 youtube/flow.py:66
+#: app_actions/file_actions.py:255 youtube/flow.py:66
 msgid "Invalid link"
 msgstr "Neplatný odkaz"
 
@@ -979,23 +1270,45 @@ msgstr "Neplatný odkaz"
 msgid "Invalid link."
 msgstr "Neplatný odkaz."
 
-#: app_actions/file_actions.py:412
+#: app_actions/file_actions.py:451
 msgid "Invalid number."
 msgstr "Neplatné číslo."
 
-#: app_actions/file_actions.py:552
+#: app_actions/file_actions.py:598
 msgid "Invalid path in clipboard."
 msgstr "Neplatná cesta ve schránce."
 
-#: ui/mainwin/menu.py:340
+#: ui/prefs/backup.py:161 ui/prefs/backup.py:197
+msgid "JSON files (*.json)|*.json|All files (*.*)|*.*"
+msgstr "Soubory JSON (*.json)|*.json|Všechny soubory (*.*)|*.*"
+
+#: ui/bookmark_dlg.py:27
+msgid "Jump"
+msgstr "Skočit"
+
+#: ui/mainwin/menu.py:396
 msgid "Jump to Percentage"
 msgstr "Skočit na procenta"
 
-#: ui/dialogs.py:51
+#: ui/mainwin/menu.py:254
+msgid "Jump to bookmark"
+msgstr "Skočit na záložku"
+
+#: ui/dialogs.py:197
 msgid "Jump to selected"
 msgstr "Skočit na označené místo"
 
-#: ui/prefs/dialog.py:76 ui/shortcut_settings.py:195
+#: app_actions/bookmark_actions.py:184
+#, python-brace-format
+msgid "Jumped to '{name}' at {time}."
+msgstr "Přesunuto na '{name}' v čase {time}."
+
+#: app_actions/bookmark_actions.py:183
+#, python-brace-format
+msgid "Jumped to bookmark {name}."
+msgstr "Přesunuto na záložku {name}."
+
+#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:195
 msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
@@ -1003,7 +1316,7 @@ msgstr "Klávesové zkratky"
 msgid "Language"
 msgstr "Jazyk"
 
-#: ui/mainwin/menu.py:280
+#: ui/mainwin/menu.py:332
 msgid "Last File"
 msgstr "Poslední soubor"
 
@@ -1031,15 +1344,23 @@ msgstr "Vloží krátkou pauzu před následující slovo (výchozí hodnota: 0.
 msgid "Left"
 msgstr "Šipka doleva"
 
+#: ui/favorite_dlg.py:39 ui/favorite_dlg.py:132
+msgid "Link"
+msgstr "Odkaz"
+
 #: youtube/results.py:59 youtube/video.py:45
 msgid "Link copied."
 msgstr "Odkaz zkopírován."
 
-#: youtube/flow.py:282
+#: app_actions/favorite_actions.py:170
+msgid "Link is required."
+msgstr "Musíte zadat odkaz."
+
+#: youtube/flow.py:301
 msgid "Loading YouTube link"
 msgstr "Načítá se odkaz na YouTube"
 
-#: youtube/flow.py:381
+#: youtube/flow.py:400
 msgid "Loading YouTube stream"
 msgstr "Načítá se datový stream z YouTube"
 
@@ -1047,7 +1368,7 @@ msgstr "Načítá se datový stream z YouTube"
 msgid "Loading YouTube stream..."
 msgstr "Načítá se datový stream z YouTube..."
 
-#: app_actions/file_actions.py:66
+#: app_actions/file_actions.py:65
 msgid "Loading files from folder and subfolders..."
 msgstr "Načítají se soubory ze složky a podsložek..."
 
@@ -1055,7 +1376,7 @@ msgstr "Načítají se soubory ze složky a podsložek..."
 msgid "Loading more videos..."
 msgstr "Načítají se další videa..."
 
-#: youtube/flow.py:469
+#: youtube/flow.py:488
 msgid "Loading next video..."
 msgstr "Načítá se následující video..."
 
@@ -1075,7 +1396,7 @@ msgstr "Načítají se podrobnosti videa"
 msgid "Loading video details..."
 msgstr "Načítají se podrobnosti videa..."
 
-#: ui/prefs/dialog.py:86
+#: ui/prefs/dialog.py:94
 msgid "Local Shortcuts"
 msgstr "Místní zkratky"
 
@@ -1087,11 +1408,16 @@ msgstr "Přehrávat soubor opakovaně"
 msgid "Low"
 msgstr "Nízká"
 
-#: ui/mainwin/menu.py:196
+#: app_actions/bookmark_actions.py:90 ui/bookmark_dlg.py:16
+#: ui/mainwin/menu.py:243
+msgid "Manage bookmarks"
+msgstr "Spravovat záložky"
+
+#: ui/mainwin/menu.py:219
 msgid "Mark All Files"
 msgstr "Označit všechny soubory"
 
-#: ui/mainwin/menu.py:192
+#: ui/mainwin/menu.py:215
 msgid "Mark Current File"
 msgstr "Označit aktuální soubor"
 
@@ -1180,9 +1506,17 @@ msgstr ""
 msgid "Minimum silence duration must be a non-negative number."
 msgstr "Minimální délka tiché pasáže musí být kladné číslo."
 
-#: youtube/flow.py:130
+#: ui/dialogs.py:51
+msgid "Minutes"
+msgstr "Minuty"
+
+#: youtube/flow.py:149
 msgid "Missing components."
 msgstr "Chybí komponenty."
+
+#: ui/prefs/recording.py:13
+msgid "Mono"
+msgstr "Mono"
 
 #: app_actions/marked_file_actions.py:264
 msgid "Moved."
@@ -1192,11 +1526,19 @@ msgstr "Přesunuto."
 msgid "Moving marked files"
 msgstr "Přesunují se označené soubory"
 
+#: ui/bookmark_dlg.py:24 ui/favorite_dlg.py:37 ui/favorite_dlg.py:124
+msgid "Name"
+msgstr "Název"
+
+#: app_actions/favorite_actions.py:168
+msgid "Name is required."
+msgstr "Musíte zadat název."
+
 #: ui/yt_dialogs.py:242
 msgid "Navigate to channel\tCtrl+N"
 msgstr "Přejít na kanál\tCtrl+N"
 
-#: ui/main_frame.py:42 ui/mainwin/menu.py:272
+#: ui/main_frame.py:50 ui/mainwin/menu.py:320
 msgid "Next"
 msgstr "Následující"
 
@@ -1212,13 +1554,27 @@ msgstr "Není aktivní žádné YouTube video."
 msgid "No YouTube video."
 msgstr "Žádné YouTube video."
 
-#: app_actions/file_actions.py:212 app_actions/file_actions.py:533
+#: app_actions/file_actions.py:241 app_actions/file_actions.py:579
 msgid "No audio files found in that folder."
 msgstr "V zadané složce nebyly nalezeny žádné zvukové soubory."
 
-#: app_actions/file_actions.py:212 app_actions/file_actions.py:533
+#: app_actions/file_actions.py:241 app_actions/file_actions.py:579
 msgid "No audio files."
 msgstr "Žádné zvukové soubory."
+
+#: app_actions/bookmark_actions.py:141
+#, python-brace-format
+msgid "No bookmark in slot {slot}."
+msgstr "Žádná záložka ve slotu {slot}."
+
+#: app_actions/bookmark_actions.py:142
+#, python-brace-format
+msgid "No bookmark {slot}."
+msgstr "Žádná záložka {slot}."
+
+#: app_actions/bookmark_actions.py:59
+msgid "No bookmarks found for the current file."
+msgstr "Pro aktuální soubor nebyly nalezeny žádné záložky."
 
 #: youtube/results.py:76
 msgid "No channel link."
@@ -1228,7 +1584,7 @@ msgstr "Žádný odkaz na kanál."
 msgid "No description is available."
 msgstr "Není dostupný žádný popis."
 
-#: ui/prefs/dialog.py:189
+#: ui/prefs/dialog.py:193
 msgid "No detailed help is available for this control."
 msgstr "Pro tento ovládací prvek není dostupná žádná podrobná nápověda."
 
@@ -1236,27 +1592,27 @@ msgstr "Pro tento ovládací prvek není dostupná žádná podrobná nápověda
 msgid "No devices."
 msgstr "Žádná zařízení."
 
-#: app_actions/file_actions.py:246 app_actions/file_actions.py:250
-#: app_actions/file_actions.py:261 app_actions/file_actions.py:350
-#: app_actions/file_actions.py:462 app_actions/file_actions.py:477
-#: app_actions/file_actions.py:490 app_actions/file_actions.py:561
-#: app_actions/file_actions.py:592 app_actions/file_actions.py:620
-#: app_actions/marked_file_actions.py:27 app_actions/marked_file_actions.py:37
-#: app_actions/playback_actions.py:41 app_actions/playback_actions.py:64
-#: app_actions/playback_actions.py:86 app_actions/playback_actions.py:253
-#: app_actions/playback_actions.py:272
+#: app_actions/bookmark_actions.py:151 app_actions/file_actions.py:275
+#: app_actions/file_actions.py:279 app_actions/file_actions.py:290
+#: app_actions/file_actions.py:379 app_actions/file_actions.py:508
+#: app_actions/file_actions.py:523 app_actions/file_actions.py:536
+#: app_actions/file_actions.py:607 app_actions/file_actions.py:638
+#: app_actions/file_actions.py:666 app_actions/marked_file_actions.py:27
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
+#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
+#: app_actions/playback_actions.py:291 app_actions/playback_actions.py:310
 msgid "No file loaded."
 msgstr "Žádný načtený soubor."
 
-#: app_actions/file_actions.py:246 app_actions/file_actions.py:250
-#: app_actions/file_actions.py:261 app_actions/file_actions.py:350
-#: app_actions/file_actions.py:462 app_actions/file_actions.py:477
-#: app_actions/file_actions.py:490 app_actions/file_actions.py:561
-#: app_actions/file_actions.py:592 app_actions/file_actions.py:620
-#: app_actions/marked_file_actions.py:27 app_actions/marked_file_actions.py:37
-#: app_actions/playback_actions.py:41 app_actions/playback_actions.py:64
-#: app_actions/playback_actions.py:86 app_actions/playback_actions.py:253
-#: app_actions/playback_actions.py:272
+#: app_actions/bookmark_actions.py:151 app_actions/file_actions.py:275
+#: app_actions/file_actions.py:279 app_actions/file_actions.py:290
+#: app_actions/file_actions.py:379 app_actions/file_actions.py:508
+#: app_actions/file_actions.py:523 app_actions/file_actions.py:536
+#: app_actions/file_actions.py:607 app_actions/file_actions.py:638
+#: app_actions/file_actions.py:666 app_actions/marked_file_actions.py:27
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
+#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
+#: app_actions/playback_actions.py:291 app_actions/playback_actions.py:310
 msgid "No file."
 msgstr "Žádný soubor."
 
@@ -1270,11 +1626,11 @@ msgstr "Žádné označené soubory."
 msgid "No marks."
 msgstr "Žádné značky."
 
-#: app_actions/file_actions.py:400
+#: app_actions/file_actions.py:439
 msgid "No other files are loaded."
 msgstr "Nejsou načteny žádné další soubory."
 
-#: app_actions/file_actions.py:400
+#: app_actions/file_actions.py:439
 msgid "No other files."
 msgstr "Žádné další soubory."
 
@@ -1282,11 +1638,11 @@ msgstr "Žádné další soubory."
 msgid "No playable YouTube items were found."
 msgstr "Nebyly nalezeny žádné přehratelné YouTube položky."
 
-#: app_actions/playback_actions.py:301
+#: app_actions/playback_actions.py:339
 msgid "No selection to clear."
 msgstr "Není nastavený žádný výběr."
 
-#: app_actions/playback_actions.py:301
+#: app_actions/playback_actions.py:339
 msgid "No selection."
 msgstr "Žádný výběr."
 
@@ -1294,7 +1650,7 @@ msgstr "Žádný výběr."
 msgid "No sound cards found."
 msgstr "Nebyla nalezena žádná zvuková zařízení."
 
-#: app_actions/playback_actions.py:276
+#: app_actions/playback_actions.py:314
 msgid "No start."
 msgstr "Žádný začátek."
 
@@ -1302,7 +1658,7 @@ msgstr "Žádný začátek."
 msgid "No videos found."
 msgstr "Žádná videa nenalezena."
 
-#: youtube/flow.py:243
+#: youtube/flow.py:262
 msgid "No videos were found for this search."
 msgstr "Pro tento výraz nebyla nalezena žádná videa."
 
@@ -1314,12 +1670,12 @@ msgstr "V tomto playlistu nebyla nalezena žádná videa."
 msgid "No videos were found."
 msgstr "Žádná videa nenalezena."
 
-#: app_actions/file_actions.py:266 app_actions/file_actions.py:566
-#: app_actions/file_actions.py:597
+#: app_actions/file_actions.py:295 app_actions/file_actions.py:612
+#: app_actions/file_actions.py:643
 msgid "Not available for streams."
 msgstr "Tato funkce není dostupná pro streamované přehrávání."
 
-#: app_actions/file_actions.py:270
+#: app_actions/file_actions.py:299
 msgid "Not supported."
 msgstr "Nepodporováno."
 
@@ -1328,7 +1684,7 @@ msgstr "Nepodporováno."
 msgid "Number of files: {count}"
 msgstr "Počet souborů: {count}"
 
-#: ui/help_dialogs.py:94
+#: ui/dialogs.py:73 ui/help_dialogs.py:47
 msgid "OK"
 msgstr "OK"
 
@@ -1345,23 +1701,23 @@ msgstr ""
 "Budou se odstraňovat pouze ty tiché pasáže uvnitř nebo na konci souboru, "
 "které jsou alespoň takhle dlouhé."
 
-#: ui/mainwin/menu.py:128
+#: ui/mainwin/menu.py:150
 msgid "Open Containing Folder"
 msgstr "Otevřít umístění souboru"
 
-#: ui/mainwin/menu.py:108
+#: ui/mainwin/menu.py:126
 msgid "Open File..."
 msgstr "Otevřít soubor..."
 
-#: ui/mainwin/menu.py:124
+#: ui/mainwin/menu.py:146
 msgid "Open Folder..."
 msgstr "Otevřít složku..."
 
-#: app_actions/file_actions.py:220
+#: app_actions/file_actions.py:249
 msgid "Open Link"
 msgstr "Otevřít odkaz"
 
-#: ui/mainwin/menu.py:112
+#: ui/mainwin/menu.py:130
 msgid "Open Link..."
 msgstr "Otevřít odkaz..."
 
@@ -1369,17 +1725,17 @@ msgstr "Otevřít odkaz..."
 msgid "Open YouTube Link"
 msgstr "Otevřít odkaz na YouTube"
 
-#: ui/mainwin/menu.py:116
+#: ui/mainwin/menu.py:134
 msgid "Open YouTube Link..."
 msgstr "Otevřít odkaz na YouTube..."
 
-#: app_actions/file_actions.py:255 app_actions/file_actions.py:281
-#: app_actions/file_actions.py:544 app_actions/help_actions.py:68
-#: app_actions/help_actions.py:74
+#: app_actions/file_actions.py:284 app_actions/file_actions.py:310
+#: app_actions/file_actions.py:590 app_actions/help_actions.py:70
+#: app_actions/help_actions.py:76
 msgid "Open failed."
 msgstr "Otevírání selhalo."
 
-#: ui/prefs/backup.py:177
+#: ui/prefs/backup.py:262
 msgid "Open folder error"
 msgstr "Chyba při otevírání složky"
 
@@ -1387,15 +1743,19 @@ msgstr "Chyba při otevírání složky"
 msgid "Open in browser\tCtrl+B"
 msgstr "Otevřít v prohlížeči\tCtrl+B"
 
-#: ui/prefs/general.py:57
+#: ui/mainwin/menu.py:544
+msgid "Open recordings folder"
+msgstr "Otevřít složku s nahrávkami"
+
+#: ui/prefs/general.py:62
 msgid "Open the file and the main folder files"
 msgstr "Otevřít vybraný soubor a ostatní soubory v hlavní složce"
 
-#: ui/prefs/general.py:56
+#: ui/prefs/general.py:61
 msgid "Open the file only"
 msgstr "Otevřít pouze vybraný soubor"
 
-#: ui/prefs/general.py:58
+#: ui/prefs/general.py:63
 msgid "Open the file with the main and subfolder files"
 msgstr ""
 "Otevřít vybraný soubor a všechny ostatní soubory v hlavní složce i v "
@@ -1405,11 +1765,11 @@ msgstr ""
 msgid "Open the playlist"
 msgstr "Otevřít playlist"
 
-#: ui/prefs/backup.py:19
+#: ui/prefs/backup.py:23
 msgid "Open user settings folder"
 msgstr "Otevřít složku s konfiguračními soubory"
 
-#: ui/prefs/backup.py:51
+#: ui/prefs/backup.py:67
 msgid ""
 "Open user settings folder opens the folder where this app stores its "
 "configuration."
@@ -1417,7 +1777,7 @@ msgstr ""
 "Příkaz Otevřít složku s konfiguračními soubory otevře složku, kam si tato "
 "aplikace ukládá svoje nastavení."
 
-#: ui/prefs/general.py:216
+#: ui/prefs/general.py:232
 msgid ""
 "Open with files behavior controls what happens when you open a single file. "
 "Open the file only loads just that file. Open the file and the main folder "
@@ -1432,24 +1792,24 @@ msgstr ""
 "vybraný soubor a všechny ostatní soubory v hlavní složce i v podsložkách "
 "rekurzivně prohledá příslušnou složku a načte i soubory ze všech podsložek."
 
-#: ui/dialogs.py:41
+#: ui/dialogs.py:187
 msgid "Opened Files"
 msgstr "Otevřené soubory"
 
-#: ui/mainwin/menu.py:136
+#: ui/mainwin/menu.py:158
 msgid "Opened Files..."
 msgstr "Otevřené soubory..."
 
-#: app_actions/file_actions.py:66
+#: app_actions/file_actions.py:65
 msgid "Opening files"
 msgstr "Otevírají se soubory"
 
-#: app_actions/file_actions.py:161
+#: app_actions/file_actions.py:160
 #, python-brace-format
 msgid "Opening files... {found} media files found"
 msgstr "Otevírají se soubory... Nalezeno {found} souborů médií"
 
-#: app_actions/file_actions.py:153
+#: app_actions/file_actions.py:152
 #, python-brace-format
 msgid ""
 "Opening files... {found} media files found ({done}/{total}) - {pct:.1f}%"
@@ -1475,7 +1835,7 @@ msgstr "Operace dokončena s chybami."
 msgid "Operation failed."
 msgstr "Operace selhala."
 
-#: app_actions/file_actions.py:416
+#: app_actions/file_actions.py:455
 msgid "Out of range."
 msgstr "Mimo rozsah."
 
@@ -1495,11 +1855,12 @@ msgstr "Smazání neúplné."
 msgid "Partial success."
 msgstr "Provedeno neúplně."
 
-#: ui/mainwin/menu.py:187
+#: ui/mainwin/menu.py:210
 msgid "Paste"
 msgstr "Vložit"
 
-#: app_actions/playback_actions.py:46 ui/mainwin/state.py:65
+#: app_actions/playback_actions.py:58 ui/mainwin/menu.py:535
+#: ui/mainwin/state.py:87 ui/mainwin/state.py:222
 msgid "Pause"
 msgstr "Pozastavit"
 
@@ -1517,20 +1878,20 @@ msgstr ""
 msgid "Peak (fast reaction)"
 msgstr "Peak (rychlá reakce na změny)"
 
-#: app_actions/playback_actions.py:203
+#: app_actions/playback_actions.py:215
 msgid "Percentage not available"
 msgstr "Pozice v procentech není dostupná"
 
-#: app_actions/playback_actions.py:46 ui/main_frame.py:40
-#: ui/mainwin/state.py:65 ui/yt_dialogs.py:161
+#: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
+#: ui/main_frame.py:48 ui/mainwin/state.py:87 ui/yt_dialogs.py:161
 msgid "Play"
 msgstr "Přehrát"
 
-#: ui/audio_settings.py:54
+#: ui/audio_settings.py:66
 msgid "Play audio as Mono"
 msgstr "Přehrávat zvuk monofonně"
 
-#: ui/audio_settings.py:165
+#: ui/audio_settings.py:197
 msgid ""
 "Play audio as Mono. When enabled, a mono downmix filter is applied so left "
 "and right channels are combined. Disable it to keep the original channel "
@@ -1548,7 +1909,7 @@ msgstr "Přehrát video"
 msgid "Play videos as audio only"
 msgstr "U videí přehrávat pouze zvukovou stopu"
 
-#: ui/prefs/youtube.py:92
+#: ui/prefs/youtube.py:111
 msgid ""
 "Play videos as audio only. When enabled, YouTube playback prefers audio "
 "streams."
@@ -1556,19 +1917,28 @@ msgstr ""
 "U videí přehrávat pouze zvukovou stopu. Když je tato možnost zaškrtnuta, "
 "přehrávání z YouTube bude upřednostňovat zvukové datové streamy."
 
-#: ui/mainwin/menu.py:247
+#: ui/mainwin/menu.py:295
 msgid "Play/Pause"
 msgstr "Přehrát/Pozastavit"
 
-#: ui/mainwin/menu.py:88
+#: ui/mainwin/menu.py:104
 msgid "Player"
 msgstr "Přehrávač"
 
-#: playlist/info.py:183 ui/dialogs.py:121
+#: ui/favorite_dlg.py:11
+msgid "Playlist"
+msgstr "Playlist"
+
+#: playlist/info.py:183 ui/dialogs.py:267
 msgid "Playlist Info"
 msgstr "Informace o playlistu"
 
-#: ui/dialogs.py:50
+#: app_actions/favorite_actions.py:185
+msgid "Playlist favorites require a YouTube playlist link."
+msgstr ""
+"Pro přidání playlistu k oblíbeným musíte zadat odkaz na playlist na YouTube."
+
+#: ui/dialogs.py:196
 msgid "Playlist info"
 msgstr "Informace o playlistu"
 
@@ -1576,15 +1946,23 @@ msgstr "Informace o playlistu"
 msgid "Playlist videos"
 msgstr "Videa v playlistu"
 
-#: core/controller.py:356
+#: ui/dialogs.py:163
+msgid "Please enter a valid time value."
+msgstr "Zadejte prosím platný časový údaj."
+
+#: core/controller.py:412
 msgid "Please restart the app for language changes to take effect."
 msgstr "Prosím, restartujte aplikaci, aby se změna jazyka projevila."
 
-#: core/controller.py:357 ui/prefs/dialog.py:18 ui/prefs/dialog.py:146
+#: ui/bookmark_dlg.py:25
+msgid "Position"
+msgstr "Pozice"
+
+#: core/controller.py:413 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
 msgid "Preferences"
 msgstr "Nastavení"
 
-#: ui/mainwin/menu.py:152
+#: ui/mainwin/menu.py:174
 msgid "Preferences..."
 msgstr "Nastavení..."
 
@@ -1601,7 +1979,7 @@ msgstr ""
 msgid "Press the desired shortcut. Escape cancels."
 msgstr "Stiskněte požadovanou zkratku. Escapem operaci zrušíte."
 
-#: ui/main_frame.py:38 ui/mainwin/menu.py:268
+#: ui/main_frame.py:46 ui/mainwin/menu.py:316
 msgid "Previous"
 msgstr "Předchozí"
 
@@ -1628,11 +2006,52 @@ msgstr "RMS (plynulejší)"
 msgid "Reading: {name}"
 msgstr "Načítá se: {name}"
 
-#: ui/prefs/general.py:79
+#: app_actions/recording_actions.py:73 ui/mainwin/menu.py:107
+#: ui/prefs/dialog.py:66
+msgid "Recording"
+msgstr "Nahrávání"
+
+#: ui/prefs/recording.py:108
+msgid ""
+"Recording bitrate in kilobits per second. Choose one of the preset values "
+"from 32 to 320. This mainly affects compressed formats such as MP3."
+msgstr ""
+"Bitrate nahrávky v kilobitech za sekundu. Vyberte jednu z předvolených "
+"hodnot od 32 do 320. Tato volba má vliv zejména na komprimované formáty jako "
+"MP3."
+
+#: ui/prefs/recording.py:104
+msgid "Recording channels. Choose Mono or Stereo."
+msgstr "Počet kanálů nahrávky. Zvolte Mono nebo Stereo."
+
+#: ui/prefs/recording.py:114
+msgid "Recording format. WAV is uncompressed. MP3 is compressed."
+msgstr "Formát nahrávky. WAV není komprimovaný. MP3 je komprimovaný."
+
+#: ui/prefs/recording.py:100
+msgid ""
+"Recording settings page. Configure channels, bitrate, output format, and "
+"destination folder."
+msgstr ""
+"Stránka nastavení nahrávání. Zde můžete nakonfigurovat počet kanálů, "
+"bitrate, výstupní formát a cílovou složku."
+
+#: ui/prefs/recording.py:29
+msgid "Recordings folder"
+msgstr "Složka s nahrávkami"
+
+#: ui/prefs/recording.py:117
+msgid ""
+"Recordings folder path. Use Browse to choose where new recordings are saved."
+msgstr ""
+"Cesta ke složce s nahrávkami. Tlačítkem Procházet vyberte, kam se mají "
+"ukládat nové nahrávky."
+
+#: ui/prefs/general.py:84
 msgid "Register file extensions"
 msgstr "Zaregistrovat přípony souborů"
 
-#: ui/prefs/general.py:224
+#: ui/prefs/general.py:240
 msgid ""
 "Register file extensions writes Windows registry entries for supported media "
 "types. This lets files open with this app from Explorer and Open With. On "
@@ -1645,15 +2064,15 @@ msgstr ""
 "ještě potřeba uživatelsky potvrdit nastavení výchozí aplikace pro otevírání "
 "souborů v nastavení Windows na záložce Výchozí aplikace."
 
-#: ui/prefs/general.py:241
+#: ui/prefs/general.py:257
 msgid "Registration"
 msgstr "Registruje se"
 
-#: ui/prefs/general.py:248
+#: ui/prefs/general.py:264
 msgid "Registration Error"
 msgstr "Chyba při registrování přípon"
 
-#: app_actions/playback_actions.py:192
+#: app_actions/playback_actions.py:204
 msgid "Remaining time: "
 msgstr "Zbývající čas: "
 
@@ -1666,7 +2085,7 @@ msgstr "Zbývá: {value}"
 msgid "Remember last file position"
 msgstr "Pamatovat si pozici v posledním otevřeném souboru"
 
-#: ui/prefs/general.py:180
+#: ui/prefs/general.py:189
 msgid ""
 "Remember last file position. When enabled, the player saves the current file "
 "and playback time on exit, then restores that position next time. When "
@@ -1677,39 +2096,48 @@ msgstr ""
 "pozici v něm a při příštím spuštění začne přehrávat od tohoto místa. Pokud "
 "zaškrtnuta není, přehrávač bude při každém spuštění prázdný."
 
-#: app_actions/file_actions.py:604
+#: app_actions/favorite_actions.py:122
+#, python-brace-format
+msgid "Remove favorite '{name}' ({kind})?"
+msgstr "Odstranit z oblíbených '{name}' ({kind})?"
+
+#: ui/favorite_dlg.py:43
+msgid "Remove..."
+msgstr "Odstranit..."
+
+#: app_actions/file_actions.py:650
 msgid "Rename File"
 msgstr "Přejmenovat soubor"
 
-#: app_actions/file_actions.py:613
+#: app_actions/file_actions.py:659
 msgid "Rename failed."
 msgstr "Přejmenování selhalo."
 
-#: app_actions/file_actions.py:596
+#: app_actions/file_actions.py:642
 msgid "Rename is available only for local files."
 msgstr "Přejmenovat můžete pouze místní soubory."
 
-#: ui/mainwin/menu.py:175
+#: ui/mainwin/menu.py:198
 msgid "Rename..."
 msgstr "Přejmenovat..."
 
-#: app_actions/file_actions.py:611
+#: app_actions/file_actions.py:657
 msgid "Renamed."
 msgstr "Přejmenováno."
 
-#: ui/mainwin/menu.py:288
+#: ui/mainwin/menu.py:340
 msgid "Repeat File"
 msgstr "Přehrávat soubor opakovaně"
 
-#: app_actions/playback_actions.py:94
+#: app_actions/playback_actions.py:106
 msgid "Repeat off"
 msgstr "Opakování vypnuto"
 
-#: app_actions/playback_actions.py:92
+#: app_actions/playback_actions.py:104
 msgid "Repeat on"
 msgstr "Opakování zapnuto"
 
-#: ui/mainwin/menu.py:261
+#: ui/mainwin/menu.py:309
 msgid "Reset Speed"
 msgstr "Obnovit výchozí rychlost"
 
@@ -1717,15 +2145,15 @@ msgstr "Obnovit výchozí rychlost"
 msgid "Reset all shortcuts to defaults?"
 msgstr "Opravdu obnovit všechny zkratky na výchozí hodnoty?"
 
-#: ui/prefs/backup.py:155
+#: ui/prefs/backup.py:240
 msgid "Reset error"
 msgstr "Chyba při obnovení"
 
-#: ui/prefs/backup.py:17 ui/prefs/backup.py:142 ui/prefs/backup.py:162
+#: ui/prefs/backup.py:21 ui/prefs/backup.py:227 ui/prefs/backup.py:247
 msgid "Reset settings"
 msgstr "Obnovit výchozí nastavení"
 
-#: ui/prefs/backup.py:55
+#: ui/prefs/backup.py:71
 msgid "Reset settings restores all preferences to default values."
 msgstr ""
 "Příkaz Obnovit výchozí nastavení obnoví veškerá nastavení na výchozí hodnoty."
@@ -1734,7 +2162,11 @@ msgstr ""
 msgid "Reset to Defaults"
 msgstr "Obnovit výchozí"
 
-#: ui/main_frame.py:39 ui/mainwin/menu.py:316
+#: ui/mainwin/state.py:222
+msgid "Resume"
+msgstr "Pokračovat"
+
+#: ui/main_frame.py:47 ui/mainwin/menu.py:368
 msgid "Rewind"
 msgstr "Přetočit dozadu"
 
@@ -1742,11 +2174,40 @@ msgstr "Přetočit dozadu"
 msgid "Right"
 msgstr "Šipka doprava"
 
+#: ui/audio_settings.py:54
+msgid "Save current position for each file"
+msgstr "Uložit pro každý soubor aktuální pozici"
+
+#: ui/audio_settings.py:178
+msgid ""
+"Save current position for each file. When enabled, the app stores the "
+"current position of files and restores that position when navigating between "
+"files."
+msgstr ""
+"Uložit pro každý soubor aktuální pozici. Když je tato možnost zaškrtnutá, "
+"aplikace si uloží v každém souboru aktuální pozici a při přechodu mezi "
+"soubory se na tuto pozici přesune."
+
+#: ui/prefs/general.py:40
+msgid "Save settings on close"
+msgstr "Uložit nastavení při ukončení"
+
+#: ui/prefs/general.py:225
+msgid ""
+"Save settings on close. When enabled, current settings are written when the "
+"app closes. When disabled, closing the app does not save session changes "
+"such as volume, speed, or other setting updates."
+msgstr ""
+"Uložit nastavení při ukončení. Když je tato možnost zaškrtnutá, aktuální "
+"nastavení se při zavření aplikace zapíšou do konfiguračních souborů. Pokud "
+"zaškrtnuta není, při zavření aplikace se neuloží aktuálně nastavené hodnoty, "
+"jako je rychlost a hlasitost přehrávání, a další změny v konfiguraci."
+
 #: youtube/ui_utils.py:44
 msgid "Search YouTube"
 msgstr "Vyhledat na YouTube"
 
-#: ui/mainwin/menu.py:120
+#: ui/mainwin/menu.py:138
 msgid "Search YouTube..."
 msgstr "Vyhledat na YouTube..."
 
@@ -1754,16 +2215,16 @@ msgstr "Vyhledat na YouTube..."
 msgid "Search results"
 msgstr "Výsledky vyhledávání"
 
-#: youtube/flow.py:144
+#: youtube/flow.py:163
 #, python-brace-format
 msgid "Search results: {query}"
 msgstr "Výsledky vyhledávání: {query}"
 
-#: youtube/flow.py:261
+#: youtube/flow.py:280
 msgid "Searching YouTube"
 msgstr "Vyhledávání na YouTube"
 
-#: youtube/flow.py:239
+#: youtube/flow.py:258
 msgid "Searching videos..."
 msgstr "Vyhledávají se videa..."
 
@@ -1771,11 +2232,15 @@ msgstr "Vyhledávají se videa..."
 msgid "Secondary Shortcut"
 msgstr "Sekundární zkratka"
 
+#: ui/dialogs.py:53
+msgid "Seconds"
+msgstr "Vteřiny"
+
 #: youtube/ui_utils.py:130
 msgid "Select download folder"
 msgstr "Vyberte složku pro stažení"
 
-#: ui/dialogs.py:49
+#: ui/dialogs.py:195
 msgid "Select file to jump to."
 msgstr "Vyberte soubor, na který chcete přejít."
 
@@ -1783,15 +2248,15 @@ msgstr "Vyberte soubor, na který chcete přejít."
 msgid "Select sound card"
 msgstr "Vyberte zvukové zařízení"
 
-#: app_actions/playback_actions.py:308
+#: app_actions/playback_actions.py:346
 msgid "Selection cleared"
 msgstr "Výběr zrušen"
 
-#: ui/mainwin/menu.py:301
+#: ui/mainwin/menu.py:353
 msgid "Set A (loop start)"
 msgstr "Nastavte začátek smyčky."
 
-#: ui/mainwin/menu.py:305
+#: ui/mainwin/menu.py:357
 msgid "Set B (loop end)"
 msgstr "Nastavte konec smyčky"
 
@@ -1811,7 +2276,7 @@ msgstr "Nastavení selhalo."
 msgid "Set."
 msgstr "Nastaveno."
 
-#: ui/prefs/dialog.py:175
+#: ui/prefs/dialog.py:179
 msgid ""
 "Settings categories tree. Use up and down arrows to choose a category like "
 "General or Audio."
@@ -1819,15 +2284,15 @@ msgstr ""
 "Seznam kategorií nastavení. Šipkami nahoru a dolů si vyberte kategorii, "
 "například Obecné nebo Zvuk."
 
-#: ui/prefs/backup.py:94
+#: ui/prefs/backup.py:110
 msgid "Settings exported successfully."
 msgstr "Nastavení úspěšně exportována."
 
-#: ui/prefs/backup.py:130
+#: ui/prefs/backup.py:146
 msgid "Settings imported successfully."
 msgstr "Nastavení úspěšně importována."
 
-#: ui/prefs/backup.py:161
+#: ui/prefs/backup.py:246
 msgid "Settings were reset to defaults."
 msgstr "Nastavení byla obnovena na výchozí hodnoty."
 
@@ -1848,23 +2313,23 @@ msgstr ""
 "se dodatečná nastavení pro odstraňování tichých pasáží. Pokud zaškrtnuta "
 "není, použijí se pouze nastavení minimální délky a prahu hlasitosti."
 
-#: ui/mainwin/menu.py:284
+#: ui/mainwin/menu.py:336
 msgid "Shuffle"
 msgstr "Náhodné pořadí"
 
-#: app_actions/playback_actions.py:72
+#: app_actions/playback_actions.py:84
 msgid "Shuffle disabled for YouTube."
 msgstr "Náhodné pořadí nefunguje na YouTube."
 
-#: app_actions/playback_actions.py:71
+#: app_actions/playback_actions.py:83
 msgid "Shuffle is disabled for YouTube streams."
 msgstr "Náhodné pořadí nelze používat při streamování z YouTube."
 
-#: app_actions/playback_actions.py:81
+#: app_actions/playback_actions.py:93
 msgid "Shuffle off"
 msgstr "Náhodné pořadí vypnuto"
 
-#: app_actions/playback_actions.py:79
+#: app_actions/playback_actions.py:91
 msgid "Shuffle on"
 msgstr "Náhodné pořadí zapnuto"
 
@@ -1885,7 +2350,7 @@ msgstr ""
 "hodnota budou považovány za ticho. Zadávejte pouze čísla, například -20, -30 "
 "nebo -40."
 
-#: ui/prefs/dialog.py:52
+#: ui/prefs/dialog.py:53
 msgid "Silence removal"
 msgstr "Odstraňování ticha"
 
@@ -1893,11 +2358,11 @@ msgstr "Odstraňování ticha"
 msgid "Silence removal (FFmpeg silenceremove)"
 msgstr "Odstraňování ticha (FFmpeg silenceremove)"
 
-#: app_actions/playback_actions.py:109
+#: app_actions/playback_actions.py:121
 msgid "Silence removal off"
 msgstr "Odstraňování ticha vypnuto"
 
-#: app_actions/playback_actions.py:107
+#: app_actions/playback_actions.py:119
 msgid "Silence removal on"
 msgstr "Odstraňování ticha zapnuto"
 
@@ -1948,7 +2413,7 @@ msgstr "Byly smazány jen některé soubory."
 msgid "Sound Cards"
 msgstr "Zvuková zařízení"
 
-#: ui/mainwin/menu.py:369
+#: ui/mainwin/menu.py:425
 msgid "Sound Cards..."
 msgstr "Zvuková zařízení..."
 
@@ -1966,7 +2431,7 @@ msgstr ""
 "Při přechodu na předchozí nebo následující soubor číst název aktuálního "
 "souboru"
 
-#: ui/prefs/general.py:188
+#: ui/prefs/general.py:197
 msgid ""
 "Speak file name when navigating. When enabled, the player will announce the "
 "name of the new file when you move to the previous or next track. This is "
@@ -1978,11 +2443,11 @@ msgstr ""
 "usnadnit rozlišování jednotlivých souborů, aniž byste si museli pokaždé "
 "nechávat přečíst informace o souboru."
 
-#: app_actions/file_actions.py:376
+#: app_actions/file_actions.py:415
 msgid "Speaker test file not found."
 msgstr "Nebyl nalezen zvukový soubor pro test reproduktorů."
 
-#: ui/mainwin/menu.py:263
+#: ui/mainwin/menu.py:311
 msgid "Speed"
 msgstr "Rychlost"
 
@@ -1990,11 +2455,11 @@ msgstr "Rychlost"
 msgid "Speed step"
 msgstr "Interval změny rychlosti"
 
-#: ui/audio_settings.py:80
+#: ui/audio_settings.py:94
 msgid "Speed step must be a positive number."
 msgstr "Interval změny rychlosti musí být kladné číslo."
 
-#: ui/audio_settings.py:146
+#: ui/audio_settings.py:164
 msgid ""
 "Speed step used when increasing or decreasing playback speed. Enter a "
 "positive decimal value like 0.025 or 0.1."
@@ -2002,16 +2467,20 @@ msgstr ""
 "Interval, který se použije při zvyšování nebo snižování rychlosti "
 "přehrávání. Zadávejte pouze kladná desetinná čísla, například 0.025 nebo 0.1."
 
-#: app_actions/playback_actions.py:276
+#: ui/mainwin/menu.py:531
+msgid "Start recording"
+msgstr "Začít nahrávat"
+
+#: app_actions/playback_actions.py:314
 msgid "Start selection not set."
 msgstr "Není nastavena značka začátku."
 
-#: app_actions/playback_actions.py:265
+#: app_actions/playback_actions.py:303
 #, python-brace-format
 msgid "Start selection: {time}"
 msgstr "Značka začátku: {time}"
 
-#: app_actions/playback_actions.py:266
+#: app_actions/playback_actions.py:304
 #, python-brace-format
 msgid "Start {time}"
 msgstr "Začátek {time}"
@@ -2019,6 +2488,18 @@ msgstr "Začátek {time}"
 #: app_actions/marked_file_actions.py:201
 msgid "Starting..."
 msgstr "Spouští se..."
+
+#: ui/prefs/recording.py:13
+msgid "Stereo"
+msgstr "Stereo"
+
+#: ui/mainwin/menu.py:539
+msgid "Stop"
+msgstr "Zastavit"
+
+#: app_actions/bookmark_actions.py:42 youtube/startup.py:60
+msgid "Success"
+msgstr "Hotovo"
 
 #: ui/prefs/general.py:21
 msgid "System default"
@@ -2028,23 +2509,23 @@ msgstr "Výchozí podle systému"
 msgid "Tab"
 msgstr "Tab"
 
-#: ui/help_dialogs.py:29
+#: ui/mainwin/menu.py:493
 msgid "Telegram"
 msgstr "Telegram"
 
-#: app_actions/file_actions.py:381
+#: app_actions/file_actions.py:420
 msgid "Test failed."
 msgstr "Test selhal."
 
-#: app_actions/file_actions.py:376
+#: app_actions/file_actions.py:415
 msgid "Test file missing."
 msgstr "Chybí zvukový soubor pro test."
 
-#: ui/mainwin/menu.py:148
+#: ui/mainwin/menu.py:170
 msgid "Test speakers"
 msgstr "Test reproduktorů"
 
-#: app_actions/file_actions.py:379
+#: app_actions/file_actions.py:418
 msgid "Testing speakers."
 msgstr "Probíhá test reproduktorů."
 
@@ -2070,17 +2551,38 @@ msgstr ""
 "Aplikace zjistila, že tento odkaz na YouTube obsahuje zároveň ID konkrétního "
 "videa a ID celého playlistu. Vyberte, co chcete udělat."
 
-#: app_actions/file_actions.py:225 youtube/flow.py:66
+#: app_actions/favorite_actions.py:181
+msgid "The link must be a valid YouTube link for this type."
+msgstr "Odkaz tohoto typu musí být platný odkaz na YouTube."
+
+#: app_actions/favorite_actions.py:179 app_actions/file_actions.py:254
+#: youtube/flow.py:66
 msgid "The link must start with http or https."
 msgstr "Odkaz musí začínat znaky http nebo https."
 
-#: youtube/flow.py:69 youtube/flow.py:112
+#: ui/dialogs.py:173
+msgid "The selected time exceeds the file duration."
+msgstr "Zadaný čas přesahuje délku souboru."
+
+#: youtube/flow.py:69 youtube/flow.py:131
 msgid "This is not a valid YouTube link."
 msgstr "Toto není platný odkaz na YouTube."
 
-#: app_actions/playback_actions.py:158 app_actions/playback_actions.py:233
-#: app_actions/playback_actions.py:257 app_actions/playback_actions.py:280
-#: app_actions/playback_actions.py:287 app_actions/playback_actions.py:314
+#: youtube/flow.py:87
+msgid "This link does not include a YouTube playlist."
+msgstr "Tento odkaz neobsahuje playlist na YouTube."
+
+#: youtube/flow.py:78
+msgid "This link does not include a YouTube video."
+msgstr "Tento odkaz neobsahuje video na YouTube."
+
+#: app_actions/playback_actions.py:261
+msgid "Time is not available for the current file."
+msgstr "Informace o čase nejsou pro aktuální soubor dostupné."
+
+#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:245
+#: app_actions/playback_actions.py:295 app_actions/playback_actions.py:318
+#: app_actions/playback_actions.py:325 app_actions/playback_actions.py:352
 msgid "Time not available"
 msgstr "Délka souboru neznámá"
 
@@ -2089,7 +2591,7 @@ msgstr "Délka souboru neznámá"
 msgid "Total duration: {value}"
 msgstr "Celková délka: {value}"
 
-#: update/actions.py:345
+#: update/actions.py:415
 #, python-brace-format
 msgid ""
 "Total size: {size}\n"
@@ -2116,11 +2618,15 @@ msgstr ""
 msgid "Total size: {value}"
 msgstr "Celková velikost: {value}"
 
-#: app_actions/playback_actions.py:196
+#: app_actions/playback_actions.py:208
 msgid "Total time: "
 msgstr "Délka: "
 
-#: app_actions/file_actions.py:495
+#: ui/favorite_dlg.py:38 ui/favorite_dlg.py:127
+msgid "Type"
+msgstr "Typ"
+
+#: app_actions/file_actions.py:541
 msgid "Unable to copy current file to clipboard."
 msgstr "Aktuální soubor nelze zkopírovat do schránky."
 
@@ -2128,18 +2634,18 @@ msgstr "Aktuální soubor nelze zkopírovat do schránky."
 msgid "Unable to copy marked files to clipboard."
 msgstr "Označené soubory nelze zkopírovat do schránky."
 
-#: app_actions/file_actions.py:639
+#: app_actions/file_actions.py:685
 msgid "Unable to copy to clipboard."
 msgstr "Nelze kopírovat do schránky."
 
-#: app_actions/file_actions.py:381
+#: app_actions/file_actions.py:420
 msgid "Unable to play speaker test."
 msgstr "Nelze přehrát test reproduktorů."
 
-#: app_actions/playback_actions.py:158 app_actions/playback_actions.py:203
-#: app_actions/playback_actions.py:233 app_actions/playback_actions.py:257
-#: app_actions/playback_actions.py:280 app_actions/playback_actions.py:287
-#: app_actions/playback_actions.py:314 playlist/info.py:382
+#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:215
+#: app_actions/playback_actions.py:245 app_actions/playback_actions.py:295
+#: app_actions/playback_actions.py:318 app_actions/playback_actions.py:325
+#: app_actions/playback_actions.py:352 playlist/info.py:382
 msgid "Unavailable"
 msgstr "Nedostupné"
 
@@ -2147,23 +2653,27 @@ msgstr "Nedostupné"
 msgid "Unknown"
 msgstr "Neznámé"
 
+#: app_actions/recording_actions.py:70
+msgid "Unknown error."
+msgstr "Neznámá chyba."
+
 #: app_actions/marked_file_actions.py:32
 msgid "Unmarked."
 msgstr "Neoznačeno."
 
-#: ui/prefs/general.py:258
+#: ui/prefs/general.py:274
 msgid "Unregister"
 msgstr "Odregistrovat"
 
-#: ui/prefs/general.py:265
+#: ui/prefs/general.py:281
 msgid "Unregister Error"
 msgstr "Chyba při odregistraci"
 
-#: ui/prefs/general.py:82
+#: ui/prefs/general.py:87
 msgid "Unregister file extensions"
 msgstr "Odregistrovat přípony souborů"
 
-#: ui/prefs/general.py:231
+#: ui/prefs/general.py:247
 msgid ""
 "Unregister file extensions removes registry entries created by this app for "
 "media associations. This does not delete your media files. Windows may still "
@@ -2175,6 +2685,10 @@ msgstr ""
 "nastavení výchozích aplikací, ve kterých se mají otevírat jednotlivé typy "
 "souborů. To můžete změnit v nastavení systému."
 
+#: app_actions/favorite_actions.py:155
+msgid "Unsupported favorite type."
+msgstr "Nepodporovaný typ oblíbeného média."
+
 #: config/shortcut_utils.py:35
 msgid "Up"
 msgstr "Šipka nahoru"
@@ -2183,35 +2697,35 @@ msgstr "Šipka nahoru"
 msgid "Update"
 msgstr "Aktualizovat"
 
-#: ui/mainwin/menu.py:440
+#: ui/mainwin/menu.py:508
 msgid "Update YouTube components"
 msgstr "Aktualizovat YouTube komponenty"
 
-#: update/actions.py:55
+#: update/actions.py:56
 msgid "Update cancelled."
 msgstr "Aktualizace zrušena."
 
-#: ui/mainwin/menu.py:442
+#: ui/mainwin/menu.py:510
 msgid "Updates"
 msgstr "Aktualizace"
 
-#: update/actions.py:50
+#: update/actions.py:51
 msgid "Updating yt-dlp"
 msgstr "Aktualizuje se yt-dlp"
 
-#: update/actions.py:38
+#: update/actions.py:39
 msgid "Updating yt-dlp..."
 msgstr "Aktualizuje se yt-dlp..."
 
-#: ui/mainwin/menu.py:422
+#: ui/mainwin/menu.py:480
 msgid "User Guide"
 msgstr "Uživatelská příručka"
 
-#: ui/prefs/general.py:46
+#: ui/prefs/general.py:51
 msgid "Verbosity"
 msgstr "Výřečnost"
 
-#: ui/prefs/general.py:202
+#: ui/prefs/general.py:211
 msgid ""
 "Verbosity controls speech detail. Beginner gives clearer full messages. "
 "Advanced gives shorter, compact announcements. Possible values: Beginner or "
@@ -2227,15 +2741,23 @@ msgstr ""
 msgid "Version: {version}"
 msgstr "Verze: {version}"
 
+#: ui/favorite_dlg.py:10
+msgid "Video"
+msgstr "Video"
+
 #: youtube/video.py:34
 msgid "Video description"
 msgstr "Popisek videa"
 
-#: ui/mainwin/menu.py:401
+#: ui/mainwin/menu.py:459
 msgid "Video description..."
 msgstr "Popisek videa..."
 
-#: ui/mainwin/menu.py:90
+#: app_actions/favorite_actions.py:183
+msgid "Video favorites require a YouTube video link."
+msgstr "Pro přidání videa k oblíbeným musíte zadat odkaz na video na YouTube."
+
+#: ui/mainwin/menu.py:106
 msgid "Video options"
 msgstr "Možnosti videa"
 
@@ -2243,7 +2765,7 @@ msgstr "Možnosti videa"
 msgid "Video quality"
 msgstr "Kvalita videa"
 
-#: ui/prefs/youtube.py:96
+#: ui/prefs/youtube.py:115
 msgid ""
 "Video quality used when audio-only playback is disabled. Low prefers smaller "
 "streams, Medium is balanced, Best prefers highest quality."
@@ -2260,11 +2782,11 @@ msgstr "Chování smíšených odkazů na video a playlist"
 msgid "Videos"
 msgstr "Videa"
 
-#: ui/help_dialogs.py:90
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:497
 msgid "Visit website"
 msgstr "Navštívit web"
 
-#: app_actions/playback_actions.py:184
+#: app_actions/playback_actions.py:196
 #, python-brace-format
 msgid "Volume is {percent}%"
 msgstr "Hlasitost: {percent} procent"
@@ -2273,7 +2795,7 @@ msgstr "Hlasitost: {percent} procent"
 msgid "Volume step"
 msgstr "Interval posunu hlasitosti"
 
-#: ui/audio_settings.py:152
+#: ui/audio_settings.py:184
 msgid ""
 "Volume step used when pressing volume up or down. Allowed range is from 1 to "
 "20."
@@ -2281,17 +2803,17 @@ msgstr ""
 "Tato hodnota se využívá při ručním zvyšování a snižování hlasitosti. "
 "Přípustný rozsah je od 1 do 20."
 
-#: app_actions/playback_actions.py:164 app_actions/playback_actions.py:170
-#: app_actions/playback_actions.py:176
+#: app_actions/playback_actions.py:176 app_actions/playback_actions.py:182
+#: app_actions/playback_actions.py:188
 #, python-brace-format
 msgid "Volume {volume} percent"
 msgstr "Hlasitost {volume} procent"
 
-#: app.py:107
+#: app.py:227
 msgid "Welcome to Simple Audio Player"
 msgstr "Vítá vás Simple Audio Player"
 
-#: ui/audio_settings.py:137
+#: ui/audio_settings.py:155
 msgid ""
 "What happens after a file ends. Advance to the next file moves to the next "
 "item in the playlist. Loop the file repeats the same file automatically. Do "
@@ -2308,11 +2830,11 @@ msgstr ""
 msgid "What happens after a file ends?"
 msgstr "Co udělat na konci souboru?"
 
-#: ui/prefs/general.py:66
+#: ui/prefs/general.py:71
 msgid "What would you like to open with files?"
 msgstr "Co otevírat spolu s vybranými soubory?"
 
-#: ui/mainwin/menu.py:426 ui/update_dialogs.py:18
+#: ui/mainwin/menu.py:484 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr "Co je nového"
 
@@ -2320,17 +2842,34 @@ msgstr "Co je nového"
 msgid "Working..."
 msgstr "Probíhá..."
 
+#: ui/audio_settings.py:48
+msgid "Wrap to top for multiple files"
+msgstr "Při více souborech se vrátit na začátek"
+
+#: ui/audio_settings.py:170
+msgid ""
+"Wrap to top for multiple files. When enabled and the playlist has more than "
+"one file, moving next from the last file goes to the first file, and moving "
+"previous from the first file goes to the last file. Advance-at-end uses the "
+"same wrapping behavior."
+msgstr ""
+"Při více souborech se vrátit na začátek. Když je tato možnost zaškrtnutá a "
+"playlist obsahuje víc než jeden soubor, přechod na další soubor, pokud jste "
+"právě na posledním, přejde na první soubor v playlistu, a přechod na "
+"předchozí soubor, když jste zrovna na prvním, přejde na poslední soubor v "
+"playlistu. Volba, co udělat na konci souboru, se také bude chovat podle "
+"tohoto nastavení."
+
 #: ui/yt_dialogs.py:22
 msgid "Yes"
 msgstr "Ano"
 
-#: update/actions.py:102
+#: update/actions.py:103
 msgid "You are using the latest version."
 msgstr "Používáte nejnovější verzi."
 
-#: ui/prefs/dialog.py:65 youtube/flow.py:269 youtube/flow.py:290
-#: youtube/flow.py:389 youtube/startup.py:45 youtube/startup.py:60
-#: youtube/startup.py:158
+#: ui/prefs/dialog.py:73 youtube/flow.py:288 youtube/flow.py:309
+#: youtube/flow.py:408
 msgid "YouTube"
 msgstr "YouTube"
 
@@ -2342,7 +2881,7 @@ msgstr "YouTube komponenty"
 msgid "YouTube components are already installed."
 msgstr "YouTube komponenty jsou už nainstalovány."
 
-#: youtube/flow.py:48 youtube/flow.py:61 youtube/flow.py:130
+#: youtube/flow.py:48 youtube/flow.py:61 youtube/flow.py:149
 msgid "YouTube components are missing."
 msgstr "Chybí YouTube komponenty."
 
@@ -2358,30 +2897,26 @@ msgstr ""
 "YouTube vrátil odpověď HTTP 429 (Too Many Requests). Množství požadavků z "
 "vaší IP adresy je možná dočasně omezeno."
 
-#: ui/prefs/youtube.py:120
+#: ui/prefs/youtube.py:145
 msgid ""
-"YouTube settings page. Configure playback mode, quality, mixed-link behavior "
-"and yt-dlp update channel."
+"YouTube settings page. Configure playback mode, quality, mixed-link "
+"behavior, yt-dlp update channel, and startup update checks."
 msgstr ""
 "Záložka pro nastavení YouTube. Zde můžete nakonfigurovat režim přehrávání, "
-"kvalitu videa, chování smíšených odkazů a kanál pro stahování aktualizací "
-"knihovny yt-dlp."
+"kvalitu videa, chování smíšených odkazů, kanál pro stahování aktualizací "
+"knihovny yt-dlp a jestli se při spuštění mají tyto aktualizace vyhledávat "
+"automaticky."
 
-#: ui/help_dialogs.py:24
-msgid ""
-"contact me:\n"
-"telegram: t.me/kamalyaser31\n"
-"e-mail: kamalyaser31@gmail.com"
-msgstr ""
-"Kontaktovat autora (anglicky):\n"
-"Telegram: t.me/kamalyaser31\n"
-"E-mail: kamalyaser31@gmail.com"
+#: app_actions/recording_actions.py:32
+msgid "paused"
+msgstr "pozastaveno"
 
-#: update/actions.py:69 update/actions.py:70 update/actions.py:75
+#: update/actions.py:70 update/actions.py:71 update/actions.py:76
+#: update/actions.py:233 update/actions.py:234
 msgid "unknown"
 msgstr "neznámé"
 
-#: update/actions.py:74
+#: update/actions.py:75
 #, python-brace-format
 msgid "yt-dlp is already up to date ({ver}) on '{ch}' channel."
 msgstr "Knihovna yt-dlp je už aktuální ({ver}) z kanálu '{ch}'."
@@ -2395,11 +2930,11 @@ msgstr "Knihovna yt-dlp není dostupná."
 msgid "yt-dlp returned invalid JSON data."
 msgstr "Knihovna yt-dlp vrátila neplatná data JSON."
 
-#: update/actions.py:59 update/actions.py:78
+#: update/actions.py:60 update/actions.py:79 update/actions.py:248
 msgid "yt-dlp update"
 msgstr "Aktualizace yt-dlp"
 
-#: update/actions.py:55
+#: update/actions.py:56
 msgid "yt-dlp update cancelled."
 msgstr "Aktualizace yt-dlp zrušena."
 
@@ -2407,7 +2942,7 @@ msgstr "Aktualizace yt-dlp zrušena."
 msgid "yt-dlp update channel"
 msgstr "Kanál pro aktualizace yt-dlp"
 
-#: ui/prefs/youtube.py:108
+#: ui/prefs/youtube.py:127
 msgid ""
 "yt-dlp update channel. Stable is recommended. Nightly and Master can include "
 "newer but less-tested builds."
@@ -2416,11 +2951,11 @@ msgstr ""
 "Doporučuji používat kanál Stable. Kanály Nightly a Master mohou nabízet "
 "novější, ale méně důkladně otestované verze."
 
-#: update/actions.py:68
+#: update/actions.py:69
 #, python-brace-format
 msgid "yt-dlp updated from {old} to {new} on '{ch}' channel."
 msgstr ""
-"Knihovna yt-dlp byla aktualizována z verze {old} na verzi {new} z kanálu "
+"Knihovna yt-dlp byla aktualizována z verze {old} na verzi {new} v kanálu "
 "'{ch}'."
 
 #: youtube/resolver.py:390
@@ -2462,13 +2997,22 @@ msgstr "{field} musí být celé číslo."
 msgid "{field} must be zero or greater."
 msgstr "{field} musí být nula nebo vyšší."
 
-#: app_actions/playback_actions.py:207 app_actions/playback_actions.py:240
+#: app_actions/playback_actions.py:219 app_actions/playback_actions.py:252
 #, python-brace-format
 msgid "{percent} percent"
 msgstr "{percent} procent"
 
-#: app_actions/playback_actions.py:213 app_actions/playback_actions.py:220
-#: app_actions/playback_actions.py:227
+#: app_actions/playback_actions.py:225 app_actions/playback_actions.py:232
+#: app_actions/playback_actions.py:239
 #, python-brace-format
 msgid "{speed}x"
 msgstr "{speed}krát"
+
+#~ msgid ""
+#~ "contact me:\n"
+#~ "telegram: t.me/kamalyaser31\n"
+#~ "e-mail: kamalyaser31@gmail.com"
+#~ msgstr ""
+#~ "Kontaktovat autora (anglicky):\n"
+#~ "Telegram: t.me/kamalyaser31\n"
+#~ "E-mail: kamalyaser31@gmail.com"
