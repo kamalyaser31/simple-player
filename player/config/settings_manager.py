@@ -115,6 +115,8 @@ class SettingsManager:
                 "yt_dlp_channel": YT_DLP_DEFAULT_CHANNEL,
                 "check_yt_updates_startup": "false",
                 "prefetch_count": "5",
+                "search_language": YT_SEARCH_LANGUAGE,
+                "search_region": YT_SEARCH_REGION,
             },
             "recording": {
                 "channels": "stereo",
@@ -163,11 +165,11 @@ class SettingsManager:
                 has_new_silence_section = False
         self._migrate_silence_removal_settings(has_new_silence_section)
 
-    def save(self):
-        if self.get_save_on_close():
-            self._write_config(self._config)
+    def save(self, force=False):
+        if not force and not self.get_save_on_close():
+            self._save_save_on_close_only()
             return
-        self._save_save_on_close_only()
+        self._write_config(self._config)
 
     def _save_save_on_close_only(self):
         disk = configparser.ConfigParser(interpolation=None)

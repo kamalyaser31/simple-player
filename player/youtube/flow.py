@@ -350,7 +350,8 @@ def _play_item(ctx, item, ses, idx):
     else:
         set_ses(ctx, ses, idx)
         _mark_queued(ses, src)
-        _prefetch_range(ses, int(idx or 0) + 1, 1)
+        prefetch_n = ctx.settings.get_yt_prefetch_count()
+        _prefetch_range(ses, int(idx or 0) + 1, prefetch_n)
     return True
 
 
@@ -549,7 +550,8 @@ def _advance_to_next(ctx, ses, from_idx, to_idx, item, prep):
         return False
     ses["sel"] = int(to_idx)
     set_now(ctx, item)
-    _prefetch_range(ses, int(to_idx) + 1, 1)
+    prefetch_n = ctx.settings.get_yt_prefetch_count()
+    _prefetch_range(ses, int(to_idx) + 1, prefetch_n)
     return True
 
 
