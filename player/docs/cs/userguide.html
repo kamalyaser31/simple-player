@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple Audio Player (Verze 1.0.1) - uživatelská pøíruèka</title>
+  <title>Simple Audio Player (Verze 1.1) - uživatelská pøíruèka</title>
   <style>
     body {
       max-width: 1020px;
@@ -46,8 +46,8 @@
   </style>
 </head>
 <body>
-  <h1>Simple Audio Player (Verze 1.0.1 - uživatelská pøíruèka)</h1>
-  <p class="muted">Naposledy aktualizováno: 8. bøezna 2026</p>
+  <h1>Simple Audio Player (Verze 1.1 - uživatelská pøíruèka)</h1>
+  <p class="muted">Naposledy aktualizováno: 7. bøezna 2026</p>
 
   <p>
     Tato pøíruèka vysvìtluje srozumitelným jazykem každodenní používání aplikace. Zaèíná rozhraním,
@@ -71,10 +71,10 @@
     <li><a href="#settings-interface">Rozhraní nastavení</a></li>
     <li><a href="#settings-categories">Kategorie nastavení</a></li>
     <li><a href="#shortcut-configuration">Nastavení klávesových zkratek</a></li>
-    <li><a href="#shortcuts-reference">Pøehled lokálních zkratek</a></li>
+    <li><a href="#shortcuts-reference">Pøehled lokálních klávesových zkratek</a></li>
     <li><a href="#data-backup-restore">Data, zálohování a obnovení</a></li>
     <li><a href="#troubleshooting">Øešení problémù</a></li>
-    <li><a href="#global-shortcuts">Globální zkratky</a></li>
+    <li><a href="#global-shortcuts">Globální klávesové zkratky</a></li>
     <li><a href="#contact-us">Kontakt</a></li>
   </ol>
 
@@ -89,7 +89,7 @@
   </p>
   <p>
     Aplikace také pøehlednì oddìluje data jednotlivých funkcí. Nastavení, záložky, oblíbené položky
-    a uložené pozice pøehrávání jsou uloženy v rùzných souborech, takže každou z tìchto èástí lze zálohovat
+    a zapamatované pozice pro jednotlivé pøehrávané soubory se ukládají do samostatných souborù, takže data pro každou funkci lze zálohovat
     nebo obnovit bez ovlivnìní ostatních.
   </p>
 
@@ -101,7 +101,7 @@
   </p>
   <p>
     Pro místní pøehrávání nemusíte být pøipojeni k internetu. Pøipojení je potøeba pouze pro kontrolu aktualizací a funkce YouTube.
-    Pokud aplikaci využijete jen pro místní soubory, bude fungovat normálnì i bez YouTube komponent.
+    Pokud aplikaci využijete jen k pøehrávání místních souborù, funguje normálnì i bez YouTube komponent.
   </p>
 
   <h2 id="installation">Instalace a první spuštìní</h2>
@@ -111,9 +111,9 @@
   </p>
   <p>
     Pøi prvním spuštìní nejprve otevøete jeden místní soubor, abyste si ovìøili, že výstup funguje správnì. Poté otevøete
-    nastavení pomocí <code>Ctrl+P</code> (nebo pøes <code>Soubor &gt; Pøedvolby...</code>) a projdìte si záložky Obecné a Zvuk.
+    nastavení pomocí <code>Ctrl+P</code> (nebo pøes <code>Soubor &gt; Nastavení...</code>) a projdìte si záložky Obecné a Zvuk.
     Tímto prvním nastavením si nadefinujete vìtšinu dlouhodobého chování aplikace, zejména režim otevírání souborù,
-    ukládání pøi zavøení a intervaly skokù pøi pøetáèení.
+    ukládání pøi zavøení a intervaly posunu pøi pøetáèení.
   </p>
 
   <hr>
@@ -151,179 +151,176 @@
     Pro otevøení pøímého streamu stisknìte <code>Ctrl+L</code> nebo použijte <code>Soubor &gt; Otevøít odkaz...</code>.
   </p>
   <p>
-		Pøehrát/pozastavit se ovládá pomocí <code>Space</code> nebo <code>Enter</code>. Další/pøedchozí položka používá
-    <code>Tab</code>/<code>Page Down</code> a <code>Shift+Tab</code>/<code>Page Up</code>. To obvykle staèí pro bìžné pøehrávání.
+		Pøehrávání spustíte nebo pozastavíte <code>mezerníkem</code> nebo <code>enterem</code>. K pøechodu na další/pøedchozí soubor se používá
+    <code>tab</code>/<code>page Down</code> a <code>shift+Tab</code>/<code>page Up</code>. Tyto zkratky obvykle staèí pro bìžné pøehrávání.
   </p>
   <p>
-    Pro navigaci uvnitø dlouhých souborù použijte levé/pravé šipky pro posun a podle potøeby jejich varianty s modifikátory:
-    <code>Ctrl+Left/Right</code> (x2), <code>Ctrl+Shift+Left/Right</code> (x4) a <code>Shift+Left/Right</code> (x8).
-    Mùžete také skákat po procentech pomocí <code>Ctrl+1</code> až <code>Ctrl+0</code> a posunutou sadou pro offsetové skoky.
+    Pro navigaci uvnitø dlouhých souborù mùžete pøetáèet levou/pravou šipkou a v pøípadì potøeby variantou s modifikátory:
+    <code>Ctrl+levá /pravá šipka</code> (x2), <code>ctrl+Shift+levá/pravá šipka</code> (x4) a <code>Shift+levá/pravá šipka</code> (x8).
+    Mùžete také skákat po desítkách procent pomocí <code>ctrl+1</code> až <code>ctrl+0</code>, pøípadnì se shiftem po pìti procentech.
   </p>
   <p>
-    Pøesná navigace na index souboru je dostupná pøes pøejít na soubor: stisknìte <code>Ctrl+G</code> nebo zvolte
-    <code>Pøehrávaè &gt; Pøejít na soubor...</code>. Pøesná navigace na èas je dostupná pøes pøejít na èas: stisknìte
-    <code>Ctrl+Shift+G</code> nebo zvolte <code>Pøehrávaè &gt; Pøejít na èas...</code>. Dialog pøejít na èas ovìøuje
-    hodnoty podle skuteèné délky a pøi neplatné hodnotì zùstává otevøený.
+    Na konkrétní otevøený soubor v playlistu pøejdete zkratkou <code>ctrl+G</code> nebo zvolte
+    <code>Pøehrávaè &gt; Pøejít na soubor...</code>. Na konkrétní pozici v souboru pøejdete položkou zkratkou
+    <code>ctrl+shift+G</code> nebo zvolte <code>Pøehrávaè &gt; Pøejít na èas...</code>. Dialog pøejít na èas kontroluje
+    zadanou hodnotu podle skuteèné délky souboru a pøi neplatné hodnotì zùstává otevøený.
   </p>
   <p>
-    A-B smyèka je užiteèná, když potøebujete opakovat urèitý úsek. Bod A nastavíte klávesou <code>[</code>,
-    bod B klávesou <code>]</code> a zrušíte ji pomocí <code>Backspace</code>. Stejné akce jsou dostupné také v
-    <code>Pøehrávaè &gt; A-B smyèka</code>.
+    Smyèka od místa do místa je užiteèná, když potøebujete opakovat urèitý úsek souboru poøád dokola. Zaèátek smyèky nastavíte klávesou <code>ú</code>,
+    konec smyèky klávesou <code>)</code> (tyto zkratky fungují pouze s anglickou klávesnicí) a nastavenou smyèku zrušíte pomocí <code>Backspace</code>. Tyto pøíkazy jsou dostupné také z menu
+    <code>Pøehrávaè &gt; Smyèka od místa do místa</code>.
   </p>
 
   <h2 id="file-playlist-management">Správa souborù a playlistù</h2>
   <p>
     Dialog otevøených souborù je nejrychlejší zpùsob, jak se pohybovat ve velkých playlistech. Otevøete jej pomocí
-    <code>F2</code> nebo zvolením <code>Soubor &gt; Otevøené soubory...</code>. Vyberte položku a stisknìte Enter pro pøechod.
+    <code>F2</code> nebo výbìrem pøíkazu <code>Soubor &gt; Otevøené soubory...</code>. Vyberte nìkterý soubor a pøejdìte na nìj klávesou enter.
   </p>
   <p>
-    Pro operace s místními soubory použijte pøejmenování pomocí <code>Shift+F2</code> nebo <code>Úpravy &gt; Pøejmenovat...</code>
-    a mazání pomocí <code>Shift+Delete</code> nebo <code>Úpravy &gt; Odstranit</code>. Otevøení nadøazené složky provedete pomocí
-    <code>Ctrl+F</code> nebo <code>Soubor &gt; Otevøít nadøazenou složku</code>. Vlastnosti souboru otevøete pomocí
-    <code>Alt+Enter</code> nebo <code>Soubor &gt; Vlastnosti souboru...</code>. Tyto operace jsou zámìrnì dostupné pouze pro místní soubory.
+    Místní soubory mùžete pøejmenovat zkratkou <code>shift+F2</code> nebo pøíkazem <code>Úpravy &gt; Pøejmenovat...</code>
+    a mazat zkratkou <code>shift+delete</code> nebo pøíkazem <code>Úpravy &gt; Smazat</code>. Složku se souborem otevøete zkratkou
+    <code>ctrl+F</code> nebo pøíkazem <code>Soubor &gt; Otevøít složku souboru</code>. Vlastnosti souboru otevøete pomocí
+    <code>alt+enter</code> nebo z menu <code>Soubor &gt; Vlastnosti souboru...</code>. Tyto operace jsou zámìrnì dostupné pouze pro místní soubory.
   </p>
   <p>
-    Oznaèování je užiteèné pøi správì více souborù najednou. Aktuální soubor oznaèíte pomocí <code>Ctrl+K</code>,
-    všechny pomocí <code>Ctrl+A</code>, oznaèení zrušíte pomocí <code>Ctrl+Shift+K</code> a poèet oznaèených oznámíte klávesou <code>K</code>.
-    Po oznaèení použijte <code>Akce pro oznaèené soubory</code> pro kopírování, pøesun, kopírování cest do schránky nebo mazání.
+    Oznaèování je užiteèné pøi správì více souborù najednou. Aktuální soubor oznaèíte pomocí <code>ctrl+K</code>,
+    všechny pomocí <code>ctrl+A</code>, oznaèení zrušíte klávesou <code>ctrl+shift+K</code> a poèet oznaèených zjistíte samotnou klávesou <code>K</code>.
+    Po oznaèení požadovaných souborù vyberte pøíkaz z nabídky <code>Akce pro oznaèené soubory</code> pro kopírování, pøesun, kopírování cest do schránky nebo mazání.
   </p>
   <p>
-    Chování playlistu výraznì ovlivòují dvì nastavení zvuku. „Pøecházet na zaèátek pøi více souborech“ zpùsobí,
-    že další/pøedchozí bude kruhové, pokud je otevøen více než jeden soubor. „Uložit aktuální pozici pro každý soubor“
-    ukládá pozici pøi pøechodu mezi soubory a pøi návratu k témuž souboru ji obnoví.
+    Chování playlistù výraznì ovlivòují dvì nastavení zvuku. „Pøi více souborech se vrátit na zaèátek “ zpùsobí,
+    že pøechod na další/pøedchozí soubor se bude pohybovat cyklicky, pokud je otevøen více než jeden soubor. „Pamatovat si aktuální pozici pro každý soubor“
+    uloží pøi pøechodu mezi soubory aktuální pozici a pøi návratu k témuž souboru ji obnoví.
   </p>
 
   <hr>
 
   <h2 id="bookmarks">Záložky</h2>
   <p>
-    Záložky jsou pojmenované pozice v místních souborech. Jsou urèeny pro rychlý návrat v dlouhých materiálech,
+    Záložky jsou pojmenované pozice v místních souborech. Slouží k rychlému vyhledání požadované pasáže v dlouhých nahrávkách,
     jako jsou kurzy, podcasty a rozhovory.
   </p>
   <p>
-    Záložku pøidáte pomocí <code>Shift+M</code> nebo pøes <code>Záložky &gt; Pøidat novou záložku</code>.
+    Novou záložku pøidáte zkratkou <code>shift+M</code> nebo pøes <code>Záložky &gt; Pøidat novou záložku</code>.
     Aplikace se zeptá na název a pod tímto názvem uloží aktuální pozici.
   </p>
   <p>
-    Správce záložek otevøete pomocí <code>Ctrl+Shift+M</code> nebo pøes <code>Záložky &gt; Spravovat záložky</code>.
-    Dialog zobrazuje sloupce názvu a pozice a nabízí akce pøejít, upravit název a odstranit. Stisknutí Enteru
+    Správce záložek otevøete pomocí <code>ctrl+shift+M</code> nebo pøes <code>Záložky &gt; Spravovat záložky</code>.
+    V dialogu jsou zobrazeny sloupce pro název a pozici a akce pøejít, upravit název a odstranit. Stisknutí Enteru
     na vybrané záložce vás okamžitì pøesune na její uloženou pozici.
   </p>
   <p>
-    Rychlé pøeskakování mezi sloty je dostupné pomocí <code>Alt+1</code> až <code>Alt+9</code> a <code>Alt+0</code>
-    pro slot 10. Stejné akce jsou dostupné i v <code>Záložky &gt; Pøejít na záložku</code>.
+    Klávesami <code>alt+1</code> až <code>alt+9</code> a <code>alt+0</code>
+    pro slot 10 mùžete pøeskakovat mezi uloženými záložkami. Tyto akce jsou dostupné i v <code>Záložky &gt; Pøejít na záložku</code>.
   </p>
 
   <h2 id="favorite-videos">Oblíbená videa</h2>
   <p>
-    Oblíbená videa ukládají opakovanì používané odkazy s výslovnì urèeným typem. Hodí se, pokud èasto otevíráte
-    stejný playlist, video, živé vysílání nebo obecnou streamovací URL a chcete mít jedno centrální místo, kde tyto odkazy spravovat.
+    Do oblíbených videí se ukládají opakovanì používané odkazy a jejich typ. Tato funkce se hodí, pokud èasto otevíráte
+    stejný playlist, video, živé vysílání nebo URL generického streamu (napøíklad internetové rádio) a chcete mít jedno centrální místo, kde tyto odkazy budete spravovat.
   </p>
   <p>
-    Dialog otevøete pomocí <code>Ctrl+Shift+F</code> nebo pøes <code>Soubor &gt; Oblíbená videa...</code>.
+    Dialog otevøete zkratkou <code>ctrl+shift+F</code> nebo pøes <code>Soubor &gt; Oblíbená videa...</code>.
     Seznam obsahuje název, typ a odkaz. K údržbì seznamu slouží tlaèítka pøidat/upravit/odebrat.
   </p>
   <p>
-    Chování typu je dùležité: „Video“ a „Playlist“ vynutí konkrétní YouTube workflow, „Kombinovaný odkaz“
-    se øídí vaším nastavením smíšených odkazù v nastavení YouTube a „Obecný stream“ se otevøe pøímo jako bìžný stream
+    Chování typu každého odkazu je dùležité: Možnost „Video“ nebo „Playlist“ vždy vynutí pøíslušné chování na YouTube, volba „Kombinovaný odkaz“
+    se øídí vaším nastavením smíšených odkazù v nastavení YouTube a volba „Generický stream“ daný odkaz vždy otevøe pøímo jako bìžný stream
     bez resolveru YouTube.
   </p>
 
   <h2 id="youtube-features">Funkce YouTube</h2>
   <p>
-    Podpora YouTube zahrnuje pøímé otevírání odkazù, vyhledávání, procházení výsledkù a akce související s videem.
-    Odkaz na YouTube otevøete pomocí <code>Ctrl+Shift+Y</code> (nebo <code>Soubor &gt; Otevøít odkaz na YouTube...</code>)
-    a vyhledávání pomocí <code>Ctrl+Y</code> (nebo <code>Soubor &gt; Hledat na YouTube...</code>).
+    Podpora YouTube zahrnuje pøímé otevírání odkazù, vyhledávání, procházení výsledkù a akce pro konkrétní video (stažení, zobrazení popisku videa atd).
+    Odkaz na YouTube otevøete pomocí <code>ctrl+shift+Y</code> (nebo <code>Soubor &gt; Otevøít odkaz na YouTube...</code>)
+    a vyhledávání pomocí <code>ctrl+Y</code> (nebo <code>Soubor &gt; Hledat na YouTube...</code>).
   </p>
   <p>
-    Vyhledávání otevøe dialog s výsledky, ve kterém mùžete položky pøehrávat, kopírovat odkazy, otevøít prohlížeè/kanál
-    a stahovat z kontextu výsledku. Odkazy na playlisty otevøou workflow pro procházení, zatímco pøímé odkazy na videa
+    Vyhledávání otevøe dialog s výsledky, ve kterém mùžete nalezená videa pøehrát, zkopírovat odkaz na dané video, otevøít video v prohlížeèi, otevøít kanál autora
+    nebo stáhnout. Odkazy na playlisty otevøou dialog pro procházení daného playlistu, zatímco pøímé odkazy na videa
     lze pøehrát okamžitì.
   </p>
   <p>
-    U odkazù, které obsahují ID videa i playlistu zároveò, øídí chování nastavení YouTube: zeptat se pokaždé,
+    U odkazù, které obsahují ID videa i playlistu zároveò, se aplikace zachová podle pøíslušného nastavení YouTube: Vždy se zeptat,
     vždy video nebo vždy playlist. Toto nastavení ovlivòuje také oblíbené položky typu „Kombinovaný odkaz“.
   </p>
   <p>
-    Akce pro aktuální kontext videa na YouTube jsou dostupné pomocí <code>Ctrl+D</code> pro stažení,
-    <code>Alt+D</code> pro popis nebo z nabídky <code>Možnosti videa</code>.
+    Akce pro aktuálnì pøehrávané video na YouTube jsou dostupné pomocí <code>ctrl+D</code> pro stažení,
+    <code>alt+D</code> pro zobrazení popisu nebo z nabídky <code>Možnosti videa</code>.
   </p>
   <p>
-    Komponenty YouTube lze aktualizovat z <code>Nápovìda &gt; Aktualizace &gt; Aktualizovat komponenty YouTube</code>
-    nebo z <code>Nastavení &gt; YouTube</code>. Volba kontroly aktualizací yt-dlp pøi spuštìní porovnává místní a vzdálené
-    verze a pøi dostupné aktualizaci zobrazí bìžnou výzvu k aktualizaci.
+    YouTube komponenty lze aktualizovat z <code>Nápovìda &gt; Aktualizace &gt; Aktualizovat YouTube komponenty</code>
+    nebo z <code>Nastavení &gt; YouTube</code>. Pøi zapnuté volbì, jestli se mají pøi spuštìní kontrolovat aktualizací yt-dlp, aplikace porovná místní 
+    verzi s verzí na serveru a pøi dostupné aktualizaci se zeptá, jestli si pøejete aktualizovat.
   </p>
 
   <h2 id="recording">Nahrávání</h2>
   <p>
-    Nahrávání zachytává zvuk z vašeho výchozího vstupního zaøízení a ukládá jej do nastavené složky pro nahrávky.
-    Spuštìní provedete klávesou <code>F9</code>, pozastavení/obnovení pomocí <code>F7</code> a zastavení pomocí <code>F8</code>,
+    Nahrávání zaznamenává zvuk z vašeho výchozího vstupního zaøízení (mikrofonu) a ukládá jej do nastavené složky pro nahrávky.
+    Nahrávání spustíte klávesou <code>F9</code>, pozastavíte/obnovíte pomocí <code>F7</code> a zastavíte ho klávesou <code>F8</code>,
     pøípadnì stejnými pøíkazy z nabídky <code>Nahrávání</code>.
   </p>
   <p>
-    Operace spuštìní a obnovení používají blokující pípnutí pøed pokraèováním záznamu. Zastavení pøehraje
-    potvrzovací pípnutí s nižší frekvencí po ukonèení nahrávání.
+    Pøi zahájení nahrávání nebo pokraèování v nahrávání se pøehraje krátké pípnutí a teprve potom se záznam spustí nebo bude pokraèovat. Pøi ukonèení nahrávání zazní potvrzovací pípnutí s nižší frekvencí.
   </p>
   <p>
     Složku s nahrávkami mùžete otevøít pøímo z <code>Nahrávání &gt; Otevøít složku s nahrávkami</code>.
-    Globální ovládání nahrávání je dostupné pomocí <code>Alt+Win+F9</code>, <code>Alt+Win+F7</code> a <code>Alt+Win+F8</code>.
+    Nahrávání mùžete ovládat i globálními zkratkami <code>alt+win+F9</code>, <code>alt+win+F7</code> a <code>alt+win+F8</code>.
   </p>
 
   <hr>
 
   <h2 id="settings-interface">Rozhraní nastavení</h2>
   <p>
-    Nastavení otevøete pomocí <code>Ctrl+P</code> (nebo <code>Soubor &gt; Pøedvolby...</code>). Kategorie jsou zobrazeny
-    jako plochý seznam vlevo a stránka jednotlivé kategorie se zobrazuje vpravo. Stisknutí OK ovìøí všechny stránky.
+    Nastavení otevøete zkratkou <code>ctrl+P</code> (nebo pøíkazem <code>Soubor &gt; Nastavení...</code>). V levé èásti okna se zobrazí seznam kategorií a vpravo volby pro vybranou kategorii. Tlaèítko OK zkontroluje správnost všech nastavení.
     Pokud je nìjaká hodnota neplatná, zobrazí se dialogové okno a nastavení zùstane otevøené, abyste ji mohli opravit.
   </p>
   <p>
-    Stisknìte <code>F1</code>, když je fokus na libovolném ovládacím prvku v nastavení, a uslyšíte krátkou nápovìdu
-    k dané volbì. To je užiteèné, pokud si nejste jistí, co která možnost mìní, a chcete rychlé vysvìtlení
+    Pokud stisknete <code>F1</code>, když je fokus na libovolném ovládacím prvku v nastavení, uslyšíte krátkou nápovìdu
+    k dané volbì. To je užiteèné, pokud si nejste jistí, co která možnost mìní, a chcete její rychlé vysvìtlení
     bez opuštìní dialogu.
   </p>
 
   <h2 id="settings-categories">Kategorie nastavení</h2>
-  <h3>12.1 Obecná nastavení</h3>
+  <h3>Obecná nastavení</h3>
   <p>
-    Tato stránka urèuje, jak se aplikace chová mezi jednotlivými spuštìními. Spravuje se zde jazyk, úroveò podrobnosti
-    a kontrola aktualizací spolu se dvìma možnostmi, které nejvíce ovlivòují každodenní workflow: režim otevírání souborù
-    a ukládání pøi zavøení. Pokud je režim otevírání souborù nastaven tak, aby zahrnoval obsah složky, mùže otevøení
-    jednoho souboru automaticky vytvoøit celý playlist. Pokud je ukládání pøi zavøení vypnuto, zmìny na úrovni relace
+    Na této záložce nastavujete, jak se aplikace chová pøi spuštìní a ukonèení. Spravuje se zde jazyk, úroveò výøeènosti
+    a kontrola aktualizací a také dvì možnosti, které mají nejvìtší vliv na každodenní používání: Režim otevírání souborù
+    a ukládání pøi zavøení. Pokud je režim otevírání souborù nastaven tak, aby se spolu s jedním souborem otevøely rovnou i všechny ostatní soubory v dané složce, mùžete otevøením
+    jednoho souboru automaticky vytvoøit celý playlist. Pokud je ukládání pøi zavøení vypnuto, zmìny provedené bìhem jednoho spuštìní aplikace
     se pøi ukonèení zámìrnì zahodí.
   </p>
   <p>
-    Obecná nastavení zahrnují také volbu „Pamatovat si poslední pozici v souboru“ pro obnovu po spuštìní a akce
-    asociací souborù pro integraci s Prùzkumníkem.
+    Obecná nastavení zahrnují také volbu „Pamatovat si poslední pozici v souborechí a možnost
+    asociovat jednotlivé typy souborù s Prùzkumníkem Windows.
   </p>
 
-  <h3>12.2 Zálohování a obnovení</h3>
+  <h3>Zálohování a obnovení</h3>
   <p>
-    Tuto stránku použijte pøi pøechodu na jiný poèítaè, obnovì po poškozeném nastavení nebo pøed vìtšími zmìnami,
-    když si chcete uložit zálohu. Mùžete exportovat a importovat nastavení, samostatnì exportovat a importovat záložky,
+    Tuto stránku použijte pøi pøechodu na jiný poèítaè, obnovì poškozených nastavení nebo uložení zálohy pøedtím, než provedete rozsáhlejší zmìny. Mùžete zde exportovat a importovat nastavení, samostatnì exportovat a importovat záložky,
     obnovit výchozí nastavení a pøímo otevøít složku s nastavením.
   </p>
   <p>
-    Oddìlený import/export záložek od nastavení pomáhá v pøípadì, že si chcete zachovat poslechové znaèky,
-    ale zároveò testovat nový èistý profil nastavení.
+    Oddìlený import/export záložek od nastavení pomáhá v pøípadì, že chcete zachovat existující záložky v jednotlivých souborech,
+    ale zároveò otestovat nový profil s výchozím nastavením.
   </p>
 
-  <h3>12.3 Nastavení zvuku</h3>
+  <h3>Nastavení zvuku</h3>
   <p>
-    Nastavení zvuku øídí chování posunu, kroky rychlosti a hlasitosti a chování na konci souboru. Zde se také
-    nastavuje cyklení playlistu a sledování pozice pro jednotlivé soubory. Pokud èasto pøepínáte mezi mnoha soubory,
-    zapnutí sledování pozice pro každý soubor èiní navigaci mnohem plynulejší.
+    Na záložce Zvuk nastavujete intervaly pro  pøetáèení, zmìnu rychlosti a hlasitosti a chování pøi dohrání souboru. Také
+    zde nastavujete, jestli má být pohyb v playlistech cyklický a jestli si má aplikace pamatovat poslední pozici v jednotlivých souborech. Pokud èasto pøepínáte mezi mnoha soubory,
+    zapnutím sledování pozice pro každý soubor bude pøecházení mezi nimi mnohem plynulejší.
   </p>
   <p>
-    Na této stránce jsou také volby zpracování, jako je dynamická normalizace/limiter a pøehrávání v mono.
-    Jsou užiteèné u problematického zdrojového materiálu, zejména u obsahu s nevyrovnanou hlasitostí
-    nebo nevyvážeností kanálù.
+    Na této stránce jsou také volby pro zpracování zvuku, jako je dynamická normalizace/limiter a pøehrávání v mono.
+    Tyto volby jsou užiteèné u problematických nahrávek, zejména s nevyrovnanou hlasitostí
+    nebo nevyváženým levým a pravým kanálem.
   </p>
 
-  <h3>12.4 Nastavení odstraòování ticha</h3>
+  <h3>Nastavení odstraòování ticha</h3>
   <p>
-    Tato stránka ovládá FFmpeg filtr pro odstraòování ticha. Pro základní použití potøebujete pouze práh
-    a minimální délku trvání. Pokroèilé ovládací prvky zpøístupòují plné parametry filtru pro pøesnìjší chování oøezu.
+    Zde si mùžete pøizpùsobit FFmpeg filtr pro odstraòování ticha. Pro základní použití budete potøebovat nastavit pouze práh hlasitosti
+    a minimální délku trvání tichých pasáží. Pokroèilé ovládací prvky zpøístupòují plné parametry filtru pro pøesnìjší chování oøezu.
   </p>
   <p>
     Pokud øeè zní pøíliš trhanì, snižte agresivitu úpravou prahu a délky trvání ještì pøed tím,
