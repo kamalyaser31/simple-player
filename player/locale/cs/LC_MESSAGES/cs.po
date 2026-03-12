@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-11 22:10+0200\n"
-"PO-Revision-Date: 2026-03-12 00:27+0100\n"
+"PO-Revision-Date: 2026-03-12 10:43+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -1409,7 +1409,7 @@ msgstr "Místní zkratky"
 
 #: ui/audio_settings.py:7
 msgid "Loop the file"
-msgstr "Přehrávat soubor opakovaně"
+msgstr "Přehrávat soubor dokola"
 
 #: ui/prefs/youtube.py:17
 msgid "Low"
@@ -1764,7 +1764,7 @@ msgstr "Otevřít složku s nahrávkami"
 
 #: ui/prefs/general.py:62
 msgid "Open the file and the main folder files"
-msgstr "Otevřít vybraný soubor a ostatní soubory v hlavní složce"
+msgstr "Otevřít vybraný soubor a ostatní soubory v jeho složce"
 
 #: ui/prefs/general.py:61
 msgid "Open the file only"
@@ -1773,7 +1773,7 @@ msgstr "Otevřít pouze vybraný soubor"
 #: ui/prefs/general.py:63
 msgid "Open the file with the main and subfolder files"
 msgstr ""
-"Otevřít vybraný soubor a všechny ostatní soubory v hlavní složce i v "
+"Otevřít vybraný soubor a všechny ostatní soubory v jeho složce i v "
 "podsložkách"
 
 #: ui/prefs/youtube.py:28 youtube/ui_utils.py:68
@@ -1800,11 +1800,11 @@ msgid ""
 "main and subfolder files scans the folder recursively and loads files from "
 "subfolders too."
 msgstr ""
-"Nastavení Spolu se souborem otevřít určuje, co se stane, když otevřete "
-"samostatný soubor. Volba Otevřít pouze vybraný soubor načte pouze daný "
-"soubor. Volba Otevřít vybraný soubor a ostatní soubory v hlavní složce načte "
-"i všechny ostatní podporované soubory ve stejné složce. Volba Otevřít "
-"vybraný soubor a všechny ostatní soubory v hlavní složce i v podsložkách "
+"Volba Co otevřít s vybraným souborem určuje, co se stane, když otevřete "
+"samostatný soubor. Možnost Otevřít pouze vybraný soubor načte pouze tento "
+"soubor. Možnost Otevřít vybraný soubor a ostatní soubory v jeho složce načte "
+"i všechny ostatní podporované soubory ve stejné složce. Možnost Otevřít "
+"vybraný soubor a všechny ostatní soubory v jeho složce i v podsložkách "
 "rekurzivně prohledá příslušnou složku a načte i soubory ze všech podsložek."
 
 #: ui/dialogs.py:187
@@ -2093,7 +2093,7 @@ msgstr ""
 
 #: ui/prefs/general.py:257
 msgid "Registration"
-msgstr "Registruje se"
+msgstr "Registrace přípon"
 
 #: ui/prefs/general.py:264
 msgid "Registration Error"
@@ -2154,7 +2154,7 @@ msgstr "Přejmenováno."
 
 #: ui/mainwin/menu.py:340
 msgid "Repeat File"
-msgstr "Přehrávat soubor opakovaně"
+msgstr "Přehrávat soubor dokola"
 
 #: app_actions/playback_actions.py:106
 msgid "Repeat off"
@@ -2289,11 +2289,11 @@ msgstr "Výběr zrušen"
 
 #: ui/mainwin/menu.py:353
 msgid "Set A (loop start)"
-msgstr "Nastavte začátek smyčky."
+msgstr "Nastavit začátek smyčky."
 
 #: ui/mainwin/menu.py:357
 msgid "Set B (loop end)"
-msgstr "Nastavte konec smyčky"
+msgstr "Nastavit konec smyčky"
 
 #: ui/shortcut_settings.py:72
 msgid "Set Global Shortcut"
@@ -2698,7 +2698,7 @@ msgstr "Neoznačeno."
 
 #: ui/prefs/general.py:274
 msgid "Unregister"
-msgstr "Odregistrovat"
+msgstr "Odregistrace přípon"
 
 #: ui/prefs/general.py:281
 msgid "Unregister Error"
@@ -2714,11 +2714,11 @@ msgid ""
 "media associations. This does not delete your media files. Windows may still "
 "keep separate user default selections managed by system settings."
 msgstr ""
-"Volba Odregistrovat přípony souborů odstraní z registru záznamy pro "
-"otevírání souborů vytvořené touto aplikací. Vaše soubory se tím z disku "
-"nesmažou. Windows si i tak může dál pamatovat samostatné uživatelské "
-"nastavení výchozích aplikací, ve kterých se mají otevírat jednotlivé typy "
-"souborů. To můžete změnit v nastavení systému."
+"Příkaz Odregistrovat přípony souborů odstraní z registru záznamy pro "
+"otevírání souborů v této aplikaci. Vaše soubory se tím z disku nesmažou. "
+"Windows si i tak mohou dál pamatovat samostatné uživatelské nastavení "
+"výchozích aplikací, ve kterých se mají otevírat jednotlivé typy souborů. To "
+"můžete změnit v nastavení systému."
 
 #: app_actions/favorite_actions.py:155
 msgid "Unsupported favorite type."
@@ -2766,9 +2766,9 @@ msgid ""
 "Advanced gives shorter, compact announcements. Possible values: Beginner or "
 "Advanced."
 msgstr ""
-"Volba Výřečnost nastavuje úroveň podrobnosti řeči. Když vyberete možnost "
-"Začátečník, bude program oznamovat úplná a srozumitelnější hlášení. Když "
-"vyberete možnost Pokročilý, hlášení budou kratší a kompaktnější. Možné "
+"Volba Výřečnost nastavuje úroveň podrobnosti hlasové odezvy. Když vyberete "
+"možnost Začátečník, bude program oznamovat úplná a srozumitelnější hlášení. "
+"Když vyberete možnost Pokročilý, hlášení budou kratší a kompaktnější. Možné "
 "hodnoty: Začátečník nebo Pokročilý."
 
 #: ui/update_dialogs.py:26
@@ -2856,10 +2856,10 @@ msgid ""
 "next file, Loop the file, or Do nothing."
 msgstr ""
 "Určuje, co se stane, když skončí přehrávání souboru. Možnost Přejít na další "
-"soubor přejde na další položku v playlistu. Možnost Přehrávat soubor "
-"opakovaně bude automaticky přehrávat tentýž soubor dokola. Možnost Nedělat "
-"nic zastaví přehrávání na konci souboru. Možné hodnoty: Přejít na další "
-"soubor, Přehrávat soubor opakovaně nebo Nedělat nic."
+"soubor přejde na další položku v playlistu. Možnost Přehrávat soubor dokola "
+"bude automaticky přehrávat tentýž soubor dokola. Možnost Nedělat nic zastaví "
+"přehrávání na konci souboru. Možné hodnoty: Přejít na další soubor, "
+"Přehrávat soubor dokola nebo Nedělat nic."
 
 #: ui/audio_settings.py:37
 msgid "What happens after a file ends?"
@@ -2867,7 +2867,7 @@ msgstr "Co udělat na konci souboru?"
 
 #: ui/prefs/general.py:71
 msgid "What would you like to open with files?"
-msgstr "Co otevírat spolu s vybranými soubory?"
+msgstr "Co otevřít s vybraným souborem?"
 
 #: ui/mainwin/menu.py:484 ui/update_dialogs.py:18
 msgid "What's new"
