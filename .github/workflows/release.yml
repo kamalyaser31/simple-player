@@ -1,0 +1,87 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+        # Install requirements except winsdk since we use the local one
+        grep -v "winsdk" player/requirements.txt > temp_reqs.txt
+        pip install -r temp_reqs.txt
+
+    - name: Get version from info.json
+      id: get_version
+      shell: bash
+      run: |
+        VERSION=$(node -p "require('./info.json').version")
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+    - name: Prepare Compiled winsdk
+      shell: pwsh
+      run: |
+        if (!(Test-Path "player/winsdk")) { New-Item -ItemType Directory -Path "player/winsdk" }
+        Copy-Item -Path "winsdk/*" -Destination "player/winsdk" -Recurse -Force
+        if (!(Test-Path "player/winsdk/__init__.py")) { New-Item -ItemType File -Path "player/winsdk/__init__.py" }
+        Write-Host "Compiled winsdk prepared in player/winsdk"
+
+    - name: Build Updater
+      run: |
+        cd player
+        python -m PyInstaller --noconfirm --clean --onefile --windowed --noupx --name Updater updater/main.py
+
+    - name: Build Simple Audio Player
+      shell: pwsh
+      run: |
+        $env:PYTHONPATH = "$((Get-Location).Path)\player;$((Get-Location).Path)"
+        cd player
+        python -m PyInstaller --noconfirm SimpleAudioPlayer.spec
+
+    - name: Build Installer (Inno Setup)
+      run: |
+        iscc player/simple_audio_player.iss
+
+    - name: Prepare Release Assets
+      shell: pwsh
+      run: |
+        $VERSION = "${{ steps.get_version.outputs.version }}"
+        # 1. Rename Installer
+        Move-Item -Path "player/dist/SimpleAudioPlayerSetup.exe" -Destination "player/dist/SimpleAudioPlayer-v$VERSION.exe"
+        
+        # 2. Create Portable ZIP
+        # We zip the contents of 'player/dist/SimpleAudioPlayer'
+        Compress-Archive -Path "player/dist/SimpleAudioPlayer/*" -DestinationPath "player/dist/SimpleAudioPlayer-v$VERSION.zip"
+        
+        Write-Host "Assets prepared: SimpleAudioPlayer-v$VERSION.exe and SimpleAudioPlayer-v$VERSION.zip"
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          player/dist/SimpleAudioPlayer-v${{ steps.get_version.outputs.version }}.exe
+          player/dist/SimpleAudioPlayer-v${{ steps.get_version.outputs.version }}.zip
+        name: Simple Audio Player v${{ steps.get_version.outputs.version }}
+        body: |
+          ### Changes in v${{ steps.get_version.outputs.version }}:
+          $(node -p "require('./info.json').changes")
+        draft: false
+        prerelease: false
