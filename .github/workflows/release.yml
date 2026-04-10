@@ -48,6 +48,7 @@ jobs:
       run: |
         cd player
         python -m PyInstaller --noconfirm --clean --onefile --windowed --noupx --name Updater updater/main.py
+        cp dist/Updater.exe .
 
     - name: Build Simple Audio Player
       shell: pwsh

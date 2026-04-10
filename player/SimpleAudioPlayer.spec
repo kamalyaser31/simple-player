@@ -10,6 +10,7 @@ binaries = []
 binaries += collect_dynamic_libs("accessible_output3")
 binaries += [
     (str(PROJECT_ROOT / "mpv.dll"), "."),
+    (str(PROJECT_ROOT / "winsdk" / "_winrt.pyd"), "winsdk"),
 ]
 
 datas = []
