@@ -45,10 +45,11 @@ jobs:
         Write-Host "Compiled winsdk copied to player/winsdk"
 
     - name: Build Updater
+      shell: pwsh
       run: |
         cd player
         python -m PyInstaller --noconfirm --clean --onefile --windowed --noupx --name Updater updater/main.py
-        cp dist/Updater.exe .
+        Copy-Item -Path "dist/Updater.exe" -Destination "." -Force
 
     - name: Build Simple Audio Player
       shell: pwsh
@@ -57,7 +58,7 @@ jobs:
         cd player
         python -m PyInstaller --noconfirm SimpleAudioPlayer.spec
 
-    - name: Post-Build: Replace winsdk in dist
+    - name: "Post-Build: Replace winsdk in dist"
       shell: pwsh
       run: |
         Copy-Item -Path "player/winsdk" -Destination "player/dist/SimpleAudioPlayer/" -Recurse -Force
