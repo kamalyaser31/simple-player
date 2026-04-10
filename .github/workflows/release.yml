@@ -39,7 +39,6 @@ jobs:
       shell: pwsh
       run: |
         if (!(Test-Path "player/winsdk")) { New-Item -ItemType Directory -Path "player/winsdk" }
-        Copy-Item -Path "winsdk/*" -Destination "player/winsdk" -Recurse -Force
         if (!(Test-Path "player/winsdk/__init__.py")) { New-Item -ItemType File -Path "player/winsdk/__init__.py" }
         Write-Host "Compiled winsdk prepared in player/winsdk"
 
