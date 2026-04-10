@@ -35,15 +35,6 @@ jobs:
         VERSION=$(node -p "require('./info.json').version")
         echo "version=$VERSION" >> $GITHUB_OUTPUT
 
-    - name: Prepare Compiled winsdk
-      shell: pwsh
-      run: |
-        $sitePackages = (python -c "import site; print(site.getsitepackages()[0])")
-        $actualWinsdkPath = Join-Path $sitePackages "winsdk"
-        if (!(Test-Path "player/winsdk")) { New-Item -ItemType Directory -Path "player/winsdk" }
-        Copy-Item -Path "$actualWinsdkPath/*" -Destination "player/winsdk" -Recurse -Force
-        Write-Host "Compiled winsdk copied to player/winsdk"
-
     - name: Build Updater
       shell: pwsh
       run: |
@@ -57,12 +48,6 @@ jobs:
         $env:PYTHONPATH = "$((Get-Location).Path)\player;$((Get-Location).Path)"
         cd player
         python -m PyInstaller --noconfirm SimpleAudioPlayer.spec
-
-    - name: "Post-Build: Replace winsdk in dist"
-      shell: pwsh
-      run: |
-        Copy-Item -Path "player/winsdk" -Destination "player/dist/SimpleAudioPlayer/" -Recurse -Force
-        Write-Host "winsdk folder replaced in dist"
 
     - name: Build Installer (Inno Setup)
       run: |
