@@ -2,7 +2,7 @@
 ; Build with: ISCC simple_audio_player.iss
 
 #define MyAppName "Simple Audio Player"
-#define MyAppVersion "1.1.0"
+#define MyAppVersion "1.2.0"
 #define MyAppPublisher "Kamal Yaser"
 #define MyAppURL "https://github.com/kamalyaser31/simple-player"
 #define MyAppExeName "SimpleAudioPlayer.exe"
