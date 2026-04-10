@@ -81,7 +81,7 @@ jobs:
         files: |
           player/dist/SimpleAudioPlayer-v${{ steps.get_version.outputs.version }}.exe
           player/dist/SimpleAudioPlayer-v${{ steps.get_version.outputs.version }}.zip
-        name: Simple Audio Player v${{ steps.get_version.outputs.version }}
+        name: Update v${{ steps.get_version.outputs.version }}
         body: |
           ### Changes in v${{ steps.get_version.outputs.version }}:
           $(node -p "require('./info.json').changes")
