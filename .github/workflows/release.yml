@@ -28,15 +28,6 @@ jobs:
         pip install pyinstaller
         pip install -r player/requirements.txt
 
-    - name: Get info from info.json
-      id: get_info
-      shell: bash
-      run: |
-        VERSION=$(node -p "require('./info.json').version")
-        CHANGES=$(node -p "require('./info.json').changes")
-        echo "version=$VERSION" >> $GITHUB_OUTPUT
-        echo "changes=$CHANGES" >> $GITHUB_OUTPUT
-
     - name: Prepare Compiled winsdk
       shell: pwsh
       run: |
@@ -70,18 +61,16 @@ jobs:
     - name: Prepare Release Assets
       shell: pwsh
       run: |
-        $VERSION = "${{ steps.get_info.outputs.version }}"
-        Move-Item -Path "player/dist/SimpleAudioPlayerSetup.exe" -Destination "player/dist/SimpleAudioPlayer-v$VERSION.exe"
-        Compress-Archive -Path "player/dist/SimpleAudioPlayer/*" -DestinationPath "player/dist/SimpleAudioPlayer-v$VERSION.zip"
+        # Use simpler file names for assets
+        Move-Item -Path "player/dist/SimpleAudioPlayerSetup.exe" -Destination "player/dist/SimpleAudioPlayer-Setup.exe"
+        Compress-Archive -Path "player/dist/SimpleAudioPlayer/*" -DestinationPath "player/dist/SimpleAudioPlayer-Portable.zip"
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.exe
-          player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.zip
-        name: Update v${{ steps.get_info.outputs.version }}
-        body: "Release v${{ steps.get_info.outputs.version }}"
+          player/dist/SimpleAudioPlayer-Setup.exe
+          player/dist/SimpleAudioPlayer-Portable.zip
         draft: false
         prerelease: false
