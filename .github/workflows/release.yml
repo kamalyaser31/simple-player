@@ -28,12 +28,14 @@ jobs:
         pip install pyinstaller
         pip install -r player/requirements.txt
 
-    - name: Get version from info.json
-      id: get_version
+    - name: Get info from info.json
+      id: get_info
       shell: bash
       run: |
         VERSION=$(node -p "require('./info.json').version")
+        CHANGES=$(node -p "require('./info.json').changes")
         echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "changes=$CHANGES" >> $GITHUB_OUTPUT
 
     - name: Prepare Compiled winsdk
       shell: pwsh
@@ -74,12 +76,11 @@ jobs:
     - name: Prepare Release Assets
       shell: pwsh
       run: |
-        $VERSION = "${{ steps.get_version.outputs.version }}"
+        $VERSION = "${{ steps.get_info.outputs.version }}"
         # 1. Rename Installer
         Move-Item -Path "player/dist/SimpleAudioPlayerSetup.exe" -Destination "player/dist/SimpleAudioPlayer-v$VERSION.exe"
         
         # 2. Create Portable ZIP
-        # We zip the contents of 'player/dist/SimpleAudioPlayer'
         Compress-Archive -Path "player/dist/SimpleAudioPlayer/*" -DestinationPath "player/dist/SimpleAudioPlayer-v$VERSION.zip"
         
         Write-Host "Assets prepared: SimpleAudioPlayer-v$VERSION.exe and SimpleAudioPlayer-v$VERSION.zip"
@@ -89,11 +90,11 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          player/dist/SimpleAudioPlayer-v${{ steps.get_version.outputs.version }}.exe
-          player/dist/SimpleAudioPlayer-v${{ steps.get_version.outputs.version }}.zip
-        name: Update v${{ steps.get_version.outputs.version }}
+          player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.exe
+          player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.zip
+        name: Update v${{ steps.get_info.outputs.version }}
         body: |
-          ### Changes in v${{ steps.get_version.outputs.version }}:
-          $(node -p "require('./info.json').changes")
+          ### Changes in v${{ steps.get_info.outputs.version }}:
+          ${{ steps.get_info.outputs.changes }}
         draft: false
         prerelease: false
