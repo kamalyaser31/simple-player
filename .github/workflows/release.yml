@@ -28,6 +28,13 @@ jobs:
         pip install pyinstaller
         pip install -r player/requirements.txt
 
+    - name: Get info from info.json
+      id: get_info
+      shell: bash
+      run: |
+        VERSION=$(node -p "require('./info.json').version")
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+
     - name: Prepare Compiled winsdk
       shell: pwsh
       run: |
@@ -35,6 +42,7 @@ jobs:
         $actualWinsdkPath = Join-Path $pythonPath "winsdk"
         if (!(Test-Path "player/winsdk")) { New-Item -ItemType Directory -Path "player/winsdk" }
         Copy-Item -Path "$actualWinsdkPath/*" -Destination "player/winsdk" -Recurse -Force
+        Write-Host "Compiled winsdk copied to player/winsdk"
 
     - name: Build Updater
       run: |
@@ -53,6 +61,7 @@ jobs:
       shell: pwsh
       run: |
         Copy-Item -Path "player/winsdk" -Destination "player/dist/SimpleAudioPlayer/" -Recurse -Force
+        Write-Host "winsdk folder replaced in dist"
 
     - name: Build Installer (Inno Setup)
       run: |
@@ -61,16 +70,19 @@ jobs:
     - name: Prepare Release Assets
       shell: pwsh
       run: |
-        # Use simpler file names for assets
-        Move-Item -Path "player/dist/SimpleAudioPlayerSetup.exe" -Destination "player/dist/SimpleAudioPlayer-Setup.exe"
-        Compress-Archive -Path "player/dist/SimpleAudioPlayer/*" -DestinationPath "player/dist/SimpleAudioPlayer-Portable.zip"
+        $VERSION = "${{ steps.get_info.outputs.version }}"
+        Move-Item -Path "player/dist/SimpleAudioPlayerSetup.exe" -Destination "player/dist/SimpleAudioPlayer-v$VERSION.exe"
+        Compress-Archive -Path "player/dist/SimpleAudioPlayer/*" -DestinationPath "player/dist/SimpleAudioPlayer-v$VERSION.zip"
+        Write-Host "Assets prepared: SimpleAudioPlayer-v$VERSION.exe and SimpleAudioPlayer-v$VERSION.zip"
 
     - name: Create Release
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          player/dist/SimpleAudioPlayer-Setup.exe
-          player/dist/SimpleAudioPlayer-Portable.zip
+          player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.exe
+          player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.zip
+        name: Update v${{ steps.get_info.outputs.version }}
+        body: "Release v${{ steps.get_info.outputs.version }}"
         draft: false
         prerelease: false
