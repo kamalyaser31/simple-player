@@ -38,8 +38,8 @@ jobs:
     - name: Prepare Compiled winsdk
       shell: pwsh
       run: |
-        $pythonPath = (python -c "import site; print(site.getsitepackages()[0])")
-        $actualWinsdkPath = Join-Path $pythonPath "winsdk"
+        $sitePackages = (python -c "import site; print(site.getsitepackages()[0])")
+        $actualWinsdkPath = Join-Path $sitePackages "winsdk"
         if (!(Test-Path "player/winsdk")) { New-Item -ItemType Directory -Path "player/winsdk" }
         Copy-Item -Path "$actualWinsdkPath/*" -Destination "player/winsdk" -Recurse -Force
         Write-Host "Compiled winsdk copied to player/winsdk"
