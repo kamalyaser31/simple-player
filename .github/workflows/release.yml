@@ -26,9 +26,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        # Install requirements except winsdk since we use the local one
-        grep -v "winsdk" player/requirements.txt > temp_reqs.txt
-        pip install -r temp_reqs.txt
+        pip install -r player/requirements.txt
 
     - name: Get version from info.json
       id: get_version
@@ -40,9 +38,14 @@ jobs:
     - name: Prepare Compiled winsdk
       shell: pwsh
       run: |
+        # 1. Locate the winsdk package in site-packages
+        $pythonPath = (python -c "import site; print(site.getsitepackages()[0])")
+        $actualWinsdkPath = Join-Path $pythonPath "winsdk"
+
+        # 2. Copy to player/winsdk so .spec file can find it
         if (!(Test-Path "player/winsdk")) { New-Item -ItemType Directory -Path "player/winsdk" }
-        if (!(Test-Path "player/winsdk/__init__.py")) { New-Item -ItemType File -Path "player/winsdk/__init__.py" }
-        Write-Host "Compiled winsdk prepared in player/winsdk"
+        Copy-Item -Path "$actualWinsdkPath/*" -Destination "player/winsdk" -Recurse -Force
+        Write-Host "Compiled winsdk copied to player/winsdk"
 
     - name: Build Updater
       run: |
@@ -56,6 +59,13 @@ jobs:
         $env:PYTHONPATH = "$((Get-Location).Path)\player;$((Get-Location).Path)"
         cd player
         python -m PyInstaller --noconfirm SimpleAudioPlayer.spec
+
+    - name: Post-Build: Replace winsdk in dist
+      shell: pwsh
+      run: |
+        # Simple copy from project winsdk to dist winsdk as requested
+        Copy-Item -Path "player/winsdk" -Destination "player/dist/SimpleAudioPlayer/" -Recurse -Force
+        Write-Host "winsdk folder replaced in dist"
 
     - name: Build Installer (Inno Setup)
       run: |
