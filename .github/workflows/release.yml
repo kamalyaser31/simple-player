@@ -32,22 +32,35 @@ jobs:
       id: get_info
       shell: bash
       run: |
-        VERSION=$(node -p "require('./info.json').version")
+        VERSION=$(python -c "import json; print(json.load(open('info.json'))['version'])")
         echo "version=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Build Updater
+      working-directory: player
       shell: pwsh
       run: |
-        cd player
         python -m PyInstaller --noconfirm --clean --onefile --windowed --noupx --name Updater updater/main.py
         Copy-Item -Path "dist/Updater.exe" -Destination "." -Force
 
     - name: Build Simple Audio Player
+      working-directory: player
       shell: pwsh
       run: |
-        $env:PYTHONPATH = "$((Get-Location).Path)\player;$((Get-Location).Path)"
-        cd player
+        $env:PYTHONPATH = "$((Get-Location).Path);$((Get-Location).Parent.Path)"
         python -m PyInstaller --noconfirm SimpleAudioPlayer.spec
+
+    - name: Fix WinRT binary naming
+      working-directory: player
+      shell: pwsh
+      run: |
+        # Replace winsdk_winrt.pyd in dist with local _winrt.pyd
+        # Local file is located at player/local/_winrt.pyd
+        if (Test-Path "local/_winrt.pyd") {
+          Copy-Item -Path "local/_winrt.pyd" -Destination "dist/SimpleAudioPlayer/_winrt.pyd" -Force
+          if (Test-Path "dist/SimpleAudioPlayer/winsdk_winrt.pyd") {
+            Remove-Item -Path "dist/SimpleAudioPlayer/winsdk_winrt.pyd" -Force
+          }
+        }
 
     - name: Build Installer (Inno Setup)
       run: |
