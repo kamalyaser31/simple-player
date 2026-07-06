@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-11 22:10+0200\n"
+"POT-Creation-Date: 2026-07-06 21:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -299,7 +299,7 @@ msgstr ""
 msgid "Channel link is not available."
 msgstr ""
 
-#: youtube/flow.py:109
+#: youtube/flow.py:107
 msgid "Channel links are not supported here."
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 msgid "Could not close the file."
 msgstr ""
 
-#: youtube/flow.py:288
+#: youtube/flow.py:303
 msgid "Could not complete YouTube search."
 msgstr ""
 
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Could not load playlist info."
 msgstr ""
 
-#: youtube/flow.py:340
+#: youtube/flow.py:355
 msgid "Could not open YouTube stream."
 msgstr ""
 
@@ -600,7 +600,11 @@ msgid ""
 "{error}"
 msgstr ""
 
-#: youtube/flow.py:309
+#: youtube/flow.py:567
+msgid "Could not prepare the next YouTube video."
+msgstr ""
+
+#: youtube/flow.py:324
 msgid "Could not read YouTube link data."
 msgstr ""
 
@@ -630,7 +634,7 @@ msgid ""
 "{error}"
 msgstr ""
 
-#: youtube/flow.py:408
+#: youtube/flow.py:424
 msgid "Could not resolve YouTube stream."
 msgstr ""
 
@@ -930,8 +934,8 @@ msgstr ""
 #: app.py:194 app_actions/bookmark_actions.py:98
 #: app_actions/file_actions.py:265 app_actions/file_actions.py:564
 #: app_actions/help_actions.py:63 update/actions.py:89 update/actions.py:135
-#: update/actions.py:141 youtube/flow.py:47 youtube/flow.py:60
-#: youtube/flow.py:340 youtube/flow.py:625 youtube/startup.py:158
+#: update/actions.py:141 youtube/flow.py:355 youtube/flow.py:667
+#: youtube/startup.py:158
 msgid "Error"
 msgstr ""
 
@@ -974,7 +978,7 @@ msgstr ""
 msgid "Favorite videos..."
 msgstr ""
 
-#: youtube/flow.py:265
+#: youtube/flow.py:280
 msgid "Fetching first stream..."
 msgstr ""
 
@@ -1161,8 +1165,8 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
-#: youtube/flow.py:68 youtube/flow.py:78 youtube/flow.py:87 youtube/flow.py:110
-#: youtube/flow.py:130
+#: youtube/flow.py:66 youtube/flow.py:76 youtube/flow.py:85 youtube/flow.py:108
+#: youtube/flow.py:128
 msgid "Invalid YouTube link"
 msgstr ""
 
@@ -1178,7 +1182,7 @@ msgstr ""
 msgid "Invalid file number."
 msgstr ""
 
-#: app_actions/file_actions.py:255 youtube/flow.py:65
+#: app_actions/file_actions.py:255 youtube/flow.py:63
 msgid "Invalid link"
 msgstr ""
 
@@ -1276,11 +1280,11 @@ msgstr ""
 msgid "Link is required."
 msgstr ""
 
-#: youtube/flow.py:302
+#: youtube/flow.py:317
 msgid "Loading YouTube link"
 msgstr ""
 
-#: youtube/flow.py:401
+#: youtube/flow.py:417
 msgid "Loading YouTube stream"
 msgstr ""
 
@@ -1296,7 +1300,7 @@ msgstr ""
 msgid "Loading more videos..."
 msgstr ""
 
-#: youtube/flow.py:489
+#: youtube/flow.py:505
 msgid "Loading next video..."
 msgstr ""
 
@@ -1418,10 +1422,6 @@ msgstr ""
 msgid "Minutes"
 msgstr ""
 
-#: youtube/flow.py:148
-msgid "Missing components."
-msgstr ""
-
 #: ui/prefs/recording.py:13
 msgid "Mono"
 msgstr ""
@@ -1448,6 +1448,10 @@ msgstr ""
 
 #: ui/main_frame.py:50 ui/mainwin/menu.py:320
 msgid "Next"
+msgstr ""
+
+#: youtube/flow.py:568
+msgid "Next YouTube video unavailable."
 msgstr ""
 
 #: ui/yt_dialogs.py:23
@@ -1566,7 +1570,7 @@ msgstr ""
 msgid "No videos found."
 msgstr ""
 
-#: youtube/flow.py:263
+#: youtube/flow.py:278
 msgid "No videos were found for this search."
 msgstr ""
 
@@ -1840,7 +1844,7 @@ msgstr ""
 msgid "Please enter a valid time value."
 msgstr ""
 
-#: core/controller.py:412
+#: core/controller.py:415
 msgid "Please restart the app for language changes to take effect."
 msgstr ""
 
@@ -1848,7 +1852,7 @@ msgstr ""
 msgid "Position"
 msgstr ""
 
-#: core/controller.py:413 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
+#: core/controller.py:416 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
 msgid "Preferences"
 msgstr ""
 
@@ -2098,16 +2102,16 @@ msgstr ""
 msgid "Search results"
 msgstr ""
 
-#: youtube/flow.py:162
+#: youtube/flow.py:159
 #, python-brace-format
 msgid "Search results: {query}"
 msgstr ""
 
-#: youtube/flow.py:281
+#: youtube/flow.py:296
 msgid "Searching YouTube"
 msgstr ""
 
-#: youtube/flow.py:257
+#: youtube/flow.py:272
 msgid "Searching videos..."
 msgstr ""
 
@@ -2408,7 +2412,7 @@ msgid "The link must be a valid YouTube link for this type."
 msgstr ""
 
 #: app_actions/favorite_actions.py:179 app_actions/file_actions.py:254
-#: youtube/flow.py:65
+#: youtube/flow.py:63
 msgid "The link must start with http or https."
 msgstr ""
 
@@ -2416,15 +2420,15 @@ msgstr ""
 msgid "The selected time exceeds the file duration."
 msgstr ""
 
-#: youtube/flow.py:68 youtube/flow.py:130
+#: youtube/flow.py:66 youtube/flow.py:128
 msgid "This is not a valid YouTube link."
 msgstr ""
 
-#: youtube/flow.py:86
+#: youtube/flow.py:84
 msgid "This link does not include a YouTube playlist."
 msgstr ""
 
-#: youtube/flow.py:77
+#: youtube/flow.py:75
 msgid "This link does not include a YouTube video."
 msgstr ""
 
@@ -2689,8 +2693,8 @@ msgstr ""
 msgid "You are using the latest version."
 msgstr ""
 
-#: ui/prefs/dialog.py:73 youtube/flow.py:289 youtube/flow.py:310
-#: youtube/flow.py:409
+#: ui/prefs/dialog.py:73 youtube/flow.py:304 youtube/flow.py:325
+#: youtube/flow.py:425 youtube/flow.py:677
 msgid "YouTube"
 msgstr ""
 
@@ -2702,8 +2706,12 @@ msgstr ""
 msgid "YouTube components are already installed."
 msgstr ""
 
-#: youtube/flow.py:47 youtube/flow.py:60 youtube/flow.py:148
+#: youtube/flow.py:676 youtube/flow.py:684
 msgid "YouTube components are missing."
+msgstr ""
+
+#: youtube/flow.py:685
+msgid "YouTube components need repair."
 msgstr ""
 
 #: youtube/startup.py:59

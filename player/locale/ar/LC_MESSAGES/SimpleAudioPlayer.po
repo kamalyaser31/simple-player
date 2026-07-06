@@ -2,58 +2,74 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Audio Player 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-11 22:10+0200\n"
-"PO-Revision-Date: 2026-03-11 22:35+0200\n"
+"POT-Creation-Date: 2026-07-06 21:00+0300\n"
+"PO-Revision-Date: 2026-07-06 21:03+0300\n"
 "Last-Translator: Kamal Yaser <kamalyaser31@gmail.com>\n"
 "Language-Team: Arabic\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
+#: ui/mainwin/menu.py:264
 msgid "&Copy to folder..."
 msgstr "نسخ إلى مجلد..."
 
+#: ui/mainwin/menu.py:276
 msgid "&Delete"
 msgstr "حذف"
 
+#: ui/mainwin/menu.py:268
 msgid "&Move to folder..."
 msgstr "نقل إلى مجلد..."
 
+#: app_actions/marked_file_actions.py:56
 msgid "1 file marked"
 msgstr "تم تحديد ملف واحد"
 
+#: app_actions/playback_actions.py:27
 msgid "1 minute"
 msgstr "دقيقة واحدة"
 
+#: app_actions/playback_actions.py:25
 msgid "1 second"
 msgstr "ثانية واحدة"
 
+#: app_actions/playback_actions.py:29
 msgid "10 minutes"
 msgstr "10 دقائق"
 
+#: app_actions/playback_actions.py:30
 msgid "20 minutes"
 msgstr "20 دقيقة"
 
+#: app_actions/playback_actions.py:31
 msgid "30 minutes"
 msgstr "30 دقيقة"
 
+#: app_actions/playback_actions.py:32
 msgid "40 minutes"
 msgstr "40 دقيقة"
 
+#: app_actions/playback_actions.py:28
 msgid "5 minutes"
 msgstr "5 دقائق"
 
+#: app_actions/playback_actions.py:26
 msgid "5 seconds"
 msgstr "5 ثوانٍ"
 
+#: app_actions/playback_actions.py:33
 msgid "50 minutes"
 msgstr "50 دقيقة"
 
+#: app_actions/playback_actions.py:34
 msgid "60 minutes"
 msgstr "60 دقيقة"
 
+#: ui/help_dialogs.py:20
+#, python-brace-format
 msgid ""
 "A lightweight, highly accessible media player designed for keyboard efficiency "
 "and seamless screen reader compatibility. Whether playing local audio files or "
@@ -68,9 +84,13 @@ msgstr ""
 "المطور: Kamal yaser\n"
 "الإصدار: {version}"
 
+#: ui/update_dialogs.py:13
+#, python-brace-format
 msgid "A new version of {app_name} has been detected. Would you like to update?"
 msgstr "تم اكتشاف إصدار جديد من {app_name}. هل ترغب في التحديث؟"
 
+#: update/actions.py:237
+#, python-brace-format
 msgid ""
 "A newer yt-dlp version is available on '{ch}' channel.\n"
 "Current version: {cur}\n"
@@ -84,64 +104,83 @@ msgstr ""
 "\n"
 "هل تريد التحديث الآن؟"
 
+#: ui/mainwin/menu.py:363
 msgid "A-B loop"
 msgstr "تكرار A-B"
 
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:514
 msgid "About"
-msgstr "حول"
+msgstr "عن البرنامج"
 
+#: ui/shortcut_settings.py:199
 msgid "Action"
 msgstr "إجراء"
 
+#: ui/mainwin/menu.py:103
 msgid "Actions for marked files"
 msgstr "إجراءات للملفات المحددة"
 
+#: app_actions/bookmark_actions.py:16 ui/mainwin/menu.py:239
 msgid "Add a new bookmark"
 msgstr "إضافة إشارة مرجعية جديدة"
 
+#: app_actions/favorite_actions.py:62
 msgid "Add favorite"
 msgstr "إضافة مفضلة"
 
+#: ui/favorite_dlg.py:41
 msgid "Add..."
 msgstr "إضافة..."
 
+#: ui/audio_settings.py:6
 msgid "Advance to the next file"
 msgstr "التقدم إلى الملف التالي"
 
+#: ui/prefs/general.py:45
 msgid "Advanced"
 msgstr "متقدم"
 
+#: app_actions/playback_actions.py:68
 msgid "Advanced mode"
 msgstr "الوضع المتقدم"
 
+#: app_actions/bookmark_actions.py:123
 msgid "All bookmarks for this file were removed."
 msgstr "تمت إزالة جميع الإشارات المرجعية لهذا الملف."
 
+#: app_actions/file_actions.py:530
 msgid "All files closed."
 msgstr "تم إغلاق جميع الملفات."
 
+#: app_actions/marked_file_actions.py:41
 msgid "All files marked."
 msgstr "تم تحديد جميع الملفات."
 
+#: app_actions/marked_file_actions.py:43
 msgid "All files unmarked."
 msgstr "تم إلغاء تحديد جميع الملفات."
 
+#: app_actions/marked_file_actions.py:41
 msgid "All marked."
 msgstr "تم تحديد الكل."
 
+#: app_actions/marked_file_actions.py:43
 msgid "All unmarked."
 msgstr "تم إلغاء تحديد الكل."
 
+#: ui/prefs/general.py:204
 msgid ""
 "Application language. System default follows your OS language. Choosing a "
 "specific language applies it on next app start."
 msgstr ""
-"لغة التطبيق. يتبع النظام الافتراضي لغة نظام التشغيل لديك. اختيار لغة معينة يطبقها "
-"عند التشغيل التالي للتطبيق."
+"لغة التطبيق. يتبع النظام الافتراضي لغة نظام التشغيل لديك. اختيار لغة معينة "
+"يطبقها عند التشغيل التالي للتطبيق."
 
+#: ui/update_dialogs.py:9
 msgid "Application update"
 msgstr "تحديث التطبيق"
 
+#: ui/prefs/backup.py:224
 msgid ""
 "Are you sure you want to reset all settings to defaults?\n"
 "This action cannot be undone."
@@ -149,246 +188,333 @@ msgstr ""
 "هل أنت متأكد أنك تريد إعادة تعيين جميع الإعدادات إلى الافتراضية؟\n"
 "لا يمكن التراجع عن هذا الإجراء."
 
+#: ui/prefs/youtube.py:26
 msgid "Ask every time"
 msgstr "السؤال في كل مرة"
 
+#: ui/prefs/dialog.py:52
 msgid "Audio"
 msgstr "الصوت"
 
+#: ui/prefs/recording.py:23
 msgid "Audio format"
 msgstr "تنسيق الصوت"
 
+#: ui/prefs/recording.py:17
 msgid "Audio quality (kbps)"
 msgstr "جودة الصوت (kbps)"
 
+#: ui/audio_settings.py:141
 msgid ""
-"Audio settings. Use Tab to move between controls. Press F1 on a specific control "
-"to hear detailed help."
+"Audio settings. Use Tab to move between controls. Press F1 on a specific "
+"control to hear detailed help."
 msgstr ""
 "إعدادات الصوت. استخدم Tab للتنقل بين عناصر التحكم. اضغط F1 على عنصر محدد لسماع "
 "شرح مفصل."
 
+#: config/shortcut_utils.py:32
 msgid "Backspace"
 msgstr "Backspace"
 
+#: ui/prefs/dialog.py:41
 msgid "Backup and restore"
 msgstr "النسخ الاحتياطي والاستعادة"
 
+#: ui/prefs/backup.py:77
 msgid ""
-"Backup and restore settings page. Use Export settings, Import settings, or Open "
-"user settings folder."
+"Backup and restore settings page. Use Export settings, Import settings, or "
+"Open user settings folder."
 msgstr ""
 "صفحة النسخ الاحتياطي واستعادة الإعدادات. استخدم تصدير الإعدادات، أو استيراد "
 "الإعدادات، أو فتح مجلد إعدادات المستخدم."
 
+#: ui/prefs/general.py:44
 msgid "Beginner"
 msgstr "مبتدئ"
 
+#: app_actions/playback_actions.py:65
 msgid "Beginner mode"
-msgstr "وضع المبتدئين"
+msgstr "الوضع المبتدئ"
 
+#: ui/mainwin/menu.py:376
 msgid "Beginning"
 msgstr "البداية"
 
+#: ui/prefs/youtube.py:154
 msgid ""
 "Behavior for YouTube links that include both a video ID and a playlist ID. Ask "
-"every time shows a chooser dialog. Play the video opens only the selected video. "
-"Open the playlist opens the full playlist."
+"every time shows a chooser dialog. Play the video opens only the selected "
+"video. Open the playlist opens the full playlist."
 msgstr ""
-"سلوك روابط YouTube التي تتضمن معرف فيديو ومعرف قائمة تشغيل. السؤال في كل مرة يعرض "
-"مربع حوار للاختيار. تشغيل الفيديو يفتح الفيديو المحدد فقط. فتح قائمة التشغيل يفتح "
-"قائمة التشغيل كاملة."
+"سلوك روابط YouTube التي تتضمن معرف فيديو ومعرف قائمة تشغيل. السؤال في كل مرة "
+"يعرض مربع حوار للاختيار. تشغيل الفيديو يفتح الفيديو المحدد فقط. فتح قائمة "
+"التشغيل يفتح قائمة التشغيل كاملة."
 
+#: ui/prefs/youtube.py:17
 msgid "Best"
 msgstr "الأفضل"
 
+#: app_actions/bookmark_actions.py:41
+#, python-brace-format
 msgid "Bookmark '{name}' added at {time}."
 msgstr "تمت إضافة الإشارة المرجعية '{name}' عند {time}."
 
+#: app_actions/bookmark_actions.py:21 app_actions/bookmark_actions.py:97
 msgid "Bookmark name cannot be empty."
 msgstr "لا يمكن أن يكون اسم الإشارة المرجعية فارغًا."
 
+#: ui/mainwin/menu.py:250
+#, python-brace-format
 msgid "Bookmark {slot}"
 msgstr "إشارة مرجعية {slot}"
 
+#: app_actions/bookmark_actions.py:15
+#, python-brace-format
 msgid "Bookmark {time}"
 msgstr "إشارة مرجعية {time}"
 
+#: app_actions/bookmark_actions.py:22 app_actions/bookmark_actions.py:33
+#: app_actions/bookmark_actions.py:60 app_actions/bookmark_actions.py:124
+#: ui/mainwin/menu.py:101
 msgid "Bookmarks"
 msgstr "الإشارات المرجعية"
 
+#: ui/prefs/backup.py:182
 msgid "Bookmarks exported successfully."
 msgstr "تم تصدير الإشارات المرجعية بنجاح."
 
+#: ui/prefs/backup.py:215
 msgid "Bookmarks imported successfully."
 msgstr "تم استيراد الإشارات المرجعية بنجاح."
 
+#: ui/prefs/recording.py:32
 msgid "Browse..."
 msgstr "استعراض..."
 
+#: youtube/results.py:68 youtube/results.py:79
 msgid "Browser open failed."
 msgstr "فشل فتح المتصفح."
 
+#: ui/dialogs.py:74 ui/dialogs.py:198 ui/task_dialogs.py:18 ui/task_dialogs.py:78
+#: ui/yt_dialogs.py:58 ui/yt_dialogs.py:114 youtube/ui_utils.py:69
 msgid "Cancel"
 msgstr "إلغاء"
 
+#: app_actions/marked_file_actions.py:238 app_actions/marked_file_actions.py:283
 msgid "Canceled."
 msgstr "تم الإلغاء."
 
+#: app_actions/file_actions.py:601
 msgid "Cannot open clipboard data."
 msgstr "لا يمكن فتح بيانات الحافظة."
 
+#: youtube/results.py:76
 msgid "Channel link is not available."
 msgstr "رابط القناة غير متوفر."
 
+#: youtube/flow.py:107
 msgid "Channel links are not supported here."
 msgstr "روابط القناة غير مدعومة هنا."
 
+#: ui/prefs/recording.py:11
 msgid "Channels"
-msgstr "القنوات"
+msgstr "قنوات الصوت"
 
+#: ui/mainwin/menu.py:504
 msgid "Check for app updates"
 msgstr "التحقق من تحديثات التطبيق"
 
+#: ui/prefs/general.py:35
 msgid "Check for app updates on startup"
 msgstr "التحقق من تحديثات التطبيق عند بدء التشغيل"
 
+#: ui/prefs/general.py:219
 msgid ""
 "Check for app updates on startup. When enabled, the app checks online update "
 "metadata at launch and prompts when a newer version is available."
 msgstr ""
-"التحقق من تحديثات التطبيق عند بدء التشغيل. عند التمكين، يتحقق التطبيق من بيانات "
-"التحديث عبر الإنترنت عند التشغيل ويطالبك عند توفر إصدار أحدث."
+"التحقق من تحديثات التطبيق عند بدء التشغيل. عند التمكين، يتحقق التطبيق من "
+"بيانات التحديث عبر الإنترنت عند التشغيل ويطالبك عند توفر إصدار أحدث."
 
+#: ui/prefs/youtube.py:41
 msgid "Check for yt-dlp updates on startup"
 msgstr "التحقق من تحديثات yt-dlp عند بدء التشغيل"
 
+#: ui/prefs/youtube.py:166
 msgid ""
 "Check for yt-dlp updates on startup. When enabled, the app checks local and "
 "latest channel versions at launch and prompts you to run the standard yt-dlp "
 "update when a newer version is available."
 msgstr ""
-"التحقق من تحديثات yt-dlp عند بدء التشغيل. عند التمكين، يتحقق التطبيق من الإصدارات "
-"المحلية وأحدث إصدارات القناة عند التشغيل ويطالبك بتشغيل تحديث yt-dlp القياسي عند "
-"توفر إصدار أحدث."
+"التحقق من تحديثات yt-dlp عند بدء التشغيل. عند التمكين، يتحقق التطبيق من "
+"الإصدارات المحلية وأحدث إصدارات القناة عند التشغيل ويطالبك بتشغيل تحديث yt-dlp "
+"القياسي عند توفر إصدار أحدث."
 
+#: update/actions.py:262
 msgid "Checking for app updates"
 msgstr "التحقق من تحديثات التطبيق"
 
+#: ui/prefs/recording.py:148
 msgid "Choose recordings folder"
 msgstr "اختيار مجلد التسجيلات"
 
+#: ui/dialogs.py:47
 msgid "Choose time position:"
 msgstr "اختيار الموضع الزمني:"
 
+#: ui/mainwin/menu.py:361
 msgid "Clear A-B loop"
 msgstr "مسح تكرار A-B"
 
+#: ui/mainwin/menu.py:223
 msgid "Clear Marked Files"
 msgstr "مسح التحديد"
 
+#: app_actions/file_actions.py:547
 msgid "Clipboard does not contain files or folders."
 msgstr "الحافظة لا تحتوي على ملفات أو مجلدات."
 
+#: app_actions/file_actions.py:601
 msgid "Clipboard does not contain openable files or folders."
 msgstr "الحافظة لا تحتوي على ملفات أو مجلدات قابلة للفتح."
 
+#: app_actions/file_actions.py:547
 msgid "Clipboard empty."
 msgstr "الحافظة فارغة."
 
+#: app_actions/file_actions.py:597
+#, python-brace-format
 msgid "Clipboard path could not be resolved: {path}"
 msgstr "تعذر تحليل مسار الحافظة: {path}"
 
+#: ui/bookmark_dlg.py:30 ui/dialogs.py:244 ui/dialogs.py:267
+#: ui/favorite_dlg.py:44 ui/yt_dialogs.py:163
 msgid "Close"
 msgstr "إغلاق"
 
+#: ui/mainwin/menu.py:162
 msgid "Close File"
 msgstr "إغلاق الملف"
 
+#: ui/mainwin/menu.py:166
 msgid "Close all files"
 msgstr "إغلاق جميع الملفات"
 
+#: app_actions/file_actions.py:512 app_actions/file_actions.py:526
 msgid "Close failed."
 msgstr "فشل الإغلاق."
 
+#: ui/favorite_dlg.py:12
 msgid "Combined link"
 msgstr "رابط مركب"
 
-msgid "Combined link favorites require a link containing both video and playlist."
+#: app_actions/favorite_actions.py:187
+msgid ""
+"Combined link favorites require a link containing both video and playlist."
 msgstr "تتطلب مفضلات الرابط المركب رابطًا يحتوي على فيديو وقائمة تشغيل معًا."
 
+#: app_actions/file_actions.py:618 app_actions/marked_file_actions.py:89
 msgid "Confirm Delete"
 msgstr "تأكيد الحذف"
 
+#: ui/shortcut_settings.py:381
 msgid "Confirm Reset"
 msgstr "تأكيد إعادة التعيين"
 
+#: app_actions/bookmark_actions.py:114
 msgid "Confirm delete"
 msgstr "تأكيد الحذف"
 
+#: app_actions/favorite_actions.py:126
 msgid "Confirm remove"
 msgstr "تأكيد الإزالة"
 
+#: ui/mainwin/menu.py:499
 msgid "Contact me"
 msgstr "تواصل معي"
 
+#: ui/mainwin/menu.py:420
 msgid "Control the clicks movement value"
 msgstr "قيمة التقديم والتأخير"
 
+#: app_actions/file_actions.py:539 app_actions/file_actions.py:683
+#: app_actions/marked_file_actions.py:76 app_actions/marked_file_actions.py:266
+#: youtube/results.py:59 youtube/video.py:45
 msgid "Copied."
 msgstr "تم النسخ."
 
+#: ui/mainwin/menu.py:206
 msgid "Copy"
 msgstr "نسخ"
 
+#: app_actions/file_actions.py:541 app_actions/file_actions.py:685
+#: app_actions/marked_file_actions.py:78 youtube/results.py:61
+#: youtube/video.py:47
 msgid "Copy failed."
 msgstr "فشل النسخ."
 
+#: ui/yt_dialogs.py:240
 msgid "Copy link\tCtrl+C"
 msgstr "نسخ الرابط\tCtrl+C"
 
+#: ui/mainwin/menu.py:272
 msgid "Copy to &clipboard"
 msgstr "النسخ إلى &الحافظة"
 
+#: ui/mainwin/menu.py:463
 msgid "Copy video link"
 msgstr "نسخ رابط الفيديو"
 
+#: app_actions/marked_file_actions.py:198
 msgid "Copying marked files"
 msgstr "نسخ التحديد"
 
+#: app_actions/bookmark_actions.py:32
 msgid "Could not add bookmark."
 msgstr "تعذر إضافة إشارة مرجعية."
 
+#: app_actions/favorite_actions.py:75
 msgid "Could not add favorite."
 msgstr "تعذر إضافة مفضلة."
 
+#: app_actions/playback_actions.py:112
 msgid "Could not change silence removal filter."
 msgstr "تعذر تغيير مرشح إزالة الصمت."
 
+#: update/actions.py:88
 msgid "Could not check for updates."
 msgstr "تعذر التحقق من وجود تحديثات."
 
+#: app_actions/file_actions.py:526
 msgid "Could not close files."
 msgstr "تعذر إغلاق الملفات."
 
+#: app_actions/file_actions.py:512
 msgid "Could not close the file."
 msgstr "تعذر إغلاق الملف."
 
+#: youtube/flow.py:303
 msgid "Could not complete YouTube search."
 msgstr "تعذر إكمال بحث YouTube."
 
+#: youtube/results.py:61 youtube/video.py:47
 msgid "Could not copy link."
 msgstr "تعذر نسخ الرابط."
 
+#: app_actions/marked_file_actions.py:157
 msgid "Could not delete marked files."
 msgstr "تعذر حذف التحديد."
 
+#: app_actions/file_actions.py:626
 msgid "Could not delete the file."
 msgstr "تعذر حذف الملف."
 
+#: update/actions.py:134
 msgid "Could not download update."
 msgstr "تعذر تنزيل التحديث."
 
+#: ui/prefs/backup.py:175
+#, python-brace-format
 msgid ""
 "Could not export bookmarks.\n"
 "{error}"
@@ -396,6 +522,8 @@ msgstr ""
 "تعذر تصدير الإشارات المرجعية.\n"
 "{error}"
 
+#: ui/prefs/backup.py:103
+#, python-brace-format
 msgid ""
 "Could not export settings.\n"
 "{error}"
@@ -403,9 +531,13 @@ msgstr ""
 "تعذر تصدير الإعدادات.\n"
 "{error}"
 
+#: app_actions/help_actions.py:62
+#, python-brace-format
 msgid "Could not find the file {name}."
 msgstr "تعذر العثور على الملف {name}."
 
+#: ui/prefs/backup.py:208
+#, python-brace-format
 msgid ""
 "Could not import bookmarks.\n"
 "{error}"
@@ -413,6 +545,8 @@ msgstr ""
 "تعذر استيراد الإشارات المرجعية.\n"
 "{error}"
 
+#: ui/prefs/backup.py:139
+#, python-brace-format
 msgid ""
 "Could not import settings.\n"
 "{error}"
@@ -420,27 +554,38 @@ msgstr ""
 "تعذر استيراد الإعدادات.\n"
 "{error}"
 
+#: app.py:193
 msgid "Could not initialize the application."
 msgstr "تعذر تهيئة التطبيق."
 
+#: youtube/startup.py:155
 msgid "Could not install YouTube components."
 msgstr "تعذر تثبيت مكونات YouTube."
 
+#: app_actions/file_actions.py:407 playlist/info.py:30
 msgid "Could not load playlist info."
 msgstr "تعذر تحميل معلومات قائمة التشغيل."
 
+#: youtube/flow.py:355
 msgid "Could not open YouTube stream."
 msgstr "تعذر فتح بث YouTube."
 
+#: youtube/results.py:68 youtube/results.py:79
 msgid "Could not open browser."
 msgstr "تعذر فتح المتصفح."
 
+#: app_actions/file_actions.py:306 app_actions/file_actions.py:310
 msgid "Could not open file properties."
 msgstr "تعذر فتح خصائص الملف."
 
+#: app_actions/file_actions.py:307
+#, python-brace-format
 msgid "Could not open file properties: {error}"
 msgstr "تعذر فتح خصائص الملف: {error}"
 
+#: app_actions/recording_actions.py:46 app_actions/recording_actions.py:51
+#: app_actions/recording_actions.py:56
+#, python-brace-format
 msgid ""
 "Could not open recordings folder.\n"
 "{error}"
@@ -448,27 +593,36 @@ msgstr ""
 "تعذر فتح مجلد التسجيلات.\n"
 "{error}"
 
+#: app_actions/favorite_actions.py:144
 msgid "Could not open stream link."
 msgstr "تعذر فتح رابط البث."
 
+#: app_actions/file_actions.py:590
 msgid "Could not open the file from clipboard."
 msgstr "تعذر فتح الملف من الحافظة."
 
+#: app_actions/help_actions.py:70
 msgid "Could not open the file."
 msgstr "تعذر فتح الملف."
 
+#: app_actions/file_actions.py:284
 msgid "Could not open the folder."
 msgstr "تعذر فتح المجلد."
 
+#: app_actions/file_actions.py:563
 msgid "Could not open the link from clipboard."
 msgstr "تعذر فتح الرابط من الحافظة."
 
+#: app_actions/file_actions.py:264 app_actions/help_actions.py:76
 msgid "Could not open the link."
 msgstr "تعذر فتح الرابط."
 
+#: ui/prefs/backup.py:261
 msgid "Could not open the settings folder."
 msgstr "تعذر فتح مجلد الإعدادات."
 
+#: app_actions/recording_actions.py:30
+#, python-brace-format
 msgid ""
 "Could not pause recording.\n"
 "{error}"
@@ -476,15 +630,24 @@ msgstr ""
 "تعذر إيقاف التسجيل مؤقتًا.\n"
 "{error}"
 
+#: youtube/flow.py:567
+msgid "Could not prepare the next YouTube video."
+msgstr "تعذر فتح فيديو YouTube."
+
+#: youtube/flow.py:324
 msgid "Could not read YouTube link data."
 msgstr "تعذر قراءة بيانات رابط YouTube."
 
+#: youtube/resolver.py:179
 msgid "Could not read playlist information."
 msgstr "تعذر قراءة معلومات قائمة التشغيل."
 
+#: youtube/resolver.py:125 youtube/resolver.py:156
 msgid "Could not read video details."
 msgstr "تعذر قراءة تفاصيل الفيديو."
 
+#: ui/prefs/general.py:263
+#, python-brace-format
 msgid ""
 "Could not register file extensions.\n"
 "{error}"
@@ -492,9 +655,12 @@ msgstr ""
 "تعذر تسجيل امتدادات الملفات.\n"
 "{error}"
 
+#: app_actions/file_actions.py:659
 msgid "Could not rename the file."
 msgstr "تعذر إعادة تسمية الملف."
 
+#: ui/prefs/backup.py:239
+#, python-brace-format
 msgid ""
 "Could not reset settings.\n"
 "{error}"
@@ -502,12 +668,16 @@ msgstr ""
 "تعذر إعادة تعيين الإعدادات.\n"
 "{error}"
 
+#: youtube/flow.py:424
 msgid "Could not resolve YouTube stream."
 msgstr "تعذر تحليل بث YouTube."
 
+#: youtube/resolver.py:113
 msgid "Could not resolve a playable stream."
 msgstr "تعذر العثور على بث قابل للتشغيل."
 
+#: app_actions/recording_actions.py:25
+#, python-brace-format
 msgid ""
 "Could not resume recording.\n"
 "{error}"
@@ -515,9 +685,12 @@ msgstr ""
 "تعذر استئناف التسجيل.\n"
 "{error}"
 
+#: app_actions/device_actions.py:32
 msgid "Could not set sound card."
 msgstr "تعذر تعيين بطاقة الصوت."
 
+#: app_actions/recording_actions.py:16
+#, python-brace-format
 msgid ""
 "Could not start recording.\n"
 "{error}"
@@ -525,9 +698,12 @@ msgstr ""
 "تعذر بدء التسجيل.\n"
 "{error}"
 
+#: update/actions.py:140
 msgid "Could not start the updater."
 msgstr "تعذر بدء أداة التحديث."
 
+#: app_actions/recording_actions.py:40
+#, python-brace-format
 msgid ""
 "Could not stop recording.\n"
 "{error}"
@@ -535,6 +711,8 @@ msgstr ""
 "تعذر إيقاف التسجيل.\n"
 "{error}"
 
+#: ui/prefs/general.py:280
+#, python-brace-format
 msgid ""
 "Could not unregister file extensions.\n"
 "{error}"
@@ -542,421 +720,574 @@ msgstr ""
 "تعذر إلغاء تسجيل امتدادات الملفات.\n"
 "{error}"
 
+#: app_actions/favorite_actions.py:109
 msgid "Could not update favorite."
 msgstr "تعذر تحديث المفضلة."
 
+#: update/actions.py:59
 msgid "Could not update yt-dlp."
 msgstr "تعذر تحديث yt-dlp."
 
+#: app_actions/file_actions.py:142
+#, python-brace-format
 msgid "Counting files... {count}"
 msgstr "جاري عد الملفات... {count}"
 
+#: app_actions/file_actions.py:539
 msgid "Current file copied to clipboard."
 msgstr "تم نسخ الملف الحالي إلى الحافظة."
 
+#: ui/audio_settings.py:21
 msgid "Custom seek value (seconds)"
 msgstr "قيمة التقديم المخصصة (بالثواني)"
 
+#: ui/audio_settings.py:147
 msgid ""
 "Custom seek value in seconds. This value is used when the custom seek step is "
 "selected. Enter a positive number like 5, 10, or 30. Decimals are allowed, for "
 "example 2.5 seconds."
 msgstr ""
-"قيمة التقديم المخصصة بالثواني. تُستخدم هذه القيمة عند اختيار خطوة التقديم المخصصة. "
-"أدخل رقمًا موجبًا مثل 5 أو 10 أو 30. الكسور العشرية مسموح بها، مثل 2.5 ثانية."
+"قيمة التقديم المخصصة بالثواني. تُستخدم هذه القيمة عند اختيار خطوة التقديم "
+"المخصصة. أدخل رقمًا موجبًا مثل 5 أو 10 أو 30. الكسور العشرية مسموح بها، مثل 2.5 "
+"ثانية."
 
+#: app_actions/playback_actions.py:35
 msgid "Custom value"
 msgstr "قيمة مخصصة"
 
+#: ui/mainwin/menu.py:305
 msgid "Decrease Speed"
 msgstr "تقليل السرعة"
 
+#: config/shortcut_utils.py:41 ui/bookmark_dlg.py:29 ui/mainwin/menu.py:202
 msgid "Delete"
 msgstr "حذف"
 
+#: app_actions/file_actions.py:617
+#, python-brace-format
 msgid "Delete '{name}'?"
 msgstr "حذف '{name}'؟"
 
+#: app_actions/marked_file_actions.py:140 app_actions/marked_file_actions.py:151
 msgid "Delete Complete"
 msgstr "اكتمل الحذف"
 
+#: app_actions/bookmark_actions.py:113
+#, python-brace-format
 msgid "Delete bookmark '{name}'?"
 msgstr "حذف الإشارة المرجعية '{name}'؟"
 
+#: app_actions/file_actions.py:626 app_actions/marked_file_actions.py:157
 msgid "Delete failed."
 msgstr "فشل الحذف."
 
+#: app_actions/file_actions.py:611
 msgid "Delete is available only for local files."
 msgstr "الحذف متاح فقط للملفات المحلية."
 
+#: app_actions/marked_file_actions.py:88
+#, python-brace-format
 msgid "Delete {count} marked files?"
 msgstr "حذف {count} من التحديد؟"
 
+#: app_actions/marked_file_actions.py:139
+#, python-brace-format
 msgid "Deleted {count} marked files."
 msgstr "تم حذف {count} من التحديد."
 
+#: app_actions/marked_file_actions.py:147
+#, python-brace-format
 msgid "Deleted {deleted} files. Failed to delete {failed} files."
 msgstr "تم حذف {deleted} من الملفات. فشل حذف {failed} من الملفات."
 
+#: app_actions/file_actions.py:632 app_actions/marked_file_actions.py:144
 msgid "Deleted."
 msgstr "تم الحذف."
 
+#: ui/silence_removal.py:126
 msgid "Detection mode"
 msgstr "وضع الاكتشاف"
 
+#: ui/silence_removal.py:359
 msgid ""
 "Detection mode for silence analysis. Peak reacts quickly to speech transients. "
 "RMS is smoother."
 msgstr ""
 "وضع اكتشاف الصمت. يتفاعل Peak بسرعة مع تقلبات الكلام. بينما يعد RMS أكثر سلاسة."
 
+#: ui/silence_removal.py:49
 msgid "Detection window size (seconds)"
 msgstr "حجم نافذة الاكتشاف (بالثواني)"
 
+#: ui/silence_removal.py:354
 msgid "Detection window size in seconds. Default is 0.02."
 msgstr "حجم نافذة الاكتشاف بالثواني. الافتراضي هو 0.02."
 
+#: ui/audio_settings.py:8
 msgid "Do nothing"
 msgstr "لا تفعل شيئًا"
 
+#: ui/yt_dialogs.py:21
 msgid "Don't show this message again"
 msgstr "لا تظهر هذه الرسالة مجددًا"
 
+#: config/shortcut_utils.py:36
 msgid "Down"
 msgstr "أسفل"
 
+#: ui/yt_dialogs.py:162 ui/yt_dialogs.py:244
 msgid "Download"
 msgstr "تنزيل"
 
+#: ui/prefs/youtube.py:58
 msgid "Download YouTube components"
 msgstr "تنزيل مكونات YouTube"
 
+#: ui/prefs/youtube.py:184
 msgid ""
-"Download YouTube components installs missing YouTube libraries such as yt-dlp and "
-"Deno."
+"Download YouTube components installs missing YouTube libraries such as yt-dlp "
+"and Deno."
 msgstr "تنزيل مكونات YouTube يثبت مكتبات YouTube المفقودة مثل yt-dlp و Deno."
 
+#: youtube/video.py:73
 msgid "Download completed."
 msgstr "اكتمل التنزيل."
 
+#: youtube/download.py:66 youtube/video.py:70
 msgid "Download failed."
 msgstr "فشل التنزيل."
 
+#: ui/mainwin/menu.py:455
 msgid "Download..."
 msgstr "تنزيل..."
 
+#: youtube/startup.py:68
 msgid "Downloading YouTube components"
 msgstr "جاري تنزيل مكونات YouTube"
 
+#: youtube/video.py:63
 msgid "Downloading audio"
 msgstr "جاري تنزيل الصوت"
 
+#: update/actions.py:126
 msgid "Downloading update"
 msgstr "جاري تنزيل التحديث"
 
+#: update/actions.py:129
 msgid "Downloading update package..."
 msgstr "جاري تنزيل حزمة التحديث..."
 
+#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:99
 msgid "Edit"
 msgstr "تعديل"
 
+#: ui/shortcut_settings.py:203
 msgid "Edit Primary Shortcut"
 msgstr "تعديل الاختصار الأساسي"
 
+#: ui/shortcut_settings.py:208
 msgid "Edit Secondary Shortcut"
 msgstr "تعديل الاختصار الثانوي"
 
+#: app_actions/bookmark_actions.py:89
 msgid "Edit bookmark name"
 msgstr "تعديل اسم الإشارة المرجعية"
 
+#: app_actions/favorite_actions.py:93
 msgid "Edit favorite"
 msgstr "تعديل المفضلة"
 
+#: ui/favorite_dlg.py:42
 msgid "Edit..."
 msgstr "تعديل..."
 
+#: app_actions/playback_actions.py:200
 msgid "Elapsed time: "
 msgstr "الوقت المنقضي: "
 
+#: playlist/info.py:224
+#, python-brace-format
 msgid "Elapsed: {value}"
 msgstr "المنقضي: {value}"
 
+#: ui/mainwin/menu.py:489
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
+#: ui/audio_settings.py:60
 msgid "Enable dynamic normalize and limiter"
 msgstr "تمكين التطبيع الديناميكي والمحدد"
 
+#: ui/audio_settings.py:190
 msgid ""
 "Enable dynamic normalize and limiter audio filter. When enabled, audio uses "
-"dynaudnorm followed by alimiter to reduce clipping at high volume boosts. Disable "
-"it to use raw output without this processing."
+"dynaudnorm followed by alimiter to reduce clipping at high volume boosts. "
+"Disable it to use raw output without this processing."
 msgstr ""
-"تمكين مرشح التطبيع الديناميكي والمحدد للصوت. عند التمكين، يستخدم الصوت dynaudnorm "
-"متبوعًا بـ alimiter لتقليل التشويه عند رفع الصوت العالي. عطله لاستخدام المخرج "
-"الخام بدون هذه المعالجة."
+"تمكين مرشح التطبيع الديناميكي والمحدد للصوت. عند التمكين، يستخدم الصوت "
+"dynaudnorm متبوعًا بـ alimiter لتقليل التشويه عند رفع الصوت العالي. عطله "
+"لاستخدام المخرج الخام بدون هذه المعالجة."
 
+#: ui/mainwin/menu.py:345
 msgid "Enable silence removal filter"
 msgstr "تمكين مرشح إزالة الصمت"
 
+#: config/shortcut_utils.py:40 ui/mainwin/menu.py:380
 msgid "End"
 msgstr "النهاية"
 
+#: app_actions/playback_actions.py:322
 msgid "End selection must be after start."
 msgstr "يجب أن يكون اختيار النهاية بعد البداية."
 
+#: app_actions/playback_actions.py:330
+#, python-brace-format
 msgid "End selection: {time}"
 msgstr "اختيار النهاية: {time}"
 
+#: app_actions/playback_actions.py:331
+#, python-brace-format
 msgid "End {time}"
 msgstr "النهاية {time}"
 
+#: config/shortcut_utils.py:31
 msgid "Enter"
 msgstr "إدخال"
 
+#: youtube/ui_utils.py:29
 msgid "Enter a YouTube video or playlist link."
 msgstr "أدخل رابط فيديو أو قائمة تشغيل YouTube."
 
+#: app_actions/bookmark_actions.py:16
 msgid "Enter bookmark name"
 msgstr "أدخل اسم الإشارة المرجعية"
 
+#: app_actions/file_actions.py:443
+#, python-brace-format
 msgid "Enter file number (1-{count})"
 msgstr "أدخل رقم الملف (1-{count})"
 
+#: app_actions/file_actions.py:249
 msgid "Enter link to play."
 msgstr "أدخل الرابط للتشغيل."
 
+#: app_actions/file_actions.py:649
 msgid "Enter new name for the file."
 msgstr "أدخل اسمًا جديدًا للملف."
 
+#: youtube/ui_utils.py:43
 msgid "Enter search text."
 msgstr "أدخل نص البحث."
 
+#: app.py:194 app_actions/bookmark_actions.py:98 app_actions/file_actions.py:265
+#: app_actions/file_actions.py:564 app_actions/help_actions.py:63
+#: update/actions.py:89 update/actions.py:135 update/actions.py:141
+#: youtube/flow.py:355 youtube/flow.py:667 youtube/startup.py:158
 msgid "Error"
 msgstr "خطأ"
 
+#: ui/mainwin/menu.py:177
 msgid "Exit"
 msgstr "خروج"
 
+#: ui/prefs/backup.py:19 ui/prefs/backup.py:158 ui/prefs/backup.py:183
 msgid "Export bookmarks"
 msgstr "تصدير الإشارات المرجعية"
 
+#: ui/prefs/backup.py:59
 msgid "Export bookmarks creates a copy of the bookmarks JSON file."
 msgstr "تصدير الإشارات المرجعية ينشئ نسخة من ملف JSON الخاص بالإشارات المرجعية."
 
+#: ui/prefs/backup.py:104 ui/prefs/backup.py:176
 msgid "Export error"
 msgstr "خطأ في التصدير"
 
+#: ui/prefs/backup.py:17 ui/prefs/backup.py:90 ui/prefs/backup.py:111
 msgid "Export settings"
 msgstr "تصدير الإعدادات"
 
+#: ui/prefs/backup.py:51
 msgid "Export settings creates a copy of the current settings file."
 msgstr "تصدير الإعدادات ينشئ نسخة من ملف الإعدادات الحالي."
 
+#: app_actions/marked_file_actions.py:285
 msgid "Failed."
 msgstr "فشل."
 
+#: app_actions/favorite_actions.py:68 app_actions/favorite_actions.py:76
+#: app_actions/favorite_actions.py:102 app_actions/favorite_actions.py:110
+#: app_actions/favorite_actions.py:145 app_actions/favorite_actions.py:156
+#: ui/favorite_dlg.py:29
 msgid "Favorite videos"
 msgstr "الفيديوهات المفضلة"
 
+#: ui/mainwin/menu.py:142
 msgid "Favorite videos..."
 msgstr "الفيديوهات المفضلة..."
 
+#: youtube/flow.py:280
 msgid "Fetching first stream..."
 msgstr "جاري جلب البث الأول..."
 
+#: youtube/resolver.py:79
 msgid "Fetching stream URL..."
 msgstr "جاري جلب رابط البث..."
 
+#: ui/mainwin/menu.py:98
 msgid "File"
 msgstr "ملف"
 
+#: app_actions/marked_file_actions.py:30
 msgid "File added to marked files."
 msgstr "تمت إضافة الملف إلى التحديد."
 
+#: app_actions/file_actions.py:518
 msgid "File closed."
 msgstr "تم إغلاق الملف."
 
+#: app_actions/file_actions.py:632
 msgid "File deleted."
 msgstr "تم حذف الملف."
 
+#: ui/prefs/general.py:256
 msgid "File extensions registered successfully."
 msgstr "تم تسجيل امتدادات الملفات بنجاح."
 
+#: ui/prefs/general.py:273
 msgid "File extensions unregistered successfully."
 msgstr "تم إلغاء تسجيل امتدادات الملفات بنجاح."
 
+#: app_actions/file_actions.py:455
 msgid "File number out of range."
 msgstr "رقم الملف خارج النطاق."
 
+#: app_actions/file_actions.py:683
 msgid "File path copied to clipboard."
 msgstr "تم نسخ مسار الملف إلى الحافظة."
 
+#: app_actions/file_actions.py:294
 msgid "File properties are available only for local files."
 msgstr "خصائص الملف متاحة فقط للملفات المحلية."
 
+#: app_actions/file_actions.py:299
 msgid "File properties are not supported on this platform."
 msgstr "خصائص الملف غير مدعومة على هذه المنصة."
 
+#: ui/mainwin/menu.py:154
 msgid "File properties..."
 msgstr "خصائص الملف..."
 
+#: app_actions/marked_file_actions.py:32
 msgid "File removed from marked files."
 msgstr "تمت إزالة الملف من التحديد."
 
+#: app_actions/file_actions.py:657
 msgid "File renamed."
 msgstr "تمت إعادة تسمية الملف."
 
+#: app_actions/playback_actions.py:112
 msgid "Filter failed."
 msgstr "فشل المرشح."
 
+#: ui/mainwin/menu.py:324
 msgid "First File"
 msgstr "الملف الأول"
 
+#: app_actions/recording_actions.py:46
 msgid "Folder is not set."
 msgstr "المجلد غير محدد."
 
+#: ui/main_frame.py:49 ui/mainwin/menu.py:372
 msgid "Forward"
 msgstr "للأمام"
 
+#: ui/prefs/dialog.py:34
 msgid "General"
 msgstr "عام"
 
+#: ui/prefs/general.py:183
 msgid ""
 "General settings. Use Tab to move between controls. Press F1 on a specific "
 "control to hear detailed help."
 msgstr ""
-"إعدادات عامة. استخدم Tab للتنقل بين عناصر التحكم. اضغط F1 على عنصر محدد لسماع شرح "
-"مفصل."
+"إعدادات عامة. استخدم Tab للتنقل بين عناصر التحكم. اضغط F1 على عنصر محدد لسماع "
+"شرح مفصل."
 
+#: ui/favorite_dlg.py:13
 msgid "Generic stream"
 msgstr "بث عام"
 
+#: app_actions/favorite_actions.py:174
 msgid "Generic stream link must start with http or https."
 msgstr "يجب أن يبدأ رابط البث العام بـ http أو https."
 
+#: ui/prefs/dialog.py:107
 msgid "Global Shortcuts"
 msgstr "اختصارات عامة"
 
+#: ui/prefs/dialog.py:85
 msgid "Global shortcuts"
 msgstr "اختصارات عامة"
 
+#: app_actions/file_actions.py:444
 msgid "Go To File"
 msgstr "الذهاب إلى الملف"
 
+#: ui/mainwin/menu.py:328
 msgid "Go to file..."
 msgstr "الذهاب إلى الملف..."
 
+#: app_actions/playback_actions.py:262 ui/dialogs.py:41 ui/dialogs.py:164
+#: ui/dialogs.py:174
 msgid "Go to time"
 msgstr "الذهاب إلى وقت"
 
+#: ui/mainwin/menu.py:384
 msgid "Go to time..."
 msgstr "الذهاب إلى وقت..."
 
+#: ui/mainwin/menu.py:108
 msgid "Help"
 msgstr "مساعدة"
 
+#: config/shortcut_utils.py:39
 msgid "Home"
 msgstr "الرئيسية"
 
+#: ui/dialogs.py:49
 msgid "Hours"
 msgstr "ساعات"
 
+#: ui/silence_removal.py:35
 msgid "How many silence chunks to trim after audio has started (-1 means all)."
 msgstr "عدد أجزاء الصمت المطلوب قصها بعد بدء الصوت (1- يعني الكل)."
 
+#: ui/silence_removal.py:25
 msgid "How many silent chunks to remove from the beginning."
 msgstr "عدد أجزاء الصمت المطلوب إزالتها من البداية."
 
+#: ui/silence_removal.py:56
 msgid ""
-"How silence is detected. Peak reacts faster to speech transients (default). RMS "
-"is smoother and less sensitive to short spikes."
+"How silence is detected. Peak reacts faster to speech transients (default). "
+"RMS is smoother and less sensitive to short spikes."
 msgstr ""
-"طريقة اكتشاف الصمت. يتفاعل Peak بشكل أسرع مع تقلبات الكلام (افتراضي). بينما يكون "
-"RMS أكثر سلاسة وأقل حساسية للزيادات المفاجئة القصيرة."
+"طريقة اكتشاف الصمت. يتفاعل Peak بشكل أسرع مع تقلبات الكلام (افتراضي). بينما "
+"يكون RMS أكثر سلاسة وأقل حساسية للزيادات المفاجئة القصيرة."
 
+#: ui/prefs/backup.py:93 ui/prefs/backup.py:125
 msgid "INI files (*.ini)|*.ini|All files (*.*)|*.*"
 msgstr "ملفات INI (*.ini)|*.ini|كل الملفات (*.*)|*.*"
 
+#: ui/prefs/backup.py:20 ui/prefs/backup.py:194 ui/prefs/backup.py:216
 msgid "Import bookmarks"
 msgstr "استيراد الإشارات المرجعية"
 
-msgid "Import bookmarks replaces current bookmarks with a selected bookmarks file."
+#: ui/prefs/backup.py:63
+msgid ""
+"Import bookmarks replaces current bookmarks with a selected bookmarks file."
 msgstr ""
 "استيراد الإشارات المرجعية يستبدل الإشارات المرجعية الحالية بملف إشارات مختار."
 
+#: ui/prefs/backup.py:140 ui/prefs/backup.py:209
 msgid "Import error"
 msgstr "خطأ في الاستيراد"
 
+#: ui/prefs/backup.py:18 ui/prefs/backup.py:122 ui/prefs/backup.py:147
 msgid "Import settings"
 msgstr "استيراد الإعدادات"
 
+#: ui/prefs/backup.py:55
 msgid "Import settings replaces current settings with a selected settings file."
 msgstr "استيراد الإعدادات يستبدل الإعدادات الحالية بملف إعدادات مختار."
 
+#: ui/mainwin/menu.py:301
 msgid "Increase Speed"
 msgstr "زيادة السرعة"
 
+#: update/actions.py:104 youtube/startup.py:45
 msgid "Info"
 msgstr "معلومات"
 
+#: app_actions/file_actions.py:407 playlist/info.py:30
 msgid "Info failed."
 msgstr "فشلت المعلومات."
 
+#: ui/dialogs.py:233
 msgid "Information"
 msgstr "معلومات"
 
+#: youtube/flow.py:66 youtube/flow.py:76 youtube/flow.py:85 youtube/flow.py:108
+#: youtube/flow.py:128
 msgid "Invalid YouTube link"
 msgstr "رابط YouTube غير صالح"
 
+#: youtube/download.py:20
 msgid "Invalid download folder."
 msgstr "مجلد تنزيل غير صالح."
 
+#: app_actions/playback_actions.py:322
 msgid "Invalid end."
 msgstr "نهاية غير صالحة."
 
+#: app_actions/file_actions.py:451
 msgid "Invalid file number."
 msgstr "رقم ملف غير صالح."
 
+#: app_actions/file_actions.py:255 youtube/flow.py:63
 msgid "Invalid link"
 msgstr "رابط غير صالح"
 
+#: youtube/resolver.py:42
 msgid "Invalid link."
 msgstr "رابط غير صالح."
 
+#: app_actions/file_actions.py:451
 msgid "Invalid number."
 msgstr "رقم غير صالح."
 
+#: app_actions/file_actions.py:598
 msgid "Invalid path in clipboard."
 msgstr "مسار غير صالح في الحافظة."
 
+#: ui/prefs/backup.py:161 ui/prefs/backup.py:197
 msgid "JSON files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "ملفات JSON (*.json)|*.json|كل الملفات (*.*)|*.*"
 
+#: ui/bookmark_dlg.py:27
 msgid "Jump"
 msgstr "انتقال"
 
+#: ui/mainwin/menu.py:396
 msgid "Jump to Percentage"
 msgstr "انتقال إلى نسبة مئوية"
 
+#: ui/mainwin/menu.py:254
 msgid "Jump to bookmark"
 msgstr "انتقال إلى إشارة مرجعية"
 
+#: ui/dialogs.py:197
 msgid "Jump to selected"
 msgstr "انتقال إلى المحدد"
 
+#: app_actions/bookmark_actions.py:184
+#, python-brace-format
 msgid "Jumped to '{name}' at {time}."
 msgstr "انتقل إلى '{name}' عند {time}."
 
+#: app_actions/bookmark_actions.py:183
+#, python-brace-format
 msgid "Jumped to bookmark {name}."
 msgstr "انتقل إلى الإشارة المرجعية {name}."
 
+#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:195
 msgid "Keyboard Shortcuts"
 msgstr "اختصارات لوحة المفاتيح"
 
+#: ui/prefs/general.py:15
 msgid "Language"
 msgstr "اللغة"
 
+#: ui/prefs/youtube.py:172
 msgid ""
 "Language code used for YouTube searches. Example: 'en' for English, 'es' for "
 "Spanish."
@@ -964,15 +1295,19 @@ msgstr ""
 "رمز اللغة المستخدم لعمليات البحث على YouTube. على سبيل المثال: \"en\" للغة "
 "الإنجليزية، و\"es\" للغة الإسبانية."
 
+#: ui/mainwin/menu.py:332
 msgid "Last File"
 msgstr "الملف الأخير"
 
+#: ui/update_dialogs.py:29
 msgid "Later"
 msgstr "لاحقًا"
 
+#: ui/silence_removal.py:24
 msgid "Leading silent parts to trim"
 msgstr "أجزاء الصمت البادئة للقص"
 
+#: ui/silence_removal.py:327
 msgid ""
 "Leading silent parts to trim. This controls how many silent chunks are removed "
 "from the beginning. Typical value is 1."
@@ -980,106 +1315,140 @@ msgstr ""
 "أجزاء الصمت البادئة للقص. يتحكم هذا في عدد أجزاء الصمت التي تتم إزالتها من "
 "البداية. القيمة المعتادة هي 1."
 
+#: ui/silence_removal.py:45
 msgid "Leaves a short pause before the next word (default: 0.2)."
 msgstr "يترك وقفة قصيرة قبل الكلمة التالية (الافتراضي: 0.2)."
 
+#: config/shortcut_utils.py:33
 msgid "Left"
 msgstr "يسار"
 
+#: ui/favorite_dlg.py:39 ui/favorite_dlg.py:132
 msgid "Link"
 msgstr "رابط"
 
+#: youtube/results.py:59 youtube/video.py:45
 msgid "Link copied."
 msgstr "تم نسخ الرابط."
 
+#: app_actions/favorite_actions.py:170
 msgid "Link is required."
 msgstr "الرابط مطلوب."
 
+#: youtube/flow.py:317
 msgid "Loading YouTube link"
 msgstr "جاري تحميل رابط YouTube"
 
+#: youtube/flow.py:417
 msgid "Loading YouTube stream"
 msgstr "جاري تحميل بث YouTube"
 
+#: youtube/resolver.py:135
 msgid "Loading YouTube stream..."
 msgstr "جاري تحميل بث YouTube..."
 
+#: app_actions/file_actions.py:65
 msgid "Loading files from folder and subfolders..."
 msgstr "جاري تحميل الملفات من المجلد والمجلدات الفرعية..."
 
+#: youtube/results.py:140
 msgid "Loading more videos..."
 msgstr "جاري تحميل المزيد من الفيديوهات..."
 
+#: youtube/flow.py:505
 msgid "Loading next video..."
 msgstr "جاري تحميل الفيديو التالي..."
 
+#: playlist/info.py:55
 msgid "Loading playlist info"
 msgstr "جاري تحميل معلومات قائمة التشغيل"
 
+#: youtube/resolver.py:52
 msgid "Loading playlist items..."
 msgstr "جاري تحميل عناصر قائمة التشغيل..."
 
+#: youtube/video.py:84
 msgid "Loading video details"
 msgstr "جاري تحميل تفاصيل الفيديو"
 
+#: youtube/resolver.py:56 youtube/resolver.py:121
 msgid "Loading video details..."
 msgstr "جاري تحميل تفاصيل الفيديو..."
 
+#: ui/prefs/dialog.py:94
 msgid "Local Shortcuts"
 msgstr "اختصارات محلية"
 
+#: ui/audio_settings.py:7
 msgid "Loop the file"
 msgstr "تكرار الملف"
 
+#: ui/prefs/youtube.py:17
 msgid "Low"
 msgstr "منخفض"
 
+#: app_actions/bookmark_actions.py:90 ui/bookmark_dlg.py:16
+#: ui/mainwin/menu.py:243
 msgid "Manage bookmarks"
 msgstr "إدارة الإشارات المرجعية"
 
+#: ui/mainwin/menu.py:219
 msgid "Mark All Files"
 msgstr "تحديد جميع الملفات"
 
+#: ui/mainwin/menu.py:215
 msgid "Mark Current File"
 msgstr "تحديد الملف الحالي"
 
+#: app_actions/marked_file_actions.py:76
 msgid "Marked files copied to clipboard."
 msgstr "تم نسخ التحديد إلى الحافظة."
 
+#: app_actions/marked_file_actions.py:266
 msgid "Marked files copied."
 msgstr "تم نسخ التحديد."
 
+#: app_actions/marked_file_actions.py:144
 msgid "Marked files deleted."
 msgstr "تم حذف التحديد."
 
+#: app_actions/marked_file_actions.py:48
 msgid "Marked files list cleared."
 msgstr "تم مسح قائمة التحديد."
 
+#: app_actions/marked_file_actions.py:264
 msgid "Marked files moved."
 msgstr "تم نقل التحديد."
 
+#: app_actions/marked_file_actions.py:30
 msgid "Marked."
 msgstr "تم التحديد."
 
+#: app_actions/marked_file_actions.py:48
 msgid "Marks cleared."
 msgstr "تم مسح التحديد."
 
+#: ui/prefs/youtube.py:17
 msgid "Medium"
 msgstr "متوسط"
 
+#: ui/silence_removal.py:39
 msgid "Minimum inner silence length (seconds)"
 msgstr "الحد الأدنى لطول الصمت الداخلي (بالثواني)"
 
+#: ui/silence_removal.py:344
 msgid ""
 "Minimum inner silence length in seconds. Only silence in the middle or end at "
 "least this long is removed."
 msgstr ""
-"الحد الأدنى لطول الصمت الداخلي بالثواني. سيتم فقط إزالة الصمت الموجود في المنتصف "
-"أو النهاية والذي تبلغ مدته هذا الطول على الأقل."
+"الحد الأدنى لطول الصمت الداخلي بالثواني. سيتم فقط إزالة الصمت الموجود في "
+"المنتصف أو النهاية والذي تبلغ مدته هذا الطول على الأقل."
 
+#: ui/silence_removal.py:29
 msgid "Minimum leading silence length (seconds)"
 msgstr "الحد الأدنى لطول الصمت البادئ (بالثواني)"
 
+#: ui/silence_removal.py:333
 msgid ""
 "Minimum leading silence length in seconds. Only leading silence at least this "
 "long is removed. Default is 0.2."
@@ -1087,507 +1456,701 @@ msgstr ""
 "الحد الأدنى لطول الصمت البادئ بالثواني. سيتم فقط إزالة الصمت البادئ الذي تبلغ "
 "مدته هذا الطول على الأقل. الافتراضي هو 0.2."
 
+#: ui/silence_removal.py:82
 msgid "Minimum silence duration (seconds)"
 msgstr "الحد الأدنى لمدة الصمت (بالثواني)"
 
+#: ui/silence_removal.py:11
 msgid ""
-"Minimum silence duration in seconds. Silence shorter than this is kept. Default "
-"is 0.5."
+"Minimum silence duration in seconds. Silence shorter than this is kept. "
+"Default is 0.5."
 msgstr ""
-"الحد الأدنى لمدة الصمت بالثواني. سيتم الإبقاء على الصمت الأقصر من ذلك. الافتراضي "
-"هو 0.5."
+"الحد الأدنى لمدة الصمت بالثواني. سيتم الإبقاء على الصمت الأقصر من ذلك. "
+"الافتراضي هو 0.5."
 
+#: ui/silence_removal.py:308
 msgid ""
 "Minimum silence duration in seconds. Silence shorter than this value is kept. "
 "Increase it to preserve short pauses. Decrease it to trim more aggressively."
 msgstr ""
-"الحد الأدنى لمدة الصمت بالثواني. سيتم الإبقاء على الصمت الأقصر من هذه القيمة. قم "
-"بزيادتها للحفاظ على الوقفات القصيرة، وقللها للقص بشكل أكثر قوة."
+"الحد الأدنى لمدة الصمت بالثواني. سيتم الإبقاء على الصمت الأقصر من هذه القيمة. "
+"قم بزيادتها للحفاظ على الوقفات القصيرة، وقللها للقص بشكل أكثر قوة."
 
+#: ui/silence_removal.py:204
 msgid "Minimum silence duration must be a non-negative number."
 msgstr "يجب أن يكون الحد الأدنى لمدة الصمت رقمًا غير سالب."
 
+#: ui/dialogs.py:51
 msgid "Minutes"
 msgstr "دقائق"
 
-msgid "Missing components."
-msgstr "مكونات مفقودة."
-
+#: ui/prefs/recording.py:13
 msgid "Mono"
 msgstr "مونو (أحادي)"
 
+#: app_actions/marked_file_actions.py:264
 msgid "Moved."
 msgstr "تم النقل."
 
+#: app_actions/marked_file_actions.py:198
 msgid "Moving marked files"
 msgstr "جاري نقل التحديد"
 
+#: ui/bookmark_dlg.py:24 ui/favorite_dlg.py:37 ui/favorite_dlg.py:124
 msgid "Name"
 msgstr "الاسم"
 
+#: app_actions/favorite_actions.py:168
 msgid "Name is required."
 msgstr "الاسم مطلوب."
 
+#: ui/yt_dialogs.py:242
 msgid "Navigate to channel\tCtrl+N"
 msgstr "الانتقال إلى القناة\tCtrl+N"
 
+#: ui/main_frame.py:50 ui/mainwin/menu.py:320
 msgid "Next"
 msgstr "التالي"
 
+#: youtube/flow.py:568
+msgid "Next YouTube video unavailable."
+msgstr "الفيديو التالي غير متوفر"
+
+#: ui/yt_dialogs.py:23
 msgid "No"
 msgstr "لا"
 
+#: youtube/video.py:19 youtube/video.py:27 youtube/video.py:42
 msgid "No YouTube video is active."
 msgstr "لا يوجد فيديو YouTube نشط."
 
+#: youtube/video.py:19 youtube/video.py:27 youtube/video.py:42
 msgid "No YouTube video."
 msgstr "لا يوجد فيديو YouTube."
 
+#: app_actions/file_actions.py:241 app_actions/file_actions.py:579
 msgid "No audio files found in that folder."
 msgstr "لم يتم العثور على ملفات صوتية في هذا المجلد."
 
+#: app_actions/file_actions.py:241 app_actions/file_actions.py:579
 msgid "No audio files."
 msgstr "لا توجد ملفات صوتية."
 
+#: app_actions/bookmark_actions.py:141
+#, python-brace-format
 msgid "No bookmark in slot {slot}."
 msgstr "لا توجد إشارة مرجعية في الفتحة {slot}."
 
+#: app_actions/bookmark_actions.py:142
+#, python-brace-format
 msgid "No bookmark {slot}."
 msgstr "لا توجد إشارة مرجعية {slot}."
 
+#: app_actions/bookmark_actions.py:59
 msgid "No bookmarks found for the current file."
 msgstr "لم يتم العثور على إشارات مرجعية للملف الحالي."
 
+#: youtube/results.py:76
 msgid "No channel link."
 msgstr "لا يوجد رابط قناة."
 
+#: youtube/video.py:32
 msgid "No description is available."
 msgstr "لا يوجد وصف متاح."
 
+#: ui/prefs/dialog.py:193
 msgid "No detailed help is available for this control."
 msgstr "لا يتوفر شرح مفصل لعنصر التحكم هذا."
 
+#: app_actions/device_actions.py:13
 msgid "No devices."
 msgstr "لا توجد أجهزة."
 
+#: app_actions/bookmark_actions.py:151 app_actions/file_actions.py:275
+#: app_actions/file_actions.py:279 app_actions/file_actions.py:290
+#: app_actions/file_actions.py:379 app_actions/file_actions.py:508
+#: app_actions/file_actions.py:523 app_actions/file_actions.py:536
+#: app_actions/file_actions.py:607 app_actions/file_actions.py:638
+#: app_actions/file_actions.py:666 app_actions/marked_file_actions.py:27
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
+#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
+#: app_actions/playback_actions.py:291 app_actions/playback_actions.py:310
 msgid "No file loaded."
 msgstr "لم يتم تحميل أي ملف."
 
+#: app_actions/bookmark_actions.py:151 app_actions/file_actions.py:275
+#: app_actions/file_actions.py:279 app_actions/file_actions.py:290
+#: app_actions/file_actions.py:379 app_actions/file_actions.py:508
+#: app_actions/file_actions.py:523 app_actions/file_actions.py:536
+#: app_actions/file_actions.py:607 app_actions/file_actions.py:638
+#: app_actions/file_actions.py:666 app_actions/marked_file_actions.py:27
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
+#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
+#: app_actions/playback_actions.py:291 app_actions/playback_actions.py:310
 msgid "No file."
 msgstr "لا يوجد ملف."
 
+#: app_actions/marked_file_actions.py:50 app_actions/marked_file_actions.py:73
+#: app_actions/marked_file_actions.py:84 app_actions/marked_file_actions.py:163
 msgid "No marked files."
 msgstr "لا توجد ملفات محددة."
 
+#: app_actions/marked_file_actions.py:50 app_actions/marked_file_actions.py:73
+#: app_actions/marked_file_actions.py:84 app_actions/marked_file_actions.py:163
 msgid "No marks."
 msgstr "لا توجد علامات تحديد."
 
+#: app_actions/file_actions.py:439
 msgid "No other files are loaded."
 msgstr "لا توجد ملفات أخرى محملة."
 
+#: app_actions/file_actions.py:439
 msgid "No other files."
 msgstr "لا توجد ملفات أخرى."
 
+#: youtube/resolver.py:59
 msgid "No playable YouTube items were found."
 msgstr "لم يتم العثور على عناصر YouTube قابلة للتشغيل."
 
+#: app_actions/playback_actions.py:339
 msgid "No selection to clear."
 msgstr "لا يوجد تحديد لمسحه."
 
+#: app_actions/playback_actions.py:339
 msgid "No selection."
 msgstr "لا يوجد تحديد."
 
+#: app_actions/device_actions.py:13
 msgid "No sound cards found."
 msgstr "لم يتم العثور على بطاقات صوت."
 
+#: app_actions/playback_actions.py:314
 msgid "No start."
 msgstr "لا توجد بداية."
 
+#: youtube/results.py:16
 msgid "No videos found."
 msgstr "لم يتم العثور على فيديوهات."
 
+#: youtube/flow.py:278
 msgid "No videos were found for this search."
 msgstr "لم يتم العثور على فيديوهات لهذا البحث."
 
+#: youtube/resolver.py:191
 msgid "No videos were found in this playlist."
 msgstr "لم يتم العثور على فيديوهات في قائمة التشغيل هذه."
 
+#: youtube/results.py:16
 msgid "No videos were found."
 msgstr "لم يتم العثور على فيديوهات."
 
+#: app_actions/file_actions.py:295 app_actions/file_actions.py:612
+#: app_actions/file_actions.py:643
 msgid "Not available for streams."
 msgstr "غير متاح للبث المباشر."
 
+#: app_actions/file_actions.py:299
 msgid "Not supported."
 msgstr "غير مدعوم."
 
+#: playlist/info.py:221
+#, python-brace-format
 msgid "Number of files: {count}"
 msgstr "عدد الملفات: {count}"
 
+#: ui/prefs/youtube.py:180
 msgid ""
 "Number of videos to prefetch when opening a YouTube playlist or search result."
 msgstr ""
 "عدد مقاطع الفيديو المطلوب جلبها مسبقًا عند فتح قائمة تشغيل أو نتيجة بحث على "
 "YouTube."
 
+#: ui/dialogs.py:73 ui/help_dialogs.py:47
 msgid "OK"
 msgstr "موافق"
 
-msgid "Only trim leading silence chunks that are at least this long (default: 0.2)."
+#: ui/silence_removal.py:30
+msgid ""
+"Only trim leading silence chunks that are at least this long (default: 0.2)."
 msgstr ""
-"قص أجزاء الصمت البادئة التي تبلغ مدتها هذا الطول على الأقل فقط (الافتراضي: 0.2)."
+"قص أجزاء الصمت البادئة التي تبلغ مدتها هذا الطول على الأقل فقط (الافتراضي: "
+"0.2)."
 
+#: ui/silence_removal.py:40
 msgid "Only trim middle/end silence chunks that are at least this long."
 msgstr ""
 "قص أجزاء الصمت في المنتصف أو النهاية التي تبلغ مدتها هذا الطول على الأقل فقط."
 
+#: ui/mainwin/menu.py:150
 msgid "Open Containing Folder"
 msgstr "فتح المجلد الحاوي"
 
+#: ui/mainwin/menu.py:126
 msgid "Open File..."
 msgstr "فتح ملف..."
 
+#: ui/mainwin/menu.py:146
 msgid "Open Folder..."
 msgstr "فتح مجلد..."
 
+#: app_actions/file_actions.py:249
 msgid "Open Link"
 msgstr "فتح رابط"
 
+#: ui/mainwin/menu.py:130
 msgid "Open Link..."
 msgstr "فتح رابط..."
 
+#: youtube/ui_utils.py:30 youtube/ui_utils.py:57
 msgid "Open YouTube Link"
 msgstr "فتح رابط YouTube"
 
+#: ui/mainwin/menu.py:134
 msgid "Open YouTube Link..."
 msgstr "فتح رابط YouTube..."
 
+#: app_actions/file_actions.py:284 app_actions/file_actions.py:310
+#: app_actions/file_actions.py:590 app_actions/help_actions.py:70
+#: app_actions/help_actions.py:76
 msgid "Open failed."
 msgstr "فشل الفتح."
 
+#: ui/prefs/backup.py:262
 msgid "Open folder error"
 msgstr "خطأ في فتح المجلد"
 
+#: ui/yt_dialogs.py:241
 msgid "Open in browser\tCtrl+B"
 msgstr "الفتح في المتصفح\tCtrl+B"
 
+#: ui/mainwin/menu.py:544
 msgid "Open recordings folder"
 msgstr "فتح مجلد التسجيلات"
 
+#: ui/prefs/general.py:62
 msgid "Open the file and the main folder files"
 msgstr "فتح الملف وملفات المجلد الرئيسي"
 
+#: ui/prefs/general.py:61
 msgid "Open the file only"
 msgstr "فتح الملف فقط"
 
+#: ui/prefs/general.py:63
 msgid "Open the file with the main and subfolder files"
 msgstr "فتح الملف مع ملفات المجلد الرئيسي والمجلدات الفرعية"
 
+#: ui/prefs/youtube.py:28 youtube/ui_utils.py:68
 msgid "Open the playlist"
 msgstr "فتح قائمة التشغيل"
 
+#: ui/prefs/backup.py:23
 msgid "Open user settings folder"
 msgstr "فتح مجلد إعدادات المستخدم"
 
+#: ui/prefs/backup.py:67
 msgid ""
 "Open user settings folder opens the folder where this app stores its "
 "configuration."
-msgstr "فتح مجلد إعدادات المستخدم يفتح المجلد الذي يخزن فيه هذا التطبيق تكويناته."
+msgstr ""
+"فتح مجلد إعدادات المستخدم يفتح المجلد الذي يخزن فيه هذا التطبيق تكويناته."
 
+#: ui/prefs/general.py:232
 msgid ""
-"Open with files behavior controls what happens when you open a single file. Open "
-"the file only loads just that file. Open the file and the main folder files loads "
-"all supported files in the same folder. Open the file with the main and subfolder "
-"files scans the folder recursively and loads files from subfolders too."
+"Open with files behavior controls what happens when you open a single file. "
+"Open the file only loads just that file. Open the file and the main folder "
+"files loads all supported files in the same folder. Open the file with the "
+"main and subfolder files scans the folder recursively and loads files from "
+"subfolders too."
 msgstr ""
 "يتحكم سلوك \"الفتح مع الملفات\" فيما يحدث عند فتح ملف واحد. \"فتح الملف فقط\" "
 "يحمل هذا الملف فقط. \"فتح الملف وملفات المجلد الرئيسي\" يحمل جميع الملفات "
-"المدعومة في نفس المجلد. \"فتح الملف مع ملفات المجلد الرئيسي والمجلدات الفرعية\" "
-"يفحص المجلد بشكل متكرر ويحمل الملفات من المجلدات الفرعية أيضًا."
+"المدعومة في نفس المجلد. \"فتح الملف مع ملفات المجلد الرئيسي والمجلدات "
+"الفرعية\" يفحص المجلد بشكل متكرر ويحمل الملفات من المجلدات الفرعية أيضًا."
 
+#: ui/dialogs.py:187
 msgid "Opened Files"
 msgstr "الملفات المفتوحة"
 
+#: ui/mainwin/menu.py:158
 msgid "Opened Files..."
 msgstr "الملفات المفتوحة..."
 
+#: app_actions/file_actions.py:65
 msgid "Opening files"
 msgstr "جاري فتح الملفات"
 
+#: app_actions/file_actions.py:160
+#, python-brace-format
 msgid "Opening files... {found} media files found"
 msgstr "جاري فتح الملفات... تم العثور على {found} من ملفات الوسائط"
 
+#: app_actions/file_actions.py:152
+#, python-brace-format
 msgid "Opening files... {found} media files found ({done}/{total}) - {pct:.1f}%"
 msgstr ""
 "جاري فتح الملفات... تم العثور على {found} من ملفات الوسائط ({done}/{total}) - "
 "{pct:.1f}%"
 
+#: app_actions/marked_file_actions.py:259 app_actions/marked_file_actions.py:275
 msgid "Operation Complete"
 msgstr "اكتملت العملية"
 
+#: app_actions/marked_file_actions.py:238 app_actions/marked_file_actions.py:283
 msgid "Operation canceled."
 msgstr "تم إلغاء العملية."
 
+#: app_actions/marked_file_actions.py:279
 msgid "Operation completed with errors."
 msgstr "اكتملت العملية مع وجود أخطاء."
 
+#: app_actions/marked_file_actions.py:285
 msgid "Operation failed."
 msgstr "فشلت العملية."
 
+#: app_actions/file_actions.py:455
 msgid "Out of range."
 msgstr "خارج النطاق."
 
+#: config/shortcut_utils.py:38
 msgid "Page Down"
 msgstr "Page Down"
 
+#: config/shortcut_utils.py:37
 msgid "Page Up"
 msgstr "Page Up"
 
+#: app_actions/marked_file_actions.py:155
 msgid "Partial delete."
 msgstr "حذف جزئي."
 
+#: app_actions/marked_file_actions.py:279
 msgid "Partial success."
 msgstr "نجاح جزئي."
 
+#: ui/mainwin/menu.py:210
 msgid "Paste"
 msgstr "لصق"
 
+#: app_actions/playback_actions.py:58 ui/mainwin/menu.py:535
+#: ui/mainwin/state.py:87 ui/mainwin/state.py:222
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
+#: ui/silence_removal.py:44
 msgid "Pause to keep after trimmed silence (seconds)"
 msgstr "الوقفة المراد الإبقاء عليها بعد الصمت المقصوص (بالثواني)"
 
+#: ui/silence_removal.py:349
 msgid "Pause to keep after trimmed silence, in seconds. Default is 0.2."
-msgstr "الوقفة المراد الإبقاء عليها بعد الصمت المقصوص، بالثواني. الافتراضي هو 0.2."
+msgstr ""
+"الوقفة المراد الإبقاء عليها بعد الصمت المقصوص، بالثواني. الافتراضي هو 0.2."
 
+#: ui/silence_removal.py:61
 msgid "Peak (fast reaction)"
 msgstr "Peak (تفاعل سريع)"
 
+#: app_actions/playback_actions.py:215
 msgid "Percentage not available"
 msgstr "النسبة المئوية غير متوفرة"
 
+#: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
+#: ui/main_frame.py:48 ui/mainwin/state.py:87 ui/yt_dialogs.py:161
 msgid "Play"
 msgstr "تشغيل"
 
+#: ui/audio_settings.py:66
 msgid "Play audio as Mono"
 msgstr "تشغيل الصوت بصيغة مونو (أحادي)"
 
+#: ui/audio_settings.py:197
 msgid ""
 "Play audio as Mono. When enabled, a mono downmix filter is applied so left and "
 "right channels are combined. Disable it to keep the original channel layout."
 msgstr ""
-"تشغيل الصوت كـ Mono. عند التمكين، يتم تطبيق مرشح دمج أحادي بحيث يتم دمج القنوات "
-"اليسرى واليمنى. عطل هذا الخيار للحفاظ على تخطيط القنوات الأصلي."
+"تشغيل الصوت كـ Mono. عند التمكين، يتم تطبيق مرشح دمج أحادي بحيث يتم دمج "
+"القنوات اليسرى واليمنى. عطل هذا الخيار للحفاظ على تخطيط القنوات الأصلي."
 
+#: ui/prefs/youtube.py:27 youtube/ui_utils.py:67
 msgid "Play the video"
 msgstr "تشغيل الفيديو"
 
+#: ui/prefs/youtube.py:13
 msgid "Play videos as audio only"
 msgstr "تشغيل الفيديوهات كصوت فقط"
 
+#: ui/prefs/youtube.py:145
 msgid ""
-"Play videos as audio only. When enabled, YouTube playback prefers audio streams."
+"Play videos as audio only. When enabled, YouTube playback prefers audio "
+"streams."
 msgstr "تشغيل الفيديوهات كصوت فقط. عند التمكين، يفضل تشغيل YouTube بث الصوت فقط."
 
+#: ui/mainwin/menu.py:295
 msgid "Play/Pause"
 msgstr "تشغيل/إيقاف مؤقت"
 
+#: ui/mainwin/menu.py:104
 msgid "Player"
 msgstr "المشغل"
 
+#: ui/favorite_dlg.py:11
 msgid "Playlist"
 msgstr "قائمة تشغيل"
 
+#: playlist/info.py:183 ui/dialogs.py:267
 msgid "Playlist Info"
 msgstr "معلومات قائمة التشغيل"
 
+#: app_actions/favorite_actions.py:185
 msgid "Playlist favorites require a YouTube playlist link."
 msgstr "تتطلب مفضلات قوائم التشغيل رابط قائمة تشغيل YouTube."
 
+#: ui/dialogs.py:196
 msgid "Playlist info"
 msgstr "معلومات قائمة التشغيل"
 
+#: youtube/ui_utils.py:178
 msgid "Playlist videos"
 msgstr "فيديوهات قائمة التشغيل"
 
+#: ui/dialogs.py:163
 msgid "Please enter a valid time value."
 msgstr "يرجى إدخال قيمة زمنية صالحة."
 
+#: core/controller.py:415
 msgid "Please restart the app for language changes to take effect."
 msgstr "يرجى إعادة تشغيل التطبيق لتفعيل تغييرات اللغة."
 
+#: ui/bookmark_dlg.py:25
 msgid "Position"
 msgstr "الموضع"
 
+#: core/controller.py:416 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
 msgid "Preferences"
 msgstr "التفضيلات"
 
+#: ui/mainwin/menu.py:174
 msgid "Preferences..."
 msgstr "التفضيلات..."
 
+#: ui/prefs/youtube.py:46
 msgid "Prefetch count"
 msgstr "عدد المقاطع المطلوب جلبها مسبقًا"
 
+#: playlist/info.py:56 playlist/info.py:61
 msgid "Preparing..."
 msgstr "جاري التحضير..."
 
+#: ui/shortcut_settings.py:83
 msgid "Press the desired global shortcut. Escape cancels."
 msgstr "اضغط على الاختصار العام المطلوب. مفتاح Escape للإلغاء."
 
+#: ui/shortcut_settings.py:20
 msgid "Press the desired shortcut. Escape cancels."
 msgstr "اضغط على الاختصار المطلوب. مفتاح Escape للإلغاء."
 
+#: ui/main_frame.py:46 ui/mainwin/menu.py:316
 msgid "Previous"
 msgstr "السابق"
 
+#: ui/shortcut_settings.py:200
 msgid "Primary Shortcut"
 msgstr "الاختصار الأساسي"
 
+#: app_actions/marked_file_actions.py:271
+#, python-brace-format
 msgid "Processed {ok} files. Failed for {failed} files."
 msgstr "تمت معالجة {ok} من الملفات. فشلت معالجة {failed} من الملفات."
 
+#: app_actions/marked_file_actions.py:217
+#, python-brace-format
 msgid "Processing: {name}"
 msgstr "جاري المعالجة: {name}"
 
+#: ui/silence_removal.py:62
 msgid "RMS (smoother)"
 msgstr "RMS (أكثر سلاسة)"
 
+#: playlist/info.py:122
+#, python-brace-format
 msgid "Reading: {name}"
 msgstr "جاري القراءة: {name}"
 
+#: app_actions/recording_actions.py:73 ui/mainwin/menu.py:107
+#: ui/prefs/dialog.py:66
 msgid "Recording"
 msgstr "جاري التسجيل"
 
+#: ui/prefs/recording.py:108
 msgid ""
-"Recording bitrate in kilobits per second. Choose one of the preset values from 32 "
-"to 320. This mainly affects compressed formats such as MP3."
+"Recording bitrate in kilobits per second. Choose one of the preset values from "
+"32 to 320. This mainly affects compressed formats such as MP3."
 msgstr ""
-"معدل بت التسجيل بالكيلوبت في الثانية. اختر إحدى القيم المسبقة من 32 إلى 320. يؤثر "
-"هذا بشكل أساسي على التنسيقات المضغوطة مثل MP3."
+"معدل بت التسجيل بالكيلوبت في الثانية. اختر إحدى القيم المسبقة من 32 إلى 320. "
+"يؤثر هذا بشكل أساسي على التنسيقات المضغوطة مثل MP3."
 
+#: ui/prefs/recording.py:104
 msgid "Recording channels. Choose Mono or Stereo."
 msgstr "قنوات التسجيل. اختر Mono أو Stereo."
 
+#: ui/prefs/recording.py:114
 msgid "Recording format. WAV is uncompressed. MP3 is compressed."
 msgstr "تنسيق التسجيل. WAV غير مضغوط. MP3 مضغوط."
 
+#: ui/prefs/recording.py:100
 msgid ""
 "Recording settings page. Configure channels, bitrate, output format, and "
 "destination folder."
 msgstr ""
-"صفحة إعدادات التسجيل. قم بتكوين القنوات، معدل البت، تنسيق الإخراج، ومجلد الوجهة."
+"صفحة إعدادات التسجيل. قم بتكوين القنوات، معدل البت، تنسيق الإخراج، ومجلد "
+"الوجهة."
 
+#: ui/prefs/recording.py:29
 msgid "Recordings folder"
 msgstr "مجلد التسجيلات"
 
-msgid "Recordings folder path. Use Browse to choose where new recordings are saved."
-msgstr "مسار مجلد التسجيلات. استخدم \"استعراض\" لاختيار مكان حفظ التسجيلات الجديدة."
-
+#: ui/prefs/recording.py:117
 msgid ""
-"Region code used for YouTube searches (country/region). Example: 'US', 'GB', 'BR'."
+"Recordings folder path. Use Browse to choose where new recordings are saved."
 msgstr ""
-"رمز المنطقة المستخدم لعمليات البحث على YouTube (البلد/المنطقة). مثال: \"الولايات "
-"المتحدة\"، \"GB\"، \"BR\"."
+"مسار مجلد التسجيلات. استخدم \"استعراض\" لاختيار مكان حفظ التسجيلات الجديدة."
 
+#: ui/prefs/youtube.py:176
+msgid ""
+"Region code used for YouTube searches (country/region). Example: 'US', 'GB', "
+"'BR'."
+msgstr ""
+"رمز المنطقة المستخدم لعمليات البحث على YouTube (البلد/المنطقة). مثال: "
+"\"الولايات المتحدة\"، \"GB\"، \"BR\"."
+
+#: ui/prefs/general.py:84
 msgid "Register file extensions"
 msgstr "تسجيل امتدادات الملفات"
 
+#: ui/prefs/general.py:240
 msgid ""
 "Register file extensions writes Windows registry entries for supported media "
-"types. This lets files open with this app from Explorer and Open With. On modern "
-"Windows, default app choice can still require user confirmation in system Default "
-"apps settings."
+"types. This lets files open with this app from Explorer and Open With. On "
+"modern Windows, default app choice can still require user confirmation in "
+"system Default apps settings."
 msgstr ""
 "كتابة امتدادات الملفات تسجل مدخلات في سجل ويندوز (Registry) لأنواع الوسائط "
 "المدعومة. هذا يتيح فتح الملفات بهذا التطبيق من المستكشف و\"فتح بواسطة\". في "
 "إصدارات ويندوز الحديثة، قد يتطلب اختيار التطبيق الافتراضي تأكيد المستخدم في "
 "إعدادات التطبيقات الافتراضية للنظام."
 
+#: ui/prefs/general.py:257
 msgid "Registration"
 msgstr "التسجيل"
 
+#: ui/prefs/general.py:264
 msgid "Registration Error"
 msgstr "خطأ في التسجيل"
 
+#: app_actions/playback_actions.py:204
 msgid "Remaining time: "
 msgstr "الوقت المتبقي: "
 
+#: playlist/info.py:225
+#, python-brace-format
 msgid "Remaining: {value}"
 msgstr "المتبقي: {value}"
 
+#: ui/prefs/general.py:26
 msgid "Remember last file position"
 msgstr "تذكر موضع الملف الأخير"
 
+#: ui/prefs/general.py:189
 msgid ""
-"Remember last file position. When enabled, the player saves the current file and "
-"playback time on exit, then restores that position next time. When disabled, the "
-"player starts fresh each launch."
+"Remember last file position. When enabled, the player saves the current file "
+"and playback time on exit, then restores that position next time. When "
+"disabled, the player starts fresh each launch."
 msgstr ""
 "تذكر موضع الملف الأخير. عند التمكين، يحفظ المشغل الملف الحالي ووقت التشغيل عند "
-"الخروج، ثم يستعيد ذلك الموضع في المرة القادمة. عند التعطيل، يبدأ المشغل من جديد "
-"في كل مرة."
+"الخروج، ثم يستعيد ذلك الموضع في المرة القادمة. عند التعطيل، يبدأ المشغل من "
+"جديد في كل مرة."
 
+#: app_actions/favorite_actions.py:122
+#, python-brace-format
 msgid "Remove favorite '{name}' ({kind})?"
 msgstr "إزالة المفضلة '{name}' ({kind})؟"
 
+#: ui/favorite_dlg.py:43
 msgid "Remove..."
 msgstr "إزالة..."
 
+#: app_actions/file_actions.py:650
 msgid "Rename File"
 msgstr "إعادة تسمية الملف"
 
+#: app_actions/file_actions.py:659
 msgid "Rename failed."
 msgstr "فشلت إعادة التسمية."
 
+#: app_actions/file_actions.py:642
 msgid "Rename is available only for local files."
 msgstr "إعادة التسمية متاحة فقط للملفات المحلية."
 
+#: ui/mainwin/menu.py:198
 msgid "Rename..."
 msgstr "إعادة تسمية..."
 
+#: app_actions/file_actions.py:657
 msgid "Renamed."
 msgstr "تمت إعادة التسمية."
 
+#: ui/mainwin/menu.py:340
 msgid "Repeat File"
 msgstr "تكرار الملف"
 
+#: app_actions/playback_actions.py:106
 msgid "Repeat off"
 msgstr "إيقاف التكرار"
 
+#: app_actions/playback_actions.py:104
 msgid "Repeat on"
 msgstr "تشغيل التكرار"
 
+#: ui/mainwin/menu.py:309
 msgid "Reset Speed"
 msgstr "إعادة تعيين السرعة"
 
+#: ui/shortcut_settings.py:380
 msgid "Reset all shortcuts to defaults?"
 msgstr "إعادة تعيين جميع الاختصارات إلى الافتراضية؟"
 
+#: ui/prefs/backup.py:240
 msgid "Reset error"
 msgstr "خطأ في إعادة التعيين"
 
+#: ui/prefs/backup.py:21 ui/prefs/backup.py:227 ui/prefs/backup.py:247
 msgid "Reset settings"
 msgstr "إعادة تعيين الإعدادات"
 
+#: ui/prefs/backup.py:71
 msgid "Reset settings restores all preferences to default values."
 msgstr "إعادة تعيين الإعدادات يستعيد جميع التفضيلات إلى قيمها الافتراضية."
 
+#: ui/shortcut_settings.py:210
 msgid "Reset to Defaults"
 msgstr "إعادة تعيين إلى الافتراضيات"
 
+#: ui/mainwin/state.py:222
 msgid "Resume"
 msgstr "استئناف"
 
+#: ui/main_frame.py:47 ui/mainwin/menu.py:368
 msgid "Rewind"
 msgstr "إرجاع"
 
+#: config/shortcut_utils.py:34
 msgid "Right"
 msgstr "يمين"
 
+#: ui/audio_settings.py:54
 msgid "Save current position for each file"
 msgstr "حفظ الموضع الحالي لكل ملف"
 
+#: ui/audio_settings.py:178
 msgid ""
 "Save current position for each file. When enabled, the app stores the current "
 "position of files and restores that position when navigating between files."
@@ -1595,99 +2158,130 @@ msgstr ""
 "حفظ الموضع الحالي لكل ملف. عند التمكين، يخزن التطبيق الموضع الحالي للملفات "
 "ويستعيده عند التنقل بين الملفات."
 
+#: ui/prefs/general.py:40
 msgid "Save settings on close"
 msgstr "حفظ الإعدادات عند الإغلاق"
 
+#: ui/prefs/general.py:225
 msgid ""
-"Save settings on close. When enabled, current settings are written when the app "
-"closes. When disabled, closing the app does not save session changes such as "
-"volume, speed, or other setting updates."
+"Save settings on close. When enabled, current settings are written when the "
+"app closes. When disabled, closing the app does not save session changes such "
+"as volume, speed, or other setting updates."
 msgstr ""
 "حفظ الإعدادات عند الإغلاق. عند التمكين، يتم حفظ الإعدادات الحالية عند إغلاق "
 "التطبيق. عند التعطيل، لا يحفظ إغلاق التطبيق تغييرات الجلسة مثل مستوى الصوت، "
 "السرعة، أو تحديثات الإعدادات الأخرى."
 
+#: youtube/ui_utils.py:44
 msgid "Search YouTube"
 msgstr "بحث YouTube"
 
+#: ui/mainwin/menu.py:138
 msgid "Search YouTube..."
 msgstr "بحث YouTube..."
 
+#: ui/prefs/youtube.py:51
 msgid "Search language code"
 msgstr "كود اللغة في البحث"
 
+#: ui/prefs/youtube.py:54
 msgid "Search region code"
 msgstr "رمز المنطقة في البحث"
 
+#: youtube/ui_utils.py:176
 msgid "Search results"
 msgstr "نتائج البحث"
 
+#: youtube/flow.py:159
+#, python-brace-format
 msgid "Search results: {query}"
 msgstr "نتائج البحث: {query}"
 
+#: youtube/flow.py:296
 msgid "Searching YouTube"
 msgstr "جاري البحث في YouTube"
 
+#: youtube/flow.py:272
 msgid "Searching videos..."
 msgstr "جاري البحث عن فيديوهات..."
 
+#: ui/shortcut_settings.py:202
 msgid "Secondary Shortcut"
 msgstr "اختصار ثانوي"
 
+#: ui/dialogs.py:53
 msgid "Seconds"
 msgstr "ثوانٍ"
 
+#: youtube/ui_utils.py:130
 msgid "Select download folder"
 msgstr "اختيار مجلد التنزيل"
 
+#: ui/dialogs.py:195
 msgid "Select file to jump to."
 msgstr "اختر الملف للانتقال إليه."
 
+#: ui/sound_cards_dialog.py:12
 msgid "Select sound card"
 msgstr "اختيار بطاقة الصوت"
 
+#: app_actions/playback_actions.py:346
 msgid "Selection cleared"
 msgstr "تم مسح التحديد"
 
+#: ui/mainwin/menu.py:353
 msgid "Set A (loop start)"
 msgstr "تعيين A (بداية التكرار)"
 
+#: ui/mainwin/menu.py:357
 msgid "Set B (loop end)"
 msgstr "تعيين B (نهاية التكرار)"
 
+#: ui/shortcut_settings.py:72
 msgid "Set Global Shortcut"
 msgstr "تعيين اختصار عام"
 
+#: ui/shortcut_settings.py:14
 msgid "Set Shortcut"
 msgstr "تعيين اختصار"
 
+#: app_actions/device_actions.py:32
 msgid "Set failed."
 msgstr "فشل التعيين."
 
+#: app_actions/device_actions.py:30
 msgid "Set."
 msgstr "تم التعيين."
 
+#: ui/prefs/dialog.py:179
 msgid ""
 "Settings categories tree. Use up and down arrows to choose a category like "
 "General or Audio."
 msgstr ""
-"شجرة فئات الإعدادات. استخدم السهمين للأعلى وللأسفل لاختيار فئة مثل عام أو الصوت."
+"شجرة فئات الإعدادات. استخدم السهمين للأعلى وللأسفل لاختيار فئة مثل عام أو "
+"الصوت."
 
+#: ui/prefs/backup.py:110
 msgid "Settings exported successfully."
 msgstr "تم تصدير الإعدادات بنجاح."
 
+#: ui/prefs/backup.py:146
 msgid "Settings imported successfully."
 msgstr "تم استيراد الإعدادات بنجاح."
 
+#: ui/prefs/backup.py:246
 msgid "Settings were reset to defaults."
 msgstr "تمت إعادة تعيين الإعدادات إلى الافتراضية."
 
+#: ui/shortcut_settings.py:315 ui/shortcut_settings.py:339
 msgid "Shortcut Conflict"
 msgstr "تعارض في الاختصارات"
 
+#: ui/silence_removal.py:106
 msgid "Show advanced settings"
 msgstr "إظهار الإعدادات المتقدمة"
 
+#: ui/silence_removal.py:321
 msgid ""
 "Show advanced settings. When enabled, extra silenceremove parameters are "
 "displayed. When disabled, only minimum duration and threshold are used."
@@ -1695,28 +2289,35 @@ msgstr ""
 "إظهار الإعدادات المتقدمة. عند التمكين، يتم عرض معلمات إضافية لإزالة الصمت. عند "
 "التعطيل، يتم استخدام الحد الأدنى للمدة والعتبة فقط."
 
+#: ui/mainwin/menu.py:336
 msgid "Shuffle"
 msgstr "تبديل عشوائي"
 
+#: app_actions/playback_actions.py:84
 msgid "Shuffle disabled for YouTube."
 msgstr "التبديل العشوائي معطل لـ YouTube."
 
+#: app_actions/playback_actions.py:83
 msgid "Shuffle is disabled for YouTube streams."
 msgstr "التبديل العشوائي معطل لبث YouTube."
 
+#: app_actions/playback_actions.py:93
 msgid "Shuffle off"
 msgstr "إيقاف التبديل العشوائي"
 
+#: app_actions/playback_actions.py:91
 msgid "Shuffle on"
 msgstr "تشغيل التبديل العشوائي"
 
+#: ui/silence_removal.py:17
 msgid ""
-"Silence level threshold. Audio below this level is treated as silence. Enter only "
-"a number, for example -30."
+"Silence level threshold. Audio below this level is treated as silence. Enter "
+"only a number, for example -30."
 msgstr ""
-"عتبة مستوى الصمت. يتم التعامل مع الصوت الأقل من هذا المستوى كصمت. أدخل رقمًا فقط، "
-"على سبيل المثال -30."
+"عتبة مستوى الصمت. يتم التعامل مع الصوت الأقل من هذا المستوى كصمت. أدخل رقمًا "
+"فقط، على سبيل المثال -30."
 
+#: ui/silence_removal.py:315
 msgid ""
 "Silence level threshold. Audio quieter than this level is treated as silence. "
 "Enter only the number, for example -20, -30, or -40."
@@ -1724,21 +2325,27 @@ msgstr ""
 "عتبة مستوى الصمت. يتم التعامل مع الصوت الأهدأ من هذا المستوى كصمت. أدخل الرقم "
 "فقط، على سبيل المثال -20 أو -30 أو -40."
 
+#: ui/prefs/dialog.py:53
 msgid "Silence removal"
 msgstr "إزالة الصمت"
 
+#: ui/silence_removal.py:75
 msgid "Silence removal (FFmpeg silenceremove)"
 msgstr "إزالة الصمت (FFmpeg silenceremove)"
 
+#: app_actions/playback_actions.py:121
 msgid "Silence removal off"
 msgstr "إيقاف إزالة الصمت"
 
+#: app_actions/playback_actions.py:119
 msgid "Silence removal on"
 msgstr "تشغيل إزالة الصمت"
 
+#: ui/silence_removal.py:363
 msgid "Silence removal setting. Enter a value and press OK to save."
 msgstr "إعداد إزالة الصمت. أدخل قيمة واضغط موافق للحفظ."
 
+#: ui/silence_removal.py:284
 msgid ""
 "Silence removal settings. Minimum silence duration and threshold are always "
 "shown. Enable advanced settings to configure all remaining filter options."
@@ -1746,125 +2353,165 @@ msgstr ""
 "إعدادات إزالة الصمت. يتم دائمًا عرض الحد الأدنى لمدة الصمت والعتبة. قم بتمكين "
 "الإعدادات المتقدمة لتكوين خيارات المرشح المتبقية."
 
+#: ui/silence_removal.py:95
 msgid "Silence threshold"
 msgstr "عتبة الصمت"
 
+#: ui/silence_removal.py:211
 msgid "Silence threshold must be a valid number."
 msgstr "يجب أن تكون عتبة الصمت رقمًا صالحًا."
 
+#: ui/silence_removal.py:34
 msgid "Silent parts to trim after audio starts"
 msgstr "أجزاء الصمت المطلوب قصها بعد بدء الصوت"
 
+#: ui/silence_removal.py:339
 msgid ""
-"Silent parts to trim after audio starts. Use -1 to trim all matching silent parts."
+"Silent parts to trim after audio starts. Use -1 to trim all matching silent "
+"parts."
 msgstr ""
-"أجزاء الصمت المطلوب قصها بعد بدء الصوت. استخدم -1 لقص جميع أجزاء الصمت المطابقة."
+"أجزاء الصمت المطلوب قصها بعد بدء الصوت. استخدم -1 لقص جميع أجزاء الصمت "
+"المطابقة."
 
+#: ui/silence_removal.py:50
 msgid "Smoothing window used by silence detection (default: 0.02)."
 msgstr "نافذة التمهيد المستخدمة في اكتشاف الصمت (الافتراضي: 0.02)."
 
+#: app_actions/marked_file_actions.py:155
 msgid "Some files were deleted."
 msgstr "تم حذف بعض الملفات."
 
+#: ui/sound_cards_dialog.py:9
 msgid "Sound Cards"
 msgstr "بطاقات الصوت"
 
+#: ui/mainwin/menu.py:425
 msgid "Sound Cards..."
 msgstr "بطاقات الصوت..."
 
+#: app_actions/device_actions.py:30
 msgid "Sound card set."
 msgstr "تم تعيين بطاقة الصوت."
 
+#: config/shortcut_utils.py:29
 msgid "Space"
 msgstr "Space"
 
+#: ui/prefs/general.py:30
 msgid "Speak file name when navigating (Previous/Next)"
 msgstr "نطق اسم الملف عند التنقل (السابق/التالي)"
 
+#: ui/prefs/general.py:197
 msgid ""
-"Speak file name when navigating. When enabled, the player will announce the name "
-"of the new file when you move to the previous or next track. This is helpful for "
-"identifying files without manually requesting file information."
+"Speak file name when navigating. When enabled, the player will announce the "
+"name of the new file when you move to the previous or next track. This is "
+"helpful for identifying files without manually requesting file information."
 msgstr ""
-"نطق اسم الملف عند التنقل. عند التمكين، سيقوم المشغل بالإعلان عن اسم الملف الجديد "
-"عند الانتقال إلى المقطع السابق أو التالي. هذا مفيد للتعرف على الملفات دون طلب "
-"معلومات الملف يدويًا."
+"نطق اسم الملف عند التنقل. عند التمكين، سيقوم المشغل بالإعلان عن اسم الملف "
+"الجديد عند الانتقال إلى المقطع السابق أو التالي. هذا مفيد للتعرف على الملفات "
+"دون طلب معلومات الملف يدويًا."
 
+#: app_actions/file_actions.py:415
 msgid "Speaker test file not found."
 msgstr "لم يتم العثور على ملف اختبار السماعات."
 
+#: ui/mainwin/menu.py:311
 msgid "Speed"
 msgstr "السرعة"
 
+#: ui/audio_settings.py:27
 msgid "Speed step"
 msgstr "خطوة السرعة"
 
+#: ui/audio_settings.py:94
 msgid "Speed step must be a positive number."
 msgstr "يجب أن تكون خطوة السرعة رقمًا موجبًا."
 
+#: ui/audio_settings.py:164
 msgid ""
 "Speed step used when increasing or decreasing playback speed. Enter a positive "
 "decimal value like 0.025 or 0.1."
 msgstr ""
-"خطوة السرعة المستخدمة عند زيادة أو تقليل سرعة التشغيل. أدخل قيمة عشرية موجبة مثل "
-"0.025 أو 0.1."
+"خطوة السرعة المستخدمة عند زيادة أو تقليل سرعة التشغيل. أدخل قيمة عشرية موجبة "
+"مثل 0.025 أو 0.1."
 
+#: ui/mainwin/menu.py:531
 msgid "Start recording"
 msgstr "بدء التسجيل"
 
+#: app_actions/playback_actions.py:314
 msgid "Start selection not set."
 msgstr "لم يتم تعيين اختيار البداية."
 
+#: app_actions/playback_actions.py:303
+#, python-brace-format
 msgid "Start selection: {time}"
 msgstr "اختيار البداية: {time}"
 
+#: app_actions/playback_actions.py:304
+#, python-brace-format
 msgid "Start {time}"
 msgstr "البداية {time}"
 
+#: app_actions/marked_file_actions.py:201
 msgid "Starting..."
 msgstr "جاري البدء..."
 
+#: ui/prefs/recording.py:13
 msgid "Stereo"
 msgstr "ستيريو (ثنائي)"
 
+#: ui/mainwin/menu.py:539
 msgid "Stop"
 msgstr "إيقاف"
 
+#: app_actions/bookmark_actions.py:42 youtube/startup.py:60
 msgid "Success"
 msgstr "نجاح"
 
+#: ui/prefs/general.py:21
 msgid "System default"
 msgstr "افتراضي النظام"
 
+#: config/shortcut_utils.py:30
 msgid "Tab"
 msgstr "Tab"
 
+#: ui/mainwin/menu.py:493
 msgid "Telegram"
 msgstr "Telegram"
 
+#: app_actions/file_actions.py:420
 msgid "Test failed."
 msgstr "فشل الاختبار."
 
+#: app_actions/file_actions.py:415
 msgid "Test file missing."
 msgstr "ملف الاختبار مفقود."
 
+#: ui/mainwin/menu.py:170
 msgid "Test speakers"
 msgstr "اختبار السماعات"
 
+#: app_actions/file_actions.py:418
 msgid "Testing speakers."
 msgstr "جاري اختبار السماعات."
 
+#: ui/shortcut_settings.py:314 ui/shortcut_settings.py:338
 msgid "That shortcut is already assigned to another action."
 msgstr "هذا الاختصار معين بالفعل لإجراء آخر."
 
+#: ui/yt_dialogs.py:6
 msgid ""
-"The app detected that some components for YouTube are missing. Would you like to "
-"download the required libraries? If you do not wish to use YouTube search "
+"The app detected that some components for YouTube are missing. Would you like "
+"to download the required libraries? If you do not wish to use YouTube search "
 "features, you can ignore this message."
 msgstr ""
-"اكتشف التطبيق أن بعض مكونات YouTube مفقودة. هل ترغب في تنزيل المكتبات المطلوبة؟ "
-"إذا كنت لا ترغب في استخدام ميزات البحث في YouTube، يمكنك تجاهل هذه الرسالة."
+"اكتشف التطبيق أن بعض مكونات YouTube مفقودة. هل ترغب في تنزيل المكتبات "
+"المطلوبة؟ إذا كنت لا ترغب في استخدام ميزات البحث في YouTube، يمكنك تجاهل هذه "
+"الرسالة."
 
+#: youtube/ui_utils.py:63
 msgid ""
 "The app detected that this YouTube link contains a playlist and a video ID. "
 "Choose how you want to proceed."
@@ -1872,33 +2519,48 @@ msgstr ""
 "اكتشف التطبيق أن رابط YouTube هذا يحتوي على قائمة تشغيل ومعرف فيديو. اختر كيف "
 "تريد المتابعة."
 
+#: app_actions/favorite_actions.py:181
 msgid "The link must be a valid YouTube link for this type."
 msgstr "يجب أن يكون الرابط رابط YouTube صالحًا لهذا النوع."
 
+#: app_actions/favorite_actions.py:179 app_actions/file_actions.py:254
+#: youtube/flow.py:63
 msgid "The link must start with http or https."
 msgstr "يجب أن يبدأ الرابط بـ http أو https."
 
+#: ui/dialogs.py:173
 msgid "The selected time exceeds the file duration."
 msgstr "الوقت المحدد يتجاوز مدة الملف."
 
+#: youtube/flow.py:66 youtube/flow.py:128
 msgid "This is not a valid YouTube link."
 msgstr "هذا ليس رابط YouTube صالحًا."
 
+#: youtube/flow.py:84
 msgid "This link does not include a YouTube playlist."
 msgstr "هذا الرابط لا يتضمن قائمة تشغيل YouTube."
 
+#: youtube/flow.py:75
 msgid "This link does not include a YouTube video."
 msgstr "هذا الرابط لا يتضمن فيديو YouTube."
 
+#: app_actions/playback_actions.py:261
 msgid "Time is not available for the current file."
 msgstr "الوقت غير متوفر للملف الحالي."
 
+#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:245
+#: app_actions/playback_actions.py:295 app_actions/playback_actions.py:318
+#: app_actions/playback_actions.py:325 app_actions/playback_actions.py:352
 msgid "Time not available"
 msgstr "الوقت غير متوفر"
 
+#: playlist/info.py:223
+#, python-brace-format
 msgid "Total duration: {value}"
 msgstr "المدة الإجمالية: {value}"
 
+#: update/actions.py:415
+#, python-brace-format
 msgid ""
 "Total size: {size}\n"
 "Downloaded: {got}\n"
@@ -1908,6 +2570,8 @@ msgstr ""
 "تم تنزيل: {got}\n"
 "النسبة المئوية: {pct:.2f}%"
 
+#: youtube/ui_utils.py:147
+#, python-brace-format
 msgid ""
 "Total size: {total}\n"
 "Downloaded: {got}\n"
@@ -1917,207 +2581,279 @@ msgstr ""
 "تم تنزيل: {got}\n"
 "النسبة المئوية: {pct:.2f}%"
 
+#: playlist/info.py:222
+#, python-brace-format
 msgid "Total size: {value}"
 msgstr "الحجم الإجمالي: {value}"
 
+#: app_actions/playback_actions.py:208
 msgid "Total time: "
 msgstr "الوقت الإجمالي: "
 
+#: ui/favorite_dlg.py:38 ui/favorite_dlg.py:127
 msgid "Type"
 msgstr "النوع"
 
+#: app_actions/file_actions.py:541
 msgid "Unable to copy current file to clipboard."
 msgstr "تعذر نسخ الملف الحالي إلى الحافظة."
 
+#: app_actions/marked_file_actions.py:78
 msgid "Unable to copy marked files to clipboard."
 msgstr "تعذر نسخ التحديد إلى الحافظة."
 
+#: app_actions/file_actions.py:685
 msgid "Unable to copy to clipboard."
 msgstr "تعذر النسخ إلى الحافظة."
 
+#: app_actions/file_actions.py:420
 msgid "Unable to play speaker test."
 msgstr "تعذر تشغيل اختبار السماعات."
 
+#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:215
+#: app_actions/playback_actions.py:245 app_actions/playback_actions.py:295
+#: app_actions/playback_actions.py:318 app_actions/playback_actions.py:325
+#: app_actions/playback_actions.py:352 playlist/info.py:382
 msgid "Unavailable"
 msgstr "غير متوفر"
 
+#: youtube/ui_utils.py:161
 msgid "Unknown"
 msgstr "غير معروف"
 
+#: app_actions/recording_actions.py:70
 msgid "Unknown error."
 msgstr "خطأ غير معروف."
 
+#: app_actions/marked_file_actions.py:32
 msgid "Unmarked."
 msgstr "ملغى التحديد."
 
+#: ui/prefs/general.py:274
 msgid "Unregister"
 msgstr "إلغاء التسجيل"
 
+#: ui/prefs/general.py:281
 msgid "Unregister Error"
 msgstr "خطأ في إلغاء التسجيل"
 
+#: ui/prefs/general.py:87
 msgid "Unregister file extensions"
 msgstr "إلغاء تسجيل امتدادات الملفات"
 
+#: ui/prefs/general.py:247
 msgid ""
-"Unregister file extensions removes registry entries created by this app for media "
-"associations. This does not delete your media files. Windows may still keep "
-"separate user default selections managed by system settings."
+"Unregister file extensions removes registry entries created by this app for "
+"media associations. This does not delete your media files. Windows may still "
+"keep separate user default selections managed by system settings."
 msgstr ""
-"إلغاء تسجيل امتدادات الملفات يزيل مدخلات السجل التي أنشأها هذا التطبيق لارتباطات "
-"الوسائط. هذا لا يحذف ملفات الوسائط الخاصة بك. قد لا يزال ويندوز يحتفظ باختيارات "
-"افتراضية منفصلة للمستخدم تديرها إعدادات النظام."
+"إلغاء تسجيل امتدادات الملفات يزيل مدخلات السجل التي أنشأها هذا التطبيق "
+"لارتباطات الوسائط. هذا لا يحذف ملفات الوسائط الخاصة بك. قد لا يزال ويندوز "
+"يحتفظ باختيارات افتراضية منفصلة للمستخدم تديرها إعدادات النظام."
 
+#: app_actions/favorite_actions.py:155
 msgid "Unsupported favorite type."
 msgstr "نوع مفضلة غير مدعوم."
 
+#: config/shortcut_utils.py:35
 msgid "Up"
 msgstr "أعلى"
 
+#: ui/update_dialogs.py:28
 msgid "Update"
 msgstr "تحديث"
 
+#: ui/mainwin/menu.py:508
 msgid "Update YouTube components"
 msgstr "تحديث مكونات YouTube"
 
+#: update/actions.py:56
 msgid "Update cancelled."
 msgstr "تم إلغاء التحديث."
 
+#: ui/mainwin/menu.py:510
 msgid "Updates"
 msgstr "التحديثات"
 
+#: update/actions.py:51
 msgid "Updating yt-dlp"
 msgstr "جاري تحديث yt-dlp"
 
+#: update/actions.py:39
 msgid "Updating yt-dlp..."
 msgstr "جاري تحديث yt-dlp..."
 
+#: ui/mainwin/menu.py:480
 msgid "User Guide"
 msgstr "دليل المستخدم"
 
+#: ui/prefs/general.py:51
 msgid "Verbosity"
 msgstr "مستوى التفصيل"
 
+#: ui/prefs/general.py:211
 msgid ""
-"Verbosity controls speech detail. Beginner gives clearer full messages. Advanced "
-"gives shorter, compact announcements. Possible values: Beginner or Advanced."
+"Verbosity controls speech detail. Beginner gives clearer full messages. "
+"Advanced gives shorter, compact announcements. Possible values: Beginner or "
+"Advanced."
 msgstr ""
-"مستوى التفصيل يتحكم في تفاصيل النطق. يوفر وضع \"مبتدئ\" رسائل كاملة أكثر وضوحًا. "
-"يوفر وضع \"متقدم\" إعلانات أقصر وموجزة. القيم الممكنة: مبتدئ أو متقدم."
+"مستوى التفصيل يتحكم في تفاصيل النطق. يوفر وضع \"مبتدئ\" رسائل كاملة أكثر "
+"وضوحًا. يوفر وضع \"متقدم\" إعلانات أقصر وموجزة. القيم الممكنة: مبتدئ أو متقدم."
 
+#: ui/update_dialogs.py:26
+#, python-brace-format
 msgid "Version: {version}"
 msgstr "الإصدار: {version}"
 
+#: ui/favorite_dlg.py:10
 msgid "Video"
 msgstr "فيديو"
 
+#: youtube/video.py:34
 msgid "Video description"
 msgstr "وصف الفيديو"
 
+#: ui/mainwin/menu.py:459
 msgid "Video description..."
 msgstr "وصف الفيديو..."
 
+#: app_actions/favorite_actions.py:183
 msgid "Video favorites require a YouTube video link."
 msgstr "تتطلب مفضلات الفيديو رابط فيديو YouTube."
 
+#: ui/mainwin/menu.py:106
 msgid "Video options"
 msgstr "خيارات الفيديو"
 
+#: ui/prefs/youtube.py:16
 msgid "Video quality"
 msgstr "جودة الفيديو"
 
+#: ui/prefs/youtube.py:149
 msgid ""
 "Video quality used when audio-only playback is disabled. Low prefers smaller "
 "streams, Medium is balanced, Best prefers highest quality."
 msgstr ""
-"جودة الفيديو المستخدمة عند تعطيل تشغيل الصوت فقط. يفضل وضع \"منخفض\" البث الأصغر، "
-"\"متوسط\" هو وضع متوازن، و\"الأفضل\" يفضل أعلى جودة."
+"جودة الفيديو المستخدمة عند تعطيل تشغيل الصوت فقط. يفضل وضع \"منخفض\" البث "
+"الأصغر، \"متوسط\" هو وضع متوازن، و\"الأفضل\" يفضل أعلى جودة."
 
+#: ui/prefs/youtube.py:23
 msgid "Video+playlist link behavior"
 msgstr "سلوك رابط الفيديو+قائمة التشغيل"
 
+#: ui/yt_dialogs.py:159 youtube/results.py:21 youtube/ui_utils.py:179
 msgid "Videos"
 msgstr "فيديوهات"
 
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:497
 msgid "Visit website"
 msgstr "زيارة الموقع"
 
+#: app_actions/playback_actions.py:196
+#, python-brace-format
 msgid "Volume is {percent}%"
 msgstr "مستوى الصوت {percent}%"
 
+#: ui/audio_settings.py:32
 msgid "Volume step"
 msgstr "خطوة مستوى الصوت"
 
+#: ui/audio_settings.py:184
 msgid ""
-"Volume step used when pressing volume up or down. Allowed range is from 1 to 20."
+"Volume step used when pressing volume up or down. Allowed range is from 1 to "
+"20."
 msgstr ""
-"خطوة مستوى الصوت المستخدمة عند الضغط على رفع أو خفض الصوت. النطاق المسموح به هو "
-"من 1 إلى 20."
+"خطوة مستوى الصوت المستخدمة عند الضغط على رفع أو خفض الصوت. النطاق المسموح به "
+"هو من 1 إلى 20."
 
+#: app_actions/playback_actions.py:176 app_actions/playback_actions.py:182
+#: app_actions/playback_actions.py:188
+#, python-brace-format
 msgid "Volume {volume} percent"
 msgstr "مستوى الصوت {volume} بالمائة"
 
+#: app.py:227
 msgid "Welcome to Simple Audio Player"
 msgstr "مرحباً بك في Simple Audio Player"
 
+#: ui/audio_settings.py:155
 msgid ""
-"What happens after a file ends. Advance to the next file moves to the next item "
-"in the playlist. Loop the file repeats the same file automatically. Do nothing "
-"keeps playback stopped at the end. Possible values: Advance to the next file, "
-"Loop the file, or Do nothing."
+"What happens after a file ends. Advance to the next file moves to the next "
+"item in the playlist. Loop the file repeats the same file automatically. Do "
+"nothing keeps playback stopped at the end. Possible values: Advance to the "
+"next file, Loop the file, or Do nothing."
 msgstr ""
-"ماذا يحدث بعد انتهاء الملف. \"التقدم إلى الملف التالي\" ينتقل إلى العنصر التالي "
-"في قائمة التشغيل. \"تكرار الملف\" يكرر نفس الملف تلقائيًا. \"لا تفعل شيئًا\" يبقي "
-"التشغيل متوقفًا عند النهاية. القيم الممكنة: التقدم إلى الملف التالي، تكرار الملف، "
-"أو لا تفعل شيئًا."
+"ماذا يحدث بعد انتهاء الملف. \"التقدم إلى الملف التالي\" ينتقل إلى العنصر "
+"التالي في قائمة التشغيل. \"تكرار الملف\" يكرر نفس الملف تلقائيًا. \"لا تفعل "
+"شيئًا\" يبقي التشغيل متوقفًا عند النهاية. القيم الممكنة: التقدم إلى الملف "
+"التالي، تكرار الملف، أو لا تفعل شيئًا."
 
+#: ui/audio_settings.py:37
 msgid "What happens after a file ends?"
 msgstr "ماذا يحدث بعد انتهاء الملف؟"
 
+#: ui/prefs/general.py:71
 msgid "What would you like to open with files?"
 msgstr "ماذا تود أن تفتح مع الملفات؟"
 
+#: ui/mainwin/menu.py:484 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr "ما الجديد"
 
+#: app_actions/marked_file_actions.py:224
 msgid "Working..."
 msgstr "جاري العمل..."
 
+#: ui/audio_settings.py:48
 msgid "Wrap to top for multiple files"
 msgstr "الالتفاف إلى البداية للملفات المتعددة"
 
+#: ui/audio_settings.py:170
 msgid ""
-"Wrap to top for multiple files. When enabled and the playlist has more than one "
-"file, moving next from the last file goes to the first file, and moving previous "
-"from the first file goes to the last file. Advance-at-end uses the same wrapping "
-"behavior."
+"Wrap to top for multiple files. When enabled and the playlist has more than "
+"one file, moving next from the last file goes to the first file, and moving "
+"previous from the first file goes to the last file. Advance-at-end uses the "
+"same wrapping behavior."
 msgstr ""
-"الالتفاف إلى البداية للملفات المتعددة. عند التمكين واحتواء قائمة التشغيل على أكثر "
-"من ملف، فإن الانتقال للتالي من الملف الأخير يذهب إلى الملف الأول، والانتقال "
-"للسابق من الملف الأول يذهب إلى الملف الأخير. يستخدم خيار \"التقدم عند النهاية\" "
-"نفس سلوك الالتفاف."
+"الالتفاف إلى البداية للملفات المتعددة. عند التمكين واحتواء قائمة التشغيل على "
+"أكثر من ملف، فإن الانتقال للتالي من الملف الأخير يذهب إلى الملف الأول، "
+"والانتقال للسابق من الملف الأول يذهب إلى الملف الأخير. يستخدم خيار \"التقدم "
+"عند النهاية\" نفس سلوك الالتفاف."
 
+#: ui/yt_dialogs.py:22
 msgid "Yes"
 msgstr "نعم"
 
+#: update/actions.py:103
 msgid "You are using the latest version."
 msgstr "أنت تستخدم أحدث إصدار."
 
+#: ui/prefs/dialog.py:73 youtube/flow.py:304 youtube/flow.py:325
+#: youtube/flow.py:425 youtube/flow.py:677
 msgid "YouTube"
 msgstr "YouTube"
 
+#: ui/yt_dialogs.py:16
 msgid "YouTube Components"
 msgstr "مكونات YouTube"
 
+#: youtube/startup.py:44
 msgid "YouTube components are already installed."
 msgstr "مكونات YouTube مثبتة بالفعل."
 
+#: youtube/flow.py:676 youtube/flow.py:684
 msgid "YouTube components are missing."
 msgstr "مكونات YouTube مفقودة."
 
+#: youtube/flow.py:685
+msgid "YouTube components need repair."
+msgstr "مكونات YouTube بحاجة إلى إصلاح."
+
+#: youtube/startup.py:59
 msgid "YouTube components were downloaded successfully."
 msgstr "تم تنزيل مكونات YouTube بنجاح."
 
+#: youtube/resolver.py:361
 msgid ""
 "YouTube returned HTTP 429 (Too Many Requests). Your IP may be temporarily rate-"
 "limited."
@@ -2125,47 +2861,64 @@ msgstr ""
 "أرجع YouTube خطأ HTTP 429 (طلبات كثيرة جدًا). قد يكون عنوان IP الخاص بك مقيدًا "
 "مؤقتًا."
 
+#: ui/prefs/youtube.py:191
 msgid ""
 "YouTube settings page. Configure playback mode, quality, mixed-link behavior, "
 "search language/region, yt-dlp update channel, and startup update checks."
 msgstr ""
-"صفحة إعدادات اليوتيوب. قم بتكوين وضع التشغيل والجودة وسلوك الارتباط المختلط ولغة/"
-"منطقة البحث وقناة تحديث yt-dlp وعمليات التحقق من تحديث بدء التشغيل."
+"صفحة إعدادات اليوتيوب. قم بتكوين وضع التشغيل والجودة وسلوك الارتباط المختلط "
+"ولغة/منطقة البحث وقناة تحديث yt-dlp وعمليات التحقق من تحديث بدء التشغيل."
 
+#: app_actions/recording_actions.py:32
 msgid "paused"
 msgstr "متوقف مؤقتاً"
 
+#: update/actions.py:70 update/actions.py:71 update/actions.py:76
+#: update/actions.py:233 update/actions.py:234
 msgid "unknown"
 msgstr "غير معروف"
 
+#: update/actions.py:75
+#, python-brace-format
 msgid "yt-dlp is already up to date ({ver}) on '{ch}' channel."
 msgstr "yt-dlp محدث بالفعل ({ver}) على قناة '{ch}'."
 
+#: youtube/download.py:18 youtube/resolver.py:48 youtube/resolver.py:77
+#: youtube/resolver.py:119 youtube/resolver.py:133
 msgid "yt-dlp is not available."
 msgstr "yt-dlp غير متوفر."
 
+#: youtube/resolver.py:277
 msgid "yt-dlp returned invalid JSON data."
 msgstr "أرجع yt-dlp بيانات JSON غير صالحة."
 
+#: update/actions.py:60 update/actions.py:79 update/actions.py:248
 msgid "yt-dlp update"
 msgstr "تحديث yt-dlp"
 
+#: update/actions.py:56
 msgid "yt-dlp update cancelled."
 msgstr "تم إلغاء تحديث yt-dlp."
 
+#: ui/prefs/youtube.py:34
 msgid "yt-dlp update channel"
 msgstr "قناة تحديث yt-dlp"
 
+#: ui/prefs/youtube.py:161
 msgid ""
 "yt-dlp update channel. Stable is recommended. Nightly and Master can include "
 "newer but less-tested builds."
 msgstr ""
-"قناة تحديث yt-dlp. يوصى باستخدام Stable. قد تتضمن قنوات Nightly و Master بناءات "
-"أحدث ولكنها أقل اختبارًا."
+"قناة تحديث yt-dlp. يوصى باستخدام Stable. قد تتضمن قنوات Nightly و Master "
+"بناءات أحدث ولكنها أقل اختبارًا."
 
+#: update/actions.py:69
+#, python-brace-format
 msgid "yt-dlp updated from {old} to {new} on '{ch}' channel."
 msgstr "تم تحديث yt-dlp من {old} إلى {new} على قناة '{ch}'."
 
+#: youtube/resolver.py:390
+#, python-brace-format
 msgid ""
 "{base}\n"
 "Details: {details}"
@@ -2173,26 +2926,46 @@ msgstr ""
 "{base}\n"
 "التفاصيل: {details}"
 
+#: app_actions/marked_file_actions.py:58
+#, python-brace-format
 msgid "{count} files marked"
 msgstr "تم تحديد {count} من الملفات"
 
+#: app_actions/marked_file_actions.py:258
+#, python-brace-format
 msgid "{count} files processed successfully."
 msgstr "تمت معالجة {count} من الملفات بنجاح."
 
+#: ui/silence_removal.py:238
+#, python-brace-format
 msgid "{field} must be -1 or greater."
 msgstr "يجب أن يكون {field} بقيمة -1 أو أكبر."
 
+#: ui/silence_removal.py:246
+#, python-brace-format
 msgid "{field} must be a non-negative number."
 msgstr "يجب أن يكون {field} رقماً غير سالب."
 
+#: ui/silence_removal.py:228
+#, python-brace-format
 msgid "{field} must be an integer value."
 msgstr "يجب أن يكون {field} قيمة عددية صحيحة."
 
+#: ui/silence_removal.py:233
+#, python-brace-format
 msgid "{field} must be zero or greater."
 msgstr "يجب أن يكون {field} صفراً أو أكبر."
 
+#: app_actions/playback_actions.py:219 app_actions/playback_actions.py:252
+#, python-brace-format
 msgid "{percent} percent"
 msgstr "{percent} بالمائة"
 
+#: app_actions/playback_actions.py:225 app_actions/playback_actions.py:232
+#: app_actions/playback_actions.py:239
+#, python-brace-format
 msgid "{speed}x"
 msgstr "{speed} x"
+
+#~ msgid "Missing components."
+#~ msgstr "مكونات مفقودة."

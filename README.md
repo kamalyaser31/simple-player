@@ -132,4 +132,4 @@ Contributions are welcome. Please open an issue to align on design decisions bef
 
 ## License
 
-This project is licensed under the **GNU General Public License, version 2, or (at your option) any later version** (GPL-2.0-or-later). See [LICENSE](LICENSE) for the full license text.
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for the full license text.
