@@ -83,5 +83,5 @@ jobs:
           player/dist/SimpleAudioPlayer-v${{ steps.get_info.outputs.version }}.zip
         name: Update v${{ steps.get_info.outputs.version }}
         body: "Release v${{ steps.get_info.outputs.version }}"
-        draft: false
+        draft: true
         prerelease: false

@@ -1,4 +1,4 @@
-﻿.specify/
+.specify/
 .opencode/
 specs/
 .github/
@@ -25,3 +25,5 @@ Thumbs.db
 *.swp
 deno.exe
 yt-dlp.exe
+player/Updater.exe
+player/Updater.spec
