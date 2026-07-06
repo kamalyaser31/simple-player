@@ -16,7 +16,9 @@ class SoundCardDialog(wx.Dialog):
             style=wx.CB_READONLY,
         )
         if device_labels:
-            self._combo.SetSelection(max(0, min(selection_index, len(device_labels) - 1)))
+            self._combo.SetSelection(
+                max(0, min(selection_index, len(device_labels) - 1))
+            )
 
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(label, 0, wx.ALL, 8)

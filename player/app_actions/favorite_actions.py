@@ -65,7 +65,9 @@ def _add_item(parent, ctx):
         data = dlg.get_data()
         err = _validate(data)
         if err:
-            wx.MessageBox(err, _("Favorite videos"), wx.OK | wx.ICON_WARNING, parent=parent)
+            wx.MessageBox(
+                err, _("Favorite videos"), wx.OK | wx.ICON_WARNING, parent=parent
+            )
             dlg.Destroy()
             return ""
         try:
@@ -99,7 +101,9 @@ def _edit_item(parent, ctx, fav_id):
         data = dlg.get_data()
         err = _validate(data)
         if err:
-            wx.MessageBox(err, _("Favorite videos"), wx.OK | wx.ICON_WARNING, parent=parent)
+            wx.MessageBox(
+                err, _("Favorite videos"), wx.OK | wx.ICON_WARNING, parent=parent
+            )
             dlg.Destroy()
             return
         try:
@@ -184,5 +188,7 @@ def _validate(data):
     if kind == "playlist" and not bool(info.has_playlist):
         return _("Playlist favorites require a YouTube playlist link.")
     if kind == "combined" and not (bool(info.has_video) and bool(info.has_playlist)):
-        return _("Combined link favorites require a link containing both video and playlist.")
+        return _(
+            "Combined link favorites require a link containing both video and playlist."
+        )
     return ""

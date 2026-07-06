@@ -1,7 +1,6 @@
 import wx
 from gettext import gettext as _
 
-
 MISSING_MSG = _(
     "The app detected that some components for YouTube are missing. "
     "Would you like to download the required libraries? "

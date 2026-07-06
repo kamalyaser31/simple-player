@@ -25,7 +25,10 @@ class _BootstrapController:
             manager = ShortcutManager(ACTIONS)
             for action_id, shortcut in settings.get_shortcut_overrides().items():
                 manager.set(action_id, shortcut)
-            for action_id, shortcut in settings.get_secondary_shortcut_overrides().items():
+            for (
+                action_id,
+                shortcut,
+            ) in settings.get_secondary_shortcut_overrides().items():
                 manager.set(action_id, shortcut, slot="secondary")
             self._shortcuts = manager
         except Exception:
@@ -327,4 +330,3 @@ def _decode_paths_payload(payload):
 def _log_exc(message):
     print(f"[SimpleAudioPlayer] {message}")
     traceback.print_exc()
-

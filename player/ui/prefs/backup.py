@@ -19,9 +19,7 @@ class BackupRestorePanel(wx.Panel):
         self._export_marks_button = wx.Button(self, label=_("Export bookmarks"))
         self._import_marks_button = wx.Button(self, label=_("Import bookmarks"))
         self._reset_button = wx.Button(self, label=_("Reset settings"))
-        self._open_folder_button = wx.Button(
-            self, label=_("Open user settings folder")
-        )
+        self._open_folder_button = wx.Button(self, label=_("Open user settings folder"))
 
         self._export_button.Bind(wx.EVT_BUTTON, self._on_export)
         self._import_button.Bind(wx.EVT_BUTTON, self._on_import_clicked)
@@ -33,10 +31,16 @@ class BackupRestorePanel(wx.Panel):
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(self._export_button, 0, wx.ALL | wx.EXPAND, 8)
         sizer.Add(self._import_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
-        sizer.Add(self._export_marks_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
-        sizer.Add(self._import_marks_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(
+            self._export_marks_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
+        sizer.Add(
+            self._import_marks_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
         sizer.Add(self._reset_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
-        sizer.Add(self._open_folder_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(
+            self._open_folder_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
         self.SetSizer(sizer)
 
     def apply(self):
@@ -47,17 +51,13 @@ class BackupRestorePanel(wx.Panel):
         control = focused
         while control is not None:
             if control is self._export_button:
-                return _(
-                    "Export settings creates a copy of the current settings file."
-                )
+                return _("Export settings creates a copy of the current settings file.")
             if control is self._import_button:
                 return _(
                     "Import settings replaces current settings with a selected settings file."
                 )
             if control is self._export_marks_button:
-                return _(
-                    "Export bookmarks creates a copy of the bookmarks JSON file."
-                )
+                return _("Export bookmarks creates a copy of the bookmarks JSON file.")
             if control is self._import_marks_button:
                 return _(
                     "Import bookmarks replaces current bookmarks with a selected bookmarks file."
@@ -67,9 +67,7 @@ class BackupRestorePanel(wx.Panel):
                     "Open user settings folder opens the folder where this app stores its configuration."
                 )
             if control is self._reset_button:
-                return _(
-                    "Reset settings restores all preferences to default values."
-                )
+                return _("Reset settings restores all preferences to default values.")
             if control is self:
                 break
             control = control.GetParent()
@@ -129,7 +127,9 @@ class BackupRestorePanel(wx.Panel):
                 return
             src = dlg.GetPath()
         try:
-            if os.path.normcase(os.path.abspath(src)) != os.path.normcase(os.path.abspath(dest)):
+            if os.path.normcase(os.path.abspath(src)) != os.path.normcase(
+                os.path.abspath(dest)
+            ):
                 shutil.copy2(src, dest)
             self._settings.load()
             if self._on_import is not None:
@@ -169,7 +169,12 @@ class BackupRestorePanel(wx.Panel):
                 shutil.copy2(src, dest)
             else:
                 with open(dest, "w", encoding="utf-8") as handle:
-                    json.dump({"version": 1, "files": {}}, handle, ensure_ascii=False, indent=2)
+                    json.dump(
+                        {"version": 1, "files": {}},
+                        handle,
+                        ensure_ascii=False,
+                        indent=2,
+                    )
         except Exception as exc:
             wx.MessageBox(
                 _("Could not export bookmarks.\n{error}").format(error=str(exc)),
@@ -201,7 +206,9 @@ class BackupRestorePanel(wx.Panel):
                 return
             src = dlg.GetPath()
         try:
-            if os.path.normcase(os.path.abspath(src)) != os.path.normcase(os.path.abspath(dest)):
+            if os.path.normcase(os.path.abspath(src)) != os.path.normcase(
+                os.path.abspath(dest)
+            ):
                 shutil.copy2(src, dest)
         except Exception as exc:
             wx.MessageBox(

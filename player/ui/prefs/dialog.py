@@ -189,9 +189,7 @@ class SettingsDialog(wx.Dialog):
             except Exception:
                 message = None
         if not message:
-            message = _(
-                "No detailed help is available for this control."
-            )
+            message = _("No detailed help is available for this control.")
         speech.speak(message)
 
     def _refresh_panels_from_settings(self):

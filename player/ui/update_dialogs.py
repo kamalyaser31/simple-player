@@ -23,7 +23,9 @@ class AppUpdateDialog(wx.Dialog):
         )
         text.SetInsertionPoint(0)
 
-        version_label = wx.StaticText(self, label=_("Version: {version}").format(version=version))
+        version_label = wx.StaticText(
+            self, label=_("Version: {version}").format(version=version)
+        )
 
         yes = wx.Button(self, wx.ID_YES, _("Update"))
         no = wx.Button(self, wx.ID_NO, _("Later"))

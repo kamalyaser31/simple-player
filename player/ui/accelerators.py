@@ -2,7 +2,6 @@ import wx
 
 from config.shortcuts import Shortcut
 
-
 _KEY_MAP = {
     "space": wx.WXK_SPACE,
     "tab": wx.WXK_TAB,
@@ -47,7 +46,9 @@ def build_accelerator_table(shortcuts, reserved_ids=None):
                 action_ids[action_id] = wx_id
                 action_id_map[int(wx_id)] = action_id
         for shortcut in shortcut_values:
-            if any(modifier not in _SUPPORTED_MODIFIERS for modifier in shortcut.modifiers):
+            if any(
+                modifier not in _SUPPORTED_MODIFIERS for modifier in shortcut.modifiers
+            ):
                 # wx.AcceleratorEntry does not support all modifier keys (e.g. Win).
                 continue
             keycode = _keycode(shortcut.key)
@@ -88,4 +89,3 @@ def _modifiers(modifiers):
     for modifier in modifiers:
         flags |= _MODIFIER_MAP.get(modifier, 0)
     return flags
-

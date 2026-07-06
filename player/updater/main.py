@@ -6,7 +6,6 @@ import sys
 import tempfile
 import zipfile
 
-
 WAIT_OBJECT_0 = 0x00000000
 PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
 SYNCHRONIZE = 0x00100000

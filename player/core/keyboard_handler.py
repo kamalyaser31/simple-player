@@ -2,7 +2,6 @@ from pynput import keyboard
 
 from config.shortcuts import Shortcut
 
-
 _MODIFIER_MAP = {
     keyboard.Key.ctrl: "ctrl",
     keyboard.Key.ctrl_l: "ctrl",
@@ -112,4 +111,3 @@ def _iter_shortcuts(value):
     if isinstance(value, (list, tuple)):
         return [shortcut for shortcut in value if isinstance(shortcut, Shortcut)]
     return []
-

@@ -1,7 +1,6 @@
 import wx
 from gettext import gettext as _
 
-
 AUDIO_WILDCARD = (
     "Audio Files (*.aac;*.aiff;*.alac;*.flac;*.m4a;*.mp3;*.mp4;*.ogg;*.opus;*.wav;*.wma)|"
     "*.aac;*.aiff;*.alac;*.flac;*.m4a;*.mp3;*.mp4;*.ogg;*.opus;*.wav;*.wma|"
@@ -87,7 +86,9 @@ class GoToTimeDialog(wx.Dialog):
             root.Add(self._hours_spin, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
         if self._minutes_enabled:
             root.Add(self._minutes_label, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
-            root.Add(self._minutes_spin, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+            root.Add(
+                self._minutes_spin, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+            )
         root.Add(self._seconds_label, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
         root.Add(self._seconds_spin, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
         root.Add(btns, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)

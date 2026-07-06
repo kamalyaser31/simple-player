@@ -14,7 +14,9 @@ SPEED_STEP = 0.1
 
 APP_UPDATE_REPO_OWNER = "kamalyaser31"
 APP_UPDATE_REPO_NAME = "simple-player"
-APP_REPO_URL = "https://github.com/" + APP_UPDATE_REPO_OWNER + "/" + APP_UPDATE_REPO_NAME
+APP_REPO_URL = (
+    "https://github.com/" + APP_UPDATE_REPO_OWNER + "/" + APP_UPDATE_REPO_NAME
+)
 APP_UPDATE_INFO_URL = (
     "https://raw.githubusercontent.com/"
     + APP_UPDATE_REPO_OWNER

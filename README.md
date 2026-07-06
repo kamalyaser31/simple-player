@@ -126,6 +126,9 @@ Simple Audio Player utilizes **Composition over Inheritance** through functional
   * **Updater Compilation (`build_updater.bat`)**:
     * *Function*: Automates compiling the standalone self-updater utility (`Updater.exe`) from `player/updater/main.py` using PyInstaller.
     * *Output*: Builds a single-file, windowed executable placed at `player/dist/Updater.exe`.
+  * **Code Formatting & Linting (`format_code.py` / `format_code.bat`)**:
+    * *Function*: Enforces clean code standards by automatically formatting all Python files with `black` and checking for stylistic PEP 8 issues with `flake8`.
+    * *Usage*: Run `python scripts/format_code.py [target_path]` or run `format_code.bat` from Windows Explorer.
 
 ---
 

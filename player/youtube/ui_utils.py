@@ -143,9 +143,7 @@ def fmt_dl(data):
     total_text = str(data.get("total_text") or "").strip()
     total = total_text or fmt_bytes(data.get("total_b", 0))
     got = fmt_bytes(data.get("got_b", 0))
-    return _(
-        "Total size: {total}\nDownloaded: {got}\nPercentage: {pct:.2f}%"
-    ).format(
+    return _("Total size: {total}\nDownloaded: {got}\nPercentage: {pct:.2f}%").format(
         total=total,
         got=got,
         pct=pct,

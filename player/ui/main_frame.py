@@ -8,7 +8,9 @@ from ui.mainwin.menu import MainFrameMenuMixin
 from ui.mainwin.state import MainFrameStateMixin
 
 
-class MainFrame(MainFrameMenuMixin, MainFrameStateMixin, MainFrameEventsMixin, wx.Frame):
+class MainFrame(
+    MainFrameMenuMixin, MainFrameStateMixin, MainFrameEventsMixin, wx.Frame
+):
     def __init__(self, controller, title):
         super().__init__(None, title=title, size=(420, 160))
         self._controller = controller

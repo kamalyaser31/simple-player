@@ -30,7 +30,9 @@ def collect_audio_files(folder_path, recursive=False):
     return entries
 
 
-def collect_audio_files_with_progress(folder_path, on_progress=None, should_cancel=None):
+def collect_audio_files_with_progress(
+    folder_path, on_progress=None, should_cancel=None
+):
     def is_cancelled():
         if should_cancel is None:
             return False
@@ -123,4 +125,3 @@ def collect_audio_files_with_progress(folder_path, on_progress=None, should_canc
         }
     )
     return entries
-

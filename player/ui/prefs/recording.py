@@ -114,7 +114,9 @@ class RecordingSettingsPanel(wx.Panel):
         return _("Recording format. WAV is uncompressed. MP3 is compressed.")
 
     def _help_folder(self):
-        return _("Recordings folder path. Use Browse to choose where new recordings are saved.")
+        return _(
+            "Recordings folder path. Use Browse to choose where new recordings are saved."
+        )
 
     def _set_channels(self, value):
         try:

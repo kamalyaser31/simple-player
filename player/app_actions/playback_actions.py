@@ -270,7 +270,9 @@ def go_to_time(ctx):
         initial = int(max(0, float(elapsed or 0.0)))
     except (TypeError, ValueError):
         initial = 0
-    dlg = dialogs.GoToTimeDialog(ctx.frame, duration_seconds=duration, initial_seconds=initial)
+    dlg = dialogs.GoToTimeDialog(
+        ctx.frame, duration_seconds=duration, initial_seconds=initial
+    )
     try:
         if dlg.ShowModal() == wx.ID_OK:
             ctx.player.seek_absolute(dlg.get_seconds())
@@ -416,4 +418,3 @@ def _seek_by_multiplier(ctx, scale):
     if _seek_within_selection(ctx, signed):
         return
     ctx.player.seek(signed)
-

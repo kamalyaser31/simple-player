@@ -16,7 +16,6 @@ from config.constants import (
 from config.shortcut_utils import shortcut_from_config, shortcut_to_config
 from helpers.utils import clamp
 
-
 SILENCE_REMOVAL_OPTION_KEYS = (
     "start_periods",
     "start_duration",
@@ -157,7 +156,9 @@ class SettingsManager:
                 self._config.read(self._config_path, encoding="utf-8")
                 raw_config = configparser.ConfigParser(interpolation=None)
                 raw_config.read(self._config_path, encoding="utf-8")
-                has_new_silence_section = raw_config.has_section(SILENCE_REMOVAL_SECTION)
+                has_new_silence_section = raw_config.has_section(
+                    SILENCE_REMOVAL_SECTION
+                )
             except (configparser.Error, OSError):
                 # Fall back to defaults if settings file is corrupted.
                 self._config = configparser.ConfigParser(interpolation=None)
@@ -360,7 +361,9 @@ class SettingsManager:
     def set_check_yt_updates_startup(self, enabled):
         if "youtube" not in self._config:
             self._config["youtube"] = {}
-        self._config["youtube"]["check_yt_updates_startup"] = "true" if enabled else "false"
+        self._config["youtube"]["check_yt_updates_startup"] = (
+            "true" if enabled else "false"
+        )
 
     def get_yt_prefetch_count(self):
         try:
@@ -399,11 +402,14 @@ class SettingsManager:
         text = str(region or YT_SEARCH_REGION).strip()
         self._config["youtube"]["search_region"] = text
 
-
     def get_rec_channels(self):
-        value = str(
-            self._config.get("recording", "channels", fallback="stereo") or "stereo"
-        ).strip().lower()
+        value = (
+            str(
+                self._config.get("recording", "channels", fallback="stereo") or "stereo"
+            )
+            .strip()
+            .lower()
+        )
         if value not in ("mono", "stereo"):
             return "stereo"
         return value
@@ -433,9 +439,11 @@ class SettingsManager:
         self._config["recording"]["quality"] = str(int(clamp(val, 32, 320)))
 
     def get_rec_format(self):
-        value = str(
-            self._config.get("recording", "format", fallback="wav") or "wav"
-        ).strip().lower()
+        value = (
+            str(self._config.get("recording", "format", fallback="wav") or "wav")
+            .strip()
+            .lower()
+        )
         if value not in ("wav", "mp3"):
             return "wav"
         return value
@@ -612,7 +620,9 @@ class SettingsManager:
     def set_audio_normalize_enabled(self, enabled):
         if "audio" not in self._config:
             self._config["audio"] = {}
-        self._config["audio"]["audio_normalize_enabled"] = "true" if enabled else "false"
+        self._config["audio"]["audio_normalize_enabled"] = (
+            "true" if enabled else "false"
+        )
 
     def get_audio_mono_enabled(self):
         try:
@@ -634,7 +644,9 @@ class SettingsManager:
 
     def set_silence_removal_enabled(self, enabled):
         self._ensure_silence_removal_section()
-        self._config[SILENCE_REMOVAL_SECTION]["enabled"] = "true" if enabled else "false"
+        self._config[SILENCE_REMOVAL_SECTION]["enabled"] = (
+            "true" if enabled else "false"
+        )
         self._cleanup_legacy_silence_keys()
 
     def get_silence_removal_advanced(self):
@@ -646,7 +658,9 @@ class SettingsManager:
 
     def set_silence_removal_advanced(self, enabled):
         self._ensure_silence_removal_section()
-        self._config[SILENCE_REMOVAL_SECTION]["advanced"] = "true" if enabled else "false"
+        self._config[SILENCE_REMOVAL_SECTION]["advanced"] = (
+            "true" if enabled else "false"
+        )
 
     def get_silence_removal_options(self):
         self._ensure_silence_removal_section()
@@ -775,7 +789,9 @@ class SettingsManager:
             for key in list(self._config["shortcuts_secondary"].keys()):
                 self._config["shortcuts_secondary"].pop(key, None)
         for action_id, shortcut in overrides.items():
-            self._config["shortcuts_secondary"][action_id] = shortcut_to_config(shortcut)
+            self._config["shortcuts_secondary"][action_id] = shortcut_to_config(
+                shortcut
+            )
 
     def get_global_shortcut_overrides(self):
         overrides = {}

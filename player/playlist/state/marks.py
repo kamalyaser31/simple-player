@@ -32,7 +32,9 @@ class PlaylistStateMarksMixin:
     def are_all_marked(self):
         if not self._file_list:
             return False
-        return all(self._path_key(path) in self._marked_keys for path in self._file_list)
+        return all(
+            self._path_key(path) in self._marked_keys for path in self._file_list
+        )
 
     def has_marked_files(self):
         return bool(self.get_marked_files())
@@ -43,7 +45,11 @@ class PlaylistStateMarksMixin:
     def get_marked_files(self):
         if not self._marked_keys:
             return []
-        return [path for path in self._file_list if self._path_key(path) in self._marked_keys]
+        return [
+            path
+            for path in self._file_list
+            if self._path_key(path) in self._marked_keys
+        ]
 
     def _clear_marked(self):
         self._marked_keys.clear()

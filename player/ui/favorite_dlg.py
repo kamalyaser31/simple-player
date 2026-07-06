@@ -1,7 +1,6 @@
 import wx
 from gettext import gettext as _
 
-
 ID_FAV_ADD = wx.ID_ADD
 ID_FAV_EDIT = wx.ID_EDIT
 ID_FAV_REMOVE = wx.ID_DELETE

@@ -1,7 +1,6 @@
 import wx
 from gettext import gettext as _
 
-
 END_BEHAVIOR_LABELS = [
     _("Advance to the next file"),
     _("Loop the file"),
@@ -17,9 +16,7 @@ class AudioSettings(wx.ScrolledWindow):
         self._help_map = {}
         self.SetScrollRate(8, 8)
 
-        self._custom_label = wx.StaticText(
-            self, label=_("Custom seek value (seconds)")
-        )
+        self._custom_label = wx.StaticText(self, label=_("Custom seek value (seconds)"))
         self._custom_value = wx.TextCtrl(self)
         self._custom_value.SetValue(str(self._settings.get_seek_step_custom()))
         self._help_map[self._custom_value] = self._help_custom_seek
@@ -34,7 +31,9 @@ class AudioSettings(wx.ScrolledWindow):
         self._volume_step_value.SetValue(self._settings.get_volume_step())
         self._help_map[self._volume_step_value] = self._help_volume_step
 
-        self._end_label = wx.StaticText(self, label=_("What happens after a file ends?"))
+        self._end_label = wx.StaticText(
+            self, label=_("What happens after a file ends?")
+        )
         self._end_choice = wx.Choice(self, choices=END_BEHAVIOR_LABELS)
         current_behavior = self._settings.get_end_behavior()
         try:
@@ -62,9 +61,7 @@ class AudioSettings(wx.ScrolledWindow):
         self._normalize_checkbox.SetValue(self._settings.get_audio_normalize_enabled())
         self._help_map[self._normalize_checkbox] = self._help_normalize_filter
 
-        self._mono_checkbox = wx.CheckBox(
-            self, label=_("Play audio as Mono")
-        )
+        self._mono_checkbox = wx.CheckBox(self, label=_("Play audio as Mono"))
         self._mono_checkbox.SetValue(self._settings.get_audio_mono_enabled())
         self._help_map[self._mono_checkbox] = self._help_mono_filter
 
@@ -72,9 +69,13 @@ class AudioSettings(wx.ScrolledWindow):
         sizer.Add(self._custom_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 8)
         sizer.Add(self._custom_value, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
         sizer.Add(self._speed_step_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 8)
-        sizer.Add(self._speed_step_value, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(
+            self._speed_step_value, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
         sizer.Add(self._volume_step_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 8)
-        sizer.Add(self._volume_step_value, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(
+            self._volume_step_value, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
         sizer.Add(self._end_label, 0, wx.LEFT | wx.RIGHT | wx.TOP, 8)
         sizer.Add(self._end_choice, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
         sizer.Add(self._wrap_playlist_checkbox, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)

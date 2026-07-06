@@ -101,9 +101,7 @@ def delete_marked_files(ctx):
     if current:
         cur_key = os.path.normcase(os.path.abspath(current))
         marked_keys = {
-            os.path.normcase(os.path.abspath(path))
-            for path in files
-            if path
+            os.path.normcase(os.path.abspath(path)) for path in files if path
         }
         if cur_key in marked_keys:
             current_handled.add(cur_key)
@@ -314,4 +312,3 @@ def _refresh_file_loaded_state(ctx):
     has_current = bool(ctx.player.current_path)
     ctx.set_file_loaded(has_current)
     ctx.set_playing(has_current)
-

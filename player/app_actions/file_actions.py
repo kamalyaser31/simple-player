@@ -62,7 +62,9 @@ def _open_with_subfolders_loading(ctx, path, start_position=None):
             )
         )
 
-    dlg = BusyDialog(ctx.frame, _("Opening files"), _("Loading files from folder and subfolders..."))
+    dlg = BusyDialog(
+        ctx.frame, _("Opening files"), _("Loading files from folder and subfolders...")
+    )
     updates = queue.Queue()
     state = {"finished": False, "cancelled": False, "determinate": False}
     pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
@@ -296,7 +298,10 @@ def open_props(ctx):
         )
         return
     if os.name != "nt":
-        ctx.speak(_("File properties are not supported on this platform."), _("Not supported."))
+        ctx.speak(
+            _("File properties are not supported on this platform."),
+            _("Not supported."),
+        )
         return
     target = os.path.normpath(os.path.abspath(path))
     ok, err = _show_props_win(target)
@@ -544,7 +549,9 @@ def copy_file(ctx):
 def paste_files(ctx):
     paths = get_clipboard_paths()
     if not paths:
-        ctx.speak(_("Clipboard does not contain files or folders."), _("Clipboard empty."))
+        ctx.speak(
+            _("Clipboard does not contain files or folders."), _("Clipboard empty.")
+        )
         return
 
     bad = []
@@ -576,7 +583,9 @@ def paste_files(ctx):
             clear_ses(ctx)
             ok = ctx.player.open_folder(path)
             if not ok:
-                ctx.speak(_("No audio files found in that folder."), _("No audio files."))
+                ctx.speak(
+                    _("No audio files found in that folder."), _("No audio files.")
+                )
                 return
             ctx.settings.set_last_dir(path)
             set_ready(ctx)
@@ -598,7 +607,10 @@ def paste_files(ctx):
             _("Invalid path in clipboard."),
         )
     else:
-        ctx.speak(_("Clipboard does not contain openable files or folders."), _("Cannot open clipboard data."))
+        ctx.speak(
+            _("Clipboard does not contain openable files or folders."),
+            _("Cannot open clipboard data."),
+        )
 
 
 def del_file(ctx):

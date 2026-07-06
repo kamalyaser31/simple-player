@@ -9,7 +9,6 @@ from config.localization import app_root
 from ui.help_dialogs import AboutDialog
 from youtube.ui_utils import open_url
 
-
 TG_URL = "https://t.me/kamalyaser31"
 MAIL_URL = "mailto:kamalyaser31@gmail.com"
 
@@ -84,7 +83,10 @@ def _open_file(path):
     except Exception:
         pass
     try:
-        return bool(Path(target).is_file() and wx.LaunchDefaultBrowser(Path(target).resolve().as_uri()))
+        return bool(
+            Path(target).is_file()
+            and wx.LaunchDefaultBrowser(Path(target).resolve().as_uri())
+        )
     except Exception:
         return False
 

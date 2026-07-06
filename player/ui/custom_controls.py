@@ -1,5 +1,6 @@
 import wx
 
+
 class CustomButton(wx.Button):
     def __init__(self, *args, **kwargs):
         wx.Button.__init__(self, *args, **kwargs)
@@ -9,6 +10,7 @@ class CustomButton(wx.Button):
 
     def AcceptsFocusFromKeyboard(self):
         return False
+
 
 class CustomSlider(wx.Slider):
     """
@@ -52,4 +54,3 @@ class CustomSlider(wx.Slider):
             return
 
         self.SetValue(new_value)
-

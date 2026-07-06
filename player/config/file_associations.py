@@ -5,7 +5,6 @@ import ctypes
 
 from config.constants import APP_NAME, AUDIO_EXTENSIONS
 
-
 APP_PROGID = "SimpleAudioPlayer.media"
 APP_REG_NAME = "Simple Audio Player"
 LEGACY_APP_EXE_ALIAS = "main.exe"
@@ -49,9 +48,14 @@ def unregister_file_associations():
     extensions = _association_extensions()
     try:
         _remove_extension_associations(extensions)
-        _delete_tree(winreg.HKEY_CURRENT_USER, fr"{CLASSES_ROOT}\{APP_PROGID}")
-        _delete_tree(winreg.HKEY_CURRENT_USER, fr"{CLASSES_ROOT}\Applications\{exe_alias}")
-        _delete_tree(winreg.HKEY_CURRENT_USER, fr"{CLASSES_ROOT}\Applications\{LEGACY_APP_EXE_ALIAS}")
+        _delete_tree(winreg.HKEY_CURRENT_USER, rf"{CLASSES_ROOT}\{APP_PROGID}")
+        _delete_tree(
+            winreg.HKEY_CURRENT_USER, rf"{CLASSES_ROOT}\Applications\{exe_alias}"
+        )
+        _delete_tree(
+            winreg.HKEY_CURRENT_USER,
+            rf"{CLASSES_ROOT}\Applications\{LEGACY_APP_EXE_ALIAS}",
+        )
         _delete_tree(winreg.HKEY_CURRENT_USER, CAPABILITIES_KEY)
         _delete_value(winreg.HKEY_CURRENT_USER, REGISTERED_APPS_KEY, APP_REG_NAME)
         _notify_association_change()
@@ -61,47 +65,47 @@ def unregister_file_associations():
 
 
 def _write_progid(command):
-    progid_key = fr"{CLASSES_ROOT}\{APP_PROGID}"
+    progid_key = rf"{CLASSES_ROOT}\{APP_PROGID}"
     _set_default_value(winreg.HKEY_CURRENT_USER, progid_key, f"{APP_NAME} media file")
     _set_default_value(
         winreg.HKEY_CURRENT_USER,
-        fr"{progid_key}\shell\open\command",
+        rf"{progid_key}\shell\open\command",
         command,
     )
     _set_default_value(
         winreg.HKEY_CURRENT_USER,
-        fr"{progid_key}\shell\play_with_simple_audio_player",
+        rf"{progid_key}\shell\play_with_simple_audio_player",
         CONTEXT_MENU_LABEL,
     )
     _set_default_value(
         winreg.HKEY_CURRENT_USER,
-        fr"{progid_key}\shell\play_with_simple_audio_player\command",
+        rf"{progid_key}\shell\play_with_simple_audio_player\command",
         command,
     )
 
 
 def _write_application_registration(command, exe_alias, extensions):
-    app_key = fr"{CLASSES_ROOT}\Applications\{exe_alias}"
+    app_key = rf"{CLASSES_ROOT}\Applications\{exe_alias}"
     _set_string_value(winreg.HKEY_CURRENT_USER, app_key, "FriendlyAppName", APP_NAME)
     _set_default_value(
         winreg.HKEY_CURRENT_USER,
-        fr"{app_key}\shell\open\command",
+        rf"{app_key}\shell\open\command",
         command,
     )
     _set_default_value(
         winreg.HKEY_CURRENT_USER,
-        fr"{app_key}\shell\play_with_simple_audio_player",
+        rf"{app_key}\shell\play_with_simple_audio_player",
         CONTEXT_MENU_LABEL,
     )
     _set_default_value(
         winreg.HKEY_CURRENT_USER,
-        fr"{app_key}\shell\play_with_simple_audio_player\command",
+        rf"{app_key}\shell\play_with_simple_audio_player\command",
         command,
     )
     for ext in extensions:
         _set_string_value(
             winreg.HKEY_CURRENT_USER,
-            fr"{app_key}\SupportedTypes",
+            rf"{app_key}\SupportedTypes",
             ext,
             "",
         )
@@ -121,7 +125,7 @@ def _write_application_registration(command, exe_alias, extensions):
     for ext in extensions:
         _set_string_value(
             winreg.HKEY_CURRENT_USER,
-            fr"{CAPABILITIES_KEY}\FileAssociations",
+            rf"{CAPABILITIES_KEY}\FileAssociations",
             ext,
             APP_PROGID,
         )
@@ -135,11 +139,11 @@ def _write_application_registration(command, exe_alias, extensions):
 
 def _write_extension_associations(extensions):
     for ext in extensions:
-        ext_key = fr"{CLASSES_ROOT}\{ext}"
+        ext_key = rf"{CLASSES_ROOT}\{ext}"
         _set_default_value(winreg.HKEY_CURRENT_USER, ext_key, APP_PROGID)
         _set_binary_value(
             winreg.HKEY_CURRENT_USER,
-            fr"{ext_key}\OpenWithProgids",
+            rf"{ext_key}\OpenWithProgids",
             APP_PROGID,
             b"",
         )
@@ -147,13 +151,13 @@ def _write_extension_associations(extensions):
 
 def _remove_extension_associations(extensions):
     for ext in extensions:
-        ext_key = fr"{CLASSES_ROOT}\{ext}"
+        ext_key = rf"{CLASSES_ROOT}\{ext}"
         current_default = _get_default_value(winreg.HKEY_CURRENT_USER, ext_key)
         if current_default == APP_PROGID:
             _set_default_value(winreg.HKEY_CURRENT_USER, ext_key, "")
         _delete_value(
             winreg.HKEY_CURRENT_USER,
-            fr"{ext_key}\OpenWithProgids",
+            rf"{ext_key}\OpenWithProgids",
             APP_PROGID,
         )
 
@@ -238,4 +242,3 @@ def _notify_association_change():
         shell32.SHChangeNotify(0x08000000, 0x0000, None, None)
     except Exception:
         pass
-

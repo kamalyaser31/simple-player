@@ -22,7 +22,9 @@ def pause_resume_rec(ctx, rec):
     if rec.is_paused:
         res = rec.resume()
         if not res.get("ok"):
-            _error(ctx.frame, _("Could not resume recording.\n{error}"), res.get("error"))
+            _error(
+                ctx.frame, _("Could not resume recording.\n{error}"), res.get("error")
+            )
         return
 
     res = rec.pause()
@@ -43,7 +45,11 @@ def stop_rec(ctx, rec):
 def open_rec_folder(ctx):
     folder = str(ctx.settings.get_rec_folder() or "").strip()
     if not folder:
-        _error(ctx.frame, _("Could not open recordings folder.\n{error}"), _("Folder is not set."))
+        _error(
+            ctx.frame,
+            _("Could not open recordings folder.\n{error}"),
+            _("Folder is not set."),
+        )
         return
     try:
         os.makedirs(folder, exist_ok=True)

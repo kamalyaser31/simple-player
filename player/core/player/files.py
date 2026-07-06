@@ -83,9 +83,7 @@ class PlayerFilesMixin:
             return False
         current = self.current_path
         remove_keys = {
-            os.path.normcase(os.path.abspath(path))
-            for path in paths
-            if path
+            os.path.normcase(os.path.abspath(path)) for path in paths if path
         }
         if current and os.path.normcase(os.path.abspath(current)) in remove_keys:
             self._stop_core_only()

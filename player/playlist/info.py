@@ -13,7 +13,6 @@ from helpers.file_helpers import show_name
 from ui import dialogs
 from helpers.utils import format_time
 
-
 _DUR = {}
 _DUR_LOCK = threading.Lock()
 _PROBE_TO = 1.2
@@ -135,12 +134,16 @@ class InfoJob:
             pass
         try:
             if self._tmr_owner is not None and self._tmr is not None:
-                self._tmr_owner.Unbind(wx.EVT_TIMER, handler=self.on_tick, source=self._tmr)
+                self._tmr_owner.Unbind(
+                    wx.EVT_TIMER, handler=self.on_tick, source=self._tmr
+                )
         except Exception:
             pass
         try:
             if self._tmr_owner is not None:
-                self._tmr_owner.Unbind(wx.EVT_WINDOW_DESTROY, handler=self.on_owner_destroy)
+                self._tmr_owner.Unbind(
+                    wx.EVT_WINDOW_DESTROY, handler=self.on_owner_destroy
+                )
         except Exception:
             pass
 
@@ -176,9 +179,13 @@ class InfoJob:
 
         text = build_text(self._ctx, self._files, info)
         parent = self._parent_dlg
-        if parent is None or (hasattr(parent, "IsBeingDeleted") and parent.IsBeingDeleted()):
+        if parent is None or (
+            hasattr(parent, "IsBeingDeleted") and parent.IsBeingDeleted()
+        ):
             parent = self._ctx.frame
-        if parent is None or (hasattr(parent, "IsBeingDeleted") and parent.IsBeingDeleted()):
+        if parent is None or (
+            hasattr(parent, "IsBeingDeleted") and parent.IsBeingDeleted()
+        ):
             return
         dlg = dialogs.TextInfoDialog(parent, _("Playlist Info"), text)
         dlg.ShowModal()
@@ -395,4 +402,3 @@ def _fmt_size(num_bytes):
     if idx == 0:
         return f"{int(val)} {units[idx]}"
     return f"{val:.2f} {units[idx]}"
-

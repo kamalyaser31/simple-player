@@ -9,7 +9,6 @@ from urllib import request
 from config.constants import YT_DLP_DEFAULT_CHANNEL, YT_DLP_UPDATE_CHANNELS
 from helpers.http_utils import open_url
 
-
 APP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 YT_EXE = os.path.join(APP_DIR, "yt-dlp.exe")
 DENO_EXE = os.path.join(APP_DIR, "deno.exe")
@@ -271,7 +270,9 @@ def _run_yt_cmd(cancel, args, on_line=None, timeout=180):
                 proc.terminate()
             except Exception:
                 pass
-            raise RuntimeError(f"yt-dlp command timed out after {int(timeout)} seconds.")
+            raise RuntimeError(
+                f"yt-dlp command timed out after {int(timeout)} seconds."
+            )
         if cancel.is_set():
             try:
                 proc.terminate()
@@ -288,7 +289,9 @@ def _run_yt_cmd(cancel, args, on_line=None, timeout=180):
         if not text:
             text = f"yt-dlp exited with code {proc.returncode}"
         raise RuntimeError(text)
-    merged = "\n".join(part for part in ((out or "").strip(), (err or "").strip()) if part).strip()
+    merged = "\n".join(
+        part for part in ((out or "").strip(), (err or "").strip()) if part
+    ).strip()
     return merged
 
 
@@ -406,12 +409,27 @@ def _extract_deno_zip(zip_path, cancel):
 
 def _file_readiness(name, path, timeout=5, validate=False):
     if not os.path.isfile(path):
-        return {"name": name, "state": HELPER_MISSING, "path": path, "message": "missing"}
+        return {
+            "name": name,
+            "state": HELPER_MISSING,
+            "path": path,
+            "message": "missing",
+        }
     try:
         if os.path.getsize(path) <= 0:
-            return {"name": name, "state": HELPER_REPAIR_REQUIRED, "path": path, "message": "empty file"}
+            return {
+                "name": name,
+                "state": HELPER_REPAIR_REQUIRED,
+                "path": path,
+                "message": "empty file",
+            }
     except OSError:
-        return {"name": name, "state": HELPER_BROKEN, "path": path, "message": "not readable"}
+        return {
+            "name": name,
+            "state": HELPER_BROKEN,
+            "path": path,
+            "message": "not readable",
+        }
     if not validate:
         return {"name": name, "state": HELPER_READY, "path": path, "message": "ready"}
     try:

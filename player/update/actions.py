@@ -76,7 +76,9 @@ def update_youtube_components_now(ctx):
             ver=(new_ver or old_ver or _("unknown")),
             ch=used_channel or "stable",
         )
-    wx.MessageBox(msg, _("yt-dlp update"), wx.OK | wx.ICON_INFORMATION, parent=ctx.frame)
+    wx.MessageBox(
+        msg, _("yt-dlp update"), wx.OK | wx.ICON_INFORMATION, parent=ctx.frame
+    )
     ctx.speak(msg, msg)
 
 

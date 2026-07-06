@@ -19,9 +19,7 @@ class YouTubeSettingsPanel(wx.Panel):
         self._quality_choice = wx.Choice(self, choices=self._quality_labels)
         self._set_quality_selection(self._settings.get_yt_video_quality())
 
-        self._mixed_label = wx.StaticText(
-            self, label=_("Video+playlist link behavior")
-        )
+        self._mixed_label = wx.StaticText(self, label=_("Video+playlist link behavior"))
         self._mixed_labels = [
             _("Ask every time"),
             _("Play the video"),
@@ -98,7 +96,9 @@ class YouTubeSettingsPanel(wx.Panel):
         region_sizer.Add(self._search_region_ctrl, 0, wx.EXPAND)
         sizer.Add(region_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
-        sizer.Add(self._download_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(
+            self._download_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
 
         self.SetSizer(sizer)
 

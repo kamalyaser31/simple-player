@@ -6,7 +6,6 @@ from config.settings_manager import (
     SILENCE_REMOVAL_DETECTION_MODES,
 )
 
-
 MIN_DURATION_HINT = _(
     "Minimum silence duration in seconds. "
     "Silence shorter than this is kept. "
@@ -27,7 +26,9 @@ ADVANCED_TEXT_FIELDS = [
     (
         "start_duration",
         _("Minimum leading silence length (seconds)"),
-        _("Only trim leading silence chunks that are at least this long (default: 0.2)."),
+        _(
+            "Only trim leading silence chunks that are at least this long (default: 0.2)."
+        ),
     ),
     (
         "stop_periods",
@@ -79,7 +80,9 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
         basic_grid = wx.FlexGridSizer(cols=2, vgap=6, hgap=8)
         basic_grid.AddGrowableCol(1, 1)
 
-        min_duration_label = wx.StaticText(self, label=_("Minimum silence duration (seconds)"))
+        min_duration_label = wx.StaticText(
+            self, label=_("Minimum silence duration (seconds)")
+        )
         min_duration_label.SetToolTip(MIN_DURATION_HINT)
         self._min_duration_field = wx.TextCtrl(
             self,
@@ -94,10 +97,14 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
 
         threshold_label = wx.StaticText(self, label=_("Silence threshold"))
         threshold_label.SetToolTip(THRESHOLD_HINT)
-        threshold_value = silence_options.get("threshold", SILENCE_REMOVAL_DEFAULTS["threshold"])
+        threshold_value = silence_options.get(
+            "threshold", SILENCE_REMOVAL_DEFAULTS["threshold"]
+        )
         self._threshold_field = wx.TextCtrl(self, value=str(threshold_value))
         self._threshold_field.SetToolTip(THRESHOLD_HINT)
-        self._help_map[self._threshold_field] = lambda: self._help_silence_field("threshold")
+        self._help_map[self._threshold_field] = lambda: self._help_silence_field(
+            "threshold"
+        )
         basic_grid.Add(threshold_label, 0, wx.ALIGN_CENTER_VERTICAL)
         basic_grid.Add(self._threshold_field, 1, wx.EXPAND)
 
@@ -105,7 +112,9 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
 
         self._advanced_checkbox = wx.CheckBox(self, label=_("Show advanced settings"))
         self._advanced_checkbox.SetValue(self._settings.get_silence_removal_advanced())
-        self._help_map[self._advanced_checkbox] = lambda: self._help_silence_field("advanced")
+        self._help_map[self._advanced_checkbox] = lambda: self._help_silence_field(
+            "advanced"
+        )
         self._advanced_checkbox.Bind(wx.EVT_CHECKBOX, self._on_toggle_advanced)
         silence_group.Add(self._advanced_checkbox, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
 
@@ -126,12 +135,17 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
         detection_label = wx.StaticText(self._advanced_panel, label=_("Detection mode"))
         detection_label.SetToolTip(DETECTION_HINT)
         detection_choices = [
-            SILENCE_DETECTION_LABELS.get(mode, mode) for mode in SILENCE_REMOVAL_DETECTION_MODES
+            SILENCE_DETECTION_LABELS.get(mode, mode)
+            for mode in SILENCE_REMOVAL_DETECTION_MODES
         ]
-        self._detection_choice = wx.Choice(self._advanced_panel, choices=detection_choices)
-        detection_mode = str(
-            silence_options.get("detection", SILENCE_REMOVAL_DEFAULTS["detection"])
-        ).strip().lower()
+        self._detection_choice = wx.Choice(
+            self._advanced_panel, choices=detection_choices
+        )
+        detection_mode = (
+            str(silence_options.get("detection", SILENCE_REMOVAL_DEFAULTS["detection"]))
+            .strip()
+            .lower()
+        )
         try:
             detection_index = SILENCE_REMOVAL_DETECTION_MODES.index(detection_mode)
         except ValueError:
@@ -140,17 +154,23 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
             )
         self._detection_choice.SetSelection(detection_index)
         self._detection_choice.SetToolTip(DETECTION_HINT)
-        self._help_map[self._detection_choice] = lambda: self._help_silence_field("detection")
+        self._help_map[self._detection_choice] = lambda: self._help_silence_field(
+            "detection"
+        )
         advanced_grid.Add(detection_label, 0, wx.ALIGN_CENTER_VERTICAL)
         advanced_grid.Add(self._detection_choice, 1, wx.EXPAND)
 
         advanced_sizer = wx.BoxSizer(wx.VERTICAL)
         advanced_sizer.Add(advanced_grid, 1, wx.EXPAND)
         self._advanced_panel.SetSizer(advanced_sizer)
-        silence_group.Add(self._advanced_panel, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        silence_group.Add(
+            self._advanced_panel, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
+        )
 
         root_sizer = wx.BoxSizer(wx.VERTICAL)
-        root_sizer.Add(silence_group, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.TOP | wx.EXPAND, 8)
+        root_sizer.Add(
+            silence_group, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.TOP | wx.EXPAND, 8
+        )
         self.SetSizer(root_sizer)
         self._set_advanced_visibility(self._advanced_checkbox.GetValue())
 
@@ -187,8 +207,16 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
             # Keep hidden advanced values as configured; only update the basic fields.
             silence_options["stop_duration"] = minimum_duration
             if not str(silence_options.get("start_duration", "")).strip():
-                silence_options["start_duration"] = SILENCE_REMOVAL_DEFAULTS["start_duration"]
-            for key in ("start_periods", "stop_periods", "stop_silence", "window", "detection"):
+                silence_options["start_duration"] = SILENCE_REMOVAL_DEFAULTS[
+                    "start_duration"
+                ]
+            for key in (
+                "start_periods",
+                "stop_periods",
+                "stop_silence",
+                "window",
+                "detection",
+            ):
                 if not str(silence_options.get(key, "")).strip():
                     silence_options[key] = SILENCE_REMOVAL_DEFAULTS[key]
 
@@ -250,17 +278,25 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
 
     def refresh_from_settings(self):
         silence_options = self._settings.get_silence_removal_options()
-        self._min_duration_field.SetValue(self._initial_minimum_duration(silence_options))
-        threshold_value = silence_options.get("threshold", SILENCE_REMOVAL_DEFAULTS["threshold"])
+        self._min_duration_field.SetValue(
+            self._initial_minimum_duration(silence_options)
+        )
+        threshold_value = silence_options.get(
+            "threshold", SILENCE_REMOVAL_DEFAULTS["threshold"]
+        )
         self._threshold_field.SetValue(str(threshold_value))
         for key, _label, _hint in ADVANCED_TEXT_FIELDS:
             field = self._advanced_controls.get(key)
             if field is None:
                 continue
-            field.SetValue(str(silence_options.get(key, SILENCE_REMOVAL_DEFAULTS.get(key, ""))))
-        detection_mode = str(
-            silence_options.get("detection", SILENCE_REMOVAL_DEFAULTS["detection"])
-        ).strip().lower()
+            field.SetValue(
+                str(silence_options.get(key, SILENCE_REMOVAL_DEFAULTS.get(key, "")))
+            )
+        detection_mode = (
+            str(silence_options.get("detection", SILENCE_REMOVAL_DEFAULTS["detection"]))
+            .strip()
+            .lower()
+        )
         try:
             detection_index = SILENCE_REMOVAL_DETECTION_MODES.index(detection_mode)
         except ValueError:
@@ -346,14 +382,10 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
             )
         if key == "stop_silence":
             return _(
-                "Pause to keep after trimmed silence, in seconds. "
-                "Default is 0.2."
+                "Pause to keep after trimmed silence, in seconds. " "Default is 0.2."
             )
         if key == "window":
-            return _(
-                "Detection window size in seconds. "
-                "Default is 0.02."
-            )
+            return _("Detection window size in seconds. " "Default is 0.02.")
         if key == "detection":
             return _(
                 "Detection mode for silence analysis. "
@@ -373,4 +405,3 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
             return True, int(str(text).strip())
         except (TypeError, ValueError):
             return False, 0
-

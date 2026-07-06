@@ -33,4 +33,3 @@ class Player(
 
     def set_finished_file_handler(self, handler):
         self._finished_file_handler = handler if callable(handler) else None
-

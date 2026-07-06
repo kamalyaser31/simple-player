@@ -17,9 +17,7 @@ class PlaylistStateMutationsMixin:
         self._file_list = new_list
         self._marked_keys = {k for k in self._marked_keys if k not in remove_keys}
         self._meta = {
-            key: value
-            for key, value in self._meta.items()
-            if key not in remove_keys
+            key: value for key, value in self._meta.items() if key not in remove_keys
         }
 
         current_changed = False

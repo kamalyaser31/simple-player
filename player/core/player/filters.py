@@ -77,11 +77,17 @@ class PlayerFiltersMixin:
             )
         ).strip()
         if not threshold:
-            threshold = str(self._silence_removal_options.get("silence_threshold", "")).strip()
+            threshold = str(
+                self._silence_removal_options.get("silence_threshold", "")
+            ).strip()
         if not threshold:
-            threshold = str(self._silence_removal_options.get("start_threshold", "")).strip()
+            threshold = str(
+                self._silence_removal_options.get("start_threshold", "")
+            ).strip()
         if not threshold:
-            threshold = str(self._silence_removal_options.get("stop_threshold", "")).strip()
+            threshold = str(
+                self._silence_removal_options.get("stop_threshold", "")
+            ).strip()
         if not threshold:
             threshold = SILENCE_REMOVAL_DEFAULTS["threshold"]
         threshold = self._format_silence_threshold(threshold)

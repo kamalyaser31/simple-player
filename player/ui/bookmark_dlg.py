@@ -3,7 +3,6 @@ from gettext import gettext as _
 
 from helpers.utils import format_time
 
-
 ID_MARK_JUMP = wx.ID_OK
 ID_MARK_EDIT = wx.ID_EDIT
 ID_MARK_DELETE = wx.ID_DELETE

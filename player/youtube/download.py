@@ -5,7 +5,6 @@ from gettext import gettext as _
 
 from .components import CancelledError, deno_runtime, yt_path
 
-
 _DL_RE = re.compile(
     r"\[download\]\s+(?P<pct>\d+(?:\.\d+)?)%\s+of\s+(?P<size>[^\s]+)",
     re.IGNORECASE,

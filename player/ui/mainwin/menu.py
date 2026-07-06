@@ -284,7 +284,9 @@ class MainFrameMenuMixin:
 
         self._bind_action_item(self._marked_copy_folder_item, MARKED_COPY_TO_FOLDER)
         self._bind_action_item(self._marked_move_folder_item, MARKED_MOVE_TO_FOLDER)
-        self._bind_action_item(self._marked_copy_clipboard_item, MARKED_COPY_TO_CLIPBOARD)
+        self._bind_action_item(
+            self._marked_copy_clipboard_item, MARKED_COPY_TO_CLIPBOARD
+        )
         self._bind_action_item(self._marked_delete_item, MARKED_DELETE)
         return menu
 
@@ -387,7 +389,9 @@ class MainFrameMenuMixin:
         menu.AppendSeparator()
         jump_menu = wx.Menu()
         self._jump_menu_map = {}
-        for action_id, percent in sorted(PERCENT_JUMPS.items(), key=lambda item: item[1]):
+        for action_id, percent in sorted(
+            PERCENT_JUMPS.items(), key=lambda item: item[1]
+        ):
             item = jump_menu.Append(
                 wx.ID_ANY,
                 self._menu_label(f"{percent}%", action_id),
@@ -561,4 +565,3 @@ class MainFrameMenuMixin:
             if display:
                 text = f"{text}\t{display}"
         return text
-

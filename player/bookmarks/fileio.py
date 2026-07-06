@@ -25,7 +25,9 @@ def write_json(path, data):
     if base:
         os.makedirs(base, exist_ok=True)
 
-    fd, tmp_path = tempfile.mkstemp(prefix="sap_marks_", suffix=".tmp", dir=base or None)
+    fd, tmp_path = tempfile.mkstemp(
+        prefix="sap_marks_", suffix=".tmp", dir=base or None
+    )
     os.close(fd)
     try:
         with open(tmp_path, "w", encoding="utf-8") as handle:

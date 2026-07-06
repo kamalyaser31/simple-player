@@ -20,7 +20,9 @@ class Mp3Sink:
         try:
             import lameenc
         except Exception as exc:
-            raise RuntimeError("MP3 encoding is unavailable. Install 'lameenc'.") from exc
+            raise RuntimeError(
+                "MP3 encoding is unavailable. Install 'lameenc'."
+            ) from exc
         self._enc = lameenc.Encoder()
         self._enc.set_bit_rate(int(bitrate))
         self._enc.set_in_sample_rate(int(rate))

@@ -158,7 +158,9 @@ ACTIONS = {
     ANNOUNCE_PERCENT: Action(ANNOUNCE_PERCENT, "Announce Percent", Shortcut("p")),
     ANNOUNCE_SPEED: Action(ANNOUNCE_SPEED, "Announce Speed", Shortcut("s")),
     TOGGLE_VERBOSITY: Action(
-        TOGGLE_VERBOSITY, "Toggle Verbosity", Shortcut("v", frozenset({"ctrl", "shift"}))
+        TOGGLE_VERBOSITY,
+        "Toggle Verbosity",
+        Shortcut("v", frozenset({"ctrl", "shift"})),
     ),
     RESET_SPEED: Action(RESET_SPEED, "Reset Speed", Shortcut("y", frozenset({"alt"}))),
     OPEN_FILE: Action(OPEN_FILE, "Open File", Shortcut("o", frozenset({"ctrl"}))),
@@ -272,7 +274,9 @@ ACTIONS = {
         OPEN_FOLDER, "Open Folder", Shortcut("o", frozenset({"ctrl", "shift"}))
     ),
     OPEN_CONTAINING_FOLDER: Action(
-        OPEN_CONTAINING_FOLDER, "Open Containing Folder", Shortcut("f", frozenset({"ctrl"}))
+        OPEN_CONTAINING_FOLDER,
+        "Open Containing Folder",
+        Shortcut("f", frozenset({"ctrl"})),
     ),
     OPEN_FILE_PROPERTIES: Action(
         OPEN_FILE_PROPERTIES, "File Properties", Shortcut("enter", frozenset({"alt"}))
@@ -321,7 +325,9 @@ ACTIONS = {
         RENAME_FILE, "Rename File", Shortcut("f2", frozenset({"shift"}))
     ),
     COPY_CURRENT_FILE: Action(
-        COPY_CURRENT_FILE, "Copy Current File", Shortcut("c", frozenset({"ctrl", "shift"}))
+        COPY_CURRENT_FILE,
+        "Copy Current File",
+        Shortcut("c", frozenset({"ctrl", "shift"})),
     ),
     PASTE_FROM_CLIPBOARD: Action(
         PASTE_FROM_CLIPBOARD, "Paste", Shortcut("v", frozenset({"ctrl"}))
@@ -346,29 +352,43 @@ ACTIONS = {
         MARKED_COPY_TO_CLIPBOARD, "Copy to Clipboard", None
     ),
     MARKED_DELETE: Action(MARKED_DELETE, "Delete Marked Files", None),
-    ANNOUNCE_FILE_INFO: Action(
-        ANNOUNCE_FILE_INFO, "Announce File Info", Shortcut("f")
+    ANNOUNCE_FILE_INFO: Action(ANNOUNCE_FILE_INFO, "Announce File Info", Shortcut("f")),
+    START_SELECTION: Action(START_SELECTION, "Start Selection", Shortcut("[")),
+    END_SELECTION: Action(END_SELECTION, "End Selection", Shortcut("]")),
+    CLEAR_SELECTION: Action(CLEAR_SELECTION, "Clear Selection", Shortcut("backspace")),
+    SEEK_STEP_1: Action(
+        SEEK_STEP_1, "Seek Step: 1 Second", Shortcut("1", frozenset({"shift"}))
     ),
-    START_SELECTION: Action(
-        START_SELECTION, "Start Selection", Shortcut("[")
+    SEEK_STEP_2: Action(
+        SEEK_STEP_2, "Seek Step: 5 Seconds", Shortcut("2", frozenset({"shift"}))
     ),
-    END_SELECTION: Action(
-        END_SELECTION, "End Selection", Shortcut("]")
+    SEEK_STEP_3: Action(
+        SEEK_STEP_3, "Seek Step: 1 Minute", Shortcut("3", frozenset({"shift"}))
     ),
-    CLEAR_SELECTION: Action(
-        CLEAR_SELECTION, "Clear Selection", Shortcut("backspace")
+    SEEK_STEP_4: Action(
+        SEEK_STEP_4, "Seek Step: 5 Minutes", Shortcut("4", frozenset({"shift"}))
     ),
-    SEEK_STEP_1: Action(SEEK_STEP_1, "Seek Step: 1 Second", Shortcut("1", frozenset({"shift"}))),
-    SEEK_STEP_2: Action(SEEK_STEP_2, "Seek Step: 5 Seconds", Shortcut("2", frozenset({"shift"}))),
-    SEEK_STEP_3: Action(SEEK_STEP_3, "Seek Step: 1 Minute", Shortcut("3", frozenset({"shift"}))),
-    SEEK_STEP_4: Action(SEEK_STEP_4, "Seek Step: 5 Minutes", Shortcut("4", frozenset({"shift"}))),
-    SEEK_STEP_5: Action(SEEK_STEP_5, "Seek Step: 10 Minutes", Shortcut("5", frozenset({"shift"}))),
-    SEEK_STEP_6: Action(SEEK_STEP_6, "Seek Step: 20 Minutes", Shortcut("6", frozenset({"shift"}))),
-    SEEK_STEP_7: Action(SEEK_STEP_7, "Seek Step: 30 Minutes", Shortcut("7", frozenset({"shift"}))),
-    SEEK_STEP_8: Action(SEEK_STEP_8, "Seek Step: 40 Minutes", Shortcut("8", frozenset({"shift"}))),
-    SEEK_STEP_9: Action(SEEK_STEP_9, "Seek Step: 50 Minutes", Shortcut("9", frozenset({"shift"}))),
-    SEEK_STEP_0: Action(SEEK_STEP_0, "Seek Step: 60 Minutes", Shortcut("0", frozenset({"shift"}))),
-    SEEK_STEP_CUSTOM: Action(SEEK_STEP_CUSTOM, "Seek Step: Custom", Shortcut("-", frozenset({"shift"}))),
+    SEEK_STEP_5: Action(
+        SEEK_STEP_5, "Seek Step: 10 Minutes", Shortcut("5", frozenset({"shift"}))
+    ),
+    SEEK_STEP_6: Action(
+        SEEK_STEP_6, "Seek Step: 20 Minutes", Shortcut("6", frozenset({"shift"}))
+    ),
+    SEEK_STEP_7: Action(
+        SEEK_STEP_7, "Seek Step: 30 Minutes", Shortcut("7", frozenset({"shift"}))
+    ),
+    SEEK_STEP_8: Action(
+        SEEK_STEP_8, "Seek Step: 40 Minutes", Shortcut("8", frozenset({"shift"}))
+    ),
+    SEEK_STEP_9: Action(
+        SEEK_STEP_9, "Seek Step: 50 Minutes", Shortcut("9", frozenset({"shift"}))
+    ),
+    SEEK_STEP_0: Action(
+        SEEK_STEP_0, "Seek Step: 60 Minutes", Shortcut("0", frozenset({"shift"}))
+    ),
+    SEEK_STEP_CUSTOM: Action(
+        SEEK_STEP_CUSTOM, "Seek Step: Custom", Shortcut("-", frozenset({"shift"}))
+    ),
     SPEED_UP: Action(SPEED_UP, "Speed Up", Shortcut("up", frozenset({"ctrl"}))),
     SPEED_DOWN: Action(SPEED_DOWN, "Speed Down", Shortcut("down", frozenset({"ctrl"}))),
     SOUND_CARDS: Action(

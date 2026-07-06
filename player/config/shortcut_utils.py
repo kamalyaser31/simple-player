@@ -4,7 +4,6 @@ import wx
 
 from config.shortcuts import Shortcut
 
-
 MODIFIER_ORDER = ["ctrl", "shift", "alt", "win"]
 _MODIFIER_ALIASES = {
     "ctrl": "ctrl",
@@ -174,9 +173,7 @@ def _modifiers_from_event(event):
     mask = event.GetModifiers()
 
     control_mask = (
-        wx.MOD_CONTROL
-        | getattr(wx, "MOD_RAW_CONTROL", 0)
-        | getattr(wx, "MOD_CMD", 0)
+        wx.MOD_CONTROL | getattr(wx, "MOD_RAW_CONTROL", 0) | getattr(wx, "MOD_CMD", 0)
     )
     if (mask & control_mask) or event.ControlDown():
         modifiers.add("ctrl")
@@ -190,4 +187,3 @@ def _modifiers_from_event(event):
         modifiers.add("win")
 
     return modifiers
-

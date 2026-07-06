@@ -1,10 +1,8 @@
 import argparse
 import os
 import subprocess
-import sys
 import tempfile
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDE_DIRS = {"__pycache__", ".git", ".venv", "venv", "dist", "build"}
@@ -19,7 +17,9 @@ def iter_py_files(root):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate POT template using xgettext.")
+    parser = argparse.ArgumentParser(
+        description="Generate POT template using xgettext."
+    )
     parser.add_argument(
         "-o",
         "--output",

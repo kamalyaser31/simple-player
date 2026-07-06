@@ -253,8 +253,12 @@ class AppController:
             SEEK_FORWARD_X8: lambda: seek_forward_x8(self._ctx),
             SEEK_START: lambda: seek_start(self._ctx),
             SEEK_END: lambda: seek_end(self._ctx),
-            VOLUME_UP: lambda: change_volume(self._ctx, self._settings.get_volume_step()),
-            VOLUME_DOWN: lambda: change_volume(self._ctx, -self._settings.get_volume_step()),
+            VOLUME_UP: lambda: change_volume(
+                self._ctx, self._settings.get_volume_step()
+            ),
+            VOLUME_DOWN: lambda: change_volume(
+                self._ctx, -self._settings.get_volume_step()
+            ),
             VOLUME_MAXIMIZE: lambda: set_volume_max(self._ctx),
             VOLUME_MINIMIZE: lambda: set_volume_min(self._ctx),
             ANNOUNCE_VOLUME: lambda: announce_volume(self._ctx),
@@ -330,19 +334,21 @@ class AppController:
             SEEK_STEP_0: lambda: set_seek_step(self._ctx, "0"),
             SEEK_STEP_CUSTOM: lambda: set_seek_step(self._ctx, "-"),
             SPEED_UP: lambda: change_speed(self._ctx, self._settings.get_speed_step()),
-            SPEED_DOWN: lambda: change_speed(self._ctx, -self._settings.get_speed_step()),
+            SPEED_DOWN: lambda: change_speed(
+                self._ctx, -self._settings.get_speed_step()
+            ),
             SOUND_CARDS: lambda: open_sound_cards(self._ctx),
             TOGGLE_SHUFFLE: lambda: toggle_shuffle(self._ctx),
             TOGGLE_REPEAT_FILE: lambda: toggle_repeat_file(self._ctx),
             TOGGLE_SILENCE_REMOVAL: lambda: toggle_silence_removal(self._ctx),
         }
         for action_id, percent in PERCENT_JUMPS.items():
-            self._action_handlers[action_id] = (
-                lambda percent=percent: jump_to_percent(self._ctx, percent)
+            self._action_handlers[action_id] = lambda percent=percent: jump_to_percent(
+                self._ctx, percent
             )
         for action_id, slot in BOOKMARK_JUMPS.items():
-            self._action_handlers[action_id] = (
-                lambda slot=slot: jump_mark_slot(self._ctx, slot)
+            self._action_handlers[action_id] = lambda slot=slot: jump_mark_slot(
+                self._ctx, slot
             )
         self._load_shortcuts_from_settings()
         self._player.set_volume(self._settings.get_volume())
@@ -355,9 +361,7 @@ class AppController:
         self._player.set_audio_normalize_enabled(
             self._settings.get_audio_normalize_enabled()
         )
-        self._player.set_audio_mono_enabled(
-            self._settings.get_audio_mono_enabled()
-        )
+        self._player.set_audio_mono_enabled(self._settings.get_audio_mono_enabled())
         self._player.configure_silence_removal(
             self._settings.get_silence_removal_options()
         )
@@ -400,9 +404,7 @@ class AppController:
             self._player.set_audio_normalize_enabled(
                 self._settings.get_audio_normalize_enabled()
             )
-            self._player.set_audio_mono_enabled(
-                self._settings.get_audio_mono_enabled()
-            )
+            self._player.set_audio_mono_enabled(self._settings.get_audio_mono_enabled())
             self._player.configure_silence_removal(
                 self._settings.get_silence_removal_options()
             )
@@ -440,7 +442,10 @@ class AppController:
             if self._media_timer is not None and self._media_timer.IsRunning():
                 self._media_timer.Stop()
             self._rec.stop(beep=False)
-            if self._settings.get_save_file_pos() and self._settings.get_save_on_close():
+            if (
+                self._settings.get_save_file_pos()
+                and self._settings.get_save_on_close()
+            ):
                 self._save_file_position()
             self._settings.set_volume(self._player.get_volume())
             self._settings.set_speed(self._player.get_speed())
@@ -494,11 +499,17 @@ class AppController:
         self._shortcuts = ShortcutManager(ACTIONS)
         for action_id, shortcut in self._settings.get_shortcut_overrides().items():
             self._shortcuts.set(action_id, shortcut)
-        for action_id, shortcut in self._settings.get_secondary_shortcut_overrides().items():
+        for (
+            action_id,
+            shortcut,
+        ) in self._settings.get_secondary_shortcut_overrides().items():
             self._shortcuts.set(action_id, shortcut, slot="secondary")
 
         self._global_shortcuts = ShortcutManager(GLOBAL_SHORTCUT_ACTIONS)
-        for action_id, shortcut in self._settings.get_global_shortcut_overrides().items():
+        for (
+            action_id,
+            shortcut,
+        ) in self._settings.get_global_shortcut_overrides().items():
             self._global_shortcuts.set(action_id, shortcut)
 
         if self._global_keyboard is not None:
@@ -577,4 +588,3 @@ class AppController:
             self._file_pos.set(path, pos)
         except Exception:
             return
-

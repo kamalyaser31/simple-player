@@ -3,7 +3,11 @@ from gettext import gettext as _
 from pynput import keyboard
 
 from actions import ACTIONS
-from config.shortcut_utils import shortcut_from_event, shortcut_to_display, shortcuts_equal
+from config.shortcut_utils import (
+    shortcut_from_event,
+    shortcut_to_display,
+    shortcuts_equal,
+)
 from config.shortcuts import Shortcut
 
 
@@ -177,13 +181,9 @@ class ShortcutSettings(wx.Panel):
         self._actions = list(self._action_definitions.items())
         self._get_overrides = get_overrides or self._settings.get_shortcut_overrides
         self._set_overrides = set_overrides or self._settings.set_shortcut_overrides
-        self._get_secondary_overrides = (
-            get_secondary_overrides
-            or (lambda: {})
-        )
-        self._set_secondary_overrides = (
-            set_secondary_overrides
-            or (lambda _overrides: None)
+        self._get_secondary_overrides = get_secondary_overrides or (lambda: {})
+        self._set_secondary_overrides = set_secondary_overrides or (
+            lambda _overrides: None
         )
         self._overrides = dict(self._get_overrides())
         self._secondary_overrides = dict(self._get_secondary_overrides())
@@ -333,7 +333,9 @@ class ShortcutSettings(wx.Panel):
         dialog = self._open_capture_dialog()
         if dialog.ShowModal() == wx.ID_OK:
             new_shortcut = dialog.shortcut
-            if new_shortcut and self._has_conflict(action_id, "secondary", new_shortcut):
+            if new_shortcut and self._has_conflict(
+                action_id, "secondary", new_shortcut
+            ):
                 wx.MessageBox(
                     _("That shortcut is already assigned to another action."),
                     _("Shortcut Conflict"),
@@ -387,4 +389,3 @@ class ShortcutSettings(wx.Panel):
         self._overrides.clear()
         self._secondary_overrides.clear()
         self._refresh_list()
-

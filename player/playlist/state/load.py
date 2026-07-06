@@ -73,7 +73,9 @@ class PlaylistStateLoadMixin:
             self._clear_shuffle_order()
         return True
 
-    def open_folder(self, folder_path, recursive=False, preferred_path=None, preserve_current=False):
+    def open_folder(
+        self, folder_path, recursive=False, preferred_path=None, preserve_current=False
+    ):
         files = collect_audio_files(folder_path, recursive=recursive)
         if not files:
             return False
@@ -91,4 +93,6 @@ class PlaylistStateLoadMixin:
         files = collect_audio_files(folder_path, recursive=recursive)
         if not files:
             return False
-        return self.open_file_list(files, preferred_path=path, start_position=start_position)
+        return self.open_file_list(
+            files, preferred_path=path, start_position=start_position
+        )

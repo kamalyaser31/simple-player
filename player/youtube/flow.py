@@ -3,15 +3,28 @@ import concurrent.futures
 import wx
 from gettext import gettext as _
 
-from .components import CancelFlag, CancelledError, add_to_path, has_all, recovery_message
+from .components import (
+    CancelFlag,
+    CancelledError,
+    add_to_path,
+    has_all,
+    recovery_message,
+)
 from .link_validator import parse_link
 from .results import show_res
 from .resolver import ResolveError, YtItem, fetch_play, inspect_link
 from .search import start_search
-from .state import clear_ses, get_ses, mk_ses, ses_idx, set_now, set_ses, sync_removed_sources
+from .state import (
+    clear_ses,
+    get_ses,
+    mk_ses,
+    ses_idx,
+    set_now,
+    set_ses,
+    sync_removed_sources,
+)
 from .task_ui import run_task
 from .ui_utils import ask_link, ask_search, ask_video_or_playlist
-
 
 _PREP_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 _PREP_FUT = {}
@@ -60,10 +73,14 @@ def open_yt_link(ctx, link, forced_kind=""):
 
     info = parse_link(link)
     if not info.is_http:
-        _show_error(ctx, _("The link must start with http or https."), _("Invalid link"))
+        _show_error(
+            ctx, _("The link must start with http or https."), _("Invalid link")
+        )
         return False
     if not info.is_youtube:
-        _show_error(ctx, _("This is not a valid YouTube link."), _("Invalid YouTube link"))
+        _show_error(
+            ctx, _("This is not a valid YouTube link."), _("Invalid YouTube link")
+        )
         return False
 
     kind = str(info.kind or "")
@@ -125,7 +142,9 @@ def open_yt_link(ctx, link, forced_kind=""):
         )
         return True
     if kind != "video":
-        _show_error(ctx, _("This is not a valid YouTube link."), _("Invalid YouTube link"))
+        _show_error(
+            ctx, _("This is not a valid YouTube link."), _("Invalid YouTube link")
+        )
         return False
 
     _clear_ctx_ses(ctx)
@@ -224,7 +243,12 @@ def try_next(ctx):
 
     item = ses["items"][nxt]
     key = _prep_key(item.url, _opts(ctx, ses))
-    ses["pending_next"] = {"from": cur_idx, "to": nxt, "key": key, "source": str(item.url or "")}
+    ses["pending_next"] = {
+        "from": cur_idx,
+        "to": nxt,
+        "key": key,
+        "source": str(item.url or ""),
+    }
     prep = _cache_get(key)
     if isinstance(prep, dict):
         moved = _advance_to_next(ctx, ses, cur_idx, nxt, item, prep)
@@ -684,4 +708,3 @@ def _components_ready_spoken(ctx):
     message = recovery_message() or _("YouTube components are missing.")
     ctx.speak(message, _("YouTube components need repair."))
     return False
-

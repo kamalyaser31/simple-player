@@ -73,7 +73,9 @@ def show_res(ctx, ses, sel, prefetch, play_item, pool, prefetch_n):
                 item = ses["items"][cur_idx()]
                 url = str(item.channel_url or "").strip()
                 if not url:
-                    ctx.speak(_("Channel link is not available."), _("No channel link."))
+                    ctx.speak(
+                        _("Channel link is not available."), _("No channel link.")
+                    )
                     return
                 if not open_url(url):
                     ctx.speak(_("Could not open browser."), _("Browser open failed."))

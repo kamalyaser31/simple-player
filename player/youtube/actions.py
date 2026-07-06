@@ -1,4 +1,12 @@
-from .flow import on_esc, on_playback_finished, open_yt, open_yt_link, search_yt, sync_sel, try_next
+from .flow import (
+    on_esc,
+    on_playback_finished,
+    open_yt,
+    open_yt_link,
+    search_yt,
+    sync_sel,
+    try_next,
+)
 from .video import copy_link, dl_now, has_video, show_desc
 
 __all__ = [

@@ -17,7 +17,6 @@ from config.constants import (
 )
 from helpers.http_utils import open_url
 
-
 UA = "SimpleAudioPlayer/1.0"
 
 

@@ -121,9 +121,7 @@ def fetch_item(item_url, cancel, on_line=None):
     _log(on_line, _("Loading video details..."))
     item = _single_item(exe, item_url, cancel)
     if item is None:
-        raise ResolveError(
-            _with_diag(_("Could not read video details."), _get_diag())
-        )
+        raise ResolveError(_with_diag(_("Could not read video details."), _get_diag()))
     return item
 
 
@@ -152,9 +150,7 @@ def fetch_play(item_url, cancel, on_line=None, audio_only=True, quality="medium"
     if item is None:
         item = _single_item(exe, item_url, cancel)
     if item is None:
-        raise ResolveError(
-            _with_diag(_("Could not read video details."), _get_diag())
-        )
+        raise ResolveError(_with_diag(_("Could not read video details."), _get_diag()))
     if not stream:
         stream = resolve_stream(
             item.url or item_url,
@@ -202,7 +198,9 @@ def _single_item(exe, link, cancel):
 
 def _entry_to_item(entry):
     title = str(entry.get("title") or "").strip()
-    channel_url = str(entry.get("channel_url") or entry.get("uploader_url") or "").strip()
+    channel_url = str(
+        entry.get("channel_url") or entry.get("uploader_url") or ""
+    ).strip()
     channel_name = str(entry.get("channel") or entry.get("uploader") or "").strip()
 
     url = str(entry.get("webpage_url") or "").strip()

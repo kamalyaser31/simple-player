@@ -13,7 +13,9 @@ def add_mark(ctx):
     if parent is None:
         return
     default_name = _("Bookmark {time}").format(time=format_time(pos) or "00:00:00")
-    dlg = wx.TextEntryDialog(parent, _("Enter bookmark name"), _("Add a new bookmark"), default_name)
+    dlg = wx.TextEntryDialog(
+        parent, _("Enter bookmark name"), _("Add a new bookmark"), default_name
+    )
     if dlg.ShowModal() == wx.ID_OK:
         name = str(dlg.GetValue() or "").strip()
         if not name:

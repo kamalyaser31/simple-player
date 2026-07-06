@@ -438,4 +438,3 @@ class MpvEngine:
             return True
         except Exception:
             return False
-

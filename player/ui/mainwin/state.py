@@ -146,7 +146,9 @@ class MainFrameStateMixin:
                     menu_item.Enable(self._bookmarks_enabled)
             if self._bookmarks_menu_index >= 0:
                 try:
-                    menu_bar.EnableTop(self._bookmarks_menu_index, self._bookmarks_enabled)
+                    menu_bar.EnableTop(
+                        self._bookmarks_menu_index, self._bookmarks_enabled
+                    )
                 except Exception:
                     pass
 
@@ -220,6 +222,4 @@ class MainFrameStateMixin:
         self._rec_stop_item.Enable(is_running)
 
         pause_label = _("Resume") if is_paused else _("Pause")
-        self._rec_pause_item.SetItemLabel(
-            self._menu_label(pause_label, REC_PAUSE)
-        )
+        self._rec_pause_item.SetItemLabel(self._menu_label(pause_label, REC_PAUSE))

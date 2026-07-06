@@ -36,7 +36,11 @@ class RecEngine:
     def start(self, opts):
         with self._lock:
             if self._running:
-                return {"ok": False, "error": "Recording is already running.", "path": ""}
+                return {
+                    "ok": False,
+                    "error": "Recording is already running.",
+                    "path": "",
+                }
             try:
                 self._pa_mod = _load_pyaudio()
                 self._pa = self._pa_mod.PyAudio()
@@ -63,7 +67,9 @@ class RecEngine:
                 self._stop.clear()
                 self._paused = False
                 self._running = True
-                self._thread = threading.Thread(target=self._loop, name="RecorderThread", daemon=True)
+                self._thread = threading.Thread(
+                    target=self._loop, name="RecorderThread", daemon=True
+                )
                 self._thread.start()
                 return {"ok": True, "error": "", "path": self._path}
             except Exception as exc:
@@ -190,7 +196,9 @@ class RecEngine:
         amp = max(0.0, min(1.0, float(amp)))
         frames = bytearray()
         for i in range(count):
-            value = int(32767.0 * amp * math.sin((2.0 * math.pi * float(freq) * i) / rate))
+            value = int(
+                32767.0 * amp * math.sin((2.0 * math.pi * float(freq) * i) / rate)
+            )
             frames.extend(struct.pack("<h", value))
         stream = pa.open(
             format=pa_mod.paInt16,

@@ -116,4 +116,3 @@ class Localization:
                     setattr(module, "_", self._translator.gettext)
                 except Exception:
                     continue
-
