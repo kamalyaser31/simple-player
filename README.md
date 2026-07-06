@@ -116,6 +116,16 @@ Simple Audio Player utilizes **Composition over Inheritance** through functional
 - **View (`ui/`)**: Stateless interface layers built with `wxPython` that capture input events and dispatch command tokens to the controller.
 - **Controller (`core/controller.py`)**: The central routing hub that coordinates actions between the UI, MPV playback engine, SMTC, and recording subsystems.
 - **Model (`core/player/` & `playlist/`)**: Encapsulates the media player playback state and playlist operations.
+- **Scripts (`scripts/`)**: Automation utilities for maintenance and deployment:
+  * **Version Synchronization (`update_version.py` / `update_version.bat`)**:
+    * *Function*: Automatically updates and synchronizes the application version number across all critical files: the root `info.json` (the `"version"` key), the Python constants file `player/config/constants.py` (the `APP_VERSION` variable), and the Windows installer script `player/simple_audio_player.iss` (the `MyAppVersion` definition).
+    * *Usage*: Run `python update_version.py <version>` or execute `update_version.bat` which prompts for the version string interactively.
+  * **Translation Extraction (`update_pot.py` / `update_pot.bat`)**:
+    * *Function*: Scans all Python source files recursively, extracts translatable string literals wrapped in the `_()` gettext function (ignoring dependency directories like virtual environments and build outputs), and updates the Gettext template file (`player/locale/simple_audio_player.pot`). Requires `xgettext` tool in the system path.
+    * *Usage*: Run `python update_pot.py` or double-click `update_pot.bat`.
+  * **Updater Compilation (`build_updater.bat`)**:
+    * *Function*: Automates compiling the standalone self-updater utility (`Updater.exe`) from `player/updater/main.py` using PyInstaller.
+    * *Output*: Builds a single-file, windowed executable placed at `player/dist/Updater.exe`.
 
 ---
 
