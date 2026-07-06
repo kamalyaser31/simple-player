@@ -1,0 +1,2198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Audio Player 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-11 22:10+0200\n"
+"PO-Revision-Date: 2026-03-11 22:35+0200\n"
+"Last-Translator: Kamal Yaser <kamalyaser31@gmail.com>\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+msgid "&Copy to folder..."
+msgstr "نسخ إلى مجلد..."
+
+msgid "&Delete"
+msgstr "حذف"
+
+msgid "&Move to folder..."
+msgstr "نقل إلى مجلد..."
+
+msgid "1 file marked"
+msgstr "تم تحديد ملف واحد"
+
+msgid "1 minute"
+msgstr "دقيقة واحدة"
+
+msgid "1 second"
+msgstr "ثانية واحدة"
+
+msgid "10 minutes"
+msgstr "10 دقائق"
+
+msgid "20 minutes"
+msgstr "20 دقيقة"
+
+msgid "30 minutes"
+msgstr "30 دقيقة"
+
+msgid "40 minutes"
+msgstr "40 دقيقة"
+
+msgid "5 minutes"
+msgstr "5 دقائق"
+
+msgid "5 seconds"
+msgstr "5 ثوانٍ"
+
+msgid "50 minutes"
+msgstr "50 دقيقة"
+
+msgid "60 minutes"
+msgstr "60 دقيقة"
+
+msgid ""
+"A lightweight, highly accessible media player designed for keyboard efficiency "
+"and seamless screen reader compatibility. Whether playing local audio files or "
+"streaming directly from YouTube, it offers precise control, advanced audio "
+"filtering, and a distraction-free experience.\n"
+"Developed by: Kamal yaser\n"
+"Version: {version}"
+msgstr ""
+"مشغل وسائط خفيف الوزن وسهل الوصول مصمم لكفاءة استخدام لوحة المفاتيح والتوافق "
+"السلس مع قارئ الشاشة. سواء عند تشغيل ملفات الصوت المحلية أو البث مباشرة من "
+"YouTube، فإنه يوفر تحكمًا دقيقًا، وتصفية صوتية متقدمة، وتجربة خالية من التشتيت.\n"
+"المطور: Kamal yaser\n"
+"الإصدار: {version}"
+
+msgid "A new version of {app_name} has been detected. Would you like to update?"
+msgstr "تم اكتشاف إصدار جديد من {app_name}. هل ترغب في التحديث؟"
+
+msgid ""
+"A newer yt-dlp version is available on '{ch}' channel.\n"
+"Current version: {cur}\n"
+"Latest version: {new}\n"
+"\n"
+"Do you want to update now?"
+msgstr ""
+"يتوفر إصدار أحدث من yt-dlp على قناة '{ch}'.\n"
+"الإصدار الحالي: {cur}\n"
+"أحدث إصدار: {new}\n"
+"\n"
+"هل تريد التحديث الآن؟"
+
+msgid "A-B loop"
+msgstr "تكرار A-B"
+
+msgid "About"
+msgstr "حول"
+
+msgid "Action"
+msgstr "إجراء"
+
+msgid "Actions for marked files"
+msgstr "إجراءات للملفات المحددة"
+
+msgid "Add a new bookmark"
+msgstr "إضافة إشارة مرجعية جديدة"
+
+msgid "Add favorite"
+msgstr "إضافة مفضلة"
+
+msgid "Add..."
+msgstr "إضافة..."
+
+msgid "Advance to the next file"
+msgstr "التقدم إلى الملف التالي"
+
+msgid "Advanced"
+msgstr "متقدم"
+
+msgid "Advanced mode"
+msgstr "الوضع المتقدم"
+
+msgid "All bookmarks for this file were removed."
+msgstr "تمت إزالة جميع الإشارات المرجعية لهذا الملف."
+
+msgid "All files closed."
+msgstr "تم إغلاق جميع الملفات."
+
+msgid "All files marked."
+msgstr "تم تحديد جميع الملفات."
+
+msgid "All files unmarked."
+msgstr "تم إلغاء تحديد جميع الملفات."
+
+msgid "All marked."
+msgstr "تم تحديد الكل."
+
+msgid "All unmarked."
+msgstr "تم إلغاء تحديد الكل."
+
+msgid ""
+"Application language. System default follows your OS language. Choosing a "
+"specific language applies it on next app start."
+msgstr ""
+"لغة التطبيق. يتبع النظام الافتراضي لغة نظام التشغيل لديك. اختيار لغة معينة يطبقها "
+"عند التشغيل التالي للتطبيق."
+
+msgid "Application update"
+msgstr "تحديث التطبيق"
+
+msgid ""
+"Are you sure you want to reset all settings to defaults?\n"
+"This action cannot be undone."
+msgstr ""
+"هل أنت متأكد أنك تريد إعادة تعيين جميع الإعدادات إلى الافتراضية؟\n"
+"لا يمكن التراجع عن هذا الإجراء."
+
+msgid "Ask every time"
+msgstr "السؤال في كل مرة"
+
+msgid "Audio"
+msgstr "الصوت"
+
+msgid "Audio format"
+msgstr "تنسيق الصوت"
+
+msgid "Audio quality (kbps)"
+msgstr "جودة الصوت (kbps)"
+
+msgid ""
+"Audio settings. Use Tab to move between controls. Press F1 on a specific control "
+"to hear detailed help."
+msgstr ""
+"إعدادات الصوت. استخدم Tab للتنقل بين عناصر التحكم. اضغط F1 على عنصر محدد لسماع "
+"شرح مفصل."
+
+msgid "Backspace"
+msgstr "Backspace"
+
+msgid "Backup and restore"
+msgstr "النسخ الاحتياطي والاستعادة"
+
+msgid ""
+"Backup and restore settings page. Use Export settings, Import settings, or Open "
+"user settings folder."
+msgstr ""
+"صفحة النسخ الاحتياطي واستعادة الإعدادات. استخدم تصدير الإعدادات، أو استيراد "
+"الإعدادات، أو فتح مجلد إعدادات المستخدم."
+
+msgid "Beginner"
+msgstr "مبتدئ"
+
+msgid "Beginner mode"
+msgstr "وضع المبتدئين"
+
+msgid "Beginning"
+msgstr "البداية"
+
+msgid ""
+"Behavior for YouTube links that include both a video ID and a playlist ID. Ask "
+"every time shows a chooser dialog. Play the video opens only the selected video. "
+"Open the playlist opens the full playlist."
+msgstr ""
+"سلوك روابط YouTube التي تتضمن معرف فيديو ومعرف قائمة تشغيل. السؤال في كل مرة يعرض "
+"مربع حوار للاختيار. تشغيل الفيديو يفتح الفيديو المحدد فقط. فتح قائمة التشغيل يفتح "
+"قائمة التشغيل كاملة."
+
+msgid "Best"
+msgstr "الأفضل"
+
+msgid "Bookmark '{name}' added at {time}."
+msgstr "تمت إضافة الإشارة المرجعية '{name}' عند {time}."
+
+msgid "Bookmark name cannot be empty."
+msgstr "لا يمكن أن يكون اسم الإشارة المرجعية فارغًا."
+
+msgid "Bookmark {slot}"
+msgstr "إشارة مرجعية {slot}"
+
+msgid "Bookmark {time}"
+msgstr "إشارة مرجعية {time}"
+
+msgid "Bookmarks"
+msgstr "الإشارات المرجعية"
+
+msgid "Bookmarks exported successfully."
+msgstr "تم تصدير الإشارات المرجعية بنجاح."
+
+msgid "Bookmarks imported successfully."
+msgstr "تم استيراد الإشارات المرجعية بنجاح."
+
+msgid "Browse..."
+msgstr "استعراض..."
+
+msgid "Browser open failed."
+msgstr "فشل فتح المتصفح."
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Canceled."
+msgstr "تم الإلغاء."
+
+msgid "Cannot open clipboard data."
+msgstr "لا يمكن فتح بيانات الحافظة."
+
+msgid "Channel link is not available."
+msgstr "رابط القناة غير متوفر."
+
+msgid "Channel links are not supported here."
+msgstr "روابط القناة غير مدعومة هنا."
+
+msgid "Channels"
+msgstr "القنوات"
+
+msgid "Check for app updates"
+msgstr "التحقق من تحديثات التطبيق"
+
+msgid "Check for app updates on startup"
+msgstr "التحقق من تحديثات التطبيق عند بدء التشغيل"
+
+msgid ""
+"Check for app updates on startup. When enabled, the app checks online update "
+"metadata at launch and prompts when a newer version is available."
+msgstr ""
+"التحقق من تحديثات التطبيق عند بدء التشغيل. عند التمكين، يتحقق التطبيق من بيانات "
+"التحديث عبر الإنترنت عند التشغيل ويطالبك عند توفر إصدار أحدث."
+
+msgid "Check for yt-dlp updates on startup"
+msgstr "التحقق من تحديثات yt-dlp عند بدء التشغيل"
+
+msgid ""
+"Check for yt-dlp updates on startup. When enabled, the app checks local and "
+"latest channel versions at launch and prompts you to run the standard yt-dlp "
+"update when a newer version is available."
+msgstr ""
+"التحقق من تحديثات yt-dlp عند بدء التشغيل. عند التمكين، يتحقق التطبيق من الإصدارات "
+"المحلية وأحدث إصدارات القناة عند التشغيل ويطالبك بتشغيل تحديث yt-dlp القياسي عند "
+"توفر إصدار أحدث."
+
+msgid "Checking for app updates"
+msgstr "التحقق من تحديثات التطبيق"
+
+msgid "Choose recordings folder"
+msgstr "اختيار مجلد التسجيلات"
+
+msgid "Choose time position:"
+msgstr "اختيار الموضع الزمني:"
+
+msgid "Clear A-B loop"
+msgstr "مسح تكرار A-B"
+
+msgid "Clear Marked Files"
+msgstr "مسح التحديد"
+
+msgid "Clipboard does not contain files or folders."
+msgstr "الحافظة لا تحتوي على ملفات أو مجلدات."
+
+msgid "Clipboard does not contain openable files or folders."
+msgstr "الحافظة لا تحتوي على ملفات أو مجلدات قابلة للفتح."
+
+msgid "Clipboard empty."
+msgstr "الحافظة فارغة."
+
+msgid "Clipboard path could not be resolved: {path}"
+msgstr "تعذر تحليل مسار الحافظة: {path}"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Close File"
+msgstr "إغلاق الملف"
+
+msgid "Close all files"
+msgstr "إغلاق جميع الملفات"
+
+msgid "Close failed."
+msgstr "فشل الإغلاق."
+
+msgid "Combined link"
+msgstr "رابط مركب"
+
+msgid "Combined link favorites require a link containing both video and playlist."
+msgstr "تتطلب مفضلات الرابط المركب رابطًا يحتوي على فيديو وقائمة تشغيل معًا."
+
+msgid "Confirm Delete"
+msgstr "تأكيد الحذف"
+
+msgid "Confirm Reset"
+msgstr "تأكيد إعادة التعيين"
+
+msgid "Confirm delete"
+msgstr "تأكيد الحذف"
+
+msgid "Confirm remove"
+msgstr "تأكيد الإزالة"
+
+msgid "Contact me"
+msgstr "تواصل معي"
+
+msgid "Control the clicks movement value"
+msgstr "قيمة التقديم والتأخير"
+
+msgid "Copied."
+msgstr "تم النسخ."
+
+msgid "Copy"
+msgstr "نسخ"
+
+msgid "Copy failed."
+msgstr "فشل النسخ."
+
+msgid "Copy link\tCtrl+C"
+msgstr "نسخ الرابط\tCtrl+C"
+
+msgid "Copy to &clipboard"
+msgstr "النسخ إلى &الحافظة"
+
+msgid "Copy video link"
+msgstr "نسخ رابط الفيديو"
+
+msgid "Copying marked files"
+msgstr "نسخ التحديد"
+
+msgid "Could not add bookmark."
+msgstr "تعذر إضافة إشارة مرجعية."
+
+msgid "Could not add favorite."
+msgstr "تعذر إضافة مفضلة."
+
+msgid "Could not change silence removal filter."
+msgstr "تعذر تغيير مرشح إزالة الصمت."
+
+msgid "Could not check for updates."
+msgstr "تعذر التحقق من وجود تحديثات."
+
+msgid "Could not close files."
+msgstr "تعذر إغلاق الملفات."
+
+msgid "Could not close the file."
+msgstr "تعذر إغلاق الملف."
+
+msgid "Could not complete YouTube search."
+msgstr "تعذر إكمال بحث YouTube."
+
+msgid "Could not copy link."
+msgstr "تعذر نسخ الرابط."
+
+msgid "Could not delete marked files."
+msgstr "تعذر حذف التحديد."
+
+msgid "Could not delete the file."
+msgstr "تعذر حذف الملف."
+
+msgid "Could not download update."
+msgstr "تعذر تنزيل التحديث."
+
+msgid ""
+"Could not export bookmarks.\n"
+"{error}"
+msgstr ""
+"تعذر تصدير الإشارات المرجعية.\n"
+"{error}"
+
+msgid ""
+"Could not export settings.\n"
+"{error}"
+msgstr ""
+"تعذر تصدير الإعدادات.\n"
+"{error}"
+
+msgid "Could not find the file {name}."
+msgstr "تعذر العثور على الملف {name}."
+
+msgid ""
+"Could not import bookmarks.\n"
+"{error}"
+msgstr ""
+"تعذر استيراد الإشارات المرجعية.\n"
+"{error}"
+
+msgid ""
+"Could not import settings.\n"
+"{error}"
+msgstr ""
+"تعذر استيراد الإعدادات.\n"
+"{error}"
+
+msgid "Could not initialize the application."
+msgstr "تعذر تهيئة التطبيق."
+
+msgid "Could not install YouTube components."
+msgstr "تعذر تثبيت مكونات YouTube."
+
+msgid "Could not load playlist info."
+msgstr "تعذر تحميل معلومات قائمة التشغيل."
+
+msgid "Could not open YouTube stream."
+msgstr "تعذر فتح بث YouTube."
+
+msgid "Could not open browser."
+msgstr "تعذر فتح المتصفح."
+
+msgid "Could not open file properties."
+msgstr "تعذر فتح خصائص الملف."
+
+msgid "Could not open file properties: {error}"
+msgstr "تعذر فتح خصائص الملف: {error}"
+
+msgid ""
+"Could not open recordings folder.\n"
+"{error}"
+msgstr ""
+"تعذر فتح مجلد التسجيلات.\n"
+"{error}"
+
+msgid "Could not open stream link."
+msgstr "تعذر فتح رابط البث."
+
+msgid "Could not open the file from clipboard."
+msgstr "تعذر فتح الملف من الحافظة."
+
+msgid "Could not open the file."
+msgstr "تعذر فتح الملف."
+
+msgid "Could not open the folder."
+msgstr "تعذر فتح المجلد."
+
+msgid "Could not open the link from clipboard."
+msgstr "تعذر فتح الرابط من الحافظة."
+
+msgid "Could not open the link."
+msgstr "تعذر فتح الرابط."
+
+msgid "Could not open the settings folder."
+msgstr "تعذر فتح مجلد الإعدادات."
+
+msgid ""
+"Could not pause recording.\n"
+"{error}"
+msgstr ""
+"تعذر إيقاف التسجيل مؤقتًا.\n"
+"{error}"
+
+msgid "Could not read YouTube link data."
+msgstr "تعذر قراءة بيانات رابط YouTube."
+
+msgid "Could not read playlist information."
+msgstr "تعذر قراءة معلومات قائمة التشغيل."
+
+msgid "Could not read video details."
+msgstr "تعذر قراءة تفاصيل الفيديو."
+
+msgid ""
+"Could not register file extensions.\n"
+"{error}"
+msgstr ""
+"تعذر تسجيل امتدادات الملفات.\n"
+"{error}"
+
+msgid "Could not rename the file."
+msgstr "تعذر إعادة تسمية الملف."
+
+msgid ""
+"Could not reset settings.\n"
+"{error}"
+msgstr ""
+"تعذر إعادة تعيين الإعدادات.\n"
+"{error}"
+
+msgid "Could not resolve YouTube stream."
+msgstr "تعذر تحليل بث YouTube."
+
+msgid "Could not resolve a playable stream."
+msgstr "تعذر العثور على بث قابل للتشغيل."
+
+msgid ""
+"Could not resume recording.\n"
+"{error}"
+msgstr ""
+"تعذر استئناف التسجيل.\n"
+"{error}"
+
+msgid "Could not set sound card."
+msgstr "تعذر تعيين بطاقة الصوت."
+
+msgid ""
+"Could not start recording.\n"
+"{error}"
+msgstr ""
+"تعذر بدء التسجيل.\n"
+"{error}"
+
+msgid "Could not start the updater."
+msgstr "تعذر بدء أداة التحديث."
+
+msgid ""
+"Could not stop recording.\n"
+"{error}"
+msgstr ""
+"تعذر إيقاف التسجيل.\n"
+"{error}"
+
+msgid ""
+"Could not unregister file extensions.\n"
+"{error}"
+msgstr ""
+"تعذر إلغاء تسجيل امتدادات الملفات.\n"
+"{error}"
+
+msgid "Could not update favorite."
+msgstr "تعذر تحديث المفضلة."
+
+msgid "Could not update yt-dlp."
+msgstr "تعذر تحديث yt-dlp."
+
+msgid "Counting files... {count}"
+msgstr "جاري عد الملفات... {count}"
+
+msgid "Current file copied to clipboard."
+msgstr "تم نسخ الملف الحالي إلى الحافظة."
+
+msgid "Custom seek value (seconds)"
+msgstr "قيمة التقديم المخصصة (بالثواني)"
+
+msgid ""
+"Custom seek value in seconds. This value is used when the custom seek step is "
+"selected. Enter a positive number like 5, 10, or 30. Decimals are allowed, for "
+"example 2.5 seconds."
+msgstr ""
+"قيمة التقديم المخصصة بالثواني. تُستخدم هذه القيمة عند اختيار خطوة التقديم المخصصة. "
+"أدخل رقمًا موجبًا مثل 5 أو 10 أو 30. الكسور العشرية مسموح بها، مثل 2.5 ثانية."
+
+msgid "Custom value"
+msgstr "قيمة مخصصة"
+
+msgid "Decrease Speed"
+msgstr "تقليل السرعة"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delete '{name}'?"
+msgstr "حذف '{name}'؟"
+
+msgid "Delete Complete"
+msgstr "اكتمل الحذف"
+
+msgid "Delete bookmark '{name}'?"
+msgstr "حذف الإشارة المرجعية '{name}'؟"
+
+msgid "Delete failed."
+msgstr "فشل الحذف."
+
+msgid "Delete is available only for local files."
+msgstr "الحذف متاح فقط للملفات المحلية."
+
+msgid "Delete {count} marked files?"
+msgstr "حذف {count} من التحديد؟"
+
+msgid "Deleted {count} marked files."
+msgstr "تم حذف {count} من التحديد."
+
+msgid "Deleted {deleted} files. Failed to delete {failed} files."
+msgstr "تم حذف {deleted} من الملفات. فشل حذف {failed} من الملفات."
+
+msgid "Deleted."
+msgstr "تم الحذف."
+
+msgid "Detection mode"
+msgstr "وضع الاكتشاف"
+
+msgid ""
+"Detection mode for silence analysis. Peak reacts quickly to speech transients. "
+"RMS is smoother."
+msgstr ""
+"وضع اكتشاف الصمت. يتفاعل Peak بسرعة مع تقلبات الكلام. بينما يعد RMS أكثر سلاسة."
+
+msgid "Detection window size (seconds)"
+msgstr "حجم نافذة الاكتشاف (بالثواني)"
+
+msgid "Detection window size in seconds. Default is 0.02."
+msgstr "حجم نافذة الاكتشاف بالثواني. الافتراضي هو 0.02."
+
+msgid "Do nothing"
+msgstr "لا تفعل شيئًا"
+
+msgid "Don't show this message again"
+msgstr "لا تظهر هذه الرسالة مجددًا"
+
+msgid "Down"
+msgstr "أسفل"
+
+msgid "Download"
+msgstr "تنزيل"
+
+msgid "Download YouTube components"
+msgstr "تنزيل مكونات YouTube"
+
+msgid ""
+"Download YouTube components installs missing YouTube libraries such as yt-dlp and "
+"Deno."
+msgstr "تنزيل مكونات YouTube يثبت مكتبات YouTube المفقودة مثل yt-dlp و Deno."
+
+msgid "Download completed."
+msgstr "اكتمل التنزيل."
+
+msgid "Download failed."
+msgstr "فشل التنزيل."
+
+msgid "Download..."
+msgstr "تنزيل..."
+
+msgid "Downloading YouTube components"
+msgstr "جاري تنزيل مكونات YouTube"
+
+msgid "Downloading audio"
+msgstr "جاري تنزيل الصوت"
+
+msgid "Downloading update"
+msgstr "جاري تنزيل التحديث"
+
+msgid "Downloading update package..."
+msgstr "جاري تنزيل حزمة التحديث..."
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Edit Primary Shortcut"
+msgstr "تعديل الاختصار الأساسي"
+
+msgid "Edit Secondary Shortcut"
+msgstr "تعديل الاختصار الثانوي"
+
+msgid "Edit bookmark name"
+msgstr "تعديل اسم الإشارة المرجعية"
+
+msgid "Edit favorite"
+msgstr "تعديل المفضلة"
+
+msgid "Edit..."
+msgstr "تعديل..."
+
+msgid "Elapsed time: "
+msgstr "الوقت المنقضي: "
+
+msgid "Elapsed: {value}"
+msgstr "المنقضي: {value}"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Enable dynamic normalize and limiter"
+msgstr "تمكين التطبيع الديناميكي والمحدد"
+
+msgid ""
+"Enable dynamic normalize and limiter audio filter. When enabled, audio uses "
+"dynaudnorm followed by alimiter to reduce clipping at high volume boosts. Disable "
+"it to use raw output without this processing."
+msgstr ""
+"تمكين مرشح التطبيع الديناميكي والمحدد للصوت. عند التمكين، يستخدم الصوت dynaudnorm "
+"متبوعًا بـ alimiter لتقليل التشويه عند رفع الصوت العالي. عطله لاستخدام المخرج "
+"الخام بدون هذه المعالجة."
+
+msgid "Enable silence removal filter"
+msgstr "تمكين مرشح إزالة الصمت"
+
+msgid "End"
+msgstr "النهاية"
+
+msgid "End selection must be after start."
+msgstr "يجب أن يكون اختيار النهاية بعد البداية."
+
+msgid "End selection: {time}"
+msgstr "اختيار النهاية: {time}"
+
+msgid "End {time}"
+msgstr "النهاية {time}"
+
+msgid "Enter"
+msgstr "إدخال"
+
+msgid "Enter a YouTube video or playlist link."
+msgstr "أدخل رابط فيديو أو قائمة تشغيل YouTube."
+
+msgid "Enter bookmark name"
+msgstr "أدخل اسم الإشارة المرجعية"
+
+msgid "Enter file number (1-{count})"
+msgstr "أدخل رقم الملف (1-{count})"
+
+msgid "Enter link to play."
+msgstr "أدخل الرابط للتشغيل."
+
+msgid "Enter new name for the file."
+msgstr "أدخل اسمًا جديدًا للملف."
+
+msgid "Enter search text."
+msgstr "أدخل نص البحث."
+
+msgid "Error"
+msgstr "خطأ"
+
+msgid "Exit"
+msgstr "خروج"
+
+msgid "Export bookmarks"
+msgstr "تصدير الإشارات المرجعية"
+
+msgid "Export bookmarks creates a copy of the bookmarks JSON file."
+msgstr "تصدير الإشارات المرجعية ينشئ نسخة من ملف JSON الخاص بالإشارات المرجعية."
+
+msgid "Export error"
+msgstr "خطأ في التصدير"
+
+msgid "Export settings"
+msgstr "تصدير الإعدادات"
+
+msgid "Export settings creates a copy of the current settings file."
+msgstr "تصدير الإعدادات ينشئ نسخة من ملف الإعدادات الحالي."
+
+msgid "Failed."
+msgstr "فشل."
+
+msgid "Favorite videos"
+msgstr "الفيديوهات المفضلة"
+
+msgid "Favorite videos..."
+msgstr "الفيديوهات المفضلة..."
+
+msgid "Fetching first stream..."
+msgstr "جاري جلب البث الأول..."
+
+msgid "Fetching stream URL..."
+msgstr "جاري جلب رابط البث..."
+
+msgid "File"
+msgstr "ملف"
+
+msgid "File added to marked files."
+msgstr "تمت إضافة الملف إلى التحديد."
+
+msgid "File closed."
+msgstr "تم إغلاق الملف."
+
+msgid "File deleted."
+msgstr "تم حذف الملف."
+
+msgid "File extensions registered successfully."
+msgstr "تم تسجيل امتدادات الملفات بنجاح."
+
+msgid "File extensions unregistered successfully."
+msgstr "تم إلغاء تسجيل امتدادات الملفات بنجاح."
+
+msgid "File number out of range."
+msgstr "رقم الملف خارج النطاق."
+
+msgid "File path copied to clipboard."
+msgstr "تم نسخ مسار الملف إلى الحافظة."
+
+msgid "File properties are available only for local files."
+msgstr "خصائص الملف متاحة فقط للملفات المحلية."
+
+msgid "File properties are not supported on this platform."
+msgstr "خصائص الملف غير مدعومة على هذه المنصة."
+
+msgid "File properties..."
+msgstr "خصائص الملف..."
+
+msgid "File removed from marked files."
+msgstr "تمت إزالة الملف من التحديد."
+
+msgid "File renamed."
+msgstr "تمت إعادة تسمية الملف."
+
+msgid "Filter failed."
+msgstr "فشل المرشح."
+
+msgid "First File"
+msgstr "الملف الأول"
+
+msgid "Folder is not set."
+msgstr "المجلد غير محدد."
+
+msgid "Forward"
+msgstr "للأمام"
+
+msgid "General"
+msgstr "عام"
+
+msgid ""
+"General settings. Use Tab to move between controls. Press F1 on a specific "
+"control to hear detailed help."
+msgstr ""
+"إعدادات عامة. استخدم Tab للتنقل بين عناصر التحكم. اضغط F1 على عنصر محدد لسماع شرح "
+"مفصل."
+
+msgid "Generic stream"
+msgstr "بث عام"
+
+msgid "Generic stream link must start with http or https."
+msgstr "يجب أن يبدأ رابط البث العام بـ http أو https."
+
+msgid "Global Shortcuts"
+msgstr "اختصارات عامة"
+
+msgid "Global shortcuts"
+msgstr "اختصارات عامة"
+
+msgid "Go To File"
+msgstr "الذهاب إلى الملف"
+
+msgid "Go to file..."
+msgstr "الذهاب إلى الملف..."
+
+msgid "Go to time"
+msgstr "الذهاب إلى وقت"
+
+msgid "Go to time..."
+msgstr "الذهاب إلى وقت..."
+
+msgid "Help"
+msgstr "مساعدة"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "Hours"
+msgstr "ساعات"
+
+msgid "How many silence chunks to trim after audio has started (-1 means all)."
+msgstr "عدد أجزاء الصمت المطلوب قصها بعد بدء الصوت (1- يعني الكل)."
+
+msgid "How many silent chunks to remove from the beginning."
+msgstr "عدد أجزاء الصمت المطلوب إزالتها من البداية."
+
+msgid ""
+"How silence is detected. Peak reacts faster to speech transients (default). RMS "
+"is smoother and less sensitive to short spikes."
+msgstr ""
+"طريقة اكتشاف الصمت. يتفاعل Peak بشكل أسرع مع تقلبات الكلام (افتراضي). بينما يكون "
+"RMS أكثر سلاسة وأقل حساسية للزيادات المفاجئة القصيرة."
+
+msgid "INI files (*.ini)|*.ini|All files (*.*)|*.*"
+msgstr "ملفات INI (*.ini)|*.ini|كل الملفات (*.*)|*.*"
+
+msgid "Import bookmarks"
+msgstr "استيراد الإشارات المرجعية"
+
+msgid "Import bookmarks replaces current bookmarks with a selected bookmarks file."
+msgstr ""
+"استيراد الإشارات المرجعية يستبدل الإشارات المرجعية الحالية بملف إشارات مختار."
+
+msgid "Import error"
+msgstr "خطأ في الاستيراد"
+
+msgid "Import settings"
+msgstr "استيراد الإعدادات"
+
+msgid "Import settings replaces current settings with a selected settings file."
+msgstr "استيراد الإعدادات يستبدل الإعدادات الحالية بملف إعدادات مختار."
+
+msgid "Increase Speed"
+msgstr "زيادة السرعة"
+
+msgid "Info"
+msgstr "معلومات"
+
+msgid "Info failed."
+msgstr "فشلت المعلومات."
+
+msgid "Information"
+msgstr "معلومات"
+
+msgid "Invalid YouTube link"
+msgstr "رابط YouTube غير صالح"
+
+msgid "Invalid download folder."
+msgstr "مجلد تنزيل غير صالح."
+
+msgid "Invalid end."
+msgstr "نهاية غير صالحة."
+
+msgid "Invalid file number."
+msgstr "رقم ملف غير صالح."
+
+msgid "Invalid link"
+msgstr "رابط غير صالح"
+
+msgid "Invalid link."
+msgstr "رابط غير صالح."
+
+msgid "Invalid number."
+msgstr "رقم غير صالح."
+
+msgid "Invalid path in clipboard."
+msgstr "مسار غير صالح في الحافظة."
+
+msgid "JSON files (*.json)|*.json|All files (*.*)|*.*"
+msgstr "ملفات JSON (*.json)|*.json|كل الملفات (*.*)|*.*"
+
+msgid "Jump"
+msgstr "انتقال"
+
+msgid "Jump to Percentage"
+msgstr "انتقال إلى نسبة مئوية"
+
+msgid "Jump to bookmark"
+msgstr "انتقال إلى إشارة مرجعية"
+
+msgid "Jump to selected"
+msgstr "انتقال إلى المحدد"
+
+msgid "Jumped to '{name}' at {time}."
+msgstr "انتقل إلى '{name}' عند {time}."
+
+msgid "Jumped to bookmark {name}."
+msgstr "انتقل إلى الإشارة المرجعية {name}."
+
+msgid "Keyboard Shortcuts"
+msgstr "اختصارات لوحة المفاتيح"
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid ""
+"Language code used for YouTube searches. Example: 'en' for English, 'es' for "
+"Spanish."
+msgstr ""
+"رمز اللغة المستخدم لعمليات البحث على YouTube. على سبيل المثال: \"en\" للغة "
+"الإنجليزية، و\"es\" للغة الإسبانية."
+
+msgid "Last File"
+msgstr "الملف الأخير"
+
+msgid "Later"
+msgstr "لاحقًا"
+
+msgid "Leading silent parts to trim"
+msgstr "أجزاء الصمت البادئة للقص"
+
+msgid ""
+"Leading silent parts to trim. This controls how many silent chunks are removed "
+"from the beginning. Typical value is 1."
+msgstr ""
+"أجزاء الصمت البادئة للقص. يتحكم هذا في عدد أجزاء الصمت التي تتم إزالتها من "
+"البداية. القيمة المعتادة هي 1."
+
+msgid "Leaves a short pause before the next word (default: 0.2)."
+msgstr "يترك وقفة قصيرة قبل الكلمة التالية (الافتراضي: 0.2)."
+
+msgid "Left"
+msgstr "يسار"
+
+msgid "Link"
+msgstr "رابط"
+
+msgid "Link copied."
+msgstr "تم نسخ الرابط."
+
+msgid "Link is required."
+msgstr "الرابط مطلوب."
+
+msgid "Loading YouTube link"
+msgstr "جاري تحميل رابط YouTube"
+
+msgid "Loading YouTube stream"
+msgstr "جاري تحميل بث YouTube"
+
+msgid "Loading YouTube stream..."
+msgstr "جاري تحميل بث YouTube..."
+
+msgid "Loading files from folder and subfolders..."
+msgstr "جاري تحميل الملفات من المجلد والمجلدات الفرعية..."
+
+msgid "Loading more videos..."
+msgstr "جاري تحميل المزيد من الفيديوهات..."
+
+msgid "Loading next video..."
+msgstr "جاري تحميل الفيديو التالي..."
+
+msgid "Loading playlist info"
+msgstr "جاري تحميل معلومات قائمة التشغيل"
+
+msgid "Loading playlist items..."
+msgstr "جاري تحميل عناصر قائمة التشغيل..."
+
+msgid "Loading video details"
+msgstr "جاري تحميل تفاصيل الفيديو"
+
+msgid "Loading video details..."
+msgstr "جاري تحميل تفاصيل الفيديو..."
+
+msgid "Local Shortcuts"
+msgstr "اختصارات محلية"
+
+msgid "Loop the file"
+msgstr "تكرار الملف"
+
+msgid "Low"
+msgstr "منخفض"
+
+msgid "Manage bookmarks"
+msgstr "إدارة الإشارات المرجعية"
+
+msgid "Mark All Files"
+msgstr "تحديد جميع الملفات"
+
+msgid "Mark Current File"
+msgstr "تحديد الملف الحالي"
+
+msgid "Marked files copied to clipboard."
+msgstr "تم نسخ التحديد إلى الحافظة."
+
+msgid "Marked files copied."
+msgstr "تم نسخ التحديد."
+
+msgid "Marked files deleted."
+msgstr "تم حذف التحديد."
+
+msgid "Marked files list cleared."
+msgstr "تم مسح قائمة التحديد."
+
+msgid "Marked files moved."
+msgstr "تم نقل التحديد."
+
+msgid "Marked."
+msgstr "تم التحديد."
+
+msgid "Marks cleared."
+msgstr "تم مسح التحديد."
+
+msgid "Medium"
+msgstr "متوسط"
+
+msgid "Minimum inner silence length (seconds)"
+msgstr "الحد الأدنى لطول الصمت الداخلي (بالثواني)"
+
+msgid ""
+"Minimum inner silence length in seconds. Only silence in the middle or end at "
+"least this long is removed."
+msgstr ""
+"الحد الأدنى لطول الصمت الداخلي بالثواني. سيتم فقط إزالة الصمت الموجود في المنتصف "
+"أو النهاية والذي تبلغ مدته هذا الطول على الأقل."
+
+msgid "Minimum leading silence length (seconds)"
+msgstr "الحد الأدنى لطول الصمت البادئ (بالثواني)"
+
+msgid ""
+"Minimum leading silence length in seconds. Only leading silence at least this "
+"long is removed. Default is 0.2."
+msgstr ""
+"الحد الأدنى لطول الصمت البادئ بالثواني. سيتم فقط إزالة الصمت البادئ الذي تبلغ "
+"مدته هذا الطول على الأقل. الافتراضي هو 0.2."
+
+msgid "Minimum silence duration (seconds)"
+msgstr "الحد الأدنى لمدة الصمت (بالثواني)"
+
+msgid ""
+"Minimum silence duration in seconds. Silence shorter than this is kept. Default "
+"is 0.5."
+msgstr ""
+"الحد الأدنى لمدة الصمت بالثواني. سيتم الإبقاء على الصمت الأقصر من ذلك. الافتراضي "
+"هو 0.5."
+
+msgid ""
+"Minimum silence duration in seconds. Silence shorter than this value is kept. "
+"Increase it to preserve short pauses. Decrease it to trim more aggressively."
+msgstr ""
+"الحد الأدنى لمدة الصمت بالثواني. سيتم الإبقاء على الصمت الأقصر من هذه القيمة. قم "
+"بزيادتها للحفاظ على الوقفات القصيرة، وقللها للقص بشكل أكثر قوة."
+
+msgid "Minimum silence duration must be a non-negative number."
+msgstr "يجب أن يكون الحد الأدنى لمدة الصمت رقمًا غير سالب."
+
+msgid "Minutes"
+msgstr "دقائق"
+
+msgid "Missing components."
+msgstr "مكونات مفقودة."
+
+msgid "Mono"
+msgstr "مونو (أحادي)"
+
+msgid "Moved."
+msgstr "تم النقل."
+
+msgid "Moving marked files"
+msgstr "جاري نقل التحديد"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Name is required."
+msgstr "الاسم مطلوب."
+
+msgid "Navigate to channel\tCtrl+N"
+msgstr "الانتقال إلى القناة\tCtrl+N"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "No"
+msgstr "لا"
+
+msgid "No YouTube video is active."
+msgstr "لا يوجد فيديو YouTube نشط."
+
+msgid "No YouTube video."
+msgstr "لا يوجد فيديو YouTube."
+
+msgid "No audio files found in that folder."
+msgstr "لم يتم العثور على ملفات صوتية في هذا المجلد."
+
+msgid "No audio files."
+msgstr "لا توجد ملفات صوتية."
+
+msgid "No bookmark in slot {slot}."
+msgstr "لا توجد إشارة مرجعية في الفتحة {slot}."
+
+msgid "No bookmark {slot}."
+msgstr "لا توجد إشارة مرجعية {slot}."
+
+msgid "No bookmarks found for the current file."
+msgstr "لم يتم العثور على إشارات مرجعية للملف الحالي."
+
+msgid "No channel link."
+msgstr "لا يوجد رابط قناة."
+
+msgid "No description is available."
+msgstr "لا يوجد وصف متاح."
+
+msgid "No detailed help is available for this control."
+msgstr "لا يتوفر شرح مفصل لعنصر التحكم هذا."
+
+msgid "No devices."
+msgstr "لا توجد أجهزة."
+
+msgid "No file loaded."
+msgstr "لم يتم تحميل أي ملف."
+
+msgid "No file."
+msgstr "لا يوجد ملف."
+
+msgid "No marked files."
+msgstr "لا توجد ملفات محددة."
+
+msgid "No marks."
+msgstr "لا توجد علامات تحديد."
+
+msgid "No other files are loaded."
+msgstr "لا توجد ملفات أخرى محملة."
+
+msgid "No other files."
+msgstr "لا توجد ملفات أخرى."
+
+msgid "No playable YouTube items were found."
+msgstr "لم يتم العثور على عناصر YouTube قابلة للتشغيل."
+
+msgid "No selection to clear."
+msgstr "لا يوجد تحديد لمسحه."
+
+msgid "No selection."
+msgstr "لا يوجد تحديد."
+
+msgid "No sound cards found."
+msgstr "لم يتم العثور على بطاقات صوت."
+
+msgid "No start."
+msgstr "لا توجد بداية."
+
+msgid "No videos found."
+msgstr "لم يتم العثور على فيديوهات."
+
+msgid "No videos were found for this search."
+msgstr "لم يتم العثور على فيديوهات لهذا البحث."
+
+msgid "No videos were found in this playlist."
+msgstr "لم يتم العثور على فيديوهات في قائمة التشغيل هذه."
+
+msgid "No videos were found."
+msgstr "لم يتم العثور على فيديوهات."
+
+msgid "Not available for streams."
+msgstr "غير متاح للبث المباشر."
+
+msgid "Not supported."
+msgstr "غير مدعوم."
+
+msgid "Number of files: {count}"
+msgstr "عدد الملفات: {count}"
+
+msgid ""
+"Number of videos to prefetch when opening a YouTube playlist or search result."
+msgstr ""
+"عدد مقاطع الفيديو المطلوب جلبها مسبقًا عند فتح قائمة تشغيل أو نتيجة بحث على "
+"YouTube."
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Only trim leading silence chunks that are at least this long (default: 0.2)."
+msgstr ""
+"قص أجزاء الصمت البادئة التي تبلغ مدتها هذا الطول على الأقل فقط (الافتراضي: 0.2)."
+
+msgid "Only trim middle/end silence chunks that are at least this long."
+msgstr ""
+"قص أجزاء الصمت في المنتصف أو النهاية التي تبلغ مدتها هذا الطول على الأقل فقط."
+
+msgid "Open Containing Folder"
+msgstr "فتح المجلد الحاوي"
+
+msgid "Open File..."
+msgstr "فتح ملف..."
+
+msgid "Open Folder..."
+msgstr "فتح مجلد..."
+
+msgid "Open Link"
+msgstr "فتح رابط"
+
+msgid "Open Link..."
+msgstr "فتح رابط..."
+
+msgid "Open YouTube Link"
+msgstr "فتح رابط YouTube"
+
+msgid "Open YouTube Link..."
+msgstr "فتح رابط YouTube..."
+
+msgid "Open failed."
+msgstr "فشل الفتح."
+
+msgid "Open folder error"
+msgstr "خطأ في فتح المجلد"
+
+msgid "Open in browser\tCtrl+B"
+msgstr "الفتح في المتصفح\tCtrl+B"
+
+msgid "Open recordings folder"
+msgstr "فتح مجلد التسجيلات"
+
+msgid "Open the file and the main folder files"
+msgstr "فتح الملف وملفات المجلد الرئيسي"
+
+msgid "Open the file only"
+msgstr "فتح الملف فقط"
+
+msgid "Open the file with the main and subfolder files"
+msgstr "فتح الملف مع ملفات المجلد الرئيسي والمجلدات الفرعية"
+
+msgid "Open the playlist"
+msgstr "فتح قائمة التشغيل"
+
+msgid "Open user settings folder"
+msgstr "فتح مجلد إعدادات المستخدم"
+
+msgid ""
+"Open user settings folder opens the folder where this app stores its "
+"configuration."
+msgstr "فتح مجلد إعدادات المستخدم يفتح المجلد الذي يخزن فيه هذا التطبيق تكويناته."
+
+msgid ""
+"Open with files behavior controls what happens when you open a single file. Open "
+"the file only loads just that file. Open the file and the main folder files loads "
+"all supported files in the same folder. Open the file with the main and subfolder "
+"files scans the folder recursively and loads files from subfolders too."
+msgstr ""
+"يتحكم سلوك \"الفتح مع الملفات\" فيما يحدث عند فتح ملف واحد. \"فتح الملف فقط\" "
+"يحمل هذا الملف فقط. \"فتح الملف وملفات المجلد الرئيسي\" يحمل جميع الملفات "
+"المدعومة في نفس المجلد. \"فتح الملف مع ملفات المجلد الرئيسي والمجلدات الفرعية\" "
+"يفحص المجلد بشكل متكرر ويحمل الملفات من المجلدات الفرعية أيضًا."
+
+msgid "Opened Files"
+msgstr "الملفات المفتوحة"
+
+msgid "Opened Files..."
+msgstr "الملفات المفتوحة..."
+
+msgid "Opening files"
+msgstr "جاري فتح الملفات"
+
+msgid "Opening files... {found} media files found"
+msgstr "جاري فتح الملفات... تم العثور على {found} من ملفات الوسائط"
+
+msgid "Opening files... {found} media files found ({done}/{total}) - {pct:.1f}%"
+msgstr ""
+"جاري فتح الملفات... تم العثور على {found} من ملفات الوسائط ({done}/{total}) - "
+"{pct:.1f}%"
+
+msgid "Operation Complete"
+msgstr "اكتملت العملية"
+
+msgid "Operation canceled."
+msgstr "تم إلغاء العملية."
+
+msgid "Operation completed with errors."
+msgstr "اكتملت العملية مع وجود أخطاء."
+
+msgid "Operation failed."
+msgstr "فشلت العملية."
+
+msgid "Out of range."
+msgstr "خارج النطاق."
+
+msgid "Page Down"
+msgstr "Page Down"
+
+msgid "Page Up"
+msgstr "Page Up"
+
+msgid "Partial delete."
+msgstr "حذف جزئي."
+
+msgid "Partial success."
+msgstr "نجاح جزئي."
+
+msgid "Paste"
+msgstr "لصق"
+
+msgid "Pause"
+msgstr "إيقاف مؤقت"
+
+msgid "Pause to keep after trimmed silence (seconds)"
+msgstr "الوقفة المراد الإبقاء عليها بعد الصمت المقصوص (بالثواني)"
+
+msgid "Pause to keep after trimmed silence, in seconds. Default is 0.2."
+msgstr "الوقفة المراد الإبقاء عليها بعد الصمت المقصوص، بالثواني. الافتراضي هو 0.2."
+
+msgid "Peak (fast reaction)"
+msgstr "Peak (تفاعل سريع)"
+
+msgid "Percentage not available"
+msgstr "النسبة المئوية غير متوفرة"
+
+msgid "Play"
+msgstr "تشغيل"
+
+msgid "Play audio as Mono"
+msgstr "تشغيل الصوت بصيغة مونو (أحادي)"
+
+msgid ""
+"Play audio as Mono. When enabled, a mono downmix filter is applied so left and "
+"right channels are combined. Disable it to keep the original channel layout."
+msgstr ""
+"تشغيل الصوت كـ Mono. عند التمكين، يتم تطبيق مرشح دمج أحادي بحيث يتم دمج القنوات "
+"اليسرى واليمنى. عطل هذا الخيار للحفاظ على تخطيط القنوات الأصلي."
+
+msgid "Play the video"
+msgstr "تشغيل الفيديو"
+
+msgid "Play videos as audio only"
+msgstr "تشغيل الفيديوهات كصوت فقط"
+
+msgid ""
+"Play videos as audio only. When enabled, YouTube playback prefers audio streams."
+msgstr "تشغيل الفيديوهات كصوت فقط. عند التمكين، يفضل تشغيل YouTube بث الصوت فقط."
+
+msgid "Play/Pause"
+msgstr "تشغيل/إيقاف مؤقت"
+
+msgid "Player"
+msgstr "المشغل"
+
+msgid "Playlist"
+msgstr "قائمة تشغيل"
+
+msgid "Playlist Info"
+msgstr "معلومات قائمة التشغيل"
+
+msgid "Playlist favorites require a YouTube playlist link."
+msgstr "تتطلب مفضلات قوائم التشغيل رابط قائمة تشغيل YouTube."
+
+msgid "Playlist info"
+msgstr "معلومات قائمة التشغيل"
+
+msgid "Playlist videos"
+msgstr "فيديوهات قائمة التشغيل"
+
+msgid "Please enter a valid time value."
+msgstr "يرجى إدخال قيمة زمنية صالحة."
+
+msgid "Please restart the app for language changes to take effect."
+msgstr "يرجى إعادة تشغيل التطبيق لتفعيل تغييرات اللغة."
+
+msgid "Position"
+msgstr "الموضع"
+
+msgid "Preferences"
+msgstr "التفضيلات"
+
+msgid "Preferences..."
+msgstr "التفضيلات..."
+
+msgid "Prefetch count"
+msgstr "عدد المقاطع المطلوب جلبها مسبقًا"
+
+msgid "Preparing..."
+msgstr "جاري التحضير..."
+
+msgid "Press the desired global shortcut. Escape cancels."
+msgstr "اضغط على الاختصار العام المطلوب. مفتاح Escape للإلغاء."
+
+msgid "Press the desired shortcut. Escape cancels."
+msgstr "اضغط على الاختصار المطلوب. مفتاح Escape للإلغاء."
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Primary Shortcut"
+msgstr "الاختصار الأساسي"
+
+msgid "Processed {ok} files. Failed for {failed} files."
+msgstr "تمت معالجة {ok} من الملفات. فشلت معالجة {failed} من الملفات."
+
+msgid "Processing: {name}"
+msgstr "جاري المعالجة: {name}"
+
+msgid "RMS (smoother)"
+msgstr "RMS (أكثر سلاسة)"
+
+msgid "Reading: {name}"
+msgstr "جاري القراءة: {name}"
+
+msgid "Recording"
+msgstr "جاري التسجيل"
+
+msgid ""
+"Recording bitrate in kilobits per second. Choose one of the preset values from 32 "
+"to 320. This mainly affects compressed formats such as MP3."
+msgstr ""
+"معدل بت التسجيل بالكيلوبت في الثانية. اختر إحدى القيم المسبقة من 32 إلى 320. يؤثر "
+"هذا بشكل أساسي على التنسيقات المضغوطة مثل MP3."
+
+msgid "Recording channels. Choose Mono or Stereo."
+msgstr "قنوات التسجيل. اختر Mono أو Stereo."
+
+msgid "Recording format. WAV is uncompressed. MP3 is compressed."
+msgstr "تنسيق التسجيل. WAV غير مضغوط. MP3 مضغوط."
+
+msgid ""
+"Recording settings page. Configure channels, bitrate, output format, and "
+"destination folder."
+msgstr ""
+"صفحة إعدادات التسجيل. قم بتكوين القنوات، معدل البت، تنسيق الإخراج، ومجلد الوجهة."
+
+msgid "Recordings folder"
+msgstr "مجلد التسجيلات"
+
+msgid "Recordings folder path. Use Browse to choose where new recordings are saved."
+msgstr "مسار مجلد التسجيلات. استخدم \"استعراض\" لاختيار مكان حفظ التسجيلات الجديدة."
+
+msgid ""
+"Region code used for YouTube searches (country/region). Example: 'US', 'GB', 'BR'."
+msgstr ""
+"رمز المنطقة المستخدم لعمليات البحث على YouTube (البلد/المنطقة). مثال: \"الولايات "
+"المتحدة\"، \"GB\"، \"BR\"."
+
+msgid "Register file extensions"
+msgstr "تسجيل امتدادات الملفات"
+
+msgid ""
+"Register file extensions writes Windows registry entries for supported media "
+"types. This lets files open with this app from Explorer and Open With. On modern "
+"Windows, default app choice can still require user confirmation in system Default "
+"apps settings."
+msgstr ""
+"كتابة امتدادات الملفات تسجل مدخلات في سجل ويندوز (Registry) لأنواع الوسائط "
+"المدعومة. هذا يتيح فتح الملفات بهذا التطبيق من المستكشف و\"فتح بواسطة\". في "
+"إصدارات ويندوز الحديثة، قد يتطلب اختيار التطبيق الافتراضي تأكيد المستخدم في "
+"إعدادات التطبيقات الافتراضية للنظام."
+
+msgid "Registration"
+msgstr "التسجيل"
+
+msgid "Registration Error"
+msgstr "خطأ في التسجيل"
+
+msgid "Remaining time: "
+msgstr "الوقت المتبقي: "
+
+msgid "Remaining: {value}"
+msgstr "المتبقي: {value}"
+
+msgid "Remember last file position"
+msgstr "تذكر موضع الملف الأخير"
+
+msgid ""
+"Remember last file position. When enabled, the player saves the current file and "
+"playback time on exit, then restores that position next time. When disabled, the "
+"player starts fresh each launch."
+msgstr ""
+"تذكر موضع الملف الأخير. عند التمكين، يحفظ المشغل الملف الحالي ووقت التشغيل عند "
+"الخروج، ثم يستعيد ذلك الموضع في المرة القادمة. عند التعطيل، يبدأ المشغل من جديد "
+"في كل مرة."
+
+msgid "Remove favorite '{name}' ({kind})?"
+msgstr "إزالة المفضلة '{name}' ({kind})؟"
+
+msgid "Remove..."
+msgstr "إزالة..."
+
+msgid "Rename File"
+msgstr "إعادة تسمية الملف"
+
+msgid "Rename failed."
+msgstr "فشلت إعادة التسمية."
+
+msgid "Rename is available only for local files."
+msgstr "إعادة التسمية متاحة فقط للملفات المحلية."
+
+msgid "Rename..."
+msgstr "إعادة تسمية..."
+
+msgid "Renamed."
+msgstr "تمت إعادة التسمية."
+
+msgid "Repeat File"
+msgstr "تكرار الملف"
+
+msgid "Repeat off"
+msgstr "إيقاف التكرار"
+
+msgid "Repeat on"
+msgstr "تشغيل التكرار"
+
+msgid "Reset Speed"
+msgstr "إعادة تعيين السرعة"
+
+msgid "Reset all shortcuts to defaults?"
+msgstr "إعادة تعيين جميع الاختصارات إلى الافتراضية؟"
+
+msgid "Reset error"
+msgstr "خطأ في إعادة التعيين"
+
+msgid "Reset settings"
+msgstr "إعادة تعيين الإعدادات"
+
+msgid "Reset settings restores all preferences to default values."
+msgstr "إعادة تعيين الإعدادات يستعيد جميع التفضيلات إلى قيمها الافتراضية."
+
+msgid "Reset to Defaults"
+msgstr "إعادة تعيين إلى الافتراضيات"
+
+msgid "Resume"
+msgstr "استئناف"
+
+msgid "Rewind"
+msgstr "إرجاع"
+
+msgid "Right"
+msgstr "يمين"
+
+msgid "Save current position for each file"
+msgstr "حفظ الموضع الحالي لكل ملف"
+
+msgid ""
+"Save current position for each file. When enabled, the app stores the current "
+"position of files and restores that position when navigating between files."
+msgstr ""
+"حفظ الموضع الحالي لكل ملف. عند التمكين، يخزن التطبيق الموضع الحالي للملفات "
+"ويستعيده عند التنقل بين الملفات."
+
+msgid "Save settings on close"
+msgstr "حفظ الإعدادات عند الإغلاق"
+
+msgid ""
+"Save settings on close. When enabled, current settings are written when the app "
+"closes. When disabled, closing the app does not save session changes such as "
+"volume, speed, or other setting updates."
+msgstr ""
+"حفظ الإعدادات عند الإغلاق. عند التمكين، يتم حفظ الإعدادات الحالية عند إغلاق "
+"التطبيق. عند التعطيل، لا يحفظ إغلاق التطبيق تغييرات الجلسة مثل مستوى الصوت، "
+"السرعة، أو تحديثات الإعدادات الأخرى."
+
+msgid "Search YouTube"
+msgstr "بحث YouTube"
+
+msgid "Search YouTube..."
+msgstr "بحث YouTube..."
+
+msgid "Search language code"
+msgstr "كود اللغة في البحث"
+
+msgid "Search region code"
+msgstr "رمز المنطقة في البحث"
+
+msgid "Search results"
+msgstr "نتائج البحث"
+
+msgid "Search results: {query}"
+msgstr "نتائج البحث: {query}"
+
+msgid "Searching YouTube"
+msgstr "جاري البحث في YouTube"
+
+msgid "Searching videos..."
+msgstr "جاري البحث عن فيديوهات..."
+
+msgid "Secondary Shortcut"
+msgstr "اختصار ثانوي"
+
+msgid "Seconds"
+msgstr "ثوانٍ"
+
+msgid "Select download folder"
+msgstr "اختيار مجلد التنزيل"
+
+msgid "Select file to jump to."
+msgstr "اختر الملف للانتقال إليه."
+
+msgid "Select sound card"
+msgstr "اختيار بطاقة الصوت"
+
+msgid "Selection cleared"
+msgstr "تم مسح التحديد"
+
+msgid "Set A (loop start)"
+msgstr "تعيين A (بداية التكرار)"
+
+msgid "Set B (loop end)"
+msgstr "تعيين B (نهاية التكرار)"
+
+msgid "Set Global Shortcut"
+msgstr "تعيين اختصار عام"
+
+msgid "Set Shortcut"
+msgstr "تعيين اختصار"
+
+msgid "Set failed."
+msgstr "فشل التعيين."
+
+msgid "Set."
+msgstr "تم التعيين."
+
+msgid ""
+"Settings categories tree. Use up and down arrows to choose a category like "
+"General or Audio."
+msgstr ""
+"شجرة فئات الإعدادات. استخدم السهمين للأعلى وللأسفل لاختيار فئة مثل عام أو الصوت."
+
+msgid "Settings exported successfully."
+msgstr "تم تصدير الإعدادات بنجاح."
+
+msgid "Settings imported successfully."
+msgstr "تم استيراد الإعدادات بنجاح."
+
+msgid "Settings were reset to defaults."
+msgstr "تمت إعادة تعيين الإعدادات إلى الافتراضية."
+
+msgid "Shortcut Conflict"
+msgstr "تعارض في الاختصارات"
+
+msgid "Show advanced settings"
+msgstr "إظهار الإعدادات المتقدمة"
+
+msgid ""
+"Show advanced settings. When enabled, extra silenceremove parameters are "
+"displayed. When disabled, only minimum duration and threshold are used."
+msgstr ""
+"إظهار الإعدادات المتقدمة. عند التمكين، يتم عرض معلمات إضافية لإزالة الصمت. عند "
+"التعطيل، يتم استخدام الحد الأدنى للمدة والعتبة فقط."
+
+msgid "Shuffle"
+msgstr "تبديل عشوائي"
+
+msgid "Shuffle disabled for YouTube."
+msgstr "التبديل العشوائي معطل لـ YouTube."
+
+msgid "Shuffle is disabled for YouTube streams."
+msgstr "التبديل العشوائي معطل لبث YouTube."
+
+msgid "Shuffle off"
+msgstr "إيقاف التبديل العشوائي"
+
+msgid "Shuffle on"
+msgstr "تشغيل التبديل العشوائي"
+
+msgid ""
+"Silence level threshold. Audio below this level is treated as silence. Enter only "
+"a number, for example -30."
+msgstr ""
+"عتبة مستوى الصمت. يتم التعامل مع الصوت الأقل من هذا المستوى كصمت. أدخل رقمًا فقط، "
+"على سبيل المثال -30."
+
+msgid ""
+"Silence level threshold. Audio quieter than this level is treated as silence. "
+"Enter only the number, for example -20, -30, or -40."
+msgstr ""
+"عتبة مستوى الصمت. يتم التعامل مع الصوت الأهدأ من هذا المستوى كصمت. أدخل الرقم "
+"فقط، على سبيل المثال -20 أو -30 أو -40."
+
+msgid "Silence removal"
+msgstr "إزالة الصمت"
+
+msgid "Silence removal (FFmpeg silenceremove)"
+msgstr "إزالة الصمت (FFmpeg silenceremove)"
+
+msgid "Silence removal off"
+msgstr "إيقاف إزالة الصمت"
+
+msgid "Silence removal on"
+msgstr "تشغيل إزالة الصمت"
+
+msgid "Silence removal setting. Enter a value and press OK to save."
+msgstr "إعداد إزالة الصمت. أدخل قيمة واضغط موافق للحفظ."
+
+msgid ""
+"Silence removal settings. Minimum silence duration and threshold are always "
+"shown. Enable advanced settings to configure all remaining filter options."
+msgstr ""
+"إعدادات إزالة الصمت. يتم دائمًا عرض الحد الأدنى لمدة الصمت والعتبة. قم بتمكين "
+"الإعدادات المتقدمة لتكوين خيارات المرشح المتبقية."
+
+msgid "Silence threshold"
+msgstr "عتبة الصمت"
+
+msgid "Silence threshold must be a valid number."
+msgstr "يجب أن تكون عتبة الصمت رقمًا صالحًا."
+
+msgid "Silent parts to trim after audio starts"
+msgstr "أجزاء الصمت المطلوب قصها بعد بدء الصوت"
+
+msgid ""
+"Silent parts to trim after audio starts. Use -1 to trim all matching silent parts."
+msgstr ""
+"أجزاء الصمت المطلوب قصها بعد بدء الصوت. استخدم -1 لقص جميع أجزاء الصمت المطابقة."
+
+msgid "Smoothing window used by silence detection (default: 0.02)."
+msgstr "نافذة التمهيد المستخدمة في اكتشاف الصمت (الافتراضي: 0.02)."
+
+msgid "Some files were deleted."
+msgstr "تم حذف بعض الملفات."
+
+msgid "Sound Cards"
+msgstr "بطاقات الصوت"
+
+msgid "Sound Cards..."
+msgstr "بطاقات الصوت..."
+
+msgid "Sound card set."
+msgstr "تم تعيين بطاقة الصوت."
+
+msgid "Space"
+msgstr "Space"
+
+msgid "Speak file name when navigating (Previous/Next)"
+msgstr "نطق اسم الملف عند التنقل (السابق/التالي)"
+
+msgid ""
+"Speak file name when navigating. When enabled, the player will announce the name "
+"of the new file when you move to the previous or next track. This is helpful for "
+"identifying files without manually requesting file information."
+msgstr ""
+"نطق اسم الملف عند التنقل. عند التمكين، سيقوم المشغل بالإعلان عن اسم الملف الجديد "
+"عند الانتقال إلى المقطع السابق أو التالي. هذا مفيد للتعرف على الملفات دون طلب "
+"معلومات الملف يدويًا."
+
+msgid "Speaker test file not found."
+msgstr "لم يتم العثور على ملف اختبار السماعات."
+
+msgid "Speed"
+msgstr "السرعة"
+
+msgid "Speed step"
+msgstr "خطوة السرعة"
+
+msgid "Speed step must be a positive number."
+msgstr "يجب أن تكون خطوة السرعة رقمًا موجبًا."
+
+msgid ""
+"Speed step used when increasing or decreasing playback speed. Enter a positive "
+"decimal value like 0.025 or 0.1."
+msgstr ""
+"خطوة السرعة المستخدمة عند زيادة أو تقليل سرعة التشغيل. أدخل قيمة عشرية موجبة مثل "
+"0.025 أو 0.1."
+
+msgid "Start recording"
+msgstr "بدء التسجيل"
+
+msgid "Start selection not set."
+msgstr "لم يتم تعيين اختيار البداية."
+
+msgid "Start selection: {time}"
+msgstr "اختيار البداية: {time}"
+
+msgid "Start {time}"
+msgstr "البداية {time}"
+
+msgid "Starting..."
+msgstr "جاري البدء..."
+
+msgid "Stereo"
+msgstr "ستيريو (ثنائي)"
+
+msgid "Stop"
+msgstr "إيقاف"
+
+msgid "Success"
+msgstr "نجاح"
+
+msgid "System default"
+msgstr "افتراضي النظام"
+
+msgid "Tab"
+msgstr "Tab"
+
+msgid "Telegram"
+msgstr "Telegram"
+
+msgid "Test failed."
+msgstr "فشل الاختبار."
+
+msgid "Test file missing."
+msgstr "ملف الاختبار مفقود."
+
+msgid "Test speakers"
+msgstr "اختبار السماعات"
+
+msgid "Testing speakers."
+msgstr "جاري اختبار السماعات."
+
+msgid "That shortcut is already assigned to another action."
+msgstr "هذا الاختصار معين بالفعل لإجراء آخر."
+
+msgid ""
+"The app detected that some components for YouTube are missing. Would you like to "
+"download the required libraries? If you do not wish to use YouTube search "
+"features, you can ignore this message."
+msgstr ""
+"اكتشف التطبيق أن بعض مكونات YouTube مفقودة. هل ترغب في تنزيل المكتبات المطلوبة؟ "
+"إذا كنت لا ترغب في استخدام ميزات البحث في YouTube، يمكنك تجاهل هذه الرسالة."
+
+msgid ""
+"The app detected that this YouTube link contains a playlist and a video ID. "
+"Choose how you want to proceed."
+msgstr ""
+"اكتشف التطبيق أن رابط YouTube هذا يحتوي على قائمة تشغيل ومعرف فيديو. اختر كيف "
+"تريد المتابعة."
+
+msgid "The link must be a valid YouTube link for this type."
+msgstr "يجب أن يكون الرابط رابط YouTube صالحًا لهذا النوع."
+
+msgid "The link must start with http or https."
+msgstr "يجب أن يبدأ الرابط بـ http أو https."
+
+msgid "The selected time exceeds the file duration."
+msgstr "الوقت المحدد يتجاوز مدة الملف."
+
+msgid "This is not a valid YouTube link."
+msgstr "هذا ليس رابط YouTube صالحًا."
+
+msgid "This link does not include a YouTube playlist."
+msgstr "هذا الرابط لا يتضمن قائمة تشغيل YouTube."
+
+msgid "This link does not include a YouTube video."
+msgstr "هذا الرابط لا يتضمن فيديو YouTube."
+
+msgid "Time is not available for the current file."
+msgstr "الوقت غير متوفر للملف الحالي."
+
+msgid "Time not available"
+msgstr "الوقت غير متوفر"
+
+msgid "Total duration: {value}"
+msgstr "المدة الإجمالية: {value}"
+
+msgid ""
+"Total size: {size}\n"
+"Downloaded: {got}\n"
+"Percentage: {pct:.2f}%"
+msgstr ""
+"الحجم الإجمالي: {size}\n"
+"تم تنزيل: {got}\n"
+"النسبة المئوية: {pct:.2f}%"
+
+msgid ""
+"Total size: {total}\n"
+"Downloaded: {got}\n"
+"Percentage: {pct:.2f}%"
+msgstr ""
+"الحجم الإجمالي: {total}\n"
+"تم تنزيل: {got}\n"
+"النسبة المئوية: {pct:.2f}%"
+
+msgid "Total size: {value}"
+msgstr "الحجم الإجمالي: {value}"
+
+msgid "Total time: "
+msgstr "الوقت الإجمالي: "
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Unable to copy current file to clipboard."
+msgstr "تعذر نسخ الملف الحالي إلى الحافظة."
+
+msgid "Unable to copy marked files to clipboard."
+msgstr "تعذر نسخ التحديد إلى الحافظة."
+
+msgid "Unable to copy to clipboard."
+msgstr "تعذر النسخ إلى الحافظة."
+
+msgid "Unable to play speaker test."
+msgstr "تعذر تشغيل اختبار السماعات."
+
+msgid "Unavailable"
+msgstr "غير متوفر"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Unknown error."
+msgstr "خطأ غير معروف."
+
+msgid "Unmarked."
+msgstr "ملغى التحديد."
+
+msgid "Unregister"
+msgstr "إلغاء التسجيل"
+
+msgid "Unregister Error"
+msgstr "خطأ في إلغاء التسجيل"
+
+msgid "Unregister file extensions"
+msgstr "إلغاء تسجيل امتدادات الملفات"
+
+msgid ""
+"Unregister file extensions removes registry entries created by this app for media "
+"associations. This does not delete your media files. Windows may still keep "
+"separate user default selections managed by system settings."
+msgstr ""
+"إلغاء تسجيل امتدادات الملفات يزيل مدخلات السجل التي أنشأها هذا التطبيق لارتباطات "
+"الوسائط. هذا لا يحذف ملفات الوسائط الخاصة بك. قد لا يزال ويندوز يحتفظ باختيارات "
+"افتراضية منفصلة للمستخدم تديرها إعدادات النظام."
+
+msgid "Unsupported favorite type."
+msgstr "نوع مفضلة غير مدعوم."
+
+msgid "Up"
+msgstr "أعلى"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "Update YouTube components"
+msgstr "تحديث مكونات YouTube"
+
+msgid "Update cancelled."
+msgstr "تم إلغاء التحديث."
+
+msgid "Updates"
+msgstr "التحديثات"
+
+msgid "Updating yt-dlp"
+msgstr "جاري تحديث yt-dlp"
+
+msgid "Updating yt-dlp..."
+msgstr "جاري تحديث yt-dlp..."
+
+msgid "User Guide"
+msgstr "دليل المستخدم"
+
+msgid "Verbosity"
+msgstr "مستوى التفصيل"
+
+msgid ""
+"Verbosity controls speech detail. Beginner gives clearer full messages. Advanced "
+"gives shorter, compact announcements. Possible values: Beginner or Advanced."
+msgstr ""
+"مستوى التفصيل يتحكم في تفاصيل النطق. يوفر وضع \"مبتدئ\" رسائل كاملة أكثر وضوحًا. "
+"يوفر وضع \"متقدم\" إعلانات أقصر وموجزة. القيم الممكنة: مبتدئ أو متقدم."
+
+msgid "Version: {version}"
+msgstr "الإصدار: {version}"
+
+msgid "Video"
+msgstr "فيديو"
+
+msgid "Video description"
+msgstr "وصف الفيديو"
+
+msgid "Video description..."
+msgstr "وصف الفيديو..."
+
+msgid "Video favorites require a YouTube video link."
+msgstr "تتطلب مفضلات الفيديو رابط فيديو YouTube."
+
+msgid "Video options"
+msgstr "خيارات الفيديو"
+
+msgid "Video quality"
+msgstr "جودة الفيديو"
+
+msgid ""
+"Video quality used when audio-only playback is disabled. Low prefers smaller "
+"streams, Medium is balanced, Best prefers highest quality."
+msgstr ""
+"جودة الفيديو المستخدمة عند تعطيل تشغيل الصوت فقط. يفضل وضع \"منخفض\" البث الأصغر، "
+"\"متوسط\" هو وضع متوازن، و\"الأفضل\" يفضل أعلى جودة."
+
+msgid "Video+playlist link behavior"
+msgstr "سلوك رابط الفيديو+قائمة التشغيل"
+
+msgid "Videos"
+msgstr "فيديوهات"
+
+msgid "Visit website"
+msgstr "زيارة الموقع"
+
+msgid "Volume is {percent}%"
+msgstr "مستوى الصوت {percent}%"
+
+msgid "Volume step"
+msgstr "خطوة مستوى الصوت"
+
+msgid ""
+"Volume step used when pressing volume up or down. Allowed range is from 1 to 20."
+msgstr ""
+"خطوة مستوى الصوت المستخدمة عند الضغط على رفع أو خفض الصوت. النطاق المسموح به هو "
+"من 1 إلى 20."
+
+msgid "Volume {volume} percent"
+msgstr "مستوى الصوت {volume} بالمائة"
+
+msgid "Welcome to Simple Audio Player"
+msgstr "مرحباً بك في Simple Audio Player"
+
+msgid ""
+"What happens after a file ends. Advance to the next file moves to the next item "
+"in the playlist. Loop the file repeats the same file automatically. Do nothing "
+"keeps playback stopped at the end. Possible values: Advance to the next file, "
+"Loop the file, or Do nothing."
+msgstr ""
+"ماذا يحدث بعد انتهاء الملف. \"التقدم إلى الملف التالي\" ينتقل إلى العنصر التالي "
+"في قائمة التشغيل. \"تكرار الملف\" يكرر نفس الملف تلقائيًا. \"لا تفعل شيئًا\" يبقي "
+"التشغيل متوقفًا عند النهاية. القيم الممكنة: التقدم إلى الملف التالي، تكرار الملف، "
+"أو لا تفعل شيئًا."
+
+msgid "What happens after a file ends?"
+msgstr "ماذا يحدث بعد انتهاء الملف؟"
+
+msgid "What would you like to open with files?"
+msgstr "ماذا تود أن تفتح مع الملفات؟"
+
+msgid "What's new"
+msgstr "ما الجديد"
+
+msgid "Working..."
+msgstr "جاري العمل..."
+
+msgid "Wrap to top for multiple files"
+msgstr "الالتفاف إلى البداية للملفات المتعددة"
+
+msgid ""
+"Wrap to top for multiple files. When enabled and the playlist has more than one "
+"file, moving next from the last file goes to the first file, and moving previous "
+"from the first file goes to the last file. Advance-at-end uses the same wrapping "
+"behavior."
+msgstr ""
+"الالتفاف إلى البداية للملفات المتعددة. عند التمكين واحتواء قائمة التشغيل على أكثر "
+"من ملف، فإن الانتقال للتالي من الملف الأخير يذهب إلى الملف الأول، والانتقال "
+"للسابق من الملف الأول يذهب إلى الملف الأخير. يستخدم خيار \"التقدم عند النهاية\" "
+"نفس سلوك الالتفاف."
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "You are using the latest version."
+msgstr "أنت تستخدم أحدث إصدار."
+
+msgid "YouTube"
+msgstr "YouTube"
+
+msgid "YouTube Components"
+msgstr "مكونات YouTube"
+
+msgid "YouTube components are already installed."
+msgstr "مكونات YouTube مثبتة بالفعل."
+
+msgid "YouTube components are missing."
+msgstr "مكونات YouTube مفقودة."
+
+msgid "YouTube components were downloaded successfully."
+msgstr "تم تنزيل مكونات YouTube بنجاح."
+
+msgid ""
+"YouTube returned HTTP 429 (Too Many Requests). Your IP may be temporarily rate-"
+"limited."
+msgstr ""
+"أرجع YouTube خطأ HTTP 429 (طلبات كثيرة جدًا). قد يكون عنوان IP الخاص بك مقيدًا "
+"مؤقتًا."
+
+msgid ""
+"YouTube settings page. Configure playback mode, quality, mixed-link behavior, "
+"search language/region, yt-dlp update channel, and startup update checks."
+msgstr ""
+"صفحة إعدادات اليوتيوب. قم بتكوين وضع التشغيل والجودة وسلوك الارتباط المختلط ولغة/"
+"منطقة البحث وقناة تحديث yt-dlp وعمليات التحقق من تحديث بدء التشغيل."
+
+msgid "paused"
+msgstr "متوقف مؤقتاً"
+
+msgid "unknown"
+msgstr "غير معروف"
+
+msgid "yt-dlp is already up to date ({ver}) on '{ch}' channel."
+msgstr "yt-dlp محدث بالفعل ({ver}) على قناة '{ch}'."
+
+msgid "yt-dlp is not available."
+msgstr "yt-dlp غير متوفر."
+
+msgid "yt-dlp returned invalid JSON data."
+msgstr "أرجع yt-dlp بيانات JSON غير صالحة."
+
+msgid "yt-dlp update"
+msgstr "تحديث yt-dlp"
+
+msgid "yt-dlp update cancelled."
+msgstr "تم إلغاء تحديث yt-dlp."
+
+msgid "yt-dlp update channel"
+msgstr "قناة تحديث yt-dlp"
+
+msgid ""
+"yt-dlp update channel. Stable is recommended. Nightly and Master can include "
+"newer but less-tested builds."
+msgstr ""
+"قناة تحديث yt-dlp. يوصى باستخدام Stable. قد تتضمن قنوات Nightly و Master بناءات "
+"أحدث ولكنها أقل اختبارًا."
+
+msgid "yt-dlp updated from {old} to {new} on '{ch}' channel."
+msgstr "تم تحديث yt-dlp من {old} إلى {new} على قناة '{ch}'."
+
+msgid ""
+"{base}\n"
+"Details: {details}"
+msgstr ""
+"{base}\n"
+"التفاصيل: {details}"
+
+msgid "{count} files marked"
+msgstr "تم تحديد {count} من الملفات"
+
+msgid "{count} files processed successfully."
+msgstr "تمت معالجة {count} من الملفات بنجاح."
+
+msgid "{field} must be -1 or greater."
+msgstr "يجب أن يكون {field} بقيمة -1 أو أكبر."
+
+msgid "{field} must be a non-negative number."
+msgstr "يجب أن يكون {field} رقماً غير سالب."
+
+msgid "{field} must be an integer value."
+msgstr "يجب أن يكون {field} قيمة عددية صحيحة."
+
+msgid "{field} must be zero or greater."
+msgstr "يجب أن يكون {field} صفراً أو أكبر."
+
+msgid "{percent} percent"
+msgstr "{percent} بالمائة"
+
+msgid "{speed}x"
+msgstr "{speed} x"
