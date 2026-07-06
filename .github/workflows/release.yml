@@ -53,10 +53,10 @@ jobs:
       working-directory: player
       shell: pwsh
       run: |
-        # Replace winsdk_winrt.pyd in dist with local _winrt.pyd
-        # Local file is located at player/local/_winrt.pyd
-        if (Test-Path "local/_winrt.pyd") {
-          Copy-Item -Path "local/_winrt.pyd" -Destination "dist/SimpleAudioPlayer/_winrt.pyd" -Force
+        # Replace winsdk_winrt.pyd in dist with local modified _winrt.pyd
+        # Local file is located at winsdk/_winrt.pyd at the root of the project
+        if (Test-Path "../winsdk/_winrt.pyd") {
+          Copy-Item -Path "../winsdk/_winrt.pyd" -Destination "dist/SimpleAudioPlayer/_winrt.pyd" -Force
           if (Test-Path "dist/SimpleAudioPlayer/winsdk_winrt.pyd") {
             Remove-Item -Path "dist/SimpleAudioPlayer/winsdk_winrt.pyd" -Force
           }
