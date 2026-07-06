@@ -1,7 +1,8 @@
 .specify/
 .opencode/
 specs/
-.github/
+.github/agents/
+.github/prompts/
 player/deno.exe
 player/yt-dlp.exe
 __pycache__/
