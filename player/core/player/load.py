@@ -52,6 +52,16 @@ class PlayerLoadMixin:
     def queue_stream(self, url, title=None, source_url=None):
         return self._state.append(url, jump=False, title=title, source=source_url)
 
+    def replace_queued_stream(self, url, source_url):
+        return self._state.replace_queued_source_path(source_url, url)
+
+    def replace_current_stream(self, url, source_url):
+        if str(self._state.current_source or "") != str(source_url or ""):
+            return False
+        if not self._state.replace_path(self._state.current_path, url):
+            return False
+        return self._load_current()
+
     def next_track(self):
         if not self._state.next_track(
             use_shuffle=True,

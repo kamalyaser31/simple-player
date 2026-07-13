@@ -1,4 +1,5 @@
 import configparser
+import copy
 import os
 
 from config.constants import (
@@ -14,6 +15,7 @@ from config.constants import (
     YT_SEARCH_REGION,
 )
 from config.shortcut_utils import shortcut_from_config, shortcut_to_config
+from helpers.atomic_io import atomic_write
 from helpers.utils import clamp
 
 SILENCE_REMOVAL_OPTION_KEYS = (
@@ -148,6 +150,12 @@ class SettingsManager:
     def config_path(self):
         return self._config_path
 
+    def snapshot_config(self):
+        return copy.deepcopy(self._config)
+
+    def restore_config(self, snapshot):
+        self._config = copy.deepcopy(snapshot)
+
     def load(self):
         self._config.read_dict(self._defaults)
         has_new_silence_section = False
@@ -187,8 +195,16 @@ class SettingsManager:
         self._write_config(disk)
 
     def _write_config(self, parser):
-        with open(self._config_path, "w", encoding="utf-8") as handle:
-            parser.write(handle)
+        atomic_write(
+            self._config_path,
+            parser.write,
+            validator=self._validate_temporary_config,
+        )
+
+    def _validate_temporary_config(self, path):
+        parsed = configparser.ConfigParser(interpolation=None)
+        with open(path, "r", encoding="utf-8") as handle:
+            parsed.read_file(handle)
 
     def reset_to_defaults(self):
         self._config = configparser.ConfigParser(interpolation=None)

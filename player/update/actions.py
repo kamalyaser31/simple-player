@@ -2,6 +2,7 @@ import concurrent.futures
 import os
 import queue
 import subprocess
+import threading
 
 import wx
 from gettext import gettext as _
@@ -12,7 +13,10 @@ from ui.update_dialogs import AppUpdateDialog
 from update import service
 from youtube import components as yt_components
 
-_BG_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+_RUNTIME_LOCK = threading.Lock()
+_BG_FUTURES = {}
+_ACTIVE_TASKS = {}
+_SHUTTING_DOWN = False
 
 
 def check_updates_on_startup(ctx):
@@ -151,19 +155,27 @@ def _process_update_info(ctx, info, show_latest):
 
 
 def _check_updates_bg(ctx):
+    if _SHUTTING_DOWN:
+        return
     frame = ctx.frame
     if frame is None:
         return
 
+    cancel = service.CancelFlag()
+
     def worker():
         try:
-            return service.fetch_update_info()
+            info = service.fetch_update_info()
         except Exception:
             return None
+        return None if cancel.is_set() else info
 
-    future = _BG_POOL.submit(worker)
+    future = _submit_background(worker, cancel)
 
     def done(_future):
+        _untrack_background(_future)
+        if _SHUTTING_DOWN or cancel.is_set():
+            return
         try:
             info = _future.result()
         except Exception:
@@ -178,6 +190,8 @@ def _check_updates_bg(ctx):
 
 
 def _on_bg_update_info(ctx, info):
+    if _SHUTTING_DOWN:
+        return
     frame = ctx.frame
     if frame is None:
         return
@@ -187,20 +201,24 @@ def _on_bg_update_info(ctx, info):
 
 
 def _check_yt_updates_bg(ctx):
+    if _SHUTTING_DOWN:
+        return
     frame = ctx.frame
     if frame is None:
         return
     channel = str(ctx.settings.get_yt_dlp_channel() or "").strip().lower()
 
+    cancel = service.CancelFlag()
+
     def worker():
         try:
             yt_components.add_to_path()
             local_ver = str(yt_components.yt_local_version() or "").strip()
-            if not local_ver:
+            if not local_ver or cancel.is_set():
                 return None
             remote_ver, used_channel = yt_components.yt_remote_version(channel=channel)
             remote_ver = str(remote_ver or "").strip()
-            if not remote_ver:
+            if not remote_ver or cancel.is_set():
                 return None
             return {
                 "local": local_ver,
@@ -210,9 +228,12 @@ def _check_yt_updates_bg(ctx):
         except Exception:
             return None
 
-    future = _BG_POOL.submit(worker)
+    future = _submit_background(worker, cancel)
 
     def done(_future):
+        _untrack_background(_future)
+        if _SHUTTING_DOWN or cancel.is_set():
+            return
         try:
             info = _future.result()
         except Exception:
@@ -227,6 +248,8 @@ def _check_yt_updates_bg(ctx):
 
 
 def _on_bg_yt_update_info(ctx, info):
+    if _SHUTTING_DOWN:
+        return
     frame = ctx.frame
     if frame is None:
         return
@@ -328,18 +351,13 @@ def _run_with_dialog(dlg, job, fmt_up=None, simple=False, on_line_ui=None):
 
     pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
     future = pool.submit(worker)
+    with _RUNTIME_LOCK:
+        _ACTIVE_TASKS[future] = cancel
     timer = wx.Timer(dlg)
 
     def on_tick(_event):
         if dlg.was_cancelled() and not state["done"]:
             cancel.set()
-            state["done"] = True
-            state["ok"] = False
-            state["value"] = None
-            state["error"] = ""
-            state["cancelled"] = True
-            dlg.EndModal(wx.ID_CANCEL)
-            return
         saw_pct = False
         while True:
             try:
@@ -375,7 +393,7 @@ def _run_with_dialog(dlg, job, fmt_up=None, simple=False, on_line_ui=None):
                     "error": str(exc),
                     "cancelled": cancel.is_set(),
                 }
-            state["ok"] = bool(result.get("ok"))
+            state["ok"] = bool(result.get("ok")) and not cancel.is_set()
             state["value"] = result.get("value")
             state["error"] = str(result.get("error") or "")
             state["cancelled"] = bool(result.get("cancelled")) or cancel.is_set()
@@ -398,16 +416,60 @@ def _run_with_dialog(dlg, job, fmt_up=None, simple=False, on_line_ui=None):
                 "cancelled": cancel.is_set(),
             }
         state["done"] = True
-        state["ok"] = bool(result.get("ok"))
+        state["ok"] = bool(result.get("ok")) and not cancel.is_set()
         state["value"] = result.get("value")
         state["error"] = str(result.get("error") or "")
         state["cancelled"] = bool(result.get("cancelled")) or cancel.is_set()
-    if state["cancelled"] and not future.done():
-        pool.shutdown(wait=False, cancel_futures=False)
-    else:
-        pool.shutdown(wait=True, cancel_futures=True)
+    if not future.done():
+        cancel.set()
+    pool.shutdown(wait=True, cancel_futures=True)
+    with _RUNTIME_LOCK:
+        _ACTIVE_TASKS.pop(future, None)
     dlg.Destroy()
     return state
+
+
+def _submit_background(worker, cancel):
+    future = concurrent.futures.Future()
+
+    def run():
+        if not future.set_running_or_notify_cancel():
+            return
+        try:
+            future.set_result(worker())
+        except Exception as exc:
+            future.set_exception(exc)
+
+    with _RUNTIME_LOCK:
+        if _SHUTTING_DOWN:
+            cancel.set()
+            future.cancel()
+            return future
+        _BG_FUTURES[future] = cancel
+    threading.Thread(target=run, name="update-check", daemon=True).start()
+    return future
+
+
+def _untrack_background(future):
+    with _RUNTIME_LOCK:
+        _BG_FUTURES.pop(future, None)
+
+
+def shutdown_updates():
+    global _SHUTTING_DOWN
+    _SHUTTING_DOWN = True
+    with _RUNTIME_LOCK:
+        background = list(_BG_FUTURES.items())
+        active = list(_ACTIVE_TASKS.items())
+        _BG_FUTURES.clear()
+    for future, cancel in background:
+        cancel.set()
+        if not future.running():
+            future.cancel()
+    for future, cancel in active:
+        cancel.set()
+        if not future.running():
+            future.cancel()
 
 
 def _fmt_update_status(data):

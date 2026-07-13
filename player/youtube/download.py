@@ -1,14 +1,19 @@
 import os
+import queue
 import re
 import subprocess
+import threading
+import time
 from gettext import gettext as _
 
 from .components import CancelledError, deno_runtime, yt_path
+from helpers.subprocess_utils import stop_process
 
 _DL_RE = re.compile(
     r"\[download\]\s+(?P<pct>\d+(?:\.\d+)?)%\s+of\s+(?P<size>[^\s]+)",
     re.IGNORECASE,
 )
+DOWNLOAD_INACTIVITY_TIMEOUT = 60.0
 
 
 def dl_audio_m4a(source_url, folder, cancel, on_update=None):
@@ -49,26 +54,39 @@ def dl_audio_m4a(source_url, folder, cancel, on_update=None):
         creationflags=creationflags,
         env=env,
     )
+    lines = queue.Queue()
+    reader = threading.Thread(target=_read_stdout, args=(proc.stdout, lines), daemon=True)
+    reader.start()
+    last_output = time.monotonic()
     try:
-        for line in iter(proc.stdout.readline, ""):
+        while True:
             if cancel.is_set():
-                _stop(proc)
                 raise CancelledError()
-            info = _parse(line)
-            if info is not None:
-                _emit(on_update, info)
-        code = proc.wait()
+            if time.monotonic() - last_output >= DOWNLOAD_INACTIVITY_TIMEOUT:
+                raise RuntimeError(
+                    _("Download stopped making progress for {seconds} seconds.").format(
+                        seconds=int(DOWNLOAD_INACTIVITY_TIMEOUT)
+                    )
+                )
+            try:
+                line = lines.get(timeout=0.1)
+            except queue.Empty:
+                if proc.poll() is not None and not reader.is_alive():
+                    break
+                continue
+            if line is None:
+                break
+            last_output = time.monotonic()
+            progress = _parse(line)
+            if progress is not None:
+                _emit(on_update, progress)
         if cancel.is_set():
-            _stop(proc)
             raise CancelledError()
-        if code != 0:
+        if proc.wait(timeout=0.5) != 0:
             raise RuntimeError(_("Download failed."))
     finally:
-        try:
-            if proc.stdout:
-                proc.stdout.close()
-        except Exception:
-            pass
+        stop_process(proc)
+        reader.join(timeout=0.5)
 
 
 def _emit(on_update, info):
@@ -117,8 +135,9 @@ def _to_bytes(text):
     return int(val * mult)
 
 
-def _stop(proc):
+def _read_stdout(stdout, lines):
     try:
-        proc.terminate()
-    except Exception:
-        pass
+        for line in iter(stdout.readline, ""):
+            lines.put(line)
+    finally:
+        lines.put(None)

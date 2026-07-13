@@ -8,6 +8,7 @@ from urllib import request
 
 from config.constants import YT_DLP_DEFAULT_CHANNEL, YT_DLP_UPDATE_CHANNELS
 from helpers.http_utils import open_url
+from helpers.subprocess_utils import stop_process
 
 APP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 YT_EXE = os.path.join(APP_DIR, "yt-dlp.exe")
@@ -264,26 +265,21 @@ def _run_yt_cmd(cancel, args, on_line=None, timeout=180):
     out = ""
     err = ""
     start = time.monotonic()
-    while True:
-        if timeout and time.monotonic() - start > float(timeout):
+    try:
+        while True:
+            if timeout and time.monotonic() - start > float(timeout):
+                raise RuntimeError(
+                    f"yt-dlp command timed out after {int(timeout)} seconds."
+                )
+            if cancel.is_set():
+                raise CancelledError()
             try:
-                proc.terminate()
-            except Exception:
-                pass
-            raise RuntimeError(
-                f"yt-dlp command timed out after {int(timeout)} seconds."
-            )
-        if cancel.is_set():
-            try:
-                proc.terminate()
-            except Exception:
-                pass
-            raise CancelledError()
-        try:
-            out, err = proc.communicate(timeout=0.1)
-            break
-        except subprocess.TimeoutExpired:
-            continue
+                out, err = proc.communicate(timeout=0.1)
+                break
+            except subprocess.TimeoutExpired:
+                continue
+    finally:
+        stop_process(proc)
     if proc.returncode != 0:
         text = (err or out or "").strip()
         if not text:

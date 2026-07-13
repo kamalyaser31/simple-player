@@ -145,6 +145,8 @@ def _try_more(ctx, ses, dlg, busy, prefetch, pool, prefetch_n):
 
     def done(_future):
         jobs.pop(key, None)
+        if cancel is not None and cancel.is_set():
+            return
         wx.CallAfter(_more_done, ctx, ses, dlg, busy, _future, prefetch, prefetch_n)
 
     fut.add_done_callback(done)

@@ -1,6 +1,7 @@
 import json
 import os
-import tempfile
+
+from helpers.atomic_io import atomic_write
 
 
 def read_json(path):
@@ -21,20 +22,15 @@ def write_json(path, data):
     target = str(path or "").strip()
     if not target:
         raise ValueError("Invalid JSON target path.")
-    base = os.path.dirname(target)
-    if base:
-        os.makedirs(base, exist_ok=True)
+    atomic_write(
+        target,
+        lambda handle: json.dump(data, handle, ensure_ascii=False, indent=2),
+        validator=_validate_json,
+    )
 
-    fd, tmp_path = tempfile.mkstemp(prefix="sap_favs_", suffix=".tmp", dir=base or None)
-    os.close(fd)
-    try:
-        with open(tmp_path, "w", encoding="utf-8") as handle:
-            json.dump(data, handle, ensure_ascii=False, indent=2)
-        os.replace(tmp_path, target)
-    except Exception:
-        try:
-            if os.path.isfile(tmp_path):
-                os.remove(tmp_path)
-        except OSError:
-            pass
-        raise
+
+def _validate_json(path):
+    with open(path, "r", encoding="utf-8") as handle:
+        parsed = json.load(handle)
+    if not isinstance(parsed, dict):
+        raise ValueError("JSON store root must be an object.")

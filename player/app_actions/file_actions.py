@@ -729,8 +729,11 @@ def _save_pos(ctx):
         pos = 0.0
     try:
         ctx.file_pos.set(path, pos)
-    except Exception:
-        return
+    except OSError as exc:
+        ctx.speak(
+            _("Could not save the playback position: {error}").format(error=exc),
+            _("Playback position save failed: {error}").format(error=exc),
+        )
 
 
 def _restore_pos(ctx):

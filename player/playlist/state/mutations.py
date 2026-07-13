@@ -89,3 +89,16 @@ class PlaylistStateMutationsMixin:
 
         self._sync_shuffle_position_to_current()
         return True
+
+    def replace_queued_source_path(self, source, new_path):
+        target = str(source or "").strip()
+        if not target or not new_path:
+            return False
+        for index, old_path in enumerate(self._file_list):
+            if index == self._current_index:
+                continue
+            if str(self.get_source(old_path) or "").strip() == target:
+                if old_path == new_path:
+                    return True
+                return self.replace_path(old_path, new_path)
+        return False

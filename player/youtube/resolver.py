@@ -2,11 +2,13 @@ import json
 import os
 import subprocess
 import threading
+import time
 from dataclasses import dataclass
 from gettext import gettext as _
 from urllib.parse import parse_qs, urlparse
 
 from .components import CancelledError, add_to_path, deno_runtime, yt_path
+from helpers.subprocess_utils import stop_process
 
 
 @dataclass
@@ -34,6 +36,7 @@ FMT_VIDEO_LOW = "best[height<=?360][ext=mp4]/best[height<=?360]/best[ext=mp4]/be
 FMT_VIDEO_MED = "best[height<=?720][ext=mp4]/best[height<=?720]/best[ext=mp4]/best"
 FMT_VIDEO_BEST = "best[ext=mp4]/best"
 _ERR_CTX = threading.local()
+RESOLVE_TIMEOUT = 90.0
 
 
 def inspect_link(link, cancel, on_line=None):
@@ -292,22 +295,24 @@ def _run_lines(args, cancel):
     )
     out = ""
     err = ""
-    while True:
-        if cancel.is_set():
+    started = time.monotonic()
+    try:
+        while True:
+            if cancel.is_set():
+                raise CancelledError()
+            if time.monotonic() - started >= RESOLVE_TIMEOUT:
+                raise ResolveError(
+                    _("YouTube metadata timed out after {seconds} seconds.").format(
+                        seconds=int(RESOLVE_TIMEOUT)
+                    )
+                )
             try:
-                proc.terminate()
-            except Exception:
-                pass
-            try:
-                proc.communicate(timeout=0.5)
-            except Exception:
-                pass
-            raise CancelledError()
-        try:
-            out, err = proc.communicate(timeout=0.1)
-            break
-        except subprocess.TimeoutExpired:
-            continue
+                out, err = proc.communicate(timeout=0.1)
+                break
+            except subprocess.TimeoutExpired:
+                continue
+    finally:
+        stop_process(proc)
     _raise_if_429(err)
     if proc.returncode not in (0, None):
         diag = _short_diag(err) or _short_diag(out)

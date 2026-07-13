@@ -4,6 +4,7 @@ from .flow import (
     open_yt,
     open_yt_link,
     search_yt,
+    shutdown_youtube,
     sync_sel,
     try_next,
 )
@@ -13,6 +14,7 @@ __all__ = [
     "open_yt",
     "open_yt_link",
     "search_yt",
+    "shutdown_youtube",
     "on_esc",
     "on_playback_finished",
     "try_next",

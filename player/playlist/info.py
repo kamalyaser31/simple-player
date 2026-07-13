@@ -17,9 +17,12 @@ _DUR = {}
 _DUR_LOCK = threading.Lock()
 _PROBE_TO = 1.2
 _LOADERS = set()
+_SHUTTING_DOWN = False
 
 
 def show(parent_dlg, ctx, files):
+    if _SHUTTING_DOWN:
+        return
     job = InfoJob(parent_dlg, ctx, files)
     _LOADERS.add(job)
     try:
@@ -90,12 +93,12 @@ class InfoJob:
         except Exception:
             obj = None
         if self._tmr_owner is not None and obj is self._tmr_owner:
-            self._owner_destroyed = True
-            self._stop.set()
-            self.finish(show_dialog=False)
+            self.shutdown()
         event.Skip()
 
     def _on_future_done(self, _future):
+        if _SHUTTING_DOWN or self._done:
+            return
         try:
             wx.CallAfter(self._finish_from_future)
         except Exception:
@@ -147,7 +150,10 @@ class InfoJob:
         except Exception:
             pass
 
-        self.pull()
+        try:
+            self.pull()
+        except Exception:
+            self._stop.set()
         info = None
         try:
             if self._fut is not None and self._fut.done():
@@ -190,6 +196,18 @@ class InfoJob:
         dlg = dialogs.TextInfoDialog(parent, _("Playlist Info"), text)
         dlg.ShowModal()
         dlg.Destroy()
+
+    def shutdown(self):
+        self._owner_destroyed = True
+        self._stop.set()
+        self.finish(show_dialog=False)
+
+
+def shutdown_info_jobs():
+    global _SHUTTING_DOWN
+    _SHUTTING_DOWN = True
+    for job in list(_LOADERS):
+        job.shutdown()
 
 
 def scan(files, cur_path, cur_dur, q, stop):

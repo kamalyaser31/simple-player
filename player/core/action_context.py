@@ -18,6 +18,7 @@ class ActionContext:
         self.file_info_last_press = 0.0
         self.yt_pl = None
         self.yt_now = None
+        self.yt_retry_source = None
 
     def set_frame(self, frame):
         self.frame = frame

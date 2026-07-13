@@ -1,5 +1,8 @@
+import configparser
+import logging
 import os
 import wx
+from gettext import gettext as _
 
 from actions import (
     ACTIONS,
@@ -201,6 +204,7 @@ from youtube.actions import (
     on_playback_finished,
     open_yt,
     search_yt,
+    shutdown_youtube,
     show_desc,
 )
 from youtube.state import is_yt
@@ -208,6 +212,7 @@ from youtube.startup import install_components_now
 from update.actions import (
     check_app_updates_now,
     check_updates_on_startup,
+    shutdown_updates,
     update_youtube_components_now,
 )
 from core.windows_media import WindowsMediaBridge
@@ -215,11 +220,16 @@ from recording import RecEngine
 from positions import PosStore
 
 
+_LOG = logging.getLogger(__name__)
+
+
 class AppController:
     def __init__(self, settings):
         self._settings = settings
         self._player = Player()
-        self._player.set_finished_file_handler(lambda: on_playback_finished(self._ctx))
+        self._player.set_finished_file_handler(
+            lambda reason: on_playback_finished(self._ctx, reason)
+        )
         self._rec = RecEngine()
         self._marks = MarkStore(self._settings.config_path)
         self._favs = FavStore(self._settings.config_path)
@@ -394,8 +404,20 @@ class AppController:
             on_download_youtube_components=self._download_yt_components,
         )
         if dialog.ShowModal() == wx.ID_OK:
+            previous_settings = self._settings.snapshot_config()
             dialog.apply()
-            self._settings.save()
+            try:
+                self._settings.save()
+            except (OSError, configparser.Error, ValueError) as exc:
+                self._settings.restore_config(previous_settings)
+                wx.MessageBox(
+                    _("Could not save settings.\n\n{error}").format(error=exc),
+                    _("Settings save failed"),
+                    wx.OK | wx.ICON_ERROR,
+                    parent=self._ctx.frame,
+                )
+                dialog.Destroy()
+                return
             self._load_shortcuts_from_settings()
             if self._ctx.frame is not None:
                 self._ctx.frame.refresh_shortcuts()
@@ -435,29 +457,55 @@ class AppController:
         return False
 
     def shutdown(self):
+        from playlist.info import shutdown_info_jobs
+
+        self._run_shutdown_step("YouTube", lambda: shutdown_youtube(self._ctx))
+        self._run_shutdown_step("updates", shutdown_updates)
+        self._run_shutdown_step("playlist info", shutdown_info_jobs)
+        self._run_shutdown_step("global keyboard", self._stop_global_keyboard)
+        self._run_shutdown_step("media timer", self._stop_media_timer)
+        self._run_shutdown_step("recorder", lambda: self._rec.stop(beep=False))
+        self._run_shutdown_step("file position", self._save_position_on_shutdown)
+        self._run_shutdown_step(
+            "volume setting",
+            lambda: self._settings.set_volume(self._player.get_volume()),
+        )
+        self._run_shutdown_step(
+            "speed setting",
+            lambda: self._settings.set_speed(self._player.get_speed()),
+        )
+        self._run_shutdown_step("last position", self._remember_position_on_shutdown)
+        self._run_shutdown_step("settings save", self._settings.save)
+        self._run_shutdown_step("media session", self._media.close)
+        self._run_shutdown_step("player", self._player.shutdown)
+
+    def _run_shutdown_step(self, name, operation):
         try:
-            if self._global_keyboard is not None:
-                self._global_keyboard.stop()
-                self._global_keyboard = None
-            if self._media_timer is not None and self._media_timer.IsRunning():
-                self._media_timer.Stop()
-            self._rec.stop(beep=False)
-            if (
-                self._settings.get_save_file_pos()
-                and self._settings.get_save_on_close()
-            ):
-                self._save_file_position()
-            self._settings.set_volume(self._player.get_volume())
-            self._settings.set_speed(self._player.get_speed())
-            if self._settings.get_remember_position():
-                path = self._player.current_path
-                position = self._player.get_elapsed()
-                if path and position is not None and os.path.isfile(path):
-                    self._settings.set_last_file_position(path, position)
-            self._settings.save()
-        finally:
-            self._media.close()
-            self._player.shutdown()
+            operation()
+        except Exception:
+            _LOG.exception("Failed to shut down %s", name)
+
+    def _stop_global_keyboard(self):
+        keyboard = self._global_keyboard
+        self._global_keyboard = None
+        if keyboard is not None:
+            keyboard.stop()
+
+    def _stop_media_timer(self):
+        if self._media_timer is not None and self._media_timer.IsRunning():
+            self._media_timer.Stop()
+
+    def _save_position_on_shutdown(self):
+        if self._settings.get_save_file_pos() and self._settings.get_save_on_close():
+            self._save_file_position()
+
+    def _remember_position_on_shutdown(self):
+        if not self._settings.get_remember_position():
+            return
+        path = self._player.current_path
+        position = self._player.get_elapsed()
+        if path and position is not None and os.path.isfile(path):
+            self._settings.set_last_file_position(path, position)
 
     def handle_action(self, action_id):
         handler = self._action_handlers.get(action_id)

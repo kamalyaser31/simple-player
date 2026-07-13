@@ -1,4 +1,7 @@
 import concurrent.futures
+import threading
+import time
+from dataclasses import dataclass
 
 import wx
 from gettext import gettext as _
@@ -17,19 +20,29 @@ from .search import start_search
 from .state import (
     clear_ses,
     get_ses,
+    is_yt,
     mk_ses,
     ses_idx,
     set_now,
     set_ses,
     sync_removed_sources,
 )
-from .task_ui import run_task
+from .task_ui import run_task, shutdown_tasks
 from .ui_utils import ask_link, ask_search, ask_video_or_playlist
 
 _PREP_POOL = concurrent.futures.ThreadPoolExecutor(max_workers=4)
 _PREP_FUT = {}
 _PREP_DONE = {}
 _PREP_MAX = 200
+_PREP_TTL = 600.0
+_PREP_LOCK = threading.RLock()
+_SHUTTING_DOWN = False
+
+
+@dataclass(frozen=True)
+class CacheRecord:
+    value: dict
+    stored_at: float
 
 
 def _opts(ctx, ses=None):
@@ -260,11 +273,15 @@ def try_next(ctx):
     return False
 
 
-def on_playback_finished(ctx):
+def on_playback_finished(ctx, reason=0):
     ses = get_ses(ctx)
+    src = str(ctx.player.current_source or "").strip()
+    if reason == 4 and _retry_failed_stream(ctx, src, ses):
+        return True
+    if reason == 0:
+        ctx.yt_retry_source = None
     if ses is None:
         return False
-    src = str(ctx.player.current_source or "").strip()
     if not src or src not in ses.get("urls", set()):
         return False
     moved = try_next(ctx)
@@ -274,6 +291,49 @@ def on_playback_finished(ctx):
     if isinstance(pending, dict):
         return True
     return False
+
+
+def _retry_failed_stream(ctx, source, ses):
+    if not is_yt(source) or getattr(ctx, "yt_retry_source", None) == source:
+        return False
+    key = _prep_key(source, _opts(ctx, ses))
+    item = _session_item_for_source(ses, source)
+    if item is None:
+        now = getattr(ctx, "yt_now", None) or {}
+        item = YtItem(
+            title=str(now.get("title") or source),
+            url=source,
+            channel_url="",
+            channel_name="",
+            description=str(now.get("desc") or ""),
+        )
+    ctx.yt_retry_source = source
+    _cache_evict(key)
+    wx.CallAfter(_reload_failed_stream, ctx, item, ses, key)
+    return True
+
+
+def _session_item_for_source(ses, source):
+    if not isinstance(ses, dict):
+        return None
+    for item in ses.get("items", []):
+        if str(getattr(item, "url", "") or "").strip() == source:
+            return item
+    return None
+
+
+def _reload_failed_stream(ctx, item, ses, key):
+    if _SHUTTING_DOWN or str(ctx.player.current_source or "").strip() != item.url:
+        return
+    prep = _prep_play(ctx, item, _opts(ctx, ses))
+    if not isinstance(prep, dict):
+        return
+    if not ctx.player.replace_current_stream(prep["stream"], item.url):
+        _cache_evict(key)
+        ctx.speak(
+            _("Could not reload the expired YouTube stream."),
+            _("YouTube stream reload failed."),
+        )
 
 
 def sync_sel(ctx):
@@ -382,6 +442,7 @@ def _play_item(ctx, item, ses, idx):
     ctx.reset_selection()
     ctx.set_file_loaded(True)
     ctx.set_playing(True)
+    ctx.yt_retry_source = None
     set_now(ctx, item)
 
     if ses is None:
@@ -400,22 +461,13 @@ def _prep_play(ctx, item, ses_opts):
         cached = _cache_get(key)
         if cached is not None:
             return cached
-        fut = _PREP_FUT.get(key)
-        if fut is not None and fut.done():
-            try:
-                ready = fut.result()
-            except Exception:
-                ready = None
-            _PREP_FUT.pop(key, None)
-            if isinstance(ready, dict):
-                _cache_set(key, ready)
-                return ready
 
     add_to_path()
 
     def job(cancel, on_line, _on_up):
-        if key and key in _PREP_FUT:
-            fut = _PREP_FUT[key]
+        with _PREP_LOCK:
+            fut = _PREP_FUT.get(key) if key else None
+        if fut is not None:
             while True:
                 if cancel.is_set():
                     raise CancelledError()
@@ -465,12 +517,15 @@ def _prefetch_range(ses, start, count):
 
 
 def _prefetch_one(ses, item, ses_opts):
+    if _SHUTTING_DOWN:
+        return
     key = _prep_key(getattr(item, "url", ""), ses_opts)
     if not key:
         return
     if _cache_get(key) is not None:
         return
-    fut = _PREP_FUT.get(key)
+    with _PREP_LOCK:
+        fut = _PREP_FUT.get(key)
     if fut is not None and not fut.done():
         return
     ses.setdefault("prep_keys", set()).add(key)
@@ -495,23 +550,30 @@ def _prefetch_one(ses, item, ses_opts):
             return None
 
     future = _PREP_POOL.submit(job)
-    _PREP_FUT[key] = future
+    with _PREP_LOCK:
+        _PREP_FUT[key] = future
     prep_jobs[key] = future
 
     def done(_future):
-        prep_jobs.pop(key, None)
-        _PREP_FUT.pop(key, None)
+        if prep_jobs.get(key) is _future:
+            prep_jobs.pop(key, None)
+        with _PREP_LOCK:
+            if _PREP_FUT.get(key) is not _future:
+                return
+            _PREP_FUT.pop(key, None)
         try:
             ready = _future.result()
         except Exception:
             ready = None
-        if isinstance(ready, dict):
+        if not _SHUTTING_DOWN and isinstance(ready, dict):
             _cache_set(key, ready)
 
     future.add_done_callback(done)
 
 
 def _load_next_bg(ctx, ses, item, from_idx, to_idx):
+    if _SHUTTING_DOWN:
+        return
     ses_opts = _opts(ctx, ses)
     key = _prep_key(getattr(item, "url", ""), ses_opts)
     if not key:
@@ -548,6 +610,8 @@ def _load_next_bg(ctx, ses, item, from_idx, to_idx):
             prep = _future.result()
         except Exception:
             prep = None
+        if _SHUTTING_DOWN:
+            return
         if not isinstance(prep, dict):
             wx.CallAfter(_next_failed, ctx, ses, key)
             return
@@ -614,7 +678,11 @@ def _ensure_queued(ctx, ses, item, prep):
     if not key:
         return False
     if _is_queued(ses, key) and _player_has_source(ctx.player, key):
-        return True
+        stream = str(prep.get("stream") or "").strip()
+        if not stream:
+            return False
+        if ctx.player.replace_queued_stream(stream, key):
+            return True
     ses.setdefault("queued", set()).discard(key)
     stream = str(prep.get("stream") or "").strip()
     if not stream:
@@ -644,17 +712,23 @@ def _mark_queued(ses, key):
 
 
 def _cache_get(key):
-    value = _PREP_DONE.get(key)
-    if isinstance(value, dict):
-        return value
-    fut = _PREP_FUT.get(key)
+    with _PREP_LOCK:
+        record = _PREP_DONE.get(key)
+        if isinstance(record, CacheRecord):
+            if time.monotonic() - record.stored_at < _PREP_TTL:
+                return record.value
+            _PREP_DONE.pop(key, None)
+        fut = _PREP_FUT.get(key)
     if fut is None or not fut.done():
         return None
     try:
         value = fut.result()
     except Exception:
         value = None
-    _PREP_FUT.pop(key, None)
+    with _PREP_LOCK:
+        if _PREP_FUT.get(key) is not fut:
+            return None
+        _PREP_FUT.pop(key, None)
     if isinstance(value, dict):
         _cache_set(key, value)
         return value
@@ -662,10 +736,19 @@ def _cache_get(key):
 
 
 def _cache_set(key, value):
-    _PREP_DONE[key] = value
-    while len(_PREP_DONE) > _PREP_MAX:
-        first = next(iter(_PREP_DONE))
-        _PREP_DONE.pop(first, None)
+    with _PREP_LOCK:
+        _PREP_DONE[key] = CacheRecord(value=value, stored_at=time.monotonic())
+        while len(_PREP_DONE) > _PREP_MAX:
+            first = next(iter(_PREP_DONE))
+            _PREP_DONE.pop(first, None)
+
+
+def _cache_evict(key):
+    with _PREP_LOCK:
+        _PREP_DONE.pop(key, None)
+        future = _PREP_FUT.pop(key, None)
+    if future is not None and not future.done():
+        future.cancel()
 
 
 def _clear_ctx_ses(ctx):
@@ -675,12 +758,28 @@ def _clear_ctx_ses(ctx):
         keys = set(ses.get("prep_keys", set()) or set())
     clear_ses(ctx)
     for key in keys:
-        fut = _PREP_FUT.pop(key, None)
+        with _PREP_LOCK:
+            fut = _PREP_FUT.pop(key, None)
         if fut is not None and not fut.done():
             try:
                 fut.cancel()
             except Exception:
                 pass
+
+
+def shutdown_youtube(ctx=None):
+    global _SHUTTING_DOWN
+    _SHUTTING_DOWN = True
+    if ctx is not None:
+        _clear_ctx_ses(ctx)
+    shutdown_tasks()
+    with _PREP_LOCK:
+        futures = list(_PREP_FUT.values())
+        _PREP_FUT.clear()
+        _PREP_DONE.clear()
+    for future in futures:
+        future.cancel()
+    _PREP_POOL.shutdown(wait=False, cancel_futures=True)
 
 
 def _show_error(ctx, message, title):

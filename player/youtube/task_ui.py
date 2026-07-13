@@ -1,5 +1,6 @@
 import concurrent.futures
 import queue
+import threading
 from dataclasses import dataclass
 
 import wx
@@ -7,6 +8,10 @@ import wx
 from ui.task_dialogs import BusyDlg, TaskDlg
 from .components import CancelFlag, CancelledError
 from .resolver import ResolveError
+
+_ACTIVE_LOCK = threading.Lock()
+_ACTIVE_TASKS = {}
+_SHUTTING_DOWN = False
 
 
 @dataclass
@@ -18,6 +23,8 @@ class TaskOut:
 
 
 def run_task(parent, title, job, fmt_up=None, simple=False):
+    if _SHUTTING_DOWN:
+        return TaskOut(ok=False, err="YouTube is shutting down.", can=True)
     dlg = BusyDlg(parent, title, title) if simple else TaskDlg(parent, title)
     dlg.set_progress(0.0)
     updates = queue.Queue()
@@ -43,18 +50,13 @@ def run_task(parent, title, job, fmt_up=None, simple=False):
 
     pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
     future = pool.submit(worker)
+    with _ACTIVE_LOCK:
+        _ACTIVE_TASKS[future] = cancel
     timer = wx.Timer(dlg)
 
     def on_tick(_event):
         if dlg.was_cancelled() and not state["done"]:
             cancel.set()
-            state["done"] = True
-            state["ok"] = False
-            state["val"] = None
-            state["err"] = ""
-            state["can"] = True
-            dlg.EndModal(wx.ID_CANCEL)
-            return
         saw_pct = False
         while True:
             try:
@@ -86,7 +88,7 @@ def run_task(parent, title, job, fmt_up=None, simple=False):
                     "err": str(exc),
                     "can": cancel.is_set(),
                 }
-            state["ok"] = bool(result.get("ok"))
+            state["ok"] = bool(result.get("ok")) and not cancel.is_set()
             state["val"] = result.get("val")
             state["err"] = str(result.get("err", "") or "")
             state["can"] = bool(result.get("can")) or cancel.is_set()
@@ -98,7 +100,6 @@ def run_task(parent, title, job, fmt_up=None, simple=False):
     timer.Start(50)
     dlg.ShowModal()
     timer.Stop()
-    dlg.Destroy()
     if not state["done"] and future.done():
         try:
             result = future.result()
@@ -110,17 +111,29 @@ def run_task(parent, title, job, fmt_up=None, simple=False):
                 "can": cancel.is_set(),
             }
         state["done"] = True
-        state["ok"] = bool(result.get("ok"))
+        state["ok"] = bool(result.get("ok")) and not cancel.is_set()
         state["val"] = result.get("val")
         state["err"] = str(result.get("err", "") or "")
         state["can"] = bool(result.get("can")) or cancel.is_set()
-    if state["can"] and not future.done():
-        pool.shutdown(wait=False, cancel_futures=False)
-    else:
-        pool.shutdown(wait=True, cancel_futures=True)
+    if not future.done():
+        cancel.set()
+    pool.shutdown(wait=True, cancel_futures=True)
+    with _ACTIVE_LOCK:
+        _ACTIVE_TASKS.pop(future, None)
+    dlg.Destroy()
     return TaskOut(
         ok=bool(state["ok"]),
         val=state["val"],
         err=state["err"],
         can=bool(state["can"]),
     )
+
+
+def shutdown_tasks():
+    global _SHUTTING_DOWN
+    _SHUTTING_DOWN = True
+    with _ACTIVE_LOCK:
+        active = list(_ACTIVE_TASKS.items())
+    for future, cancel in active:
+        cancel.set()
+        future.cancel()
