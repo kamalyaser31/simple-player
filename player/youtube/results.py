@@ -155,7 +155,7 @@ def _try_more(ctx, ses, dlg, busy, prefetch, pool, prefetch_n):
 def _more_done(ctx, ses, dlg, busy, future, prefetch, prefetch_n):
     busy["on"] = False
     cur = get_ses(ctx)
-    if cur is None or cur is not ses:
+    if cur is not None and cur is not ses:
         return
     cancel = ses.get("cancel")
     if cancel is not None and cancel.is_set():

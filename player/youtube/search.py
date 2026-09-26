@@ -1,9 +1,23 @@
 import asyncio
+import threading
 from dataclasses import dataclass, field
 
 from py_yt import VideosSearch
+from py_yt.handlers.componenthandler import ComponentHandler
 
 from .resolver import YtItem
+
+# Guard against py_yt TypeError when a shelf has no verticalListRenderer elements
+_orig_get_shelf = getattr(ComponentHandler, "_getShelfComponent", None)
+if _orig_get_shelf is not None:
+
+    def _safe_get_shelf(self, element):
+        res = _orig_get_shelf(self, element)
+        if isinstance(res, dict) and not isinstance(res.get("elements"), list):
+            res["elements"] = []
+        return res
+
+    ComponentHandler._getShelfComponent = _safe_get_shelf
 
 
 @dataclass
@@ -21,10 +35,10 @@ class SearchState:
 
 def start_search(query, limit=50, language="en", region="US"):
     text = str(query or "").strip()
-    search = VideosSearch(text, limit=int(limit), language=language, region=region)
-    data = _run(search.next())
+    data, cont = _run_search_sync(
+        lambda: VideosSearch(text, limit=int(limit), language=language, region=region)
+    )
     items = _to_items(data)
-    cont = str(getattr(search, "continuationKey", "") or "")
     return SearchState(
         query=text,
         limit=int(limit),
@@ -40,38 +54,91 @@ def load_more(state, cancel=None):
         return []
     if cancel is not None and cancel.is_set():
         return []
-    search = VideosSearch(
-        state.query,
-        limit=int(state.limit),
-        language=state.language,
-        region=state.region,
-    )
+
+    def make_search():
+        s = VideosSearch(
+            state.query,
+            limit=int(state.limit),
+            language=state.language,
+            region=state.region,
+        )
+        s.continuationKey = state.cont
+        return s
+
     if cancel is not None and cancel.is_set():
         return []
-    search.continuationKey = state.cont
-    data = _run(search.next())
+
+    try:
+        data, cont = _run_search_sync(make_search)
+    except Exception:
+        return []
+
     if cancel is not None and cancel.is_set():
         return []
     items = _to_items(data)
     if cancel is not None and cancel.is_set():
         return []
     state.items.extend(items)
-    state.cont = str(getattr(search, "continuationKey", "") or "")
+    state.cont = cont
     return items
+
+
+def _run_search_sync(search_factory, timeout=20.0):
+    result = None
+    exception = None
+
+    def worker():
+        nonlocal result, exception
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        search = None
+        try:
+            search = search_factory()
+            coro = asyncio.wait_for(search.next(), timeout=float(timeout))
+            data = loop.run_until_complete(coro)
+            cont = str(getattr(search, "continuationKey", "") or "")
+            result = (data, cont)
+        except Exception as exc:
+            exception = exc
+        finally:
+            if (
+                search is not None
+                and hasattr(search, "async_client")
+                and search.async_client is not None
+            ):
+                try:
+                    loop.run_until_complete(search.async_client.aclose())
+                except Exception:
+                    pass
+            try:
+                pending = asyncio.all_tasks(loop)
+                for task in pending:
+                    task.cancel()
+                if pending:
+                    loop.run_until_complete(
+                        asyncio.gather(*pending, return_exceptions=True)
+                    )
+                loop.run_until_complete(loop.shutdown_asyncgens())
+            except Exception:
+                pass
+            loop.close()
+            asyncio.set_event_loop(None)
+
+    thread = threading.Thread(target=worker, daemon=True)
+    thread.start()
+    thread.join(timeout=float(timeout) + 5.0)
+    if thread.is_alive():
+        raise TimeoutError("YouTube search timed out.")
+    if exception is not None:
+        raise exception
+    return result
 
 
 def _run(awaitable, timeout=20):
     async def _with_timeout():
         return await asyncio.wait_for(awaitable, timeout=float(timeout))
 
-    try:
-        return asyncio.run(_with_timeout())
-    except RuntimeError:
-        loop = asyncio.new_event_loop()
-        try:
-            return loop.run_until_complete(_with_timeout())
-        finally:
-            loop.close()
+    return asyncio.run(_with_timeout())
 
 
 def _to_items(data):
