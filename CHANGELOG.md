@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-13: feat(youtube): add local YouTube subscriptions without a Google login: channels and playlists saved in subscriptions.json, latest videos from RSS (Ctrl+U), a management dialog (Ctrl+Shift+U), and subscribe from search results (Ctrl+S).
+
 - 2026-11-13: feat(youtube): add a "Minutes to load ahead while playing" setting that caps mpv read-ahead with cache-secs, so switching videos early need not download the whole audio; 0, the default, keeps mpv's unlimited read-ahead.
 - 2026-11-13: fix(youtube): make search language/region take effect (py_yt sent hl/gl outside context.client), validate the codes with a default fallback, and cancel queued prefetch jobs left behind when browsing results.
 - 2026-11-13: chore(scripts): update_pot.py now merges and compiles every catalog, and update_version.py validates the version and runs the consistency check.

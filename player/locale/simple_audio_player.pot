@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 00:59+0200\n"
+"POT-Creation-Date: 2026-11-13 01:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: app.py:197 app_actions/bookmark_actions.py:100
 #: app_actions/file_actions.py:267 app_actions/file_actions.py:571
 #: app_actions/help_actions.py:62 update/actions.py:95 update/actions.py:141
-#: update/actions.py:147 youtube/flow.py:452 youtube/flow.py:819
+#: update/actions.py:147 youtube/flow.py:467 youtube/flow.py:834
 #: youtube/startup.py:158
 msgid "Error"
 msgstr ""
@@ -38,7 +38,7 @@ msgstr ""
 msgid "Bookmark {time}"
 msgstr ""
 
-#: app_actions/bookmark_actions.py:17 ui/mainwin/menu.py:239
+#: app_actions/bookmark_actions.py:17 ui/mainwin/menu.py:251
 msgid "Add a new bookmark"
 msgstr ""
 
@@ -52,7 +52,7 @@ msgstr ""
 
 #: app_actions/bookmark_actions.py:24 app_actions/bookmark_actions.py:35
 #: app_actions/bookmark_actions.py:62 app_actions/bookmark_actions.py:126
-#: ui/mainwin/menu.py:101
+#: ui/mainwin/menu.py:103
 msgid "Bookmarks"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgid "Edit bookmark name"
 msgstr ""
 
 #: app_actions/bookmark_actions.py:92 ui/bookmark_dlg.py:15
-#: ui/mainwin/menu.py:243
+#: ui/mainwin/menu.py:255
 msgid "Manage bookmarks"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Remove favorite '{name}' ({kind})?"
 msgstr ""
 
-#: app_actions/favorite_actions.py:130
+#: app_actions/favorite_actions.py:130 app_actions/subscription_actions.py:164
 msgid "Confirm remove"
 msgstr ""
 
@@ -404,7 +404,7 @@ msgstr ""
 
 #: app_actions/file_actions.py:544 app_actions/file_actions.py:695
 #: app_actions/marked_file_actions.py:76 app_actions/marked_file_actions.py:264
-#: youtube/results.py:59 youtube/video.py:45
+#: youtube/results.py:61 youtube/video.py:45
 msgid "Copied."
 msgstr ""
 
@@ -413,7 +413,7 @@ msgid "Current file copied to clipboard."
 msgstr ""
 
 #: app_actions/file_actions.py:546 app_actions/file_actions.py:697
-#: app_actions/marked_file_actions.py:78 youtube/results.py:61
+#: app_actions/marked_file_actions.py:78 youtube/results.py:63
 #: youtube/video.py:47
 msgid "Copy failed."
 msgstr ""
@@ -761,12 +761,12 @@ msgid "Custom value"
 msgstr ""
 
 #: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
-#: ui/main_frame.py:50 ui/mainwin/state.py:87 ui/yt_dialogs.py:160
+#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:160
 msgid "Play"
 msgstr ""
 
-#: app_actions/playback_actions.py:58 ui/mainwin/menu.py:539
-#: ui/mainwin/state.py:87 ui/mainwin/state.py:224
+#: app_actions/playback_actions.py:58 ui/mainwin/menu.py:551
+#: ui/mainwin/state.py:91 ui/mainwin/state.py:228
 msgid "Pause"
 msgstr ""
 
@@ -974,9 +974,73 @@ msgstr ""
 msgid "Unknown error."
 msgstr ""
 
-#: app_actions/recording_actions.py:79 ui/mainwin/menu.py:107
+#: app_actions/recording_actions.py:79 ui/mainwin/menu.py:109
 #: ui/prefs/dialog.py:66
 msgid "Recording"
+msgstr ""
+
+#: app_actions/subscription_actions.py:23
+msgid "No subscriptions yet."
+msgstr ""
+
+#: app_actions/subscription_actions.py:46
+msgid "Loading subscriptions"
+msgstr ""
+
+#: app_actions/subscription_actions.py:52
+#, python-brace-format
+msgid "{n} channels could not be loaded."
+msgstr ""
+
+#: app_actions/subscription_actions.py:55 ui/mainwin/menu.py:148
+msgid "Latest subscription videos"
+msgstr ""
+
+#: app_actions/subscription_actions.py:99
+msgid "Add subscription"
+msgstr ""
+
+#: app_actions/subscription_actions.py:99
+msgid "Channel or playlist link:"
+msgstr ""
+
+#: app_actions/subscription_actions.py:120
+msgid "Adding subscription"
+msgstr ""
+
+#: app_actions/subscription_actions.py:128
+msgid "Could not add subscription."
+msgstr ""
+
+#: app_actions/subscription_actions.py:133
+#, python-brace-format
+msgid "Subscribed to {name}."
+msgstr ""
+
+#: app_actions/subscription_actions.py:148
+#, python-brace-format
+msgid "Already subscribed to {name}."
+msgstr ""
+
+#: app_actions/subscription_actions.py:163
+#, python-brace-format
+msgid "Remove {name} from subscriptions?"
+msgstr ""
+
+#: app_actions/subscription_actions.py:176
+msgid "Loading channel"
+msgstr ""
+
+#: app_actions/subscription_actions.py:192
+msgid "Could not reach YouTube. Check your internet connection."
+msgstr ""
+
+#: app_actions/subscription_actions.py:199
+msgid "Could not load YouTube data."
+msgstr ""
+
+#: app_actions/subscription_actions.py:207 ui/subs_dlg.py:19
+msgid "YouTube subscriptions"
 msgstr ""
 
 #: config/shortcut_utils.py:28
@@ -1023,15 +1087,15 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: config/shortcut_utils.py:39 ui/mainwin/menu.py:382
+#: config/shortcut_utils.py:39 ui/mainwin/menu.py:394
 msgid "End"
 msgstr ""
 
-#: config/shortcut_utils.py:40 ui/bookmark_dlg.py:28 ui/mainwin/menu.py:202
+#: config/shortcut_utils.py:40 ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
 msgid "Delete"
 msgstr ""
 
-#: core/controller.py:414
+#: core/controller.py:422
 #, python-brace-format
 msgid ""
 "Could not save settings.\n"
@@ -1039,15 +1103,15 @@ msgid ""
 "{error}"
 msgstr ""
 
-#: core/controller.py:415
+#: core/controller.py:423
 msgid "Settings save failed"
 msgstr ""
 
-#: core/controller.py:439
+#: core/controller.py:447
 msgid "Please restart the app for language changes to take effect."
 msgstr ""
 
-#: core/controller.py:440 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
+#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
 msgid "Preferences"
 msgstr ""
 
@@ -1091,6 +1155,38 @@ msgstr ""
 #: playlist/info.py:250
 #, python-brace-format
 msgid "Remaining: {value}"
+msgstr ""
+
+#: subscriptions/feed.py:137 subscriptions/feed.py:145
+msgid "This is not a valid YouTube channel or playlist link."
+msgstr ""
+
+#: subscriptions/feed.py:149
+msgid "Could not find the channel for this link."
+msgstr ""
+
+#: subscriptions/feed.py:171 subscriptions/run_tests.py:127
+msgid "today"
+msgstr ""
+
+#: subscriptions/feed.py:173 subscriptions/run_tests.py:128
+msgid "yesterday"
+msgstr ""
+
+#: subscriptions/feed.py:175 subscriptions/run_tests.py:129
+#: subscriptions/run_tests.py:137
+#, python-brace-format
+msgid "{n} days ago"
+msgstr ""
+
+#: subscriptions/feed.py:177 subscriptions/run_tests.py:130
+#, python-brace-format
+msgid "{n} months ago"
+msgstr ""
+
+#: subscriptions/feed.py:178 subscriptions/run_tests.py:131
+#, python-brace-format
+msgid "{n} years ago"
 msgstr ""
 
 #: ui/audio_settings.py:5
@@ -1215,12 +1311,12 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: ui/bookmark_dlg.py:27 ui/mainwin/menu.py:99
+#: ui/bookmark_dlg.py:27 ui/mainwin/menu.py:101
 msgid "Edit"
 msgstr ""
 
 #: ui/bookmark_dlg.py:29 ui/dialogs.py:245 ui/dialogs.py:268
-#: ui/favorite_dlg.py:43 ui/yt_dialogs.py:162
+#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:162
 msgid "Close"
 msgstr ""
 
@@ -1310,11 +1406,11 @@ msgstr ""
 msgid "Edit..."
 msgstr ""
 
-#: ui/favorite_dlg.py:42
+#: ui/favorite_dlg.py:42 ui/subs_dlg.py:29
 msgid "Remove..."
 msgstr ""
 
-#: ui/help_dialogs.py:15 ui/mainwin/menu.py:518
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:530
 msgid "About"
 msgstr ""
 
@@ -1329,288 +1425,292 @@ msgid ""
 "Version: {version}"
 msgstr ""
 
-#: ui/help_dialogs.py:43 ui/mainwin/menu.py:501
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:513
 msgid "Visit website"
 msgstr ""
 
-#: ui/main_frame.py:48 ui/mainwin/menu.py:318
+#: ui/main_frame.py:48 ui/mainwin/menu.py:330
 msgid "Previous"
 msgstr ""
 
-#: ui/main_frame.py:49 ui/mainwin/menu.py:370
+#: ui/main_frame.py:49 ui/mainwin/menu.py:382
 msgid "Rewind"
 msgstr ""
 
-#: ui/main_frame.py:51 ui/mainwin/menu.py:374
+#: ui/main_frame.py:51 ui/mainwin/menu.py:386
 msgid "Forward"
 msgstr ""
 
-#: ui/main_frame.py:52 ui/mainwin/menu.py:322
+#: ui/main_frame.py:52 ui/mainwin/menu.py:334
 msgid "Next"
 msgstr ""
 
-#: ui/mainwin/menu.py:98
+#: ui/mainwin/menu.py:100
 msgid "File"
 msgstr ""
 
-#: ui/mainwin/menu.py:103
+#: ui/mainwin/menu.py:105
 msgid "Actions for marked files"
 msgstr ""
 
-#: ui/mainwin/menu.py:104
+#: ui/mainwin/menu.py:106
 msgid "Player"
 msgstr ""
 
-#: ui/mainwin/menu.py:106
+#: ui/mainwin/menu.py:108
 msgid "Video options"
 msgstr ""
 
-#: ui/mainwin/menu.py:108
+#: ui/mainwin/menu.py:110
 msgid "Help"
 msgstr ""
 
-#: ui/mainwin/menu.py:126
+#: ui/mainwin/menu.py:128
 msgid "Open File..."
 msgstr ""
 
-#: ui/mainwin/menu.py:130
+#: ui/mainwin/menu.py:132
 msgid "Open Link..."
 msgstr ""
 
-#: ui/mainwin/menu.py:134
+#: ui/mainwin/menu.py:136
 msgid "Open YouTube Link..."
 msgstr ""
 
-#: ui/mainwin/menu.py:138
+#: ui/mainwin/menu.py:140
 msgid "Search YouTube..."
 msgstr ""
 
-#: ui/mainwin/menu.py:142
+#: ui/mainwin/menu.py:144
 msgid "Favorite videos..."
 msgstr ""
 
-#: ui/mainwin/menu.py:146
+#: ui/mainwin/menu.py:152
+msgid "YouTube subscriptions..."
+msgstr ""
+
+#: ui/mainwin/menu.py:156
 msgid "Open Folder..."
 msgstr ""
 
-#: ui/mainwin/menu.py:150
+#: ui/mainwin/menu.py:160
 msgid "Open Containing Folder"
 msgstr ""
 
-#: ui/mainwin/menu.py:154
+#: ui/mainwin/menu.py:164
 msgid "File properties..."
 msgstr ""
 
-#: ui/mainwin/menu.py:158
+#: ui/mainwin/menu.py:168
 msgid "Opened Files..."
 msgstr ""
 
-#: ui/mainwin/menu.py:162
+#: ui/mainwin/menu.py:172
 msgid "Close File"
 msgstr ""
 
-#: ui/mainwin/menu.py:166
+#: ui/mainwin/menu.py:176
 msgid "Close all files"
 msgstr ""
 
-#: ui/mainwin/menu.py:170
+#: ui/mainwin/menu.py:180
 msgid "Test speakers"
 msgstr ""
 
-#: ui/mainwin/menu.py:174
+#: ui/mainwin/menu.py:184
 msgid "Preferences..."
 msgstr ""
 
-#: ui/mainwin/menu.py:177
+#: ui/mainwin/menu.py:187
 msgid "Exit"
 msgstr ""
 
-#: ui/mainwin/menu.py:198
+#: ui/mainwin/menu.py:210
 msgid "Rename..."
 msgstr ""
 
-#: ui/mainwin/menu.py:206
+#: ui/mainwin/menu.py:218
 msgid "Copy"
 msgstr ""
 
-#: ui/mainwin/menu.py:210
+#: ui/mainwin/menu.py:222
 msgid "Paste"
 msgstr ""
 
-#: ui/mainwin/menu.py:215
+#: ui/mainwin/menu.py:227
 msgid "Mark Current File"
 msgstr ""
 
-#: ui/mainwin/menu.py:219
+#: ui/mainwin/menu.py:231
 msgid "Mark All Files"
 msgstr ""
 
-#: ui/mainwin/menu.py:223
+#: ui/mainwin/menu.py:235
 msgid "Clear Marked Files"
 msgstr ""
 
-#: ui/mainwin/menu.py:250
+#: ui/mainwin/menu.py:262
 #, python-brace-format
 msgid "Bookmark {slot}"
 msgstr ""
 
-#: ui/mainwin/menu.py:254
+#: ui/mainwin/menu.py:266
 msgid "Jump to bookmark"
 msgstr ""
 
-#: ui/mainwin/menu.py:264
+#: ui/mainwin/menu.py:276
 msgid "&Copy to folder..."
 msgstr ""
 
-#: ui/mainwin/menu.py:268
+#: ui/mainwin/menu.py:280
 msgid "&Move to folder..."
 msgstr ""
 
-#: ui/mainwin/menu.py:272
+#: ui/mainwin/menu.py:284
 msgid "Copy to &clipboard"
 msgstr ""
 
-#: ui/mainwin/menu.py:276
+#: ui/mainwin/menu.py:288
 msgid "&Delete"
 msgstr ""
 
-#: ui/mainwin/menu.py:297
+#: ui/mainwin/menu.py:309
 msgid "Play/Pause"
 msgstr ""
 
-#: ui/mainwin/menu.py:303
+#: ui/mainwin/menu.py:315
 msgid "Increase Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:307
+#: ui/mainwin/menu.py:319
 msgid "Decrease Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:311
+#: ui/mainwin/menu.py:323
 msgid "Reset Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:313
+#: ui/mainwin/menu.py:325
 msgid "Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:326
+#: ui/mainwin/menu.py:338
 msgid "First File"
 msgstr ""
 
-#: ui/mainwin/menu.py:330
+#: ui/mainwin/menu.py:342
 msgid "Go to file..."
 msgstr ""
 
-#: ui/mainwin/menu.py:334
+#: ui/mainwin/menu.py:346
 msgid "Last File"
 msgstr ""
 
-#: ui/mainwin/menu.py:338
+#: ui/mainwin/menu.py:350
 msgid "Shuffle"
 msgstr ""
 
-#: ui/mainwin/menu.py:342
+#: ui/mainwin/menu.py:354
 msgid "Repeat File"
 msgstr ""
 
-#: ui/mainwin/menu.py:347
+#: ui/mainwin/menu.py:359
 msgid "Enable silence removal filter"
 msgstr ""
 
-#: ui/mainwin/menu.py:355
+#: ui/mainwin/menu.py:367
 msgid "Set A (loop start)"
 msgstr ""
 
-#: ui/mainwin/menu.py:359
+#: ui/mainwin/menu.py:371
 msgid "Set B (loop end)"
 msgstr ""
 
-#: ui/mainwin/menu.py:363
+#: ui/mainwin/menu.py:375
 msgid "Clear A-B loop"
 msgstr ""
 
-#: ui/mainwin/menu.py:365
+#: ui/mainwin/menu.py:377
 msgid "A-B loop"
 msgstr ""
 
-#: ui/mainwin/menu.py:378
+#: ui/mainwin/menu.py:390
 msgid "Beginning"
 msgstr ""
 
-#: ui/mainwin/menu.py:386
+#: ui/mainwin/menu.py:398
 msgid "Go to time..."
 msgstr ""
 
-#: ui/mainwin/menu.py:400
+#: ui/mainwin/menu.py:412
 msgid "Jump to Percentage"
 msgstr ""
 
-#: ui/mainwin/menu.py:424
+#: ui/mainwin/menu.py:436
 msgid "Control the clicks movement value"
 msgstr ""
 
-#: ui/mainwin/menu.py:429
+#: ui/mainwin/menu.py:441
 msgid "Sound Cards..."
 msgstr ""
 
-#: ui/mainwin/menu.py:459
+#: ui/mainwin/menu.py:471
 msgid "Download..."
 msgstr ""
 
-#: ui/mainwin/menu.py:463
+#: ui/mainwin/menu.py:475
 msgid "Video description..."
 msgstr ""
 
-#: ui/mainwin/menu.py:467
+#: ui/mainwin/menu.py:479
 msgid "Copy video link"
 msgstr ""
 
-#: ui/mainwin/menu.py:484
+#: ui/mainwin/menu.py:496
 msgid "User Guide"
 msgstr ""
 
-#: ui/mainwin/menu.py:488 ui/update_dialogs.py:18
+#: ui/mainwin/menu.py:500 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr ""
 
-#: ui/mainwin/menu.py:493
+#: ui/mainwin/menu.py:505
 msgid "Email"
 msgstr ""
 
-#: ui/mainwin/menu.py:497
+#: ui/mainwin/menu.py:509
 msgid "Telegram"
 msgstr ""
 
-#: ui/mainwin/menu.py:503
+#: ui/mainwin/menu.py:515
 msgid "Contact me"
 msgstr ""
 
-#: ui/mainwin/menu.py:508
+#: ui/mainwin/menu.py:520
 msgid "Check for app updates"
 msgstr ""
 
-#: ui/mainwin/menu.py:512
+#: ui/mainwin/menu.py:524
 msgid "Update YouTube components"
 msgstr ""
 
-#: ui/mainwin/menu.py:514
+#: ui/mainwin/menu.py:526
 msgid "Updates"
 msgstr ""
 
-#: ui/mainwin/menu.py:535
+#: ui/mainwin/menu.py:547
 msgid "Start recording"
 msgstr ""
 
-#: ui/mainwin/menu.py:543
+#: ui/mainwin/menu.py:555
 msgid "Stop"
 msgstr ""
 
-#: ui/mainwin/menu.py:548
+#: ui/mainwin/menu.py:560
 msgid "Open recordings folder"
 msgstr ""
 
-#: ui/mainwin/state.py:224
+#: ui/mainwin/state.py:228
 msgid "Resume"
 msgstr ""
 
@@ -1777,8 +1877,8 @@ msgstr ""
 msgid "Silence removal"
 msgstr ""
 
-#: ui/prefs/dialog.py:73 youtube/flow.py:400 youtube/flow.py:421
-#: youtube/flow.py:517 youtube/flow.py:829
+#: ui/prefs/dialog.py:73 youtube/flow.py:415 youtube/flow.py:436
+#: youtube/flow.py:532 youtube/flow.py:844
 msgid "YouTube"
 msgstr ""
 
@@ -2433,6 +2533,28 @@ msgstr ""
 msgid "Select sound card"
 msgstr ""
 
+#: ui/subs_dlg.py:11
+#, python-brace-format
+msgid "{name} - playlist"
+msgstr ""
+
+#: ui/subs_dlg.py:12
+#, python-brace-format
+msgid "{name} - channel"
+msgstr ""
+
+#: ui/subs_dlg.py:24
+msgid "Subscriptions"
+msgstr ""
+
+#: ui/subs_dlg.py:27
+msgid "Open"
+msgstr ""
+
+#: ui/subs_dlg.py:28
+msgid "Add by link..."
+msgstr ""
+
 #: ui/update_dialogs.py:9
 msgid "Application update"
 msgstr ""
@@ -2479,24 +2601,28 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: ui/yt_dialogs.py:158 youtube/results.py:21 youtube/ui_utils.py:177
+#: ui/yt_dialogs.py:158 youtube/results.py:23 youtube/ui_utils.py:181
 msgid "Videos"
 msgstr ""
 
-#: ui/yt_dialogs.py:161 ui/yt_dialogs.py:243
+#: ui/yt_dialogs.py:161 ui/yt_dialogs.py:249
 msgid "Download"
 msgstr ""
 
-#: ui/yt_dialogs.py:239
+#: ui/yt_dialogs.py:244
 msgid "Copy link\tCtrl+C"
 msgstr ""
 
-#: ui/yt_dialogs.py:240
+#: ui/yt_dialogs.py:245
 msgid "Open in browser\tCtrl+B"
 msgstr ""
 
-#: ui/yt_dialogs.py:241
+#: ui/yt_dialogs.py:246
 msgid "Navigate to channel\tCtrl+N"
+msgstr ""
+
+#: ui/yt_dialogs.py:247
+msgid "Subscribe to channel\tCtrl+S"
 msgstr ""
 
 #: update/actions.py:43
@@ -2588,8 +2714,8 @@ msgid ""
 "Percentage: {pct:.2f}%"
 msgstr ""
 
-#: youtube/download.py:22 youtube/resolver.py:51 youtube/resolver.py:80
-#: youtube/resolver.py:122 youtube/resolver.py:134
+#: youtube/download.py:22 youtube/resolver.py:52 youtube/resolver.py:81
+#: youtube/resolver.py:123 youtube/resolver.py:135
 msgid "yt-dlp is not available."
 msgstr ""
 
@@ -2632,169 +2758,169 @@ msgstr ""
 msgid "Search results: {query}"
 msgstr ""
 
-#: youtube/flow.py:346
+#: youtube/flow.py:361
 msgid "Could not reload the expired YouTube stream."
 msgstr ""
 
-#: youtube/flow.py:347
+#: youtube/flow.py:362
 msgid "YouTube stream reload failed."
 msgstr ""
 
-#: youtube/flow.py:368
+#: youtube/flow.py:383
 msgid "Searching videos..."
 msgstr ""
 
-#: youtube/flow.py:374
+#: youtube/flow.py:389
 msgid "No videos were found for this search."
 msgstr ""
 
-#: youtube/flow.py:376
+#: youtube/flow.py:391
 msgid "Fetching first stream..."
 msgstr ""
 
-#: youtube/flow.py:392
+#: youtube/flow.py:407
 msgid "Searching YouTube"
 msgstr ""
 
-#: youtube/flow.py:399
+#: youtube/flow.py:414
 msgid "Could not complete YouTube search."
 msgstr ""
 
-#: youtube/flow.py:413
+#: youtube/flow.py:428
 msgid "Loading YouTube link"
 msgstr ""
 
-#: youtube/flow.py:420
+#: youtube/flow.py:435
 msgid "Could not read YouTube link data."
 msgstr ""
 
-#: youtube/flow.py:452
+#: youtube/flow.py:467
 msgid "Could not open YouTube stream."
 msgstr ""
 
-#: youtube/flow.py:509
+#: youtube/flow.py:524
 msgid "Loading YouTube stream"
 msgstr ""
 
-#: youtube/flow.py:516
+#: youtube/flow.py:531
 msgid "Could not resolve YouTube stream."
 msgstr ""
 
-#: youtube/flow.py:620
+#: youtube/flow.py:635
 msgid "Loading next video..."
 msgstr ""
 
-#: youtube/flow.py:684
+#: youtube/flow.py:699
 msgid "Could not prepare the next YouTube video."
 msgstr ""
 
-#: youtube/flow.py:685
+#: youtube/flow.py:700
 msgid "Next YouTube video unavailable."
 msgstr ""
 
-#: youtube/flow.py:828 youtube/flow.py:836
+#: youtube/flow.py:843 youtube/flow.py:851
 msgid "YouTube components are missing."
 msgstr ""
 
-#: youtube/flow.py:837
+#: youtube/flow.py:852
 msgid "YouTube components need repair."
 msgstr ""
 
-#: youtube/resolver.py:45
+#: youtube/resolver.py:46
 msgid "Invalid link."
 msgstr ""
 
-#: youtube/resolver.py:55
+#: youtube/resolver.py:56
 msgid "Loading playlist items..."
 msgstr ""
 
-#: youtube/resolver.py:59 youtube/resolver.py:124
+#: youtube/resolver.py:60 youtube/resolver.py:125
 msgid "Loading video details..."
 msgstr ""
 
-#: youtube/resolver.py:62
+#: youtube/resolver.py:63
 msgid "No playable YouTube items were found."
 msgstr ""
 
-#: youtube/resolver.py:82
+#: youtube/resolver.py:83
 msgid "Fetching stream URL..."
 msgstr ""
 
-#: youtube/resolver.py:116
+#: youtube/resolver.py:117
 msgid "Could not resolve a playable stream."
 msgstr ""
 
-#: youtube/resolver.py:127 youtube/resolver.py:156
+#: youtube/resolver.py:128 youtube/resolver.py:157
 msgid "Could not read video details."
 msgstr ""
 
-#: youtube/resolver.py:136
+#: youtube/resolver.py:137
 msgid "Loading YouTube stream..."
 msgstr ""
 
-#: youtube/resolver.py:178
+#: youtube/resolver.py:179
 msgid "Could not read playlist information."
 msgstr ""
 
-#: youtube/resolver.py:190
+#: youtube/resolver.py:191
 msgid "No videos were found in this playlist."
 msgstr ""
 
-#: youtube/resolver.py:278
+#: youtube/resolver.py:279
 msgid "yt-dlp returned invalid JSON data."
 msgstr ""
 
-#: youtube/resolver.py:305
+#: youtube/resolver.py:306
 #, python-brace-format
 msgid "YouTube metadata timed out after {seconds} seconds."
 msgstr ""
 
-#: youtube/resolver.py:364
+#: youtube/resolver.py:365
 msgid ""
 "YouTube returned HTTP 429 (Too Many Requests). Your IP may be temporarily "
 "rate-limited."
 msgstr ""
 
-#: youtube/resolver.py:393
+#: youtube/resolver.py:394
 #, python-brace-format
 msgid ""
 "{base}\n"
 "Details: {details}"
 msgstr ""
 
-#: youtube/results.py:16
+#: youtube/results.py:18
 msgid "No videos found."
 msgstr ""
 
-#: youtube/results.py:16
+#: youtube/results.py:18
 msgid "No videos were found."
 msgstr ""
 
-#: youtube/results.py:59 youtube/video.py:45
+#: youtube/results.py:61 youtube/video.py:45
 msgid "Link copied."
 msgstr ""
 
-#: youtube/results.py:61 youtube/video.py:47
+#: youtube/results.py:63 youtube/video.py:47
 msgid "Could not copy link."
 msgstr ""
 
-#: youtube/results.py:68 youtube/results.py:81
+#: youtube/results.py:70 youtube/results.py:83
 msgid "Browser open failed."
 msgstr ""
 
-#: youtube/results.py:68 youtube/results.py:81
+#: youtube/results.py:70 youtube/results.py:83
 msgid "Could not open browser."
 msgstr ""
 
-#: youtube/results.py:77
+#: youtube/results.py:79 youtube/results.py:92
 msgid "Channel link is not available."
 msgstr ""
 
-#: youtube/results.py:77
+#: youtube/results.py:79 youtube/results.py:92
 msgid "No channel link."
 msgstr ""
 
-#: youtube/results.py:142
+#: youtube/results.py:162
 msgid "Loading more videos..."
 msgstr ""
 
@@ -2858,6 +2984,14 @@ msgstr ""
 
 #: youtube/ui_utils.py:176
 msgid "Playlist videos"
+msgstr ""
+
+#: youtube/ui_utils.py:178
+msgid "Latest videos"
+msgstr ""
+
+#: youtube/ui_utils.py:180
+msgid "Channel videos"
 msgstr ""
 
 #: youtube/video.py:19 youtube/video.py:27 youtube/video.py:42

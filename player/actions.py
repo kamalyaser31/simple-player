@@ -40,6 +40,8 @@ OPEN_LINK = "open_link"
 OPEN_YOUTUBE_LINK = "open_youtube_link"
 OPEN_YOUTUBE_SEARCH = "open_youtube_search"
 OPEN_FAVORITES = "open_favorites"
+OPEN_SUBS_FEED = "open_subs_feed"
+OPEN_SUBSCRIPTIONS = "open_subscriptions"
 OPEN_FOLDER = "open_folder"
 OPEN_CONTAINING_FOLDER = "open_containing_folder"
 OPEN_FILE_LIST = "open_file_list"
@@ -179,6 +181,16 @@ ACTIONS = {
         OPEN_FAVORITES,
         "Favorite Videos",
         Shortcut("f", frozenset({"ctrl", "shift"})),
+    ),
+    OPEN_SUBS_FEED: Action(
+        OPEN_SUBS_FEED,
+        "Latest Subscription Videos",
+        Shortcut("u", frozenset({"ctrl"})),
+    ),
+    OPEN_SUBSCRIPTIONS: Action(
+        OPEN_SUBSCRIPTIONS,
+        "YouTube Subscriptions",
+        Shortcut("u", frozenset({"ctrl", "shift"})),
     ),
     VIDEO_DOWNLOAD: Action(
         VIDEO_DOWNLOAD,

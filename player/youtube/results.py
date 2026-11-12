@@ -1,7 +1,9 @@
 import wx
 from gettext import gettext as _
+import time
 import traceback
 
+from subscriptions.feed import feed_row
 from ui.yt_dialogs import ResultsDlg
 
 from .search import load_more as search_more
@@ -80,6 +82,21 @@ def show_res(ctx, ses, sel, prefetch, play_item, pool, prefetch_n):
                 if not open_url(url):
                     ctx.speak(_("Could not open browser."), _("Browser open failed."))
 
+            def do_subscribe(_event=None):
+                if dlg.list_box.GetCount() <= 0:
+                    return
+                item = ses["items"][cur_idx()]
+                url = str(item.channel_url or "").strip()
+                if not url:
+                    ctx.speak(
+                        _("Channel link is not available."), _("No channel link.")
+                    )
+                    return
+                # Imported here: app_actions imports youtube.actions.
+                from app_actions.subscription_actions import subscribe_channel
+
+                subscribe_channel(ctx, url, str(item.channel_name or ""))
+
             def on_pick(_event=None):
                 idx = cur_idx()
                 action["idx"] = idx
@@ -96,6 +113,7 @@ def show_res(ctx, ses, sel, prefetch, play_item, pool, prefetch_n):
             dlg.Bind(wx.EVT_MENU, do_copy, id=dlg.id_copy)
             dlg.Bind(wx.EVT_MENU, do_browser, id=dlg.id_browser)
             dlg.Bind(wx.EVT_MENU, do_channel, id=dlg.id_channel)
+            dlg.Bind(wx.EVT_MENU, do_subscribe, id=dlg.id_subscribe)
             dlg.Bind(wx.EVT_MENU, do_dl, id=dlg.id_dl)
             dlg.Bind(wx.EVT_MENU, do_play, id=dlg.id_play)
             dlg.ShowModal()
@@ -116,7 +134,9 @@ def show_res(ctx, ses, sel, prefetch, play_item, pool, prefetch_n):
 
 
 def _set_res(dlg, ses):
-    labels = [item.title for item in ses.get("items", [])]
+    kind = str(ses.get("kind") or "")
+    now = time.time()
+    labels = [feed_row(item, kind, now) for item in ses.get("items", [])]
     dlg.set_label(res_label(ses))
     dlg.set_items(labels)
 

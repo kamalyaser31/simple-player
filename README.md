@@ -47,6 +47,7 @@ Using FFmpeg's `lavfi` (Libavfilter) graph interface via `libmpv`, the player ha
 The player embeds a powerful YouTube resolver with optimization features:
 - **3-Tier Link Resolution**: Resolves YouTube links via a nested fallback strategy using `yt-dlp` (standard dump, URL extraction, and general fallback).
 - **Background Prefetch Pipeline**: To eliminate track-switching latency, the player spawns a background thread pool (`_PREP_POOL`) to resolve and cache up to 200 upcoming streams while the active track plays. If a cached stream is next, playback starts instantly; otherwise, it plays a "Loading next video..." speech cue.
+- **Subscriptions Without a Google Account**: Follow channels and save playlists locally (`subscriptions.json` next to the settings file). Add one by pasting a channel or playlist link (File > YouTube subscriptions..., `Ctrl+Shift+U`) or with `Ctrl+S` on a search result. `Ctrl+U` lists the 50 newest videos of all followed channels, Shorts excluded, each read as title, channel and age. Videos come from YouTube's public RSS feeds, so no sign-in is needed.
 - **Component Self-Updater**: Automatically monitors, downloads, and updates runtime dependencies (`yt-dlp.exe` and `deno.exe`) directly from remote repository releases.
 
 ### 4. Audio Recording Engine

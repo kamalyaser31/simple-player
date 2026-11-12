@@ -174,4 +174,8 @@ def res_label(ses):
         return _("Search results")
     if kind == "playlist":
         return _("Playlist videos")
+    if kind == "feed":
+        return _("Latest videos")
+    if kind == "channel":
+        return _("Channel videos")
     return _("Videos")

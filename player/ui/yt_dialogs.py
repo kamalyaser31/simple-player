@@ -178,6 +178,7 @@ class ResultsDlg(wx.Dialog):
         self._id_copy = wx.NewIdRef()
         self._id_browser = wx.NewIdRef()
         self._id_channel = wx.NewIdRef()
+        self._id_subscribe = wx.NewIdRef()
         self._id_dl = wx.NewIdRef()
         self._id_play = wx.NewIdRef()
         self._build_accels()
@@ -227,6 +228,10 @@ class ResultsDlg(wx.Dialog):
         return int(self._id_channel)
 
     @property
+    def id_subscribe(self):
+        return int(self._id_subscribe)
+
+    @property
     def id_dl(self):
         return int(self._id_dl)
 
@@ -239,6 +244,7 @@ class ResultsDlg(wx.Dialog):
         menu.Append(self.id_copy, _("Copy link\tCtrl+C"))
         menu.Append(self.id_browser, _("Open in browser\tCtrl+B"))
         menu.Append(self.id_channel, _("Navigate to channel\tCtrl+N"))
+        menu.Append(self.id_subscribe, _("Subscribe to channel\tCtrl+S"))
         menu.AppendSeparator()
         menu.Append(self.id_dl, _("Download"))
         self.PopupMenu(menu)
@@ -252,6 +258,7 @@ class ResultsDlg(wx.Dialog):
             (wx.ACCEL_CTRL, ord("C"), self.id_copy),
             (wx.ACCEL_CTRL, ord("B"), self.id_browser),
             (wx.ACCEL_CTRL, ord("N"), self.id_channel),
+            (wx.ACCEL_CTRL, ord("S"), self.id_subscribe),
         ):
             entry = wx.AcceleratorEntry()
             entry.Set(flags, key, cmd)

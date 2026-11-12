@@ -30,6 +30,8 @@ from actions import (
     OPEN_FILE_PROPERTIES,
     OPEN_FOLDER,
     OPEN_FAVORITES,
+    OPEN_SUBS_FEED,
+    OPEN_SUBSCRIPTIONS,
     OPEN_LINK,
     OPEN_SETTINGS,
     OPEN_YOUTUBE_LINK,
@@ -141,6 +143,14 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("Favorite videos..."), OPEN_FAVORITES),
         )
+        self._open_subs_feed_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Latest subscription videos"), OPEN_SUBS_FEED),
+        )
+        self._open_subs_item = menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("YouTube subscriptions..."), OPEN_SUBSCRIPTIONS),
+        )
         self._open_folder_item = menu.Append(
             wx.ID_ANY,
             self._menu_label(_("Open Folder..."), OPEN_FOLDER),
@@ -181,6 +191,8 @@ class MainFrameMenuMixin:
         self._bind_action_item(self._open_yt_link_item, OPEN_YOUTUBE_LINK)
         self._bind_action_item(self._open_yt_search_item, OPEN_YOUTUBE_SEARCH)
         self._bind_action_item(self._open_favs_item, OPEN_FAVORITES)
+        self._bind_action_item(self._open_subs_feed_item, OPEN_SUBS_FEED)
+        self._bind_action_item(self._open_subs_item, OPEN_SUBSCRIPTIONS)
         self._bind_action_item(self._open_folder_item, OPEN_FOLDER)
         self._bind_action_item(self._open_containing_item, OPEN_CONTAINING_FOLDER)
         self._bind_action_item(self._open_file_props_item, OPEN_FILE_PROPERTIES)

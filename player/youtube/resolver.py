@@ -18,6 +18,7 @@ class YtItem:
     channel_url: str
     channel_name: str
     description: str = ""
+    published: float = 0.0
 
 
 @dataclass

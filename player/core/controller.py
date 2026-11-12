@@ -39,6 +39,8 @@ from actions import (
     OPEN_YOUTUBE_LINK,
     OPEN_YOUTUBE_SEARCH,
     OPEN_FAVORITES,
+    OPEN_SUBS_FEED,
+    OPEN_SUBSCRIPTIONS,
     OPEN_USER_GUIDE,
     OPEN_CHANGES,
     OPEN_CONTACT,
@@ -105,10 +107,12 @@ from actions import (
 )
 from bookmarks.store import MarkStore
 from favorites.store import FavStore
+from subscriptions.store import SubStore
 from config.constants import APP_NAME
 from core.action_context import ActionContext
 from app_actions.bookmark_actions import add_mark, jump_mark_slot, manage_marks
 from app_actions.favorite_actions import manage_favs
+from app_actions.subscription_actions import manage_subs, open_latest
 from app_actions.device_actions import open_sound_cards
 from app_actions.file_actions import (
     close_file,
@@ -233,6 +237,7 @@ class AppController:
         self._rec = RecEngine()
         self._marks = MarkStore(self._settings.config_path)
         self._favs = FavStore(self._settings.config_path)
+        self._subs = SubStore(self._settings.config_path)
         self._file_pos = PosStore(self._settings.config_path)
         self._ctx = ActionContext(
             self._player,
@@ -240,6 +245,7 @@ class AppController:
             marks=self._marks,
             file_pos=self._file_pos,
             favs=self._favs,
+            subs=self._subs,
         )
         # The custom bridge is the single Windows media command/status owner; MPV remains playback owner.
         self._media = WindowsMediaBridge(
@@ -284,6 +290,8 @@ class AppController:
             OPEN_YOUTUBE_LINK: lambda: open_yt(self._ctx),
             OPEN_YOUTUBE_SEARCH: lambda: search_yt(self._ctx),
             OPEN_FAVORITES: lambda: manage_favs(self._ctx),
+            OPEN_SUBS_FEED: lambda: open_latest(self._ctx),
+            OPEN_SUBSCRIPTIONS: lambda: manage_subs(self._ctx),
             VIDEO_DOWNLOAD: lambda: dl_now(self._ctx),
             VIDEO_DESCRIPTION: lambda: show_desc(self._ctx),
             VIDEO_COPY_LINK: lambda: copy_link(self._ctx),

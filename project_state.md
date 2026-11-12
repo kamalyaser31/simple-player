@@ -35,6 +35,14 @@
 
 9. **حدّ التحميل المسبق لبث يوتيوب:** mpv بإعداداته المبدئية يحمّل أمام الموضع حتى 150 ميغابايت، أي صوت الساعتين كله؛ فيضبط `_play_item` الخيار `cache-secs` من `youtube.cache_minutes` (0 إلى 60، والأصل 0 أي بلا حدّ فيُعاد `cache-secs` إلى مبدئي mpv 3600000) عبر `MpvEngine.set_stream_cache_seconds`، ويُعاد بعد `recreate_with_window`. لا تخزين على القرص (`cache-on-disk` معطَّل).
 
+10. **اشتراكات يوتيوب المحلية (بلا تسجيل دخول):** رُفض OAuth (مشروع Google Cloud، وتحقق النطاقات الحساسة، وانتهاء الرمز في 7 أيام، وحصة مشتركة، ولا ينفع التشغيل لأن yt-dlp أسقط OAuth). الخطة في `plan-subscriptions.md`.
+   - `subscriptions/feed.py`: خلاصة RSS (`feeds/videos.xml?channel_id=`، آخر 15 مقطعاً)، تُسقط Shorts (رابطها `/shorts/`)؛ ورابط `@handle` يُحل من HTML الصفحة (canonical أو externalId) بكعكة `CONSENT=YES+1`.
+   - `subscriptions/store.py`: `subscriptions.json` بجانب الإعدادات `{"version":1,"items":[{id,kind,name,url,added}]}`، والنوع `channel` أو `playlist`، والعرض الأحدث إضافةً أولاً.
+   - `app_actions/subscription_actions.py` و`ui/subs_dlg.py`: `Ctrl+U` أحدث 50 مقطعاً من القنوات (القوائم لا تدخلها)، و`Ctrl+Shift+U` الحوار، و`Ctrl+S` في نافذة النتائج للاشتراك.
+   - جلستا `feed` و`channel` لا تنتقلان آلياً عند نهاية المقطع، كنتائج البحث، باختيار كمال؛ وأسقط كمال استيراد CSV من Takeout.
+   - العمر بلا `ngettext` (القالب بـ `--keyword=_` وحده)، فالعربية «منذ {n} يوم».
+   - الاختبارات: `python subscriptions/run_tests.py` من `player/` (و`--live` لطلب حي).
+
 ## نتائج الاختبارات (Verification Results)
 - اجتياز كافة سيناريوهات البحث المتتالي السريع والبحث باللغتين العربية والإنجليزية واختبارات الجلب التراكمي بنسبة نجاح 100%.
 - اجتياز حزمة الاختبارات المعيارية لسلوك نهاية المقطع في يوتيوب (15 اختباراً شملت: نتائج البحث، قوائم التشغيل، التكرار، التوقف، الانتقال اليدوي، إفراغ المسارات السابقة) بنسبة نجاح 100%.

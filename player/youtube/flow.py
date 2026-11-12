@@ -212,6 +212,21 @@ def search_yt(ctx):
     )
 
 
+def show_videos(ctx, kind, title, items):
+    """Show a ready list of videos (a feed or a channel) in the results dialog."""
+    ses = mk_ses(kind, str(title or ""), list(items or []))
+    ses.update(_opts(ctx))
+    show_res(
+        ctx,
+        ses,
+        sel=0,
+        prefetch=_prefetch_range,
+        play_item=_play_item,
+        pool=_PREP_POOL,
+        prefetch_n=ctx.settings.get_yt_prefetch_count(),
+    )
+
+
 def on_esc(ctx):
     ses = get_ses(ctx)
     if ses is None or ctx.frame is None:
