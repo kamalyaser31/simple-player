@@ -284,6 +284,8 @@ def on_playback_finished(ctx, reason=0):
         return False
     if not src or src not in ses.get("urls", set()):
         return False
+    if reason == 0 and not _should_auto_advance_session(ctx, ses):
+        return False
     moved = try_next(ctx)
     if moved is True:
         return True
@@ -291,6 +293,16 @@ def on_playback_finished(ctx, reason=0):
     if isinstance(pending, dict):
         return True
     return False
+
+
+def _should_auto_advance_session(ctx, ses):
+    is_playlist = str(ses.get("kind") or "").strip().lower() == "playlist"
+    if not is_playlist:
+        return False
+    if ctx.player.is_repeat_file_enabled():
+        return False
+    behavior = ctx.settings.get_end_behavior() or "advance"
+    return str(behavior).strip().lower() == "advance"
 
 
 def _retry_failed_stream(ctx, source, ses):
@@ -431,7 +443,7 @@ def _play_item(ctx, item, ses, idx):
             pass
     ok = ctx.player.open_stream(
         stream,
-        append=True,
+        append=False,
         title=ttl,
         source_url=src,
     )
