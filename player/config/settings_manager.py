@@ -1,6 +1,7 @@
 import configparser
 import copy
 import os
+import re
 
 from config.constants import (
     APP_NAME,
@@ -59,6 +60,27 @@ LEGACY_AUDIO_SILENCE_KEYS = (
 )
 
 
+_LANGUAGE_CODE = re.compile(r"([a-z]{2,3})(?:[-_]([a-z0-9]{2,4}))?")
+_REGION_CODE = re.compile(r"[a-z]{2}")
+
+
+def _normalize_language_code(value):
+    """Return a YouTube hl code such as 'ar' or 'en-GB', else the default."""
+    match = _LANGUAGE_CODE.fullmatch(str(value or "").strip().lower())
+    if not match:
+        return YT_SEARCH_LANGUAGE
+    base, variant = match.groups()
+    if not variant:
+        return base
+    return f"{base}-{variant.upper() if len(variant) == 2 else variant.title()}"
+
+
+def _normalize_region_code(value):
+    """Return a two-letter YouTube gl code such as 'EG', else the default."""
+    text = str(value or "").strip().lower()
+    return text.upper() if _REGION_CODE.fullmatch(text) else YT_SEARCH_REGION
+
+
 def _default_rec_folder():
     docs = ""
     if os.name == "nt":
@@ -103,6 +125,7 @@ class SettingsManager:
                 "last_dir": "",
                 "verbosity": "beginner",
                 "open_with_files_mode": "file_only",
+                "focus_on_shell_open": "false",
                 "check_app_updates": "true",
                 "save_on_close": "true",
                 "speak_file_on_nav": "false",
@@ -116,6 +139,7 @@ class SettingsManager:
                 "yt_dlp_channel": YT_DLP_DEFAULT_CHANNEL,
                 "check_yt_updates_startup": "false",
                 "prefetch_count": "5",
+                "cache_minutes": "0",
                 "search_language": YT_SEARCH_LANGUAGE,
                 "search_region": YT_SEARCH_REGION,
             },
@@ -255,6 +279,17 @@ class SettingsManager:
             value = "file_only"
         self._config["ui"]["open_with_files_mode"] = value
 
+    def get_focus_on_shell_open(self):
+        try:
+            return self._config.getboolean("ui", "focus_on_shell_open")
+        except (ValueError, configparser.Error):
+            return False
+
+    def set_focus_on_shell_open(self, enabled):
+        if "ui" not in self._config:
+            self._config["ui"] = {}
+        self._config["ui"]["focus_on_shell_open"] = "true" if enabled else "false"
+
     def get_check_app_updates(self):
         try:
             return self._config.getboolean("ui", "check_app_updates")
@@ -392,31 +427,40 @@ class SettingsManager:
             self._config["youtube"] = {}
         self._config["youtube"]["prefetch_count"] = str(int(value))
 
+    def get_yt_cache_minutes(self):
+        try:
+            minutes = self._config.getint("youtube", "cache_minutes")
+        except (ValueError, configparser.Error):
+            minutes = 0
+        # 0 means no limit: mpv keeps its own read-ahead.
+        return clamp(minutes, 0, 60)
+
+    def set_yt_cache_minutes(self, value):
+        if "youtube" not in self._config:
+            self._config["youtube"] = {}
+        self._config["youtube"]["cache_minutes"] = str(clamp(int(value), 0, 60))
+
     def get_yt_search_language(self):
         # language code passed to YouTube search (py-yt VideosSearch)
-        return str(
-            self._config.get("youtube", "search_language", fallback=YT_SEARCH_LANGUAGE)
-            or YT_SEARCH_LANGUAGE
-        ).strip()
+        return _normalize_language_code(
+            self._config.get("youtube", "search_language", fallback="")
+        )
 
     def set_yt_search_language(self, lang):
         if "youtube" not in self._config:
             self._config["youtube"] = {}
-        text = str(lang or YT_SEARCH_LANGUAGE).strip()
-        self._config["youtube"]["search_language"] = text
+        self._config["youtube"]["search_language"] = _normalize_language_code(lang)
 
     def get_yt_search_region(self):
         # region code passed to YouTube search (py-yt VideosSearch)
-        return str(
-            self._config.get("youtube", "search_region", fallback=YT_SEARCH_REGION)
-            or YT_SEARCH_REGION
-        ).strip()
+        return _normalize_region_code(
+            self._config.get("youtube", "search_region", fallback="")
+        )
 
     def set_yt_search_region(self, region):
         if "youtube" not in self._config:
             self._config["youtube"] = {}
-        text = str(region or YT_SEARCH_REGION).strip()
-        self._config["youtube"]["search_region"] = text
+        self._config["youtube"]["search_region"] = _normalize_region_code(region)
 
     def get_rec_channels(self):
         value = (

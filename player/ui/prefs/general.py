@@ -80,6 +80,11 @@ class GeneralSettingsPanel(wx.Panel):
             open_with_index = 0
         self._open_with_files_choice.SetSelection(open_with_index)
 
+        self._focus_on_open_checkbox = wx.CheckBox(
+            self, label=_("Switch to the player when opening a file from Explorer")
+        )
+        self._focus_on_open_checkbox.SetValue(self._settings.get_focus_on_shell_open())
+
         self._register_extensions_button = wx.Button(
             self, label=_("Register file extensions")
         )
@@ -110,6 +115,7 @@ class GeneralSettingsPanel(wx.Panel):
         open_with_sizer.Add(self._open_with_files_label, 0, wx.BOTTOM, 4)
         open_with_sizer.Add(self._open_with_files_choice, 0, wx.EXPAND)
         sizer.Add(open_with_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        sizer.Add(self._focus_on_open_checkbox, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM, 8)
         association_buttons = wx.BoxSizer(wx.HORIZONTAL)
         association_buttons.Add(self._register_extensions_button, 0, wx.RIGHT, 6)
         association_buttons.Add(self._unregister_extensions_button, 0)
@@ -128,6 +134,7 @@ class GeneralSettingsPanel(wx.Panel):
             self._save_on_close_checkbox: self._help_save_on_close,
             self._verbosity_choice: self._help_verbosity,
             self._open_with_files_choice: self._help_open_with_files,
+            self._focus_on_open_checkbox: self._help_focus_on_open,
             self._register_extensions_button: self._help_register_extensions,
             self._unregister_extensions_button: self._help_unregister_extensions,
         }
@@ -151,6 +158,7 @@ class GeneralSettingsPanel(wx.Panel):
         self._settings.set_open_with_files_mode(
             self._open_with_files_values[open_with_selection]
         )
+        self._settings.set_focus_on_shell_open(self._focus_on_open_checkbox.GetValue())
 
     def refresh_from_settings(self):
         self._set_language_selection(self._settings.get_ui_language())
@@ -170,6 +178,7 @@ class GeneralSettingsPanel(wx.Panel):
         except ValueError:
             open_with_index = 0
         self._open_with_files_choice.SetSelection(open_with_index)
+        self._focus_on_open_checkbox.SetValue(self._settings.get_focus_on_shell_open())
 
     def get_context_help(self, focused):
         control = focused
@@ -233,6 +242,14 @@ class GeneralSettingsPanel(wx.Panel):
             "Open the file only loads just that file. "
             "Open the file and the main folder files loads all supported files in the same folder. "
             "Open the file with the main and subfolder files scans the folder recursively and loads files from subfolders too."
+        )
+
+    def _help_focus_on_open(self):
+        return _(
+            "Switch to the player when opening a file from Explorer. "
+            "When enabled and the player is already running, it comes to the front "
+            "and takes focus. When disabled, the new file plays and focus stays "
+            "in Explorer."
         )
 
     def _help_register_extensions(self):

@@ -16,6 +16,8 @@ HIGH_VOLUME_PREAMP = max(1.0, VOLUME_MAX / BASE_VOLUME)
 NETWORK_TIMEOUT_SECONDS = 10
 MEDIA_CONTROLS_OPTION = "media-controls"
 MEDIA_KEYS_OPTION = "input-media-keys"
+# mpv's own default; a cache limit of 0 minutes restores it.
+MPV_DEFAULT_CACHE_SECS = 3600000
 
 
 class MpvEngine:
@@ -27,6 +29,7 @@ class MpvEngine:
         self._audio_normalize_enabled = False
         self._audio_mono_enabled = False
         self._requested_volume = BASE_VOLUME
+        self._stream_cache_secs = None
         self._apply_network_defaults()
         self._apply_windows_media_defaults()
         self._register_event_handlers()
@@ -65,6 +68,13 @@ class MpvEngine:
             return
         self._set_option_safe(MEDIA_CONTROLS_OPTION, "no")
         self._set_option_safe(MEDIA_KEYS_OPTION, "no")
+
+    def set_stream_cache_seconds(self, seconds):
+        # mpv otherwise reads network streams ahead up to 150 MiB, which for
+        # YouTube audio is the whole file; cache-secs caps it by playback time.
+        self._stream_cache_secs = max(0, int(seconds))
+        value = self._stream_cache_secs or MPV_DEFAULT_CACHE_SECS
+        self._set_option_safe("cache-secs", str(value))
 
     def _set_option_safe(self, name, value):
         try:
@@ -109,6 +119,8 @@ class MpvEngine:
             return None
         self._apply_network_defaults()
         self._apply_windows_media_defaults()
+        if self._stream_cache_secs is not None:
+            self.set_stream_cache_seconds(self._stream_cache_secs)
         self.set_audio_normalize_filter(self._audio_normalize_enabled)
         self.set_mono_filter(self._audio_mono_enabled)
         self._register_event_handlers()

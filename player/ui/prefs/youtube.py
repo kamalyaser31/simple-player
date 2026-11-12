@@ -44,6 +44,11 @@ class YouTubeSettingsPanel(wx.Panel):
         self._prefetch_label = wx.StaticText(self, label=_("Prefetch count"))
         self._prefetch_spin = wx.SpinCtrl(self, min=1, max=20)
         self._prefetch_spin.SetValue(self._settings.get_yt_prefetch_count())
+        self._cache_label = wx.StaticText(
+            self, label=_("Minutes to load ahead while playing (0 = no limit)")
+        )
+        self._cache_spin = wx.SpinCtrl(self, min=0, max=60)
+        self._cache_spin.SetValue(self._settings.get_yt_cache_minutes())
 
         # search language/region settings
         self._search_lang_label = wx.StaticText(self, label=_("Search language code"))
@@ -84,6 +89,10 @@ class YouTubeSettingsPanel(wx.Panel):
         prefetch_sizer.Add(self._prefetch_label, 0, wx.BOTTOM, 4)
         prefetch_sizer.Add(self._prefetch_spin, 0, wx.EXPAND)
         sizer.Add(prefetch_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
+        cache_sizer = wx.BoxSizer(wx.VERTICAL)
+        cache_sizer.Add(self._cache_label, 0, wx.BOTTOM, 4)
+        cache_sizer.Add(self._cache_spin, 0, wx.EXPAND)
+        sizer.Add(cache_sizer, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
 
         # search language and region sizers
         lang_sizer = wx.BoxSizer(wx.VERTICAL)
@@ -123,6 +132,7 @@ class YouTubeSettingsPanel(wx.Panel):
             self._check_updates_startup.GetValue()
         )
         self._settings.set_yt_prefetch_count(self._prefetch_spin.GetValue())
+        self._settings.set_yt_cache_minutes(self._cache_spin.GetValue())
         # save search lang/region
         self._settings.set_yt_search_language(self._search_lang_ctrl.GetValue())
         self._settings.set_yt_search_region(self._search_region_ctrl.GetValue())
@@ -136,6 +146,7 @@ class YouTubeSettingsPanel(wx.Panel):
             self._settings.get_check_yt_updates_startup()
         )
         self._prefetch_spin.SetValue(self._settings.get_yt_prefetch_count())
+        self._cache_spin.SetValue(self._settings.get_yt_cache_minutes())
 
     def get_context_help(self, focused):
         control = focused
@@ -178,6 +189,14 @@ class YouTubeSettingsPanel(wx.Panel):
             if control is self._prefetch_spin:
                 return _(
                     "Number of videos to prefetch when opening a YouTube playlist or search result."
+                )
+            if control is self._cache_spin:
+                return _(
+                    "Minutes of a YouTube video loaded ahead of the playing position. "
+                    "0, the default, sets no limit, so a long audio may load in full "
+                    "even if you switch videos early. Fewer minutes use less "
+                    "internet data; more minutes keep playback going through "
+                    "longer connection drops."
                 )
             if control is self._download_button:
                 return _(

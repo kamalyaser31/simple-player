@@ -434,6 +434,7 @@ def _play_item(ctx, item, ses, idx):
     ttl = str(item.title or "").strip()
 
     add_to_path()
+    ctx.player.set_stream_cache_seconds(ctx.settings.get_yt_cache_minutes() * 60)
     # Keep YouTube/session playback deterministic and aligned with result order.
     ctx.player.set_shuffle_enabled(False)
     if ctx.frame is not None:
@@ -479,6 +480,9 @@ def _prep_play(ctx, item, ses_opts):
     def job(cancel, on_line, _on_up):
         with _PREP_LOCK:
             fut = _PREP_FUT.get(key) if key else None
+        if fut is not None and fut.cancel():
+            # Still queued behind other prefetches: fetch it directly instead.
+            fut = None
         if fut is not None:
             while True:
                 if cancel.is_set():
@@ -524,8 +528,21 @@ def _prefetch_range(ses, start, count):
     ses_opts = _opts(None, ses)
     pos = max(0, int(start))
     end = min(len(items), pos + int(count))
+    wanted = {
+        _prep_key(getattr(items[idx], "url", ""), ses_opts) for idx in range(pos, end)
+    }
+    _cancel_queued_prefetch(ses, keep=wanted)
     for idx in range(pos, end):
         _prefetch_one(ses, items[idx], ses_opts)
+
+
+def _cancel_queued_prefetch(ses, keep):
+    # Arrowing through results queues jobs for every item passed; drop the ones
+    # that have not started so the pool serves the items near the selection.
+    prep_jobs = ses.get("prep_jobs") or {}
+    for key, future in list(prep_jobs.items()):
+        if key not in keep:
+            future.cancel()
 
 
 def _prefetch_one(ses, item, ses_opts):

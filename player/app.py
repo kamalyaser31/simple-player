@@ -135,7 +135,7 @@ class SimpleAudioPlayerApp(wx.App):
 
     def _handle_external_open_request(self, paths):
         frame = self.GetTopWindow()
-        if frame is not None:
+        if frame is not None and self.settings.get_focus_on_shell_open():
             try:
                 frame.Iconize(False)
             except Exception:
@@ -252,14 +252,27 @@ class SimpleAudioPlayerApp(wx.App):
                 self._guard.send_msg_request(self._ipc_handle, payload)
             except Exception:
                 _log_exc("Failed to send paths to primary instance.")
-        try:
-            self._guard.focus_window(APP_NAME)
-        except Exception:
-            _log_exc("Failed to focus primary app window.")
+        if _focus_on_shell_open_enabled():
+            # Only this short-lived process holds Explorer's foreground right,
+            # so the primary window cannot take focus by itself.
+            try:
+                self._guard.focus_window(APP_NAME)
+            except Exception:
+                _log_exc("Failed to focus primary app window.")
         try:
             AppGuard.release()
         except Exception:
             _log_exc("Failed to release AppGuard in secondary instance.")
+        return False
+
+
+def _focus_on_shell_open_enabled():
+    try:
+        settings = SettingsManager()
+        settings.load()
+        return settings.get_focus_on_shell_open()
+    except Exception:
+        _log_exc("Could not read focus setting in secondary instance.")
         return False
 
 

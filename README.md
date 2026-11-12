@@ -119,10 +119,13 @@ Simple Audio Player utilizes **Composition over Inheritance** through functional
 - **Scripts (`scripts/`)**: Automation utilities for maintenance and deployment:
   * **Version Synchronization (`update_version.py` / `update_version.bat`)**:
     * *Function*: Automatically updates and synchronizes the application version number across all critical files: the root `info.json` (the `"version"` key), the Python constants file `player/config/constants.py` (the `APP_VERSION` variable), and the Windows installer script `player/simple_audio_player.iss` (the `MyAppVersion` definition).
-    * *Usage*: Run `python update_version.py <version>` or execute `update_version.bat` which prompts for the version string interactively.
-  * **Translation Extraction (`update_pot.py` / `update_pot.bat`)**:
-    * *Function*: Scans all Python source files recursively, extracts translatable string literals wrapped in the `_()` gettext function (ignoring dependency directories like virtual environments and build outputs), and updates the Gettext template file (`player/locale/simple_audio_player.pot`). Requires `xgettext` tool in the system path.
-    * *Usage*: Run `python update_pot.py` or double-click `update_pot.bat`.
+    * *Usage*: Run `python update_version.py <version>` or execute `update_version.bat` which prompts for the version string interactively. The version must be `MAJOR.MINOR.PATCH` (a leading `v` is dropped). After writing, the script runs `validate_project_consistency.py` and exits with its result.
+  * **Translation Update (`update_pot.py` / `update_pot.bat`)**:
+    * *Function*: Scans all Python source files recursively, extracts translatable string literals wrapped in the `_()` gettext function (ignoring dependency directories like virtual environments and build outputs), and updates the Gettext template file (`player/locale/simple_audio_player.pot`). It then merges the template into every `.po` catalog under `player/locale/` and compiles each `.mo` file. Requires `xgettext`, `msgmerge`, and `msgfmt` in the system path.
+    * *Usage*: Run `python update_pot.py` or double-click `update_pot.bat`. Add `--pot-only` to update the template alone.
+  * **Consistency Check (`validate_project_consistency.py`)**:
+    * *Function*: Checks that the version, file extensions, translation catalogs, packaging files, and release asset names agree across the project.
+    * *Usage*: Run `python scripts/validate_project_consistency.py`; it prints each mismatch and exits with code 1 if any is found.
   * **Updater Compilation (`build_updater.bat`)**:
     * *Function*: Automates compiling the standalone self-updater utility (`Updater.exe`) from `player/updater/main.py` using PyInstaller.
     * *Output*: Builds a single-file, windowed executable placed at `player/dist/Updater.exe`.

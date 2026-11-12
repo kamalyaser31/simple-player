@@ -1,5 +1,6 @@
 import json
 import re
+import subprocess
 import sys
 import os
 
@@ -56,10 +57,36 @@ def update_version(new_version):
         print(f"Could not find {iss_path}")
 
 
+VERSION_PATTERN = re.compile(r"\d+\.\d+\.\d+")
+
+
+def normalize_version(raw):
+    """Return 'X.Y.Z' from input such as 'v1.6.0', or None if malformed."""
+    version = str(raw or "").strip()
+    if version[:1] in ("v", "V"):
+        version = version[1:]
+    return version if VERSION_PATTERN.fullmatch(version) else None
+
+
+def run_consistency_check():
+    script = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "validate_project_consistency.py"
+    )
+    sys.stdout.flush()
+    return subprocess.run([sys.executable, script]).returncode
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python update_version.py <version>")
         sys.exit(1)
 
-    version = sys.argv[1]
+    version = normalize_version(sys.argv[1])
+    if version is None:
+        print(
+            f"Invalid version: {sys.argv[1]!r}. Use MAJOR.MINOR.PATCH, e.g. 1.6.0.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
     update_version(version)
+    sys.exit(run_consistency_check())

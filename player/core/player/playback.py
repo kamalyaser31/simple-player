@@ -46,6 +46,9 @@ class PlayerPlaybackMixin:
     def get_speed(self):
         return self._engine.get_speed()
 
+    def set_stream_cache_seconds(self, seconds):
+        return self._engine.set_stream_cache_seconds(seconds)
+
     def set_end_behavior(self, behavior):
         behavior = (behavior or "").lower()
         if behavior not in ("advance", "loop", "none"):

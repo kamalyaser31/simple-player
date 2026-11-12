@@ -3,6 +3,7 @@ import threading
 from dataclasses import dataclass, field
 
 from py_yt import VideosSearch
+from py_yt.core.search import SearchCore
 from py_yt.handlers.componenthandler import ComponentHandler
 
 from .resolver import YtItem
@@ -18,6 +19,26 @@ if _orig_get_shelf is not None:
         return res
 
     ComponentHandler._getShelfComponent = _safe_get_shelf
+
+# py_yt sends hl/gl at the top level of the request body, where YouTube ignores
+# them; the InnerTube API reads them only from context.client.
+_orig_request_body = getattr(SearchCore, "_getRequestBody", None)
+if _orig_request_body is not None:
+
+    def _localized_request_body(self):
+        _orig_request_body(self)
+        data = getattr(self, "data", None)
+        if not isinstance(data, dict):
+            return
+        top_client = data.pop("client", None) or {}
+        client = data.setdefault("context", {}).setdefault("client", {})
+        client["hl"] = top_client.get("hl") or self.language
+        client["gl"] = top_client.get("gl") or self.region
+
+    SearchCore._getRequestBody = _localized_request_body
+
+DEFAULT_LANGUAGE = "en"
+DEFAULT_REGION = "US"
 
 
 @dataclass
@@ -35,15 +56,28 @@ class SearchState:
 
 def start_search(query, limit=50, language="en", region="US"):
     text = str(query or "").strip()
-    data, cont = _run_search_sync(
-        lambda: VideosSearch(text, limit=int(limit), language=language, region=region)
-    )
+    language = str(language or DEFAULT_LANGUAGE)
+    region = str(region or DEFAULT_REGION)
+
+    def search_with(lang, reg):
+        return _run_search_sync(
+            lambda: VideosSearch(text, limit=int(limit), language=lang, region=reg)
+        )
+
+    try:
+        data, cont = search_with(language, region)
+    except Exception:
+        # YouTube rejects unknown hl/gl codes; retry once with the defaults.
+        if (language, region) == (DEFAULT_LANGUAGE, DEFAULT_REGION):
+            raise
+        language, region = DEFAULT_LANGUAGE, DEFAULT_REGION
+        data, cont = search_with(language, region)
     items = _to_items(data)
     return SearchState(
         query=text,
         limit=int(limit),
-        language=str(language or "en"),
-        region=str(region or "US"),
+        language=language,
+        region=region,
         cont=cont,
         items=items,
     )
