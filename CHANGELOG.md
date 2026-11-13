@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-13: test: Kamal confirmed live with NVDA the subscriptions, the reviewed Arabic UI, the 2026-11-13 fixes, the new Arabic installer and the in-app update from 1.5.0 to 2.0.0.
+
 - 2026-11-13: release: 2.0.0 (subscriptions, Arabic review, new bilingual guide, installer fixes), with bilingual update notes in info.json and both What's New pages.
 
 - 2026-11-13: build(installer): stop forcing default file associations (they broke after uninstall), add Arabic and Czech setup languages, remove runtime yt-dlp/deno on uninstall, drop the Start-menu page, fail when Updater.exe is missing, pin Inno Setup 6.7.3 in release.yml, and let build_test.ps1 use an active venv.
