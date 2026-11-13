@@ -1,6 +1,7 @@
 # حالة المشروع (Project State) - Simple Audio Player
 
 ## الملخص المعماري (Architectural Summary)
+- الإصدار المنشور: 2.0.0 (2026-11-13). ترتيب الإطلاق لازم: الإيداع، ثم رفع الوسم وحده، ثم بناء GitHub ونشر المسودة، ثم رفع `main` في الآخر؛ لأن `info.json` على `main` هو ما تقرؤه النسخ المثبّتة لتعرض التحديث، والمسودة لا تُنزَّل.
 - تطبيق مشغل صوتيات لسطح المكتب بنظام Windows مبني بلغة بايثون وواجهة wxPython ومحرك MPV (libmpv)، متوافق كلياً مع قارئات الشاشة (NVDA / Accessible Output 3).
 - وحدة البحث في يوتيوب تعتمد على استدعاءات مهيكلة ومكتبة `py_yt` مع آلية جلب مسبق (prefetching) عبر `yt-dlp`.
 - مرجع الوكيل التقني الوحيد `PROJECT_REFERENCE.md` في الجذر (أُعيدت كتابته 2026-11-13 من الشفرة، وحلّ محل `player/PROJECT_REFERENCE.md` و`TECHNICAL_REFERENCE.md`)؛ فيه ما يلزم لتعديل الشفرة وحده، ووصف الخصائص للمستخدم في `player/docs/{en,ar}/userguide.html`، وREADME موجز بلغتين (`README.md` و`README.ar.md`).
