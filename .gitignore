@@ -30,3 +30,5 @@ player/Updater.exe
 player/Updater.spec
 
 .tmp/
+# Fetched by player/scripts/fetch_mpv.py (over GitHub's 100 MB limit)
+player/mpv.dll

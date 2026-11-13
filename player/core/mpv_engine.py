@@ -45,6 +45,9 @@ class MpvEngine:
             "keep_open": "no",
             "input_default_bindings": False,
             "input_vo_keyboard": False,
+            # mpv before 0.36 accepted volume above volume-max (130); newer
+            # builds reject it, so allow the app's whole range explicitly.
+            "volume_max": VOLUME_MAX,
         }
         if window_id:
             options["wid"] = str(window_id)

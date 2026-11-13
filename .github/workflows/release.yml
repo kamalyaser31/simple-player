@@ -35,6 +35,11 @@ jobs:
         VERSION=$(python -c "import json; print(json.load(open('info.json', encoding='utf-8'))['version'])")
         echo "version=$VERSION" >> $GITHUB_OUTPUT
 
+    - name: Fetch libmpv
+      working-directory: player
+      shell: pwsh
+      run: python scripts/fetch_mpv.py
+
     - name: Build Updater
       working-directory: player
       shell: pwsh

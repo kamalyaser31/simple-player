@@ -77,6 +77,8 @@ Push-Location player
 try {
     # Set PYTHONPATH
     $env:PYTHONPATH = "$((Get-Location).Path);$((Get-Location).Parent.Path)"
+    Invoke-PythonCommand "scripts/fetch_mpv.py"
+    if ($LASTEXITCODE -ne 0) { Write-Error "libmpv download failed."; exit 1 }
     Invoke-PythonCommand "-m PyInstaller --noconfirm SimpleAudioPlayer.spec"
     if (-not (Test-Path "dist/SimpleAudioPlayer/SimpleAudioPlayer.exe")) {
         Write-Error "Main application packaging failed."

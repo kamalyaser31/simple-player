@@ -4,8 +4,8 @@ END_FILE_REASON_ERROR = 4
 
 class PlayerLifecycleMixin:
     def _on_end_file_event(self, event):
-        info = event.get("event") or {}
-        reason = info.get("reason")
+        # python-mpv 1.x passes an MpvEvent; END_FILE data carries the reason.
+        reason = getattr(getattr(event, "data", None), "reason", None)
         if reason not in (END_FILE_REASON_EOF, END_FILE_REASON_ERROR):
             return
         self._handle_finished_file(reason)

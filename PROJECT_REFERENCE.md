@@ -5,8 +5,8 @@ The source under `player/` is the truth; user docs are in `player/docs/<lang>/us
 ## 1. Run and layout
 
 - Stack: Python 3.11, wxPython, libmpv (`player/mpv.dll` + vendored `player/mpv.py`); deps in `player/requirements.txt` (import names differ: `appGuard` -> `app_guard`, `py-yt-search` -> `py_yt`).
-- Run: `cd player; python SimpleAudioPlayer.py [paths...]`. Imports are top-level, so CWD or `PYTHONPATH` must be `player/`; `mpv.py` does `os.add_dll_directory(os.getcwd())` and loads `mpv.dll` by bare name, so another CWD breaks libmpv.
-- `mpv.py` is vendored: do not edit or reformat.
+- Run: `cd player; python SimpleAudioPlayer.py [paths...]`. Imports are top-level, so CWD or `PYTHONPATH` must be `player/`. `mpv.py` loads the `mpv.dll` next to itself first (the one local patch), so the CWD does not matter for libmpv.
+- `mpv.py` is pristine python-mpv 1.0.8 plus that loader patch: do not edit or reformat it; to upgrade, copy upstream and re-apply only the loader block. libmpv is shinchiro `libmpv-2.dll` (mpv 0.42) renamed `mpv.dll`. API facts the code relies on: event callbacks get an `MpvEvent` (END_FILE reason is `event.data.reason`); `loadfile` options go through `MPV.loadfile(path, mode, **opts)` because mpv 0.38 added an index argument; mpv 0.36+ enforces `volume-max`, so `MpvEngine` sets it to `VOLUME_MAX`.
 
 ## 2. Control flow
 

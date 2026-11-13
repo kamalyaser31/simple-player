@@ -297,7 +297,9 @@ def _mk_probe():
 
 def _probe(probe, path):
     try:
-        probe.command("loadfile", path, "replace", "pause=yes")
+        # mpv 0.38 added an index argument before the options; loadfile()
+        # places them correctly.
+        probe.loadfile(path, "replace", pause="yes")
     except Exception:
         return None
     end = time.time() + _PROBE_TO
