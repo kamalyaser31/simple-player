@@ -10,6 +10,7 @@ fetches it and checks its SHA256. Run from anywhere:
 import argparse
 import hashlib
 import io
+import json
 import sys
 import urllib.request
 import zipfile
@@ -19,6 +20,10 @@ MPV_VERSION = "0.42.0"
 ASSET_URL = (
     "https://github.com/kamalyaser31/simple-player/releases/download/"
     f"libmpv-{MPV_VERSION}/libmpv-{MPV_VERSION}-x86_64.zip"
+)
+API_RELEASE_URL = (
+    "https://api.github.com/repos/kamalyaser31/simple-player/releases/tags/"
+    f"libmpv-{MPV_VERSION}"
 )
 DLL_SHA256 = "88504ee5560942a955405e99dfb5971368e4cf851321f36565bf2a667271db1b"
 DLL_PATH = Path(__file__).resolve().parent.parent / "mpv.dll"
@@ -35,9 +40,29 @@ def is_current(path):
         return False
 
 
+def download(url, accept=None):
+    req = urllib.request.Request(url)
+    if accept:
+        req.add_header("Accept", accept)
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        return resp.read()
+
+
+def download_via_api():
+    # Some networks block github.com but reach api.github.com.
+    release = json.loads(download(API_RELEASE_URL))
+    asset_url = release["assets"][0]["url"]
+    return download(asset_url, accept="application/octet-stream")
+
+
 def fetch(url):
-    with urllib.request.urlopen(url, timeout=120) as resp:
-        archive = resp.read()
+    try:
+        archive = download(url)
+    except Exception as exc:
+        if url != ASSET_URL:
+            raise
+        print(f"Direct download failed ({exc}); trying the GitHub API.")
+        archive = download_via_api()
     with zipfile.ZipFile(io.BytesIO(archive)) as zf:
         return zf.read("mpv.dll")
 
