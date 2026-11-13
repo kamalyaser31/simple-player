@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Audio Player 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 10:58+0200\n"
+"POT-Creation-Date: 2026-11-13 22:45+0200\n"
 "PO-Revision-Date: 2026-07-06 21:03+0300\n"
 "Last-Translator: Kamal Yaser <kamalyaser31@gmail.com>\n"
 "Language-Team: Arabic\n"
@@ -1797,7 +1797,8 @@ msgstr "تصدير المفضلة والاشتراكات يحفظ القائمت
 msgid ""
 "Import favorites and subscriptions replaces both lists with the ones in a "
 "backup file."
-msgstr "استيراد المفضلة والاشتراكات يستبدل بالقائمتين ما في ملف النسخة الاحتياطية."
+msgstr ""
+"استيراد المفضلة والاشتراكات يستبدل بالقائمتين ما في ملف النسخة الاحتياطية."
 
 #: ui/prefs/backup.py:120
 msgid ""
@@ -1892,7 +1893,9 @@ msgstr "استُوردت الإشارات المرجعية بنجاح."
 msgid ""
 "Could not export favorites and subscriptions.\n"
 "{error}"
-msgstr "تعذر تصدير المفضلة والاشتراكات.\n{error}"
+msgstr ""
+"تعذر تصدير المفضلة والاشتراكات.\n"
+"{error}"
 
 #: ui/prefs/backup.py:306
 msgid "Favorites and subscriptions exported successfully."
@@ -1903,7 +1906,9 @@ msgstr "صُدِّرت المفضلة والاشتراكات بنجاح."
 msgid ""
 "Could not import favorites and subscriptions.\n"
 "{error}"
-msgstr "تعذر استيراد المفضلة والاشتراكات.\n{error}"
+msgstr ""
+"تعذر استيراد المفضلة والاشتراكات.\n"
+"{error}"
 
 #: ui/prefs/backup.py:336
 msgid "Favorites and subscriptions imported successfully."
@@ -2592,27 +2597,31 @@ msgstr "يجب أن يكون الحد الأدنى لمدة الصمت رقمً�
 msgid "Silence threshold must be a valid number."
 msgstr "يجب أن تكون عتبة الصمت رقمًا صالحًا."
 
-#: ui/silence_removal.py:256
+#: ui/silence_removal.py:243
+msgid "Silence threshold must be below zero, for example -30."
+msgstr "يجب أن تكون عتبة الصمت أقل من الصفر، مثل -30."
+
+#: ui/silence_removal.py:260
 #, python-brace-format
 msgid "{field} must be an integer value."
 msgstr "يجب أن يكون {field} قيمة عددية صحيحة."
 
-#: ui/silence_removal.py:261
+#: ui/silence_removal.py:265
 #, python-brace-format
 msgid "{field} must be zero or greater."
 msgstr "يجب أن يكون {field} صفرًا أو أكبر."
 
-#: ui/silence_removal.py:266
+#: ui/silence_removal.py:270
 #, python-brace-format
 msgid "{field} must be -1 or greater."
 msgstr "يجب أن يكون {field} بقيمة -1 أو أكبر."
 
-#: ui/silence_removal.py:274
+#: ui/silence_removal.py:278
 #, python-brace-format
 msgid "{field} must be a non-negative number."
 msgstr "يجب أن يكون {field} رقمًا غير سالب."
 
-#: ui/silence_removal.py:320
+#: ui/silence_removal.py:324
 msgid ""
 "Silence removal settings. Minimum silence duration and threshold are always "
 "shown. Enable advanced settings to configure all remaining filter options."
@@ -2620,7 +2629,7 @@ msgstr ""
 "إعدادات إزالة الصمت. يُعرض دائمًا الحد الأدنى لمدة الصمت والعتبة. مكِّن "
 "الإعدادات المتقدمة لضبط بقية خيارات المرشح."
 
-#: ui/silence_removal.py:344
+#: ui/silence_removal.py:348
 msgid ""
 "Minimum silence duration in seconds. Silence shorter than this value is "
 "kept. Increase it to preserve short pauses. Decrease it to trim more "
@@ -2629,7 +2638,7 @@ msgstr ""
 "الحد الأدنى لمدة الصمت بالثواني. يُبقى على الصمت الأقصر من هذه القيمة. زِدها "
 "للحفاظ على الوقفات القصيرة، وأنقِصها لقصٍّ أشد."
 
-#: ui/silence_removal.py:351
+#: ui/silence_removal.py:355
 msgid ""
 "Silence level threshold. Audio quieter than this level is treated as "
 "silence. Enter only the number, for example -20, -30, or -40."
@@ -2637,7 +2646,7 @@ msgstr ""
 "عتبة مستوى الصمت. يُعدّ الصوت الأهدأ من هذا المستوى صمتًا. أدخل الرقم فقط، مثل "
 "-20 أو -30 أو -40."
 
-#: ui/silence_removal.py:357
+#: ui/silence_removal.py:361
 msgid ""
 "Show advanced settings. When enabled, extra silenceremove parameters are "
 "displayed. When disabled, only minimum duration and threshold are used."
@@ -2645,7 +2654,7 @@ msgstr ""
 "إظهار الإعدادات المتقدمة. عند التمكين تُعرض معلمات إضافية لإزالة الصمت، وعند "
 "التعطيل لا يُستخدم إلا الحد الأدنى للمدة والعتبة."
 
-#: ui/silence_removal.py:363
+#: ui/silence_removal.py:367
 msgid ""
 "Leading silent parts to trim. This controls how many silent chunks are "
 "removed from the beginning. Typical value is 1."
@@ -2653,7 +2662,7 @@ msgstr ""
 "أجزاء الصمت البادئة للقص. يتحكم هذا في عدد أجزاء الصمت التي تُزال من البداية. "
 "القيمة المعتادة 1."
 
-#: ui/silence_removal.py:369
+#: ui/silence_removal.py:373
 msgid ""
 "Minimum leading silence length in seconds. Only leading silence at least "
 "this long is removed. Default is 0.2."
@@ -2661,7 +2670,7 @@ msgstr ""
 "الحد الأدنى لطول الصمت البادئ بالثواني. لا يُزال إلا الصمت البادئ الذي تبلغ "
 "مدته هذا الطول على الأقل. الافتراضي 0.2."
 
-#: ui/silence_removal.py:375
+#: ui/silence_removal.py:379
 msgid ""
 "Silent parts to trim after audio starts. Use -1 to trim all matching silent "
 "parts."
@@ -2669,7 +2678,7 @@ msgstr ""
 "أجزاء الصمت المطلوب قصها بعد بدء الصوت. استخدم -1 لقص جميع أجزاء الصمت "
 "المطابقة."
 
-#: ui/silence_removal.py:380
+#: ui/silence_removal.py:384
 msgid ""
 "Minimum inner silence length in seconds. Only silence in the middle or end "
 "at least this long is removed."
@@ -2677,22 +2686,22 @@ msgstr ""
 "الحد الأدنى لطول الصمت الداخلي بالثواني. لا يُزال إلا الصمت الواقع في المنتصف "
 "أو النهاية الذي تبلغ مدته هذا الطول على الأقل."
 
-#: ui/silence_removal.py:385
+#: ui/silence_removal.py:389
 msgid "Pause to keep after trimmed silence, in seconds. Default is 0.2."
 msgstr ""
 "الوقفة المراد الإبقاء عليها بعد الصمت المقصوص، بالثواني. الافتراضي هو 0.2."
 
-#: ui/silence_removal.py:388
+#: ui/silence_removal.py:392
 msgid "Detection window size in seconds. Default is 0.02."
 msgstr "حجم نافذة الكشف بالثواني. الافتراضي 0.02."
 
-#: ui/silence_removal.py:391
+#: ui/silence_removal.py:395
 msgid ""
 "Detection mode for silence analysis. Peak reacts quickly to speech "
 "transients. RMS is smoother."
 msgstr "وضع كشف الصمت. يتفاعل Peak بسرعة مع تقلبات الكلام. أما RMS فأنعم."
 
-#: ui/silence_removal.py:395
+#: ui/silence_removal.py:399
 msgid "Silence removal setting. Enter a value and press OK to save."
 msgstr "إعداد إزالة الصمت. أدخل قيمة واضغط موافق للحفظ."
 

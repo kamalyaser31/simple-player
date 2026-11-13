@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-13: fix(silence): put silence removal first in the mpv filter chain (af pre), because dynaudnorm, on by default, lifted the background noise of pauses above the threshold so nothing was trimmed; and refuse a threshold of 0 dB or more, which muted all audio.
+
 - 2026-11-13: test: Kamal confirmed live with NVDA the subscriptions, the reviewed Arabic UI, the 2026-11-13 fixes, the new Arabic installer and the in-app update from 1.5.0 to 2.0.0.
 
 - 2026-11-13: release: 2.0.0 (subscriptions, Arabic review, new bilingual guide, installer fixes), with bilingual update notes in info.json and both What's New pages.

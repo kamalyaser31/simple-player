@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 10:58+0200\n"
+"POT-Creation-Date: 2026-11-13 22:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2449,90 +2449,94 @@ msgstr ""
 msgid "Silence threshold must be a valid number."
 msgstr ""
 
-#: ui/silence_removal.py:256
+#: ui/silence_removal.py:243
+msgid "Silence threshold must be below zero, for example -30."
+msgstr ""
+
+#: ui/silence_removal.py:260
 #, python-brace-format
 msgid "{field} must be an integer value."
 msgstr ""
 
-#: ui/silence_removal.py:261
+#: ui/silence_removal.py:265
 #, python-brace-format
 msgid "{field} must be zero or greater."
 msgstr ""
 
-#: ui/silence_removal.py:266
+#: ui/silence_removal.py:270
 #, python-brace-format
 msgid "{field} must be -1 or greater."
 msgstr ""
 
-#: ui/silence_removal.py:274
+#: ui/silence_removal.py:278
 #, python-brace-format
 msgid "{field} must be a non-negative number."
 msgstr ""
 
-#: ui/silence_removal.py:320
+#: ui/silence_removal.py:324
 msgid ""
 "Silence removal settings. Minimum silence duration and threshold are always "
 "shown. Enable advanced settings to configure all remaining filter options."
 msgstr ""
 
-#: ui/silence_removal.py:344
+#: ui/silence_removal.py:348
 msgid ""
 "Minimum silence duration in seconds. Silence shorter than this value is "
 "kept. Increase it to preserve short pauses. Decrease it to trim more "
 "aggressively."
 msgstr ""
 
-#: ui/silence_removal.py:351
+#: ui/silence_removal.py:355
 msgid ""
 "Silence level threshold. Audio quieter than this level is treated as "
 "silence. Enter only the number, for example -20, -30, or -40."
 msgstr ""
 
-#: ui/silence_removal.py:357
+#: ui/silence_removal.py:361
 msgid ""
 "Show advanced settings. When enabled, extra silenceremove parameters are "
 "displayed. When disabled, only minimum duration and threshold are used."
 msgstr ""
 
-#: ui/silence_removal.py:363
+#: ui/silence_removal.py:367
 msgid ""
 "Leading silent parts to trim. This controls how many silent chunks are "
 "removed from the beginning. Typical value is 1."
 msgstr ""
 
-#: ui/silence_removal.py:369
+#: ui/silence_removal.py:373
 msgid ""
 "Minimum leading silence length in seconds. Only leading silence at least "
 "this long is removed. Default is 0.2."
 msgstr ""
 
-#: ui/silence_removal.py:375
+#: ui/silence_removal.py:379
 msgid ""
 "Silent parts to trim after audio starts. Use -1 to trim all matching silent "
 "parts."
 msgstr ""
 
-#: ui/silence_removal.py:380
+#: ui/silence_removal.py:384
 msgid ""
 "Minimum inner silence length in seconds. Only silence in the middle or end "
 "at least this long is removed."
 msgstr ""
 
-#: ui/silence_removal.py:385
+#: ui/silence_removal.py:389
 msgid "Pause to keep after trimmed silence, in seconds. Default is 0.2."
 msgstr ""
 
-#: ui/silence_removal.py:388
+#: ui/silence_removal.py:392
 msgid "Detection window size in seconds. Default is 0.02."
 msgstr ""
 
-#: ui/silence_removal.py:391
+#: ui/silence_removal.py:395
 msgid ""
 "Detection mode for silence analysis. Peak reacts quickly to speech "
 "transients. RMS is smoother."
 msgstr ""
 
-#: ui/silence_removal.py:395
+#: ui/silence_removal.py:399
 msgid "Silence removal setting. Enter a value and press OK to save."
 msgstr ""
 

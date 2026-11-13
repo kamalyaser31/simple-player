@@ -233,10 +233,14 @@ class SilenceRemovalSettings(wx.ScrolledWindow):
 
         threshold = self._threshold_field.GetValue().strip()
         if threshold:
-            ok, _parsed = self._parse_float(threshold)
+            ok, parsed = self._parse_float(threshold)
             if not ok:
                 self._threshold_field.SetFocus()
                 return _("Silence threshold must be a valid number.")
+            # 0 dB or more counts all audio as silence, so playback goes mute.
+            if parsed >= 0:
+                self._threshold_field.SetFocus()
+                return _("Silence threshold must be below zero, for example -30.")
 
         if not self._advanced_checkbox.GetValue():
             return ""

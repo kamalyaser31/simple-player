@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 10:58+0200\n"
+"POT-Creation-Date: 2026-11-13 22:45+0200\n"
 "PO-Revision-Date: 2026-03-07 07:46+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
@@ -2661,27 +2661,32 @@ msgstr "Minimální délka tiché pasáže musí být kladné číslo."
 msgid "Silence threshold must be a valid number."
 msgstr "Práh hlasitosti tichých pasáží musí být platné číslo."
 
-#: ui/silence_removal.py:256
+#: ui/silence_removal.py:243
+#, fuzzy
+msgid "Silence threshold must be below zero, for example -30."
+msgstr "Práh hlasitosti tichých pasáží musí být platné číslo."
+
+#: ui/silence_removal.py:260
 #, python-brace-format
 msgid "{field} must be an integer value."
 msgstr "{field} musí být celé číslo."
 
-#: ui/silence_removal.py:261
+#: ui/silence_removal.py:265
 #, python-brace-format
 msgid "{field} must be zero or greater."
 msgstr "{field} musí být nula nebo vyšší."
 
-#: ui/silence_removal.py:266
+#: ui/silence_removal.py:270
 #, python-brace-format
 msgid "{field} must be -1 or greater."
 msgstr "{field} musí být -1 nebo vyšší."
 
-#: ui/silence_removal.py:274
+#: ui/silence_removal.py:278
 #, python-brace-format
 msgid "{field} must be a non-negative number."
 msgstr "{field} nesmí být záporné číslo."
 
-#: ui/silence_removal.py:320
+#: ui/silence_removal.py:324
 msgid ""
 "Silence removal settings. Minimum silence duration and threshold are always "
 "shown. Enable advanced settings to configure all remaining filter options."
@@ -2691,7 +2696,7 @@ msgstr ""
 "ostatní parametry tohoto filtru, zaškrtněte volbu Zobrazit pokročilá "
 "nastavení."
 
-#: ui/silence_removal.py:344
+#: ui/silence_removal.py:348
 msgid ""
 "Minimum silence duration in seconds. Silence shorter than this value is "
 "kept. Increase it to preserve short pauses. Decrease it to trim more "
@@ -2702,7 +2707,7 @@ msgstr ""
 "zachovat krátké pauzy. Snižte ji, pokud chcete agresivnější odstraňování "
 "ticha."
 
-#: ui/silence_removal.py:351
+#: ui/silence_removal.py:355
 msgid ""
 "Silence level threshold. Audio quieter than this level is treated as "
 "silence. Enter only the number, for example -20, -30, or -40."
@@ -2711,7 +2716,7 @@ msgstr ""
 "hodnota budou považovány za ticho. Zadávejte pouze čísla, například -20, -30 "
 "nebo -40."
 
-#: ui/silence_removal.py:357
+#: ui/silence_removal.py:361
 msgid ""
 "Show advanced settings. When enabled, extra silenceremove parameters are "
 "displayed. When disabled, only minimum duration and threshold are used."
@@ -2720,7 +2725,7 @@ msgstr ""
 "se dodatečná nastavení pro odstraňování tichých pasáží. Pokud zaškrtnuta "
 "není, použijí se pouze nastavení minimální délky a prahu hlasitosti."
 
-#: ui/silence_removal.py:363
+#: ui/silence_removal.py:367
 msgid ""
 "Leading silent parts to trim. This controls how many silent chunks are "
 "removed from the beginning. Typical value is 1."
@@ -2728,7 +2733,7 @@ msgstr ""
 "Tato volba určuje, kolik tichých pasáží odstranit na začátku. Typická "
 "hodnota je 1."
 
-#: ui/silence_removal.py:369
+#: ui/silence_removal.py:373
 msgid ""
 "Minimum leading silence length in seconds. Only leading silence at least "
 "this long is removed. Default is 0.2."
@@ -2737,7 +2742,7 @@ msgstr ""
 "pouze ty tiché pasáže na začátku souboru, které jsou alespoň takhle dlouhé. "
 "Výchozí hodnota je 0.2."
 
-#: ui/silence_removal.py:375
+#: ui/silence_removal.py:379
 msgid ""
 "Silent parts to trim after audio starts. Use -1 to trim all matching silent "
 "parts."
@@ -2745,7 +2750,7 @@ msgstr ""
 "Kolik tichých pasáží odstranit po zahájení přehrávání. Pokud chcete "
 "odstranit všechny odpovídající tiché pasáže, zadejte hodnotu -1."
 
-#: ui/silence_removal.py:380
+#: ui/silence_removal.py:384
 msgid ""
 "Minimum inner silence length in seconds. Only silence in the middle or end "
 "at least this long is removed."
@@ -2754,17 +2759,17 @@ msgstr ""
 "ty tiché pasáže uvnitř nebo na konci souboru, které jsou alespoň takhle "
 "dlouhé."
 
-#: ui/silence_removal.py:385
+#: ui/silence_removal.py:389
 msgid "Pause to keep after trimmed silence, in seconds. Default is 0.2."
 msgstr ""
 "Jak dlouhou pomlku ponechat po odstraněné tiché pasáži v sekundách. Výchozí "
 "hodnota je 0.2."
 
-#: ui/silence_removal.py:388
+#: ui/silence_removal.py:392
 msgid "Detection window size in seconds. Default is 0.02."
 msgstr "Délka úseku pro detekci ticha v sekundách. Výchozí hodnota je 0.02."
 
-#: ui/silence_removal.py:391
+#: ui/silence_removal.py:395
 msgid ""
 "Detection mode for silence analysis. Peak reacts quickly to speech "
 "transients. RMS is smoother."
@@ -2772,7 +2777,7 @@ msgstr ""
 "Způsob detekce při vyhledávání tichých pasáží. Volba Peak rychle reaguje na "
 "změny v hlasitosti řeči. Volba RMS je plynulejší."
 
-#: ui/silence_removal.py:395
+#: ui/silence_removal.py:399
 msgid "Silence removal setting. Enter a value and press OK to save."
 msgstr ""
 "Nastavení pro odstraňování ticha. Zadejte hodnotu a uložte tlačítkem OK."

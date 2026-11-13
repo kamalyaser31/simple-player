@@ -326,7 +326,9 @@ class MpvEngine:
             return False
         entry = f"{SILENCE_FILTER_LABEL}:lavfi=[{filter_graph}]"
         try:
-            self._mpv.command("af", "add", entry)
+            # First in the chain: after dynaudnorm the boosted background noise
+            # of a pause rises above the threshold and nothing is trimmed.
+            self._mpv.command("af", "pre", entry)
             return True
         except Exception:
             return False

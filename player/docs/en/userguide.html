@@ -727,7 +727,7 @@
     </thead>
     <tbody>
       <tr><th scope="row">Minimum silence duration (seconds)</th><td>Silence shorter than this stays. A bigger value keeps more short pauses. Zero or more. It is also used as the "Minimum inner silence length" when the advanced options are off or that field is empty.</td><td>0.5</td></tr>
-      <tr><th scope="row">Silence threshold</th><td>Sound quieter than this level counts as silence. Type a number, such as -20, -30 or -40.</td><td>-30</td></tr>
+      <tr><th scope="row">Silence threshold</th><td>Sound quieter than this level counts as silence. Type a number below zero, such as -20, -30 or -40. Zero or more is refused, because it would count all sound as silence.</td><td>-30</td></tr>
       <tr><th scope="row">Show advanced settings</th><td>Shows the options below. When off, they are hidden but the filter still uses their saved values, which are the defaults listed here until you change them.</td><td>Off</td></tr>
       <tr><th scope="row">Leading silent parts to trim</th><td>How many silent parts to cut from the beginning. A whole number, zero or more.</td><td>1</td></tr>
       <tr><th scope="row">Minimum leading silence length (seconds)</th><td>Only silence at the beginning that is at least this long is cut.</td><td>0.2</td></tr>

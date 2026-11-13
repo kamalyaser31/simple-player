@@ -30,6 +30,7 @@ The source under `player/` is the truth; user docs are in `player/docs/<lang>/us
 
 - `MpvEngine` (`core/mpv_engine.py`) is the only libmpv owner; it turns off mpv's media keys/controls (SMTC has one owner, `WindowsMediaBridge`) and registers one `end-file` callback.
 - Volume 0..1000: with normalization on, values above 100 pin mpv at 100 and scale the `@audiopreamp` gain (`volume/100`); otherwise mpv volume is set directly. `_requested_volume` is the truth. Speed 0.5..4.0.
+- `@silenceremove` is inserted with `af pre` so it stays first: placed after `dynaudnorm` (on by default), the boosted pause noise passes the threshold and nothing is trimmed. While it trims, `time-pos` runs behind the file position until the next seek; this is mpv behaviour, not a bug to fix.
 - Filters are labelled `af add` lavfi entries (`@audionormalize`, `@audiopreamp`, `@audiomono`, `@silenceremove`); `Player._apply_active_audio_filters` reapplies them after each load.
 - `Player.set_render_window` tries assigning `wid`; on failure `MpvEngine.recreate_with_window` builds a new core (32-bit-masked HWND), restores volume/speed/filters/device/stream cache, and the player reloads at the saved position/pause state. Any runtime option added must be reapplied there.
 - End of file (`core/player/lifecycle.py`, runs on mpv's event thread): reason 4 (error) -> `youtube.flow.on_playback_finished` retry; then repeat-file reloads; then `end_behavior`: `advance` (for EOF the YouTube flow gets first chance, else next track, else stop), `loop` (mpv `loop-file=inf`), `none` (`keep-open`).
