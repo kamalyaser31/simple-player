@@ -55,9 +55,13 @@ def _check_versions(repository, constants, installer, errors):
 
 def _check_associations(constants, associations, dialogs, installer, errors):
     audio_extensions = set(constants.get("AUDIO_EXTENSIONS", set()))
-    python_extensions = audio_extensions | set(associations.get("VIDEO_EXTENSIONS", set()))
+    python_extensions = audio_extensions | set(
+        associations.get("VIDEO_EXTENSIONS", set())
+    )
     wildcard = str(dialogs.get("AUDIO_WILDCARD") or "")
-    wildcard_extensions = {f".{ext}" for ext in re.findall(r"\*\.([a-z0-9]+)", wildcard)}
+    wildcard_extensions = {
+        f".{ext}" for ext in re.findall(r"\*\.([a-z0-9]+)", wildcard)
+    }
     if audio_extensions != wildcard_extensions:
         errors.append("Audio extensions differ between constants and the file dialog.")
     for name, pattern in _INSTALLER_EXTENSION_PATTERNS.items():
@@ -67,7 +71,6 @@ def _check_associations(constants, associations, dialogs, installer, errors):
 
 _INSTALLER_EXTENSION_PATTERNS = {
     "SupportedTypes": r'SupportedTypes";\s+ValueType: string;\s+ValueName: "(\.[^"]+)"',
-    "class default": r'Subkey: "Software\\Classes\\(\.[^"\\]+)";\s+ValueType: string;\s+ValueName: "";\s+ValueData: "\{#MyProgId\}"',
     "OpenWithProgids": r'Subkey: "Software\\Classes\\(\.[^"\\]+)\\OpenWithProgids"',
     "capabilities": r'Capabilities\\FileAssociations";\s+ValueType: string;\s+ValueName: "(\.[^"]+)"',
 }
@@ -80,7 +83,9 @@ def _check_catalogs(player, constants, errors):
         if not messages.is_dir():
             continue
         if not (messages / f"{domain}.mo").is_file():
-            errors.append(f"Missing runtime catalog: {language.name}/LC_MESSAGES/{domain}.mo")
+            errors.append(
+                f"Missing runtime catalog: {language.name}/LC_MESSAGES/{domain}.mo"
+            )
         po_files = list(messages.glob("*.po"))
         if po_files and not (messages / f"{domain}.po").is_file():
             errors.append(f"Catalog source has wrong domain name: {language.name}.")
@@ -98,13 +103,17 @@ def _check_packaging(player, repository, spec, errors):
             errors.append(f"Required packaging asset is missing: {path.name}")
     for token in ("mpv.dll", "speaker_test.wav", "locale", "docs", "Updater.exe"):
         if token not in spec:
-            errors.append(f"PyInstaller spec does not include packaging rule for {token}.")
+            errors.append(
+                f"PyInstaller spec does not include packaging rule for {token}."
+            )
 
 
 def _check_updater(constants, installer, errors):
     marker = str(constants.get("APP_UPDATE_INSTALLER_MARKER") or "")
     if not marker or installer.count(marker) < 2:
-        errors.append("Installer updater marker disagrees with APP_UPDATE_INSTALLER_MARKER.")
+        errors.append(
+            "Installer updater marker disagrees with APP_UPDATE_INSTALLER_MARKER."
+        )
     if "dist\\Updater.exe" not in installer:
         errors.append("Inno Setup does not package the component updater.")
 
@@ -118,7 +127,9 @@ def _check_release_names(repository, constants, errors):
         text = workflow.read_text(encoding="utf-8")
         for suffix in ("exe", "zip"):
             if f"SimpleAudioPlayer-v$VERSION.{suffix}" not in text:
-                errors.append(f"Release workflow does not create canonical {suffix} asset.")
+                errors.append(
+                    f"Release workflow does not create canonical {suffix} asset."
+                )
 
 
 def _check_runtime_policy(player, spec, errors):
@@ -127,7 +138,9 @@ def _check_runtime_policy(player, spec, errors):
         errors.append("YouTube runtime component policy is not documented.")
     for executable in ("yt-dlp.exe", "deno.exe"):
         if executable in spec:
-            errors.append(f"{executable} must be runtime-installed, not release-bundled.")
+            errors.append(
+                f"{executable} must be runtime-installed, not release-bundled."
+            )
 
 
 def main():

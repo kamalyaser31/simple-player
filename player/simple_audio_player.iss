@@ -1,4 +1,4 @@
-; Inno Setup script for Simple Audio Player
+﻿; Inno Setup script for Simple Audio Player
 ; Build with: ISCC simple_audio_player.iss
 
 #define MyAppName "Simple Audio Player"
@@ -8,7 +8,6 @@
 #define MyAppExeName "SimpleAudioPlayer.exe"
 #define MyAppDistDir "dist\SimpleAudioPlayer"
 #define MyProgId "SimpleAudioPlayer.media"
-#define MyContextLabel "Play with Simple Audio Player"
 
 [Setup]
 AppId={{D1288C88-8739-4BE1-A302-2E83822C6A8D}
@@ -20,7 +19,8 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={localappdata}\Programs\{#MyAppName}
 DefaultGroupName={#MyAppName}
-DisableProgramGroupPage=no
+DisableProgramGroupPage=yes
+UninstallDisplayIcon={app}\{#MyAppExeName}
 PrivilegesRequired=lowest
 
 OutputDir=dist
@@ -32,14 +32,20 @@ ChangesAssociations=yes
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "arabic"; MessagesFile: "compiler:Languages\Arabic.isl"
+Name: "czech"; MessagesFile: "compiler:Languages\Czech.isl"
+
+[CustomMessages]
+english.ContextLabel=Play with Simple Audio Player
+arabic.ContextLabel=تشغيل بـ Simple Audio Player
+czech.ContextLabel=Přehrát v Simple Audio Player
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#MyAppDistDir}\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#MyAppDistDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "dist\Updater.exe"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
+Source: "dist\Updater.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -50,18 +56,22 @@ Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChang
 
 [UninstallDelete]
 Type: files; Name: "{app}\.sap_installed"
+; Downloaded at runtime, so the uninstaller would not know them otherwise.
+Type: files; Name: "{app}\yt-dlp.exe"
+Type: files; Name: "{app}\deno.exe"
+Type: dirifempty; Name: "{app}"
 
 [Registry]
 ; ProgID and context command
 Root: HKCU; Subkey: "Software\Classes\{#MyProgId}"; ValueType: string; ValueName: ""; ValueData: "{#MyAppName} media file"; Flags: uninsdeletekey
 Root: HKCU; Subkey: "Software\Classes\{#MyProgId}\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
-Root: HKCU; Subkey: "Software\Classes\{#MyProgId}\shell\play_with_simple_audio_player"; ValueType: string; ValueName: ""; ValueData: "{#MyContextLabel}"; Flags: uninsdeletekey
+Root: HKCU; Subkey: "Software\Classes\{#MyProgId}\shell\play_with_simple_audio_player"; ValueType: string; ValueName: ""; ValueData: "{cm:ContextLabel}"; Flags: uninsdeletekey
 Root: HKCU; Subkey: "Software\Classes\{#MyProgId}\shell\play_with_simple_audio_player\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
 
 ; Applications registration (Open With and shell verb)
 Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}"; ValueType: string; ValueName: "FriendlyAppName"; ValueData: "{#MyAppName}"; Flags: uninsdeletekey
 Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
-Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\shell\play_with_simple_audio_player"; ValueType: string; ValueName: ""; ValueData: "{#MyContextLabel}"; Flags: uninsdeletekey
+Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\shell\play_with_simple_audio_player"; ValueType: string; ValueName: ""; ValueData: "{cm:ContextLabel}"; Flags: uninsdeletekey
 Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\shell\play_with_simple_audio_player\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExeName}"" ""%1"""; Flags: uninsdeletekey
 
 ; Default Programs capabilities
@@ -93,31 +103,6 @@ Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedType
 Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".wma"; ValueData: ""; Flags: uninsdeletevalue
 Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".wmv"; ValueData: ""; Flags: uninsdeletevalue
 Root: HKCU; Subkey: "Software\Classes\Applications\{#MyAppExeName}\SupportedTypes"; ValueType: string; ValueName: ".3gp"; ValueData: ""; Flags: uninsdeletevalue
-
-; Extension associations (same model as app-side registration)
-Root: HKCU; Subkey: "Software\Classes\.aac"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.aiff"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.alac"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.avi"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.flac"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.flv"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.m2ts"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.m4a"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.m4v"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.mkv"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.mov"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.mp3"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.mp4"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.mpeg"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.mpg"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.ogg"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.opus"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.ts"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.wav"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.webm"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.wma"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.wmv"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
-Root: HKCU; Subkey: "Software\Classes\.3gp"; ValueType: string; ValueName: ""; ValueData: "{#MyProgId}"
 
 ; OpenWithProgids entries
 Root: HKCU; Subkey: "Software\Classes\.aac\OpenWithProgids"; ValueType: none; ValueName: "{#MyProgId}"; Flags: uninsdeletevalue

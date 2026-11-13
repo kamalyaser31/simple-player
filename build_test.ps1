@@ -11,6 +11,11 @@ Write-Host "=============================================" -ForegroundColor Cyan
 Write-Host "[1/7] Detecting Python environment..." -ForegroundColor Yellow
 $PYTHON_EXE = "python"
 
+# An active virtual environment wins, so the build does not touch system Python.
+if ($env:VIRTUAL_ENV) {
+    $pythonVer = & python -V 2>$null
+    Write-Host "Using active virtual environment (Found: $pythonVer)" -ForegroundColor Green
+} else {
 try {
     $testOutput = & py -3.11 -V 2>$null
     if ($testOutput -like "*3.11*") {
@@ -23,6 +28,7 @@ try {
 } catch {
     $pythonVer = & python -V 2>$null
     Write-Host "Using default python command (Found: $pythonVer)" -ForegroundColor Green
+}
 }
 
 # Define command wrapper to execute Python commands correctly

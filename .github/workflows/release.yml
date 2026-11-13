@@ -63,8 +63,18 @@ jobs:
         }
 
     - name: Build Installer (Inno Setup)
+      shell: pwsh
       run: |
-        iscc player/simple_audio_player.iss
+        # Pin Inno Setup: Arabic.isl ships only with 6.5+, and runner images may drop it.
+        winget install --id JRSoftware.InnoSetup -e --version 6.7.3 --silent --accept-package-agreements --accept-source-agreements
+        $iscc = @(
+          "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe",
+          "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
+          "$env:ProgramFiles\Inno Setup 6\ISCC.exe"
+        ) | Where-Object { Test-Path $_ } | Select-Object -First 1
+        if (-not $iscc) { throw "ISCC.exe not found after installing Inno Setup." }
+        & $iscc player/simple_audio_player.iss
+        if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed with code $LASTEXITCODE." }
 
     - name: Prepare Release Assets
       shell: pwsh
