@@ -8,7 +8,7 @@ Write-Host "Starting Local Build Workflow Test..." -ForegroundColor Cyan
 Write-Host "=============================================" -ForegroundColor Cyan
 
 # 1. Resolve Python version (prefers 3.11 if available)
-Write-Host "[1/7] Detecting Python environment..." -ForegroundColor Yellow
+Write-Host "[1/6] Detecting Python environment..." -ForegroundColor Yellow
 $PYTHON_EXE = "python"
 
 # An active virtual environment wins, so the build does not touch system Python.
@@ -42,7 +42,7 @@ function Invoke-PythonCommand {
 }
 
 # 2. Extract Version from info.json
-Write-Host "[2/7] Extracting version from info.json..." -ForegroundColor Yellow
+Write-Host "[2/6] Extracting version from info.json..." -ForegroundColor Yellow
 if (-not (Test-Path "info.json")) {
     Write-Error "info.json not found in the root directory."
 }
@@ -51,14 +51,14 @@ $VERSION = $info.version
 Write-Host "Target Version: $VERSION" -ForegroundColor Green
 
 # 3. Install/Update dependencies
-Write-Host "[3/7] Upgrading pip and installing requirements..." -ForegroundColor Yellow
+Write-Host "[3/6] Upgrading pip and installing requirements..." -ForegroundColor Yellow
 Invoke-PythonCommand "-m pip install --upgrade pip"
 Invoke-PythonCommand "-m pip install pyinstaller"
 Invoke-PythonCommand "-m pip install -r player/requirements.txt"
 Write-Host "Dependencies ready." -ForegroundColor Green
 
 # 4. Build Updater
-Write-Host "[4/7] Packaging Updater..." -ForegroundColor Yellow
+Write-Host "[4/6] Packaging Updater..." -ForegroundColor Yellow
 Push-Location player
 try {
     Invoke-PythonCommand "-m PyInstaller --noconfirm --clean --onefile --windowed --noupx --name Updater updater/main.py"
@@ -72,7 +72,7 @@ try {
 }
 
 # 5. Build Simple Audio Player
-Write-Host "[5/7] Packaging Main Application..." -ForegroundColor Yellow
+Write-Host "[5/6] Packaging Main Application..." -ForegroundColor Yellow
 Push-Location player
 try {
     # Set PYTHONPATH
@@ -88,20 +88,8 @@ try {
     Pop-Location
 }
 
-# 6. Apply modified winsdk binary naming patch
-Write-Host "[6/7] Applying WinRT binary patch..." -ForegroundColor Yellow
-if (Test-Path "winsdk/_winrt.pyd") {
-    Copy-Item -Path "winsdk/_winrt.pyd" -Destination "player/dist/SimpleAudioPlayer/_winrt.pyd" -Force
-    if (Test-Path "player/dist/SimpleAudioPlayer/winsdk_winrt.pyd") {
-        Remove-Item -Path "player/dist/SimpleAudioPlayer/winsdk_winrt.pyd" -Force
-    }
-    Write-Host "WinRT binary patch applied successfully (_winrt.pyd copied, winsdk_winrt.pyd removed)." -ForegroundColor Green
-} else {
-    Write-Warning "winsdk/_winrt.pyd not found. Skipping patch. The build may crash on media controls."
-}
-
-# 7. Build Installer using Inno Setup
-Write-Host "[7/7] Compiling Installer (Inno Setup)..." -ForegroundColor Yellow
+# 6. Build Installer using Inno Setup
+Write-Host "[6/6] Compiling Installer (Inno Setup)..." -ForegroundColor Yellow
 $iscc = "iscc"
 if (-not (Get-Command "iscc" -ErrorAction SilentlyContinue)) {
     $common_paths = @(

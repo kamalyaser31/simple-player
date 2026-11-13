@@ -6,9 +6,9 @@ import time
 
 from gettext import gettext as _
 
-import mpv
 import wx
 
+from core.mpv_engine import create_mpv
 from helpers.file_helpers import show_name
 from ui import dialogs
 from helpers.utils import format_time
@@ -290,7 +290,7 @@ def _mk_probe():
         "idle": "yes",
     }
     try:
-        return mpv.MPV(**opts)
+        return create_mpv(**opts)
     except Exception:
         return None
 

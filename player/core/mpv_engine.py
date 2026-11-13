@@ -1,3 +1,4 @@
+import locale
 import os
 
 import mpv
@@ -20,6 +21,13 @@ MEDIA_KEYS_OPTION = "input-media-keys"
 MPV_DEFAULT_CACHE_SECS = 3600000
 
 
+def create_mpv(**options):
+    # libmpv 0.36+ refuses to start unless LC_NUMERIC is "C". mpv.py sets it
+    # once at import, but wx.Locale changes it again for the UI language.
+    locale.setlocale(locale.LC_NUMERIC, "C")
+    return mpv.MPV(**options)
+
+
 class MpvEngine:
     def __init__(self, on_end_file=None, on_ab_last_pass=None):
         self._on_end_file = on_end_file
@@ -38,7 +46,7 @@ class MpvEngine:
 
     def _create_core(self, window_id=None):
         options = self._create_core_options(window_id)
-        return mpv.MPV(**options)
+        return create_mpv(**options)
 
     def _create_core_options(self, window_id=None):
         options = {
@@ -428,7 +436,7 @@ class MpvEngine:
         if device:
             options["audio_device"] = device
         try:
-            test_mpv = mpv.MPV(**options)
+            test_mpv = create_mpv(**options)
         except Exception:
             return False
 

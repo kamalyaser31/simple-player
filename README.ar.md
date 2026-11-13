@@ -58,7 +58,7 @@ python -m PyInstaller --noconfirm SimpleAudioPlayer.spec
 iscc player/simple_audio_player.iss
 ```
 
-شغّل بناء الإصدار المحلي كاملًا، وهو يبني أيضًا `Updater.exe` ويطبّق رقعة `winsdk/_winrt.pyd` التي يحتاجها الإصدار:
+شغّل بناء الإصدار المحلي كاملًا، وهو يبني أيضًا `Updater.exe` وينزّل `mpv.dll`:
 
 ```powershell
 .\build_test.ps1

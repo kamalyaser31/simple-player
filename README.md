@@ -58,7 +58,7 @@ Build the installer with Inno Setup, from the repository root, after the folder 
 iscc player/simple_audio_player.iss
 ```
 
-Run the whole local release build, which also builds `Updater.exe` and applies the `winsdk/_winrt.pyd` patch the release needs:
+Run the whole local release build, which also builds `Updater.exe` and downloads `mpv.dll`:
 
 ```powershell
 .\build_test.ps1

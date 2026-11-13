@@ -96,7 +96,6 @@ def _check_packaging(player, repository, spec, errors):
         player / "mpv.dll",
         player / "sounds" / "speaker_test.wav",
         player / "updater" / "main.py",
-        repository / "winsdk" / "_winrt.pyd",
     )
     for path in required:
         if not path.is_file():

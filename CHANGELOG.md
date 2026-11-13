@@ -1,5 +1,9 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-14: fix(mpv): reset LC_NUMERIC to C before every mpv core (create_mpv), because libmpv 0.42 refused to start after wx.Locale set the UI language, and the packaged app showed «Could not initialize the application».
+
+- 2026-11-14: build(smtc): replace winsdk with the modular winrt packages, dropping the _winrt.pyd swap from both builds; on branch mpv-update.
+
 - 2026-11-14: feat(loop): play the A-B section a set number of times (`\` key, «مرات تشغيل التحديد»), announcing the count with point B and «التكرار الأخير» when the last pass begins; on branch mpv-update.
 
 - 2026-11-13: chore(mpv): upgrade libmpv to 0.42 (shinchiro 20261111) and python-mpv to 1.0.8 with one loader patch, adapting end-file reasons, the duration probe and volume-max; with mpv.dll moved out of git and fetched at build time by player/scripts/fetch_mpv.py; on branch mpv-update until Kamal tests it live.

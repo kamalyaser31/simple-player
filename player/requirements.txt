@@ -3,7 +3,10 @@ pynput
 appGuard
 accessible_output3
 py-yt-search
-winsdk
+winrt-runtime
+winrt-Windows.Foundation
+winrt-Windows.Media
+winrt-Windows.Media.Playback
 certifi
 pyaudio
 lameenc

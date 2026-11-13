@@ -44,8 +44,8 @@ a = Analysis(
     binaries=binaries,
     datas=datas,
     hiddenimports=[
-        "winsdk.windows.media",
-        "winsdk.windows.media.playback",
+        "winrt.windows.media",
+        "winrt.windows.media.playback",
     ],
     hookspath=[],
     hooksconfig={},

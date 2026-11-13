@@ -11,13 +11,13 @@ from actions import (
 )
 
 try:
-    from winsdk.windows.media import (
+    from winrt.windows.media import (
         MediaPlaybackStatus,
         MediaPlaybackType,
         SystemMediaTransportControlsButton,
         SystemMediaTransportControlsTimelineProperties,
     )
-    from winsdk.windows.media.playback import MediaPlayer
+    from winrt.windows.media.playback import MediaPlayer
 
     _WINSDK_OK = True
 except Exception:
