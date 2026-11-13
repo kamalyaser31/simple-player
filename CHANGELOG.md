@@ -1,6 +1,6 @@
 # سجل التغييرات (CHANGELOG)
 
-- 2026-11-13: chore(mpv): upgrade libmpv to 0.42 (shinchiro 20261111) and python-mpv to 1.0.8 with one loader patch, adapting end-file reasons, the duration probe and volume-max; on branch mpv-update until Kamal tests it live.
+- 2026-11-13: chore(mpv): upgrade libmpv to 0.42 (shinchiro 20261111) and python-mpv to 1.0.8 with one loader patch, adapting end-file reasons, the duration probe and volume-max; with mpv.dll moved out of git and fetched at build time by player/scripts/fetch_mpv.py; on branch mpv-update until Kamal tests it live.
 
 - 2026-11-13: fix(silence): put silence removal first in the mpv filter chain (af pre), because dynaudnorm, on by default, lifted the background noise of pauses above the threshold so nothing was trimmed; and refuse a threshold of 0 dB or more, which muted all audio.
 
