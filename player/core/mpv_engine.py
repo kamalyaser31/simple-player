@@ -351,6 +351,13 @@ class MpvEngine:
     def get_duration(self):
         return getattr(self._mpv, "duration", None)
 
+    def get_media_title(self):
+        # The file's title tag, else its file name without the folder.
+        try:
+            return self._mpv.media_title
+        except Exception:
+            return None
+
     def set_silence_removal_filter(self, enabled, filter_graph):
         if not self._remove_filter_by_label(SILENCE_FILTER_LABEL):
             return False

@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-14: fix(smtc): show the file's title tag (mpv media-title), or the file name, in the Windows media controls instead of the full path; on branch mpv-update.
+
 - 2026-11-14: fix(mpv): reset LC_NUMERIC to C before every mpv core (create_mpv), because libmpv 0.42 refused to start after wx.Locale set the UI language, and the packaged app showed «Could not initialize the application».
 
 - 2026-11-14: build(smtc): replace winsdk with the modular winrt packages, dropping the _winrt.pyd swap from both builds; on branch mpv-update.

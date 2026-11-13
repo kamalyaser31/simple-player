@@ -610,8 +610,10 @@ class AppController:
         path = str(self._player.current_path or "").strip()
         has_media = bool(path)
         title = str(self._player.current_title or "").strip()
+        if not title and has_media:
+            title = str(self._player.get_media_title() or "").strip()
         if not title:
-            title = path
+            title = os.path.basename(path)
         is_playing = has_media and (not self._player.is_paused())
         duration = self._player.get_duration() if has_media else None
         position = self._player.get_elapsed() if has_media else None

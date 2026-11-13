@@ -93,5 +93,8 @@ class PlayerPlaybackMixin:
     def get_duration(self):
         return self._engine.get_duration()
 
+    def get_media_title(self):
+        return self._engine.get_media_title()
+
     def play_test_speakers_sound(self, path):
         return self._engine.play_test_sound(path)
