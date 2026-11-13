@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-13: release: 2.0.0 (subscriptions, Arabic review, new bilingual guide, installer fixes), with bilingual update notes in info.json and both What's New pages.
+
 - 2026-11-13: build(installer): stop forcing default file associations (they broke after uninstall), add Arabic and Czech setup languages, remove runtime yt-dlp/deno on uninstall, drop the Start-menu page, fail when Updater.exe is missing, pin Inno Setup 6.7.3 in release.yml, and let build_test.ps1 use an active venv.
 
 - 2026-11-13: fix: Reset settings refreshes the other Preferences pages, global shortcuts accept Home/End/Delete/Backspace, a video opened in folder mode stays in the list and plays first, seek-step labels and the YouTube components prompt are translated, and Backup and restore can export/import favorites and subscriptions.

@@ -1,4 +1,24 @@
 {
-  "version": "1.5.0",
-  "changes": "sume fixes."
+  "version": "2.0.0",
+  "changes": [
+    "What's new in 2.0:",
+    "- YouTube subscriptions without a Google account: follow channels and save playlists. Ctrl+U lists the newest videos of your channels, Ctrl+Shift+U manages them, Ctrl+S subscribes from search results.",
+    "- New setting: minutes to load ahead while a YouTube video plays.",
+    "- YouTube search now respects your search language and region.",
+    "- Backup and restore can now export and import your favorites and subscriptions.",
+    "- New option: switch to the player when you open a file from File Explorer while it runs.",
+    "- Many fixes, including: Reset settings now updates all pages, more keys work as global shortcuts, and a video opened with its folder now plays first.",
+    "- Improved Arabic translation and a new user guide in English and Arabic (F1).",
+    "- The installer is now in Arabic, English and Czech, and no longer takes over your file types.",
+    "",
+    "الجديد في 2.0:",
+    "- اشتراكات YouTube بلا حساب Google: تابع القنوات واحفظ قوائم التشغيل. Ctrl+U لأحدث مقاطع قنواتك، وCtrl+Shift+U لإدارتها، وCtrl+S للاشتراك من نتائج البحث.",
+    "- إعداد جديد: عدد دقائق التحميل المسبق أثناء تشغيل مقطع YouTube.",
+    "- صار البحث في YouTube يلتزم لغة البحث ومنطقته اللتين تختارهما.",
+    "- صار النسخ الاحتياطي يصدّر المفضلة والاشتراكات ويستوردها.",
+    "- خيار جديد: الانتقال إلى المشغل حين تفتح ملفًا من مستكشف الملفات وهو يعمل.",
+    "- إصلاحات كثيرة، منها: إعادة تعيين الإعدادات تحدّث الصفحات كلها، ومفاتيح أكثر تعمل في الاختصارات العامة، وملف الفيديو المفتوح مع مجلده يُشغَّل أولًا.",
+    "- ترجمة عربية محسّنة، ودليل استخدام جديد بالعربية والإنجليزية (F1).",
+    "- صار المثبّت بالعربية والإنجليزية والتشيكية، ولم يعد يستولي على أنواع ملفاتك."
+  ]
 }

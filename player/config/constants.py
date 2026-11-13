@@ -1,5 +1,5 @@
 APP_NAME = "Simple Audio Player"
-APP_VERSION = "1.5.0"
+APP_VERSION = "2.0.0"
 DOMAIN = "SimpleAudioPlayer"
 
 CONFIG_FILENAME = "settings.ini"
