@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-14: chore: merged mpv-update into main and pushed it, together with the silence-removal fix; not yet released.
+
 - 2026-11-14: test: Kamal confirmed live with NVDA the mpv-update branch (mpv 0.42, section plays, winrt media controls, start under the Arabic UI); the media-title change in 459b3a0 was not in the tested build.
 
 - 2026-11-14: fix(smtc): show the file's title tag (mpv media-title), or the file name, in the Windows media controls instead of the full path; on branch mpv-update.
