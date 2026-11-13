@@ -17,6 +17,7 @@ from config.constants import (
 )
 from helpers.http_utils import open_url
 
+
 UA = "SimpleAudioPlayer/1.0"
 
 
@@ -165,21 +166,3 @@ def _emit(on_update, size, got):
             "pct": float(pct),
         }
     )
-
-
-def fmt_bytes(value):
-    try:
-        num = int(value)
-    except Exception:
-        num = 0
-    if num <= 0:
-        return "Unknown"
-    size = float(num)
-    units = ("B", "KB", "MB", "GB", "TB")
-    idx = 0
-    while size >= 1024.0 and idx < len(units) - 1:
-        size /= 1024.0
-        idx += 1
-    if idx == 0:
-        return f"{int(size)} {units[idx]}"
-    return f"{size:.2f} {units[idx]}"

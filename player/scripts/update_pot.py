@@ -86,6 +86,7 @@ def main():
         "--language=Python",
         "--from-code=UTF-8",
         "--keyword=_",
+        "--keyword=ngettext:1,2",
         "--sort-by-file",
         "--files-from",
         str(list_path),

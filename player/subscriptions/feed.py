@@ -1,4 +1,5 @@
 import datetime
+import gettext
 import re
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -172,10 +173,15 @@ def age_label(published, now):
     if days == 1:
         return _("yesterday")
     if days <= 30:
-        return _("{n} days ago").format(n=days)
-    if days < 365:
-        return _("{n} months ago").format(n=min(11, days // 30))
-    return _("{n} years ago").format(n=days // 365)
+        n = days
+        text = gettext.ngettext("{n} day ago", "{n} days ago", n)
+    elif days < 365:
+        n = min(11, days // 30)
+        text = gettext.ngettext("{n} month ago", "{n} months ago", n)
+    else:
+        n = days // 365
+        text = gettext.ngettext("{n} year ago", "{n} years ago", n)
+    return text.format(n=n)
 
 
 def feed_row(item, kind, now):

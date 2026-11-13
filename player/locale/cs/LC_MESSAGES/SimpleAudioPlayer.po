@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 01:23+0200\n"
+"POT-Creation-Date: 2026-11-13 01:47+0200\n"
 "PO-Revision-Date: 2026-03-07 07:46+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 3.8\n"
 
 #: app.py:196
@@ -25,9 +26,9 @@ msgstr "Odkaz se nepodařilo otevřít."
 
 #: app.py:197 app_actions/bookmark_actions.py:100
 #: app_actions/file_actions.py:267 app_actions/file_actions.py:571
-#: app_actions/help_actions.py:62 update/actions.py:95 update/actions.py:141
-#: update/actions.py:147 youtube/flow.py:467 youtube/flow.py:834
-#: youtube/startup.py:158
+#: app_actions/help_actions.py:62 update/actions.py:96 update/actions.py:142
+#: update/actions.py:148 youtube/flow.py:467 youtube/flow.py:834
+#: youtube/startup.py:142
 msgid "Error"
 msgstr "Chyba"
 
@@ -69,7 +70,7 @@ msgstr "Nepodařilo se otevřít prohlížeč."
 msgid "Bookmark '{name}' added at {time}."
 msgstr ""
 
-#: app_actions/bookmark_actions.py:44 youtube/startup.py:60
+#: app_actions/bookmark_actions.py:44 youtube/startup.py:62
 msgid "Success"
 msgstr ""
 
@@ -779,7 +780,7 @@ msgid "Custom value"
 msgstr "Vlastní interval"
 
 #: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
-#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:160
+#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:54
 msgid "Play"
 msgstr "Přehrát"
 
@@ -1156,6 +1157,10 @@ msgstr "Prosím, restartujte aplikaci, aby se změna jazyka projevila."
 msgid "Preferences"
 msgstr "Nastavení"
 
+#: helpers/utils.py:33
+msgid "Unknown"
+msgstr "Neznámé"
+
 #: playlist/info.py:57
 msgid "Loading playlist info"
 msgstr "Načítají se informace o playlistu"
@@ -1198,39 +1203,48 @@ msgstr "Přehráno: {value}"
 msgid "Remaining: {value}"
 msgstr "Zbývá: {value}"
 
-#: subscriptions/feed.py:137 subscriptions/feed.py:145
+#: subscriptions/feed.py:138 subscriptions/feed.py:146
 #, fuzzy
 msgid "This is not a valid YouTube channel or playlist link."
 msgstr "Toto není platný odkaz na YouTube."
 
-#: subscriptions/feed.py:149
+#: subscriptions/feed.py:150
 #, fuzzy
 msgid "Could not find the channel for this link."
 msgstr "Nepodařilo se najít soubor {name}."
 
-#: subscriptions/feed.py:171 subscriptions/run_tests.py:127
+#: subscriptions/feed.py:172 subscriptions/run_tests.py:128
 msgid "today"
 msgstr ""
 
-#: subscriptions/feed.py:173 subscriptions/run_tests.py:128
+#: subscriptions/feed.py:174 subscriptions/run_tests.py:129
 msgid "yesterday"
 msgstr ""
 
-#: subscriptions/feed.py:175 subscriptions/run_tests.py:129
-#: subscriptions/run_tests.py:137
+#: subscriptions/feed.py:177 subscriptions/run_tests.py:131
+#: subscriptions/run_tests.py:144
 #, python-brace-format
-msgid "{n} days ago"
-msgstr ""
+msgid "{n} day ago"
+msgid_plural "{n} days ago"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: subscriptions/feed.py:177 subscriptions/run_tests.py:130
+#: subscriptions/feed.py:180 subscriptions/run_tests.py:134
 #, python-brace-format
-msgid "{n} months ago"
-msgstr ""
+msgid "{n} month ago"
+msgid_plural "{n} months ago"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: subscriptions/feed.py:178 subscriptions/run_tests.py:131
+#: subscriptions/feed.py:183 subscriptions/run_tests.py:137
 #, python-brace-format
-msgid "{n} years ago"
-msgstr ""
+msgid "{n} year ago"
+msgid_plural "{n} years ago"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #: ui/audio_settings.py:5
 msgid "Advance to the next file"
@@ -1381,7 +1395,7 @@ msgid "Edit"
 msgstr "Úpravy"
 
 #: ui/bookmark_dlg.py:29 ui/dialogs.py:245 ui/dialogs.py:268
-#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:162
+#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:56
 msgid "Close"
 msgstr "Zavřít"
 
@@ -1408,8 +1422,7 @@ msgid "OK"
 msgstr "OK"
 
 #: ui/dialogs.py:73 ui/dialogs.py:199 ui/task_dialogs.py:18
-#: ui/task_dialogs.py:78 ui/yt_dialogs.py:57 ui/yt_dialogs.py:113
-#: youtube/ui_utils.py:69
+#: ui/task_dialogs.py:78 youtube/ui_utils.py:71
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -1996,7 +2009,7 @@ msgstr "Odstraňování ticha"
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:195
+#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:176
 msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
@@ -2336,11 +2349,11 @@ msgstr "Chování smíšených odkazů na video a playlist"
 msgid "Ask every time"
 msgstr "Vždy se zeptat"
 
-#: ui/prefs/youtube.py:25 youtube/ui_utils.py:67
+#: ui/prefs/youtube.py:25 youtube/ui_utils.py:69
 msgid "Play the video"
 msgstr "Přehrát video"
 
-#: ui/prefs/youtube.py:26 youtube/ui_utils.py:68
+#: ui/prefs/youtube.py:26 youtube/ui_utils.py:70
 msgid "Open the playlist"
 msgstr "Otevřít playlist"
 
@@ -2468,60 +2481,60 @@ msgstr ""
 "kvalitu videa, chování smíšených odkazů a kanál pro stahování aktualizací "
 "knihovny yt-dlp."
 
-#: ui/shortcut_settings.py:18
+#: ui/shortcut_settings.py:19
 msgid "Set Shortcut"
 msgstr "Nastavte zkratku"
 
-#: ui/shortcut_settings.py:24
+#: ui/shortcut_settings.py:25
 msgid "Press the desired shortcut. Escape cancels."
 msgstr "Stiskněte požadovanou zkratku. Escapem operaci zrušíte."
 
-#: ui/shortcut_settings.py:76
+#: ui/shortcut_settings.py:57
 msgid "Set Global Shortcut"
 msgstr "Nastavte globální zkratku"
 
-#: ui/shortcut_settings.py:87
+#: ui/shortcut_settings.py:68
 msgid "Press the desired global shortcut. Escape cancels."
 msgstr ""
 "Stiskněte požadovanou globální klávesovou zkratku. Escapem operaci zrušíte."
 
-#: ui/shortcut_settings.py:199
+#: ui/shortcut_settings.py:180
 msgid "Action"
 msgstr "Akce"
 
-#: ui/shortcut_settings.py:200
+#: ui/shortcut_settings.py:181
 msgid "Primary Shortcut"
 msgstr "Primární zkratka"
 
-#: ui/shortcut_settings.py:202
+#: ui/shortcut_settings.py:183
 msgid "Secondary Shortcut"
 msgstr "Sekundární zkratka"
 
-#: ui/shortcut_settings.py:203
+#: ui/shortcut_settings.py:184
 msgid "Edit Primary Shortcut"
 msgstr "Změnit primární zkratku"
 
-#: ui/shortcut_settings.py:208
+#: ui/shortcut_settings.py:189
 msgid "Edit Secondary Shortcut"
 msgstr "Změnit sekundární zkratku"
 
-#: ui/shortcut_settings.py:210
+#: ui/shortcut_settings.py:191
 msgid "Reset to Defaults"
 msgstr "Obnovit výchozí"
 
-#: ui/shortcut_settings.py:314 ui/shortcut_settings.py:340
+#: ui/shortcut_settings.py:295 ui/shortcut_settings.py:321
 msgid "That shortcut is already assigned to another action."
 msgstr "Tato zkratka už je přiřazena k jinému příkazu."
 
-#: ui/shortcut_settings.py:315 ui/shortcut_settings.py:341
+#: ui/shortcut_settings.py:296 ui/shortcut_settings.py:322
 msgid "Shortcut Conflict"
 msgstr "Konflikt klávesových zkratek"
 
-#: ui/shortcut_settings.py:382
+#: ui/shortcut_settings.py:363
 msgid "Reset all shortcuts to defaults?"
 msgstr "Opravdu obnovit všechny zkratky na výchozí hodnoty?"
 
-#: ui/shortcut_settings.py:383
+#: ui/shortcut_settings.py:364
 msgid "Confirm Reset"
 msgstr "Potvrdit obnovení"
 
@@ -2837,101 +2850,101 @@ msgstr "Ano"
 msgid "No"
 msgstr "Ne"
 
-#: ui/yt_dialogs.py:158 youtube/results.py:23 youtube/ui_utils.py:181
+#: ui/yt_dialogs.py:52 youtube/results.py:23 youtube/ui_utils.py:165
 msgid "Videos"
 msgstr "Videa"
 
-#: ui/yt_dialogs.py:161 ui/yt_dialogs.py:249
+#: ui/yt_dialogs.py:55 ui/yt_dialogs.py:143
 msgid "Download"
 msgstr "Stáhnout"
 
-#: ui/yt_dialogs.py:244
+#: ui/yt_dialogs.py:138
 msgid "Copy link\tCtrl+C"
 msgstr "Zkopírovat odkaz\tCtrl+C"
 
-#: ui/yt_dialogs.py:245
+#: ui/yt_dialogs.py:139
 msgid "Open in browser\tCtrl+B"
 msgstr "Otevřít v prohlížeči\tCtrl+B"
 
-#: ui/yt_dialogs.py:246
+#: ui/yt_dialogs.py:140
 msgid "Navigate to channel\tCtrl+N"
 msgstr "Přejít na kanál\tCtrl+N"
 
-#: ui/yt_dialogs.py:247
+#: ui/yt_dialogs.py:141
 #, fuzzy
 msgid "Subscribe to channel\tCtrl+S"
 msgstr "Přejít na kanál\tCtrl+N"
 
-#: update/actions.py:43
+#: update/actions.py:44
 msgid "Updating yt-dlp..."
 msgstr "Aktualizuje se yt-dlp..."
 
-#: update/actions.py:55
+#: update/actions.py:56
 msgid "Updating yt-dlp"
 msgstr "Aktualizuje se yt-dlp"
 
-#: update/actions.py:60
+#: update/actions.py:61
 msgid "Update cancelled."
 msgstr "Aktualizace zrušena."
 
-#: update/actions.py:60
+#: update/actions.py:61
 msgid "yt-dlp update cancelled."
 msgstr "Aktualizace yt-dlp zrušena."
 
-#: update/actions.py:63
+#: update/actions.py:64
 msgid "Could not update yt-dlp."
 msgstr "Nepodařilo se aktualizovat yt-dlp."
 
-#: update/actions.py:64 update/actions.py:84 update/actions.py:273
+#: update/actions.py:65 update/actions.py:85 update/actions.py:274
 msgid "yt-dlp update"
 msgstr "Aktualizace yt-dlp"
 
-#: update/actions.py:73
+#: update/actions.py:74
 #, python-brace-format
 msgid "yt-dlp updated from {old} to {new} on '{ch}' channel."
 msgstr ""
 "Knihovna yt-dlp byla aktualizována z verze {old} na verzi {new} z kanálu "
 "'{ch}'."
 
-#: update/actions.py:74 update/actions.py:75 update/actions.py:80
-#: update/actions.py:258 update/actions.py:259
+#: update/actions.py:75 update/actions.py:76 update/actions.py:81
+#: update/actions.py:259 update/actions.py:260
 msgid "unknown"
 msgstr "neznámé"
 
-#: update/actions.py:79
+#: update/actions.py:80
 #, python-brace-format
 msgid "yt-dlp is already up to date ({ver}) on '{ch}' channel."
 msgstr "Knihovna yt-dlp je už aktuální ({ver}) z kanálu '{ch}'."
 
-#: update/actions.py:94
+#: update/actions.py:95
 msgid "Could not check for updates."
 msgstr "Nepodařilo se vyhledat aktualizace."
 
-#: update/actions.py:109
+#: update/actions.py:110
 msgid "You are using the latest version."
 msgstr "Používáte nejnovější verzi."
 
-#: update/actions.py:110 youtube/startup.py:45
+#: update/actions.py:111 youtube/startup.py:47
 msgid "Info"
 msgstr "Info"
 
-#: update/actions.py:132
+#: update/actions.py:133
 msgid "Downloading update"
 msgstr "Stahuje se aktualizace"
 
-#: update/actions.py:135
+#: update/actions.py:136
 msgid "Downloading update package..."
 msgstr "Stahují se soubory aktualizace..."
 
-#: update/actions.py:140
+#: update/actions.py:141
 msgid "Could not download update."
 msgstr "Aktualizaci se nepodařilo stáhnout."
 
-#: update/actions.py:146
+#: update/actions.py:147
 msgid "Could not start the updater."
 msgstr "Nepodařilo se spustit updater."
 
-#: update/actions.py:262
+#: update/actions.py:263
 #, python-brace-format
 msgid ""
 "A newer yt-dlp version is available on '{ch}' channel.\n"
@@ -2941,11 +2954,11 @@ msgid ""
 "Do you want to update now?"
 msgstr ""
 
-#: update/actions.py:287
+#: update/actions.py:288
 msgid "Checking for app updates"
 msgstr "Vyhledávají se aktualizace"
 
-#: update/actions.py:479
+#: update/actions.py:480
 #, python-brace-format
 msgid ""
 "Total size: {size}\n"
@@ -3177,39 +3190,39 @@ msgstr "Žádný odkaz na kanál."
 msgid "Loading more videos..."
 msgstr "Načítají se další videa..."
 
-#: youtube/startup.py:44
+#: youtube/startup.py:46
 msgid "YouTube components are already installed."
 msgstr "YouTube komponenty jsou už nainstalovány."
 
-#: youtube/startup.py:59
+#: youtube/startup.py:61
 msgid "YouTube components were downloaded successfully."
 msgstr "YouTube komponenty byly úspěšně staženy."
 
-#: youtube/startup.py:68
+#: youtube/startup.py:70
 msgid "Downloading YouTube components"
 msgstr "Stahují se YouTube komponenty"
 
-#: youtube/startup.py:155
+#: youtube/startup.py:139
 msgid "Could not install YouTube components."
 msgstr "Nepodařilo se nainstalovat YouTube komponenty."
 
-#: youtube/ui_utils.py:29
+#: youtube/ui_utils.py:31
 msgid "Enter a YouTube video or playlist link."
 msgstr "Zadejte odkaz na video nebo playlist na YouTube."
 
-#: youtube/ui_utils.py:30 youtube/ui_utils.py:57
+#: youtube/ui_utils.py:32 youtube/ui_utils.py:59
 msgid "Open YouTube Link"
 msgstr "Otevřít odkaz na YouTube"
 
-#: youtube/ui_utils.py:43
+#: youtube/ui_utils.py:45
 msgid "Enter search text."
 msgstr "Zadejte hledaný výraz."
 
-#: youtube/ui_utils.py:44
+#: youtube/ui_utils.py:46
 msgid "Search YouTube"
 msgstr "Vyhledat na YouTube"
 
-#: youtube/ui_utils.py:63
+#: youtube/ui_utils.py:65
 msgid ""
 "The app detected that this YouTube link contains a playlist and a video ID. "
 "Choose how you want to proceed."
@@ -3217,11 +3230,11 @@ msgstr ""
 "Aplikace zjistila, že tento odkaz na YouTube obsahuje zároveň ID konkrétního "
 "videa a ID celého playlistu. Vyberte, co chcete udělat."
 
-#: youtube/ui_utils.py:130
+#: youtube/ui_utils.py:132
 msgid "Select download folder"
 msgstr "Vyberte složku pro stažení"
 
-#: youtube/ui_utils.py:146
+#: youtube/ui_utils.py:148
 #, python-brace-format
 msgid ""
 "Total size: {total}\n"
@@ -3232,24 +3245,20 @@ msgstr ""
 "Staženo: {got}\n"
 "Průběh: {pct:.2f} procent"
 
-#: youtube/ui_utils.py:159
-msgid "Unknown"
-msgstr "Neznámé"
-
-#: youtube/ui_utils.py:174
+#: youtube/ui_utils.py:158
 msgid "Search results"
 msgstr "Výsledky vyhledávání"
 
-#: youtube/ui_utils.py:176
+#: youtube/ui_utils.py:160
 msgid "Playlist videos"
 msgstr "Videa v playlistu"
 
-#: youtube/ui_utils.py:178
+#: youtube/ui_utils.py:162
 #, fuzzy
 msgid "Latest videos"
 msgstr "Videa v playlistu"
 
-#: youtube/ui_utils.py:180
+#: youtube/ui_utils.py:164
 #, fuzzy
 msgid "Channel videos"
 msgstr "Videa v playlistu"

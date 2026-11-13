@@ -1,5 +1,9 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-13: docs: rewrite the user guide and README in English and Arabic as matching mirrors verified against the code, and replace the two stale agent references with one PROJECT_REFERENCE.md.
+- 2026-11-13: fix(i18n): review the whole Arabic catalog (meaning errors, calques, unified terms, restored menu accelerators, no fuzzy left) and add Arabic/Czech plural forms for the video age labels.
+- 2026-11-13: refactor: remove dead dialogs (CustomSlider, old TaskDlg/BusyDlg/PlaylistDlg) and merge duplicated JSON store, key-map and byte-size helpers into helpers/.
+
 - 2026-11-13: feat(youtube): add local YouTube subscriptions without a Google login: channels and playlists saved in subscriptions.json, latest videos from RSS (Ctrl+U), a management dialog (Ctrl+Shift+U), and subscribe from search results (Ctrl+S).
 
 - 2026-11-13: feat(youtube): add a "Minutes to load ahead while playing" setting that caps mpv read-ahead with cache-secs, so switching videos early need not download the whole audio; 0, the default, keeps mpv's unlimited read-ahead.

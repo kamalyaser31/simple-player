@@ -12,6 +12,7 @@ import tempfile
 import time
 import traceback
 from gettext import gettext as _
+from gettext import ngettext
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -126,15 +127,21 @@ def test_age_label():
     now = time.time()
     assert age_label(now - 3600, now) == _("today")
     assert age_label(now - 86400 * 1.5, now) == _("yesterday")
-    assert age_label(now - 86400 * 5, now) == _("{n} days ago").format(n=5)
-    assert age_label(now - 86400 * 70, now) == _("{n} months ago").format(n=2)
-    assert age_label(now - 86400 * 800, now) == _("{n} years ago").format(n=2)
+    assert age_label(now - 86400 * 5, now) == ngettext(
+        "{n} day ago", "{n} days ago", 5
+    ).format(n=5)
+    assert age_label(now - 86400 * 70, now) == ngettext(
+        "{n} month ago", "{n} months ago", 2
+    ).format(n=2)
+    assert age_label(now - 86400 * 800, now) == ngettext(
+        "{n} year ago", "{n} years ago", 2
+    ).format(n=2)
 
 
 def test_feed_row():
     now = time.time()
     item = YtItem("Title", "u", "", "Chan", published=now - 86400 * 5)
-    age = _("{n} days ago").format(n=5)
+    age = ngettext("{n} day ago", "{n} days ago", 5).format(n=5)
     assert feed_row(item, "feed", now) == f"Title - Chan - {age}"
     assert feed_row(item, "channel", now) == f"Title - {age}"
     assert feed_row(item, "search", now) == "Title"

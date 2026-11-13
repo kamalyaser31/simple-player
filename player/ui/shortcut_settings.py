@@ -9,6 +9,7 @@ from config.shortcut_utils import (
     shortcuts_equal,
 )
 from config.shortcuts import Shortcut
+from core.keyboard_handler import MODIFIER_KEYS, SPECIAL_KEYS
 
 
 class ShortcutCaptureDialog(wx.Dialog):
@@ -39,29 +40,9 @@ class ShortcutCaptureDialog(wx.Dialog):
         self.EndModal(wx.ID_OK)
 
 
-_MODIFIER_KEYS = {
-    keyboard.Key.ctrl: "ctrl",
-    keyboard.Key.ctrl_l: "ctrl",
-    keyboard.Key.ctrl_r: "ctrl",
-    keyboard.Key.shift: "shift",
-    keyboard.Key.shift_l: "shift",
-    keyboard.Key.shift_r: "shift",
-    keyboard.Key.alt: "alt",
-    keyboard.Key.alt_l: "alt",
-    keyboard.Key.alt_r: "alt",
-    keyboard.Key.cmd: "win",
-    keyboard.Key.cmd_l: "win",
-    keyboard.Key.cmd_r: "win",
-}
-
 _SPECIAL_KEYS = {
-    keyboard.Key.space: "space",
-    keyboard.Key.left: "left",
-    keyboard.Key.right: "right",
-    keyboard.Key.up: "up",
-    keyboard.Key.down: "down",
-    keyboard.Key.page_up: "page_up",
-    keyboard.Key.page_down: "page_down",
+    **SPECIAL_KEYS,
+    # Only the shortcut editor accepts these; the global listener ignores them.
     keyboard.Key.home: "home",
     keyboard.Key.end: "end",
     keyboard.Key.delete: "delete",
@@ -101,7 +82,7 @@ class GlobalShortcutCaptureDialog(wx.Dialog):
         self._listener.start()
 
     def _on_press(self, key):
-        modifier = _MODIFIER_KEYS.get(key)
+        modifier = MODIFIER_KEYS.get(key)
         if modifier is not None:
             self._modifiers.add(modifier)
             return
@@ -117,7 +98,7 @@ class GlobalShortcutCaptureDialog(wx.Dialog):
         wx.CallAfter(self._finish_ok, shortcut)
 
     def _on_release(self, key):
-        modifier = _MODIFIER_KEYS.get(key)
+        modifier = MODIFIER_KEYS.get(key)
         if modifier is not None:
             self._modifiers.discard(modifier)
 

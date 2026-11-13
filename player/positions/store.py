@@ -1,7 +1,7 @@
 import os
 import time
 
-from .fileio import read_json, write_json
+from helpers.json_store import read_json, write_json
 from .model import Pos, pos_from_dict, pos_to_dict
 
 

@@ -3,6 +3,8 @@ import queue
 import wx
 from gettext import gettext as _
 
+from helpers.utils import fmt_bytes
+
 from ui.task_dialogs import TaskDlg
 from ui.yt_dialogs import MissingDlg
 from .components import (
@@ -127,28 +129,10 @@ def _fmt_status(data):
     title = f"Downloading {name} {data.get('step', 0)} of {data.get('total', 0)}"
     if ver:
         title = f"{title} ({ver})"
-    size = _fmt_bytes(data.get("size", 0))
-    got = _fmt_bytes(data.get("downloaded", 0))
+    size = fmt_bytes(data.get("size", 0))
+    got = fmt_bytes(data.get("downloaded", 0))
     pct = f"{float(data.get('pct', 0.0)):.2f}%"
     return f"{title}\nTotal size: {size}\nDownloaded: {got}\nPercentage: {pct}"
-
-
-def _fmt_bytes(value):
-    try:
-        num = int(value)
-    except Exception:
-        num = 0
-    if num <= 0:
-        return "Unknown"
-    size = float(num)
-    units = ("B", "KB", "MB", "GB", "TB")
-    idx = 0
-    while size >= 1024.0 and idx < len(units) - 1:
-        size /= 1024.0
-        idx += 1
-    if idx == 0:
-        return f"{int(size)} {units[idx]}"
-    return f"{size:.2f} {units[idx]}"
 
 
 def _show_install_error(parent, err):

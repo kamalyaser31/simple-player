@@ -8,6 +8,7 @@ import wx
 from gettext import gettext as _
 
 from config.constants import APP_NAME, APP_VERSION
+from helpers.utils import fmt_bytes
 from ui.task_dialogs import BusyDialog, TaskDialog
 from ui.update_dialogs import AppUpdateDialog
 from update import service
@@ -473,8 +474,8 @@ def shutdown_updates():
 
 
 def _fmt_update_status(data):
-    size = service.fmt_bytes(data.get("size", 0))
-    got = service.fmt_bytes(data.get("downloaded", 0))
+    size = fmt_bytes(data.get("size", 0))
+    got = fmt_bytes(data.get("downloaded", 0))
     pct = float(data.get("pct", 0.0))
     return _("Total size: {size}\nDownloaded: {got}\nPercentage: {pct:.2f}%").format(
         size=size,
@@ -494,7 +495,7 @@ def _fmt_yt_status(data):
         title = f"{title} [{channel}]"
     if ver:
         title = f"{title} ({ver})"
-    size = service.fmt_bytes(data.get("size", 0))
-    got = service.fmt_bytes(data.get("downloaded", 0))
+    size = fmt_bytes(data.get("size", 0))
+    got = fmt_bytes(data.get("downloaded", 0))
     pct = float(data.get("pct", 0.0))
     return f"{title}\nTotal size: {size}\nDownloaded: {got}\nPercentage: {pct:.2f}%"

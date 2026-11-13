@@ -2,7 +2,7 @@ from pynput import keyboard
 
 from config.shortcuts import Shortcut
 
-_MODIFIER_MAP = {
+MODIFIER_KEYS = {
     keyboard.Key.ctrl: "ctrl",
     keyboard.Key.ctrl_l: "ctrl",
     keyboard.Key.ctrl_r: "ctrl",
@@ -17,7 +17,7 @@ _MODIFIER_MAP = {
     keyboard.Key.cmd_r: "win",
 }
 
-_SPECIAL_KEYS = {
+SPECIAL_KEYS = {
     keyboard.Key.space: "space",
     keyboard.Key.left: "left",
     keyboard.Key.right: "right",
@@ -65,7 +65,7 @@ class KeyboardHandler:
                 self._shortcut_index[(key, modifiers)] = action_id
 
     def _on_press(self, key):
-        modifier = _MODIFIER_MAP.get(key)
+        modifier = MODIFIER_KEYS.get(key)
         if modifier is not None:
             self._modifiers.add(modifier)
             return
@@ -82,7 +82,7 @@ class KeyboardHandler:
             self._on_action(action_id)
 
     def _on_release(self, key):
-        modifier = _MODIFIER_MAP.get(key)
+        modifier = MODIFIER_KEYS.get(key)
         if modifier is not None:
             self._modifiers.discard(modifier)
             return
@@ -93,8 +93,8 @@ class KeyboardHandler:
 
 
 def _key_token(key):
-    if key in _SPECIAL_KEYS:
-        return _SPECIAL_KEYS[key]
+    if key in SPECIAL_KEYS:
+        return SPECIAL_KEYS[key]
     name = getattr(key, "name", "")
     if name:
         text = str(name).lower()

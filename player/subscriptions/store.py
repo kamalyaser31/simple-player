@@ -2,7 +2,7 @@ import os
 import time
 from dataclasses import dataclass
 
-from favorites.fileio import read_json, write_json
+from helpers.json_store import read_json, write_json
 
 SUB_KINDS = ("channel", "playlist")
 CHANNEL_URL = "https://www.youtube.com/channel/"

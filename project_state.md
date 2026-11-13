@@ -3,7 +3,9 @@
 ## الملخص المعماري (Architectural Summary)
 - تطبيق مشغل صوتيات لسطح المكتب بنظام Windows مبني بلغة بايثون وواجهة wxPython ومحرك MPV (libmpv)، متوافق كلياً مع قارئات الشاشة (NVDA / Accessible Output 3).
 - وحدة البحث في يوتيوب تعتمد على استدعاءات مهيكلة ومكتبة `py_yt` مع آلية جلب مسبق (prefetching) عبر `yt-dlp`.
-- `PROJECT_REFERENCE.md` مضغوط بصيغة caveman (2026-09-29)؛ أصله الكامل في `%LOCALAPPDATA%\caveman-compress\backups\simple-player\PROJECT_REFERENCE.original.md`.
+- مرجع الوكيل التقني الوحيد `PROJECT_REFERENCE.md` في الجذر (أُعيدت كتابته 2026-11-13 من الشفرة، وحلّ محل `player/PROJECT_REFERENCE.md` و`TECHNICAL_REFERENCE.md`)؛ فيه ما يلزم لتعديل الشفرة وحده، ووصف الخصائص للمستخدم في `player/docs/{en,ar}/userguide.html`، وREADME موجز بلغتين (`README.md` و`README.ar.md`).
+- الأدلة باللغتين متطابقة البنية (المعرّفات والعناوين والجداول)، وأسماء الواجهة في العربية منقولة من ملف الترجمة؛ فمن عدّل نصاً في الواجهة عدّله في الدليلين.
+- مصطلحات الترجمة العربية: «مقطع/مقاطع» لمقطع YouTube («الفيديو» لصورة الفيديو وحدها)، و«مفعّل/معطّل» لإعلان الحالات، و«جارٍ»، و«تعذر» بلا شدة، وتنوين «ًا»، وYouTube بالحرف اللاتيني.
 
 ## آخر التعديلات والقرارات الهندسية (Recent Decisions & Fixes)
 1. **معالجة خطأ الكورووتين المعاد انتظاره (`cannot reuse already awaited coroutine`):**
@@ -40,7 +42,7 @@
    - `subscriptions/store.py`: `subscriptions.json` بجانب الإعدادات `{"version":1,"items":[{id,kind,name,url,added}]}`، والنوع `channel` أو `playlist`، والعرض الأحدث إضافةً أولاً.
    - `app_actions/subscription_actions.py` و`ui/subs_dlg.py`: `Ctrl+U` أحدث 50 مقطعاً من القنوات (القوائم لا تدخلها)، و`Ctrl+Shift+U` الحوار، و`Ctrl+S` في نافذة النتائج للاشتراك.
    - جلستا `feed` و`channel` لا تنتقلان آلياً عند نهاية المقطع، كنتائج البحث، باختيار كمال؛ وأسقط كمال استيراد CSV من Takeout.
-   - العمر بلا `ngettext` (القالب بـ `--keyword=_` وحده)، فالعربية «منذ {n} يوم».
+   - العمر بـ `gettext.ngettext` عبر الوحدة (لأن `Localization` يبدّلها وقت التشغيل)، والقالب بـ `--keyword=ngettext:1,2`، وفي ترويسة العربية ست صيغ جمع وفي التشيكية ثلاث.
    - الاختبارات: `python subscriptions/run_tests.py` من `player/` (و`--live` لطلب حي).
 
 ## نتائج الاختبارات (Verification Results)

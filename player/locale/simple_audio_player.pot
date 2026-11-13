@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 01:25+0200\n"
+"POT-Creation-Date: 2026-11-13 01:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: app.py:196
 msgid "Could not initialize the application."
@@ -23,9 +24,9 @@ msgstr ""
 
 #: app.py:197 app_actions/bookmark_actions.py:100
 #: app_actions/file_actions.py:267 app_actions/file_actions.py:571
-#: app_actions/help_actions.py:62 update/actions.py:95 update/actions.py:141
-#: update/actions.py:147 youtube/flow.py:467 youtube/flow.py:834
-#: youtube/startup.py:158
+#: app_actions/help_actions.py:62 update/actions.py:96 update/actions.py:142
+#: update/actions.py:148 youtube/flow.py:467 youtube/flow.py:834
+#: youtube/startup.py:142
 msgid "Error"
 msgstr ""
 
@@ -65,7 +66,7 @@ msgstr ""
 msgid "Bookmark '{name}' added at {time}."
 msgstr ""
 
-#: app_actions/bookmark_actions.py:44 youtube/startup.py:60
+#: app_actions/bookmark_actions.py:44 youtube/startup.py:62
 msgid "Success"
 msgstr ""
 
@@ -761,7 +762,7 @@ msgid "Custom value"
 msgstr ""
 
 #: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
-#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:160
+#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:54
 msgid "Play"
 msgstr ""
 
@@ -1115,6 +1116,10 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
+#: helpers/utils.py:33
+msgid "Unknown"
+msgstr ""
+
 #: playlist/info.py:57
 msgid "Loading playlist info"
 msgstr ""
@@ -1157,37 +1162,43 @@ msgstr ""
 msgid "Remaining: {value}"
 msgstr ""
 
-#: subscriptions/feed.py:137 subscriptions/feed.py:145
+#: subscriptions/feed.py:138 subscriptions/feed.py:146
 msgid "This is not a valid YouTube channel or playlist link."
 msgstr ""
 
-#: subscriptions/feed.py:149
+#: subscriptions/feed.py:150
 msgid "Could not find the channel for this link."
 msgstr ""
 
-#: subscriptions/feed.py:171 subscriptions/run_tests.py:127
+#: subscriptions/feed.py:172 subscriptions/run_tests.py:128
 msgid "today"
 msgstr ""
 
-#: subscriptions/feed.py:173 subscriptions/run_tests.py:128
+#: subscriptions/feed.py:174 subscriptions/run_tests.py:129
 msgid "yesterday"
 msgstr ""
 
-#: subscriptions/feed.py:175 subscriptions/run_tests.py:129
-#: subscriptions/run_tests.py:137
+#: subscriptions/feed.py:177 subscriptions/run_tests.py:131
+#: subscriptions/run_tests.py:144
 #, python-brace-format
-msgid "{n} days ago"
-msgstr ""
+msgid "{n} day ago"
+msgid_plural "{n} days ago"
+msgstr[0] ""
+msgstr[1] ""
 
-#: subscriptions/feed.py:177 subscriptions/run_tests.py:130
+#: subscriptions/feed.py:180 subscriptions/run_tests.py:134
 #, python-brace-format
-msgid "{n} months ago"
-msgstr ""
+msgid "{n} month ago"
+msgid_plural "{n} months ago"
+msgstr[0] ""
+msgstr[1] ""
 
-#: subscriptions/feed.py:178 subscriptions/run_tests.py:131
+#: subscriptions/feed.py:183 subscriptions/run_tests.py:137
 #, python-brace-format
-msgid "{n} years ago"
-msgstr ""
+msgid "{n} year ago"
+msgid_plural "{n} years ago"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ui/audio_settings.py:5
 msgid "Advance to the next file"
@@ -1316,7 +1327,7 @@ msgid "Edit"
 msgstr ""
 
 #: ui/bookmark_dlg.py:29 ui/dialogs.py:245 ui/dialogs.py:268
-#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:162
+#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:56
 msgid "Close"
 msgstr ""
 
@@ -1341,8 +1352,7 @@ msgid "OK"
 msgstr ""
 
 #: ui/dialogs.py:73 ui/dialogs.py:199 ui/task_dialogs.py:18
-#: ui/task_dialogs.py:78 ui/yt_dialogs.py:57 ui/yt_dialogs.py:113
-#: youtube/ui_utils.py:69
+#: ui/task_dialogs.py:78 youtube/ui_utils.py:71
 msgid "Cancel"
 msgstr ""
 
@@ -1882,7 +1892,7 @@ msgstr ""
 msgid "YouTube"
 msgstr ""
 
-#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:195
+#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:176
 msgid "Keyboard Shortcuts"
 msgstr ""
 
@@ -2172,11 +2182,11 @@ msgstr ""
 msgid "Ask every time"
 msgstr ""
 
-#: ui/prefs/youtube.py:25 youtube/ui_utils.py:67
+#: ui/prefs/youtube.py:25 youtube/ui_utils.py:69
 msgid "Play the video"
 msgstr ""
 
-#: ui/prefs/youtube.py:26 youtube/ui_utils.py:68
+#: ui/prefs/youtube.py:26 youtube/ui_utils.py:70
 msgid "Open the playlist"
 msgstr ""
 
@@ -2279,59 +2289,59 @@ msgid ""
 "checks."
 msgstr ""
 
-#: ui/shortcut_settings.py:18
+#: ui/shortcut_settings.py:19
 msgid "Set Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:24
+#: ui/shortcut_settings.py:25
 msgid "Press the desired shortcut. Escape cancels."
 msgstr ""
 
-#: ui/shortcut_settings.py:76
+#: ui/shortcut_settings.py:57
 msgid "Set Global Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:87
+#: ui/shortcut_settings.py:68
 msgid "Press the desired global shortcut. Escape cancels."
 msgstr ""
 
-#: ui/shortcut_settings.py:199
+#: ui/shortcut_settings.py:180
 msgid "Action"
 msgstr ""
 
-#: ui/shortcut_settings.py:200
+#: ui/shortcut_settings.py:181
 msgid "Primary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:202
+#: ui/shortcut_settings.py:183
 msgid "Secondary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:203
+#: ui/shortcut_settings.py:184
 msgid "Edit Primary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:208
+#: ui/shortcut_settings.py:189
 msgid "Edit Secondary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:210
+#: ui/shortcut_settings.py:191
 msgid "Reset to Defaults"
 msgstr ""
 
-#: ui/shortcut_settings.py:314 ui/shortcut_settings.py:340
+#: ui/shortcut_settings.py:295 ui/shortcut_settings.py:321
 msgid "That shortcut is already assigned to another action."
 msgstr ""
 
-#: ui/shortcut_settings.py:315 ui/shortcut_settings.py:341
+#: ui/shortcut_settings.py:296 ui/shortcut_settings.py:322
 msgid "Shortcut Conflict"
 msgstr ""
 
-#: ui/shortcut_settings.py:382
+#: ui/shortcut_settings.py:363
 msgid "Reset all shortcuts to defaults?"
 msgstr ""
 
-#: ui/shortcut_settings.py:383
+#: ui/shortcut_settings.py:364
 msgid "Confirm Reset"
 msgstr ""
 
@@ -2601,98 +2611,98 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: ui/yt_dialogs.py:158 youtube/results.py:23 youtube/ui_utils.py:181
+#: ui/yt_dialogs.py:52 youtube/results.py:23 youtube/ui_utils.py:165
 msgid "Videos"
 msgstr ""
 
-#: ui/yt_dialogs.py:161 ui/yt_dialogs.py:249
+#: ui/yt_dialogs.py:55 ui/yt_dialogs.py:143
 msgid "Download"
 msgstr ""
 
-#: ui/yt_dialogs.py:244
+#: ui/yt_dialogs.py:138
 msgid "Copy link\tCtrl+C"
 msgstr ""
 
-#: ui/yt_dialogs.py:245
+#: ui/yt_dialogs.py:139
 msgid "Open in browser\tCtrl+B"
 msgstr ""
 
-#: ui/yt_dialogs.py:246
+#: ui/yt_dialogs.py:140
 msgid "Navigate to channel\tCtrl+N"
 msgstr ""
 
-#: ui/yt_dialogs.py:247
+#: ui/yt_dialogs.py:141
 msgid "Subscribe to channel\tCtrl+S"
 msgstr ""
 
-#: update/actions.py:43
+#: update/actions.py:44
 msgid "Updating yt-dlp..."
 msgstr ""
 
-#: update/actions.py:55
+#: update/actions.py:56
 msgid "Updating yt-dlp"
 msgstr ""
 
-#: update/actions.py:60
+#: update/actions.py:61
 msgid "Update cancelled."
 msgstr ""
 
-#: update/actions.py:60
+#: update/actions.py:61
 msgid "yt-dlp update cancelled."
 msgstr ""
 
-#: update/actions.py:63
+#: update/actions.py:64
 msgid "Could not update yt-dlp."
 msgstr ""
 
-#: update/actions.py:64 update/actions.py:84 update/actions.py:273
+#: update/actions.py:65 update/actions.py:85 update/actions.py:274
 msgid "yt-dlp update"
 msgstr ""
 
-#: update/actions.py:73
+#: update/actions.py:74
 #, python-brace-format
 msgid "yt-dlp updated from {old} to {new} on '{ch}' channel."
 msgstr ""
 
-#: update/actions.py:74 update/actions.py:75 update/actions.py:80
-#: update/actions.py:258 update/actions.py:259
+#: update/actions.py:75 update/actions.py:76 update/actions.py:81
+#: update/actions.py:259 update/actions.py:260
 msgid "unknown"
 msgstr ""
 
-#: update/actions.py:79
+#: update/actions.py:80
 #, python-brace-format
 msgid "yt-dlp is already up to date ({ver}) on '{ch}' channel."
 msgstr ""
 
-#: update/actions.py:94
+#: update/actions.py:95
 msgid "Could not check for updates."
 msgstr ""
 
-#: update/actions.py:109
+#: update/actions.py:110
 msgid "You are using the latest version."
 msgstr ""
 
-#: update/actions.py:110 youtube/startup.py:45
+#: update/actions.py:111 youtube/startup.py:47
 msgid "Info"
 msgstr ""
 
-#: update/actions.py:132
+#: update/actions.py:133
 msgid "Downloading update"
 msgstr ""
 
-#: update/actions.py:135
+#: update/actions.py:136
 msgid "Downloading update package..."
 msgstr ""
 
-#: update/actions.py:140
+#: update/actions.py:141
 msgid "Could not download update."
 msgstr ""
 
-#: update/actions.py:146
+#: update/actions.py:147
 msgid "Could not start the updater."
 msgstr ""
 
-#: update/actions.py:262
+#: update/actions.py:263
 #, python-brace-format
 msgid ""
 "A newer yt-dlp version is available on '{ch}' channel.\n"
@@ -2702,11 +2712,11 @@ msgid ""
 "Do you want to update now?"
 msgstr ""
 
-#: update/actions.py:287
+#: update/actions.py:288
 msgid "Checking for app updates"
 msgstr ""
 
-#: update/actions.py:479
+#: update/actions.py:480
 #, python-brace-format
 msgid ""
 "Total size: {size}\n"
@@ -2924,49 +2934,49 @@ msgstr ""
 msgid "Loading more videos..."
 msgstr ""
 
-#: youtube/startup.py:44
+#: youtube/startup.py:46
 msgid "YouTube components are already installed."
 msgstr ""
 
-#: youtube/startup.py:59
+#: youtube/startup.py:61
 msgid "YouTube components were downloaded successfully."
 msgstr ""
 
-#: youtube/startup.py:68
+#: youtube/startup.py:70
 msgid "Downloading YouTube components"
 msgstr ""
 
-#: youtube/startup.py:155
+#: youtube/startup.py:139
 msgid "Could not install YouTube components."
 msgstr ""
 
-#: youtube/ui_utils.py:29
+#: youtube/ui_utils.py:31
 msgid "Enter a YouTube video or playlist link."
 msgstr ""
 
-#: youtube/ui_utils.py:30 youtube/ui_utils.py:57
+#: youtube/ui_utils.py:32 youtube/ui_utils.py:59
 msgid "Open YouTube Link"
 msgstr ""
 
-#: youtube/ui_utils.py:43
+#: youtube/ui_utils.py:45
 msgid "Enter search text."
 msgstr ""
 
-#: youtube/ui_utils.py:44
+#: youtube/ui_utils.py:46
 msgid "Search YouTube"
 msgstr ""
 
-#: youtube/ui_utils.py:63
+#: youtube/ui_utils.py:65
 msgid ""
 "The app detected that this YouTube link contains a playlist and a video ID. "
 "Choose how you want to proceed."
 msgstr ""
 
-#: youtube/ui_utils.py:130
+#: youtube/ui_utils.py:132
 msgid "Select download folder"
 msgstr ""
 
-#: youtube/ui_utils.py:146
+#: youtube/ui_utils.py:148
 #, python-brace-format
 msgid ""
 "Total size: {total}\n"
@@ -2974,23 +2984,19 @@ msgid ""
 "Percentage: {pct:.2f}%"
 msgstr ""
 
-#: youtube/ui_utils.py:159
-msgid "Unknown"
-msgstr ""
-
-#: youtube/ui_utils.py:174
+#: youtube/ui_utils.py:158
 msgid "Search results"
 msgstr ""
 
-#: youtube/ui_utils.py:176
+#: youtube/ui_utils.py:160
 msgid "Playlist videos"
 msgstr ""
 
-#: youtube/ui_utils.py:178
+#: youtube/ui_utils.py:162
 msgid "Latest videos"
 msgstr ""
 
-#: youtube/ui_utils.py:180
+#: youtube/ui_utils.py:164
 msgid "Channel videos"
 msgstr ""
 
