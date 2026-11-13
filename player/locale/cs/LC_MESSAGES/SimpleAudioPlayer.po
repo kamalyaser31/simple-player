@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 01:47+0200\n"
+"POT-Creation-Date: 2026-11-13 10:58+0200\n"
 "PO-Revision-Date: 2026-03-07 07:46+0100\n"
 "Last-Translator: 4Sense Gaming <lukas@4sensegaming.cz>\n"
 "Language-Team: \n"
@@ -117,9 +117,9 @@ msgstr "Žádné značky."
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
-#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
-#: app_actions/playback_actions.py:293 app_actions/playback_actions.py:312
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
+#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
+#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
 msgid "No file loaded."
 msgstr "Žádný načtený soubor."
 
@@ -129,9 +129,9 @@ msgstr "Žádný načtený soubor."
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
-#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
-#: app_actions/playback_actions.py:293 app_actions/playback_actions.py:312
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
+#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
+#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
 msgid "No file."
 msgstr "Žádný soubor."
 
@@ -735,215 +735,215 @@ msgstr "Příkaz selhal."
 msgid "Operation failed."
 msgstr "Operace selhala."
 
-#: app_actions/playback_actions.py:25
+#: app_actions/playback_actions.py:28
 msgid "1 second"
 msgstr "Jedna sekunda"
 
-#: app_actions/playback_actions.py:26
+#: app_actions/playback_actions.py:29
 msgid "5 seconds"
 msgstr "5 sekund"
 
-#: app_actions/playback_actions.py:27
+#: app_actions/playback_actions.py:30
 msgid "1 minute"
 msgstr "Jedna minuta"
 
-#: app_actions/playback_actions.py:28
+#: app_actions/playback_actions.py:31
 msgid "5 minutes"
 msgstr "5 minut"
 
-#: app_actions/playback_actions.py:29
+#: app_actions/playback_actions.py:32
 msgid "10 minutes"
 msgstr "10 minut"
 
-#: app_actions/playback_actions.py:30
+#: app_actions/playback_actions.py:33
 msgid "20 minutes"
 msgstr "20 minut"
 
-#: app_actions/playback_actions.py:31
+#: app_actions/playback_actions.py:34
 msgid "30 minutes"
 msgstr "30 minut"
 
-#: app_actions/playback_actions.py:32
+#: app_actions/playback_actions.py:35
 msgid "40 minutes"
 msgstr "40 minut"
 
-#: app_actions/playback_actions.py:33
+#: app_actions/playback_actions.py:36
 msgid "50 minutes"
 msgstr "50 minut"
 
-#: app_actions/playback_actions.py:34
+#: app_actions/playback_actions.py:37
 msgid "60 minutes"
 msgstr "60 minut"
 
-#: app_actions/playback_actions.py:35
+#: app_actions/playback_actions.py:38
 msgid "Custom value"
 msgstr "Vlastní interval"
 
-#: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
-#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:54
+#: app_actions/playback_actions.py:56 app_actions/playback_actions.py:62
+#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:58
 msgid "Play"
 msgstr "Přehrát"
 
-#: app_actions/playback_actions.py:58 ui/mainwin/menu.py:551
+#: app_actions/playback_actions.py:62 ui/mainwin/menu.py:552
 #: ui/mainwin/state.py:91 ui/mainwin/state.py:228
 msgid "Pause"
 msgstr "Pozastavit"
 
-#: app_actions/playback_actions.py:65
+#: app_actions/playback_actions.py:69
 msgid "Beginner mode"
 msgstr "Režim pro začátečníky"
 
-#: app_actions/playback_actions.py:68
+#: app_actions/playback_actions.py:72
 msgid "Advanced mode"
 msgstr "Režim pro pokročilé"
 
-#: app_actions/playback_actions.py:83
+#: app_actions/playback_actions.py:87
 msgid "Shuffle is disabled for YouTube streams."
 msgstr "Náhodné pořadí nelze používat při streamování z YouTube."
 
-#: app_actions/playback_actions.py:84
+#: app_actions/playback_actions.py:88
 msgid "Shuffle disabled for YouTube."
 msgstr "Náhodné pořadí nefunguje na YouTube."
 
-#: app_actions/playback_actions.py:91
+#: app_actions/playback_actions.py:95
 msgid "Shuffle on"
 msgstr "Náhodné pořadí zapnuto"
 
-#: app_actions/playback_actions.py:93
+#: app_actions/playback_actions.py:97
 msgid "Shuffle off"
 msgstr "Náhodné pořadí vypnuto"
 
-#: app_actions/playback_actions.py:104
+#: app_actions/playback_actions.py:108
 msgid "Repeat on"
 msgstr "Opakování zapnuto"
 
-#: app_actions/playback_actions.py:106
+#: app_actions/playback_actions.py:110
 msgid "Repeat off"
 msgstr "Opakování vypnuto"
 
-#: app_actions/playback_actions.py:112
+#: app_actions/playback_actions.py:116
 msgid "Could not change silence removal filter."
 msgstr "Nepodařilo se přenastavit filtr odstraňování ticha."
 
-#: app_actions/playback_actions.py:112
+#: app_actions/playback_actions.py:116
 msgid "Filter failed."
 msgstr "Použití filtru selhalo."
 
-#: app_actions/playback_actions.py:119
+#: app_actions/playback_actions.py:123
 msgid "Silence removal on"
 msgstr "Odstraňování ticha zapnuto"
 
-#: app_actions/playback_actions.py:121
+#: app_actions/playback_actions.py:125
 msgid "Silence removal off"
 msgstr "Odstraňování ticha vypnuto"
 
-#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:245
-#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:320
-#: app_actions/playback_actions.py:327 app_actions/playback_actions.py:354
+#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:249
+#: app_actions/playback_actions.py:301 app_actions/playback_actions.py:324
+#: app_actions/playback_actions.py:331 app_actions/playback_actions.py:358
 msgid "Time not available"
 msgstr "Délka souboru neznámá"
 
-#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:215
-#: app_actions/playback_actions.py:245 app_actions/playback_actions.py:297
-#: app_actions/playback_actions.py:320 app_actions/playback_actions.py:327
-#: app_actions/playback_actions.py:354 playlist/info.py:407
+#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:219
+#: app_actions/playback_actions.py:249 app_actions/playback_actions.py:301
+#: app_actions/playback_actions.py:324 app_actions/playback_actions.py:331
+#: app_actions/playback_actions.py:358 playlist/info.py:407
 msgid "Unavailable"
 msgstr "Nedostupné"
 
-#: app_actions/playback_actions.py:176 app_actions/playback_actions.py:182
-#: app_actions/playback_actions.py:188
+#: app_actions/playback_actions.py:180 app_actions/playback_actions.py:186
+#: app_actions/playback_actions.py:192
 #, python-brace-format
 msgid "Volume {volume} percent"
 msgstr "Hlasitost {volume} procent"
 
-#: app_actions/playback_actions.py:196
+#: app_actions/playback_actions.py:200
 #, python-brace-format
 msgid "Volume is {percent}%"
 msgstr "Hlasitost: {percent} procent"
 
-#: app_actions/playback_actions.py:200
+#: app_actions/playback_actions.py:204
 msgid "Elapsed time: "
 msgstr "Přehráno: "
 
-#: app_actions/playback_actions.py:204
+#: app_actions/playback_actions.py:208
 msgid "Remaining time: "
 msgstr "Zbývající čas: "
 
-#: app_actions/playback_actions.py:208
+#: app_actions/playback_actions.py:212
 msgid "Total time: "
 msgstr "Délka: "
 
-#: app_actions/playback_actions.py:215
+#: app_actions/playback_actions.py:219
 msgid "Percentage not available"
 msgstr "Pozice v procentech není dostupná"
 
-#: app_actions/playback_actions.py:219 app_actions/playback_actions.py:252
+#: app_actions/playback_actions.py:223 app_actions/playback_actions.py:256
 #, python-brace-format
 msgid "{percent} percent"
 msgstr "{percent} procent"
 
-#: app_actions/playback_actions.py:225 app_actions/playback_actions.py:232
-#: app_actions/playback_actions.py:239
+#: app_actions/playback_actions.py:229 app_actions/playback_actions.py:236
+#: app_actions/playback_actions.py:243
 #, python-brace-format
 msgid "{speed}x"
 msgstr "{speed}krát"
 
-#: app_actions/playback_actions.py:261
+#: app_actions/playback_actions.py:265
 #, fuzzy
 msgid "Time is not available for the current file."
 msgstr "Přejmenovat můžete pouze místní soubory."
 
-#: app_actions/playback_actions.py:262 ui/dialogs.py:40 ui/dialogs.py:165
+#: app_actions/playback_actions.py:266 ui/dialogs.py:40 ui/dialogs.py:165
 #: ui/dialogs.py:175
 #, fuzzy
 msgid "Go to time"
 msgstr "Délka: "
 
-#: app_actions/playback_actions.py:305
+#: app_actions/playback_actions.py:309
 #, python-brace-format
 msgid "Start selection: {time}"
 msgstr "Značka začátku: {time}"
 
-#: app_actions/playback_actions.py:306
+#: app_actions/playback_actions.py:310
 #, python-brace-format
 msgid "Start {time}"
 msgstr "Začátek {time}"
 
-#: app_actions/playback_actions.py:316
+#: app_actions/playback_actions.py:320
 msgid "No start."
 msgstr "Žádný začátek."
 
-#: app_actions/playback_actions.py:316
+#: app_actions/playback_actions.py:320
 msgid "Start selection not set."
 msgstr "Není nastavena značka začátku."
 
-#: app_actions/playback_actions.py:324
+#: app_actions/playback_actions.py:328
 msgid "End selection must be after start."
 msgstr "Značka konce musí být za značkou začátku."
 
-#: app_actions/playback_actions.py:324
+#: app_actions/playback_actions.py:328
 msgid "Invalid end."
 msgstr "Neplatná značka konce."
 
-#: app_actions/playback_actions.py:332
+#: app_actions/playback_actions.py:336
 #, python-brace-format
 msgid "End selection: {time}"
 msgstr "Značka konce: {time}"
 
-#: app_actions/playback_actions.py:333
+#: app_actions/playback_actions.py:337
 #, python-brace-format
 msgid "End {time}"
 msgstr "KOnec {time}"
 
-#: app_actions/playback_actions.py:341
+#: app_actions/playback_actions.py:345
 msgid "No selection to clear."
 msgstr "Není nastavený žádný výběr."
 
-#: app_actions/playback_actions.py:341
+#: app_actions/playback_actions.py:345
 msgid "No selection."
 msgstr "Žádný výběr."
 
-#: app_actions/playback_actions.py:348
+#: app_actions/playback_actions.py:352
 msgid "Selection cleared"
 msgstr "Výběr zrušen"
 
@@ -1006,14 +1006,13 @@ msgid "Unknown error."
 msgstr "Neznámé"
 
 #: app_actions/recording_actions.py:79 ui/mainwin/menu.py:109
-#: ui/prefs/dialog.py:66
+#: ui/prefs/dialog.py:67
 msgid "Recording"
 msgstr ""
 
 #: app_actions/subscription_actions.py:23
-#, fuzzy
-msgid "No subscriptions yet."
-msgstr "Není dostupný žádný popis."
+msgid "You do not follow any channel yet."
+msgstr ""
 
 #: app_actions/subscription_actions.py:46
 msgid "Loading subscriptions"
@@ -1082,58 +1081,6 @@ msgstr "Nepodařilo se načíst data z odkazu na YouTube."
 msgid "YouTube subscriptions"
 msgstr "YouTube komponenty"
 
-#: config/shortcut_utils.py:28
-msgid "Space"
-msgstr "Mezerník"
-
-#: config/shortcut_utils.py:29
-msgid "Tab"
-msgstr "Tab"
-
-#: config/shortcut_utils.py:30
-msgid "Enter"
-msgstr "Enter"
-
-#: config/shortcut_utils.py:31
-msgid "Backspace"
-msgstr "Backspace"
-
-#: config/shortcut_utils.py:32
-msgid "Left"
-msgstr "Šipka doleva"
-
-#: config/shortcut_utils.py:33
-msgid "Right"
-msgstr "Šipka doprava"
-
-#: config/shortcut_utils.py:34
-msgid "Up"
-msgstr "Šipka nahoru"
-
-#: config/shortcut_utils.py:35
-msgid "Down"
-msgstr "Šipka dolů"
-
-#: config/shortcut_utils.py:36
-msgid "Page Up"
-msgstr "Page up"
-
-#: config/shortcut_utils.py:37
-msgid "Page Down"
-msgstr "Page down"
-
-#: config/shortcut_utils.py:38
-msgid "Home"
-msgstr "Home"
-
-#: config/shortcut_utils.py:39 ui/mainwin/menu.py:394
-msgid "End"
-msgstr "End"
-
-#: config/shortcut_utils.py:40 ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
-msgid "Delete"
-msgstr "Smazat"
-
 #: core/controller.py:422
 #, fuzzy, python-brace-format
 msgid ""
@@ -1153,7 +1100,7 @@ msgstr "Přejmenování selhalo."
 msgid "Please restart the app for language changes to take effect."
 msgstr "Prosím, restartujte aplikaci, aby se změna jazyka projevila."
 
-#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
+#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:151
 msgid "Preferences"
 msgstr "Nastavení"
 
@@ -1394,8 +1341,12 @@ msgstr ""
 msgid "Edit"
 msgstr "Úpravy"
 
+#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
+msgid "Delete"
+msgstr "Smazat"
+
 #: ui/bookmark_dlg.py:29 ui/dialogs.py:245 ui/dialogs.py:268
-#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:56
+#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:60
 msgid "Close"
 msgstr "Zavřít"
 
@@ -1496,7 +1447,7 @@ msgstr "Úpravy"
 msgid "Remove..."
 msgstr "Přejmenovat..."
 
-#: ui/help_dialogs.py:15 ui/mainwin/menu.py:530
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:531
 msgid "About"
 msgstr "O programu"
 
@@ -1517,7 +1468,7 @@ msgstr ""
 "Autor: Kamal yaser\n"
 "Verze: {version}"
 
-#: ui/help_dialogs.py:43 ui/mainwin/menu.py:513
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:514
 msgid "Visit website"
 msgstr "Navštívit web"
 
@@ -1733,6 +1684,10 @@ msgstr "Smyčka od místa do místa"
 msgid "Beginning"
 msgstr "Začátek"
 
+#: ui/mainwin/menu.py:394
+msgid "End"
+msgstr "End"
+
 #: ui/mainwin/menu.py:398
 msgid "Go to time..."
 msgstr ""
@@ -1741,68 +1696,68 @@ msgstr ""
 msgid "Jump to Percentage"
 msgstr "Skočit na procenta"
 
-#: ui/mainwin/menu.py:436
+#: ui/mainwin/menu.py:437
 msgid "Control the clicks movement value"
 msgstr "Nastavení intervalů pro přetáčení"
 
-#: ui/mainwin/menu.py:441
+#: ui/mainwin/menu.py:442
 msgid "Sound Cards..."
 msgstr "Zvuková zařízení..."
 
-#: ui/mainwin/menu.py:471
+#: ui/mainwin/menu.py:472
 msgid "Download..."
 msgstr "Stáhnout..."
 
-#: ui/mainwin/menu.py:475
+#: ui/mainwin/menu.py:476
 msgid "Video description..."
 msgstr "Popisek videa..."
 
-#: ui/mainwin/menu.py:479
+#: ui/mainwin/menu.py:480
 msgid "Copy video link"
 msgstr "Zkopírovat odkaz na video"
 
-#: ui/mainwin/menu.py:496
+#: ui/mainwin/menu.py:497
 msgid "User Guide"
 msgstr "Uživatelská příručka"
 
-#: ui/mainwin/menu.py:500 ui/update_dialogs.py:18
+#: ui/mainwin/menu.py:501 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr "Co je nového"
 
-#: ui/mainwin/menu.py:505
+#: ui/mainwin/menu.py:506
 msgid "Email"
 msgstr "E-mail"
 
-#: ui/mainwin/menu.py:509
+#: ui/mainwin/menu.py:510
 msgid "Telegram"
 msgstr "Telegram"
 
-#: ui/mainwin/menu.py:515
+#: ui/mainwin/menu.py:516
 msgid "Contact me"
 msgstr "Kontaktovat autora (anglicky)"
 
-#: ui/mainwin/menu.py:520
+#: ui/mainwin/menu.py:521
 msgid "Check for app updates"
 msgstr "Vyhledat aktualizace aplikace"
 
-#: ui/mainwin/menu.py:524
+#: ui/mainwin/menu.py:525
 msgid "Update YouTube components"
 msgstr "Aktualizovat YouTube komponenty"
 
-#: ui/mainwin/menu.py:526
+#: ui/mainwin/menu.py:527
 msgid "Updates"
 msgstr "Aktualizace"
 
-#: ui/mainwin/menu.py:547
+#: ui/mainwin/menu.py:548
 #, fuzzy
 msgid "Start recording"
 msgstr "Spouští se..."
 
-#: ui/mainwin/menu.py:555
+#: ui/mainwin/menu.py:556
 msgid "Stop"
 msgstr ""
 
-#: ui/mainwin/menu.py:560
+#: ui/mainwin/menu.py:561
 #, fuzzy
 msgid "Open recordings folder"
 msgstr "Otevřít složku s konfiguračními soubory"
@@ -1811,51 +1766,65 @@ msgstr "Otevřít složku s konfiguračními soubory"
 msgid "Resume"
 msgstr ""
 
-#: ui/prefs/backup.py:17 ui/prefs/backup.py:88 ui/prefs/backup.py:109
+#: ui/prefs/backup.py:33
+msgid "This is not a favorites and subscriptions backup."
+msgstr ""
+
+#: ui/prefs/backup.py:50 ui/prefs/backup.py:141 ui/prefs/backup.py:162
 msgid "Export settings"
 msgstr "Exportovat nastavení"
 
-#: ui/prefs/backup.py:18 ui/prefs/backup.py:120 ui/prefs/backup.py:147
+#: ui/prefs/backup.py:51 ui/prefs/backup.py:173 ui/prefs/backup.py:200
 msgid "Import settings"
 msgstr "Importovat nastavení"
 
-#: ui/prefs/backup.py:19 ui/prefs/backup.py:158 ui/prefs/backup.py:188
+#: ui/prefs/backup.py:52 ui/prefs/backup.py:211 ui/prefs/backup.py:241
 #, fuzzy
 msgid "Export bookmarks"
 msgstr "Chyba při exportu"
 
-#: ui/prefs/backup.py:20 ui/prefs/backup.py:199 ui/prefs/backup.py:223
+#: ui/prefs/backup.py:53 ui/prefs/backup.py:252 ui/prefs/backup.py:276
 #, fuzzy
 msgid "Import bookmarks"
 msgstr "Chyba při importu"
 
-#: ui/prefs/backup.py:21 ui/prefs/backup.py:234 ui/prefs/backup.py:254
+#: ui/prefs/backup.py:55 ui/prefs/backup.py:284 ui/prefs/backup.py:307
+#, fuzzy
+msgid "Export favorites and subscriptions"
+msgstr "Aktualizaci se nepodařilo stáhnout."
+
+#: ui/prefs/backup.py:58 ui/prefs/backup.py:315 ui/prefs/backup.py:337
+#, fuzzy
+msgid "Import favorites and subscriptions"
+msgstr "Aktualizaci se nepodařilo stáhnout."
+
+#: ui/prefs/backup.py:60 ui/prefs/backup.py:348 ui/prefs/backup.py:368
 msgid "Reset settings"
 msgstr "Obnovit výchozí nastavení"
 
-#: ui/prefs/backup.py:22
+#: ui/prefs/backup.py:61
 msgid "Open user settings folder"
 msgstr "Otevřít složku s konfiguračními soubory"
 
-#: ui/prefs/backup.py:54
+#: ui/prefs/backup.py:97
 msgid "Export settings creates a copy of the current settings file."
 msgstr ""
 "Příkaz Exportovat nastavení vytvoří kopii aktuálního konfiguračního souboru."
 
-#: ui/prefs/backup.py:57
+#: ui/prefs/backup.py:100
 msgid ""
 "Import settings replaces current settings with a selected settings file."
 msgstr ""
 "Příkaz Importovat nastavení nahradí aktuální nastavení vybraným "
 "konfiguračním souborem."
 
-#: ui/prefs/backup.py:60
+#: ui/prefs/backup.py:103
 #, fuzzy
 msgid "Export bookmarks creates a copy of the bookmarks JSON file."
 msgstr ""
 "Příkaz Exportovat nastavení vytvoří kopii aktuálního konfiguračního souboru."
 
-#: ui/prefs/backup.py:63
+#: ui/prefs/backup.py:106
 #, fuzzy
 msgid ""
 "Import bookmarks replaces current bookmarks with a selected bookmarks file."
@@ -1863,7 +1832,17 @@ msgstr ""
 "Příkaz Importovat nastavení nahradí aktuální nastavení vybraným "
 "konfiguračním souborem."
 
-#: ui/prefs/backup.py:67
+#: ui/prefs/backup.py:110
+msgid "Export favorites and subscriptions saves both lists in one JSON file."
+msgstr ""
+
+#: ui/prefs/backup.py:115
+msgid ""
+"Import favorites and subscriptions replaces both lists with the ones in a "
+"backup file."
+msgstr ""
+
+#: ui/prefs/backup.py:120
 msgid ""
 "Open user settings folder opens the folder where this app stores its "
 "configuration."
@@ -1871,12 +1850,12 @@ msgstr ""
 "Příkaz Otevřít složku s konfiguračními soubory otevře složku, kam si tato "
 "aplikace ukládá svoje nastavení."
 
-#: ui/prefs/backup.py:70
+#: ui/prefs/backup.py:123
 msgid "Reset settings restores all preferences to default values."
 msgstr ""
 "Příkaz Obnovit výchozí nastavení obnoví veškerá nastavení na výchozí hodnoty."
 
-#: ui/prefs/backup.py:75
+#: ui/prefs/backup.py:128
 msgid ""
 "Backup and restore settings page. Use Export settings, Import settings, or "
 "Open user settings folder."
@@ -1884,11 +1863,11 @@ msgstr ""
 "Záložka Záloha a obnovení. Zde můžete exportovat nastavení, importovat "
 "nastavení nebo otevřít složku s konfiguračními soubory."
 
-#: ui/prefs/backup.py:91 ui/prefs/backup.py:123
+#: ui/prefs/backup.py:144 ui/prefs/backup.py:176
 msgid "INI files (*.ini)|*.ini|All files (*.*)|*.*"
 msgstr "Soubory INI (*.ini)|*.ini|Všechny soubory (*.*)|*.*"
 
-#: ui/prefs/backup.py:101
+#: ui/prefs/backup.py:154
 #, python-brace-format
 msgid ""
 "Could not export settings.\n"
@@ -1897,15 +1876,15 @@ msgstr ""
 "Nepodařilo se exportovat nastavení.\n"
 "{error}"
 
-#: ui/prefs/backup.py:102 ui/prefs/backup.py:181
+#: ui/prefs/backup.py:155 ui/prefs/backup.py:234 ui/prefs/backup.py:300
 msgid "Export error"
 msgstr "Chyba při exportu"
 
-#: ui/prefs/backup.py:108
+#: ui/prefs/backup.py:161
 msgid "Settings exported successfully."
 msgstr "Nastavení úspěšně exportována."
 
-#: ui/prefs/backup.py:139
+#: ui/prefs/backup.py:192
 #, python-brace-format
 msgid ""
 "Could not import settings.\n"
@@ -1914,20 +1893,21 @@ msgstr ""
 "Nepodařilo se importovat nastavení.\n"
 "{error}"
 
-#: ui/prefs/backup.py:140 ui/prefs/backup.py:216
+#: ui/prefs/backup.py:193 ui/prefs/backup.py:269 ui/prefs/backup.py:330
 msgid "Import error"
 msgstr "Chyba při importu"
 
-#: ui/prefs/backup.py:146
+#: ui/prefs/backup.py:199
 msgid "Settings imported successfully."
 msgstr "Nastavení úspěšně importována."
 
-#: ui/prefs/backup.py:161 ui/prefs/backup.py:202
+#: ui/prefs/backup.py:214 ui/prefs/backup.py:255 ui/prefs/backup.py:287
+#: ui/prefs/backup.py:317
 #, fuzzy
 msgid "JSON files (*.json)|*.json|All files (*.*)|*.*"
 msgstr "Soubory INI (*.ini)|*.ini|Všechny soubory (*.*)|*.*"
 
-#: ui/prefs/backup.py:180
+#: ui/prefs/backup.py:233
 #, fuzzy, python-brace-format
 msgid ""
 "Could not export bookmarks.\n"
@@ -1936,12 +1916,12 @@ msgstr ""
 "Nepodařilo se exportovat nastavení.\n"
 "{error}"
 
-#: ui/prefs/backup.py:187
+#: ui/prefs/backup.py:240
 #, fuzzy
 msgid "Bookmarks exported successfully."
 msgstr "Nastavení úspěšně exportována."
 
-#: ui/prefs/backup.py:215
+#: ui/prefs/backup.py:268
 #, fuzzy, python-brace-format
 msgid ""
 "Could not import bookmarks.\n"
@@ -1950,12 +1930,40 @@ msgstr ""
 "Nepodařilo se importovat nastavení.\n"
 "{error}"
 
-#: ui/prefs/backup.py:222
+#: ui/prefs/backup.py:275
 #, fuzzy
 msgid "Bookmarks imported successfully."
 msgstr "Nastavení úspěšně importována."
 
-#: ui/prefs/backup.py:231
+#: ui/prefs/backup.py:297
+#, fuzzy, python-brace-format
+msgid ""
+"Could not export favorites and subscriptions.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se exportovat nastavení.\n"
+"{error}"
+
+#: ui/prefs/backup.py:306
+#, fuzzy
+msgid "Favorites and subscriptions exported successfully."
+msgstr "Nastavení úspěšně exportována."
+
+#: ui/prefs/backup.py:327
+#, fuzzy, python-brace-format
+msgid ""
+"Could not import favorites and subscriptions.\n"
+"{error}"
+msgstr ""
+"Nepodařilo se importovat nastavení.\n"
+"{error}"
+
+#: ui/prefs/backup.py:336
+#, fuzzy
+msgid "Favorites and subscriptions imported successfully."
+msgstr "Nastavení úspěšně importována."
+
+#: ui/prefs/backup.py:345
 msgid ""
 "Are you sure you want to reset all settings to defaults?\n"
 "This action cannot be undone."
@@ -1963,7 +1971,7 @@ msgstr ""
 "Přejete si skutečně obnovit všechna nastavení na výchozí hodnoty?\n"
 "Tuto akci nelze odvolat."
 
-#: ui/prefs/backup.py:246
+#: ui/prefs/backup.py:360
 #, python-brace-format
 msgid ""
 "Could not reset settings.\n"
@@ -1972,19 +1980,19 @@ msgstr ""
 "Nepodařilo se obnovit výchozí nastavení.\n"
 "{error}"
 
-#: ui/prefs/backup.py:247
+#: ui/prefs/backup.py:361
 msgid "Reset error"
 msgstr "Chyba při obnovení"
 
-#: ui/prefs/backup.py:253
+#: ui/prefs/backup.py:367
 msgid "Settings were reset to defaults."
 msgstr "Nastavení byla obnovena na výchozí hodnoty."
 
-#: ui/prefs/backup.py:268
+#: ui/prefs/backup.py:382
 msgid "Could not open the settings folder."
 msgstr "Nepodařilo se otevřít složku s konfiguračními soubory."
 
-#: ui/prefs/backup.py:269
+#: ui/prefs/backup.py:383
 msgid "Open folder error"
 msgstr "Chyba při otevírání složky"
 
@@ -1996,36 +2004,36 @@ msgstr "Obecné"
 msgid "Backup and restore"
 msgstr "Záloha a obnovení"
 
-#: ui/prefs/dialog.py:52
+#: ui/prefs/dialog.py:53
 msgid "Audio"
 msgstr "Zvuk"
 
-#: ui/prefs/dialog.py:53
+#: ui/prefs/dialog.py:54
 msgid "Silence removal"
 msgstr "Odstraňování ticha"
 
-#: ui/prefs/dialog.py:73 youtube/flow.py:415 youtube/flow.py:436
+#: ui/prefs/dialog.py:74 youtube/flow.py:415 youtube/flow.py:436
 #: youtube/flow.py:532 youtube/flow.py:844
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:176
+#: ui/prefs/dialog.py:85 ui/shortcut_settings.py:166
 msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: ui/prefs/dialog.py:85
+#: ui/prefs/dialog.py:86
 msgid "Global shortcuts"
 msgstr "Globální zkratky"
 
-#: ui/prefs/dialog.py:94
+#: ui/prefs/dialog.py:95
 msgid "Local Shortcuts"
 msgstr "Místní zkratky"
 
-#: ui/prefs/dialog.py:107
+#: ui/prefs/dialog.py:108
 msgid "Global Shortcuts"
 msgstr "Globální klávesové zkratky"
 
-#: ui/prefs/dialog.py:179
+#: ui/prefs/dialog.py:180
 msgid ""
 "Settings categories tree. Use up and down arrows to choose a category like "
 "General or Audio."
@@ -2033,7 +2041,7 @@ msgstr ""
 "Seznam kategorií nastavení. Šipkami nahoru a dolů si vyberte kategorii, "
 "například Obecné nebo Zvuk."
 
-#: ui/prefs/dialog.py:192
+#: ui/prefs/dialog.py:193
 msgid "No detailed help is available for this control."
 msgstr "Pro tento ovládací prvek není dostupná žádná podrobná nápověda."
 
@@ -2489,52 +2497,52 @@ msgstr "Nastavte zkratku"
 msgid "Press the desired shortcut. Escape cancels."
 msgstr "Stiskněte požadovanou zkratku. Escapem operaci zrušíte."
 
-#: ui/shortcut_settings.py:57
+#: ui/shortcut_settings.py:47
 msgid "Set Global Shortcut"
 msgstr "Nastavte globální zkratku"
 
-#: ui/shortcut_settings.py:68
+#: ui/shortcut_settings.py:58
 msgid "Press the desired global shortcut. Escape cancels."
 msgstr ""
 "Stiskněte požadovanou globální klávesovou zkratku. Escapem operaci zrušíte."
 
-#: ui/shortcut_settings.py:180
+#: ui/shortcut_settings.py:170
 msgid "Action"
 msgstr "Akce"
 
-#: ui/shortcut_settings.py:181
+#: ui/shortcut_settings.py:171
 msgid "Primary Shortcut"
 msgstr "Primární zkratka"
 
-#: ui/shortcut_settings.py:183
+#: ui/shortcut_settings.py:173
 msgid "Secondary Shortcut"
 msgstr "Sekundární zkratka"
 
-#: ui/shortcut_settings.py:184
+#: ui/shortcut_settings.py:174
 msgid "Edit Primary Shortcut"
 msgstr "Změnit primární zkratku"
 
-#: ui/shortcut_settings.py:189
+#: ui/shortcut_settings.py:179
 msgid "Edit Secondary Shortcut"
 msgstr "Změnit sekundární zkratku"
 
-#: ui/shortcut_settings.py:191
+#: ui/shortcut_settings.py:181
 msgid "Reset to Defaults"
 msgstr "Obnovit výchozí"
 
-#: ui/shortcut_settings.py:295 ui/shortcut_settings.py:321
+#: ui/shortcut_settings.py:285 ui/shortcut_settings.py:311
 msgid "That shortcut is already assigned to another action."
 msgstr "Tato zkratka už je přiřazena k jinému příkazu."
 
-#: ui/shortcut_settings.py:296 ui/shortcut_settings.py:322
+#: ui/shortcut_settings.py:286 ui/shortcut_settings.py:312
 msgid "Shortcut Conflict"
 msgstr "Konflikt klávesových zkratek"
 
-#: ui/shortcut_settings.py:363
+#: ui/shortcut_settings.py:353
 msgid "Reset all shortcuts to defaults?"
 msgstr "Opravdu obnovit všechny zkratky na výchozí hodnoty?"
 
-#: ui/shortcut_settings.py:364
+#: ui/shortcut_settings.py:354
 msgid "Confirm Reset"
 msgstr "Potvrdit obnovení"
 
@@ -2824,7 +2832,7 @@ msgstr "Aktualizovat"
 msgid "Later"
 msgstr "Později"
 
-#: ui/yt_dialogs.py:5
+#: ui/yt_dialogs.py:8
 msgid ""
 "The app detected that some components for YouTube are missing. Would you "
 "like to download the required libraries? If you do not wish to use YouTube "
@@ -2834,43 +2842,43 @@ msgstr ""
 "stáhnout požadované knihovny? Pokud nechcete využívat vyhledávání na YouTube "
 "a související funkce, můžete tuto zprávu ignorovat."
 
-#: ui/yt_dialogs.py:15
+#: ui/yt_dialogs.py:19
 msgid "YouTube Components"
 msgstr "YouTube komponenty"
 
-#: ui/yt_dialogs.py:20
+#: ui/yt_dialogs.py:24
 msgid "Don't show this message again"
 msgstr "Příště tuto zprávu nezobrazovat"
 
-#: ui/yt_dialogs.py:21
+#: ui/yt_dialogs.py:25
 msgid "Yes"
 msgstr "Ano"
 
-#: ui/yt_dialogs.py:22
+#: ui/yt_dialogs.py:26
 msgid "No"
 msgstr "Ne"
 
-#: ui/yt_dialogs.py:52 youtube/results.py:23 youtube/ui_utils.py:165
+#: ui/yt_dialogs.py:56 youtube/results.py:23 youtube/ui_utils.py:165
 msgid "Videos"
 msgstr "Videa"
 
-#: ui/yt_dialogs.py:55 ui/yt_dialogs.py:143
+#: ui/yt_dialogs.py:59 ui/yt_dialogs.py:147
 msgid "Download"
 msgstr "Stáhnout"
 
-#: ui/yt_dialogs.py:138
+#: ui/yt_dialogs.py:142
 msgid "Copy link\tCtrl+C"
 msgstr "Zkopírovat odkaz\tCtrl+C"
 
-#: ui/yt_dialogs.py:139
+#: ui/yt_dialogs.py:143
 msgid "Open in browser\tCtrl+B"
 msgstr "Otevřít v prohlížeči\tCtrl+B"
 
-#: ui/yt_dialogs.py:140
+#: ui/yt_dialogs.py:144
 msgid "Navigate to channel\tCtrl+N"
 msgstr "Přejít na kanál\tCtrl+N"
 
-#: ui/yt_dialogs.py:141
+#: ui/yt_dialogs.py:145
 #, fuzzy
 msgid "Subscribe to channel\tCtrl+S"
 msgstr "Přejít na kanál\tCtrl+N"
@@ -3290,6 +3298,43 @@ msgstr "Staženo."
 #: youtube/video.py:84
 msgid "Loading video details"
 msgstr "Načítají se podrobnosti videa"
+
+#, fuzzy
+#~ msgid "No subscriptions yet."
+#~ msgstr "Není dostupný žádný popis."
+
+#~ msgid "Space"
+#~ msgstr "Mezerník"
+
+#~ msgid "Tab"
+#~ msgstr "Tab"
+
+#~ msgid "Enter"
+#~ msgstr "Enter"
+
+#~ msgid "Backspace"
+#~ msgstr "Backspace"
+
+#~ msgid "Left"
+#~ msgstr "Šipka doleva"
+
+#~ msgid "Right"
+#~ msgstr "Šipka doprava"
+
+#~ msgid "Up"
+#~ msgstr "Šipka nahoru"
+
+#~ msgid "Down"
+#~ msgstr "Šipka dolů"
+
+#~ msgid "Page Up"
+#~ msgstr "Page up"
+
+#~ msgid "Page Down"
+#~ msgstr "Page down"
+
+#~ msgid "Home"
+#~ msgstr "Home"
 
 #~ msgid "Missing components."
 #~ msgstr "Chybí komponenty."

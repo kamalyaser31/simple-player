@@ -43,6 +43,7 @@ class SettingsDialog(wx.Dialog):
             self._book,
             settings,
             on_import=self._refresh_panels_from_settings,
+            on_reset=self._refresh_panels_from_settings,
         )
         self._book_sizer.Add(self._backup_panel, 1, wx.EXPAND)
         self._backup_panel.Hide()

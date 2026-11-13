@@ -3,6 +3,20 @@ import os
 from core.media_library import collect_audio_files
 
 
+def _sibling_index(entries, path):
+    """Index that keeps path in name order among files of its own folder."""
+    folder = os.path.normcase(os.path.dirname(os.path.abspath(path)))
+    name = os.path.basename(path).lower()
+    last_sibling = None
+    for idx, entry in enumerate(entries):
+        if os.path.normcase(os.path.dirname(os.path.abspath(entry))) != folder:
+            continue
+        if os.path.basename(entry).lower() > name:
+            return idx
+        last_sibling = idx
+    return len(entries) if last_sibling is None else last_sibling + 1
+
+
 class PlaylistStateLoadMixin:
     def open_file_list(self, files, preferred_path=None, start_position=None):
         entries = list(files or [])
@@ -10,8 +24,17 @@ class PlaylistStateLoadMixin:
             return False
 
         selected = None
-        if preferred_path and preferred_path in entries:
-            selected = preferred_path
+        if preferred_path:
+            target = os.path.normcase(os.path.abspath(preferred_path))
+            for entry in entries:
+                if os.path.normcase(os.path.abspath(entry)) == target:
+                    selected = entry
+                    break
+            # A video opened from Explorer is not collected by the audio-only
+            # folder scan; keep it in the list so playback starts with it.
+            if selected is None and os.path.isfile(preferred_path):
+                entries.insert(_sibling_index(entries, preferred_path), preferred_path)
+                selected = preferred_path
 
         if selected is None:
             index = 0

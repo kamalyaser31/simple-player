@@ -1,5 +1,7 @@
 # سجل التغييرات (CHANGELOG)
 
+- 2026-11-13: fix: Reset settings refreshes the other Preferences pages, global shortcuts accept Home/End/Delete/Backspace, a video opened in folder mode stays in the list and plays first, seek-step labels and the YouTube components prompt are translated, and Backup and restore can export/import favorites and subscriptions.
+
 - 2026-11-13: docs: rewrite the user guide and README in English and Arabic as matching mirrors verified against the code, and replace the two stale agent references with one PROJECT_REFERENCE.md.
 - 2026-11-13: fix(i18n): review the whole Arabic catalog (meaning errors, calques, unified terms, restored menu accelerators, no fuzzy left) and add Arabic/Czech plural forms for the video age labels.
 - 2026-11-13: refactor: remove dead dialogs (CustomSlider, old TaskDlg/BusyDlg/PlaylistDlg) and merge duplicated JSON store, key-map and byte-size helpers into helpers/.

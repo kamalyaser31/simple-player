@@ -191,6 +191,35 @@ def run_live():
     assert kind == "channel" and ident.startswith("UC")
 
 
+def test_library_backup_round_trip_and_rejects_bad_file():
+    from favorites.store import FavStore
+    from ui.prefs.backup import export_library, import_library
+
+    with tempfile.TemporaryDirectory() as tmp:
+        cfg = os.path.join(tmp, "settings.ini")
+        SubStore(cfg).add("channel", "UCaaa", "A")
+        FavStore(cfg).add("Fav1", "video", "https://www.youtube.com/watch?v=x")
+        backup = os.path.join(tmp, "backup.json")
+        export_library(cfg, backup)
+
+        other = os.path.join(tmp, "other")
+        os.mkdir(other)
+        cfg2 = os.path.join(other, "settings.ini")
+        bad = os.path.join(tmp, "bad.json")
+        with open(bad, "w", encoding="utf-8") as handle:
+            handle.write('{"favorites": {}}')
+        try:
+            import_library(cfg2, bad)
+            raise AssertionError("bad backup accepted")
+        except ValueError:
+            pass
+        assert not os.path.exists(SubStore(cfg2).path)  # nothing half-written
+
+        import_library(cfg2, backup)
+        assert [s.name for s in SubStore(cfg2).list_all()] == ["A"]
+        assert [f.name for f in FavStore(cfg2).list_all()] == ["Fav1"]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Subscriptions tests.")
     parser.add_argument("--live", action="store_true", help="also hit YouTube")

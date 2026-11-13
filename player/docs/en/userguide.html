@@ -311,7 +311,7 @@
   </ul>
   <p>
     Both folder choices load only files with a supported audio extension (see the list above).
-    If the file you open has another extension, for example a video type from "All Files", it is not in the loaded list, and playback starts with the first file of the list.
+    If the file you open has another extension, for example a video type from "All Files", it is added to the list in its name order, and playback starts with it.
   </p>
 
   <h3>Open files from Windows Explorer</h3>
@@ -507,7 +507,7 @@
     <li>The results window opens with the label "Latest videos". It shows up to 50 of the newest videos from all your followed channels, newest first. Shorts are left out. Playlists are not included.</li>
     <li>Each line reads: video title, channel name, age. The age is "today", "yesterday", then days, months or years, for example "3 days ago", "1 month ago" or "2 years ago".</li>
     <li>If some channels cannot be loaded, you hear how many. The others still show.</li>
-    <li>If you follow no channel, you hear "No subscriptions yet." and the subscriptions window opens. Saved playlists do not count here.</li>
+    <li>If you follow no channel, you hear "You do not follow any channel yet." and the subscriptions window opens. Saved playlists do not count here.</li>
     <li>This list does not move on to the next video by itself when a video ends. Use <kbd>Tab</kbd> or <kbd>Page Down</kbd>.</li>
   </ul>
 
@@ -690,14 +690,12 @@
       <tr><th scope="row">Import settings</th><td>Replaces your settings with a settings file you choose, and reloads the pages.</td></tr>
       <tr><th scope="row">Export bookmarks</th><td>Saves a copy of <code>bookmarks.json</code>.</td></tr>
       <tr><th scope="row">Import bookmarks</th><td>Replaces your bookmarks with a bookmarks file you choose.</td></tr>
-      <tr><th scope="row">Reset settings</th><td>After you confirm, sets all settings to their defaults. It cannot be undone.</td></tr>
+      <tr><th scope="row">Export favorites and subscriptions</th><td>Saves your favorites and your subscriptions together in one JSON file you choose.</td></tr>
+      <tr><th scope="row">Import favorites and subscriptions</th><td>Replaces your favorites and your subscriptions with the ones in a backup file. A file of another kind is refused, and nothing changes.</td></tr>
+      <tr><th scope="row">Reset settings</th><td>After you confirm, sets all settings to their defaults, and the other pages show the defaults at once. It cannot be undone.</td></tr>
       <tr><th scope="row">Open user settings folder</th><td>Opens the folder with the app data in Explorer.</td></tr>
     </tbody>
   </table>
-  <p>
-    <strong>After "Reset settings", close Preferences with Cancel.</strong>
-    The other pages still show the old values, and OK would write those values again.
-  </p>
 
   <h3 id="settings-audio">Audio page</h3>
   <table>
@@ -827,7 +825,7 @@
   </table>
   <ul>
     <li>The app does not block the keys. The program in front also receives them. Pick combinations that other programs do not use.</li>
-    <li>For global shortcuts, use letters, digits, F keys, the arrow keys, Space, Page Up and Page Down. The keys Home, End, Delete and Backspace are accepted by the settings page but the listener ignores them, so they do not work.</li>
+    <li>For global shortcuts, use letters, digits, F keys, the arrow keys, Space, Page Up and Page Down. Home, End, Delete and Backspace work too.</li>
     <li>If a global shortcut does not work, another program or Windows may use the same keys. Choose another combination.</li>
   </ul>
 
@@ -1051,19 +1049,19 @@
   <ol>
     <li>Press <kbd>Ctrl+P</kbd> and choose the page "Backup and restore".</li>
     <li>Use "Export settings" and "Export bookmarks". Choose where to save each file.</li>
-    <li>The page has no buttons for favorites, subscriptions and file positions. Copy <code>favorites.json</code>, <code>subscriptions.json</code> and <code>positions.json</code> by hand from the settings folder.</li>
+    <li>Use "Export favorites and subscriptions" for those two lists. File positions have no button: copy <code>positions.json</code> by hand from the settings folder.</li>
   </ol>
 
   <h3>Restore on a new computer</h3>
   <ol>
     <li>Install the app and start it once.</li>
-    <li>In Preferences, Backup and restore, use "Import settings" and "Import bookmarks" and choose your saved files.</li>
+    <li>In Preferences, Backup and restore, use "Import settings", "Import bookmarks" and "Import favorites and subscriptions", and choose your saved files.</li>
     <li>To restore favorites, subscriptions or positions, close the app and copy the saved files into the settings folder.</li>
     <li>If you change the language, restart the app.</li>
   </ol>
 
   <h3>Start again with default settings</h3>
-  <p>Use "Reset settings". Read the warning in <a href="#settings-backup">the Backup and restore page</a> first: close Preferences with Cancel afterwards.</p>
+  <p>Use "Reset settings" on <a href="#settings-backup">the Backup and restore page</a>.</p>
 
   <hr>
 
@@ -1119,7 +1117,6 @@
   <h3>A global shortcut does nothing</h3>
   <p>
     Another program may use the same keys. Choose another combination in Preferences, Global shortcuts.
-    Do not use Home, End, Delete or Backspace.
   </p>
 
   <h3>Recording does not start</h3>

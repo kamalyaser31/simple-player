@@ -90,7 +90,8 @@ Folder `%APPDATA%\Simple Audio Player\` (`SettingsManager._resolve_config_path`)
 - Local playback must survive YouTube, network, helper and SMTC failures.
 - Release must overwrite `dist/SimpleAudioPlayer/_winrt.pyd` with `winsdk/_winrt.pyd` and delete `winsdk_winrt.pyd`, else SMTC crashes (`build_test.ps1`, `release.yml`).
 - `yt-dlp.exe`/`deno.exe` never go in `SimpleAudioPlayer.spec` (validator).
-- Module-level `_()` runs at import. `app.py` imports `ui.main_frame` (hence `app_actions.playback_actions`) before `Localization.init`, so module-level translated strings (e.g. `SEEK_STEP_LABELS`) miss the catalog; call `_()` inside functions.
+- Module-level `_()` runs at import. `app.py` imports `ui.main_frame` (hence `app_actions.playback_actions`) before `Localization.init`, so module-level translated strings miss the catalog; call `_()` inside functions (see `playback_actions.seek_step_labels`, `yt_dialogs.missing_msg`). Key names in `config/shortcut_utils._KEY_DISPLAY` stay English on purpose: they follow `\t` in menu labels, where wx parses them as accelerators.
+- Preferences > Backup and restore (`ui/prefs/backup.py`): `export_library`/`import_library` move favorites and subscriptions as one `{"version":1,"favorites":{...},"subscriptions":{...}}` file; import validates both parts before writing either.
 - File-info action (`F`) cycles on presses within 0.3 s (`ActionContext.should_reset_file_info`).
 
 ## 11. i18n

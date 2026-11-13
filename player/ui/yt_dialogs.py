@@ -1,11 +1,15 @@
 import wx
 from gettext import gettext as _
 
-MISSING_MSG = _(
-    "The app detected that some components for YouTube are missing. "
-    "Would you like to download the required libraries? "
-    "If you do not wish to use YouTube search features, you can ignore this message."
-)
+
+# Translated when the dialog opens: this module loads before the UI language is set.
+def missing_msg():
+    return _(
+        "The app detected that some components for YouTube are missing. "
+        "Would you like to download the required libraries? "
+        "If you do not wish to use YouTube search features, "
+        "you can ignore this message."
+    )
 
 
 class MissingDlg(wx.Dialog):
@@ -15,7 +19,7 @@ class MissingDlg(wx.Dialog):
             title=_("YouTube Components"),
             style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER,
         )
-        text = wx.StaticText(self, label=MISSING_MSG)
+        text = wx.StaticText(self, label=missing_msg())
         text.Wrap(420)
         self._skip = wx.CheckBox(self, label=_("Don't show this message again"))
         yes = wx.Button(self, wx.ID_YES, _("Yes"))

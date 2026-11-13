@@ -40,16 +40,6 @@ class ShortcutCaptureDialog(wx.Dialog):
         self.EndModal(wx.ID_OK)
 
 
-_SPECIAL_KEYS = {
-    **SPECIAL_KEYS,
-    # Only the shortcut editor accepts these; the global listener ignores them.
-    keyboard.Key.home: "home",
-    keyboard.Key.end: "end",
-    keyboard.Key.delete: "delete",
-    keyboard.Key.backspace: "backspace",
-}
-
-
 class GlobalShortcutCaptureDialog(wx.Dialog):
     def __init__(self, parent):
         super().__init__(
@@ -131,8 +121,8 @@ class GlobalShortcutCaptureDialog(wx.Dialog):
 
 
 def _pynput_key_token(key):
-    if key in _SPECIAL_KEYS:
-        return _SPECIAL_KEYS[key]
+    if key in SPECIAL_KEYS:
+        return SPECIAL_KEYS[key]
     if key == keyboard.Key.esc:
         return "esc"
     if isinstance(key, keyboard.KeyCode):

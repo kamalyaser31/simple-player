@@ -21,19 +21,23 @@ SEEK_STEP_PRESETS = {
     "0": 3600,
 }
 
-SEEK_STEP_LABELS = {
-    "1": _("1 second"),
-    "2": _("5 seconds"),
-    "3": _("1 minute"),
-    "4": _("5 minutes"),
-    "5": _("10 minutes"),
-    "6": _("20 minutes"),
-    "7": _("30 minutes"),
-    "8": _("40 minutes"),
-    "9": _("50 minutes"),
-    "0": _("60 minutes"),
-    "-": _("Custom value"),
-}
+
+# A function, not a constant: this module loads before the UI language is set.
+def seek_step_labels():
+    return {
+        "1": _("1 second"),
+        "2": _("5 seconds"),
+        "3": _("1 minute"),
+        "4": _("5 minutes"),
+        "5": _("10 minutes"),
+        "6": _("20 minutes"),
+        "7": _("30 minutes"),
+        "8": _("40 minutes"),
+        "9": _("50 minutes"),
+        "0": _("60 minutes"),
+        "-": _("Custom value"),
+    }
+
 
 DEFAULT_SEEK_STEP = 5.0
 
@@ -283,7 +287,7 @@ def go_to_time(ctx):
 def set_seek_step(ctx, key):
     ctx.settings.set_seek_step_key(key)
     ctx.settings.save()
-    label = SEEK_STEP_LABELS.get(key, "")
+    label = seek_step_labels().get(key, "")
     if label:
         speech.speak(label)
 

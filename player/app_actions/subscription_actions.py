@@ -20,7 +20,7 @@ def open_latest(ctx):
         return
     channels = ctx.subs.channels()
     if not channels:
-        ctx.speak(_("No subscriptions yet."))
+        ctx.speak(_("You do not follow any channel yet."))
         manage_subs(ctx)
         return
 

@@ -25,6 +25,10 @@ SPECIAL_KEYS = {
     keyboard.Key.down: "down",
     keyboard.Key.page_up: "page_up",
     keyboard.Key.page_down: "page_down",
+    keyboard.Key.home: "home",
+    keyboard.Key.end: "end",
+    keyboard.Key.delete: "delete",
+    keyboard.Key.backspace: "backspace",
 }
 
 

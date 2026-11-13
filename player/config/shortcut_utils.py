@@ -1,5 +1,3 @@
-from gettext import gettext as _
-
 import wx
 
 from config.shortcuts import Shortcut
@@ -24,20 +22,22 @@ _KEY_ALIASES = {
     "del": "delete",
 }
 
+# Kept in English: this text follows a tab in menu labels, where wx parses it
+# as the accelerator and does not know translated key names.
 _KEY_DISPLAY = {
-    "space": _("Space"),
-    "tab": _("Tab"),
-    "enter": _("Enter"),
-    "backspace": _("Backspace"),
-    "left": _("Left"),
-    "right": _("Right"),
-    "up": _("Up"),
-    "down": _("Down"),
-    "page_up": _("Page Up"),
-    "page_down": _("Page Down"),
-    "home": _("Home"),
-    "end": _("End"),
-    "delete": _("Delete"),
+    "space": "Space",
+    "tab": "Tab",
+    "enter": "Enter",
+    "backspace": "Backspace",
+    "left": "Left",
+    "right": "Right",
+    "up": "Up",
+    "down": "Down",
+    "page_up": "Page Up",
+    "page_down": "Page Down",
+    "home": "Home",
+    "end": "End",
+    "delete": "Delete",
 }
 
 

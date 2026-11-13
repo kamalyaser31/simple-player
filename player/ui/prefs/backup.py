@@ -5,6 +5,39 @@ import shutil
 import wx
 from gettext import gettext as _
 from bookmarks import MarkStore
+from favorites.store import FavStore
+from helpers.json_store import read_json, write_json
+from subscriptions.store import SubStore
+
+LIBRARY_PARTS = ("favorites", "subscriptions")
+
+
+def export_library(settings_path, dest):
+    """Write favorites and subscriptions into one JSON backup file."""
+    packet = {"version": 1}
+    for part, store in zip(LIBRARY_PARTS, _library_stores(settings_path)):
+        packet[part] = read_json(store.path) or {"version": 1, "items": []}
+    with open(dest, "w", encoding="utf-8") as handle:
+        json.dump(packet, handle, ensure_ascii=False, indent=2)
+
+
+def import_library(settings_path, src):
+    """Replace favorites and subscriptions from a backup; nothing is written
+    unless the whole file is valid."""
+    with open(src, "r", encoding="utf-8-sig") as handle:
+        packet = json.load(handle)
+    parts = []
+    for part in LIBRARY_PARTS:
+        data = packet.get(part) if isinstance(packet, dict) else None
+        if not isinstance(data, dict) or not isinstance(data.get("items"), list):
+            raise ValueError(_("This is not a favorites and subscriptions backup."))
+        parts.append(data)
+    for data, store in zip(parts, _library_stores(settings_path)):
+        write_json(store.path, data)
+
+
+def _library_stores(settings_path):
+    return (FavStore(settings_path), SubStore(settings_path))
 
 
 class BackupRestorePanel(wx.Panel):
@@ -18,6 +51,12 @@ class BackupRestorePanel(wx.Panel):
         self._import_button = wx.Button(self, label=_("Import settings"))
         self._export_marks_button = wx.Button(self, label=_("Export bookmarks"))
         self._import_marks_button = wx.Button(self, label=_("Import bookmarks"))
+        self._export_library_button = wx.Button(
+            self, label=_("Export favorites and subscriptions")
+        )
+        self._import_library_button = wx.Button(
+            self, label=_("Import favorites and subscriptions")
+        )
         self._reset_button = wx.Button(self, label=_("Reset settings"))
         self._open_folder_button = wx.Button(self, label=_("Open user settings folder"))
 
@@ -25,6 +64,8 @@ class BackupRestorePanel(wx.Panel):
         self._import_button.Bind(wx.EVT_BUTTON, self._on_import_clicked)
         self._export_marks_button.Bind(wx.EVT_BUTTON, self._on_export_marks)
         self._import_marks_button.Bind(wx.EVT_BUTTON, self._on_import_marks)
+        self._export_library_button.Bind(wx.EVT_BUTTON, self._on_export_library)
+        self._import_library_button.Bind(wx.EVT_BUTTON, self._on_import_library)
         self._reset_button.Bind(wx.EVT_BUTTON, self._on_reset_clicked)
         self._open_folder_button.Bind(wx.EVT_BUTTON, self._on_open_folder)
 
@@ -37,6 +78,8 @@ class BackupRestorePanel(wx.Panel):
         sizer.Add(
             self._import_marks_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
         )
+        for button in (self._export_library_button, self._import_library_button):
+            sizer.Add(button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
         sizer.Add(self._reset_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8)
         sizer.Add(
             self._open_folder_button, 0, wx.LEFT | wx.RIGHT | wx.BOTTOM | wx.EXPAND, 8
@@ -61,6 +104,16 @@ class BackupRestorePanel(wx.Panel):
             if control is self._import_marks_button:
                 return _(
                     "Import bookmarks replaces current bookmarks with a selected bookmarks file."
+                )
+            if control is self._export_library_button:
+                return _(
+                    "Export favorites and subscriptions saves both lists "
+                    "in one JSON file."
+                )
+            if control is self._import_library_button:
+                return _(
+                    "Import favorites and subscriptions replaces both lists "
+                    "with the ones in a backup file."
                 )
             if control is self._open_folder_button:
                 return _(
@@ -221,6 +274,67 @@ class BackupRestorePanel(wx.Panel):
         wx.MessageBox(
             _("Bookmarks imported successfully."),
             _("Import bookmarks"),
+            wx.OK | wx.ICON_INFORMATION,
+            parent=self,
+        )
+
+    def _on_export_library(self, _event):
+        with wx.FileDialog(
+            self,
+            message=_("Export favorites and subscriptions"),
+            defaultDir=os.path.dirname(self._settings.config_path),
+            defaultFile="favorites_and_subscriptions.json",
+            wildcard=_("JSON files (*.json)|*.json|All files (*.*)|*.*"),
+            style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT,
+        ) as dlg:
+            if dlg.ShowModal() != wx.ID_OK:
+                return
+            dest = dlg.GetPath()
+        try:
+            export_library(self._settings.config_path, dest)
+        except Exception as exc:
+            wx.MessageBox(
+                _("Could not export favorites and subscriptions.\n{error}").format(
+                    error=str(exc)
+                ),
+                _("Export error"),
+                wx.OK | wx.ICON_ERROR,
+                parent=self,
+            )
+            return
+        wx.MessageBox(
+            _("Favorites and subscriptions exported successfully."),
+            _("Export favorites and subscriptions"),
+            wx.OK | wx.ICON_INFORMATION,
+            parent=self,
+        )
+
+    def _on_import_library(self, _event):
+        with wx.FileDialog(
+            self,
+            message=_("Import favorites and subscriptions"),
+            defaultDir=os.path.dirname(self._settings.config_path),
+            wildcard=_("JSON files (*.json)|*.json|All files (*.*)|*.*"),
+            style=wx.FD_OPEN | wx.FD_FILE_MUST_EXIST,
+        ) as dlg:
+            if dlg.ShowModal() != wx.ID_OK:
+                return
+            src = dlg.GetPath()
+        try:
+            import_library(self._settings.config_path, src)
+        except Exception as exc:
+            wx.MessageBox(
+                _("Could not import favorites and subscriptions.\n{error}").format(
+                    error=str(exc)
+                ),
+                _("Import error"),
+                wx.OK | wx.ICON_ERROR,
+                parent=self,
+            )
+            return
+        wx.MessageBox(
+            _("Favorites and subscriptions imported successfully."),
+            _("Import favorites and subscriptions"),
             wx.OK | wx.ICON_INFORMATION,
             parent=self,
         )

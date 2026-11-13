@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 01:52+0200\n"
+"POT-Creation-Date: 2026-11-13 10:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,9 +112,9 @@ msgstr ""
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
-#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
-#: app_actions/playback_actions.py:293 app_actions/playback_actions.py:312
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
+#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
+#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
 msgid "No file loaded."
 msgstr ""
 
@@ -124,9 +124,9 @@ msgstr ""
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:43
-#: app_actions/playback_actions.py:76 app_actions/playback_actions.py:98
-#: app_actions/playback_actions.py:293 app_actions/playback_actions.py:312
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
+#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
+#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
 msgid "No file."
 msgstr ""
 
@@ -717,213 +717,213 @@ msgstr ""
 msgid "Operation failed."
 msgstr ""
 
-#: app_actions/playback_actions.py:25
+#: app_actions/playback_actions.py:28
 msgid "1 second"
 msgstr ""
 
-#: app_actions/playback_actions.py:26
+#: app_actions/playback_actions.py:29
 msgid "5 seconds"
 msgstr ""
 
-#: app_actions/playback_actions.py:27
+#: app_actions/playback_actions.py:30
 msgid "1 minute"
 msgstr ""
 
-#: app_actions/playback_actions.py:28
+#: app_actions/playback_actions.py:31
 msgid "5 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:29
+#: app_actions/playback_actions.py:32
 msgid "10 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:30
+#: app_actions/playback_actions.py:33
 msgid "20 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:31
+#: app_actions/playback_actions.py:34
 msgid "30 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:32
+#: app_actions/playback_actions.py:35
 msgid "40 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:33
+#: app_actions/playback_actions.py:36
 msgid "50 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:34
+#: app_actions/playback_actions.py:37
 msgid "60 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:35
+#: app_actions/playback_actions.py:38
 msgid "Custom value"
 msgstr ""
 
-#: app_actions/playback_actions.py:52 app_actions/playback_actions.py:58
-#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:54
+#: app_actions/playback_actions.py:56 app_actions/playback_actions.py:62
+#: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:58
 msgid "Play"
 msgstr ""
 
-#: app_actions/playback_actions.py:58 ui/mainwin/menu.py:551
+#: app_actions/playback_actions.py:62 ui/mainwin/menu.py:552
 #: ui/mainwin/state.py:91 ui/mainwin/state.py:228
 msgid "Pause"
 msgstr ""
 
-#: app_actions/playback_actions.py:65
+#: app_actions/playback_actions.py:69
 msgid "Beginner mode"
 msgstr ""
 
-#: app_actions/playback_actions.py:68
+#: app_actions/playback_actions.py:72
 msgid "Advanced mode"
 msgstr ""
 
-#: app_actions/playback_actions.py:83
+#: app_actions/playback_actions.py:87
 msgid "Shuffle is disabled for YouTube streams."
 msgstr ""
 
-#: app_actions/playback_actions.py:84
+#: app_actions/playback_actions.py:88
 msgid "Shuffle disabled for YouTube."
 msgstr ""
 
-#: app_actions/playback_actions.py:91
+#: app_actions/playback_actions.py:95
 msgid "Shuffle on"
 msgstr ""
 
-#: app_actions/playback_actions.py:93
+#: app_actions/playback_actions.py:97
 msgid "Shuffle off"
 msgstr ""
 
-#: app_actions/playback_actions.py:104
+#: app_actions/playback_actions.py:108
 msgid "Repeat on"
 msgstr ""
 
-#: app_actions/playback_actions.py:106
+#: app_actions/playback_actions.py:110
 msgid "Repeat off"
 msgstr ""
 
-#: app_actions/playback_actions.py:112
+#: app_actions/playback_actions.py:116
 msgid "Could not change silence removal filter."
 msgstr ""
 
-#: app_actions/playback_actions.py:112
+#: app_actions/playback_actions.py:116
 msgid "Filter failed."
 msgstr ""
 
-#: app_actions/playback_actions.py:119
+#: app_actions/playback_actions.py:123
 msgid "Silence removal on"
 msgstr ""
 
-#: app_actions/playback_actions.py:121
+#: app_actions/playback_actions.py:125
 msgid "Silence removal off"
 msgstr ""
 
-#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:245
-#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:320
-#: app_actions/playback_actions.py:327 app_actions/playback_actions.py:354
+#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:249
+#: app_actions/playback_actions.py:301 app_actions/playback_actions.py:324
+#: app_actions/playback_actions.py:331 app_actions/playback_actions.py:358
 msgid "Time not available"
 msgstr ""
 
-#: app_actions/playback_actions.py:170 app_actions/playback_actions.py:215
-#: app_actions/playback_actions.py:245 app_actions/playback_actions.py:297
-#: app_actions/playback_actions.py:320 app_actions/playback_actions.py:327
-#: app_actions/playback_actions.py:354 playlist/info.py:407
+#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:219
+#: app_actions/playback_actions.py:249 app_actions/playback_actions.py:301
+#: app_actions/playback_actions.py:324 app_actions/playback_actions.py:331
+#: app_actions/playback_actions.py:358 playlist/info.py:407
 msgid "Unavailable"
 msgstr ""
 
-#: app_actions/playback_actions.py:176 app_actions/playback_actions.py:182
-#: app_actions/playback_actions.py:188
+#: app_actions/playback_actions.py:180 app_actions/playback_actions.py:186
+#: app_actions/playback_actions.py:192
 #, python-brace-format
 msgid "Volume {volume} percent"
 msgstr ""
 
-#: app_actions/playback_actions.py:196
+#: app_actions/playback_actions.py:200
 #, python-brace-format
 msgid "Volume is {percent}%"
 msgstr ""
 
-#: app_actions/playback_actions.py:200
+#: app_actions/playback_actions.py:204
 msgid "Elapsed time: "
 msgstr ""
 
-#: app_actions/playback_actions.py:204
+#: app_actions/playback_actions.py:208
 msgid "Remaining time: "
 msgstr ""
 
-#: app_actions/playback_actions.py:208
+#: app_actions/playback_actions.py:212
 msgid "Total time: "
 msgstr ""
 
-#: app_actions/playback_actions.py:215
+#: app_actions/playback_actions.py:219
 msgid "Percentage not available"
 msgstr ""
 
-#: app_actions/playback_actions.py:219 app_actions/playback_actions.py:252
+#: app_actions/playback_actions.py:223 app_actions/playback_actions.py:256
 #, python-brace-format
 msgid "{percent} percent"
 msgstr ""
 
-#: app_actions/playback_actions.py:225 app_actions/playback_actions.py:232
-#: app_actions/playback_actions.py:239
+#: app_actions/playback_actions.py:229 app_actions/playback_actions.py:236
+#: app_actions/playback_actions.py:243
 #, python-brace-format
 msgid "{speed}x"
 msgstr ""
 
-#: app_actions/playback_actions.py:261
+#: app_actions/playback_actions.py:265
 msgid "Time is not available for the current file."
 msgstr ""
 
-#: app_actions/playback_actions.py:262 ui/dialogs.py:40 ui/dialogs.py:165
+#: app_actions/playback_actions.py:266 ui/dialogs.py:40 ui/dialogs.py:165
 #: ui/dialogs.py:175
 msgid "Go to time"
 msgstr ""
 
-#: app_actions/playback_actions.py:305
+#: app_actions/playback_actions.py:309
 #, python-brace-format
 msgid "Start selection: {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:306
+#: app_actions/playback_actions.py:310
 #, python-brace-format
 msgid "Start {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:316
+#: app_actions/playback_actions.py:320
 msgid "No start."
 msgstr ""
 
-#: app_actions/playback_actions.py:316
+#: app_actions/playback_actions.py:320
 msgid "Start selection not set."
 msgstr ""
 
-#: app_actions/playback_actions.py:324
+#: app_actions/playback_actions.py:328
 msgid "End selection must be after start."
 msgstr ""
 
-#: app_actions/playback_actions.py:324
+#: app_actions/playback_actions.py:328
 msgid "Invalid end."
 msgstr ""
 
-#: app_actions/playback_actions.py:332
+#: app_actions/playback_actions.py:336
 #, python-brace-format
 msgid "End selection: {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:333
+#: app_actions/playback_actions.py:337
 #, python-brace-format
 msgid "End {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:341
+#: app_actions/playback_actions.py:345
 msgid "No selection to clear."
 msgstr ""
 
-#: app_actions/playback_actions.py:341
+#: app_actions/playback_actions.py:345
 msgid "No selection."
 msgstr ""
 
-#: app_actions/playback_actions.py:348
+#: app_actions/playback_actions.py:352
 msgid "Selection cleared"
 msgstr ""
 
@@ -976,12 +976,12 @@ msgid "Unknown error."
 msgstr ""
 
 #: app_actions/recording_actions.py:79 ui/mainwin/menu.py:109
-#: ui/prefs/dialog.py:66
+#: ui/prefs/dialog.py:67
 msgid "Recording"
 msgstr ""
 
 #: app_actions/subscription_actions.py:23
-msgid "No subscriptions yet."
+msgid "You do not follow any channel yet."
 msgstr ""
 
 #: app_actions/subscription_actions.py:46
@@ -1044,58 +1044,6 @@ msgstr ""
 msgid "YouTube subscriptions"
 msgstr ""
 
-#: config/shortcut_utils.py:28
-msgid "Space"
-msgstr ""
-
-#: config/shortcut_utils.py:29
-msgid "Tab"
-msgstr ""
-
-#: config/shortcut_utils.py:30
-msgid "Enter"
-msgstr ""
-
-#: config/shortcut_utils.py:31
-msgid "Backspace"
-msgstr ""
-
-#: config/shortcut_utils.py:32
-msgid "Left"
-msgstr ""
-
-#: config/shortcut_utils.py:33
-msgid "Right"
-msgstr ""
-
-#: config/shortcut_utils.py:34
-msgid "Up"
-msgstr ""
-
-#: config/shortcut_utils.py:35
-msgid "Down"
-msgstr ""
-
-#: config/shortcut_utils.py:36
-msgid "Page Up"
-msgstr ""
-
-#: config/shortcut_utils.py:37
-msgid "Page Down"
-msgstr ""
-
-#: config/shortcut_utils.py:38
-msgid "Home"
-msgstr ""
-
-#: config/shortcut_utils.py:39 ui/mainwin/menu.py:394
-msgid "End"
-msgstr ""
-
-#: config/shortcut_utils.py:40 ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
-msgid "Delete"
-msgstr ""
-
 #: core/controller.py:422
 #, python-brace-format
 msgid ""
@@ -1112,7 +1060,7 @@ msgstr ""
 msgid "Please restart the app for language changes to take effect."
 msgstr ""
 
-#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:150
+#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:151
 msgid "Preferences"
 msgstr ""
 
@@ -1326,8 +1274,12 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
+msgid "Delete"
+msgstr ""
+
 #: ui/bookmark_dlg.py:29 ui/dialogs.py:245 ui/dialogs.py:268
-#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:56
+#: ui/favorite_dlg.py:43 ui/subs_dlg.py:30 ui/yt_dialogs.py:60
 msgid "Close"
 msgstr ""
 
@@ -1420,7 +1372,7 @@ msgstr ""
 msgid "Remove..."
 msgstr ""
 
-#: ui/help_dialogs.py:15 ui/mainwin/menu.py:530
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:531
 msgid "About"
 msgstr ""
 
@@ -1435,7 +1387,7 @@ msgid ""
 "Version: {version}"
 msgstr ""
 
-#: ui/help_dialogs.py:43 ui/mainwin/menu.py:513
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:514
 msgid "Visit website"
 msgstr ""
 
@@ -1648,6 +1600,10 @@ msgstr ""
 msgid "Beginning"
 msgstr ""
 
+#: ui/mainwin/menu.py:394
+msgid "End"
+msgstr ""
+
 #: ui/mainwin/menu.py:398
 msgid "Go to time..."
 msgstr ""
@@ -1656,67 +1612,67 @@ msgstr ""
 msgid "Jump to Percentage"
 msgstr ""
 
-#: ui/mainwin/menu.py:436
+#: ui/mainwin/menu.py:437
 msgid "Control the clicks movement value"
 msgstr ""
 
-#: ui/mainwin/menu.py:441
+#: ui/mainwin/menu.py:442
 msgid "Sound Cards..."
 msgstr ""
 
-#: ui/mainwin/menu.py:471
+#: ui/mainwin/menu.py:472
 msgid "Download..."
 msgstr ""
 
-#: ui/mainwin/menu.py:475
+#: ui/mainwin/menu.py:476
 msgid "Video description..."
 msgstr ""
 
-#: ui/mainwin/menu.py:479
+#: ui/mainwin/menu.py:480
 msgid "Copy video link"
 msgstr ""
 
-#: ui/mainwin/menu.py:496
+#: ui/mainwin/menu.py:497
 msgid "User Guide"
 msgstr ""
 
-#: ui/mainwin/menu.py:500 ui/update_dialogs.py:18
+#: ui/mainwin/menu.py:501 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr ""
 
-#: ui/mainwin/menu.py:505
+#: ui/mainwin/menu.py:506
 msgid "Email"
 msgstr ""
 
-#: ui/mainwin/menu.py:509
+#: ui/mainwin/menu.py:510
 msgid "Telegram"
 msgstr ""
 
-#: ui/mainwin/menu.py:515
+#: ui/mainwin/menu.py:516
 msgid "Contact me"
 msgstr ""
 
-#: ui/mainwin/menu.py:520
+#: ui/mainwin/menu.py:521
 msgid "Check for app updates"
 msgstr ""
 
-#: ui/mainwin/menu.py:524
+#: ui/mainwin/menu.py:525
 msgid "Update YouTube components"
 msgstr ""
 
-#: ui/mainwin/menu.py:526
+#: ui/mainwin/menu.py:527
 msgid "Updates"
 msgstr ""
 
-#: ui/mainwin/menu.py:547
+#: ui/mainwin/menu.py:548
 msgid "Start recording"
 msgstr ""
 
-#: ui/mainwin/menu.py:555
+#: ui/mainwin/menu.py:556
 msgid "Stop"
 msgstr ""
 
-#: ui/mainwin/menu.py:560
+#: ui/mainwin/menu.py:561
 msgid "Open recordings folder"
 msgstr ""
 
@@ -1724,150 +1680,195 @@ msgstr ""
 msgid "Resume"
 msgstr ""
 
-#: ui/prefs/backup.py:17 ui/prefs/backup.py:88 ui/prefs/backup.py:109
+#: ui/prefs/backup.py:33
+msgid "This is not a favorites and subscriptions backup."
+msgstr ""
+
+#: ui/prefs/backup.py:50 ui/prefs/backup.py:141 ui/prefs/backup.py:162
 msgid "Export settings"
 msgstr ""
 
-#: ui/prefs/backup.py:18 ui/prefs/backup.py:120 ui/prefs/backup.py:147
+#: ui/prefs/backup.py:51 ui/prefs/backup.py:173 ui/prefs/backup.py:200
 msgid "Import settings"
 msgstr ""
 
-#: ui/prefs/backup.py:19 ui/prefs/backup.py:158 ui/prefs/backup.py:188
+#: ui/prefs/backup.py:52 ui/prefs/backup.py:211 ui/prefs/backup.py:241
 msgid "Export bookmarks"
 msgstr ""
 
-#: ui/prefs/backup.py:20 ui/prefs/backup.py:199 ui/prefs/backup.py:223
+#: ui/prefs/backup.py:53 ui/prefs/backup.py:252 ui/prefs/backup.py:276
 msgid "Import bookmarks"
 msgstr ""
 
-#: ui/prefs/backup.py:21 ui/prefs/backup.py:234 ui/prefs/backup.py:254
+#: ui/prefs/backup.py:55 ui/prefs/backup.py:284 ui/prefs/backup.py:307
+msgid "Export favorites and subscriptions"
+msgstr ""
+
+#: ui/prefs/backup.py:58 ui/prefs/backup.py:315 ui/prefs/backup.py:337
+msgid "Import favorites and subscriptions"
+msgstr ""
+
+#: ui/prefs/backup.py:60 ui/prefs/backup.py:348 ui/prefs/backup.py:368
 msgid "Reset settings"
 msgstr ""
 
-#: ui/prefs/backup.py:22
+#: ui/prefs/backup.py:61
 msgid "Open user settings folder"
 msgstr ""
 
-#: ui/prefs/backup.py:54
+#: ui/prefs/backup.py:97
 msgid "Export settings creates a copy of the current settings file."
 msgstr ""
 
-#: ui/prefs/backup.py:57
+#: ui/prefs/backup.py:100
 msgid ""
 "Import settings replaces current settings with a selected settings file."
 msgstr ""
 
-#: ui/prefs/backup.py:60
+#: ui/prefs/backup.py:103
 msgid "Export bookmarks creates a copy of the bookmarks JSON file."
 msgstr ""
 
-#: ui/prefs/backup.py:63
+#: ui/prefs/backup.py:106
 msgid ""
 "Import bookmarks replaces current bookmarks with a selected bookmarks file."
 msgstr ""
 
-#: ui/prefs/backup.py:67
+#: ui/prefs/backup.py:110
+msgid "Export favorites and subscriptions saves both lists in one JSON file."
+msgstr ""
+
+#: ui/prefs/backup.py:115
+msgid ""
+"Import favorites and subscriptions replaces both lists with the ones in a "
+"backup file."
+msgstr ""
+
+#: ui/prefs/backup.py:120
 msgid ""
 "Open user settings folder opens the folder where this app stores its "
 "configuration."
 msgstr ""
 
-#: ui/prefs/backup.py:70
+#: ui/prefs/backup.py:123
 msgid "Reset settings restores all preferences to default values."
 msgstr ""
 
-#: ui/prefs/backup.py:75
+#: ui/prefs/backup.py:128
 msgid ""
 "Backup and restore settings page. Use Export settings, Import settings, or "
 "Open user settings folder."
 msgstr ""
 
-#: ui/prefs/backup.py:91 ui/prefs/backup.py:123
+#: ui/prefs/backup.py:144 ui/prefs/backup.py:176
 msgid "INI files (*.ini)|*.ini|All files (*.*)|*.*"
 msgstr ""
 
-#: ui/prefs/backup.py:101
+#: ui/prefs/backup.py:154
 #, python-brace-format
 msgid ""
 "Could not export settings.\n"
 "{error}"
 msgstr ""
 
-#: ui/prefs/backup.py:102 ui/prefs/backup.py:181
+#: ui/prefs/backup.py:155 ui/prefs/backup.py:234 ui/prefs/backup.py:300
 msgid "Export error"
 msgstr ""
 
-#: ui/prefs/backup.py:108
+#: ui/prefs/backup.py:161
 msgid "Settings exported successfully."
 msgstr ""
 
-#: ui/prefs/backup.py:139
+#: ui/prefs/backup.py:192
 #, python-brace-format
 msgid ""
 "Could not import settings.\n"
 "{error}"
 msgstr ""
 
-#: ui/prefs/backup.py:140 ui/prefs/backup.py:216
+#: ui/prefs/backup.py:193 ui/prefs/backup.py:269 ui/prefs/backup.py:330
 msgid "Import error"
 msgstr ""
 
-#: ui/prefs/backup.py:146
+#: ui/prefs/backup.py:199
 msgid "Settings imported successfully."
 msgstr ""
 
-#: ui/prefs/backup.py:161 ui/prefs/backup.py:202
+#: ui/prefs/backup.py:214 ui/prefs/backup.py:255 ui/prefs/backup.py:287
+#: ui/prefs/backup.py:317
 msgid "JSON files (*.json)|*.json|All files (*.*)|*.*"
 msgstr ""
 
-#: ui/prefs/backup.py:180
+#: ui/prefs/backup.py:233
 #, python-brace-format
 msgid ""
 "Could not export bookmarks.\n"
 "{error}"
 msgstr ""
 
-#: ui/prefs/backup.py:187
+#: ui/prefs/backup.py:240
 msgid "Bookmarks exported successfully."
 msgstr ""
 
-#: ui/prefs/backup.py:215
+#: ui/prefs/backup.py:268
 #, python-brace-format
 msgid ""
 "Could not import bookmarks.\n"
 "{error}"
 msgstr ""
 
-#: ui/prefs/backup.py:222
+#: ui/prefs/backup.py:275
 msgid "Bookmarks imported successfully."
 msgstr ""
 
-#: ui/prefs/backup.py:231
+#: ui/prefs/backup.py:297
+#, python-brace-format
+msgid ""
+"Could not export favorites and subscriptions.\n"
+"{error}"
+msgstr ""
+
+#: ui/prefs/backup.py:306
+msgid "Favorites and subscriptions exported successfully."
+msgstr ""
+
+#: ui/prefs/backup.py:327
+#, python-brace-format
+msgid ""
+"Could not import favorites and subscriptions.\n"
+"{error}"
+msgstr ""
+
+#: ui/prefs/backup.py:336
+msgid "Favorites and subscriptions imported successfully."
+msgstr ""
+
+#: ui/prefs/backup.py:345
 msgid ""
 "Are you sure you want to reset all settings to defaults?\n"
 "This action cannot be undone."
 msgstr ""
 
-#: ui/prefs/backup.py:246
+#: ui/prefs/backup.py:360
 #, python-brace-format
 msgid ""
 "Could not reset settings.\n"
 "{error}"
 msgstr ""
 
-#: ui/prefs/backup.py:247
+#: ui/prefs/backup.py:361
 msgid "Reset error"
 msgstr ""
 
-#: ui/prefs/backup.py:253
+#: ui/prefs/backup.py:367
 msgid "Settings were reset to defaults."
 msgstr ""
 
-#: ui/prefs/backup.py:268
+#: ui/prefs/backup.py:382
 msgid "Could not open the settings folder."
 msgstr ""
 
-#: ui/prefs/backup.py:269
+#: ui/prefs/backup.py:383
 msgid "Open folder error"
 msgstr ""
 
@@ -1879,42 +1880,42 @@ msgstr ""
 msgid "Backup and restore"
 msgstr ""
 
-#: ui/prefs/dialog.py:52
+#: ui/prefs/dialog.py:53
 msgid "Audio"
 msgstr ""
 
-#: ui/prefs/dialog.py:53
+#: ui/prefs/dialog.py:54
 msgid "Silence removal"
 msgstr ""
 
-#: ui/prefs/dialog.py:73 youtube/flow.py:415 youtube/flow.py:436
+#: ui/prefs/dialog.py:74 youtube/flow.py:415 youtube/flow.py:436
 #: youtube/flow.py:532 youtube/flow.py:844
 msgid "YouTube"
 msgstr ""
 
-#: ui/prefs/dialog.py:84 ui/shortcut_settings.py:176
+#: ui/prefs/dialog.py:85 ui/shortcut_settings.py:166
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: ui/prefs/dialog.py:85
+#: ui/prefs/dialog.py:86
 msgid "Global shortcuts"
 msgstr ""
 
-#: ui/prefs/dialog.py:94
+#: ui/prefs/dialog.py:95
 msgid "Local Shortcuts"
 msgstr ""
 
-#: ui/prefs/dialog.py:107
+#: ui/prefs/dialog.py:108
 msgid "Global Shortcuts"
 msgstr ""
 
-#: ui/prefs/dialog.py:179
+#: ui/prefs/dialog.py:180
 msgid ""
 "Settings categories tree. Use up and down arrows to choose a category like "
 "General or Audio."
 msgstr ""
 
-#: ui/prefs/dialog.py:192
+#: ui/prefs/dialog.py:193
 msgid "No detailed help is available for this control."
 msgstr ""
 
@@ -2297,51 +2298,51 @@ msgstr ""
 msgid "Press the desired shortcut. Escape cancels."
 msgstr ""
 
-#: ui/shortcut_settings.py:57
+#: ui/shortcut_settings.py:47
 msgid "Set Global Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:68
+#: ui/shortcut_settings.py:58
 msgid "Press the desired global shortcut. Escape cancels."
 msgstr ""
 
-#: ui/shortcut_settings.py:180
+#: ui/shortcut_settings.py:170
 msgid "Action"
 msgstr ""
 
-#: ui/shortcut_settings.py:181
+#: ui/shortcut_settings.py:171
 msgid "Primary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:183
+#: ui/shortcut_settings.py:173
 msgid "Secondary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:184
+#: ui/shortcut_settings.py:174
 msgid "Edit Primary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:189
+#: ui/shortcut_settings.py:179
 msgid "Edit Secondary Shortcut"
 msgstr ""
 
-#: ui/shortcut_settings.py:191
+#: ui/shortcut_settings.py:181
 msgid "Reset to Defaults"
 msgstr ""
 
-#: ui/shortcut_settings.py:295 ui/shortcut_settings.py:321
+#: ui/shortcut_settings.py:285 ui/shortcut_settings.py:311
 msgid "That shortcut is already assigned to another action."
 msgstr ""
 
-#: ui/shortcut_settings.py:296 ui/shortcut_settings.py:322
+#: ui/shortcut_settings.py:286 ui/shortcut_settings.py:312
 msgid "Shortcut Conflict"
 msgstr ""
 
-#: ui/shortcut_settings.py:363
+#: ui/shortcut_settings.py:353
 msgid "Reset all shortcuts to defaults?"
 msgstr ""
 
-#: ui/shortcut_settings.py:364
+#: ui/shortcut_settings.py:354
 msgid "Confirm Reset"
 msgstr ""
 
@@ -2588,50 +2589,50 @@ msgstr ""
 msgid "Later"
 msgstr ""
 
-#: ui/yt_dialogs.py:5
+#: ui/yt_dialogs.py:8
 msgid ""
 "The app detected that some components for YouTube are missing. Would you "
 "like to download the required libraries? If you do not wish to use YouTube "
 "search features, you can ignore this message."
 msgstr ""
 
-#: ui/yt_dialogs.py:15
+#: ui/yt_dialogs.py:19
 msgid "YouTube Components"
 msgstr ""
 
-#: ui/yt_dialogs.py:20
+#: ui/yt_dialogs.py:24
 msgid "Don't show this message again"
 msgstr ""
 
-#: ui/yt_dialogs.py:21
+#: ui/yt_dialogs.py:25
 msgid "Yes"
 msgstr ""
 
-#: ui/yt_dialogs.py:22
+#: ui/yt_dialogs.py:26
 msgid "No"
 msgstr ""
 
-#: ui/yt_dialogs.py:52 youtube/results.py:23 youtube/ui_utils.py:165
+#: ui/yt_dialogs.py:56 youtube/results.py:23 youtube/ui_utils.py:165
 msgid "Videos"
 msgstr ""
 
-#: ui/yt_dialogs.py:55 ui/yt_dialogs.py:143
+#: ui/yt_dialogs.py:59 ui/yt_dialogs.py:147
 msgid "Download"
 msgstr ""
 
-#: ui/yt_dialogs.py:138
+#: ui/yt_dialogs.py:142
 msgid "Copy link\tCtrl+C"
 msgstr ""
 
-#: ui/yt_dialogs.py:139
+#: ui/yt_dialogs.py:143
 msgid "Open in browser\tCtrl+B"
 msgstr ""
 
-#: ui/yt_dialogs.py:140
+#: ui/yt_dialogs.py:144
 msgid "Navigate to channel\tCtrl+N"
 msgstr ""
 
-#: ui/yt_dialogs.py:141
+#: ui/yt_dialogs.py:145
 msgid "Subscribe to channel\tCtrl+S"
 msgstr ""
 

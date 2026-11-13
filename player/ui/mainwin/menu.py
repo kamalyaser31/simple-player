@@ -80,7 +80,7 @@ from actions import (
     UPDATE_YT_COMPONENTS,
     PERCENT_JUMPS,
 )
-from app_actions.playback_actions import SEEK_STEP_LABELS
+from app_actions.playback_actions import seek_step_labels
 from config.shortcut_utils import shortcut_to_display
 
 
@@ -426,8 +426,9 @@ class MainFrameMenuMixin:
             (SEEK_STEP_0, "0"),
             (SEEK_STEP_CUSTOM, "-"),
         ]
+        labels = seek_step_labels()
         for action_id, key in step_order:
-            label = SEEK_STEP_LABELS.get(key, key)
+            label = labels.get(key, key)
             item = movement_menu.Append(
                 wx.ID_ANY,
                 self._menu_label(label, action_id),
