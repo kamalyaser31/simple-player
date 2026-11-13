@@ -20,7 +20,10 @@ class Player(
     def __init__(self):
         from core.mpv_engine import MpvEngine
 
-        self._engine = MpvEngine(on_end_file=self._on_end_file_event)
+        self._engine = MpvEngine(
+            on_end_file=self._on_end_file_event,
+            on_ab_last_pass=self._on_ab_last_pass_event,
+        )
         self._state = PlaylistState()
         self._end_behavior = "advance"
         self._wrap_playlist_enabled = False
@@ -30,6 +33,14 @@ class Player(
         self._silence_removal_enabled = False
         self._silence_removal_options = {}
         self._finished_file_handler = None
+        self._ab_last_pass_handler = None
 
     def set_finished_file_handler(self, handler):
         self._finished_file_handler = handler if callable(handler) else None
+
+    def set_ab_last_pass_handler(self, handler):
+        self._ab_last_pass_handler = handler if callable(handler) else None
+
+    def _on_ab_last_pass_event(self):
+        if self._ab_last_pass_handler is not None:
+            self._ab_last_pass_handler()

@@ -6,6 +6,7 @@ from actions import (
     BOOKMARK_JUMPS,
     CHECK_APP_UPDATES,
     CLEAR_SELECTION,
+    SET_LOOP_PLAYS,
     CLEAR_MARKED_FILES,
     CLOSE_FILE,
     CLOSE_ALL_FILES,
@@ -374,6 +375,10 @@ class MainFrameMenuMixin:
             wx.ID_ANY,
             self._menu_label(_("Clear A-B loop"), CLEAR_SELECTION),
         )
+        self._loop_plays_item = loop_menu.Append(
+            wx.ID_ANY,
+            self._menu_label(_("Section plays..."), SET_LOOP_PLAYS),
+        )
         menu.AppendSubMenu(loop_menu, _("A-B loop"))
         menu.AppendSeparator()
 
@@ -457,6 +462,7 @@ class MainFrameMenuMixin:
         self._bind_action_item(self._loop_start_item, START_SELECTION)
         self._bind_action_item(self._loop_end_item, END_SELECTION)
         self._bind_action_item(self._loop_clear_item, CLEAR_SELECTION)
+        self._bind_action_item(self._loop_plays_item, SET_LOOP_PLAYS)
         self._bind_action_item(self._rewind_item, SEEK_BACKWARD)
         self._bind_action_item(self._forward_item, SEEK_FORWARD)
         self._bind_action_item(self._start_item, SEEK_START)

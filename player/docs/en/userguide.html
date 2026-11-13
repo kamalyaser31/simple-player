@@ -163,7 +163,7 @@
     <li><strong>Edit:</strong> Rename..., Delete, Copy, Paste, Mark Current File, Mark All Files, Clear Marked Files.</li>
     <li><strong>Bookmarks:</strong> Add a new bookmark, Manage bookmarks, and a submenu Jump to bookmark with Bookmark 1 to Bookmark 10.</li>
     <li><strong>Actions for marked files:</strong> Copy to folder..., Move to folder..., Copy to clipboard, Delete.</li>
-    <li><strong>Player:</strong> Play/Pause; submenu Speed (Increase Speed, Decrease Speed, Reset Speed); Previous, Next, First File, Go to file..., Last File; Shuffle; Repeat File; Enable silence removal filter; submenu A-B loop (Set A (loop start), Set B (loop end), Clear A-B loop); Rewind, Forward, Beginning, End, Go to time...; submenu Jump to Percentage; submenu Control the clicks movement value; Sound Cards...</li>
+    <li><strong>Player:</strong> Play/Pause; submenu Speed (Increase Speed, Decrease Speed, Reset Speed); Previous, Next, First File, Go to file..., Last File; Shuffle; Repeat File; Enable silence removal filter; submenu A-B loop (Set A (loop start), Set B (loop end), Clear A-B loop, Section plays...); Rewind, Forward, Beginning, End, Go to time...; submenu Jump to Percentage; submenu Control the clicks movement value; Sound Cards...</li>
     <li><strong>Video options:</strong> Download..., Video description..., Copy video link.</li>
     <li><strong>Recording:</strong> Start recording, Pause (it becomes Resume while paused), Stop, Open recordings folder.</li>
     <li><strong>Help:</strong> User Guide, What's new, submenu Contact me (Email, Telegram, Visit website), submenu Updates (Check for app updates, Update YouTube components), About.</li>
@@ -281,6 +281,12 @@
     <li>Press <kbd>Backspace</kbd> to clear the loop. Playback continues from point B.</li>
   </ol>
   <p>The loop is cleared when you change to another file.</p>
+  <h3>Play the part a set number of times</h3>
+  <p>By default the A-B part repeats without end. To play it a set number of times, press <kbd>\</kbd> (or Player menu, A-B loop, Section plays...), type how many times, and press Enter. Type 0 to repeat without end again. The number is saved and applies to every A-B loop you set after that.</p>
+  <ul>
+    <li>When you press <kbd>]</kbd>, you also hear the number, for example "Section plays 5 times".</li>
+    <li>When the last time begins, you hear "Last repetition". After that pass, playback continues after point B.</li>
+  </ul>
 
   <hr>
 
@@ -865,6 +871,7 @@
       <tr><th scope="row">Start Selection (A-B loop, point A)</th><td><kbd>[</kbd></td></tr>
       <tr><th scope="row">End Selection (A-B loop, point B)</th><td><kbd>]</kbd></td></tr>
       <tr><th scope="row">Clear Selection (A-B loop)</th><td><kbd>Backspace</kbd></td></tr>
+      <tr><th scope="row">Section Plays (A-B loop)</th><td><kbd>\</kbd></td></tr>
     </tbody>
   </table>
 

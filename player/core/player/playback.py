@@ -71,6 +71,9 @@ class PlayerPlaybackMixin:
     def set_loop_end(self, seconds):
         return self._engine.set_loop_end(seconds)
 
+    def set_loop_plays(self, plays):
+        return self._engine.set_loop_plays(plays)
+
     def clear_loop(self):
         return self._engine.clear_loop()
 

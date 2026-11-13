@@ -1,9 +1,10 @@
+import gettext
 from gettext import gettext as _
 
 import speech
 import wx
 
-from config.constants import VOLUME_MAX, VOLUME_MIN_SHORTCUT
+from config.constants import AB_LOOP_PLAYS_MAX, VOLUME_MAX, VOLUME_MIN_SHORTCUT
 from helpers.utils import format_time
 from ui import dialogs
 from youtube.state import is_yt
@@ -331,11 +332,16 @@ def end_selection(ctx):
         ctx.speak(_("Time not available"), _("Unavailable"))
         return
     ctx.selection_end = end_time
+    plays = ctx.settings.get_ab_loop_plays()
+    # Setting the count again restarts mpv's count of remaining passes.
+    ctx.player.set_loop_plays(plays)
     formatted = format_time(end_time)
-    ctx.speak(
-        _("End selection: {time}").format(time=formatted),
-        _("End {time}").format(time=formatted),
-    )
+    beginner = _("End selection: {time}").format(time=formatted)
+    advanced = _("End {time}").format(time=formatted)
+    if plays:
+        beginner = f"{beginner}. {_plays_text(plays)}"
+        advanced = f"{advanced}. {_plays_text(plays)}"
+    ctx.speak(beginner, advanced)
     ctx.player.seek_absolute(loop["start"])
     ctx.player.play()
 
@@ -350,6 +356,41 @@ def clear_selection(ctx):
     ctx.reset_selection(clear_loop=False)
     if not ctx.is_advanced():
         speech.speak(_("Selection cleared"))
+
+
+def set_loop_plays(ctx):
+    dlg = wx.NumberEntryDialog(
+        ctx.frame,
+        _("How many times to play the A-B section (0 repeats it without end):"),
+        _("Times:"),
+        _("Section plays"),
+        ctx.settings.get_ab_loop_plays(),
+        0,
+        AB_LOOP_PLAYS_MAX,
+    )
+    try:
+        if dlg.ShowModal() != wx.ID_OK:
+            return
+        plays = int(dlg.GetValue())
+    finally:
+        dlg.Destroy()
+    ctx.settings.set_ab_loop_plays(plays)
+    ctx.settings.save()
+    ctx.player.set_loop_plays(plays)
+    speech.speak(_plays_text(plays))
+
+
+def announce_last_pass(ctx):
+    if _active_ab(ctx) is not None:
+        ctx.speak(_("Last repetition"), _("Last"))
+
+
+def _plays_text(plays):
+    if not plays:
+        return _("Section repeats without end")
+    return gettext.ngettext(
+        "Section plays {count} time", "Section plays {count} times", plays
+    ).format(count=plays)
 
 
 def _announce_time(ctx, label, seconds):

@@ -18,6 +18,7 @@ from actions import (
     ANNOUNCE_SPEED,
     ANNOUNCE_VOLUME,
     CLEAR_SELECTION,
+    SET_LOOP_PLAYS,
     COPY_CURRENT_FILE,
     DELETE_FILE,
     END_SELECTION,
@@ -165,6 +166,7 @@ from app_actions.recording_actions import (
 from core.keyboard_handler import KeyboardHandler
 from app_actions.playback_actions import (
     announce_duration,
+    announce_last_pass,
     announce_elapsed,
     announce_percent,
     announce_remaining,
@@ -187,6 +189,7 @@ from app_actions.playback_actions import (
     seek_forward_x4,
     seek_forward_x8,
     seek_start,
+    set_loop_plays,
     set_seek_step,
     set_volume_max,
     set_volume_min,
@@ -223,7 +226,6 @@ from core.windows_media import WindowsMediaBridge
 from recording import RecEngine
 from positions import PosStore
 
-
 _LOG = logging.getLogger(__name__)
 
 
@@ -233,6 +235,10 @@ class AppController:
         self._player = Player()
         self._player.set_finished_file_handler(
             lambda reason: on_playback_finished(self._ctx, reason)
+        )
+        # Called on mpv's event thread; speech belongs on the UI thread.
+        self._player.set_ab_last_pass_handler(
+            lambda: wx.CallAfter(announce_last_pass, self._ctx)
         )
         self._rec = RecEngine()
         self._marks = MarkStore(self._settings.config_path)
@@ -340,6 +346,7 @@ class AppController:
             START_SELECTION: lambda: start_selection(self._ctx),
             END_SELECTION: lambda: end_selection(self._ctx),
             CLEAR_SELECTION: lambda: clear_selection(self._ctx),
+            SET_LOOP_PLAYS: lambda: set_loop_plays(self._ctx),
             SEEK_STEP_1: lambda: set_seek_step(self._ctx, "1"),
             SEEK_STEP_2: lambda: set_seek_step(self._ctx, "2"),
             SEEK_STEP_3: lambda: set_seek_step(self._ctx, "3"),

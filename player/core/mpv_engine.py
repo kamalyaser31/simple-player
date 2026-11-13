@@ -21,8 +21,10 @@ MPV_DEFAULT_CACHE_SECS = 3600000
 
 
 class MpvEngine:
-    def __init__(self, on_end_file=None):
+    def __init__(self, on_end_file=None, on_ab_last_pass=None):
         self._on_end_file = on_end_file
+        self._on_ab_last_pass = on_ab_last_pass
+        self._ab_loop_count = None
         self._mpv = self._create_core()
         self._test_mpv = None
         self._test_end_handler = None
@@ -97,6 +99,15 @@ class MpvEngine:
                 self._on_end_file(event)
 
         self._end_file_handler = _on_end_file
+        self._remaining_ab_loops = None
+        self._mpv.observe_property("remaining-ab-loops", self._on_remaining_ab_loops)
+
+    def _on_remaining_ab_loops(self, _name, value):
+        previous, self._remaining_ab_loops = self._remaining_ab_loops, value
+        # mpv counts the jumps back to A, so 0 means the last pass has begun.
+        if value == 0 and isinstance(previous, int) and previous > 0:
+            if self._on_ab_last_pass is not None:
+                self._on_ab_last_pass()
 
     def terminate(self):
         self.stop_test_sound()
@@ -126,6 +137,8 @@ class MpvEngine:
             self.set_stream_cache_seconds(self._stream_cache_secs)
         self.set_audio_normalize_filter(self._audio_normalize_enabled)
         self.set_mono_filter(self._audio_mono_enabled)
+        if self._ab_loop_count is not None:
+            self._set_option_safe("ab-loop-count", self._ab_loop_count)
         self._register_event_handlers()
         try:
             old_mpv.terminate()
@@ -299,6 +312,16 @@ class MpvEngine:
     def set_loop_end(self, seconds):
         try:
             self._mpv["ab-loop-b"] = seconds
+            return True
+        except Exception:
+            return False
+
+    def set_loop_plays(self, plays):
+        # plays is the total number of passes over A-B; 0 loops without end.
+        plays = max(0, int(plays))
+        self._ab_loop_count = "inf" if plays == 0 else plays - 1
+        try:
+            self._mpv["ab-loop-count"] = self._ab_loop_count
             return True
         except Exception:
             return False

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 22:45+0200\n"
+"POT-Creation-Date: 2026-11-14 00:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Bookmark {time}"
 msgstr ""
 
-#: app_actions/bookmark_actions.py:17 ui/mainwin/menu.py:251
+#: app_actions/bookmark_actions.py:17 ui/mainwin/menu.py:252
 msgid "Add a new bookmark"
 msgstr ""
 
@@ -53,7 +53,7 @@ msgstr ""
 
 #: app_actions/bookmark_actions.py:24 app_actions/bookmark_actions.py:35
 #: app_actions/bookmark_actions.py:62 app_actions/bookmark_actions.py:126
-#: ui/mainwin/menu.py:103
+#: ui/mainwin/menu.py:104
 msgid "Bookmarks"
 msgstr ""
 
@@ -79,7 +79,7 @@ msgid "Edit bookmark name"
 msgstr ""
 
 #: app_actions/bookmark_actions.py:92 ui/bookmark_dlg.py:15
-#: ui/mainwin/menu.py:255
+#: ui/mainwin/menu.py:256
 msgid "Manage bookmarks"
 msgstr ""
 
@@ -112,9 +112,9 @@ msgstr ""
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
-#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
-#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:48
+#: app_actions/playback_actions.py:81 app_actions/playback_actions.py:103
+#: app_actions/playback_actions.py:298 app_actions/playback_actions.py:317
 msgid "No file loaded."
 msgstr ""
 
@@ -124,9 +124,9 @@ msgstr ""
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
-#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
-#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:48
+#: app_actions/playback_actions.py:81 app_actions/playback_actions.py:103
+#: app_actions/playback_actions.py:298 app_actions/playback_actions.py:317
 msgid "No file."
 msgstr ""
 
@@ -717,215 +717,246 @@ msgstr ""
 msgid "Operation failed."
 msgstr ""
 
-#: app_actions/playback_actions.py:28
+#: app_actions/playback_actions.py:29
 msgid "1 second"
 msgstr ""
 
-#: app_actions/playback_actions.py:29
+#: app_actions/playback_actions.py:30
 msgid "5 seconds"
 msgstr ""
 
-#: app_actions/playback_actions.py:30
+#: app_actions/playback_actions.py:31
 msgid "1 minute"
 msgstr ""
 
-#: app_actions/playback_actions.py:31
+#: app_actions/playback_actions.py:32
 msgid "5 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:32
+#: app_actions/playback_actions.py:33
 msgid "10 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:33
+#: app_actions/playback_actions.py:34
 msgid "20 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:34
+#: app_actions/playback_actions.py:35
 msgid "30 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:35
+#: app_actions/playback_actions.py:36
 msgid "40 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:36
+#: app_actions/playback_actions.py:37
 msgid "50 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:37
+#: app_actions/playback_actions.py:38
 msgid "60 minutes"
 msgstr ""
 
-#: app_actions/playback_actions.py:38
+#: app_actions/playback_actions.py:39
 msgid "Custom value"
 msgstr ""
 
-#: app_actions/playback_actions.py:56 app_actions/playback_actions.py:62
+#: app_actions/playback_actions.py:57 app_actions/playback_actions.py:63
 #: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:58
 msgid "Play"
 msgstr ""
 
-#: app_actions/playback_actions.py:62 ui/mainwin/menu.py:552
+#: app_actions/playback_actions.py:63 ui/mainwin/menu.py:558
 #: ui/mainwin/state.py:91 ui/mainwin/state.py:228
 msgid "Pause"
 msgstr ""
 
-#: app_actions/playback_actions.py:69
+#: app_actions/playback_actions.py:70
 msgid "Beginner mode"
 msgstr ""
 
-#: app_actions/playback_actions.py:72
+#: app_actions/playback_actions.py:73
 msgid "Advanced mode"
 msgstr ""
 
-#: app_actions/playback_actions.py:87
+#: app_actions/playback_actions.py:88
 msgid "Shuffle is disabled for YouTube streams."
 msgstr ""
 
-#: app_actions/playback_actions.py:88
+#: app_actions/playback_actions.py:89
 msgid "Shuffle disabled for YouTube."
 msgstr ""
 
-#: app_actions/playback_actions.py:95
+#: app_actions/playback_actions.py:96
 msgid "Shuffle on"
 msgstr ""
 
-#: app_actions/playback_actions.py:97
+#: app_actions/playback_actions.py:98
 msgid "Shuffle off"
 msgstr ""
 
-#: app_actions/playback_actions.py:108
+#: app_actions/playback_actions.py:109
 msgid "Repeat on"
 msgstr ""
 
-#: app_actions/playback_actions.py:110
+#: app_actions/playback_actions.py:111
 msgid "Repeat off"
 msgstr ""
 
-#: app_actions/playback_actions.py:116
+#: app_actions/playback_actions.py:117
 msgid "Could not change silence removal filter."
 msgstr ""
 
-#: app_actions/playback_actions.py:116
+#: app_actions/playback_actions.py:117
 msgid "Filter failed."
 msgstr ""
 
-#: app_actions/playback_actions.py:123
+#: app_actions/playback_actions.py:124
 msgid "Silence removal on"
 msgstr ""
 
-#: app_actions/playback_actions.py:125
+#: app_actions/playback_actions.py:126
 msgid "Silence removal off"
 msgstr ""
 
-#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:249
-#: app_actions/playback_actions.py:301 app_actions/playback_actions.py:324
-#: app_actions/playback_actions.py:331 app_actions/playback_actions.py:358
+#: app_actions/playback_actions.py:175 app_actions/playback_actions.py:250
+#: app_actions/playback_actions.py:302 app_actions/playback_actions.py:325
+#: app_actions/playback_actions.py:332 app_actions/playback_actions.py:399
 msgid "Time not available"
 msgstr ""
 
-#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:219
-#: app_actions/playback_actions.py:249 app_actions/playback_actions.py:301
-#: app_actions/playback_actions.py:324 app_actions/playback_actions.py:331
-#: app_actions/playback_actions.py:358 playlist/info.py:407
+#: app_actions/playback_actions.py:175 app_actions/playback_actions.py:220
+#: app_actions/playback_actions.py:250 app_actions/playback_actions.py:302
+#: app_actions/playback_actions.py:325 app_actions/playback_actions.py:332
+#: app_actions/playback_actions.py:399 playlist/info.py:409
 msgid "Unavailable"
 msgstr ""
 
-#: app_actions/playback_actions.py:180 app_actions/playback_actions.py:186
-#: app_actions/playback_actions.py:192
+#: app_actions/playback_actions.py:181 app_actions/playback_actions.py:187
+#: app_actions/playback_actions.py:193
 #, python-brace-format
 msgid "Volume {volume} percent"
 msgstr ""
 
-#: app_actions/playback_actions.py:200
+#: app_actions/playback_actions.py:201
 #, python-brace-format
 msgid "Volume is {percent}%"
 msgstr ""
 
-#: app_actions/playback_actions.py:204
+#: app_actions/playback_actions.py:205
 msgid "Elapsed time: "
 msgstr ""
 
-#: app_actions/playback_actions.py:208
+#: app_actions/playback_actions.py:209
 msgid "Remaining time: "
 msgstr ""
 
-#: app_actions/playback_actions.py:212
+#: app_actions/playback_actions.py:213
 msgid "Total time: "
 msgstr ""
 
-#: app_actions/playback_actions.py:219
+#: app_actions/playback_actions.py:220
 msgid "Percentage not available"
 msgstr ""
 
-#: app_actions/playback_actions.py:223 app_actions/playback_actions.py:256
+#: app_actions/playback_actions.py:224 app_actions/playback_actions.py:257
 #, python-brace-format
 msgid "{percent} percent"
 msgstr ""
 
-#: app_actions/playback_actions.py:229 app_actions/playback_actions.py:236
-#: app_actions/playback_actions.py:243
+#: app_actions/playback_actions.py:230 app_actions/playback_actions.py:237
+#: app_actions/playback_actions.py:244
 #, python-brace-format
 msgid "{speed}x"
 msgstr ""
 
-#: app_actions/playback_actions.py:265
+#: app_actions/playback_actions.py:266
 msgid "Time is not available for the current file."
 msgstr ""
 
-#: app_actions/playback_actions.py:266 ui/dialogs.py:40 ui/dialogs.py:165
+#: app_actions/playback_actions.py:267 ui/dialogs.py:40 ui/dialogs.py:165
 #: ui/dialogs.py:175
 msgid "Go to time"
 msgstr ""
 
-#: app_actions/playback_actions.py:309
+#: app_actions/playback_actions.py:310
 #, python-brace-format
 msgid "Start selection: {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:310
+#: app_actions/playback_actions.py:311
 #, python-brace-format
 msgid "Start {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:320
+#: app_actions/playback_actions.py:321
 msgid "No start."
 msgstr ""
 
-#: app_actions/playback_actions.py:320
+#: app_actions/playback_actions.py:321
 msgid "Start selection not set."
 msgstr ""
 
-#: app_actions/playback_actions.py:328
+#: app_actions/playback_actions.py:329
 msgid "End selection must be after start."
 msgstr ""
 
-#: app_actions/playback_actions.py:328
+#: app_actions/playback_actions.py:329
 msgid "Invalid end."
 msgstr ""
 
-#: app_actions/playback_actions.py:336
+#: app_actions/playback_actions.py:339
 #, python-brace-format
 msgid "End selection: {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:337
+#: app_actions/playback_actions.py:340
 #, python-brace-format
 msgid "End {time}"
 msgstr ""
 
-#: app_actions/playback_actions.py:345
+#: app_actions/playback_actions.py:351
 msgid "No selection to clear."
 msgstr ""
 
-#: app_actions/playback_actions.py:345
+#: app_actions/playback_actions.py:351
 msgid "No selection."
 msgstr ""
 
-#: app_actions/playback_actions.py:352
+#: app_actions/playback_actions.py:358
 msgid "Selection cleared"
 msgstr ""
+
+#: app_actions/playback_actions.py:364
+msgid "How many times to play the A-B section (0 repeats it without end):"
+msgstr ""
+
+#: app_actions/playback_actions.py:365
+msgid "Times:"
+msgstr ""
+
+#: app_actions/playback_actions.py:366
+msgid "Section plays"
+msgstr ""
+
+#: app_actions/playback_actions.py:385
+msgid "Last"
+msgstr ""
+
+#: app_actions/playback_actions.py:385
+msgid "Last repetition"
+msgstr ""
+
+#: app_actions/playback_actions.py:390
+msgid "Section repeats without end"
+msgstr ""
+
+#: app_actions/playback_actions.py:392
+#, python-brace-format
+msgid "Section plays {count} time"
+msgid_plural "Section plays {count} times"
+msgstr[0] ""
+msgstr[1] ""
 
 #: app_actions/recording_actions.py:16
 #, python-brace-format
@@ -975,7 +1006,7 @@ msgstr ""
 msgid "Unknown error."
 msgstr ""
 
-#: app_actions/recording_actions.py:79 ui/mainwin/menu.py:109
+#: app_actions/recording_actions.py:79 ui/mainwin/menu.py:110
 #: ui/prefs/dialog.py:67
 msgid "Recording"
 msgstr ""
@@ -993,7 +1024,7 @@ msgstr ""
 msgid "{n} channels could not be loaded."
 msgstr ""
 
-#: app_actions/subscription_actions.py:55 ui/mainwin/menu.py:148
+#: app_actions/subscription_actions.py:55 ui/mainwin/menu.py:149
 msgid "Latest subscription videos"
 msgstr ""
 
@@ -1044,7 +1075,7 @@ msgstr ""
 msgid "YouTube subscriptions"
 msgstr ""
 
-#: core/controller.py:422
+#: core/controller.py:429
 #, python-brace-format
 msgid ""
 "Could not save settings.\n"
@@ -1052,15 +1083,15 @@ msgid ""
 "{error}"
 msgstr ""
 
-#: core/controller.py:423
+#: core/controller.py:430
 msgid "Settings save failed"
 msgstr ""
 
-#: core/controller.py:447
+#: core/controller.py:454
 msgid "Please restart the app for language changes to take effect."
 msgstr ""
 
-#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:151
+#: core/controller.py:455 ui/prefs/dialog.py:19 ui/prefs/dialog.py:151
 msgid "Preferences"
 msgstr ""
 
@@ -1270,11 +1301,11 @@ msgstr ""
 msgid "Jump"
 msgstr ""
 
-#: ui/bookmark_dlg.py:27 ui/mainwin/menu.py:101
+#: ui/bookmark_dlg.py:27 ui/mainwin/menu.py:102
 msgid "Edit"
 msgstr ""
 
-#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
+#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:215
 msgid "Delete"
 msgstr ""
 
@@ -1372,7 +1403,7 @@ msgstr ""
 msgid "Remove..."
 msgstr ""
 
-#: ui/help_dialogs.py:15 ui/mainwin/menu.py:531
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:537
 msgid "About"
 msgstr ""
 
@@ -1387,292 +1418,296 @@ msgid ""
 "Version: {version}"
 msgstr ""
 
-#: ui/help_dialogs.py:43 ui/mainwin/menu.py:514
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:520
 msgid "Visit website"
 msgstr ""
 
-#: ui/main_frame.py:48 ui/mainwin/menu.py:330
+#: ui/main_frame.py:48 ui/mainwin/menu.py:331
 msgid "Previous"
 msgstr ""
 
-#: ui/main_frame.py:49 ui/mainwin/menu.py:382
+#: ui/main_frame.py:49 ui/mainwin/menu.py:387
 msgid "Rewind"
 msgstr ""
 
-#: ui/main_frame.py:51 ui/mainwin/menu.py:386
+#: ui/main_frame.py:51 ui/mainwin/menu.py:391
 msgid "Forward"
 msgstr ""
 
-#: ui/main_frame.py:52 ui/mainwin/menu.py:334
+#: ui/main_frame.py:52 ui/mainwin/menu.py:335
 msgid "Next"
 msgstr ""
 
-#: ui/mainwin/menu.py:100
+#: ui/mainwin/menu.py:101
 msgid "File"
 msgstr ""
 
-#: ui/mainwin/menu.py:105
+#: ui/mainwin/menu.py:106
 msgid "Actions for marked files"
 msgstr ""
 
-#: ui/mainwin/menu.py:106
+#: ui/mainwin/menu.py:107
 msgid "Player"
 msgstr ""
 
-#: ui/mainwin/menu.py:108
+#: ui/mainwin/menu.py:109
 msgid "Video options"
 msgstr ""
 
-#: ui/mainwin/menu.py:110
+#: ui/mainwin/menu.py:111
 msgid "Help"
 msgstr ""
 
-#: ui/mainwin/menu.py:128
+#: ui/mainwin/menu.py:129
 msgid "Open File..."
 msgstr ""
 
-#: ui/mainwin/menu.py:132
+#: ui/mainwin/menu.py:133
 msgid "Open Link..."
 msgstr ""
 
-#: ui/mainwin/menu.py:136
+#: ui/mainwin/menu.py:137
 msgid "Open YouTube Link..."
 msgstr ""
 
-#: ui/mainwin/menu.py:140
+#: ui/mainwin/menu.py:141
 msgid "Search YouTube..."
 msgstr ""
 
-#: ui/mainwin/menu.py:144
+#: ui/mainwin/menu.py:145
 msgid "Favorite videos..."
 msgstr ""
 
-#: ui/mainwin/menu.py:152
+#: ui/mainwin/menu.py:153
 msgid "YouTube subscriptions..."
 msgstr ""
 
-#: ui/mainwin/menu.py:156
+#: ui/mainwin/menu.py:157
 msgid "Open Folder..."
 msgstr ""
 
-#: ui/mainwin/menu.py:160
+#: ui/mainwin/menu.py:161
 msgid "Open Containing Folder"
 msgstr ""
 
-#: ui/mainwin/menu.py:164
+#: ui/mainwin/menu.py:165
 msgid "File properties..."
 msgstr ""
 
-#: ui/mainwin/menu.py:168
+#: ui/mainwin/menu.py:169
 msgid "Opened Files..."
 msgstr ""
 
-#: ui/mainwin/menu.py:172
+#: ui/mainwin/menu.py:173
 msgid "Close File"
 msgstr ""
 
-#: ui/mainwin/menu.py:176
+#: ui/mainwin/menu.py:177
 msgid "Close all files"
 msgstr ""
 
-#: ui/mainwin/menu.py:180
+#: ui/mainwin/menu.py:181
 msgid "Test speakers"
 msgstr ""
 
-#: ui/mainwin/menu.py:184
+#: ui/mainwin/menu.py:185
 msgid "Preferences..."
 msgstr ""
 
-#: ui/mainwin/menu.py:187
+#: ui/mainwin/menu.py:188
 msgid "Exit"
 msgstr ""
 
-#: ui/mainwin/menu.py:210
+#: ui/mainwin/menu.py:211
 msgid "Rename..."
 msgstr ""
 
-#: ui/mainwin/menu.py:218
+#: ui/mainwin/menu.py:219
 msgid "Copy"
 msgstr ""
 
-#: ui/mainwin/menu.py:222
+#: ui/mainwin/menu.py:223
 msgid "Paste"
 msgstr ""
 
-#: ui/mainwin/menu.py:227
+#: ui/mainwin/menu.py:228
 msgid "Mark Current File"
 msgstr ""
 
-#: ui/mainwin/menu.py:231
+#: ui/mainwin/menu.py:232
 msgid "Mark All Files"
 msgstr ""
 
-#: ui/mainwin/menu.py:235
+#: ui/mainwin/menu.py:236
 msgid "Clear Marked Files"
 msgstr ""
 
-#: ui/mainwin/menu.py:262
+#: ui/mainwin/menu.py:263
 #, python-brace-format
 msgid "Bookmark {slot}"
 msgstr ""
 
-#: ui/mainwin/menu.py:266
+#: ui/mainwin/menu.py:267
 msgid "Jump to bookmark"
 msgstr ""
 
-#: ui/mainwin/menu.py:276
+#: ui/mainwin/menu.py:277
 msgid "&Copy to folder..."
 msgstr ""
 
-#: ui/mainwin/menu.py:280
+#: ui/mainwin/menu.py:281
 msgid "&Move to folder..."
 msgstr ""
 
-#: ui/mainwin/menu.py:284
+#: ui/mainwin/menu.py:285
 msgid "Copy to &clipboard"
 msgstr ""
 
-#: ui/mainwin/menu.py:288
+#: ui/mainwin/menu.py:289
 msgid "&Delete"
 msgstr ""
 
-#: ui/mainwin/menu.py:309
+#: ui/mainwin/menu.py:310
 msgid "Play/Pause"
 msgstr ""
 
-#: ui/mainwin/menu.py:315
+#: ui/mainwin/menu.py:316
 msgid "Increase Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:319
+#: ui/mainwin/menu.py:320
 msgid "Decrease Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:323
+#: ui/mainwin/menu.py:324
 msgid "Reset Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:325
+#: ui/mainwin/menu.py:326
 msgid "Speed"
 msgstr ""
 
-#: ui/mainwin/menu.py:338
+#: ui/mainwin/menu.py:339
 msgid "First File"
 msgstr ""
 
-#: ui/mainwin/menu.py:342
+#: ui/mainwin/menu.py:343
 msgid "Go to file..."
 msgstr ""
 
-#: ui/mainwin/menu.py:346
+#: ui/mainwin/menu.py:347
 msgid "Last File"
 msgstr ""
 
-#: ui/mainwin/menu.py:350
+#: ui/mainwin/menu.py:351
 msgid "Shuffle"
 msgstr ""
 
-#: ui/mainwin/menu.py:354
+#: ui/mainwin/menu.py:355
 msgid "Repeat File"
 msgstr ""
 
-#: ui/mainwin/menu.py:359
+#: ui/mainwin/menu.py:360
 msgid "Enable silence removal filter"
 msgstr ""
 
-#: ui/mainwin/menu.py:367
+#: ui/mainwin/menu.py:368
 msgid "Set A (loop start)"
 msgstr ""
 
-#: ui/mainwin/menu.py:371
+#: ui/mainwin/menu.py:372
 msgid "Set B (loop end)"
 msgstr ""
 
-#: ui/mainwin/menu.py:375
+#: ui/mainwin/menu.py:376
 msgid "Clear A-B loop"
 msgstr ""
 
-#: ui/mainwin/menu.py:377
+#: ui/mainwin/menu.py:380
+msgid "Section plays..."
+msgstr ""
+
+#: ui/mainwin/menu.py:382
 msgid "A-B loop"
 msgstr ""
 
-#: ui/mainwin/menu.py:390
+#: ui/mainwin/menu.py:395
 msgid "Beginning"
 msgstr ""
 
-#: ui/mainwin/menu.py:394
+#: ui/mainwin/menu.py:399
 msgid "End"
 msgstr ""
 
-#: ui/mainwin/menu.py:398
+#: ui/mainwin/menu.py:403
 msgid "Go to time..."
 msgstr ""
 
-#: ui/mainwin/menu.py:412
+#: ui/mainwin/menu.py:417
 msgid "Jump to Percentage"
 msgstr ""
 
-#: ui/mainwin/menu.py:437
+#: ui/mainwin/menu.py:442
 msgid "Control the clicks movement value"
 msgstr ""
 
-#: ui/mainwin/menu.py:442
+#: ui/mainwin/menu.py:447
 msgid "Sound Cards..."
 msgstr ""
 
-#: ui/mainwin/menu.py:472
+#: ui/mainwin/menu.py:478
 msgid "Download..."
 msgstr ""
 
-#: ui/mainwin/menu.py:476
+#: ui/mainwin/menu.py:482
 msgid "Video description..."
 msgstr ""
 
-#: ui/mainwin/menu.py:480
+#: ui/mainwin/menu.py:486
 msgid "Copy video link"
 msgstr ""
 
-#: ui/mainwin/menu.py:497
+#: ui/mainwin/menu.py:503
 msgid "User Guide"
 msgstr ""
 
-#: ui/mainwin/menu.py:501 ui/update_dialogs.py:18
+#: ui/mainwin/menu.py:507 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr ""
 
-#: ui/mainwin/menu.py:506
+#: ui/mainwin/menu.py:512
 msgid "Email"
 msgstr ""
 
-#: ui/mainwin/menu.py:510
+#: ui/mainwin/menu.py:516
 msgid "Telegram"
 msgstr ""
 
-#: ui/mainwin/menu.py:516
+#: ui/mainwin/menu.py:522
 msgid "Contact me"
 msgstr ""
 
-#: ui/mainwin/menu.py:521
+#: ui/mainwin/menu.py:527
 msgid "Check for app updates"
 msgstr ""
 
-#: ui/mainwin/menu.py:525
+#: ui/mainwin/menu.py:531
 msgid "Update YouTube components"
 msgstr ""
 
-#: ui/mainwin/menu.py:527
+#: ui/mainwin/menu.py:533
 msgid "Updates"
 msgstr ""
 
-#: ui/mainwin/menu.py:548
+#: ui/mainwin/menu.py:554
 msgid "Start recording"
 msgstr ""
 
-#: ui/mainwin/menu.py:556
+#: ui/mainwin/menu.py:562
 msgid "Stop"
 msgstr ""
 
-#: ui/mainwin/menu.py:561
+#: ui/mainwin/menu.py:567
 msgid "Open recordings folder"
 msgstr ""
 

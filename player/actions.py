@@ -72,6 +72,7 @@ ANNOUNCE_FILE_INFO = "announce_file_info"
 START_SELECTION = "start_selection"
 END_SELECTION = "end_selection"
 CLEAR_SELECTION = "clear_selection"
+SET_LOOP_PLAYS = "set_loop_plays"
 SEEK_STEP_1 = "seek_step_1"
 SEEK_STEP_2 = "seek_step_2"
 SEEK_STEP_3 = "seek_step_3"
@@ -368,6 +369,7 @@ ACTIONS = {
     START_SELECTION: Action(START_SELECTION, "Start Selection", Shortcut("[")),
     END_SELECTION: Action(END_SELECTION, "End Selection", Shortcut("]")),
     CLEAR_SELECTION: Action(CLEAR_SELECTION, "Clear Selection", Shortcut("backspace")),
+    SET_LOOP_PLAYS: Action(SET_LOOP_PLAYS, "Section Plays", Shortcut("\\")),
     SEEK_STEP_1: Action(
         SEEK_STEP_1, "Seek Step: 1 Second", Shortcut("1", frozenset({"shift"}))
     ),

@@ -6,7 +6,7 @@ The source under `player/` is the truth; user docs are in `player/docs/<lang>/us
 
 - Stack: Python 3.11, wxPython, libmpv (`player/mpv.dll`, fetched, + vendored `player/mpv.py`); deps in `player/requirements.txt` (import names differ: `appGuard` -> `app_guard`, `py-yt-search` -> `py_yt`).
 - Run: `cd player; python SimpleAudioPlayer.py [paths...]`. Imports are top-level, so CWD or `PYTHONPATH` must be `player/`. `mpv.py` loads the `mpv.dll` next to itself first (the one local patch), so the CWD does not matter for libmpv.
-- `mpv.py` is pristine python-mpv 1.0.8 plus that loader patch: do not edit or reformat it; to upgrade, copy upstream and re-apply only the loader block. libmpv is shinchiro `libmpv-2.dll` (mpv 0.42) renamed `mpv.dll`. API facts the code relies on: event callbacks get an `MpvEvent` (END_FILE reason is `event.data.reason`); `loadfile` options go through `MPV.loadfile(path, mode, **opts)` because mpv 0.38 added an index argument; mpv 0.36+ enforces `volume-max`, so `MpvEngine` sets it to `VOLUME_MAX`.
+- `mpv.py` is pristine python-mpv 1.0.8 plus that loader patch: do not edit or reformat it; to upgrade, copy upstream and re-apply only the loader block. libmpv is shinchiro `libmpv-2.dll` (mpv 0.42) renamed `mpv.dll`. API facts the code relies on: event callbacks get an `MpvEvent` (END_FILE reason is `event.data.reason`); `loadfile` options go through `MPV.loadfile(path, mode, **opts)` because mpv 0.38 added an index argument; mpv 0.36+ enforces `volume-max`, so `MpvEngine` sets it to `VOLUME_MAX`. Do not move the >100% gain to mpv `volume-gain`: it applies after the af chain, past the normalization limiter, so loud input clips (measured 2026-11-14); the preamp filter rebuild leaves no audible gap.
 
 ## 2. Control flow
 
@@ -34,7 +34,7 @@ The source under `player/` is the truth; user docs are in `player/docs/<lang>/us
 - Filters are labelled `af add` lavfi entries (`@audionormalize`, `@audiopreamp`, `@audiomono`, `@silenceremove`); `Player._apply_active_audio_filters` reapplies them after each load.
 - `Player.set_render_window` tries assigning `wid`; on failure `MpvEngine.recreate_with_window` builds a new core (32-bit-masked HWND), restores volume/speed/filters/device/stream cache, and the player reloads at the saved position/pause state. Any runtime option added must be reapplied there.
 - End of file (`core/player/lifecycle.py`, runs on mpv's event thread): reason 4 (error) -> `youtube.flow.on_playback_finished` retry; then repeat-file reloads; then `end_behavior`: `advance` (for EOF the YouTube flow gets first chance, else next track, else stop), `loop` (mpv `loop-file=inf`), `none` (`keep-open`).
-- A-B loop = mpv `ab-loop-a/b`, cleared by `Player._load_current` on every load; the speaker test uses a throwaway second core.
+- A-B loop = mpv `ab-loop-a/b`, cleared by `Player._load_current` on every load; the speaker test uses a throwaway second core. Section plays (`\` key, setting `audio.ab_loop_plays`, 0 = without end) = mpv `ab-loop-count` set to plays - 1, because mpv counts jumps back to A; `end_selection` sets it again to restart the count. `MpvEngine` observes `remaining-ab-loops` and calls `on_ab_last_pass` (on mpv's event thread) when it falls from >0 to 0, the start of the last pass; the controller hops to the UI thread with `wx.CallAfter` to say "Last repetition".
 
 ## 5. Files and playlist
 

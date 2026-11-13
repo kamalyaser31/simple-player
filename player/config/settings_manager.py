@@ -4,6 +4,7 @@ import os
 import re
 
 from config.constants import (
+    AB_LOOP_PLAYS_MAX,
     APP_NAME,
     CONFIG_FILENAME,
     SPEED_STEP,
@@ -101,6 +102,7 @@ class SettingsManager:
                 "device": "",
                 "seek_step_key": "2",
                 "seek_step_custom": "5",
+                "ab_loop_plays": "0",
                 "speed_step": str(float(SPEED_STEP)),
                 "volume_step": str(int(VOLUME_STEP)),
                 "end_behavior": "advance",
@@ -597,6 +599,19 @@ class SettingsManager:
         if "audio" not in self._config:
             self._config["audio"] = {}
         self._config["audio"]["seek_step_custom"] = str(float(value))
+
+    def get_ab_loop_plays(self):
+        try:
+            value = int(self._config.get("audio", "ab_loop_plays"))
+        except (ValueError, configparser.Error):
+            return 0
+        return max(0, min(AB_LOOP_PLAYS_MAX, value))
+
+    def set_ab_loop_plays(self, plays):
+        if "audio" not in self._config:
+            self._config["audio"] = {}
+        plays = max(0, min(AB_LOOP_PLAYS_MAX, int(plays)))
+        self._config["audio"]["ab_loop_plays"] = str(plays)
 
     def get_speed_step(self):
         try:

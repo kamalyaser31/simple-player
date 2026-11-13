@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Audio Player 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 22:45+0200\n"
+"POT-Creation-Date: 2026-11-14 00:23+0200\n"
 "PO-Revision-Date: 2026-07-06 21:03+0300\n"
 "Last-Translator: Kamal Yaser <kamalyaser31@gmail.com>\n"
 "Language-Team: Arabic\n"
@@ -35,7 +35,7 @@ msgstr "مرحبًا بك في Simple Audio Player"
 msgid "Bookmark {time}"
 msgstr "إشارة مرجعية {time}"
 
-#: app_actions/bookmark_actions.py:17 ui/mainwin/menu.py:251
+#: app_actions/bookmark_actions.py:17 ui/mainwin/menu.py:252
 msgid "Add a new bookmark"
 msgstr "إضافة إشارة مرجعية جديدة"
 
@@ -49,7 +49,7 @@ msgstr "لا يمكن أن يكون اسم الإشارة المرجعية فا�
 
 #: app_actions/bookmark_actions.py:24 app_actions/bookmark_actions.py:35
 #: app_actions/bookmark_actions.py:62 app_actions/bookmark_actions.py:126
-#: ui/mainwin/menu.py:103
+#: ui/mainwin/menu.py:104
 msgid "Bookmarks"
 msgstr "الإشارات المرجعية"
 
@@ -75,7 +75,7 @@ msgid "Edit bookmark name"
 msgstr "تعديل اسم الإشارة المرجعية"
 
 #: app_actions/bookmark_actions.py:92 ui/bookmark_dlg.py:15
-#: ui/mainwin/menu.py:255
+#: ui/mainwin/menu.py:256
 msgid "Manage bookmarks"
 msgstr "إدارة الإشارات المرجعية"
 
@@ -108,9 +108,9 @@ msgstr "لا توجد إشارة مرجعية رقم {slot}."
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
-#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
-#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:48
+#: app_actions/playback_actions.py:81 app_actions/playback_actions.py:103
+#: app_actions/playback_actions.py:298 app_actions/playback_actions.py:317
 msgid "No file loaded."
 msgstr "لم يُحمَّل أي ملف."
 
@@ -120,9 +120,9 @@ msgstr "لم يُحمَّل أي ملف."
 #: app_actions/file_actions.py:528 app_actions/file_actions.py:541
 #: app_actions/file_actions.py:619 app_actions/file_actions.py:650
 #: app_actions/file_actions.py:678 app_actions/marked_file_actions.py:27
-#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:47
-#: app_actions/playback_actions.py:80 app_actions/playback_actions.py:102
-#: app_actions/playback_actions.py:297 app_actions/playback_actions.py:316
+#: app_actions/marked_file_actions.py:37 app_actions/playback_actions.py:48
+#: app_actions/playback_actions.py:81 app_actions/playback_actions.py:103
+#: app_actions/playback_actions.py:298 app_actions/playback_actions.py:317
 msgid "No file."
 msgstr "لا يوجد ملف."
 
@@ -715,215 +715,250 @@ msgstr "فشل."
 msgid "Operation failed."
 msgstr "فشلت العملية."
 
-#: app_actions/playback_actions.py:28
+#: app_actions/playback_actions.py:29
 msgid "1 second"
 msgstr "ثانية واحدة"
 
-#: app_actions/playback_actions.py:29
+#: app_actions/playback_actions.py:30
 msgid "5 seconds"
 msgstr "5 ثوانٍ"
 
-#: app_actions/playback_actions.py:30
+#: app_actions/playback_actions.py:31
 msgid "1 minute"
 msgstr "دقيقة واحدة"
 
-#: app_actions/playback_actions.py:31
+#: app_actions/playback_actions.py:32
 msgid "5 minutes"
 msgstr "5 دقائق"
 
-#: app_actions/playback_actions.py:32
+#: app_actions/playback_actions.py:33
 msgid "10 minutes"
 msgstr "10 دقائق"
 
-#: app_actions/playback_actions.py:33
+#: app_actions/playback_actions.py:34
 msgid "20 minutes"
 msgstr "20 دقيقة"
 
-#: app_actions/playback_actions.py:34
+#: app_actions/playback_actions.py:35
 msgid "30 minutes"
 msgstr "30 دقيقة"
 
-#: app_actions/playback_actions.py:35
+#: app_actions/playback_actions.py:36
 msgid "40 minutes"
 msgstr "40 دقيقة"
 
-#: app_actions/playback_actions.py:36
+#: app_actions/playback_actions.py:37
 msgid "50 minutes"
 msgstr "50 دقيقة"
 
-#: app_actions/playback_actions.py:37
+#: app_actions/playback_actions.py:38
 msgid "60 minutes"
 msgstr "60 دقيقة"
 
-#: app_actions/playback_actions.py:38
+#: app_actions/playback_actions.py:39
 msgid "Custom value"
 msgstr "قيمة مخصصة"
 
-#: app_actions/playback_actions.py:56 app_actions/playback_actions.py:62
+#: app_actions/playback_actions.py:57 app_actions/playback_actions.py:63
 #: ui/main_frame.py:50 ui/mainwin/state.py:91 ui/yt_dialogs.py:58
 msgid "Play"
 msgstr "تشغيل"
 
-#: app_actions/playback_actions.py:62 ui/mainwin/menu.py:552
+#: app_actions/playback_actions.py:63 ui/mainwin/menu.py:558
 #: ui/mainwin/state.py:91 ui/mainwin/state.py:228
 msgid "Pause"
 msgstr "إيقاف مؤقت"
 
-#: app_actions/playback_actions.py:69
+#: app_actions/playback_actions.py:70
 msgid "Beginner mode"
 msgstr "وضع المبتدئ"
 
-#: app_actions/playback_actions.py:72
+#: app_actions/playback_actions.py:73
 msgid "Advanced mode"
 msgstr "وضع المتقدم"
 
-#: app_actions/playback_actions.py:87
+#: app_actions/playback_actions.py:88
 msgid "Shuffle is disabled for YouTube streams."
 msgstr "التشغيل العشوائي معطّل لبث YouTube."
 
-#: app_actions/playback_actions.py:88
+#: app_actions/playback_actions.py:89
 msgid "Shuffle disabled for YouTube."
 msgstr "التشغيل العشوائي معطّل لـ YouTube."
 
-#: app_actions/playback_actions.py:95
+#: app_actions/playback_actions.py:96
 msgid "Shuffle on"
 msgstr "التشغيل العشوائي مفعّل"
 
-#: app_actions/playback_actions.py:97
+#: app_actions/playback_actions.py:98
 msgid "Shuffle off"
 msgstr "التشغيل العشوائي معطّل"
 
-#: app_actions/playback_actions.py:108
+#: app_actions/playback_actions.py:109
 msgid "Repeat on"
 msgstr "التكرار مفعّل"
 
-#: app_actions/playback_actions.py:110
+#: app_actions/playback_actions.py:111
 msgid "Repeat off"
 msgstr "التكرار معطّل"
 
-#: app_actions/playback_actions.py:116
+#: app_actions/playback_actions.py:117
 msgid "Could not change silence removal filter."
 msgstr "تعذر تغيير مرشح إزالة الصمت."
 
-#: app_actions/playback_actions.py:116
+#: app_actions/playback_actions.py:117
 msgid "Filter failed."
 msgstr "فشل المرشح."
 
-#: app_actions/playback_actions.py:123
+#: app_actions/playback_actions.py:124
 msgid "Silence removal on"
 msgstr "إزالة الصمت مفعّلة"
 
-#: app_actions/playback_actions.py:125
+#: app_actions/playback_actions.py:126
 msgid "Silence removal off"
 msgstr "إزالة الصمت معطّلة"
 
-#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:249
-#: app_actions/playback_actions.py:301 app_actions/playback_actions.py:324
-#: app_actions/playback_actions.py:331 app_actions/playback_actions.py:358
+#: app_actions/playback_actions.py:175 app_actions/playback_actions.py:250
+#: app_actions/playback_actions.py:302 app_actions/playback_actions.py:325
+#: app_actions/playback_actions.py:332 app_actions/playback_actions.py:399
 msgid "Time not available"
 msgstr "الوقت غير متوفر"
 
-#: app_actions/playback_actions.py:174 app_actions/playback_actions.py:219
-#: app_actions/playback_actions.py:249 app_actions/playback_actions.py:301
-#: app_actions/playback_actions.py:324 app_actions/playback_actions.py:331
-#: app_actions/playback_actions.py:358 playlist/info.py:407
+#: app_actions/playback_actions.py:175 app_actions/playback_actions.py:220
+#: app_actions/playback_actions.py:250 app_actions/playback_actions.py:302
+#: app_actions/playback_actions.py:325 app_actions/playback_actions.py:332
+#: app_actions/playback_actions.py:399 playlist/info.py:409
 msgid "Unavailable"
 msgstr "غير متوفر"
 
-#: app_actions/playback_actions.py:180 app_actions/playback_actions.py:186
-#: app_actions/playback_actions.py:192
+#: app_actions/playback_actions.py:181 app_actions/playback_actions.py:187
+#: app_actions/playback_actions.py:193
 #, python-brace-format
 msgid "Volume {volume} percent"
 msgstr "مستوى الصوت {volume} بالمائة"
 
-#: app_actions/playback_actions.py:200
+#: app_actions/playback_actions.py:201
 #, python-brace-format
 msgid "Volume is {percent}%"
 msgstr "مستوى الصوت {percent}%"
 
-#: app_actions/playback_actions.py:204
+#: app_actions/playback_actions.py:205
 msgid "Elapsed time: "
 msgstr "الوقت المنقضي: "
 
-#: app_actions/playback_actions.py:208
+#: app_actions/playback_actions.py:209
 msgid "Remaining time: "
 msgstr "الوقت المتبقي: "
 
-#: app_actions/playback_actions.py:212
+#: app_actions/playback_actions.py:213
 msgid "Total time: "
 msgstr "الوقت الإجمالي: "
 
-#: app_actions/playback_actions.py:219
+#: app_actions/playback_actions.py:220
 msgid "Percentage not available"
 msgstr "النسبة المئوية غير متوفرة"
 
-#: app_actions/playback_actions.py:223 app_actions/playback_actions.py:256
+#: app_actions/playback_actions.py:224 app_actions/playback_actions.py:257
 #, python-brace-format
 msgid "{percent} percent"
 msgstr "{percent} بالمائة"
 
-#: app_actions/playback_actions.py:229 app_actions/playback_actions.py:236
-#: app_actions/playback_actions.py:243
+#: app_actions/playback_actions.py:230 app_actions/playback_actions.py:237
+#: app_actions/playback_actions.py:244
 #, python-brace-format
 msgid "{speed}x"
 msgstr "{speed} x"
 
-#: app_actions/playback_actions.py:265
+#: app_actions/playback_actions.py:266
 msgid "Time is not available for the current file."
 msgstr "الوقت غير متوفر للملف الحالي."
 
-#: app_actions/playback_actions.py:266 ui/dialogs.py:40 ui/dialogs.py:165
+#: app_actions/playback_actions.py:267 ui/dialogs.py:40 ui/dialogs.py:165
 #: ui/dialogs.py:175
 msgid "Go to time"
 msgstr "الانتقال إلى وقت"
 
-#: app_actions/playback_actions.py:309
+#: app_actions/playback_actions.py:310
 #, python-brace-format
 msgid "Start selection: {time}"
 msgstr "بداية التحديد: {time}"
 
-#: app_actions/playback_actions.py:310
+#: app_actions/playback_actions.py:311
 #, python-brace-format
 msgid "Start {time}"
 msgstr "البداية {time}"
 
-#: app_actions/playback_actions.py:320
+#: app_actions/playback_actions.py:321
 msgid "No start."
 msgstr "لا توجد بداية."
 
-#: app_actions/playback_actions.py:320
+#: app_actions/playback_actions.py:321
 msgid "Start selection not set."
 msgstr "لم تُعيَّن بداية التحديد."
 
-#: app_actions/playback_actions.py:328
+#: app_actions/playback_actions.py:329
 msgid "End selection must be after start."
 msgstr "يجب أن تكون نهاية التحديد بعد البداية."
 
-#: app_actions/playback_actions.py:328
+#: app_actions/playback_actions.py:329
 msgid "Invalid end."
 msgstr "نهاية غير صالحة."
 
-#: app_actions/playback_actions.py:336
+#: app_actions/playback_actions.py:339
 #, python-brace-format
 msgid "End selection: {time}"
 msgstr "نهاية التحديد: {time}"
 
-#: app_actions/playback_actions.py:337
+#: app_actions/playback_actions.py:340
 #, python-brace-format
 msgid "End {time}"
 msgstr "النهاية {time}"
 
-#: app_actions/playback_actions.py:345
+#: app_actions/playback_actions.py:351
 msgid "No selection to clear."
 msgstr "لا يوجد تحديد لمسحه."
 
-#: app_actions/playback_actions.py:345
+#: app_actions/playback_actions.py:351
 msgid "No selection."
 msgstr "لا يوجد تحديد."
 
-#: app_actions/playback_actions.py:352
+#: app_actions/playback_actions.py:358
 msgid "Selection cleared"
 msgstr "مُسح التحديد"
+
+#: app_actions/playback_actions.py:364
+msgid "How many times to play the A-B section (0 repeats it without end):"
+msgstr "كم مرة يُشغَّل التحديد بين A وB؟ (0 يكرره بلا نهاية):"
+
+#: app_actions/playback_actions.py:365
+msgid "Times:"
+msgstr "عدد المرات:"
+
+#: app_actions/playback_actions.py:366
+msgid "Section plays"
+msgstr "مرات تشغيل التحديد"
+
+#: app_actions/playback_actions.py:385
+msgid "Last"
+msgstr "الأخير"
+
+#: app_actions/playback_actions.py:385
+msgid "Last repetition"
+msgstr "التكرار الأخير"
+
+#: app_actions/playback_actions.py:390
+msgid "Section repeats without end"
+msgstr "يتكرر التحديد بلا نهاية"
+
+#: app_actions/playback_actions.py:392
+#, python-brace-format
+msgid "Section plays {count} time"
+msgid_plural "Section plays {count} times"
+msgstr[0] "يُشغَّل التحديد {count} مرة"
+msgstr[1] "يُشغَّل التحديد مرة واحدة"
+msgstr[2] "يُشغَّل التحديد مرتين"
+msgstr[3] "يُشغَّل التحديد {count} مرات"
+msgstr[4] "يُشغَّل التحديد {count} مرة"
+msgstr[5] "يُشغَّل التحديد {count} مرة"
 
 #: app_actions/recording_actions.py:16
 #, python-brace-format
@@ -983,7 +1018,7 @@ msgstr "المجلد غير محدد."
 msgid "Unknown error."
 msgstr "خطأ غير معروف."
 
-#: app_actions/recording_actions.py:79 ui/mainwin/menu.py:109
+#: app_actions/recording_actions.py:79 ui/mainwin/menu.py:110
 #: ui/prefs/dialog.py:67
 msgid "Recording"
 msgstr "التسجيل"
@@ -1001,7 +1036,7 @@ msgstr "جارٍ تحميل الاشتراكات"
 msgid "{n} channels could not be loaded."
 msgstr "تعذر تحميل {n} من القنوات."
 
-#: app_actions/subscription_actions.py:55 ui/mainwin/menu.py:148
+#: app_actions/subscription_actions.py:55 ui/mainwin/menu.py:149
 msgid "Latest subscription videos"
 msgstr "أحدث مقاطع الاشتراكات"
 
@@ -1052,7 +1087,7 @@ msgstr "تعذر تحميل بيانات YouTube."
 msgid "YouTube subscriptions"
 msgstr "اشتراكات YouTube"
 
-#: core/controller.py:422
+#: core/controller.py:429
 #, python-brace-format
 msgid ""
 "Could not save settings.\n"
@@ -1063,15 +1098,15 @@ msgstr ""
 "\n"
 "{error}"
 
-#: core/controller.py:423
+#: core/controller.py:430
 msgid "Settings save failed"
 msgstr "فشل حفظ الإعدادات"
 
-#: core/controller.py:447
+#: core/controller.py:454
 msgid "Please restart the app for language changes to take effect."
 msgstr "يرجى إعادة تشغيل التطبيق لتفعيل تغييرات اللغة."
 
-#: core/controller.py:448 ui/prefs/dialog.py:19 ui/prefs/dialog.py:151
+#: core/controller.py:455 ui/prefs/dialog.py:19 ui/prefs/dialog.py:151
 msgid "Preferences"
 msgstr "التفضيلات"
 
@@ -1317,11 +1352,11 @@ msgstr "الموضع"
 msgid "Jump"
 msgstr "انتقال"
 
-#: ui/bookmark_dlg.py:27 ui/mainwin/menu.py:101
+#: ui/bookmark_dlg.py:27 ui/mainwin/menu.py:102
 msgid "Edit"
 msgstr "تعديل"
 
-#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:214
+#: ui/bookmark_dlg.py:28 ui/mainwin/menu.py:215
 msgid "Delete"
 msgstr "حذف"
 
@@ -1419,7 +1454,7 @@ msgstr "تعديل..."
 msgid "Remove..."
 msgstr "إزالة..."
 
-#: ui/help_dialogs.py:15 ui/mainwin/menu.py:531
+#: ui/help_dialogs.py:15 ui/mainwin/menu.py:537
 msgid "About"
 msgstr "عن التطبيق"
 
@@ -1440,292 +1475,296 @@ msgstr ""
 "المطور: Kamal yaser\n"
 "الإصدار: {version}"
 
-#: ui/help_dialogs.py:43 ui/mainwin/menu.py:514
+#: ui/help_dialogs.py:43 ui/mainwin/menu.py:520
 msgid "Visit website"
 msgstr "زيارة الموقع"
 
-#: ui/main_frame.py:48 ui/mainwin/menu.py:330
+#: ui/main_frame.py:48 ui/mainwin/menu.py:331
 msgid "Previous"
 msgstr "السابق"
 
-#: ui/main_frame.py:49 ui/mainwin/menu.py:382
+#: ui/main_frame.py:49 ui/mainwin/menu.py:387
 msgid "Rewind"
 msgstr "للخلف"
 
-#: ui/main_frame.py:51 ui/mainwin/menu.py:386
+#: ui/main_frame.py:51 ui/mainwin/menu.py:391
 msgid "Forward"
 msgstr "للأمام"
 
-#: ui/main_frame.py:52 ui/mainwin/menu.py:334
+#: ui/main_frame.py:52 ui/mainwin/menu.py:335
 msgid "Next"
 msgstr "التالي"
 
-#: ui/mainwin/menu.py:100
+#: ui/mainwin/menu.py:101
 msgid "File"
 msgstr "ملف"
 
-#: ui/mainwin/menu.py:105
+#: ui/mainwin/menu.py:106
 msgid "Actions for marked files"
 msgstr "إجراءات للملفات المحددة"
 
-#: ui/mainwin/menu.py:106
+#: ui/mainwin/menu.py:107
 msgid "Player"
 msgstr "المشغل"
 
-#: ui/mainwin/menu.py:108
+#: ui/mainwin/menu.py:109
 msgid "Video options"
 msgstr "خيارات المقطع"
 
-#: ui/mainwin/menu.py:110
+#: ui/mainwin/menu.py:111
 msgid "Help"
 msgstr "مساعدة"
 
-#: ui/mainwin/menu.py:128
+#: ui/mainwin/menu.py:129
 msgid "Open File..."
 msgstr "فتح ملف..."
 
-#: ui/mainwin/menu.py:132
+#: ui/mainwin/menu.py:133
 msgid "Open Link..."
 msgstr "فتح رابط..."
 
-#: ui/mainwin/menu.py:136
+#: ui/mainwin/menu.py:137
 msgid "Open YouTube Link..."
 msgstr "فتح رابط YouTube..."
 
-#: ui/mainwin/menu.py:140
+#: ui/mainwin/menu.py:141
 msgid "Search YouTube..."
 msgstr "بحث YouTube..."
 
-#: ui/mainwin/menu.py:144
+#: ui/mainwin/menu.py:145
 msgid "Favorite videos..."
 msgstr "المقاطع المفضلة..."
 
-#: ui/mainwin/menu.py:152
+#: ui/mainwin/menu.py:153
 msgid "YouTube subscriptions..."
 msgstr "اشتراكات YouTube..."
 
-#: ui/mainwin/menu.py:156
+#: ui/mainwin/menu.py:157
 msgid "Open Folder..."
 msgstr "فتح مجلد..."
 
-#: ui/mainwin/menu.py:160
+#: ui/mainwin/menu.py:161
 msgid "Open Containing Folder"
 msgstr "فتح المجلد الحاوي"
 
-#: ui/mainwin/menu.py:164
+#: ui/mainwin/menu.py:165
 msgid "File properties..."
 msgstr "خصائص الملف..."
 
-#: ui/mainwin/menu.py:168
+#: ui/mainwin/menu.py:169
 msgid "Opened Files..."
 msgstr "الملفات المفتوحة..."
 
-#: ui/mainwin/menu.py:172
+#: ui/mainwin/menu.py:173
 msgid "Close File"
 msgstr "إغلاق الملف"
 
-#: ui/mainwin/menu.py:176
+#: ui/mainwin/menu.py:177
 msgid "Close all files"
 msgstr "إغلاق جميع الملفات"
 
-#: ui/mainwin/menu.py:180
+#: ui/mainwin/menu.py:181
 msgid "Test speakers"
 msgstr "اختبار السماعات"
 
-#: ui/mainwin/menu.py:184
+#: ui/mainwin/menu.py:185
 msgid "Preferences..."
 msgstr "التفضيلات..."
 
-#: ui/mainwin/menu.py:187
+#: ui/mainwin/menu.py:188
 msgid "Exit"
 msgstr "خروج"
 
-#: ui/mainwin/menu.py:210
+#: ui/mainwin/menu.py:211
 msgid "Rename..."
 msgstr "إعادة تسمية..."
 
-#: ui/mainwin/menu.py:218
+#: ui/mainwin/menu.py:219
 msgid "Copy"
 msgstr "نسخ"
 
-#: ui/mainwin/menu.py:222
+#: ui/mainwin/menu.py:223
 msgid "Paste"
 msgstr "لصق"
 
-#: ui/mainwin/menu.py:227
+#: ui/mainwin/menu.py:228
 msgid "Mark Current File"
 msgstr "تحديد الملف الحالي"
 
-#: ui/mainwin/menu.py:231
+#: ui/mainwin/menu.py:232
 msgid "Mark All Files"
 msgstr "تحديد جميع الملفات"
 
-#: ui/mainwin/menu.py:235
+#: ui/mainwin/menu.py:236
 msgid "Clear Marked Files"
 msgstr "مسح التحديد"
 
-#: ui/mainwin/menu.py:262
+#: ui/mainwin/menu.py:263
 #, python-brace-format
 msgid "Bookmark {slot}"
 msgstr "إشارة مرجعية {slot}"
 
-#: ui/mainwin/menu.py:266
+#: ui/mainwin/menu.py:267
 msgid "Jump to bookmark"
 msgstr "انتقال إلى إشارة مرجعية"
 
-#: ui/mainwin/menu.py:276
+#: ui/mainwin/menu.py:277
 msgid "&Copy to folder..."
 msgstr "&نسخ إلى مجلد..."
 
-#: ui/mainwin/menu.py:280
+#: ui/mainwin/menu.py:281
 msgid "&Move to folder..."
 msgstr "نق&ل إلى مجلد..."
 
-#: ui/mainwin/menu.py:284
+#: ui/mainwin/menu.py:285
 msgid "Copy to &clipboard"
 msgstr "نسخ إلى &الحافظة"
 
-#: ui/mainwin/menu.py:288
+#: ui/mainwin/menu.py:289
 msgid "&Delete"
 msgstr "&حذف"
 
-#: ui/mainwin/menu.py:309
+#: ui/mainwin/menu.py:310
 msgid "Play/Pause"
 msgstr "تشغيل/إيقاف مؤقت"
 
-#: ui/mainwin/menu.py:315
+#: ui/mainwin/menu.py:316
 msgid "Increase Speed"
 msgstr "زيادة السرعة"
 
-#: ui/mainwin/menu.py:319
+#: ui/mainwin/menu.py:320
 msgid "Decrease Speed"
 msgstr "تقليل السرعة"
 
-#: ui/mainwin/menu.py:323
+#: ui/mainwin/menu.py:324
 msgid "Reset Speed"
 msgstr "إعادة تعيين السرعة"
 
-#: ui/mainwin/menu.py:325
+#: ui/mainwin/menu.py:326
 msgid "Speed"
 msgstr "السرعة"
 
-#: ui/mainwin/menu.py:338
+#: ui/mainwin/menu.py:339
 msgid "First File"
 msgstr "الملف الأول"
 
-#: ui/mainwin/menu.py:342
+#: ui/mainwin/menu.py:343
 msgid "Go to file..."
 msgstr "انتقال إلى ملف..."
 
-#: ui/mainwin/menu.py:346
+#: ui/mainwin/menu.py:347
 msgid "Last File"
 msgstr "الملف الأخير"
 
-#: ui/mainwin/menu.py:350
+#: ui/mainwin/menu.py:351
 msgid "Shuffle"
 msgstr "التشغيل العشوائي"
 
-#: ui/mainwin/menu.py:354
+#: ui/mainwin/menu.py:355
 msgid "Repeat File"
 msgstr "تكرار الملف"
 
-#: ui/mainwin/menu.py:359
+#: ui/mainwin/menu.py:360
 msgid "Enable silence removal filter"
 msgstr "تمكين مرشح إزالة الصمت"
 
-#: ui/mainwin/menu.py:367
+#: ui/mainwin/menu.py:368
 msgid "Set A (loop start)"
 msgstr "تعيين A (بداية التكرار)"
 
-#: ui/mainwin/menu.py:371
+#: ui/mainwin/menu.py:372
 msgid "Set B (loop end)"
 msgstr "تعيين B (نهاية التكرار)"
 
-#: ui/mainwin/menu.py:375
+#: ui/mainwin/menu.py:376
 msgid "Clear A-B loop"
 msgstr "مسح تكرار A-B"
 
-#: ui/mainwin/menu.py:377
+#: ui/mainwin/menu.py:380
+msgid "Section plays..."
+msgstr "مرات تشغيل التحديد..."
+
+#: ui/mainwin/menu.py:382
 msgid "A-B loop"
 msgstr "تكرار A-B"
 
-#: ui/mainwin/menu.py:390
+#: ui/mainwin/menu.py:395
 msgid "Beginning"
 msgstr "البداية"
 
-#: ui/mainwin/menu.py:394
+#: ui/mainwin/menu.py:399
 msgid "End"
 msgstr "النهاية"
 
-#: ui/mainwin/menu.py:398
+#: ui/mainwin/menu.py:403
 msgid "Go to time..."
 msgstr "انتقال إلى وقت..."
 
-#: ui/mainwin/menu.py:412
+#: ui/mainwin/menu.py:417
 msgid "Jump to Percentage"
 msgstr "انتقال إلى نسبة مئوية"
 
-#: ui/mainwin/menu.py:437
+#: ui/mainwin/menu.py:442
 msgid "Control the clicks movement value"
 msgstr "قيمة التقديم والتأخير"
 
-#: ui/mainwin/menu.py:442
+#: ui/mainwin/menu.py:447
 msgid "Sound Cards..."
 msgstr "بطاقات الصوت..."
 
-#: ui/mainwin/menu.py:472
+#: ui/mainwin/menu.py:478
 msgid "Download..."
 msgstr "تنزيل..."
 
-#: ui/mainwin/menu.py:476
+#: ui/mainwin/menu.py:482
 msgid "Video description..."
 msgstr "وصف المقطع..."
 
-#: ui/mainwin/menu.py:480
+#: ui/mainwin/menu.py:486
 msgid "Copy video link"
 msgstr "نسخ رابط المقطع"
 
-#: ui/mainwin/menu.py:497
+#: ui/mainwin/menu.py:503
 msgid "User Guide"
 msgstr "دليل المستخدم"
 
-#: ui/mainwin/menu.py:501 ui/update_dialogs.py:18
+#: ui/mainwin/menu.py:507 ui/update_dialogs.py:18
 msgid "What's new"
 msgstr "ما الجديد"
 
-#: ui/mainwin/menu.py:506
+#: ui/mainwin/menu.py:512
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: ui/mainwin/menu.py:510
+#: ui/mainwin/menu.py:516
 msgid "Telegram"
 msgstr "Telegram"
 
-#: ui/mainwin/menu.py:516
+#: ui/mainwin/menu.py:522
 msgid "Contact me"
 msgstr "تواصل معي"
 
-#: ui/mainwin/menu.py:521
+#: ui/mainwin/menu.py:527
 msgid "Check for app updates"
 msgstr "التحقق من تحديثات التطبيق"
 
-#: ui/mainwin/menu.py:525
+#: ui/mainwin/menu.py:531
 msgid "Update YouTube components"
 msgstr "تحديث مكونات YouTube"
 
-#: ui/mainwin/menu.py:527
+#: ui/mainwin/menu.py:533
 msgid "Updates"
 msgstr "التحديثات"
 
-#: ui/mainwin/menu.py:548
+#: ui/mainwin/menu.py:554
 msgid "Start recording"
 msgstr "بدء التسجيل"
 
-#: ui/mainwin/menu.py:556
+#: ui/mainwin/menu.py:562
 msgid "Stop"
 msgstr "إيقاف"
 
-#: ui/mainwin/menu.py:561
+#: ui/mainwin/menu.py:567
 msgid "Open recordings folder"
 msgstr "فتح مجلد التسجيلات"
 
