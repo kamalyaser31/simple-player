@@ -32,7 +32,7 @@ jobs:
       id: get_info
       shell: bash
       run: |
-        VERSION=$(python -c "import json; print(json.load(open('info.json'))['version'])")
+        VERSION=$(python -c "import json; print(json.load(open('info.json', encoding='utf-8'))['version'])")
         echo "version=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Build Updater
